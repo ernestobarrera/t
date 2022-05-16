@@ -1,0 +1,343 @@
+<!-- falta revisar dataname para introducir barra horizontal. Ver archivo→ https://github.com/Martinomagnifico/reveal.js-tagteam/blob/main/demo.html para que se vea así https://martinomagnifico.github.io/reveal.js-tagteam/demo.html#/3  valorar confusión de estilos css -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+<!-- meta_propio_inicio -->
+<meta name="description" content="Web con recursos para facilitar la búsqueda de información y gestión del conocimiento en Ciencias de la Salud">
+<meta name="author" content="Ernesto Barrera">
+<link rel="icon" href="./faviconwebgithub.webp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Herramientas para buscar información sanitaria | ​👨‍⚕️ EB">
+<meta property="og:site_name" content="Recursos para la gestión de información  🔎🩺⚕">
+<meta property="og:url" content="https://ernestobarrera.github.io/">
+<!-- <meta property="og:image" content="https://ernestobarrera.github.io/assets/images/me.png" > -->
+<meta property="article:published_time" content="2022-05-10">
+<meta property="article:author" content="Ernesto Barrera">
+<!-- fin -->
+    <title> PLE | Digital </title>
+
+    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="plugin/simplemenu/simplemenu.css">
+    <link rel="stylesheet" href="plugin/menu/menu.css">
+    <link rel="stylesheet" href="reveal.js/dist/theme/blood.css" id="theme" />
+    <link rel="stylesheet" href="../reveal-plugin/customcontrols/style.css">
+    <link rel="stylesheet" href="../reveal-plugin/chalkboard/style.css">
+    <link rel="stylesheet" href="../reveal-plugin/menu/menu.css">
+
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="reveal.js/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+     <!-- Custom Styles For Our Presentation -->
+  <style>
+ 
+    .left {
+      text-align: left;
+      
+    }
+    .pie {
+      position:absolute !important;
+      bottom:5;}
+      .size0 {
+      font-size: 20px;
+    }
+    .size1 {
+      font-size: 16px;
+    }
+    .size2 {
+      font-size: 14px;
+    }
+    .size3 {
+      font-size: 12px;
+    }
+    .color{
+      color:rgb(255, 191, 71);
+    }
+    .footer {
+  position: absolute; 
+  left: 35%;
+  bottom: 1em;
+}
+.highlighted {
+    background-color: rgba(252, 212, 212, 0.5);
+}
+
+  </style>
+  <!--- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKR6RB1ZC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YFKR6RB1ZC');
+</script>
+  </head>
+  <body>
+    <div class="reveal">
+      
+      <!-- <a class="github-corner bottom" href="https://github.com/ernestobarrera" target="blank" title="Estoy en GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 55">
+          <path fill="red" d="M27.5 11.2a16.3 16.3 0 0 0-5.1 31.7c.8.2 1.1-.3 1.1-.7v-2.8c-4.5 1-5.5-2.2-5.5-2.2-.7-1.9-1.8-2.4-1.8-2.4-1.5-1 .1-1 .1-1 1.6.1 2.5 1.7 2.5 1.7 1.5 2.5 3.8 1.8 4.7 1.4.2-1 .6-1.8 1-2.2-3.5-.4-7.3-1.8-7.3-8 0-1.8.6-3.3 1.6-4.4-.1-.5-.7-2.1.2-4.4 0 0 1.4-.4 4.5 1.7a15.6 15.6 0 0 1 8.1 0c3.1-2 4.5-1.7 4.5-1.7.9 2.3.3 4 .2 4.4 1 1 1.6 2.6 1.6 4.3 0 6.3-3.8 7.7-7.4 8 .6.6 1.1 1.6 1.1 3v4.6c0 .4.3.9 1.1.7a16.3 16.3 0 0 0-5.2-31.7"></path>
+      </svg></a> -->
+    
+   
+   
+      <!--esto parece sería del menú 
+    <div class="menubar">
+      <ul class="menu"></ul>
+  </div> -->
+      <div class="slides">
+
+          <!-- presentación con landing y contexto -->
+      <section>
+        <section>
+          <h4>Desarrollo de un marco teórico para organizar recursos digitales</h4>
+          <p class="fade-in-then-out">Para facilitar la gestión eficiente del conocimiento científico </p>
+          <!-- <p class="fragment fade-out">Fade out</p> -->
+          <p class="fragment fade-up" color="highlight red">y la revisión del entorno personal de aprendizaje en las profesiones sanitarias</p>
+                   <!-- <p class="fragment fade-in-then-out">Ernesto Barrera</p> -->
+         <!--  <p class="fragment fade-up">Slide up while fading in</p> -->
+        </section>         
+        <section data-markdown>
+          <textarea data-template>
+            ## Slide 1
+            A paragraph with some text and a [link](http://hakim.se).
+            ---
+            ## Slide 2
+            ---
+            ## Slide 3
+          </textarea>
+        </section>                       
+        <section>       
+          <p> <a href="https://twitter.com/ernestob">Autor: @ernestob  </a></p>
+          <p class="size3"> Optimizada para navegación horizontal en dispositivos móviles</p>
+          <p >CC BY-SA 3.0   </p>
+          <p> <a href="https://ernestobarrera.github.io/bookmarklet/pico.html">Disponible en https://ernestobarrera.github.io/bookmarklet/pico.html  </a></p>
+        </section>
+      </section>
+      <section>
+       <section  data-background-image="https://ernestobarrera.github.io/assets/images/landing.png">
+
+        <aside class="notes">
+          estas son mis notas privadas 📝
+        </aside>
+       </section>
+               <section  data-background-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAiaXCj9Y7purHIZE8ggeRoq8nAtzU5wg21Vrn2tfA1EtaCInkP4lY-2eKAbYLt1pNTnxTx_AjmOPC/pubchart?oid=861503756&amp;format=interactive" width="100%" height="100%"  eamless frameborder="0" scrolling="no"  data-background-interactive> 
+            <!-- <iframe width="1847" height="850" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=42C1E8FB5F981E15%2115021&authkey=%21ALla4forTZvwkDo&em=2&AllowTyping=True&ActiveCell=' '!F2&Item=' '!A1:S34&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True&waccluster=PIE1"></iframe> -->
+        </section>
+      </section>
+      <section>
+        <h2>PLE</h2>
+      <img class="r-stretch" src="https://ernestobarrera.github.io/assets/images/landing.png">
+      <p>Marco conceptual tecnopedagógico y constructivista</p>
+      </section>
+      <!-- busqueda -->
+     <!--  <iframe width="1307" height="845" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAiaXCj9Y7purHIZE8ggeRoq8nAtzU5wg21Vrn2tfA1EtaCInkP4lY-2eKAbYLt1pNTnxTx_AjmOPC/pubchart?oid=861503756&amp;format=interactive"></iframe> -->
+        <!-- pirámide de buscadores -->
+
+        <section data-background-size="800px" data-background-iframe="https://onedrive.live.com/embed?resid=42C1E8FB5F981E15%2115021&authkey=%21ALla4forTZvwkDo&em=2&AllowTyping=True&ActiveCell=' '!F2&Item=' '!A1:S34&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True&waccluster=PIE1" width="80%" height="80%"  data-background-interactive> 
+          <!-- <iframe width="1847" height="850" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=42C1E8FB5F981E15%2115021&authkey=%21ALla4forTZvwkDo&em=2&AllowTyping=True&ActiveCell=' '!F2&Item=' '!A1:S34&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True&waccluster=PIE1"></iframe> -->
+           </section>
+        <!-- bookmarklet buscadores -->
+     
+           <section data-background-opacity="1" data-background-iframe="https://ernestobarrera.github.io/bookmarklet/buscadores.html" data-background-interactive></section>
+        
+           <!-- Wikipedia -->
+          <section data-background-size="800px" data-background-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSDEsc8i3Lso5LLA0ok8Yda8XLEk94TgSxGvw0BJBaeNDm0aD503c-yvbqmrq875ULAbWxeKokEUOYi/pubhtml?widget=true&amp;headers=false" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"> 
+            <!-- <iframe width="1847" height="850" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=42C1E8FB5F981E15%2115021&authkey=%21ALla4forTZvwkDo&em=2&AllowTyping=True&ActiveCell=' '!F2&Item=' '!A1:S34&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True&waccluster=PIE1"></iframe> -->
+             </section>
+      
+    </div>
+    <!-- cierre del div menú
+       </div> -->
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="plugin/simplemenu/simplemenu.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script src="reveal.js/plugin/search/search.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+    <script src="plugin/tagteam/tagteam.js"></script>
+    <script src="../reveal-plugin/chalkboard/plugin.js"></script>
+    <script src="../reveal-plugin/customcontrols/plugin.js"></script>
+    <script src="../reveal-plugin/menu/plugin.js"></script>
+    <script> 
+    // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+       /* https://github.com/asciidoctor/asciidoctor-reveal.js/blob/master/templates/document.html.slim */
+      Reveal.initialize({
+        
+        menu: {
+   // Specifies which side of the presentation the menu will
+    // be shown. Use 'left' or 'right'.
+    side: 'left',
+
+    // Specifies the width of the menu.
+    // Can be one of the following:
+    // 'normal', 'wide', 'third', 'half', 'full', or
+    // any valid css length value
+    width: 'normal',
+
+    // Add slide numbers to the titles in the slide list.
+    // Use 'true' or format string (same as reveal.js slide numbers)
+    numbers: false,
+
+    // Specifies which slide elements will be used for generating
+    // the slide titles in the menu. The default selects the first
+    // heading element found in the slide, but you can specify any
+    // valid css selector and the text from the first matching
+    // element will be used.
+    // Note: that a section data-menu-title attribute or an element
+    // with a menu-title class will take precedence over this option
+    titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+    // If slides do not have a matching title, attempt to use the
+    // start of the text content as the title instead
+    useTextContentForMissingTitles: false,
+
+    // Hide slides from the menu that do not have a title.
+    // Set to 'true' to only list slides with titles.
+    hideMissingTitles: false,
+
+    // Adds markers to the slide titles to indicate the
+    // progress through the presentation. Set to 'false'
+    // to hide the markers.
+    markers: true,
+
+    // Specify custom panels to be included in the menu, by
+    // providing an array of objects with 'title', 'icon'
+    // properties, and either a 'src' or 'content' property.
+    custom: false,
+
+    // Specifies the themes that will be available in the themes
+    // menu panel. Set to 'true' to show the themes menu panel
+    // with the default themes list. Alternatively, provide an
+    // array to specify the themes to make available in the
+    // themes menu panel, for example...
+    //
+    // [
+    //     { name: 'Black', theme: 'dist/theme/black.css' },
+    //     { name: 'White', theme: 'dist/theme/white.css' },
+    //     { name: 'League', theme: 'dist/theme/league.css' },
+    //     {
+    //       name: 'Dark',
+    //       theme: 'lib/reveal.js/dist/theme/black.css',
+    //       highlightTheme: 'lib/reveal.js/plugin/highlight/monokai.css'
+    //     },
+    //     {
+    //       name: 'Code: Zenburn',
+    //       highlightTheme: 'lib/reveal.js/plugin/highlight/zenburn.css'
+    //     }
+    // ]
+    //
+    // Note: specifying highlightTheme without a theme will
+    // change the code highlight theme while leaving the
+    // presentation theme unchanged.
+    themes: false,
+
+    // Specifies the path to the default theme files. If your
+    // presentation uses a different path to the standard reveal
+    // layout then you need to provide this option, but only
+    // when 'themes' is set to 'true'. If you provide your own
+    // list of themes or 'themes' is set to 'false' the
+    // 'themesPath' option is ignored.
+    themesPath: 'dist/theme/',
+
+    // Specifies if the transitions menu panel will be shown.
+    // Set to 'true' to show the transitions menu panel with
+    // the default transitions list. Alternatively, provide an
+    // array to specify the transitions to make available in
+    // the transitions panel, for example...
+    // ['None', 'Fade', 'Slide']
+    transitions: false,
+
+    // Adds a menu button to the slides to open the menu panel.
+    // Set to 'false' to hide the button.
+    openButton: true,
+
+    // If 'true' allows the slide number in the presentation to
+    // open the menu panel. The reveal.js slideNumber option must
+    // be displayed for this to take effect
+    openSlideNumber: false,
+
+    // If true allows the user to open and navigate the menu using
+    // the keyboard. Standard keyboard interaction with reveal
+    // will be disabled while the menu is open.
+    keyboard: true,
+
+    // Normally the menu will close on user actions such as
+    // selecting a menu item, or clicking the presentation area.
+    // If 'true', the sticky option will leave the menu open
+    // until it is explicitly closed, that is, using the close
+    // button or pressing the ESC or m key (when the keyboard
+    // interaction option is enabled).
+    sticky: false,
+
+    // If 'true' standard menu items will be automatically opened
+    // when navigating using the keyboard. Note: this only takes
+    // effect when both the 'keyboard' and 'sticky' options are enabled.
+    autoOpen: true,
+
+    // If 'true' the menu will not be created until it is explicitly
+    // requested by calling RevealMenu.init(). Note this will delay
+    // the creation of all menu panels, including custom panels, and
+    // the menu button.
+    delayInit: false,
+
+    // If 'true' the menu will be shown when the menu is initialised.
+    openOnInit: false,
+
+    // By default the menu will load it's own font-awesome library
+    // icons. If your presentation needs to load a different
+    // font-awesome library the 'loadIcons' option can be set to false
+    // and the menu will not attempt to load the font-awesome library.
+    loadIcons: true},
+        width: "99%",
+        height: "99%",
+        center:true,
+     /* esto daría tiempo en notas orador pero hay algún error  
+      defaultTiming: #{attr 'revealjs_defaulttiming', 600}, */
+        // Specify the total time in seconds that is available to
+        // present.  If this is set to a nonzero value, the pacing
+        // timer will work out the time available for each slide,
+        // instead of using the defaultTiming value
+     
+        backgroundTransition: 'concave',
+        // Transition style for full page slide backgrounds: none/fade/slide/convex/concave/zoom
+        
+        // Global override for preloading lazy-loaded iframes
+        // - null:   Iframes with data-src AND data-preload will be loaded when within
+        //           the viewDistance, iframes with only data-src will be loaded when visible
+        // - true:   All iframes with data-src will be loaded when within the viewDistance
+        // - false:  All iframes with data-src will be loaded only when visible
+        preloadIframes: true,
+        hash: true,
+       // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealMenu, RevealHighlight, RevealNotes,  RevealZoom, RevealSearch, Tagteam, RevealChalkboard,  RevealMenu],
+        slideNumber: true
+        
+        	   
+      });
+    </script>
+  </body>
+</html>
+
+
+
+  
