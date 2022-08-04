@@ -78,14 +78,11 @@
   </head>
   <body>
     <div class="reveal">
-  <div class="menubar">
-      <ul class="menu"></ul>
-  </div>
+
       <div class="slides">
           
 <!--             data-background-image="./img/1.jpg" -->
-          <section data-name="inicio" data-tag="intro">
-          <section data-background-opacity="0.6" data-background-image="./instalacionPC.gif"><div class="color"> Bookmarklet para buscar en espacios de trabajo con BING </div>        
+            <section data-background-opacity="0.6" data-background-image="./instalacionPC.gif"><div class="color"> Bookmarklet para buscar en espacios de trabajo con BING </div>        
           <br/><br/><button type="button" class="btn btn-info active" style="background-color:#F0A908;padding-bottom: 10px;padding-top: 4px;"><a class="size2" href="javascript: /*Este bookmarklet facilita la búsqueda de información asociada a espacios de trabajo en Bing*/ (function() {
             var inputStr = '%s'; var evalua = '' + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text);if (evalua == '') {var inputStr = inputStr} else {var inputStr = '' + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text);};if (!inputStr || (inputStr.length==2)) inputStr = prompt('Introducir lo que desea buscar en sus archivos. Se pueden usar:\nFILTROS:\n->filetype:pdf (o doc,xls,ppt,mp4...) busca solo ese tipo de archivo\n->%22texto%22 busca texto entrecomillado literal\n->site: busca solo dentro de esa dirección URL\nOPERADORES LÓGICOS:\n->NOT: símbolo - sin espacio antes de texto/comando para excluirlo\n->AND: resultados que incluyan todos los términos \n->OR o | : resultados que incluyan alguno de los términos', '');if (inputStr != null) buscar = 'https://www.bing.com/work/search?q=' + encodeURIComponent(inputStr) ; 
                 a = [window.open(buscar)]; }());">🔎</span><span style="color:black;font-size: 25px;">&nbsp;Bing-Trabajo</span></a></button>
@@ -95,36 +92,8 @@
             <p class="size1 color">Para instalar arrastrar el botón a la barra de marcadores del navegador<br/>En dispositivos móviles pulsar el botón<br/>SI no está visible, para activar barra de favoritos pulsar CONTROL + Mayúsculas + B</p>
      
           </section> 
-          </section>                
-          <section data-name="instalación" data-tag="intro">
-            <section data-background-opacity="0.6" data-background-image="./instalacionPC.gif">
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <p>Instalación en el navegador</p>           
-          </section> 
-        </section> 
-        <section data-name="presentación" data-tag="intro">
-           <section data-background-iframe="https://docs.google.com/presentation/d/e/2PACX-1vQ9wep1JX4MC7Ld396Jn-FU7-tvoSHrrJChkb5n9ufuvpuM3UFiZmXjtnYOV-AebURPtcAidGXfmZ0o/embed?start=false&loop=false&delayms=60000" frameborder="4" width="95%" height="95%" allowfullscreen="false" mozallowfullscreen="false" webkitallowfullscreen="false" single=true data-background-interactive>
-          </section>
-           </section>
-           <section data-background-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSDEsc8i3Lso5LLA0ok8Yda8XLEk94TgSxGvw0BJBaeNDm0aD503c-yvbqmrq875ULAbWxeKokEUOYi/pubhtml?widget=true&amp;headers=false" width="100%" height="100%"  frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" data-background-interactive> 
-
-           </section>
-           <section data-background-opacity="1" data-background-iframe="https://ernestobarrera.github.io/bookmarklet/pico.html" data-background-interactive></section>
-       	
-          <section data-name="Brown" data-tag="nice">
-            <section data-tag="cats, small">Cat (brown, small, nice)</section>
-            <section data-tag="dogs">Dog (brown, nice)</section>
-            <section data-tag="dogs, big">Dog (brown, big, nice)</section>
-            <section data-tag="horses">Horse (brown, nice)</section>
-          </section>
-          <section data-name="Black &amp; white">
-            <section data-tag="cats">Cat (black &amp; white)</section>
-            <section data-tag="dogs, small">Dog (black &amp; white + small)</section>
-            <section data-tag="horses">Horse (black &amp; white)</section>
-          </section>
+                       
+          
       </div>
     </div>
 
