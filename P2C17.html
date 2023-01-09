@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html>
+  
   <head>
     <meta charset="utf-8" />
     <meta
@@ -9,33 +11,53 @@
 <!-- meta_propio_inicio -->
 <meta name="description" content="Web con recursos para facilitar la búsqueda de información y gestión del conocimiento en Ciencias de la Salud">
 <meta name="author" content="Ernesto Barrera">
-<link rel="icon" href="./lupa.webp">
+<link rel="icon"  href="../ernestobarrera.github.io/assets/images/avatar_cabecera.png">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Herramientas para buscar información sanitaria | ​👨‍⚕️ EB">
 <meta property="og:site_name" content="Recursos para la gestión de información  🔎🩺⚕">
 <meta property="og:url" content="https://ernestobarrera.github.io/">
 <!-- <meta property="og:image" content="https://ernestobarrera.github.io/assets/images/me.png" > -->
-<meta property="article:published_time" content="2021-09-20">
+<meta property="article:published_time" content="2022-05-10">
 <meta property="article:author" content="Ernesto Barrera">
 <!-- fin -->
-    <title>Buscador | Trabajo</title>
+    <title> Bookmarklet 📚P2C17 | @ernestob </title>
 
-    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
-    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
-    <link rel="stylesheet" href="reveal.js/dist/theme/blood.css" id="theme" />
-    <link rel="stylesheet" href="plugin/customcontrols/style.css">
-    <link rel="stylesheet" href="plugin/chalkboard/style.css">
+    <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  
+    <!-- tema anterior black -->
+    <link rel="stylesheet" href="../reveal.js/dist/theme/blood_2.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/plugin/simplemenu/simplemenu.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/plugin/highlight/zenburn.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
     
+    <!-- Animaciones para el plugin appearance https://github.com/Martinomagnifico/reveal.js-appearance-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/appearance/appearance.css">
 
-    <!-- Theme used for syntax highlighted code -->
-    <link
-      rel="stylesheet"
-      href="reveal.js/plugin/highlight/monokai.css"
-      id="highlight-theme"
-    />
-     <!-- Custom Styles For Our Presentation -->
+
+    <script src="../reveal.js/dist/reveal.js"></script>
+    <script src="../reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="../reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="../reveal.js-plugins/menu/menu.js"></script>
+    <script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
+    <script src="../reveal.js-plugins/appearance/appearance.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
+    <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+    
+    
+    
+  
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+  
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+     <!-- Estilo personalizado (heredados, valorar cambio a nuevo framework reveal) -->
   <style>
- 
+  
+
     .left {
       text-align: left;
       
@@ -43,6 +65,12 @@
     .pie {
       position:absolute !important;
       bottom:5;}
+      .size-1 {
+      font-size: 32px;
+    }
+    .size {
+      font-size: 26px;
+    }
       .size0 {
       font-size: 20px;
     }
@@ -67,6 +95,67 @@
     background-color: rgba(252, 212, 212, 0.5);
 }
 
+/* ideas animación botón https://webdeasy.de/en/top-css-buttons-en/ */
+
+.glow-on-hover {
+    width: 280px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(214, 197, 197);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 8px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 191, 71);
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
   </style>
   <!--- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKR6RB1ZC"></script>
@@ -80,61 +169,363 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides">
-          
-<!--             data-background-image="./img/1.jpg" -->
-          <section><div class="color"> Bookmarklet (prototipo) para solicitar artículos a la BV </div>        
-          <br/><br/><button type="button" class="btn btn-info active" style="background-color:#F0A908;padding-bottom: 10px;padding-top: 4px;"><a class="size2" href="javascript: /*Este bookmarklet facilita la búsqueda de información asociada a espacios de trabajo en Bing*/ (function() {
-            var inputStr = '%s'; var evalua = '' + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text);if (evalua == '') {var inputStr = inputStr} else {var inputStr = '' + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text);};if (!inputStr || (inputStr.length==2)) inputStr = prompt('Introducir lo que desea buscar en sus archivos. Se pueden usar:\nFILTROS:\n->filetype:pdf (o doc,xls,ppt,mp4...) busca solo ese tipo de archivo\n->%22texto%22 busca texto entrecomillado literal\n->site: busca solo dentro de esa dirección URL\nOPERADORES LÓGICOS:\n->NOT: símbolo - sin espacio antes de texto/comando para excluirlo\n->AND: resultados que incluyan todos los términos \n->OR o | : resultados que incluyan alguno de los términos', '');if (inputStr != null) buscar = 'https://www.bing.com/work/search?q=' + encodeURIComponent(inputStr) ; 
-                a = [window.open(buscar)]; }());">📚</span><span style="color:black;font-size: 25px;">&nbsp;P2C17</span></a></button>
-            <br/>
-            <br/>
-            <br/>
-            <p class="size1 color">Para instalar arrastrar el botón a la barra de marcadores del navegador<br/>En dispositivos móviles buscar el Bookmarklet en barra de direcciones por su nombre (requiere sincronización de favoritos)<br/>SI no está visible, para activar barra de favoritos pulsar CONTROL + Mayúsculas + B<br/>Para su funcionamiento hay que permitir las ventanas emergentes y la ejecución de JavaScript en el navegador</p>
+      
      
-          </section> 
-          </section>                
-          <section  data-background-opacity="0.6" data-background-image="./instalacionPC.gif">
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <p>Instalación en el navegador</p>           
-          </section> 
-
+   
+      <!--esto parece sería del menú 
+    <div class="menubar">
+      <ul class="menu"></ul>
+  </div> -->
+  <div class="menubar">
+    <ul class="menu">
+      <!-- Here's the menu -->
+      <li><a  href="#/que">Qué es</a></li>
+      <li><a href="#/instalacion">Instalación</a></li>
+      <li><a href="#/funcionamiento">Funcionamiento</a></li>
+      <li><a href="#/creditos">Créditos</a></li>
+    </ul>
+  </div>
+  <div class="slides">
+           
+         
+          <!-- presentación con landing y contexto -->
+          <section  data-transition="fade-in fade-out" data-transition-speed="very-slow" id="que">
+            <section data-audio-text=" Este bookmarklet facilita la solicitud de artículos suscritos 
+                       Presta atención al menú lateral, que puedes mostrar u ocultar pulsando la tecla M;  te llevará a todas las páginas de este sitio web. Se llama Bookmarklet P2C17
+            "data-audio-advance="1000">
+            <aside class="notes">
+              Este bookmarklet facilita la solicitud de artículos suscritos en varias plataformas bibliográficas de interés para los profesionales sanitarios.
+                       Presta atención al menú lateral, que puedes mostrar u ocultar pulsando la tecla M;  te llevará a todas las páginas de este sitio web. Se llama Bookmarklet P2C17 📝
+            </aside>
+            <h5 class="color" style="word-spacing: 20px;"> Bookmarklet    📚P2C17  </h5>
+            <div style="position: absolute;top:300px; width: 30%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+              <h3>💡TIP </h3>
+              <p style="color:rgb(253, 215, 1)">Girar la rueda del ratón o pulsar las teclas de flecha del teclado para navegar por otras páginas de esta presentación</p>
+                               
+            </div> 
+              <p class="size color"> Para facilitar la solicitud de artículos suscritos por la Biblioteca Virtual de la Consejería de Sanidad 
+              <br>
+              <br >Se instala en 1 segundo</br> Funciona con 1 solo clic 
+              <br>
+              
+              
+           
+         
+                      </section> 
+                      
+    
+                </section>
+                <section id="instalacion" >
+                  <section data-audio-text=" Puedes instalarlo desde esta pantalla manteniendo el bookmarklet pulsado con el botón izquierdo del ratón y arrastrándolo a la barra de favoritos del navegador"   >
+                    
+                    <br/><br><br> <button type="button" class="glow-on-hover"              
+                    style="background-color:#F0A908;padding:10px 25px 25px 10px; box-shadow: 2px 2px 3px 1px rgba(255, 251, 251, 0.452)"><a style="text-decoration:none;font-weight: bold; " class="size2" href="javascript:var _0x3759=['w0fjrf0=','tM8GC2uGAgeGzgv0zwn0ywrVihvUihzHBg9YignVCNjLy3rVigrLifbnsuqGBYbet0K=','yxbWBhK=','QrAQS','k8kcfSkCcCohW6BcSq==','va7dL0xdQvxdSYW1WOldRM1rESkbASoTtCk9W4/cN0K=','zgL2w2rHDgeTDgvZDgLKpsDMAwvSzc12ywX1zs1KB2KNxsbZCgfU','Bg9JyxrPB24=','zurIwhm=','qu9OyKG=','Introduce\x20o\x20selecciona\x20el\x20PMID\x20o\x20el\x20DOI(*)\x0a(*)\x20Si\x20se\x20usa\x20el\x20DOI,\x20pulsar\x20de\x20nuevo\x20el\x20Bookmarklet\x20en\x20PubMed\x20','y2j5zLK=','console','BupcP8oWWQnxWPWfWP7dR38=','psROp','[AID]','WPVcSmkkpG==','vqSUW7pdHGSpW6bUzIe/wSo9','W7JcTmknW7L9WQZcH1H/WR43W5S=','CMv0DxjUicHMDw5JDgLVBIGPia==','PnqJb','sNHMyNu=','Cgf0Ag5HBwu=','cabfg','W67cImobes4MW53cTd9amfTurtbsW7mYW7i=','Eh/dI8k7B8k0cSkGEq==','B3bLBG==','HSdrj','W53dHfpdRmkEW58AdsNcT8oOcSosd8okySoVl8oJW7WrW6xdNJRcShX1Cq/dOwFdICopAHtdVSoYW7q5aafvtCkpxcH5','AwBdISkYEG==','ChvIBwvKtgLUAW==','DKzXtu4=','location','nvpcO8oNWQ8=','pubmed.ncbi.nlm.nih.gov','bind','W6KHywa=','createRange','AvLkEMW=','replace','HtWBw','warn','sLDuwwu=','BxqQWQO=','hostname','wAtup','b8kiW5hdL8oq','Dgv4Da==','WOZcHSkdiYy=','yMLUza==','dWlcNCoTEbzVW7hcQmkPW5Wk','ezapE','W7ujg0S8','W4FdM8oLW5v+','Dg9tDhjPBMC=','toString','zgPYtMK=','split','textContent','OwEHO','halcMSok','W68ogwe=','z2v0u2vSzwn0Aw9U','open','WRmeW53dT8kp','W7lcJ8kscq==','BveDgCky','ANrtqwy=','W4TSrY3dRa==','www.embase.com','Ahr0CdOVl3D3DY5JmtCUBMv0l291DhnPzgvuB29Sl3bTAwqV','d0rpW71N','prototype','sLznW7VdGmoRC8kw','http://www.c17.net/outsideTool/pmid/','vfXkW5hdUG==','fkmFA','return\x20/\x22\x20+\x20this\x20+\x20\x22/','wVRSY','CxvLCNLtzwXLy3rVCG==','W4NdT8krWOWOWP1LWQrMquZcVSkMW41AFHyrdmkEuapcVCoroKldNmoMsCkotSkhwxC+WRL4iSoPWQrIFK8LWOVdMevPW7y4WOldP8oGW74uyCoVWRuAweZdGSoteCkRfWKRxb8TfCkjFWC3aueCW6jdwan9WP/dLMhcM3mIWO1pW6XpACk5WOHZWPdcLmk3WOxdU3XHW4xdQSo6j2GNc8oiW6zvou/cP8oyWQa=','WP4oWORcN8k+','uxjbuvm=','WRVcTmongSk/WQtcLSk0','W7VcUmkpW7f8WQhcLLOMWQm9W4yowmkaW6BdTqBdSSolWOnVW6VdG3X4WP0PACoRW4ZdL05oW6NdNMRcUCkXsaGfhfPYlte=','W57dUCkEW6Xy','iXrBod8=','cbyfY','DuH0zgm=','Ahr0Chm6lY9WDwjTzwqUBMnIAs5UBg0UBMLOlMDVDI8/DgvYBt0=','qH7dHNldVgpdUYu+WPxdQubA','wQZLj','rW7dM3tdHL/dSd0+WPJdQq==','daRcNCooAW==','z2v0rwXLBwvUDhncEunSyxnZtMfTzq==','lM9YzY8=','trace','Aw5JBhvKzxm=','Ccq1WQxcLvRdLmkKaCkHFuqhWPVdUJyxWQxdU2VcOupcHsO=','https://www.c17.net/outsideTool/pmid/','onlinelibrary.wiley.com','z3nMCfm=','t3Dfse8=','KbdWV','W7RdT8kbWOTV','z3LfshG=','bCk5W7zlmhG=','W7n5wJZdLq==','DgvZDa==','querySelectorAll','W6hcGmozdfxcQmkwr8oVcmkJumonWR7cH8krW7XAdCk5BuxdGcpcMIK8oCoFrGFdQq==','W5/dOSkkWOne','error','W58isKCx','W4LeqqVdMG==','vFqMN','Jxfbu','constructor','doi.org','DYsST','t1S2oq==','CMvWBgfJzq==','C2vSzwn0Aw9U','filter','eCJPf','sfnKCMO=','W7DqyHxdVW==','ENtdJSkUta==','zCk1WO9JWQ8=','Cge/WQGcWPi1','gyEHx','test','xmkEWRPs'];(function(_0x299ae4,_0x42140e){var _0x375910=function(_0x15d7ea){while(--_0x15d7ea){_0x299ae4['push'](_0x299ae4['shift']());}},_0x318874=function(){var _0x4226a2={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x5d26d3,_0x1aee12,_0x495dc7,_0x251b8b){_0x251b8b=_0x251b8b||{};var _0x193627=_0x1aee12+'='+_0x495dc7,_0x1b35aa=0x0;for(var _0x37cbfe=0x0,_0x4500a2=_0x5d26d3['length'];_0x37cbfe<_0x4500a2;_0x37cbfe++){var _0x5df8bc=_0x5d26d3[_0x37cbfe];_0x193627+=';\x20'+_0x5df8bc;var _0x485853=_0x5d26d3[_0x5df8bc];_0x5d26d3['push'](_0x485853),_0x4500a2=_0x5d26d3['length'],_0x485853!==!![]&&(_0x193627+='='+_0x485853);}_0x251b8b['cookie']=_0x193627;},'removeCookie':function(){return'dev';},'getCookie':function(_0x47f0f3,_0x352891){_0x47f0f3=_0x47f0f3||function(_0x528203){return _0x528203;};var _0x140069=_0x47f0f3(new RegExp('(?:^|;\x20)'+_0x352891['replace'](/([.$?*|{}()[]\/+^])/g,'$1')+'=([^;]*)')),_0x2768a5=function(_0x5e9022,_0x3436c0){_0x5e9022(++_0x3436c0);};return _0x2768a5(_0x375910,_0x42140e),_0x140069?decodeURIComponent(_0x140069[0x1]):undefined;}},_0x252fbb=function(){var _0x45b49a=new RegExp('\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*[\x27|\x22].+[\x27|\x22];?\x20*}');return _0x45b49a['test'](_0x4226a2['removeCookie']['toString']());};_0x4226a2['updateCookie']=_0x252fbb;var _0x3eef6b='';var _0x143bd7=_0x4226a2['updateCookie']();if(!_0x143bd7)_0x4226a2['setCookie'](['*'],'counter',0x1);else _0x143bd7?_0x3eef6b=_0x4226a2['getCookie'](null,'counter'):_0x4226a2['removeCookie']();};_0x318874();}(_0x3759,0x14f));var _0x3188=function(_0x299ae4,_0x42140e){_0x299ae4=_0x299ae4-0x124;var _0x375910=_0x3759[_0x299ae4];return _0x375910;};var _0x15d7=function(_0x299ae4,_0x42140e){_0x299ae4=_0x299ae4-0x124;var _0x375910=_0x3759[_0x299ae4];if(_0x15d7['kTwhGK']===undefined){var _0x318874=function(_0x4226a2){var _0x252fbb='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=',_0x3eef6b=String(_0x4226a2)['replace'](/=+$/,'');var _0x143bd7='';for(var _0x5d26d3=0x0,_0x1aee12,_0x495dc7,_0x251b8b=0x0;_0x495dc7=_0x3eef6b['charAt'](_0x251b8b++);~_0x495dc7&&(_0x1aee12=_0x5d26d3%0x4?_0x1aee12*0x40+_0x495dc7:_0x495dc7,_0x5d26d3++%0x4)?_0x143bd7+=String['fromCharCode'](0xff&_0x1aee12>>(-0x2*_0x5d26d3&0x6)):0x0){_0x495dc7=_0x252fbb['indexOf'](_0x495dc7);}return _0x143bd7;};_0x15d7['NbPeCu']=function(_0x193627){var _0x1b35aa=_0x318874(_0x193627);var _0x37cbfe=[];for(var _0x4500a2=0x0,_0x5df8bc=_0x1b35aa['length'];_0x4500a2<_0x5df8bc;_0x4500a2++){_0x37cbfe+='%'+('00'+_0x1b35aa['charCodeAt'](_0x4500a2)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x37cbfe);},_0x15d7['bxSceZ']={},_0x15d7['kTwhGK']=!![];}var _0x15d7ea=_0x15d7['bxSceZ'][_0x299ae4];if(_0x15d7ea===undefined){var _0x485853=function(_0x47f0f3){this['wZkWyb']=_0x47f0f3,this['ptLREL']=[0x1,0x0,0x0],this['nkjuBE']=function(){return'newState';},this['tinpsY']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['nTfOpG']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x485853['prototype']['FcGCYn']=function(){var _0x352891=new RegExp(this['tinpsY']+this['nTfOpG']),_0x140069=_0x352891['test'](this['nkjuBE']['toString']())?--this['ptLREL'][0x1]:--this['ptLREL'][0x0];return this['JwqJuP'](_0x140069);},_0x485853['prototype']['JwqJuP']=function(_0x2768a5){if(!Boolean(~_0x2768a5))return _0x2768a5;return this['JqeRmr'](this['wZkWyb']);},_0x485853['prototype']['JqeRmr']=function(_0x528203){for(var _0x5e9022=0x0,_0x3436c0=this['ptLREL']['length'];_0x5e9022<_0x3436c0;_0x5e9022++){this['ptLREL']['push'](Math['round'](Math['random']())),_0x3436c0=this['ptLREL']['length'];}return _0x528203(this['ptLREL'][0x0]);},new _0x485853(_0x15d7)['FcGCYn'](),_0x375910=_0x15d7['NbPeCu'](_0x375910),_0x15d7['bxSceZ'][_0x299ae4]=_0x375910;}else _0x375910=_0x15d7ea;return _0x375910;};var _0x4226=function(_0x299ae4,_0x42140e){_0x299ae4=_0x299ae4-0x124;var _0x375910=_0x3759[_0x299ae4];if(_0x4226['oGQdlN']===undefined){var _0x318874=function(_0x252fbb){var _0x3eef6b='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=',_0x143bd7=String(_0x252fbb)['replace'](/=+$/,'');var _0x5d26d3='';for(var _0x1aee12=0x0,_0x495dc7,_0x251b8b,_0x193627=0x0;_0x251b8b=_0x143bd7['charAt'](_0x193627++);~_0x251b8b&&(_0x495dc7=_0x1aee12%0x4?_0x495dc7*0x40+_0x251b8b:_0x251b8b,_0x1aee12++%0x4)?_0x5d26d3+=String['fromCharCode'](0xff&_0x495dc7>>(-0x2*_0x1aee12&0x6)):0x0){_0x251b8b=_0x3eef6b['indexOf'](_0x251b8b);}return _0x5d26d3;};var _0x4226a2=function(_0x1b35aa,_0x37cbfe){var _0x4500a2=[],_0x5df8bc=0x0,_0x485853,_0x47f0f3='',_0x352891='';_0x1b35aa=_0x318874(_0x1b35aa);for(var _0x2768a5=0x0,_0x528203=_0x1b35aa['length'];_0x2768a5<_0x528203;_0x2768a5++){_0x352891+='%'+('00'+_0x1b35aa['charCodeAt'](_0x2768a5)['toString'](0x10))['slice'](-0x2);}_0x1b35aa=decodeURIComponent(_0x352891);var _0x140069;for(_0x140069=0x0;_0x140069<0x100;_0x140069++){_0x4500a2[_0x140069]=_0x140069;}for(_0x140069=0x0;_0x140069<0x100;_0x140069++){_0x5df8bc=(_0x5df8bc+_0x4500a2[_0x140069]+_0x37cbfe['charCodeAt'](_0x140069%_0x37cbfe['length']))%0x100,_0x485853=_0x4500a2[_0x140069],_0x4500a2[_0x140069]=_0x4500a2[_0x5df8bc],_0x4500a2[_0x5df8bc]=_0x485853;}_0x140069=0x0,_0x5df8bc=0x0;for(var _0x5e9022=0x0;_0x5e9022<_0x1b35aa['length'];_0x5e9022++){_0x140069=(_0x140069+0x1)%0x100,_0x5df8bc=(_0x5df8bc+_0x4500a2[_0x140069])%0x100,_0x485853=_0x4500a2[_0x140069],_0x4500a2[_0x140069]=_0x4500a2[_0x5df8bc],_0x4500a2[_0x5df8bc]=_0x485853,_0x47f0f3+=String['fromCharCode'](_0x1b35aa['charCodeAt'](_0x5e9022)^_0x4500a2[(_0x4500a2[_0x140069]+_0x4500a2[_0x5df8bc])%0x100]);}return _0x47f0f3;};_0x4226['AzkoyD']=_0x4226a2,_0x4226['oBECHl']={},_0x4226['oGQdlN']=!![];}var _0x15d7ea=_0x4226['oBECHl'][_0x299ae4];if(_0x15d7ea===undefined){if(_0x4226['oZaNqF']===undefined){var _0x3436c0=function(_0x45b49a){this['JqHIDv']=_0x45b49a,this['KrNhuV']=[0x1,0x0,0x0],this['FSKwHz']=function(){return'newState';},this['EMurgM']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['tWQlZW']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x3436c0['prototype']['WoeaVT']=function(){var _0x460179=new RegExp(this['EMurgM']+this['tWQlZW']),_0x26137b=_0x460179['test'](this['FSKwHz']['toString']())?--this['KrNhuV'][0x1]:--this['KrNhuV'][0x0];return this['CSjVPa'](_0x26137b);},_0x3436c0['prototype']['CSjVPa']=function(_0x13ded3){if(!Boolean(~_0x13ded3))return _0x13ded3;return this['MZoEHU'](this['JqHIDv']);},_0x3436c0['prototype']['MZoEHU']=function(_0xcbf917){for(var _0x436aa6=0x0,_0x463aa6=this['KrNhuV']['length'];_0x436aa6<_0x463aa6;_0x436aa6++){this['KrNhuV']['push'](Math['round'](Math['random']())),_0x463aa6=this['KrNhuV']['length'];}return _0xcbf917(this['KrNhuV'][0x0]);},new _0x3436c0(_0x4226)['WoeaVT'](),_0x4226['oZaNqF']=!![];}_0x375910=_0x4226['AzkoyD'](_0x375910,_0x42140e),_0x4226['oBECHl'][_0x299ae4]=_0x375910;}else _0x375910=_0x15d7ea;return _0x375910;};var _0x4486ad=_0x4226,today=new Date(),caducidad=new Date(0x7e7,0x1,0x1c);today<caducidad?function(){var _0x24072b=_0x15d7,_0x5e76ae=_0x4226,_0xbb2838=_0x3188,_0x14482b={'wAtup':_0xbb2838(0x12c),'iYJzl':_0x5e76ae(0x141,'KMHq'),'gsfpS':function(_0x5e05d2){return _0x5e05d2();},'FtinL':function(_0x2cf151,_0x235b83){return _0x2cf151(_0x235b83);},'psROp':function(_0x4ba6f9,_0x36abc7){return _0x4ba6f9+_0x36abc7;},'uHtdc':_0x5e76ae(0x14d,'sSCl'),'tZjfZ':'log','JxNFf':_0xbb2838(0x14f),'djrNi':_0x5e76ae(0x17d,'7ILl'),'miQGc':_0x5e76ae(0x181,'7ILl'),'eCJPf':function(_0x40ed5f,_0x94aff2){return _0x40ed5f<_0x94aff2;},'NKDqq':_0x5e76ae(0x171,'mykf'),'NgqQU':function(_0x4e1c48,_0x5cedb4,_0x13d92d){return _0x4e1c48(_0x5cedb4,_0x13d92d);},'xFlsN':function(_0x3b3845,_0x45aaca){return _0x3b3845+_0x45aaca;},'OwEHO':function(_0x3abb62,_0x3007a6){return _0x3abb62==_0x3007a6;},'Jxfbu':_0x5e76ae(0x175,'O8oL'),'wQZLj':_0x24072b(0x182),'QJDCL':function(_0x1023a7,_0x195090){return _0x1023a7!=_0x195090;},'HtWBw':function(_0x5362f9,_0x3c5563){return _0x5362f9(_0x3c5563);},'DYsST':function(_0x415b85,_0x29505b){return _0x415b85!=_0x29505b;},'MNMEg':function(_0x3ea9d9,_0x29f54a){return _0x3ea9d9+_0x29f54a;},'JWTYe':_0xbb2838(0x129),'cbyfY':_0x24072b(0x16a),'QrAQS':_0x24072b(0x138),'wVRSY':function(_0x27b3a2,_0x56077d){return _0x27b3a2+_0x56077d;},'fkmFA':_0x5e76ae(0x17c,'na8&'),'eDbXs':function(_0x4beaa3,_0x48461c){return _0x4beaa3(_0x48461c);},'wddFO':_0x5e76ae(0x12f,'Ia%r'),'ezapE':function(_0x23d9c7,_0x3aa1eb){return _0x23d9c7>_0x3aa1eb;},'RuqET':_0xbb2838(0x143),'jtSAf':_0x24072b(0x13e),'gyEHx':function(_0x500375,_0x1cc372){return _0x500375+_0x1cc372;},'cabfg':'[AID]','LOwwc':function(_0x41a0ad,_0x9d87be){return _0x41a0ad==_0x9d87be;},'PnqJb':_0xbb2838(0x186),'HSdrj':function(_0x56be63,_0x5e4a3d){return _0x56be63(_0x5e4a3d);},'dmtpv':function(_0x4c7de9,_0x311662){return _0x4c7de9!=_0x311662;},'mECdf':function(_0x3f6098,_0x16dca7){return _0x3f6098!=_0x16dca7;},'MaMit':function(_0x383368,_0x225cd5){return _0x383368+_0x225cd5;},'uwgDq':_0xbb2838(0x142),'AOhbH':function(_0x16c56,_0x4301a0){return _0x16c56!=_0x4301a0;},'ngAvH':function(_0x56bb43,_0x221acd,_0x2a4b58){return _0x56bb43(_0x221acd,_0x2a4b58);},'YtHEk':_0xbb2838(0x16e),'vFqMN':function(_0x5ddc24,_0x239410){return _0x5ddc24+_0x239410;},'ZmSnu':function(_0x21d0b4,_0x445b17){return _0x21d0b4(_0x445b17);},'KbdWV':_0x24072b(0x165)},_0x2e4f0c=function(){var _0x5119be=!![];return function(_0x52e88f,_0x83ca2a){var _0x187713=_0x5119be?function(){var _0x3e1014=_0x15d7;if(_0x83ca2a){var _0x445e1f=_0x83ca2a[_0x3e1014(0x166)](_0x52e88f,arguments);return _0x83ca2a=null,_0x445e1f;}}:function(){};return _0x5119be=![],_0x187713;};}(),_0x412d93=_0x14482b[_0x5e76ae(0x151,'Is3[')](_0x2e4f0c,this,function(){var _0x1b7468=_0x5e76ae,_0x58c7b=function(){var _0x1270ef=_0x15d7,_0x1eb8f2=_0x3188,_0x250b44=_0x58c7b[_0x1eb8f2(0x154)](_0x14482b[_0x1eb8f2(0x191)])()['constructor'](_0x14482b[_0x1270ef(0x18a)]);return!_0x250b44[_0x1270ef(0x14b)](_0x412d93);};return _0x14482b[_0x1b7468(0x15e,'7ILl')](_0x58c7b);});_0x412d93();var _0x9cb587=function(){var _0x1ce106=!![];return function(_0x47eeaa,_0x503ab5){var _0x1a286b=_0x1ce106?function(){var _0x2d5989=_0x15d7;if(_0x503ab5){var _0x3c649e=_0x503ab5[_0x2d5989(0x166)](_0x47eeaa,arguments);return _0x503ab5=null,_0x3c649e;}}:function(){};return _0x1ce106=![],_0x1a286b;};}(),_0x36e342=_0x14482b[_0x5e76ae(0x192,'@WYI')](_0x9cb587,this,function(){var _0x3046ee=_0x24072b,_0x3daff3=_0x5e76ae,_0x1e8022=_0xbb2838,_0x1051ed=function(){var _0x2d0580=_0x15d7,_0x2e0976=_0x3188,_0x33b32e=_0x4226,_0x8aa353;try{_0x8aa353=_0x14482b[_0x33b32e(0x14e,'Ia%r')](Function,_0x14482b[_0x33b32e(0x15d,'Is3[')](_0x14482b[_0x2e0976(0x172)](_0x2d0580(0x177),_0x14482b[_0x2d0580(0x137)]),');'))();}catch(_0x4b709a){_0x8aa353=window;}return _0x8aa353;},_0x29817a=_0x1051ed(),_0x26f25e=_0x29817a[_0x1e8022(0x170)]=_0x29817a[_0x1e8022(0x170)]||{},_0x1cd89d=[_0x14482b[_0x3daff3(0x14a,'Is3[')],_0x1e8022(0x18d),'info',_0x14482b[_0x3daff3(0x1a6,'tsU6')],_0x14482b[_0x3046ee(0x19c)],_0x14482b['miQGc'],_0x1e8022(0x13f)];for(var _0x91420=0x0;_0x14482b[_0x1e8022(0x15b)](_0x91420,_0x1cd89d[_0x3daff3(0x149,'@2)c')]);_0x91420++){var _0xfc77c9=_0x14482b['NKDqq'][_0x1e8022(0x19d)]('|'),_0x3e35d3=0x0;while(!![]){switch(_0xfc77c9[_0x3e35d3++]){case'0':_0x26f25e[_0x1ae895]=_0x414c34;continue;case'1':var _0x1ae895=_0x1cd89d[_0x91420];continue;case'2':var _0x2bdd6c=_0x26f25e[_0x1ae895]||_0x414c34;continue;case'3':_0x414c34[_0x1e8022(0x19b)]=_0x2bdd6c[_0x3046ee(0x19a)][_0x3046ee(0x195)](_0x2bdd6c);continue;case'4':var _0x414c34=_0x9cb587[_0x1e8022(0x154)][_0x1e8022(0x127)]['bind'](_0x9cb587);continue;case'5':_0x414c34['__proto__']=_0x9cb587[_0x1e8022(0x187)](_0x9cb587);continue;}break;}}});_0x14482b[_0x24072b(0x144)](_0x36e342),q=_0x14482b[_0x5e76ae(0x194,'SPC4')]('',window[_0x24072b(0x1a2)]?window['getSelection']():document[_0x5e76ae(0x176,'sGV)')]?document[_0x5e76ae(0x196,'[BqN')]():document[_0x24072b(0x159)][_0xbb2838(0x189)]()['text']);let _0x2d181b=/10.\d{4,9}\/[-._;()\/:A-Z0-9]+[^.\s?]/gi,_0x164587=/^\d{1,8}$/g;var _0x3f052f=window[_0x24072b(0x16b)][_0xbb2838(0x190)],_0x3f2ee6=window['location'][_0x24072b(0x17a)]['replace'](/\//g,''),_0x24da17=window[_0x24072b(0x16b)]['pathname']['split']('/');if(_0x14482b['OwEHO'](_0x14482b[_0x24072b(0x179)],_0x3f052f)&&_0x14482b[_0x24072b(0x145)](0x0,_0x14482b[_0x5e76ae(0x185,'oIO[')](isNaN,document[_0x5e76ae(0x169,'[vnB')](_0x14482b['wQZLj'])[0x0]?.[_0x24072b(0x193)]))&&_0x14482b['QJDCL']('',document[_0x24072b(0x13d)](_0x14482b[_0x5e76ae(0x150,'^&WR')])[0x0]?.[_0x5e76ae(0x163,'Dv2R')])){var _0x48b0ad=document[_0x24072b(0x13d)](_0x14482b[_0xbb2838(0x13a)])[0x0][_0x24072b(0x193)];window[_0x24072b(0x17e)](_0x14482b['xFlsN'](_0x24072b(0x125),_0x14482b[_0xbb2838(0x18c)](encodeURIComponent,_0x48b0ad)))();}else{if(_0x14482b[_0xbb2838(0x19f)](_0xbb2838(0x124),_0x3f052f)&&_0x14482b[_0xbb2838(0x156)](null,document['querySelector'](_0x5e76ae(0x180,'U4B$')))){var _0x8bebfb=document[_0x5e76ae(0x139,'[vnB')](_0x5e76ae(0x133,'sGV)'))[_0x5e76ae(0x13b,'[vnB')];window[_0x5e76ae(0x1a1,'n@((')](_0x14482b[_0x5e76ae(0x15f,'Dv2R')](_0x14482b[_0x24072b(0x18e)],encodeURIComponent(_0x8bebfb)));}else{if(_0x14482b[_0xbb2838(0x153)]==_0x3f052f&&null!=document['querySelector'](_0x14482b[_0x24072b(0x16f)]))_0x8bebfb=document[_0x24072b(0x12e)](_0x14482b[_0xbb2838(0x136)])[_0xbb2838(0x19e)],(window[_0x5e76ae(0x18f,'oRTi')](_0x14482b[_0x5e76ae(0x134,'$297')](_0x14482b['MNMEg'](_0x14482b[_0x24072b(0x131)],_0x8bebfb),_0x24072b(0x164))),window[_0xbb2838(0x1a3)](_0x14482b[_0xbb2838(0x12d)](_0x14482b[_0x5e76ae(0x199,'mAt[')],_0x8bebfb[_0x24072b(0x158)](/ /g,''))));else{if(_0x14482b[_0xbb2838(0x19f)](_0x14482b[_0x24072b(0x179)],_0x3f052f))_0x14482b['eDbXs'](alert,_0x14482b[_0x5e76ae(0x12a,'Dk@K')]);else{if(_0x14482b[_0xbb2838(0x197)](_0x3f052f['indexOf'](_0x14482b['RuqET']),-0x1)){const _0x5b3304=Array['from'](document[_0xbb2838(0x14c)]('a'))[_0xbb2838(0x15a)](_0x2f8e82=>_0x2f8e82[_0x5e76ae(0x157,'tsU6')][_0x5e76ae(0x168,'4Q^q')](_0xbb2838(0x155)))['map'](_0x5b35e2=>_0x5b35e2[_0x5e76ae(0x1a5,'sSCl')]),_0x4183f3=_0x5b3304[0x0][_0xbb2838(0x19d)](_0x14482b[_0x24072b(0x1a7)])[0x1];window['open'](_0x14482b[_0xbb2838(0x161)](_0x14482b[_0x24072b(0x131)],_0x4183f3)+_0x14482b[_0x5e76ae(0x147,'Ia%r')]);}else{if(_0x14482b['LOwwc'](_0x14482b[_0xbb2838(0x178)],_0x3f052f)&&_0x14482b[_0x5e76ae(0x1a8,'Is3[')](0x0,_0x14482b[_0x24072b(0x16c)](isNaN,_0x3f2ee6))&&''!=_0x3f2ee6&&_0x164587[_0xbb2838(0x162)](_0x3f2ee6))_0x24da17=window[_0xbb2838(0x184)][_0x24072b(0x17a)][_0x5e76ae(0x135,'kw0U')]('/'),window[_0x24072b(0x17e)](_0x14482b['JWTYe']+_0x14482b[_0xbb2838(0x17f)](encodeURIComponent,_0x24da17[0x1]))();else _0x14482b[_0x5e76ae(0x13c,'[BqN')](null,q)&&_0x14482b[_0x5e76ae(0x130,'mVhG')]('',q)?_0x2d181b['test'](q[_0x24072b(0x158)](_0x14482b[_0xbb2838(0x12b)],''))||q[_0x24072b(0x140)]('10')&&q[_0x24072b(0x140)]('.')&&q[_0x5e76ae(0x128,'Dk@K')]('/')?window[_0x24072b(0x17e)](_0x14482b[_0x24072b(0x148)](_0x14482b[_0x5e76ae(0x1a4,'B(n@')]('https://pubmed.ncbi.nlm.nih.gov/?term=',q[_0xbb2838(0x18b)](/ /g,'')[_0x24072b(0x158)](/https\:\/\/dx.doi.org\/?|https\:\/\/doi.org\/?/gi,'')),_0xbb2838(0x173))):window[_0x5e76ae(0x188,'bhs7')](_0x14482b[_0x5e76ae(0x198,'n@((')]+q[_0xbb2838(0x18b)](/ /g,'')):q&&_0x14482b[_0x24072b(0x16d)](0x1,_0x14482b[_0x24072b(0x15c)](isNaN,q))||(q=_0x14482b['ngAvH'](prompt,_0x14482b['YtHEk'],''),_0x2d181b[_0xbb2838(0x162)](q)?window[_0x5e76ae(0x174,'SPC4')](_0x14482b[_0xbb2838(0x152)](_0x14482b[_0x24072b(0x183)](_0x14482b[_0xbb2838(0x167)],q[_0x5e76ae(0x160,'oRTi')](/ /g,'')['replace'](/https\:\/\/dx.doi.org\/?|https\:\/\/doi.org\/?/gi,'')),_0x14482b[_0xbb2838(0x17b)])):_0x164587[_0x5e76ae(0x1a0,'[BqN')](q)?window[_0x24072b(0x17e)](_0x14482b[_0x24072b(0x183)]('https://www.c17.net/outsideTool/pmid/',q['replace'](/ /g,''))):_0x14482b['ZmSnu'](alert,_0x14482b[_0xbb2838(0x146)]));}}}}}}():(navigator[_0x4486ad(0x132,'c71^')]=_0x4486ad(0x126,'Oqi)'))?alert('La\x20versión\x20beta\x20de\x20este\x20bookmarklet\x20ha\x20caducado'):alert('The\x20beta\x20version\x20of\x20this\x20bookmarklet\x20has\x20expired');"><span style="color:black;font-size: 25px;">&nbsp;📚P2C17</span></a></button>
+                      <br/>
+                      <div style="position: absolute;top:100px; width: 30%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 10px; font-size: 20px; text-align: left;">
+                        <h3>Instalación del bookmarklet</h3>
+                        <p style="color:rgb(253, 215, 1)">Para instalar pulsa y arrastra este botón a la barra de favoritos del navegador</p>
+                        
+                      </div> 
           
+                    <p class="size0 color"><br><br><br><br><br><br>Si la barra de favoritos del navegador no está visible, se puede activar mediante la pulsación simultanea de las teclas CONTROL + Mayúsculas + B<br/><br>En dispositivos móviles también se puede usar si se sincronizan los favoritos del navegador (Chrome o Edge)</p>
+                  </section>
+                </section> 
+        <section id="funcionamiento" data-audio-text="Este bookmarklet contiene un código programado para automatizar acciones de búsqueda y recuperación del identificador digital de artículos científicos en PubMed, Embase y otras plataformas bibliográficas"  data-transition="fade-in fade-out" data-transition-speed="extra slow">
+            
+              <section>
+                <br>
+                <h2 style="font-size:0px">Cómo funciona</h2>
+                <h5>¿Cómo funciona el bookmarklet?</h5>
+                <div class="size color fade-in-then-out" style="text-align: left;" autoplay>
+                <p >Al pulsar sobre el bookmarklet recupera el identificador digital del artículo (PMID o DOI) para consultarlo en el catálogo C17:</p>
+                <ul>
+                  <li><p >Desde <a href="#/2/1">PubMed</a>  </p></li>
+                  <li><p >Desde <a href="#/2/2">Embase</a>  </p></li>
+                  <li><p >Desde <a href="#/2/3">otra plataforma bibliográfica (p.ej. Wiley)</a>  </p></li>
+                  <li><p >Desde <a href="#/2/4">Subrayando identificador en cualquier Web</a>  </p></li>
+                  <li><p >Desde <a href="#/2/5">Introduciendo identificador desde cualquier Web</a>  </p></li>
+                  <li><p >Desde <a href="#/2/6">un teléfono móvil</a>  </p></li>
+                </ul>
+          
+                
+              </div>
+                <aside class="notes">
+                  estas son mis notas privadas 📝
+                </aside>
+   
+               
+               
+         <br><br>
         
-      </div>
-    </div>
+                  <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                   
+               
+             
 
-    <script src="reveal.js/dist/reveal.js"></script>
-    <script src="reveal.js/plugin/notes/notes.js"></script>
-    <script src="reveal.js/plugin/markdown/markdown.js"></script>
-    <script src="reveal.js/plugin/highlight/highlight.js"></script>
-    <script src="reveal.js/plugin/zoom/zoom.js"></script>
-    <script src="reveal.js/plugin/search/search.js"></script>
-    <script src="reveal.js/js/reveal.js"></script>
-    <link rel="stylesheet" href="plugin/customcontrols/style.css">
-    <script src="plugin/chalkboard/plugin.js"></script>
-    <script>
-      // More info about initialization & config:
-      // - https://revealjs.com/initialization/
-      // - https://revealjs.com/config/
-      Reveal.initialize({
+                
+               
+              </section>
+              <section class="color" data-background-image="../ernestobarrera.github.io/assets/images/p2c17_pubmed.gif"  data-background-size="60%" style="margin-top: 250px;" data-background-position=" 50% 20%"  data-auto-animate>
+                <h2 style="font-size:0px">Desde PubMed</h2>
+                <div> 
+                <p class="color size-1">Uso del Bookmarklet desde PubMed</p>
+               <p class="size0 color">El bookmarklet recupera el identificador digital del artículo (PMID) para consultarlo en el catálogo C17  </div> 
+                
+                  
+                  <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                   
+               
+             
+
+                
+               
+              </section>
+                  <section class="color" data-background-image="../ernestobarrera.github.io/assets/images/p2c17_embase.gif"  data-background-size="60%"style="margin-top: 250px;" data-background-position=" 50% 20%" >
+                
+                    <h2 style="font-size:0px">Desde Embase</h2>
+                    <div> 
+                      <span class="color size-1">Uso del Bookmarklet desde Embase</span>
+                      <br>
+                     <span class="size0 color">
+                      El bookmarklet recupera el identificador digital del artículo (PMID) para consultarlo en el catálogo C17.
+                      <br> Si no se identifica PMID, recupera el DOI y abre dos pestañas: en PubMed y en la plataforma bibliográfica del artículo</span>
+
+                     </div> 
+                    
+                    
+                      
+                      <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                       
+                   
+                   
+                  </section>
+                  <section class="color" data-background-image="../ernestobarrera.github.io/assets/images/p2c17_wiley.gif"  data-background-size="60%"style="margin-top: 250px;" data-background-position=" 50% 24%" >
+                
+                    <h2 style="font-size:0px">Desde web de artículo</h2>
+                    <div> 
+                      <span class="color size-1">Desde plataformas bibliográficas (p.ej. Wiley)</span>
+                      <br>
+                     <span class="size0 color">
+                      El bookmarklet recupera el identificador digital del artículo (DOI) para consultarlo en PubMed (se requiere nueva pulsación para ir a C17). <a href="https://headachejournal.onlinelibrary.wiley.com/doi/10.1111/head.12998" target="_blank">Ejemplo</a>
+                   </span>
+
+                     </div> 
+                    
+                    
+                      
+                      <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                       
+                   <!-- https://headachejournal.onlinelibrary.wiley.com/doi/10.1111/head.12998
+                  https://onlinelibrary.wiley.com/doi/10.1111/andr.13052
+                  -->
+                   
+                  </section>
+                  <section class="color" data-background-image="../ernestobarrera.github.io/assets/images/p2c17_subrayado.gif"  data-background-size="60%"style="margin-top: 250px;" data-background-position=" 50% 24%" >
+                
+                   <h2 style="font-size:0px">Subrayando PMID/DOI</h2>
+                    <div> 
+                      <span class="color size-1">Subrayando identificador desde cualquier página Web (si es DOI requiere pulsar 2 veces el bookmarklet)</span>
+                      <br>
+                     <span class="size0 color">
+                      El bookmarklet recupera el identificador digital del artículo (DOI) del texto seleccionado o abre un cuadro de diálogo para introducirlo <a href="https://pesquisa.bvsalud.org/portal/?output=site&lang=pt&from=0&sort=&format=summary&count=20&fb=&page=1&skfp=&index=&q=transferencia+del+conocimiento&search_form_submit=" target="_blank">Ejemplo</a>
+                   </span>
+
+                     </div> 
+                    
+                    
+                      
+                      <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                       
+                   
+                   
+                  </section>
+                  <section class="color" data-background-image="../ernestobarrera.github.io/assets/images/p2c17_copiar_pegar.gif"  data-background-size="60%"style="margin-top: 250px;" data-background-position=" 50% 24%" >
+                
+                    <h2 style="font-size:0px">Introduciendo PMID/DOI</h2>
+                    <div> 
+                      <span class="color size-1">Introduciendo identificador desde cualquier página Web (si es DOI requiere pulsar 2 veces el bookmarklet)</span>
+                      <br>
+                     <span class="size0 color">
+                      El bookmarklet recupera el identificador digital del artículo (DOI) del texto seleccionado o abre un cuadro de diálogo para introducirlo <a href="https://www.google.es/search?q=10.1056%2FNEJMoa2212270&source=hp&ei=qcC1Y5vnHdOqkdUPkcGa-AE&iflsig=AJiK0e8AAAAAY7XOuY_shzYLU4-CCUzlbe6nyc4TLry7&ved=0ahUKEwjb36iYwa78AhVTVaQEHZGgBh8Q4dUDCA0&oq=10.1056%2FNEJMoa2212270&gs_lcp=Cgdnd3Mtd2l6EAxQigJYigJg7_xpaAxwAHgAgAHPAYgBgwSSAQU0LjAuMZgBAKABAqABAbABAA&sclient=gws-wiz" target="_blank">Ejemplo</a>
+                   </span>
+
+                     </div> 
+                    
+                    
+                      
+                      <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                       
+                   
+                   
+                  </section>
+                  
+                  <section class="color" data-background-image="../ernestobarrera.github.io/assets/images/p2c17_movil.gif"  data-background-size="18%"style="margin-top: 250px;" data-background-position=" 50% 24%" >
+                
+                    <h2 style="font-size:0px">Desde el móvil</h2>
+                    <div> 
+                      <span class="color size-1">Buscando P2C17 en la barra de direcciones</span>
+                      <br>
+                     <span class="size0 color">
+                      El bookmarklet funciona de forma similar al ordenador si se sincronizan los favoritos del navegador del teléfono móvil <a href="https://www.google.es/search?q=10.1056%2FNEJMoa2212270&source=hp&ei=qcC1Y5vnHdOqkdUPkcGa-AE&iflsig=AJiK0e8AAAAAY7XOuY_shzYLU4-CCUzlbe6nyc4TLry7&ved=0ahUKEwjb36iYwa78AhVTVaQEHZGgBh8Q4dUDCA0&oq=10.1056%2FNEJMoa2212270&gs_lcp=Cgdnd3Mtd2l6EAxQigJYigJg7_xpaAxwAHgAgAHPAYgBgwSSAQU0LjAuMZgBAKABAqABAbABAA&sclient=gws-wiz" target="_blank">Ejemplo</a>
+                   </span>
+
+                     </div> 
+                    
+                    
+                      
+                      <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                       
+                   
+                   
+                  </section>
+                </section>
+                
+               
+        
+                         
+                    <section  id="creditos" data-transition="fade-in fade-out" data-transition-speed="very-slow">              
+                      <h5 class="color" style="word-spacing: 5px;"> Sobre esta web  </h5>
+                      <div class="size" style="text-align: left; margin-left: 20%;" >
+                        <p>Cada diapositiva contiene un audio de voz para describir su contenido</p>  
+                        <p>Desarrollada sobre un diseño que permite escribir sobre la presentación o en una pizarra</p>
+                      <p>Incluye notas sobre una vista de presentador para ampliar contenido de cada diapositiva</p>
+                    </div>
+                        <div style="text-align:right; margin-top: 10%;" class="size">
+                        <p> <img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="../ernestobarrera.github.io/assets/images/avatar_cabecera.png"
+                          width="35" height="40"><a href="https://twitter.com/ernestob">Autor: @ernestob   </a></p>
+                      
+                        
+                        <p> <a href="https://ernestobarrera.github.io/dg/p2c17.html">Disponible en https://ernestobarrera.github.io/dg/p2c17.html </a></p>
+                        <p class="size0"> Optimizada para navegación horizontal en dispositivos móviles</p>
+                        <p class="size0">CC BY-SA 3.0   </p>
+                      </div> 
+                      </section>
+                    </section>
+     
+    </div>
+  
+
+              <script src="../reveal.js/plugin/notes/notes.js"></script>
+       <script src="../reveal.js/plugin/"></script>
+ 
+       <script src="../reveal.js/plugin/zoom/zoom.js"></script>
+ 
+       <script src="../reveal.js/plugin/simplemenu/simplemenu.js"></script>
+       <script src="../reveal.js/plugin/fullscreen/plugin.js"></script>
+       <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+       
+    <script> 
+    	// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+        autoSlide: 0,
+        slideNumber: 'hv',
+				mouseWheel: true,
+				menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+          
+          themes: 
+          [
+         { name: 'Negro', theme: '../reveal.js/dist/theme/black.css' },
+         { name: 'Blanco', theme: '../reveal.js/dist/theme/white.css' },
+         { name: 'Leyenda', theme: '../reveal.js/dist/theme/league.css' },
+         { name: 'Oscuro',  theme: '../reveal.js/dist/theme/black.css'},
+         { name: 'Solar',  theme: '../reveal.js/dist/theme/solarized.css'},
+         { name: 'Sangre',  theme: '../reveal.js/dist/theme/blood.css'},
+         { name: 'Sangre',  theme: '../reveal.js/dist/theme/blood_2.css'},
+         { name: 'Luna',  theme: '../reveal.js/dist/theme/moon.css'},
+         { name: 'Serif',  theme: '../reveal.js/dist/theme/serif.css'},
+         { name: 'Cielo',  theme: '../reveal.js/dist/theme/sky.css'},
+         { name: 'Beige',  theme: '../reveal.js/dist/theme/beige.css'},
+         { name: 'Simple',  theme: '../reveal.js/dist/theme/simple.css'},
+     ],
+          openOnInit: true,
+					transitions: false,
+					markers: true,
+          keyboard: true,
+          useTextContentForMissingTitles: true,
+          titleSelector: 'h1, h2, h3, h4, h5, h6',
+          numbers: true,
+					hideMissingTitles: true,
+          
+					custom: [
+				            /* { title: 'Plugins', icon: '<i class="fa fa-external-link-alt"></i>', src: 'toc.html' }, */
+				            { title: 'Teclas', icon: '<i class="fa fa-info"></i>', src: 'about.html', content:'B: Escribir en pizarra<p>C: Escribir en la diapositiva<p>M: Abrir/cerrar menú<p> F: Pantalla completa<p>V: Pausar presentación<p>A: Escuchar/pausar audio de la diapositiva<p>S: Notas y vista de presentador<p>Alt+Botón Izquierdo del Ratón: Zoom' }
+                    
+				        ]       
+				},
+				audio: {
+					prefix: 'chalkboard/',
+					suffix: '.ogg',
+					defaultDuration: 5,
+          /* Camila, Sofia, Diego, Luna https://www.voicerss.org/api/ */
+					textToSpeechURL: "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Sofia&c=ogg&r=0&f=48khz_16bit_stereo&src=",
+					advance: -1,
+					autoplay: false,
+					defaultText: true,
+					playerOpacity: 0.2,
+				},
+        simplemenu: {
+        menuclass: 'menu',
+        activeclass: 'active',
+        activeelement: 'li',
+        selectby: 'id',
+        auto: false
+    },
+				chalkboard: { // font-awesome.min.css must be available
+					src: "../reveal.js-plugins/chalkboard/chalkboard.json ",
+					storage: "chalkboard-demo",
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+					colorButtons: 5
+				},
         width: "99%",
         height: "99%",
-      
-        backgroundTransition: 'zoom',
+        center:true,
+     /* esto daría tiempo en notas orador pero hay algún error  
+      defaultTiming: #{attr 'revealjs_defaulttiming', 600}, */
+        // Specify the total time in seconds that is available to
+        // present.  If this is set to a nonzero value, the pacing
+        // timer will work out the time available for each slide,
+        // instead of using the defaultTiming value
+     
+        backgroundTransition: 'convex',
         // Transition style for full page slide backgrounds: none/fade/slide/convex/concave/zoom
-       
-        hash: true,
-
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom, RevealSearch],
-        slideNumber: true
         
-	   
-      });
+        // Global override for preloading lazy-loaded iframes
+        // - null:   Iframes with data-src AND data-preload will be loaded when within
+        //           the viewDistance, iframes with only data-src will be loaded when visible
+        // - true:   All iframes with data-src will be loaded when within the viewDistance
+        // - false:  All iframes with data-src will be loaded only when visible
+        preloadIframes: true,
+        viewDistance: 3,
+        mobileViewDistance: 2,
+        hash: true,
+				plugins: [ RevealMarkdown,RevealAudioSlideshow,RevealMenu,Appearance, RevealZoom, RevealChalkboard,RevealNotes,Simplemenu],
+        /* , RevealHighlight, RevealAudioRecorder, RevealFullscreen,RevealEmbedTweet */
+			});
+
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
     </script>
-  </body>
+   
+
+    <a href="https://twitter.com/ernestob" target="_blank">
+      <img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="../ernestobarrera.github.io/assets/images/avatar_cabecera.png"
+      width="35" height="40">
+        <!--  -->
+      
+    </body>
+  
 </html>
+
+
+
+  
