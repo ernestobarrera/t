@@ -75,25 +75,7 @@
 
   gtag('config', 'G-YFKR6RB1ZC');
 </script>
-<title>Ejemplo de verificación de navegador</title>
-	<script>
-		// Verificar el navegador y la versión
-		var navegador = navigator.userAgent.toLowerCase();
-		var esChrome = /chrome/.test(navegador);
-		var esEdge = /edge/.test(navegador);
-		var version = parseInt(/edg\/([\d]+)/.exec(navegador)[1]);
 
-		// Si no es Chrome o Edge versión 108, mostrar un aviso en rojo
-		if (!((esChrome && version >= 112) || (esEdge && version >= 112))) {
-			var aviso = document.createElement("div");
-			aviso.style.backgroundColor = "red";
-			aviso.style.color = "white";
-			aviso.style.padding = "10px";
-			aviso.style.textAlign = "center";
-			aviso.innerHTML = "Este sitio web funciona mejor en Chrome o Edge versión 112 o superior";
-			document.body.insertBefore(aviso, document.body.firstChild);
-		}
-	</script>
   </head>
   <body>
     <div class="reveal">
@@ -114,6 +96,25 @@
                        
           
       </div>
+      <title>Ejemplo de verificación de navegador</title>
+	<script>
+		// Verificar el navegador y la versión
+		var navegador = navigator.userAgent.toLowerCase();
+		var esChrome = /chrome/.test(navegador);
+		var esEdge = /edge/.test(navegador);
+		var version = parseInt(/edg\/([\d]+)/.exec(navegador)[1]);
+
+		// Si no es Chrome o Edge versión 108, mostrar un aviso en rojo
+		if (!((esChrome && version >= 112) || (esEdge && version >= 112))) {
+			var aviso = document.createElement("div");
+			aviso.style.backgroundColor = "red";
+			aviso.style.color = "white";
+			aviso.style.padding = "10px";
+			aviso.style.textAlign = "center";
+			aviso.innerHTML = "Este sitio web funciona mejor en Chrome o Edge versión 112 o superior";
+			document.body.insertBefore(aviso, document.body.firstChild);
+		}
+	</script>
     </div>
     <script src="reveal.js/dist/reveal.js"></script>
     <script src="reveal.js/plugin/notes/notes.js"></script>
