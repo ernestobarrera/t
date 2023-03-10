@@ -1,0 +1,468 @@
+<!-- falta revisar dataname para introducir barra horizontal. Ver archivo→ https://github.com/Martinomagnifico/reveal.js-tagteam/blob/main/demo.html para que se vea así https://martinomagnifico.github.io/reveal.js-tagteam/demo.html#/3  valorar confusión de estilos css -->
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+<!-- meta_propio_inicio -->
+<meta name="description" content="Web con recursos para facilitar la búsqueda de información y gestión del conocimiento en Ciencias de la Salud">
+<meta name="author" content="Ernesto Barrera">
+<link rel="icon"  href="../ernestobarrera.github.io/assets/images/avatar_cabecera.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Herramientas para buscar información sanitaria | ​👨‍⚕️ EB">
+<meta property="og:site_name" content="Recursos para la gestión de información  🔎🩺⚕">
+<meta property="og:url" content="https://ernestobarrera.github.io/">
+<!-- <meta property="og:image" content="https://ernestobarrera.github.io/assets/images/me.png" > -->
+<meta property="article:published_time" content="2022-05-10">
+<meta property="article:author" content="Ernesto Barrera">
+<!-- fin -->
+    <title> ❓Bookmarklet Buscadores! | @ernestob </title>
+
+    <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  
+    <!-- tema anterior black -->
+    <link rel="stylesheet" href="../reveal.js/dist/theme/blood.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/plugin/simplemenu/simplemenu.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/plugin/highlight/zenburn.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
+    
+    <!-- Animaciones para el plugin appearance https://github.com/Martinomagnifico/reveal.js-appearance-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/appearance/appearance.css">
+
+
+    <script src="../reveal.js/dist/reveal.js"></script>
+    <script src="../reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="../reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="../reveal.js-plugins/menu/menu.js"></script>
+    <script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
+    <script src="../reveal.js-plugins/appearance/appearance.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
+    <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+    
+    
+    
+  
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+  
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+     <!-- Estilo personalizado (heredados, valorar cambio a nuevo framework reveal) -->
+  <style>
+  
+
+    .left {
+      text-align: left;
+      
+    }
+    .pie {
+      position:absolute !important;
+      bottom:5;}
+    .size {
+      font-size: 26px;
+    }
+      .size0 {
+      font-size: 20px;
+    }
+    .size1 {
+      font-size: 16px;
+    }
+    .size2 {
+      font-size: 14px;
+    }
+    .size3 {
+      font-size: 12px;
+    }
+    .color{
+      color:rgb(255, 191, 71);
+    }
+    .footer {
+  position: absolute; 
+  left: 35%;
+  bottom: 1em;
+}
+.highlighted {
+    background-color: rgba(252, 212, 212, 0.5);
+}
+
+/* fuente código animación botón https://webdeasy.de/en/top-css-buttons-en/ */
+
+.glow-on-hover {
+    width: 280px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(214, 197, 197);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 8px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 191, 71);
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+  </style>
+  <!--- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKR6RB1ZC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YFKR6RB1ZC');
+</script>
+  </head>
+  <body>
+    <div class="reveal">
+      
+     
+   
+      <!--esto parece sería del menú 
+    <div class="menubar">
+      <ul class="menu"></ul>
+  </div> -->
+  <div class="menubar">
+    <ul class="menu">
+      <!-- Here's the menu -->
+      <li><a  href="#/que">Qué es</a></li>
+      <li><a href="#/instalacion">Instalación</a></li>
+      <li><a href="#/funcionamiento">Funcionamiento</a></li>
+      <li><a href="#/creditos">Créditos</a></li>
+    </ul>
+  </div>
+      <div class="slides">
+        <!-- <a class="github-corner" href="https://github.com/ernestobarrera" target="blank" title="Estoy en GitHub"> -->
+        
+         
+          <!-- presentación con landing y contexto -->
+          <section  id="que">
+            <section data-audio-text=" Este bookmarklet facilita la búsqueda de información dentro de múltiples páginas web.  Es de especial interés en ciencias de la salud.
+            ¿Para qué lo puedes usar?
+           
+            Presta atención al menú lateral, que puedes mostrar u ocultar pulsando la tecla M;  te llevará a todas las páginas de este sitio web
+            "data-audio-advance="1000"> <h5 class="color"> Bookmarklet 🔎Buscadores!  </h5>
+              <p data-audio-text=" Se llama Bookmarklet buscadores
+              " class="size color"> Una aplicación para buscar simultáneamente en más de 50 buscadores o páginas web
+              <br >Se instala en 1 segundo</br> Funciona con 1 solo clic y se aprende a utilizar en 1 pantalla   
+              <br>Este bookmarklet está diseñado para utilizar más de un motor de búsqueda simultáneamente, sin tener que abrir nuevas pestañas. Los enlaces generados en su menú principal permiten acceder rápidamente a distintos tipos de resultados y búsquedas. Con este bookmarklet, quiero ayudar a ahorrar tiempo mientras buscas información en Internet. Te permitirá buscar en varios motores al mismo tiempo, sin tener que salir de la página en la que realizó la búsqueda. Con este bookmarklet, queremos ayudarte a ahorrar tiempo mientras buscas información en Internet. Le permitirá buscar en varios motores al mismo tiempo, sin tener que salir de la página en la que realizó la búsqueda.
+              <!-- clase anterior del botón no animado 
+                "btn btn-info active"  -->  
+              <br/><br> <button type="button" class="glow-on-hover"  
+              
+              style="background-color:#F0A908;padding:10px 25px 10px 10px;  box-shadow: 2px 2px 3px 1px rgba(255, 251, 251, 0.452)"><a class="size2" href="javascript: /*Este bookmarklet permite hacer una búsqueda en más de 50 motores de búsqueda de interés sanitario                                                  */var Q = %22%22 + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text);var sitio = document.location.hostname.split(%22.%22);var string = document.location.hostname;var today = new Date();today.setDate(today.getDate() - 365);var dd = today.getDate();var mm = today.getMonth() + 1;var yyyy = today.getFullYear();if (dd < 10) {  dd = %270%27 + dd;}if (mm < 10) {  mm = %270%27 + mm;}today = yyyy + %27-%27 + mm + %27-%27 + dd;var todayTitle = %27desde el %27 + dd + %27/%27 + mm + %27/%27 + yyyy;var substring = %22www%22;string.indexOf(substring) >= 0 ? sitio.length > 4 ? sitio = sitio[sitio.length - 4] + %22.%22 + sitio[sitio.length - 3] + %22.%22 + sitio[sitio.length - 2] + %22.%22 + sitio[sitio.length - 1] : sitio.length > 3 ? sitio = sitio[sitio.length - 3] + %22.%22 + sitio[sitio.length - 2] + %22.%22 + sitio[sitio.length - 1] : sitio.length > 2 ? sitio = sitio[sitio.length - 2] + %22.%22 + sitio[sitio.length - 1] : sitio.length > 1 ? sitio = document.location.hostname : sitio.join(%22.%22) : sitio = document.location.hostname;Q || (Q = prompt(%22                                  Introducir términos de búsqueda\n\n[Para abrir más de un buscador en la lista de buscadores hacer clic con el botón de la rueda del ratón]\n  %22));null != Q && (Q = Q.replace(/\r\n|\r|\n/g, %22 %22).replace(/^\s+|\s+$/g, %22%22).replace(/\s\s+/g, %22 %22));null != Q && function (e, t, i, o, a) {  ;  var r, c, l = document;  var n = (l.onclick, %22op_elemen%22 + a);  var s = l.getElementById(n),    p = %22op_elemen%22 + a,    g = l.getElementById(p);  var d = null;  var u = {    tl: {      left: %221px%22,      top: %221px%22    },    tr: {      right: %221px%22,      top: %221px%22    },    bl: {      left: %221px%22,      bottom: %221px%22    },    br: {      right: %221px%22,      bottom: %221px%22    }  };  var m = %22.op_elemen{position:fixed;z-index:10123456;width:500px;display:block;visibility:hidden;border:2px solid #b0b0b0;background:#5e6eff;padding:6px 6px 6px 6px;text-align:left;border-radius:1px;-moz-border-radius:1px;-webkit-border-radius1px;box-shadow:2px 2px 3px #777;-moz-box-shadow:2px 2px 3px #777;-webkit-box-shadow:2px 2px 3px #777;}.op_elemen a{display:block;float:left;margin:0;width:241px;border:none;padding:4px 0 4px 8px;background:#fff;color:black;text-decoration:none;font:normal normal normal 12px/100% Verdana,sans-serif;letter-spacing:normal;word-spacing:normal;}.op_elemen a:hover{background:#a0a0a0;color:white;border:none;text-decoration:underline;font:normal normal normal 12px/100% Verdana,sans-serif;letter-spacing:normal;word-spacing:normal;}%22;  function h() {    s.style.visibility = %22hidden%22  };  function w() {    s.style.visibility = %22visible%22  };  if (s) %22visible%22 == s.style.visibility ? h() : w();  else {    for (g || (m = m.replace(/.op_elemen/g, %22#%22 + n), (g = l.createElement(%22style%22)).type = %22text/css%22, g.id = p, g.appendChild(l.createTextNode(m)), l.getElementsByTagName(%22head%22)[0].appendChild(g)), (s = l.createElement(%22div%22)).setAttribute(%22id%22, n), s.className = %22op_elemen notranslate%22, r = 0; r < e.length; r++)(d = l.createElement(%22a%22)).appendChild(l.createTextNode(e[r].title)), d.setAttribute(%22href%22, e[r].url), d.setAttribute(%22target%22, e[r].target), d.onclick = function (e) {      h()    }, s.appendChild(d);    if (l.getElementsByTagName(%22body%22)[0].appendChild(s), u.hasOwnProperty(t))      for (c in u.tl) s.style[c] = u.tl[c];    else 0;    0, w()  }}([{  title: %22GOOGLE→%22 + Q.substr(0, 22) + %22...%22,  url: %22https://www.google.es/search?q=%22 + encodeURIComponent(Q)}, {  title: %22EN LA WEB→%22 + sitio.substr(0, 18) + %22...%22,  url: %22https://www.google.es/search?q=%22 + encodeURIComponent(Q) + %22+site:%22 + sitio}, {  title: %22DRAE%22,  url: %22http://dle.rae.es/?w=%22 + encodeURIComponent(Q)}, {  title: %22IEDRA%22,  url: %22https://iedra.es/palabras/?q=%22 + encodeURIComponent(Q),}, {  title: %22BING%22,  url: %22https://www.bing.com/search?qs=n&form=QBLH&filt=all&q=%22 + encodeURIComponent(Q)}, {  title: %22GOOGLE MAPS%22,  url: %22https://www.google.es/maps?&q=%22 + encodeURIComponent(Q)}, {  title: %22PINTEREST%22,  url: %22https://www.pinterest.es/search/pins/?q=%22 + encodeURIComponent(Q)}, {  title: %22TWITTER%22,  url: %22https://twitter.com/search?q=%22 + encodeURIComponent(Q)}, {  title: %22WIKIPEDIA(es)%22,  url: %22https://es.wikipedia.org/wiki/%22 + encodeURIComponent(Q)}, {  title: %22YOUTUBE%22,  url: %22https://www.youtube.com/results?search=Search&search_query=%22 + encodeURIComponent(Q)}, {  title: %22GOOGLE BOOKS%22,  url: %22https://www.google.com/search?q=%22 + encodeURIComponent(Q) + %22&tbm=bks%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22AEMPS (reintroducir búsqueda)%22,  url: %22https://cima.aemps.es/cima/publico/buscadoravanzado.html%22}, {  title: %22SIDER (Side Effects Resource)%22,  url: %22https://www.google.es/search?&q=intitle:%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22)) + %22+site:sideeffects.embl.de/%22}, {  title: %22EMA (Principio Activo o Marca)%22,  url: %22https://www.ema.europa.eu/en/medicines/field_ema_web_categories%253Aname_field/Human?sort=field_ema_public_date&order=desc&search_api_views_fulltext=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22EMA (EPAR por Marca)%22,  url: %22https://www.ema.europa.eu/medicines/human/EPAR/%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22ALQUIMIA%22,  url: %22https://cse.google.com/cse?cx=004681290781776855341:1tprgcbskcu&q=%22 + encodeURIComponent(Q) + %22&cof=FORID:0&ie=utf-8&oe=utf-8#gsc.tab=0&gsc.q=%22 + encodeURIComponent(Q)}, {  title: %22Información Farmacoterapéutica%22,  url: %22https://cse.google.com/cse?cx=017503224239761697087:kl-ly1ji8_a&q=%22 + encodeURIComponent(Q) + %22&sa=Buscar&cof=FORID:0&ie=utf-8&oe=utf-8#gsc.tab=0&gsc.q=%22 + encodeURIComponent(Q)}, {  title: %22WHOCC-ATC/DDD (Principio Activo)%22,  url: %22https://www.whocc.no/atc_ddd_index/?code=ATC code&name=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22)) + %22&namesearchtype=containing%22}, {  title: %22WHOCC-ATC/DDD (ATC)%22,  url: %22https://www.whocc.no/atc_ddd_index/?code=%22 + encodeURIComponent(Q) + %22&name=name&namesearchtype=containing%22}, {  title: %22%5Cufeff %22,  url: %22JavaScript:void(0)%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22INAHTA Database%22,  url: %22https://database.inahta.org/search?limit=&terms=%22 + encodeURIComponent(Q)+%22&client=user%22}, {  title: %22Clinical Trials International -WHO%22,  url: %22http://apps.who.int/trialsearch/AdvSearch.aspx?SearchTerm=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22ClinicalTrials.gov%22,  url: %22https://clinicaltrials.gov/ct2/results?term=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22Cochrane%22,  url: %22https://pubmed.ncbi.nlm.nih.gov/?term=%22 + encodeURIComponent(Q) + %22+Cochrane Database Syst Rev%22 + %22[JOUR]%22}, {  title: %22Epistemonikos%22,  url: %22https://www.epistemonikos.org/es/search?q=%22 + encodeURIComponent(Q)}, {  title: %22Evidence Search (NHS)%22,  url: %22https://www.evidence.nhs.uk/Search?q=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22Fisterra%22,  url: %22https://www.fisterra.com/buscador/index.asp?=&txtBuscador=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22Guías de Práctica Clínica (España)%22,  url: %22https://cse.google.com/cse?cx=011124105117553046939:yj5skpobyxs&ie=UTF-8&q=%22 + encodeURIComponent(Q) + %22&sa=Buscar&siteurl=www.google.com/cse/home?cx=011124105117553046939:yj5skpobyxs&ie=#gsc.tab=0&gsc.q=%22 + encodeURIComponent(Q) + %22&gsc.page=1%22}, {  title: %22NICE (NHS)%22,  url: %22https://www.nice.org.uk/Search?q=%22 + encodeURIComponent(Q)}, {  title: %22Pedro (Physiotherapy Evidence)%22,  url: %22https://search.pedro.org.au/search-results?-find=Search&calc_text=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22PREEVID (Murcia Salud)%22,  url: %22http://www.murciasalud.es/preevid.php?op=banco&idsec=453&cs=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22Red Eval Tecnol. Sanitarias (España)%22,  url: %22https://redets.mscbs.gob.es/productos/buscarProductos.do?search=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22)) + %22&d-6893580-s=4&buscarpor=titulo&d-6893580-p=1&d-6893580-o=1%22}, {  title: %22SIGN Guidelines (Scottish)%22,  url: %22https://www.google.es/search?q=%22 + encodeURIComponent(Q) + %22&sa=Google+Search&cof=S:http://www.sign.ac.uk;AH:center;BGC:FBFAEC;AWFID:a88955d1eee288ef;&domains=www.sign.ac.uk&sitesearch=www.sign.ac.uk&gws_rd=cr&dcr=0&ei=N2osWvDzKMjTU-qng9gB%22}, {  title: %22TRIP Database%22,  url: %22https://www.tripdatabase.com/search?criteria=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22%5Cufeff %22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22Europeana%22,  url: %22https://www.europeana.eu/es/search?page=1&view=list&query=%22 + encodeURIComponent(Q)}, {  title: %22BASE%22,  url: %22https://www.base-search.net/Search/Results?type=all&lookfor=%22+ encodeURIComponent(Q) + %22&ling=1&name=&thes=&refid=dcreses&newsearch=1%22},{  title: %22Allie%22,  url: %22http://allie.dbcls.jp/short/exact/Any/%22 + encodeURIComponent(Q)}, {  title: %22Dimensions%22,  url: %22https://app.dimensions.ai/discover/publication?search_text=%22 + encodeURIComponent(Q) + %22&search_type=kws&full_search=false&order=altmetric%22}, {  title: %22CCAA %22 + todayTitle,  url: %22https%3A%2F%2Fwww.google.es%2Fsearch%3Fq%3D%22 + encodeURIComponent(Q) + %22 after%3A%22 + today + %22 (site%3Aaragon.es+|site%3Ariojasalud.es+|site%3Anavarra.es+|site%3Asan.gva.es+|site%3Amurciasalud.es+|site%3Asaludcastillayleon.es+|site%3Acastillalamancha.es+|site%3Ases.es+|site%3Aastursalud.es+|site%3Asergas.es+|site%3Ascsalud.es+|site%3Agobiernodecanarias.org+|site%3Aibsalut.es+|site%3Aeuskadi.eus+|site%3Ajuntadeandalucia.es+|site%3Acomunidad.madrid+|site%3Agencat.cat)%22}, {  title: %22Biomedical Image Open Access%22,  url: %22https://openi.nlm.nih.gov/gridquery.php?q=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22Biblioteca Virtual en Salud%22,  url: %22https://pesquisa.bvsalud.org/portal/?output=site&lang=es&from=0&sort=YEAR_DESC&format=summary&count=30&fb=&page=1&q=%22  + encodeURIComponent(Q) + %22&index=tw%22}, {  title: %22FACTA Data Mining Search%22,  url: %22http://www.nactem.ac.uk/facta/cgi-bin/facta.cgi?query=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22)) + %22|111111|20|0%22}, {  title: %22Google Scholar%22,  url: %22https://scholar.google.com/scholar?&hl=es&q=%22 + encodeURIComponent(Q)}, {  title: %22Grey Literature%22,  url: %22https://cse.google.com/cse?cx=017503224239761697087:ih48izebczs&q=%22 + encodeURIComponent(Q) + %22&sa=Buscar&cof=FORID:0&ie=utf-8&oe=utf-8#gsc.tab=0&gsc.sort=date&gsc.q=%22 + encodeURIComponent(Q)}, {  title: %22HubMed%22,  url: %22http://git.macropus.org/hubmed/?term=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22MeSH%22,  url: %22https://www.ncbi.nlm.nih.gov/mesh?orig_db=mesh&term=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22re3data (repositorios datos invest.)%22,  url: %22https://www.re3data.org/search?query=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22))}, {  title: %22DeCS: MeSH Español--%5Cx3eIngles%22,  url: %22https://decs.bvsalud.org/es/ths?filter=ths_termall&q=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22)) + %22&s=all%22}, {  title: %22Microsoft Academic%22,  url: %22https://academic.microsoft.com/search?q=%22 + encodeURIComponent(Q.replace(/\341/gi, %22a%22).replace(/\351/gi, %22e%22).replace(/\355/gi, %22i%22).replace(/\363/gi, %22o%22).replace(/\372/gi, %22u%22)) + %22&f=&orderBy=0&skip=0&take=10%22}, {  title: %22PubMed%22,  url: %22https://pubmed.ncbi.nlm.nih.gov/?term=%22 + encodeURIComponent(Q)}, {  title: %22PubMed-TITLE/ABSTRACT%22,  url: %22https://pubmed.ncbi.nlm.nih.gov/?term=%22 + encodeURIComponent(Q) + %22+[TIAB]%22}, {  title: %22PubMed-GUIDELINES%22,  url: %22https://pubmed.ncbi.nlm.nih.gov/?term=%22 + encodeURIComponent(Q) + %22+(Clinical+pathway[mh]+OR+Clinical+protocol[mh]+OR+Consensus[mh]+OR+Consensus+development+conferences+as+topic[mh]+OR+Critical+pathways[mh]+OR+Guidelines+as+topic+[Mesh%253ANoExp]+OR+Practice+guidelines+as+topic[mh]+OR+Health+planning+guidelines[mh]+OR+guideline[pt]+OR+practice+guideline[pt]+OR+consensus+development+conference[pt]+OR+consensus+development+conference%252C+NIH[pt]+OR+position+statement*[tiab]+OR+guideline*[TI]+)%22}, {  title: %22PubMed Clinical Queries%22,  url: %22https://pubmed.ncbi.nlm.nih.gov/clinical/?term=%22 + encodeURIComponent(Q)}, {  title: %22PubMed Syst Rev/HTA%22,  url: %22https://pubmed.ncbi.nlm.nih.gov/?term=%22 + encodeURIComponent(Q) + %22+(systematic%5Bsb%5D%2BOR%2Bmeta-analysis%5Bpt%5D%2BOR%2Bmeta-analysis as topic%5Bmh%5D%2BOR%2Bmeta-analysis%5Bmh%5D%2BOR%2Bmeta analy*%5Btw%5D%2BOR%2Bmetanaly*%5Btw%5D%2BOR%2Bmetaanaly*%5Btw%5D%2BOR%2Bmet analy*%5Btw%5D%2BOR%2Bintegrative research%5Btiab%5D%2BOR%2Bintegrative review*%5Btiab%5D%2BOR%2Bintegrative overview*%5Btiab%5D%2BOR%2Bresearch integration*%5Btiab%5D%2BOR%2Bresearch overview*%5Btiab%5D%2BOR%2Bcollaborative review*%5Btiab%5D%2BOR%2Bcollaborative overview*%5Btiab%5D%2BOR%2Bsystematic review*%5Btiab%5D%2BOR%2Btechnology assessment*%5Btiab%5D%2BOR%2Btechnology overview*%5Btiab%5D%2BOR%2B%2522Technology Assessment%2C Biomedical%2522%5Bmh%5D%2BOR%2BHTA%5Btiab%5D%2BOR%2BHTAs%5Btiab%5D%2BOR%2Bcomparative efficacy%5Btiab%5D%2BOR%2Bcomparative effectiveness%5Btiab%5D%2BOR%2Boutcomes research%5Btiab%5D%2BOR%2Bindirect comparison*%5Btiab%5D%2BOR%2B((indirect treatment%5Btiab%5D%2BOR%2Bmixed-treatment%5Btiab%5D) AND comparison*%5Btiab%5D)%2BOR%2BEmbase*%5Btiab%5D%2BOR%2BCinahl*%5Btiab%5D%2BOR%2Bsystematic overview*%5Btiab%5D%2BOR%2Bmethodological overview*%5Btiab%5D%2BOR%2Bmethodologic overview*%5Btiab%5D%2BOR%2Bmethodological review*%5Btiab%5D%2BOR%2Bmethodologic review*%5Btiab%5D%2BOR%2Bquantitative review*%5Btiab%5D%2BOR%2Bquantitative overview*%5Btiab%5D%2BOR%2Bquantitative synthes*%5Btiab%5D%2BOR%2Bpooled analy*%5Btiab%5D%2BOR%2BCochrane%5Btiab%5D%2BOR%2BMedline%5Btiab%5D%2BOR%2BPubmed%5Btiab%5D%2BOR%2BMedlars%5Btiab%5D%2BOR%2Bhandsearch*%5Btiab%5D%2BOR%2Bhand search*%5Btiab%5D%2BOR%2Bmeta-regression*%5Btiab%5D%2BOR%2Bmetaregression*%5Btiab%5D%2BOR%2Bdata synthes*%5Btiab%5D%2BOR%2Bdata extraction%5Btiab%5D%2BOR%2Bdata abstraction*%5Btiab%5D%2BOR%2Bmantel haenszel%5Btiab%5D%2BOR%2Bpeto%5Btiab%5D%2BOR%2Bder-simonian%5Btiab%5D%2BOR%2Bdersimonian%5Btiab%5D%2BOR%2Bfixed effect*%5Btiab%5D%2BOR%2B%2522Cochrane Database Syst Rev%2522%5BJournal%3A__jrid21711%5D%2BOR%2B%2522health technology assessment winchester%2C england%2522%5BJournal%5D%2BOR%2B%2522Evid Rep Technol Assess (Full Rep)%2522%5BJournal%5D%2BOR%2B%2522Evid Rep Technol Assess (Summ)%2522%5BJournal%5D%2BOR%2B%2522Int J Technol Assess Health Care%2522%5BJournal%5D%2BOR%2B%2522GMS Health Technol Assess%2522%5BJournal%5D%2BOR%2B%2522Health Technol Assess (Rockv)%2522%5BJournal%5D%2BOR%2B%2522Health Technol Assess Rep%2522%5BJournal%5D%2B)%22}, {  title: %22PubMed PubReMiner%22,  url: %22http://hgserver2.amc.nl/cgi-bin/miner/miner2.cgi?query=%22 + encodeURIComponent(Q)}, {  title: %22Semantic Scholar%22,  url: %22https://www.semanticscholar.org/search?q=%22 + encodeURIComponent(Q) + %22&sort=relevance%22}, {  title: %22UpToDate%22,  url: %22http://www.uptodate.com/contents/search?search=%22 + encodeURIComponent(Q)}, {  title: %22Crossref%22,  url: %22https://search.crossref.org/?q=%22 + encodeURIComponent(Q) + %22&sort=year%22}, {  title: %22\ufeff %22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22\n%22,  url: %22JavaScript:void(0)%22,  target: %22_self%22}, {  title: %22TRADUCTOR DeepL (multilingüe)%22,  url: %22https://www.deepl.com/translator#es/en/%22 + encodeURIComponent(Q)}, {  title: %22Versión Febrero-2021 → Sugerencias%22,  url: %22https://docs.google.com/forms/d/e/1FAIpQLSe0ZjPYr7Tu-5urf9O1mBU4cbuhD_f8BjX4NPo0v6TqKE4RYA/viewform?entry.330152244=🔎 Buscadores! V.15%22}, {  title: %22CERRAR BUSCADORES%22,  url: %22javascript:So_CleanUp()%22,  target: %22_self%22}, {  title: %22Buscar en Gmail%22,  url: %22https://mail.google.com/mail/u/0/#search/%22 + encodeURIComponent(Q)}], %22tl%22, 0, 0, Math.floor(99e4 * Math.random()) + 1e4);void(0);">🔎</span><span style="color:black;font-size: 25px;">&nbsp;Buscadores V.16</span></a></button>
+                <br/>
+                <br/>
+              <p class="size1 color">Para instalar arrastrar el botón a la barra de favoritos del navegador<br/>SI no está visible, para activar barra de favoritos pulsar CONTROL + Mayúsculas + B<br/>En dispositivos móviles pulsar el botón</p>
+         
+                      </section> 
+                      
+    
+                </section>
+                <section data-audio-text=" En el menú general  aparecen 5 agrupaciones temáticas de buscadores: los buscadores generales. El grupo de buscadores de apoyo a la información de medicamentos. Los buscadores MBE. Los buscadores bibliográficos. Y un pequeño apartado final de otros buscadores"   data-background-iframe="https://view.genial.ly/5ba902b9304be1592031172c" data-background-interactive >
+                  <div style="position: absolute;top:100px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+                    <h3>Esquema de los buscadores</h3>
+                    <p style="color:rgb(253, 215, 1)">Introducir término en las celdas superiores (Español o Inglés)</p>
+                  </div> 
+                </section>
+                <section>
+                 <div  style="position: absolute;top:10px; width: 90%; align-content:center ; box-shadow: 0 1px 4 px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding:  2px 2% 20px; font-size: 20px; text-align: center;">
+                  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@theradiologistpage/video/7110604510023699717" data-video-id="7110604510023699717" style="max-width: 605px;min-width: 325px;" > <a target="_blank" title="@theradiologistpage" href="https://www.tiktok.com/@theradiologistpage">@theradiologistpage</a> Tricky one did you spot it? <a title="radiology" target="_blank" href="https://www.tiktok.com/tag/radiology">#radiology</a> <a title="doctor" target="_blank" href="https://www.tiktok.com/tag/doctor">#doctor</a> <a title="radiologist" target="_blank" href="https://www.tiktok.com/tag/radiologist">#radiologist</a> <a title="medicalstudent" target="_blank" href="https://www.tiktok.com/tag/medicalstudent">#medicalstudent</a> <a title="nursepractitioner" target="_blank" href="https://www.tiktok.com/tag/nursepractitioner">#nursepractitioner</a> <a title="physicianassistant" target="_blank" href="https://www.tiktok.com/tag/physicianassistant">#physicianassistant</a> <a title="medico" target="_blank" href="https://www.tiktok.com/tag/medico">#medico</a> <a target="_blank" title="♬ Chill Hip hop 37(932007) - 212soundworks" href="https://www.tiktok.com/music/Chill-Hip-hop-37-932007-6906931575162669058">♬ Chill Hip hop 37(932007) - 212soundworks</a>  </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+                  
+                </div>
+                  </section>
+    <!--             data-background-image="./img/1.jpg" -->
+       
+    <section id="instalacion" data-transition="zoom-in fade-out"  data-background-opacity="1" background-color="radial-gradient(circle, rgba(102,80,130,0.9303959437779018) 5%, rgba(13,13,13,1) 62%) !important "><div class="color"> Bookmarklet BUSCADORES </div>        
+              <section><button type="button" class="btn btn-info active" style="background-color:#F0A908;padding-bottom: 10px;padding-top: 4px;"><a class="size2" href="javascript: var _0x3476=['&namesearchtype=containing','WQhdOIFdISoTW7ijtZKOFsq=','bSomp0FcIq==','background-color:#ffa87d;','pSoEngJcVCoc','https://pubmed.ncbi.nlm.nih.gov/?term=','yM9KEq==','vgPdzLG=','Ahr0Chm6lY9TywLSlMDVB2DSzs5JB20VBwfPBc91lZaVi3nLyxjJAc8=','C3r5Bgu=','https://www.ema.europa.eu/medicines/human/EPAR/','y3u3x8kGkG==','W5y+WOFcTNC=','DeCS:\x20MeSH\x20Español--%5Cx3eIngles','WOpcVeCTW4D0uSkWWRJcLea=','https://www.re3data.org/search?query=','r8o3W7pcVZ/dPqZcKmoyoGaoWOFcVcNdImksWOZdPSkTdZb4W4VdLhVcV8oEm8kZcCkvW593WQlcPSoTWRaQW6DSeW3cIG==','appendChild','AmZDG','DhLWzq==','yxbWzw5Kq2HPBgq=','W4VcM8kwWQi6bCo8WPXF','WPXUfGpcShey','WOXaACkPW6iD','W6pdNh/cTwFdLG==','W5JcH0T5W67cNa==','W6BcOCkwWRW0eSo2','W5vwDmogseRdGL4X','&index=tw','f8khdXPoW4NdUIDcW6ZdLdzHDW==','WO7dMrZdVCosWO0giGeqqvL7wbJdHCkJm8okkCoAzSo8W7hdP3tcISkgrcm=','SIDER\x20(Side\x20Effects\x20Resource)','qNvZy2eGCgfSywjYyxmGCxvLihnHDgLZzMfJzw4GDw5HigrLzMLUAwnPW7nUigvUieLfrfjbcNf1zsbZAxj2zsbWyxjHigldUNnXDwvKysbPBNzLCNnHlcbLDgLTB2ZdS2DPy2eSigrLihnPBSoZBMLTB3mSigv0yY4kvxrPBgL6ysbSyxmGzgvMAw5Py2LVBMvZigrLBcbeuKffihKGzgvSierPy2nPB25HCMLVigrLihvZBYbKzwWGzxnWyCoXB2WGzguGtwfYAweGtw9SAw5LCG==','WPhcL8klr8ou','ttjhhCoLa8khz8k3E8oPqhGFW7ddLIeDDgqB','WQddHbVdUCoeW4vBBa==','title2','WOlcN8kUxmoar8oiW73dTG==','+[TIAB]','n8kUW6uJvu4=','C3bSAxq=','replace','WQDoiJ3cKa==','Ahr0Chm6lY9Hy2fKzw1PyY5TAwnYB3nVzNqUy29Tl3nLyxjJAd9Xpq==','rhrOsKq=','+(systematic%5Bsb%5D%2BOR%2Bmeta-analysis%5Bpt%5D%2BOR%2Bmeta-analysis\x20as\x20topic%5Bmh%5D%2BOR%2Bmeta-analysis%5Bmh%5D%2BOR%2Bmeta\x20analy*%5Btw%5D%2BOR%2Bmetanaly*%5Btw%5D%2BOR%2Bmetaanaly*%5Btw%5D%2BOR%2Bmet\x20analy*%5Btw%5D%2BOR%2Bintegrative\x20research%5Btiab%5D%2BOR%2Bintegrative\x20review*%5Btiab%5D%2BOR%2Bintegrative\x20overview*%5Btiab%5D%2BOR%2Bresearch\x20integration*%5Btiab%5D%2BOR%2Bresearch\x20overview*%5Btiab%5D%2BOR%2Bcollaborative\x20review*%5Btiab%5D%2BOR%2Bcollaborative\x20overview*%5Btiab%5D%2BOR%2Bsystematic\x20review*%5Btiab%5D%2BOR%2Btechnology\x20assessment*%5Btiab%5D%2BOR%2Btechnology\x20overview*%5Btiab%5D%2BOR%2B%2522Technology\x20Assessment%2C\x20Biomedical%2522%5Bmh%5D%2BOR%2BHTA%5Btiab%5D%2BOR%2BHTAs%5Btiab%5D%2BOR%2Bcomparative\x20efficacy%5Btiab%5D%2BOR%2Bcomparative\x20effectiveness%5Btiab%5D%2BOR%2Boutcomes\x20research%5Btiab%5D%2BOR%2Bindirect\x20comparison*%5Btiab%5D%2BOR%2B((indirect\x20treatment%5Btiab%5D%2BOR%2Bmixed-treatment%5Btiab%5D)\x20AND\x20comparison*%5Btiab%5D)%2BOR%2BEmbase*%5Btiab%5D%2BOR%2BCinahl*%5Btiab%5D%2BOR%2Bsystematic\x20overview*%5Btiab%5D%2BOR%2Bmethodological\x20overview*%5Btiab%5D%2BOR%2Bmethodologic\x20overview*%5Btiab%5D%2BOR%2Bmethodological\x20review*%5Btiab%5D%2BOR%2Bmethodologic\x20review*%5Btiab%5D%2BOR%2Bquantitative\x20review*%5Btiab%5D%2BOR%2Bquantitative\x20overview*%5Btiab%5D%2BOR%2Bquantitative\x20synthes*%5Btiab%5D%2BOR%2Bpooled\x20analy*%5Btiab%5D%2BOR%2BCochrane%5Btiab%5D%2BOR%2BMedline%5Btiab%5D%2BOR%2BPubmed%5Btiab%5D%2BOR%2BMedlars%5Btiab%5D%2BOR%2Bhandsearch*%5Btiab%5D%2BOR%2Bhand\x20search*%5Btiab%5D%2BOR%2Bmeta-regression*%5Btiab%5D%2BOR%2Bmetaregression*%5Btiab%5D%2BOR%2Bdata\x20synthes*%5Btiab%5D%2BOR%2Bdata\x20extraction%5Btiab%5D%2BOR%2Bdata\x20abstraction*%5Btiab%5D%2BOR%2Bmantel\x20haenszel%5Btiab%5D%2BOR%2Bpeto%5Btiab%5D%2BOR%2Bder-simonian%5Btiab%5D%2BOR%2Bdersimonian%5Btiab%5D%2BOR%2Bfixed\x20effect*%5Btiab%5D%2BOR%2B%2522Cochrane\x20Database\x20Syst\x20Rev%2522%5BJournal%3A__jrid21711%5D%2BOR%2B%2522health\x20technology\x20assessment\x20winchester%2C\x20england%2522%5BJournal%5D%2BOR%2B%2522Evid\x20Rep\x20Technol\x20Assess\x20(Full\x20Rep)%2522%5BJournal%5D%2BOR%2B%2522Evid\x20Rep\x20Technol\x20Assess\x20(Summ)%2522%5BJournal%5D%2BOR%2B%2522Int\x20J\x20Technol\x20Assess\x20Health\x20Care%2522%5BJournal%5D%2BOR%2B%2522GMS\x20Health\x20Technol\x20Assess%2522%5BJournal%5D%2BOR%2B%2522Health\x20Technol\x20Assess\x20(Rockv)%2522%5BJournal%5D%2BOR%2B%2522Health\x20Technol\x20Assess\x20Rep%2522%5BJournal%5D%2B)','WRBdMaRdGmoeW5m=','Ahr0Chm6lY93D3CUBMnIAs5UBg0UBMLOlMDVDI9TzxnOp29YAwDFzgi9BwvZAcz0zxjTpq==','W63dQSkfkCkiW6K=','W7itWRVcNcu=','&search_type=kws&full_search=false&order=altmetric','hostname','EJzMW69lWOqqW6pcP8od','https://www.bing.com/search?qs=n&form=QBLH&filt=all&q=','ignVBIbJB21HBMrVicDZAxrLjYbKzsbhB29NBgu=','Ahr0Chm6lY9KzwnZlMj2C2fSDwqUB3jNl2vZl3rOCZ9MAwX0zxi9DgHZx3rLCM1HBgWMCt0=','W4RdPmo1ehhcKXhcMXK=','gSkPW7KUwKyL','Ahr0CdOVl3D3DY51ChrVzgf0zs5JB20Vy29UDgvUDhmVC2vHCMnOp3nLyxjJAd0=','WRxdTSkKWRuPW7i5oxvkWQD1AhvIAGvsxCk4W43dVaFcJ8oYkGaBhmoG','q29TCK8=','WOddQ8kJWQi2WQz4bNm=','head','WOrrx1hdIG==','WPH2lJFcH2BcIcb2aKOYm8knWO/cRGjubfTxW6ldMmoMWOdcL0lcKmklv8o6vNC=','W5pcR8kYW6pdVmopW6vnWPNdVCk8WOXLkJFcSSojlSkjCmoJWP7dJ8olp8otsmoZ','cCoilhNcOmktW5ddI8k3WQpcGW9Tm8koW4P/WO7dKINcSMddG1KnWQKvFCoEcmoZWOdcP8kzvCkPW43dHW==','lK7dOSkqymkq','bind','C0hdN0rdWPNcHmkWr8kUWORdOmkzsJ4GWPxcNSkrWRtdI8oFW48lWPJcJwVcN14=','|111111|20|0','xvoVM','JavaScript:void(0)','tCo+WRKwDabYDmoNmHBcTCoZ','u8ktnCo/W7Glb8oJd8kmWO7dK8oMhWH+CMusWQqeomkqW4Gww8o/imkrWQr7WQJdLCoSiwuEW7rocCkQb3nDAmkvW7KwW7ldP0ddRJBcLGtcLmkBWOddMsddHJxcOHJcOaFcJSooWRZdLfFcUmk3uwZcLH9cW7HdW77dG8kMmG02WQeeEhXXWQddVfpdTdldNb0VWOFdQd3dTWddTSk4W7q9yNdcK8okWRNcGmktwmoYw8kSv8kzWOnqWOHZW6b/yhVdMMVcQ1ewW77dLfrCymoYWOtdGSoeW5JdTqldLMi/s8k/rSkcdwtcGSkkwcOHW6qXWPJcG8o/qxToWRG=','tgBdRY48','yu3dLvOWW77dMCkRrSkIWOJdVCkfqcL1W57cPmkaW7VdNvhdLqNcHCob','hidden','qZZdO8kKW6iNWQtcIff8W6CRWPZdLmkCiKjCgCoBWPu=','qMLIBgLVDgvJysbwAxj0DwfSigvUifnHBhvK','Cmkkb8oDW5a=','\x20(site%3Aaragon.es+|site%3Ariojasalud.es+|site%3Anavarra.es+|site%3Asan.gva.es+|site%3Amurciasalud.es+|site%3Asaludcastillayleon.es+|site%3Acastillalamancha.es+|site%3Ases.es+|site%3Aastursalud.es+|site%3Asergas.es+|site%3Ascsalud.es+|site%3Agobiernodecanarias.org+|site%3Aibsalut.es+|site%3Aeuskadi.eus+|site%3Ajuntadeandalucia.es+|site%3Acomunidad.madrid+|site%3Agencat.cat)','https://database.inahta.org/search?limit=&terms=','W5FdKvVdSCkrW4SDCuqBaW==','y3jLyxrLrwXLBwvUDa==','&sa=Buscar&siteurl=www.google.com/cse/home?cx=011124105117553046939:yj5skpobyxs&ie=#gsc.tab=0&gsc.q=','uhvItwvKienSAw5Py2fSiff1zxjPzxm=','toString','emoBmxJdOhtdL8kSFCoxC1VdIG==','&sa=Buscar&cof=FORID:0&ie=utf-8&oe=utf-8#gsc.tab=0&gsc.sort=date&gsc.q=','c8k1W5OFW4dcV8kYWR7dJGBcGgtcVW==','WQyICbVdKCozuG==','ksKMCd0WjM49mtaMCZ1YzwzLCMvUy2vKx2j5x2nVDw50jMq9jtiWjMy9zMfSC2uMzt1MywXZzszSpwvZjMf1DgHVCKzPzwXKpwf1DgHVCIzKyxrLrMLSDgvYrMLLBgq9ChvIBgLZAgvKwwvHCIzVCMrLCKj5psuYmhjLzMvYzw5JzwrFyNLFy291BNqMChjLC2vUDgf0Aw9UpwzHBhnLjNbYzxzPzxC9zMfSC2uMC3rLBw1Lzd10CNvLjNvZzuf1DgHVCKLKpwzHBhnLjNb1yMXPC2HLzfLLyxiUzNjVBt0=','AaldICkMhgzcW5JdThrDymkQveC=','DcZdTCkSW6SMW6tcUxzCW5GSW4RdGCk/fLHVnCo9','Guías\x20de\x20Práctica\x20Clínica\x20(España)','WRhdPcpdHmoXW7jTrdDpuWq1','W6ver8ocsKq=','http://allie.dbcls.jp/short/exact/Any/','jSkXW4CCW4FdOmoWW77dKbRcIwBcQqpcV8kqv8ocW61YW5CDaCoUW5WOx07cOrNdRftdPmkGg8o3W5RdMW==','Ahr0ChmLm0eLmKyLmKz3D3CUz29Vz2XLlMvZjtjgC2vHCMnOjtngCsuZra==','createRange','W43cHff5W5pcLmkCrCoGWQpdNa7dL8oCWR1qWOZcSW==','indexOf','qNvZy2eGzwWGDmoPCM1PBM8GiG==','CmoWW6lcOYO=','Ahr0CdOVl3D3DY5TDxjJAwfZywX1zc5LCY9WCMvLDMLKlNbOCd9VCd1Iyw5JBYzPzhnLyZ00ntmMy3m9','lxBdHmoBdsJdHxu5vG==','Ahr0Chm6lY9ZzwfYy2GUy3jVC3nYzwyUB3jNlZ9Xpq==','WPqro8o9cmkWW4O=','nXFcLSoBW73cRai=','W4Hdw8opruZdIG==','WQb5WQFdOg4=','https://es.wikipedia.org/wiki/','WRGIBHddHmos','iGOGzw4GzwWGrgLJy2LVBMfYAw8GzguGBgeGBgvUz3vHigvZCghdSw9Syq==','Ahr0Chm6lY93D3CUD2HVy2mUBM8VyxrJx2rKzf9PBMrLEc8/y29Kzt0=','Biomedical\x20Image\x20Open\x20Access','url','Kaumk','W4PxWQC=','rKL4B0C=','qNvZy2eGzgvUDhjVigrLigXHihDLyIa=','DgvZDa==','W745ra==','Ahr0Chm6lY9JC2uUz29Vz2XLlMnVBs9JC2u/y3G9mde3ntaZmJi0mJm5nZyXnJK3mdG3oMTSlwX5mwPPof9HjNe9','W7ddSSoEWR1gW4W0','jNnHpuj1C2nHCIzJB2y9rK9ssuq6mczPzt11DgyToczVzt11DgyTocnNC2mUDgfIptaMz3nJlNe9','W43dISkLhCoC','mxb4','Ahr0Chm6lY9YzwrLDhmUBxnJyNmUz29IlMvZl3bYB2r1y3rVCY9IDxnJyxjqCM9KDwn0B3mUzg8/C2vHCMnOpq==','Dg9tDhjPBMC=','a0NdVSkDB8kyBG==','W7ZcSmksWQaMs8k8W6XHs8omWQhdH8k0WP7cSCoAymkkWRPCDghdVmkhg8kiWQylW6njreKZd8oLW4bSW6mzW68kW58Ha8ove8o1W6y7m8kHFMhdSh0Bpwq=','rJ5JW6D6WO4oW6pcO8ooA8o7WReRWRVdTfSr','Ahr0Chm6lY9WDwjTzwqUBMnIAs5UBg0UBMLOlMDVDI8/DgvYBt0=','WPbcxMddS8k8','WOS0zrVdLG==','CYRdHqbtACozWOeQmmo6WOOgWRddQSoiWOOtWP4=','https://www.deepl.com/translator#es/en/','https://cse.google.com/cse?cx=017503224239761697087:ih48izebczs&q=','_self','https://www.youtube.com/results?search=Search&search_query=','uvLjvKm=','Ahr0CdOVl3D3DY5Uywn0zw0UywmUDwSVzMfJDgeVy2DPlwjPBI9Mywn0ys5Jz2K/CxvLCNK9','re3data\x20(repositorios\x20datos\x20invest.)','yd3dUmkfW6i=',')%20OR%20keyword:(','WPBcPSoHWRBdP8opW7rlWP/dKmk3','x2jSyw5R','https://www.europeana.eu/es/search?page=1&view=list&query=','kCkGW4C/W5hcTSk6WRldLaBcHgu=','zercu2G=','W4xdPColWQGhW6m4W6L5Bs/dTJVdQ0G=','WOldTSk0WPqJWR50cMLAWRTY','WQCMt8oFnmkaiSkF','lqBcKSohW6/dTuJdUIv1kSoJCJRdGSohW5tcL2uEx8onvGiIWRfTc8kIBmk4WRalW68pWRbmj8oOs2vjyCoeWPlcVmkbW4HMWQhcOmkNyMXWySon','tKLdrsaOtKHtkq==','WOnqA8oH','zW3dQsTIjCo2WRa=','AhjLzG==','WR5jWOuokW==','lL/dQ8kDAa==','_blank','qNvZy2eGzw4GugLUDgvYzxn0lcbYzwqGC29JAwfSihf1zsbJB250AwvUzsb0ywjSzxjVCWP5ignVBgvJy2LVBMvZigrLigLTW6fNzw5LCYbHzg1PBMLZDhjHzgfZihbVCIbSB3mGDxn1yxjPB3m=','y8oAWOmKaSoRzCoVeSokpNBdIZy9amoIxmkakmoRmSokWORdTh3cMCoTCc/dImoaWPhcHJe7WQJdGw3cTSo2qq==','oSkVWO3dTd/dSCkfvSkP','FxJdHmorqthdIhSOeIK=','d8k/WRTxECkb','style','&d-6893580-s=4&buscarpor=titulo&d-6893580-p=1&d-6893580-o=1','ubHPf8oO','WQz8WPJdMehdUmonW7VcPcFcRu7dRSkEW5RdOSoSWQmQWRNdMmoSW5tdHK1gc8kgWQpcMbmbFIxcQ8oK','W6VcUIVdVe4=','&sa=Google+Search&cof=S:http://www.sign.ac.uk;AH:center;BGC:FBFAEC;AWFID:a88955d1eee288ef;&domains=www.sign.ac.uk&sitesearch=www.sign.ac.uk&gws_rd=cr&dcr=0&ei=N2osWvDzKMjTU-qng9gB','xIHBxIbDkYGGk1TEif0RksSPk1TEif19','tSk/W6yWtXG5iCkShq==','W54Sf8oOwCkk','jNm9ywXS','https://pesquisa.bvsalud.org/portal/?output=site&lang=es&from=0&sort=YEAR_DESC&format=summary&count=30&fb=&page=1&q=','uaFdSJC/j8oRWQy=','https://www.whocc.no/atc_ddd_index/?code=ATC\x20code&name=','uvzrwvi=','rxHYuMe=','https://twitter.com/search?q=','vSkXW5ddQwhdPG==','xCoMW7FcOY3cVey=','join','yGXGi','BVsTS','WRz4v8oi','x3nLBgy=','TRADUCTOR\x20DeepL\x20(multilingüe)','W6/cKvnOW7pdJCoba8oNWQdcKvBdN8oAWRyFW5ddV3ddQ8kssmoYWOH/hrVcHSkoWRj4W65SW5faW7JcNXBcImoo','visible','C2RdLMvI','length','CLfsq2e=','Ahr0Chm6lY93D3CUz29Vz2XLlMvZl3nLyxjJAd9Xpq==','&client=user','getSelection','dCk+W7STsq==','jtvdDwzLzMyG','u2XEcSovkSkh','cG3dUHX1kmo9WRGmCCofWR4TW6pcQ8o9WRC/W5K0uSoOWOddKsGoWO9lcrmSW5BdGI3dRmoldbNdOKhcOuOEimomWQdcHxbAdSkhdSozmhD0WRZcQmo2WRelAmkTW4BcQSo7WPJdJKRdOeSjW6VcJ8oDWObJdMRdImkvWOdcNqBdH2DMEGiCWQhdRY5wW6dcPevaWP0MWQFdNCkiWPNcL8oHW5hcOSkXWOpdRSoMpSoXW7xdOKvrW5P7W6S+rWjQW4JcICoeqr5iv17dPCoIW6BdLb7cRSknrNiXW5LTW7nqW65dySkfymkVamozz8oYAKDVjCkFtxHVWQiMfqNcVwTxWPtcVIi9dSoiW6/cOJKgcmksWQKJWP5KWQPGW4xdU3BdLv8moSoFWO7cGcpcRSkyF13dJSkGWRiiqMfDWQWljCkXW7ePsWiWt8ovdSoywmozW5xdOvxdVNZdN8oFzCobmCoNzcJdJ2Svw8kIqmkGubtcLqddVCohBCkrkmoZb8k0WPxdLrVdOSkcW6BcNColh8kaWPpcVmkjuZKfCWG+W4bkkSkrWRvEdb8zyaHriN/dPSoPWQ0UAx8VWQpdUsCPW5RcRmkNs8ogeSoAfSkWW4ddSSkFvmkPBxtcTmorWRzJsSkzW7hdLqJdK8oGFSkGW4pcQCktW6/cImkVW41WWQxcQ8oGmdepbXVcSHncW6CMxSoIWOtcPNBcGGNdRJOqW5jLob3cKCowbCoIW6ZdMSoTW5hdOWLrW6OUW53dISocW5nhySo5emkLFXGmWP4itgxdP8ocqZWWW5PgW4jhWPibWQygW78RW7tcGCoPW53dH8o/W5NdICoabSoOaujuFgfGk2BdKSoeWO3cGexdKCkKW5ZdVNJcI0NdICocf8kmBvJdStnSWPVcUmojW7uWomkuW4pdNSkXCwZcLmoUWQNcH8oqBcCrzb7cPSoxW5VcQmkCW4iuy8o3WQBcNXFcJ8kwWOe4W6LeWR/dK8oHcCoJWRpcOLb6emolAmkSjmodfmo/W43cJSozF0v4WR9vWQBcIH7dLCo2W69TWObLxMBcGSkxjCk0W6BdKCkSW4jjf8kEWP3dS8oGuSkDWO3dJ8olW7tdQYVdSCoYWQbZA8kIWQRdOSo0W7uiWPbCoCkeyCkiCxv7WRyuWPbOoSkKW7dcHSo4pmoPWO0bWPpdVshdHtXoDe3cPSoBW4SoW7nulmocWRm8WPNdHX5qEmoTW6LiWQidWQJdImoDWO7dKSk5bhXyWRGbcwz4W4VdM8kFW4hdSSkNwef1WOuzWP/dLdhcISoIdSopWOC+W5ZdKCkAW6TrW6m9WOykWRKuahPAsmoDWRVcKSkWtcdcQmkDjHVcTaTnF8oJp1tdGCkUW7/cTCknW4GRWPixWO84haZdSCo+ACoOB8k2oGFcNmkCdCk6fNJdLx0aW6ucW4pcHSkAC3BdQHO8W6pdJ3HkW7O0WQGZsMK4WR7cUSkxWRRdVSoeW5Suk8k4lmo8EMqnW4ldGmocoCk8W5tdSCoFWQJdS0dcOmkXxCo3W5T3WR/dOmkzAhPRvmkJW7BcRI5dW4RcJepcQ1lcP0FdLb3cQSoBW4/cHuBcSmocW6TRW7tdQMq8oeVcT1JdL8kQwxbKW7FdRcy9sCkbW6XoWRusW60SWRJcRCoyWR0OWOCdqh3cM8oeW5noW7nQ','NkyMZ','E30Uy29UC3rYDwn0B3iOiNjLDhvYBIb0AgLZiIKOicK=','iSknebfdW4/cVW==','y29UC29Szq==','Busca\x20en\x20Wikipedia\x20(edición\x20española)','target','zCkpmSoWW7W=','setAttribute','W4xcKfr7W6hdL8knq8o+W7FcOrFdL8osWRuDWPZdLZ/dVSks','v1D0yNq=','vwHmcSor','zgRdLSk+WOy=','yMLUza==','qNvZy2fYigvUieDTywLS','BgvUz3rO','BSo4AmkiW6yl','QVQYR','AfDJDuG=','cMNdIW==','Fsb0gCoNdq==','https://docs.google.com/forms/d/e/1FAIpQLSe0ZjPYr7Tu-5urf9O1mBU4cbuhD_f8BjX4NPo0v6TqKE4RYA/viewform?entry.330152244=🔎\x20Buscadores!\x20V.16','&cof=FORID:0&ie=utf-8&oe=utf-8#gsc.tab=0&gsc.q=','uhvItwvKifn5C3qGuMv2l0Huqq==','lI4U','Aw5MBW==','FACTA\x20Data\x20Mining\x20Search','createElement','TWITTER','log','random','ru4GteeGv0vc4OAs','https://www.fisterra.com/buscador/index.asp?=&txtBuscador=','Ahr0Chm6lY93D3CUzxbPC3rLBw9UAwTVCY5VCMCVzxmVC2vHCMnOp3e9','https://iedra.es/palabras/?q=','LENS','Ahr0Chm6lY93D3CUzxzPzgvUy2uUBMHZlNvRl1nLyxjJAd9Xpq==','v0n6B3G=','getElementById','WPfwCCkqW6W=','EMA\x20(Principio\x20Activo\x20o\x20Marca)','CMvWBgfJzq==','W4VcPSkkWRe7gG==','getDate','getFullYear','location','zCkuj8o/W7W=','EWddPIj+lW==','D0nXrLC=','+site:sideeffects.embl.de/','BwTHr1C=','s2f1BwS=','WRKwj8oWb8k4','uhi1wCk6kq==','W7ZcSmksWQaMs8k8W6X3tmolWQhdHmkYWPZcS8oyDSonWRbbkdZdUmkprSkpWQDhW7eB','W4i3WPJcTwrQW4e=','AMf2yxnJCMLWDdPtB19dBgvHBLvWkcK=','hCk4WOr+','PREEVID\x20(Murcia\x20Salud)','http://git.macropus.org/hubmed/?term=','sMf2yvnJCMLWDdP2B2LKkdaP','z2v0rgf0zq==','CMv0DxjUicHMDw5JDgLVBIGPia==','rxvYB3bLyw5H','q2XPBMLJywWGvhjPywXZieLUDgvYBMf0Aw9UywWGlvDitW==','y3jLyxrLvgv4De5Vzgu=','z2v0tw9UDgG=','&tbm=bks','Ahr0Chm6lY9JAw1HlMfLBxbZlMvZl2nPBweVChvIBgLJBY9IDxnJywrVCMf2yw56ywrVlMH0BwW=','WPDbF8kQW6vvEvJdQKHgWRNdNu3cHxRcUSogWPlcIsxcNX4iW5NdHhj8fmoYWPZcVmoUW6WyBSoKWQVdHt/cNI7cLSkgWQ3cN0u1WPfmhCoBW7DBWPTr','B25JBgLJAW=='];(function(_0x25282a,_0x5ecac8){var _0x3476ba=function(_0x5118b6){while(--_0x5118b6){_0x25282a['push'](_0x25282a['shift']());}},_0x168ec3=function(){var _0x1a8303={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x786449,_0x152376,_0x54bf20,_0x533061){_0x533061=_0x533061||{};var _0x2d71e6=_0x152376+'='+_0x54bf20,_0x3b9dab=0x0;for(var _0x35fb6b=0x0,_0x57ca61=_0x786449['length'];_0x35fb6b<_0x57ca61;_0x35fb6b++){var _0x57fec7=_0x786449[_0x35fb6b];_0x2d71e6+=';\x20'+_0x57fec7;var _0x40a304=_0x786449[_0x57fec7];_0x786449['push'](_0x40a304),_0x57ca61=_0x786449['length'],_0x40a304!==!![]&&(_0x2d71e6+='='+_0x40a304);}_0x533061['cookie']=_0x2d71e6;},'removeCookie':function(){return'dev';},'getCookie':function(_0x326ee0,_0x4434ea){_0x326ee0=_0x326ee0||function(_0x1dcaeb){return _0x1dcaeb;};var _0x41ebe8=_0x326ee0(new RegExp('(?:^|;\x20)'+_0x4434ea['replace'](/([.$?*|{}()[]\/+^])/g,'$1')+'=([^;]*)')),_0x29acb0=function(_0x3c1619,_0x1e5cb9){_0x3c1619(++_0x1e5cb9);};return _0x29acb0(_0x3476ba,_0x5ecac8),_0x41ebe8?decodeURIComponent(_0x41ebe8[0x1]):undefined;}},_0x48eb37=function(){var _0x4083ce=new RegExp('\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*[\x27|\x22].+[\x27|\x22];?\x20*}');return _0x4083ce['test'](_0x1a8303['removeCookie']['toString']());};_0x1a8303['updateCookie']=_0x48eb37;var _0xdd8209='';var _0x19ef45=_0x1a8303['updateCookie']();if(!_0x19ef45)_0x1a8303['setCookie'](['*'],'counter',0x1);else _0x19ef45?_0xdd8209=_0x1a8303['getCookie'](null,'counter'):_0x1a8303['removeCookie']();};_0x168ec3();}(_0x3476,0x166));var _0x168e=function(_0x25282a,_0x5ecac8){_0x25282a=_0x25282a-0x1a9;var _0x3476ba=_0x3476[_0x25282a];return _0x3476ba;};var _0x5118=function(_0x25282a,_0x5ecac8){_0x25282a=_0x25282a-0x1a9;var _0x3476ba=_0x3476[_0x25282a];if(_0x5118['nJqGeP']===undefined){var _0x168ec3=function(_0x1a8303){var _0x48eb37='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=',_0xdd8209=String(_0x1a8303)['replace'](/=+$/,'');var _0x19ef45='';for(var _0x786449=0x0,_0x152376,_0x54bf20,_0x533061=0x0;_0x54bf20=_0xdd8209['charAt'](_0x533061++);~_0x54bf20&&(_0x152376=_0x786449%0x4?_0x152376*0x40+_0x54bf20:_0x54bf20,_0x786449++%0x4)?_0x19ef45+=String['fromCharCode'](0xff&_0x152376>>(-0x2*_0x786449&0x6)):0x0){_0x54bf20=_0x48eb37['indexOf'](_0x54bf20);}return _0x19ef45;};_0x5118['wXAQWW']=function(_0x2d71e6){var _0x3b9dab=_0x168ec3(_0x2d71e6);var _0x35fb6b=[];for(var _0x57ca61=0x0,_0x57fec7=_0x3b9dab['length'];_0x57ca61<_0x57fec7;_0x57ca61++){_0x35fb6b+='%'+('00'+_0x3b9dab['charCodeAt'](_0x57ca61)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x35fb6b);},_0x5118['ByXITD']={},_0x5118['nJqGeP']=!![];}var _0x5118b6=_0x5118['ByXITD'][_0x25282a];if(_0x5118b6===undefined){var _0x40a304=function(_0x326ee0){this['EzgkiZ']=_0x326ee0,this['STWdbf']=[0x1,0x0,0x0],this['JsiYHZ']=function(){return'newState';},this['JOEOWp']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['CHrIAK']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x40a304['prototype']['ejiaen']=function(){var _0x4434ea=new RegExp(this['JOEOWp']+this['CHrIAK']),_0x41ebe8=_0x4434ea['test'](this['JsiYHZ']['toString']())?--this['STWdbf'][0x1]:--this['STWdbf'][0x0];return this['dHxVNj'](_0x41ebe8);},_0x40a304['prototype']['dHxVNj']=function(_0x29acb0){if(!Boolean(~_0x29acb0))return _0x29acb0;return this['tdkVmQ'](this['EzgkiZ']);},_0x40a304['prototype']['tdkVmQ']=function(_0x1dcaeb){for(var _0x3c1619=0x0,_0x1e5cb9=this['STWdbf']['length'];_0x3c1619<_0x1e5cb9;_0x3c1619++){this['STWdbf']['push'](Math['round'](Math['random']())),_0x1e5cb9=this['STWdbf']['length'];}return _0x1dcaeb(this['STWdbf'][0x0]);},new _0x40a304(_0x5118)['ejiaen'](),_0x3476ba=_0x5118['wXAQWW'](_0x3476ba),_0x5118['ByXITD'][_0x25282a]=_0x3476ba;}else _0x3476ba=_0x5118b6;return _0x3476ba;};var _0x1a83=function(_0x25282a,_0x5ecac8){_0x25282a=_0x25282a-0x1a9;var _0x3476ba=_0x3476[_0x25282a];if(_0x1a83['pEOGlb']===undefined){var _0x168ec3=function(_0x48eb37){var _0xdd8209='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=',_0x19ef45=String(_0x48eb37)['replace'](/=+$/,'');var _0x786449='';for(var _0x152376=0x0,_0x54bf20,_0x533061,_0x2d71e6=0x0;_0x533061=_0x19ef45['charAt'](_0x2d71e6++);~_0x533061&&(_0x54bf20=_0x152376%0x4?_0x54bf20*0x40+_0x533061:_0x533061,_0x152376++%0x4)?_0x786449+=String['fromCharCode'](0xff&_0x54bf20>>(-0x2*_0x152376&0x6)):0x0){_0x533061=_0xdd8209['indexOf'](_0x533061);}return _0x786449;};var _0x1a8303=function(_0x3b9dab,_0x35fb6b){var _0x57ca61=[],_0x57fec7=0x0,_0x40a304,_0x326ee0='',_0x4434ea='';_0x3b9dab=_0x168ec3(_0x3b9dab);for(var _0x29acb0=0x0,_0x1dcaeb=_0x3b9dab['length'];_0x29acb0<_0x1dcaeb;_0x29acb0++){_0x4434ea+='%'+('00'+_0x3b9dab['charCodeAt'](_0x29acb0)['toString'](0x10))['slice'](-0x2);}_0x3b9dab=decodeURIComponent(_0x4434ea);var _0x41ebe8;for(_0x41ebe8=0x0;_0x41ebe8<0x100;_0x41ebe8++){_0x57ca61[_0x41ebe8]=_0x41ebe8;}for(_0x41ebe8=0x0;_0x41ebe8<0x100;_0x41ebe8++){_0x57fec7=(_0x57fec7+_0x57ca61[_0x41ebe8]+_0x35fb6b['charCodeAt'](_0x41ebe8%_0x35fb6b['length']))%0x100,_0x40a304=_0x57ca61[_0x41ebe8],_0x57ca61[_0x41ebe8]=_0x57ca61[_0x57fec7],_0x57ca61[_0x57fec7]=_0x40a304;}_0x41ebe8=0x0,_0x57fec7=0x0;for(var _0x3c1619=0x0;_0x3c1619<_0x3b9dab['length'];_0x3c1619++){_0x41ebe8=(_0x41ebe8+0x1)%0x100,_0x57fec7=(_0x57fec7+_0x57ca61[_0x41ebe8])%0x100,_0x40a304=_0x57ca61[_0x41ebe8],_0x57ca61[_0x41ebe8]=_0x57ca61[_0x57fec7],_0x57ca61[_0x57fec7]=_0x40a304,_0x326ee0+=String['fromCharCode'](_0x3b9dab['charCodeAt'](_0x3c1619)^_0x57ca61[(_0x57ca61[_0x41ebe8]+_0x57ca61[_0x57fec7])%0x100]);}return _0x326ee0;};_0x1a83['AHFbBj']=_0x1a8303,_0x1a83['vnFQWc']={},_0x1a83['pEOGlb']=!![];}var _0x5118b6=_0x1a83['vnFQWc'][_0x25282a];if(_0x5118b6===undefined){if(_0x1a83['JXvNwe']===undefined){var _0x1e5cb9=function(_0x4083ce){this['ojRRny']=_0x4083ce,this['LEnrzJ']=[0x1,0x0,0x0],this['fnkDYG']=function(){return'newState';},this['ZLrDoS']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['YooOcK']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x1e5cb9['prototype']['mCDiED']=function(){var _0xa1c340=new RegExp(this['ZLrDoS']+this['YooOcK']),_0x4521a3=_0xa1c340['test'](this['fnkDYG']['toString']())?--this['LEnrzJ'][0x1]:--this['LEnrzJ'][0x0];return this['xCPtjp'](_0x4521a3);},_0x1e5cb9['prototype']['xCPtjp']=function(_0x9cdafb){if(!Boolean(~_0x9cdafb))return _0x9cdafb;return this['lkCBpv'](this['ojRRny']);},_0x1e5cb9['prototype']['lkCBpv']=function(_0x2cd568){for(var _0x2e43d8=0x0,_0x20f705=this['LEnrzJ']['length'];_0x2e43d8<_0x20f705;_0x2e43d8++){this['LEnrzJ']['push'](Math['round'](Math['random']())),_0x20f705=this['LEnrzJ']['length'];}return _0x2cd568(this['LEnrzJ'][0x0]);},new _0x1e5cb9(_0x1a83)['mCDiED'](),_0x1a83['JXvNwe']=!![];}_0x3476ba=_0x1a83['AHFbBj'](_0x3476ba,_0x5ecac8),_0x1a83['vnFQWc'][_0x25282a]=_0x3476ba;}else _0x3476ba=_0x5118b6;return _0x3476ba;};var _0x3888c7=_0x5118,_0x1bad08=_0x168e,_0x108200=_0x1a83;_0x1dc113:var Q=''+(window[_0x108200(0x1f0,'n[iE')]?window[_0x1bad08(0x21e)]():document[_0x1bad08(0x21e)]?document[_0x108200(0x1ed,'9hgK')]():document[_0x108200(0x2a1,'W!k#')][_0x1bad08(0x1bb)]()['text']);var rand=Math[_0x108200(0x275,'@C&B')](Math[_0x1bad08(0x240)]()*0x3e8),sitio=document['location'][_0x108200(0x1f1,'qlG1')][_0x3888c7(0x291)]('.'),string=document['location'][_0x1bad08(0x29c)],today=new Date();today['setDate'](today[_0x1bad08(0x24d)]()-0x16d);var dd=today[_0x3888c7(0x25f)](),mm=today[_0x3888c7(0x264)]()+0x1,yyyy=today[_0x1bad08(0x24e)]();dd<0xa&&(dd='0'+dd);mm<0xa&&(mm='0'+mm);today=yyyy+'-'+mm+'-'+dd;var todayTitle='desde\x20el\x20'+dd+'/'+mm+'/'+yyyy,fiveyears=new Date();fiveyears['setDate'](fiveyears['getDate']()-0x721);var yyyy5=fiveyears[_0x108200(0x277,'t8st')](),fiveyearstitle='desde\x20el\x20año\x20'+yyyy5,substring='www';string[_0x1bad08(0x1bd)](substring)>=0x0?sitio[_0x108200(0x1de,'7D22')]>0x4?sitio=sitio[sitio[_0x1bad08(0x21a)]-0x4]+'.'+sitio[sitio[_0x1bad08(0x21a)]-0x3]+'.'+sitio[sitio[_0x108200(0x299,'Kl70')]-0x2]+'.'+sitio[sitio[_0x3888c7(0x231)]-0x1]:sitio[_0x108200(0x1c8,'@qXY')]>0x3?sitio=sitio[sitio[_0x108200(0x281,'[1K4')]-0x3]+'.'+sitio[sitio[_0x3888c7(0x231)]-0x2]+'.'+sitio[sitio[_0x1bad08(0x21a)]-0x1]:sitio[_0x1bad08(0x21a)]>0x2?sitio=sitio[sitio[_0x108200(0x257,'!2B9')]-0x2]+'.'+sitio[sitio[_0x1bad08(0x21a)]-0x1]:sitio['length']>0x1?sitio=document[_0x1bad08(0x24f)]['hostname']:sitio[_0x1bad08(0x211)]('.'):sitio=document['location']['hostname'],Q||(Q=prompt('\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Introducir\x20términos\x20de\x20búsqueda\x0a\x0a[Para\x20abrir\x20más\x20de\x20un\x20buscador\x20en\x20la\x20lista\x20de\x20buscadores\x20hacer\x20clic\x20con\x20el\x20botón\x20de\x20la\x20rueda\x20del\x20ratón]\x0a\x20\x20')),null!=Q&&(Q=Q[_0x1bad08(0x292)](/\r\n|\r|\n/g,'\x20')['replace'](/^\s+|\s+$/g,'')[_0x1bad08(0x292)](/\s\s+/g,'\x20')),null!=Q&&function(_0x25739a,_0x362199,_0x6f5640,_0x46a652,_0xc3da6a){var _0x46c5fd=_0x1bad08,_0x2a5702=_0x3888c7,_0x4887ca=_0x108200,_0x5d93ac={'Zwdvp':_0x4887ca(0x1fc,'2D25'),'ZrRUY':function(_0x5685d1,_0x5a9bf6){return _0x5685d1(_0x5a9bf6);},'ComrO':function(_0x5edac7,_0x301837){return _0x5edac7+_0x301837;},'Kaumk':function(_0x253d13,_0x49fbc0){return _0x253d13+_0x49fbc0;},'HQtyO':_0x2a5702(0x260),'dDBSh':_0x2a5702(0x224),'aLerW':function(_0x29ceb5){return _0x29ceb5();},'nczJz':_0x4887ca(0x1a9,'@BVp'),'yGXGi':_0x4887ca(0x1f4,'55wM'),'AnDqr':_0x2a5702(0x23b),'AmZDG':_0x4887ca(0x21f,')jNU'),'FIxoG':_0x4887ca(0x2a6,'n[iE'),'NmcCw':_0x4887ca(0x22d,'YyDb'),'PrBBB':'return\x20/\x22\x20+\x20this\x20+\x20\x22/','JRtsP':_0x2a5702(0x205),'QVQYR':function(_0x1cdb31,_0x1b4a8c,_0x430adc){return _0x1cdb31(_0x1b4a8c,_0x430adc);},'EnZBd':function(_0x5cbf13){return _0x5cbf13();},'DthJD':function(_0x5a407d){return _0x5a407d();},'NkyMZ':_0x46c5fd(0x2b6),'FMJSS':_0x46c5fd(0x218),'ExrRa':_0x4887ca(0x284,'xR*V'),'QYIVC':_0x4887ca(0x1d2,'qlG1'),'BEGoI':_0x4887ca(0x222,'r)3O'),'WWtbt':function(_0x572318,_0x26c2ff){return _0x572318==_0x26c2ff;},'rQRCa':function(_0x4ed0b6){return _0x4ed0b6();},'rZqoa':function(_0x574b57,_0x54cfb5){return _0x574b57+_0x54cfb5;},'xvoVM':_0x4887ca(0x1e8,'H7Ti'),'WCzox':_0x4887ca(0x20a,'r)3O'),'BVsTS':_0x46c5fd(0x2a7),'wCqFW':'div','fjRfW':_0x4887ca(0x28b,'3SW['),'RfjbD':function(_0x507c23,_0x3a9b3a){return _0x507c23<_0x3a9b3a;},'pdDhg':_0x2a5702(0x1f6),'TjCfX':_0x46c5fd(0x228),'hWcuH':_0x4887ca(0x229,'1flw'),'alAAI':_0x2a5702(0x26f)},_0x2e048f=function(){var _0x240cd1=!![];return function(_0xf4222b,_0x2807cb){var _0x10d87c=_0x240cd1?function(){if(_0x2807cb){var _0x4b905c=_0x2807cb['apply'](_0xf4222b,arguments);return _0x2807cb=null,_0x4b905c;}}:function(){};return _0x240cd1=![],_0x10d87c;};}(),_0x62008b=function(){var _0x590b33=!![];return function(_0x40b0d4,_0x3e1ddd){var _0x5bcc3e=_0x590b33?function(){if(_0x3e1ddd){var _0x7a75e5=_0x3e1ddd['apply'](_0x40b0d4,arguments);return _0x3e1ddd=null,_0x7a75e5;}}:function(){};return _0x590b33=![],_0x5bcc3e;};}();;var _0x7337d2,_0x22456c,_0x2eba47=document,_0x40bab9=(_0x2eba47[_0x2a5702(0x268)],_0x5d93ac[_0x2a5702(0x255)](_0x5d93ac['ExrRa'],_0xc3da6a)),_0xd1339e=_0x2eba47[_0x46c5fd(0x248)](_0x40bab9),_0x5393b6=_0x5d93ac[_0x2a5702(0x20d)]+_0xc3da6a,_0x4dbed3=_0x2eba47['getElementById'](_0x5393b6),_0x198c9b=null,_0x384231={'tl':{'left':_0x5d93ac[_0x2a5702(0x1e5)],'top':_0x5d93ac['QYIVC']},'tr':{'right':_0x2a5702(0x1d7),'top':_0x5d93ac['QYIVC']},'bl':{'left':_0x4887ca(0x1ce,'R2z2'),'bottom':'1px'},'br':{'right':_0x4887ca(0x235,'yQ[Z'),'bottom':'1px'}},_0x26adbe=_0x5d93ac[_0x4887ca(0x26b,'vOG7')];function _0x48ba12(){var _0x2e4416=_0x2a5702,_0xc6e596=_0x4887ca,_0x307622=_0x46c5fd,_0x4eb02b={'mcnER':_0x5d93ac['PrBBB'],'mkaGW':_0x5d93ac['JRtsP']},_0x1a0a1e=_0x5d93ac[_0x307622(0x233)](_0x2e048f,this,function(){var _0x5c2127=function(){var _0x40b347=_0x5118,_0x32cd7f=_0x5c2127['constructor'](_0x4eb02b['mcnER'])()['constructor'](_0x4eb02b[_0x40b347(0x254)]);return!_0x32cd7f[_0x40b347(0x1d1)](_0x1a0a1e);};return _0x5c2127();});_0x5d93ac[_0xc6e596(0x1f7,'R2z2')](_0x1a0a1e);var _0x51f152=_0x5d93ac[_0x2e4416(0x20c)](_0x62008b,this,function(){var _0x421b45=_0xc6e596,_0x5050e9=_0x307622,_0x3a3cc3=_0x2e4416,_0x5b51b1=_0x5d93ac['Zwdvp'][_0x3a3cc3(0x291)]('|'),_0x558e3c=0x0;while(!![]){switch(_0x5b51b1[_0x558e3c++]){case'0':var _0x1ba6d0=_0x10e25f['console']=_0x10e25f[_0x3a3cc3(0x226)]||{};continue;case'1':try{var _0x3f1a82=_0x5d93ac['ZrRUY'](Function,_0x5d93ac[_0x3a3cc3(0x2a5)](_0x5d93ac[_0x5050e9(0x1cd)](_0x5d93ac['HQtyO'],_0x5d93ac[_0x3a3cc3(0x1ee)]),');'));_0x10e25f=_0x5d93ac['aLerW'](_0x3f1a82);}catch(_0x6dd865){_0x10e25f=window;}continue;case'2':for(var _0x17affb=0x0;_0x17affb<_0x2c5324[_0x3a3cc3(0x231)];_0x17affb++){var _0x463dfb=_0x5d93ac[_0x421b45(0x249,'#8Ed')][_0x3a3cc3(0x291)]('|'),_0x464f9e=0x0;while(!![]){switch(_0x463dfb[_0x464f9e++]){case'0':var _0x4dd733=_0x1ba6d0[_0x372ca9]||_0x16207d;continue;case'1':var _0x16207d=_0x62008b[_0x421b45(0x1ea,'V37T')]['prototype']['bind'](_0x62008b);continue;case'2':_0x16207d[_0x5050e9(0x1ad)]=_0x4dd733[_0x3a3cc3(0x1d9)][_0x3a3cc3(0x22f)](_0x4dd733);continue;case'3':var _0x372ca9=_0x2c5324[_0x17affb];continue;case'4':_0x16207d[_0x421b45(0x27e,'806o')]=_0x62008b[_0x5050e9(0x2ad)](_0x62008b);continue;case'5':_0x1ba6d0[_0x372ca9]=_0x16207d;continue;}break;}}continue;case'3':var _0x10e25f;continue;case'4':var _0x2c5324=[_0x5050e9(0x23f),_0x5d93ac[_0x5050e9(0x212)],_0x5d93ac[_0x421b45(0x219,'&RUl')],_0x5d93ac[_0x5050e9(0x27b)],_0x5d93ac[_0x3a3cc3(0x1cf)],_0x5d93ac['NmcCw'],_0x421b45(0x250,'1flw')];continue;}break;}});_0x5d93ac[_0x2e4416(0x295)](_0x51f152),_0xd1339e['style']['visibility']=_0x5d93ac[_0x307622(0x223)];};function _0x54ec8f(){var _0x4bde3a=_0x4887ca;_0xd1339e['style'][_0x4bde3a(0x29d,'e6%B')]=_0x5d93ac['FMJSS'];};if(_0xd1339e)_0x5d93ac[_0x2a5702(0x22c)]('visible',_0xd1339e[_0x46c5fd(0x1ff)][_0x4887ca(0x1c1,'c]UI')])?_0x5d93ac[_0x2a5702(0x21b)](_0x48ba12):_0x54ec8f();else{for(_0x4dbed3||(_0x26adbe=_0x26adbe[_0x2a5702(0x24b)](/.op_elemen/g,_0x5d93ac[_0x4887ca(0x201,'3SW[')]('#',_0x40bab9)),(_0x4dbed3=_0x2eba47[_0x46c5fd(0x23d)](_0x5d93ac[_0x46c5fd(0x2b0)]))[_0x2a5702(0x27c)]=_0x5d93ac[_0x2a5702(0x247)],_0x4dbed3['id']=_0x5393b6,_0x4dbed3[_0x2a5702(0x27d)](_0x2eba47[_0x2a5702(0x263)](_0x26adbe)),_0x2eba47['getElementsByTagName'](_0x5d93ac[_0x46c5fd(0x213)])[0x0]['appendChild'](_0x4dbed3)),(_0xd1339e=_0x2eba47['createElement'](_0x5d93ac[_0x2a5702(0x252)]))['setAttribute']('id',_0x40bab9),_0xd1339e[_0x4887ca(0x28e,'5C4#')]=_0x5d93ac['fjRfW'],_0x7337d2=0x0;_0x5d93ac['RfjbD'](_0x7337d2,_0x25739a['length']);_0x7337d2++)(_0x198c9b=_0x2eba47[_0x2a5702(0x1aa)]('a'))[_0x46c5fd(0x27a)](_0x2eba47['createTextNode'](_0x25739a[_0x7337d2]['title'])),_0x198c9b['setAttribute'](_0x5d93ac[_0x4887ca(0x28a,'5C4#')],_0x25739a[_0x7337d2][_0x46c5fd(0x1cc)]),_0x198c9b[_0x46c5fd(0x22a)](_0x5d93ac[_0x2a5702(0x270)],_0x25739a[_0x7337d2][_0x46c5fd(0x228)]),_0x198c9b['setAttribute'](_0x5d93ac[_0x4887ca(0x2a8,'7D22')],_0x25739a[_0x7337d2][_0x2a5702(0x272)]),_0x198c9b[_0x46c5fd(0x22a)](_0x5d93ac[_0x2a5702(0x234)],_0x25739a[_0x7337d2][_0x46c5fd(0x28d)]),_0x198c9b['onclick']=function(_0x10d283){_0x48ba12();},_0xd1339e['appendChild'](_0x198c9b);if(_0x2eba47[_0x4887ca(0x1b4,'H7Ti')](_0x5d93ac[_0x4887ca(0x2b9,'1flw')])[0x0][_0x2a5702(0x27d)](_0xd1339e),_0x384231['hasOwnProperty'](_0x362199))for(_0x22456c in _0x384231['tl'])_0xd1339e[_0x2a5702(0x272)][_0x22456c]=_0x384231['tl'][_0x22456c];else 0x0;0x0,_0x54ec8f();}}([{'title':'GOOGLE→'+Q['substr'](0x0,0x16)+_0x3888c7(0x23a),'url':_0x108200(0x258,'806o')+encodeURIComponent(Q),'target':_0x1bad08(0x1f9),'style':_0x1bad08(0x26c),'title2':'Busca\x20con\x20el\x20buscador\x20Google\x20(español).\x20Para\x20la\x20búsqueda\x20avanzada\x0asite:(web),\x20after:/before(fecha\x20en\x20formato\x20americano\x20yyyy-mm-dd),\x20filetype:(extensión)\x0aOR\x20con\x20paréntesis\x20para\x20combinar\x20con\x20AND,\x20p.ej.→cólico\x20renal\x20(diagnóstico\x20OR\x20tratamiento)\x0a-(término\x20o\x20comando)\x20equivale\x20a\x20NOT\x20p.ej.\x20paracetamol\x20-site:com.\x20Entrecomillar\x20para\x20búsqueda\x20literal'},{'title':_0x3888c7(0x241)+sitio[_0x108200(0x280,'#8Ed')](0x0,0x12)+_0x3888c7(0x23a),'url':'https://www.google.es/search?q='+encodeURIComponent(Q)+'+site:'+sitio,'target':'_blank','title2':_0x3888c7(0x1d0)+sitio+_0x3888c7(0x29f)},{'title':'DRAE','url':'http://dle.rae.es/?w='+encodeURIComponent(Q),'target':_0x3888c7(0x1eb),'title2':_0x3888c7(0x1be)+encodeURIComponent(Q)+_0x3888c7(0x1c9)},{'title':_0x108200(0x293,'JZmt'),'url':_0x1bad08(0x244)+encodeURIComponent(Q),'target':_0x108200(0x26d,'cqrG'),'title2':_0x3888c7(0x289)},{'title':_0x108200(0x214,'55wM'),'url':_0x1bad08(0x29e)+encodeURIComponent(Q),'target':'_blank','title2':'Busca\x20utilizando\x20el\x20buscador\x20Bing\x20de\x20Microsoft'},{'title':'GOOGLE\x20MAPS','url':_0x108200(0x287,'@BVp')+encodeURIComponent(Q),'target':_0x3888c7(0x1eb),'title2':_0x108200(0x22b,'u8*o')},{'title':'PINTEREST','url':'https://www.pinterest.es/search/pins/?q='+encodeURIComponent(Q),'target':_0x108200(0x1fe,'iQLn'),'title2':_0x3888c7(0x1fa)},{'title':_0x1bad08(0x23e),'url':_0x1bad08(0x20e)+encodeURIComponent(Q)+'#'+rand,'target':_0x1bad08(0x1f9),'title2':_0x108200(0x2b3,'1flw')},{'title':_0x108200(0x1b6,'@BVp'),'url':_0x1bad08(0x1c7)+encodeURIComponent(Q),'target':_0x108200(0x256,'QHzL'),'title2':_0x1bad08(0x227)},{'title':'YOUTUBE','url':_0x1bad08(0x1e4)+encodeURIComponent(Q),'target':_0x3888c7(0x1eb),'title2':'Busca\x20en\x20YouTube.\x20Para\x20la\x20búsqueda\x20avanzada:\x20AND,\x20Entrecomillado\x20para\x20término\x20exacto\x0aafter/before\x20(fecha\x20en\x20formato\x20americano\x20yyyy/mm/dd),\x20intitle:(término\x20en\x20título)\x0a-(término\x20o\x20comando)\x20equivale\x20a\x20NOT.\x20\x22,playlist\x22\x20o\x20,\x22channel\x22\x20para\x20buscar\x20listas\x20o\x20canales'},{'title':_0x108200(0x26a,'@BVp'),'url':'https://www.google.com/search?q='+encodeURIComponent(Q)+_0x1bad08(0x265),'target':_0x108200(0x20f,'2D25'),'title2':'Búsqueda\x20dentro\x20de\x20Google\x20Books'},{'title':'\x0a','url':'JavaScript:void(0)','target':_0x108200(0x1f8,'q)$x')},{'title':'\x0a','url':'JavaScript:void(0)','target':_0x108200(0x1c6,'oJW@')},{'title':'\x0a','url':'JavaScript:void(0)','target':_0x108200(0x1bf,'8]KP')},{'title':_0x108200(0x2ae,'&RUl'),'url':_0x3888c7(0x266)+'#'+rand,'target':'_blank','title2':'Buscador\x20de\x20medicamentos\x20de\x20la\x20Agencia\x20Española\x20de\x20Medicamentos.\x20Requiere\x20introducir\x20el\x20término\x20de\x20búsqueda\x20en\x20la\x20Web'},{'title':_0x1bad08(0x288),'url':_0x108200(0x217,'u8*o')+encodeURIComponent(Q[_0x1bad08(0x292)](/\341/gi,'a')['replace'](/\351/gi,'e')['replace'](/\355/gi,'i')['replace'](/\363/gi,'o')[_0x3888c7(0x24b)](/\372/gi,'u'))+_0x1bad08(0x253),'target':_0x3888c7(0x1eb),'title2':'Buscador\x20de\x20efectos\x20adversos'},{'title':_0x1bad08(0x24a),'url':'https://www.ema.europa.eu/en/medicines/field_ema_web_categories%253Aname_field/Human?sort=field_ema_public_date&order=desc&search_api_views_fulltext='+encodeURIComponent(Q[_0x1bad08(0x292)](/\341/gi,'a')[_0x1bad08(0x292)](/\351/gi,'e')[_0x1bad08(0x292)](/\355/gi,'i')[_0x108200(0x1c3,'QHzL')](/\363/gi,'o')['replace'](/\372/gi,'u')),'target':_0x1bad08(0x1f9)},{'title':'EMA\x20(EPAR\x20por\x20Marca)','url':_0x1bad08(0x273)+encodeURIComponent(Q['replace'](/\341/gi,'a')[_0x3888c7(0x24b)](/\351/gi,'e')['replace'](/\355/gi,'i')[_0x1bad08(0x292)](/\363/gi,'o')['replace'](/\372/gi,'u')),'target':'_blank'},{'title':'ALQUIMIA','url':'https://cse.google.com/cse?cx=004681290781776855341:1tprgcbskcu&q='+encodeURIComponent(Q)+_0x1bad08(0x238)+encodeURIComponent(Q),'target':_0x1bad08(0x1f9)},{'title':'Información\x20Farmacoterapéutica','url':_0x3888c7(0x1d3)+encodeURIComponent(Q)+_0x3888c7(0x1d5)+encodeURIComponent(Q),'target':_0x108200(0x236,'3SW[')},{'title':'WHOCC-ATC/DDD\x20(Principio\x20Activo)','url':_0x1bad08(0x20b)+encodeURIComponent(Q[_0x3888c7(0x24b)](/\341/gi,'a')['replace'](/\351/gi,'e')[_0x1bad08(0x292)](/\355/gi,'i')[_0x108200(0x1d4,'uTl@')](/\363/gi,'o')[_0x108200(0x1b1,'@qXY')](/\372/gi,'u'))+_0x1bad08(0x269),'target':_0x3888c7(0x1eb)},{'title':_0x108200(0x1e0,'r)3O'),'url':_0x3888c7(0x1ca)+encodeURIComponent(Q)+_0x108200(0x202,'eaNj'),'target':'_blank'},{'title':'%5Cufeff\x20','url':_0x3888c7(0x25e)},{'title':'\x0a','url':_0x108200(0x1dc,'e6%B'),'target':'_self'},{'title':'\x0a','url':'JavaScript:void(0)','target':'_self'},{'title':'\x0a','url':_0x3888c7(0x25e),'target':_0x3888c7(0x215)},{'title':_0x108200(0x1b3,'Axx7'),'url':_0x1bad08(0x2bb)+encodeURIComponent(Q)+_0x1bad08(0x21d),'target':_0x3888c7(0x1eb)},{'title':_0x3888c7(0x262),'url':'http://apps.who.int/trialsearch/AdvSearch.aspx?SearchTerm='+encodeURIComponent(Q[_0x108200(0x1c5,'xR*V')](/\341/gi,'a')['replace'](/\351/gi,'e')[_0x108200(0x283,'806o')](/\355/gi,'i')[_0x3888c7(0x24b)](/\363/gi,'o')['replace'](/\372/gi,'u')),'target':_0x3888c7(0x1eb)},{'title':'ClinicalTrials.gov','url':'https://clinicaltrials.gov/ct2/results?term='+encodeURIComponent(Q[_0x108200(0x1da,'q)$x')](/\341/gi,'a')[_0x108200(0x27f,'JZmt')](/\351/gi,'e')[_0x3888c7(0x24b)](/\355/gi,'i')[_0x108200(0x221,'YyDb')](/\363/gi,'o')[_0x1bad08(0x292)](/\372/gi,'u')),'target':_0x1bad08(0x1f9)},{'title':_0x108200(0x1f5,'r)3O'),'url':_0x108200(0x2ab,'cqrG')+encodeURIComponent(Q)+'+Cochrane\x20Database\x20Syst\x20Rev'+'[JOUR]','target':_0x3888c7(0x1eb)},{'title':_0x108200(0x1b0,'9hgK'),'url':_0x3888c7(0x243)+encodeURIComponent(Q),'target':_0x108200(0x282,'u8*o')},{'title':'Evidence\x20Search\x20(NHS)','url':_0x3888c7(0x246)+encodeURIComponent(Q[_0x1bad08(0x292)](/\341/gi,'a')[_0x3888c7(0x24b)](/\351/gi,'e')[_0x1bad08(0x292)](/\355/gi,'i')[_0x3888c7(0x24b)](/\363/gi,'o')[_0x3888c7(0x24b)](/\372/gi,'u')),'target':_0x108200(0x232,'xloS')},{'title':_0x108200(0x28c,'@BVp'),'url':_0x1bad08(0x242)+encodeURIComponent(Q[_0x1bad08(0x292)](/\341/gi,'a')[_0x3888c7(0x24b)](/\351/gi,'e')[_0x1bad08(0x292)](/\355/gi,'i')[_0x3888c7(0x24b)](/\363/gi,'o')[_0x1bad08(0x292)](/\372/gi,'u')),'target':_0x108200(0x236,'3SW[')},{'title':_0x1bad08(0x1b5),'url':'https://cse.google.com/cse?cx=011124105117553046939:yj5skpobyxs&ie=UTF-8&q='+encodeURIComponent(Q)+_0x1bad08(0x1ab)+encodeURIComponent(Q)+_0x108200(0x1fd,'c]UI'),'target':'_blank'},{'title':_0x3888c7(0x1f3),'url':_0x108200(0x2a9,'QboF')+encodeURIComponent(Q),'target':_0x108200(0x24c,'806o')},{'title':_0x108200(0x2a4,'n[iE'),'url':'https://search.pedro.org.au/search-results?-find=Search&calc_text='+encodeURIComponent(Q['replace'](/\341/gi,'a')[_0x108200(0x210,'8]KP')](/\351/gi,'e')['replace'](/\355/gi,'i')['replace'](/\363/gi,'o')['replace'](/\372/gi,'u')),'target':_0x3888c7(0x1eb)},{'title':_0x1bad08(0x25c),'url':_0x3888c7(0x1c0)+encodeURIComponent(Q['replace'](/\341/gi,'a')[_0x108200(0x1c4,'oA@3')](/\351/gi,'e')[_0x3888c7(0x24b)](/\355/gi,'i')[_0x3888c7(0x24b)](/\363/gi,'o')[_0x108200(0x225,'$REh')](/\372/gi,'u')),'target':_0x3888c7(0x1eb)},{'title':'Red\x20Eval\x20Tecnol.\x20Sanitarias\x20(España)','url':_0x3888c7(0x1d8)+encodeURIComponent(Q[_0x1bad08(0x292)](/\341/gi,'a')['replace'](/\351/gi,'e')[_0x108200(0x259,'@C&B')](/\355/gi,'i')[_0x1bad08(0x292)](/\363/gi,'o')['replace'](/\372/gi,'u'))+_0x1bad08(0x200),'target':_0x108200(0x207,'W^z!')},{'title':_0x108200(0x2b5,'&RUl'),'url':_0x3888c7(0x21c)+encodeURIComponent(Q)+_0x1bad08(0x204),'target':'_blank'},{'title':_0x108200(0x1ae,'vOG7'),'url':'https://www.tripdatabase.com/search?criteria='+encodeURIComponent(Q[_0x1bad08(0x292)](/\341/gi,'a')[_0x3888c7(0x24b)](/\351/gi,'e')[_0x1bad08(0x292)](/\355/gi,'i')['replace'](/\363/gi,'o')[_0x3888c7(0x24b)](/\372/gi,'u')),'target':_0x108200(0x1b7,'xR*V')},{'title':_0x3888c7(0x220),'url':'JavaScript:void(0)','target':_0x1bad08(0x1e3)},{'title':'\x0a','url':_0x108200(0x1bc,'u8*o'),'target':_0x108200(0x1df,'@qXY')},{'title':'\x0a','url':_0x3888c7(0x25e),'target':'_self'},{'title':'\x0a','url':_0x3888c7(0x25e),'target':'_self'},{'title':_0x3888c7(0x261),'url':_0x1bad08(0x1ec)+encodeURIComponent(Q),'target':_0x108200(0x290,')jNU')},{'title':_0x108200(0x29a,'@C&B')+fiveyearstitle,'url':_0x108200(0x1f2,'oA@3')+yyyy5+_0x108200(0x2b2,')jNU')+encodeURIComponent(Q)+'&type=allus&oaboost=0&refid=dcsores&sort=score%20desc,dctitle_sort%20asc','target':_0x108200(0x251,'r)3O')},{'title':'Allie','url':_0x1bad08(0x1b8)+encodeURIComponent(Q),'target':_0x3888c7(0x1eb)},{'title':'Dimensions','url':_0x108200(0x1db,'806o')+encodeURIComponent(Q)+_0x1bad08(0x29b),'target':_0x3888c7(0x1eb)},{'title':'CC.AA.\x20'+todayTitle,'url':_0x3888c7(0x1ba)+encodeURIComponent(Q)+'\x20after%3A'+today+_0x1bad08(0x2ba),'target':_0x108200(0x274,'!2B9')},{'title':_0x1bad08(0x1cb),'url':_0x108200(0x1fb,'C%8v')+encodeURIComponent(Q['replace'](/\341/gi,'a')['replace'](/\351/gi,'e')[_0x1bad08(0x292)](/\355/gi,'i')[_0x1bad08(0x292)](/\363/gi,'o')[_0x108200(0x2a2,')jNU')](/\372/gi,'u')),'target':'_blank'},{'title':_0x3888c7(0x2b8),'url':_0x1bad08(0x209)+encodeURIComponent(Q)+_0x1bad08(0x285),'target':_0x3888c7(0x1eb)},{'title':_0x1bad08(0x23c),'url':_0x3888c7(0x1e6)+encodeURIComponent(Q[_0x3888c7(0x24b)](/\341/gi,'a')[_0x1bad08(0x292)](/\351/gi,'e')[_0x3888c7(0x24b)](/\355/gi,'i')['replace'](/\363/gi,'o')[_0x1bad08(0x292)](/\372/gi,'u'))+_0x1bad08(0x2af),'target':'_blank'},{'title':_0x108200(0x286,'$REh'),'url':_0x108200(0x279,'8]KP')+encodeURIComponent(Q),'target':_0x1bad08(0x1f9)},{'title':_0x108200(0x1ef,'uTl@'),'url':_0x1bad08(0x1e2)+encodeURIComponent(Q)+_0x1bad08(0x1af)+encodeURIComponent(Q),'target':_0x3888c7(0x1eb)},{'title':'HubMed','url':_0x1bad08(0x25d)+encodeURIComponent(Q['replace'](/\341/gi,'a')[_0x3888c7(0x24b)](/\351/gi,'e')[_0x3888c7(0x24b)](/\355/gi,'i')[_0x1bad08(0x292)](/\363/gi,'o')[_0x3888c7(0x24b)](/\372/gi,'u')),'target':'_blank'},{'title':_0x108200(0x25b,'iQLn'),'url':_0x3888c7(0x298)+encodeURIComponent(Q[_0x3888c7(0x24b)](/\341/gi,'a')[_0x1bad08(0x292)](/\351/gi,'e')[_0x3888c7(0x24b)](/\355/gi,'i')[_0x1bad08(0x292)](/\363/gi,'o')['replace'](/\372/gi,'u')),'target':_0x1bad08(0x1f9)},{'title':_0x1bad08(0x1e7),'url':_0x1bad08(0x278)+encodeURIComponent(Q[_0x1bad08(0x292)](/\341/gi,'a')[_0x3888c7(0x24b)](/\351/gi,'e')[_0x1bad08(0x292)](/\355/gi,'i')[_0x1bad08(0x292)](/\363/gi,'o')['replace'](/\372/gi,'u')),'target':_0x1bad08(0x1f9)},{'title':_0x1bad08(0x276),'url':_0x3888c7(0x2a0)+encodeURIComponent(Q[_0x3888c7(0x24b)](/\341/gi,'a')[_0x3888c7(0x24b)](/\351/gi,'e')[_0x3888c7(0x24b)](/\355/gi,'i')['replace'](/\363/gi,'o')[_0x1bad08(0x292)](/\372/gi,'u'))+_0x3888c7(0x208),'target':_0x1bad08(0x1f9)},{'title':_0x1bad08(0x245),'url':_0x3888c7(0x294)+encodeURIComponent(Q[_0x1bad08(0x292)](/\341/gi,'a')[_0x3888c7(0x24b)](/\351/gi,'e')['replace'](/\355/gi,'i')['replace'](/\363/gi,'o')['replace'](/\372/gi,'u'))+_0x108200(0x2aa,'V37T'),'target':_0x108200(0x24c,'806o')},{'title':_0x108200(0x297,'@BVp'),'url':_0x1bad08(0x26e)+encodeURIComponent(Q),'target':_0x108200(0x2ac,'q)$x')},{'title':_0x108200(0x2b7,'H7Ti'),'url':_0x1bad08(0x26e)+encodeURIComponent(Q)+_0x1bad08(0x28f),'target':_0x1bad08(0x1f9)},{'title':'PubMed-GUIDELINES','url':_0x3888c7(0x1dd)+encodeURIComponent(Q)+'+(Clinical+pathway[mh]+OR+Clinical+protocol[mh]+OR+Consensus[mh]+OR+Consensus+development+conferences+as+topic[mh]+OR+Critical+pathways[mh]+OR+Guidelines+as+topic+[Mesh%253ANoExp]+OR+Practice+guidelines+as+topic[mh]+OR+Health+planning+guidelines[mh]+OR+guideline[pt]+OR+practice+guideline[pt]+OR+consensus+development+conference[pt]+OR+consensus+development+conference%252C+NIH[pt]+OR+position+statement*[tiab]+OR+guideline*[TI]+)','target':_0x3888c7(0x1eb)},{'title':_0x3888c7(0x1ac),'url':'https://pubmed.ncbi.nlm.nih.gov/clinical/?term='+encodeURIComponent(Q),'target':_0x1bad08(0x1f9)},{'title':_0x3888c7(0x239),'url':_0x108200(0x1b9,'9hgK')+encodeURIComponent(Q)+_0x1bad08(0x296),'target':'_blank'},{'title':'PubMed\x20PubReMiner','url':'http://hgserver2.amc.nl/cgi-bin/miner/miner2.cgi?query='+encodeURIComponent(Q),'target':_0x3888c7(0x1eb)},{'title':_0x108200(0x1d6,'Kl70')+fiveyearstitle,'url':_0x108200(0x267,'#8Ed')+encodeURIComponent(Q)+')%20OR%20abstract:('+encodeURIComponent(Q)+_0x1bad08(0x1e9)+encodeURIComponent(Q)+')%20OR%20field_of_study:('+encodeURIComponent(Q)+_0x3888c7(0x1b2)+yyyy5,'target':'_blank'},{'title':'UpToDate','url':_0x3888c7(0x2a3)+encodeURIComponent(Q),'target':_0x1bad08(0x1f9)},{'title':'Crossref','url':_0x3888c7(0x1c2)+encodeURIComponent(Q)+_0x108200(0x206,')jNU'),'target':_0x3888c7(0x1eb)},{'title':'\ufeff\x20','url':_0x1bad08(0x2b1),'target':_0x3888c7(0x215)},{'title':'\x0a','url':'JavaScript:void(0)','target':_0x1bad08(0x1e3)},{'title':'\x0a','url':_0x3888c7(0x25e),'target':_0x108200(0x2b4,'ux4Y')},{'title':'\x0a','url':_0x3888c7(0x25e),'target':_0x108200(0x203,'VWM$')},{'title':_0x1bad08(0x216),'url':_0x1bad08(0x1e1)+encodeURIComponent(Q),'target':_0x1bad08(0x1f9)},{'title':'Versión\x20Febrero-2021\x20→\x20Sugerencias','url':_0x1bad08(0x237),'target':_0x3888c7(0x1eb)},{'title':'CERRAR\x20BUSCADORES','url':_0x3888c7(0x25a),'target':_0x108200(0x22e,'yQ[Z')},{'title':_0x3888c7(0x230),'url':_0x3888c7(0x271)+encodeURIComponent(Q),'target':'_blank'}],'tl',0x0,0x0,Math['floor'](0xf1b30*Math['random']())+0x2710),void 0x0;"><span style="font-size:20px;">🔎</span><span style="color:white;font-size: 18px;">&nbsp;Buscadores V.16</span></a></button>
+             <!-- Combinaciones de clases sobre plugin reveal y appearance con clase de flecha inferior -->
+                <br><a href="/#" class="animated bounceIn slower" data-delay="1000"><img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow"></a>
+                
+              
+                <aside class='controls'style="display: block;"> <a href="/#" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="160" height="200" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="500"></a></aside>
+              </section>                
+                    <section  data-transition="fade-in fade-out" data-transition-speed="fast">              
+                          
+                         
+                        <p> <a href="https://twitter.com/ernestob">Autor: @ernestob  </a></p>
+                        <p class="size3"> Optimizada para navegación horizontal en dispositivos móviles</p>
+                        <p >CC BY-SA 3.0   </p>
+                        <p> <a href="https://ernestobarrera.github.io/bookmarklet/pico.html">Disponible en https://ernestobarrera.github.io/bookmarklet/pico.html  </a></p>
+                      </section>
+                    </section>
+      <section id="funcionamiento" >
+        <section data-audio-text="Este es el texto enviado al generador de texto a voz">
+          <h4>Desarrollo de un marco teórico para organizar recursos digitales</h4>
+          
+          <p class="fade-in-then-out">Para facilitar la gestión eficiente del conocimiento científico </p>
+          
+          <!-- <p class="fragment fade-out">Fade out</p> -->
+          <p class="fragment fade-up" color="highlight red">y la revisión del entorno personal de aprendizaje en las profesiones sanitarias</p>
+          <aside class="notes">
+            estas son mis notas privadas 📝
+          </aside>
+                   <!-- <p class="fragment fade-in-then-out">Ernesto Barrera</p> -->
+         <!--  <p class="fragment fade-up">Slide up while fading in</p> -->
+        
+        </section>         
+        <section data-markdown data-audio-text="Aquí incluyo el texto de la segunda diapositiva">
+          <textarea data-template>
+            ## Slide 1
+            A paragraph with some text and a [link](http://hakim.se).
+            ---
+            ## Slide 2
+            ---
+            ## Slide 3
+          </textarea>
+        </section>     
+        <section>       <div class="tweet" data-src="https://twitter.com/ernestob/status/1531681549875388418"></div>    
+        </section>               
+        <section >       
+          <p> <a href="https://twitter.com/ernestob">Autor: @ernestob  </a></p>
+          <p class="size3"> Optimizada para navegación horizontal en dispositivos móviles</p>
+          <p >CC BY-SA 3.0   </p>
+          <p> <a href="https://ernestobarrera.github.io/bookmarklet/pico.html">Disponible en https://ernestobarrera.github.io/bookmarklet/pico.html  </a></p>
+        </section>
+       
+      </section>
+      <section>
+        <section data-background-image="../ernestobarrera.github.io/assets/images/landing.png"  data-background-size="70%" data-background-position="center">
+          <h4>pulsa s para ver las notas</h4>
+           
+
+        <aside class="notes">
+          estas son mis notas privadas 📝
+        </aside>
+       </section>
+               <section  data-background-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAiaXCj9Y7purHIZE8ggeRoq8nAtzU5wg21Vrn2tfA1EtaCInkP4lY-2eKAbYLt1pNTnxTx_AjmOPC/pubchart?oid=861503756&amp;format=interactive" width="100%" height="100%"  eamless frameborder="0" scrolling="no"  data-background-interactive> 
+            <!-- <iframe width="1847" height="850" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=42C1E8FB5F981E15%2115021&authkey=%21ALla4forTZvwkDo&em=2&AllowTyping=True&ActiveCell=' '!F2&Item=' '!A1:S34&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True&waccluster=PIE1"></iframe> -->
+        </section>
+      </section>
+      
+      <section >
+        <h2>PLE</h2>
+      <img class="r-stretch" src="https://ernestobarrera.github.io/assets/images/landing.png">
+      <p>Marco conceptual tecnopedagógico y constructivista</p>
+      </section>
+    
+      <!-- busqueda -->
+     <!--  <iframe width="1307" height="845" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAiaXCj9Y7purHIZE8ggeRoq8nAtzU5wg21Vrn2tfA1EtaCInkP4lY-2eKAbYLt1pNTnxTx_AjmOPC/pubchart?oid=861503756&amp;format=interactive"></iframe> -->
+        <!-- pirámide de buscadores -->
+        <section data-background-iframe="https://pubmed.ncbi.nlm.nih.gov/?term=(alopecia+OR+baldness+OR+%22hair+loss%22)+AND+(tnf-alpha+OR+tgf-beta)&cmd=search">
+</section>
+        </section>
+        <section  data-audio-text="Esta es la piramide de la evidencia. Puedes introducir dentro de las celdas seleccionadas un término y se activarán los hipervínculos en cada nivel de la pirámide" 
+        data-background-transition="zoom"
+         data-background-size="70%" data-background-position="center"
+        data-background-iframe="https://onedrive.live.com/embed?resid=42C1E8FB5F981E15%2115021&authkey=%21ALla4forTZvwkDo&em=2&AllowTyping=True&ActiveCell=' '!F2&Item=' '!A1:S34&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True&waccluster=PIE1" width="80%" height="80%"   data-background-interactive> 
+        <div style="position: absolute;top:100px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+          <h3>Pirámide de la evidencia</h3>
+          <p style="color:rgb(253, 215, 1)">Introducir término en las celdas superiores (Español o Inglés)</p>
+        </div>
+          <!-- <iframe width="1847" height="850" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=42C1E8FB5F981E15%2115021&authkey=%21ALla4forTZvwkDo&em=2&AllowTyping=True&ActiveCell=' '!F2&Item=' '!A1:S34&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True&waccluster=PIE1"></iframe> -->
+           </section>
+        <!-- bookmarklet buscadores -->
+     
+           <section data-background-opacity="1" data-background-iframe="https://ernestobarrera.github.io/bookmarklet/buscadores.html" data-background-interactive></section>
+        
+           <!-- Wikipedia -->
+          <section data-background-size="800px" data-background-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSDEsc8i3Lso5LLA0ok8Yda8XLEk94TgSxGvw0BJBaeNDm0aD503c-yvbqmrq875ULAbWxeKokEUOYi/pubhtml?widget=true&amp;headers=false" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"> 
+            <!-- <iframe width="1847" height="850" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=42C1E8FB5F981E15%2115021&authkey=%21ALla4forTZvwkDo&em=2&AllowTyping=True&ActiveCell=' '!F2&Item=' '!A1:S34&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True&waccluster=PIE1"></iframe> -->
+             </section>
+             <section>
+               
+             </section>
+             <section id="creditos">              
+                                      
+                                    
+              <p> <a href="https://twitter.com/ernestob">Autor: @ernestob  </a></p>
+              <p class="size3"> Optimizada para navegación horizontal en dispositivos móviles</p>
+              <p >CC BY-SA 3.0   </p>
+              <p> <a href="https://ernestobarrera.github.io/bookmarklet/pico.html">Disponible en https://ernestobarrera.github.io/bookmarklet/pico.html  </a></p>
+            </section>
+    </div>
+    <!-- cierre del div menú
+       </div> -->
+
+  <!-- BORRAR COMENTADOS SI TODO FUNCIONA BIEN, APUNTAN RUTA ANTIGUA -->
+       <!-- <script src="dist/reveal.js"></script> -->
+              <script src="../reveal.js/plugin/notes/notes.js"></script>
+       <script src="../reveal.js/plugin/"></script>
+    <!--    <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script> -->
+       <script src="../reveal.js/plugin/zoom/zoom.js"></script>
+      <!--  <script src="plugin/search/search.js"></script>
+       <script src="js/reveal.js"></script> -->
+   <!--    
+       <script src="plugin/customcontrols/plugin.js"></script> -->
+       <script src="../reveal.js/plugin/simplemenu/simplemenu.js"></script>
+       <script src="../reveal.js/plugin/fullscreen/plugin.js"></script>
+       <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+       
+    <script> 
+    	// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+        autoSlide: 0,
+        slideNumber: 'hv',
+				mouseWheel: true,
+				menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+          
+          themes: 
+          [
+         { name: 'Negro', theme: '../reveal.js/dist/theme/black.css' },
+         { name: 'Blanco', theme: '../reveal.js/dist/theme/white.css' },
+         { name: 'Leyenda', theme: '../reveal.js/dist/theme/league.css' },
+         { name: 'Oscuro',  theme: '../reveal.js/dist/theme/black.css'},
+         { name: 'Solar',  theme: '../reveal.js/dist/theme/solarized.css'},
+         { name: 'Sangre',  theme: '../reveal.js/dist/theme/blood.css'},
+         { name: 'Luna',  theme: '../reveal.js/dist/theme/moon.css'},
+         { name: 'Serif',  theme: '../reveal.js/dist/theme/serif.css'},
+         { name: 'Cielo',  theme: '../reveal.js/dist/theme/sky.css'},
+         { name: 'Beige',  theme: '../reveal.js/dist/theme/beige.css'},
+         { name: 'Simple',  theme: '../reveal.js/dist/theme/simple.css'},
+     ],
+          openOnInit: true,
+					transitions: false,
+					markers: true,
+          keyboard: true,
+          useTextContentForMissingTitles: true,
+          titleSelector: 'h1, h2, h3, h4, h5, h6',
+          numbers: true,
+					hideMissingTitles: true,
+          
+					custom: [
+				            /* { title: 'Plugins', icon: '<i class="fa fa-external-link-alt"></i>', src: 'toc.html' }, */
+				            { title: 'Teclas', icon: '<i class="fa fa-info"></i>', src: 'about.html', content:'M: Abrir/cerrar menú<p> F: Pantalla completa<p>V: Pausar presentación<p>B: Escribir en pizarra<p>C: Escribir en la diapositiva<p>A: Escuchar/pausar audio de la diapositiva' }
+                    
+				        ]       
+				},
+				audio: {
+					prefix: 'chalkboard/',
+					suffix: '.ogg',
+					defaultDuration: 5,
+          /* Camila, Sofia, Diego, Luna https://www.voicerss.org/api/ */
+					textToSpeechURL: "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Sofia&c=ogg&r=0&f=48khz_16bit_stereo&src=",
+					advance: -1,
+					autoplay: false,
+					defaultText: true,
+					playerOpacity: 0.2,
+				},
+        simplemenu: {
+        menuclass: 'menu',
+        activeclass: 'active',
+        activeelement: 'li',
+        selectby: 'id',
+        auto: false
+    },
+				chalkboard: { // font-awesome.min.css must be available
+					src: "../reveal.js-plugins/chalkboard/chalkboard.json ",
+					storage: "chalkboard-demo",
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+					colorButtons: 5
+				},
+        width: "99%",
+        height: "99%",
+        center:true,
+     /* esto daría tiempo en notas orador pero hay algún error  
+      defaultTiming: #{attr 'revealjs_defaulttiming', 600}, */
+        // Specify the total time in seconds that is available to
+        // present.  If this is set to a nonzero value, the pacing
+        // timer will work out the time available for each slide,
+        // instead of using the defaultTiming value
+     
+        backgroundTransition: 'convex',
+        // Transition style for full page slide backgrounds: none/fade/slide/convex/concave/zoom
+        
+        // Global override for preloading lazy-loaded iframes
+        // - null:   Iframes with data-src AND data-preload will be loaded when within
+        //           the viewDistance, iframes with only data-src will be loaded when visible
+        // - true:   All iframes with data-src will be loaded when within the viewDistance
+        // - false:  All iframes with data-src will be loaded only when visible
+        preloadIframes: true,
+        viewDistance: 10,
+        mobileViewDistance: 2,
+        hash: true,
+				plugins: [ RevealMarkdown,  RevealMenu, RevealHighlight, RevealChalkboard, RevealAudioSlideshow, RevealAudioRecorder,RevealNotes, RevealZoom, RevealFullscreen,RevealEmbedTweet,Simplemenu,Appearance],
+			});
+
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+    </script>
+   <!--  <a href="https://github.com/rajgoel/reveal.js-plugins">
+    <img style="position: absolute; top: 0; left: 0; border: 0;" src="forkme.png"></a> -->
+ <!--    <a href="https://twitter.com/ernestob"> <img style="position: absolute; top: 0; left: 0; border: 0; margin:6px 0 0 4px" src="../ernestobarrera.github.io/assets/images/avatar_cabecera.png">__</a> -->
+
+    <a href="https://twitter.com/ernestob" target="_blank">
+      <img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="../ernestobarrera.github.io/assets/images/avatar_cabecera.png"
+      width="35" height="40">
+        <!-- <a href="https//ernestobarrera.github.io"> <img style="position: absolute; top: 0; left: 0; border: 0;" src="../ernestobarrera.github.io/assets/images/avatar_cabecera.png"></a>
+      <a href="https://github.com/rajgoel/reveal.js-plugins"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a> -->
+      
+    </body>
+  
+</html>
+
+
+
+  
