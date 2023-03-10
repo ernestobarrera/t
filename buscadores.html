@@ -1,0 +1,548 @@
+<!-- versión original P2C17 adaptada aquí -->
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+<!-- meta_propio_inicio -->
+<meta name="description" content="Web con recursos para facilitar la búsqueda de información y gestión del conocimiento en Ciencias de la Salud">
+<meta name="author" content="Ernesto Barrera">
+<link rel="icon"  href="../ernestobarrera.github.io/assets/images/avatar_cabecera.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Herramientas para buscar información sanitaria | ​👨‍⚕️ EB">
+<meta property="og:site_name" content="Recursos para la gestión de información  🔎🩺⚕">
+<meta property="og:url" content="https://ernestobarrera.github.io/">
+<!-- <meta property="og:image" content="https://ernestobarrera.github.io/assets/images/me.png" > -->
+<meta property="article:published_time" content="2023-03-01">
+<meta property="article:author" content="Ernesto Barrera">
+<!-- fin -->
+    <title> Bookmarklet 🔎Buscadores! | @ernestob </title>
+
+    <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  
+    <!-- tema anterior black -->
+    <link rel="stylesheet" href="../reveal.js/dist/theme/blood.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/plugin/simplemenu/simplemenu.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/plugin/highlight/zenburn.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
+    
+    <!-- Animaciones para el plugin appearance https://github.com/Martinomagnifico/reveal.js-appearance-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/appearance/appearance.css">
+
+
+    <script src="../reveal.js/dist/reveal.js"></script>
+    <script src="../reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="../reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="../reveal.js-plugins/menu/menu.js"></script>
+    <script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
+    <script src="../reveal.js-plugins/appearance/appearance.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
+    <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+    
+    
+    
+  
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+  
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+     <!-- Estilo personalizado (heredados, valorar cambio a nuevo framework reveal) -->
+  <style>
+  
+
+    .left {
+      text-align: left;
+      
+    }
+    .pie {
+      position:absolute !important;
+      bottom:5;}
+      .size-1 {
+      font-size: 32px;
+    }
+    .size {
+      font-size: 26px;
+    }
+      .size0 {
+      font-size: 20px;
+    }
+    .size1 {
+      font-size: 16px;
+    }
+    .size2 {
+      font-size: 14px;
+    }
+    .size3 {
+      font-size: 12px;
+    }
+    .color{
+      color:rgb(255, 191, 71);
+    }
+    .footer {
+  position: absolute; 
+  left: 35%;
+  bottom: 1em;
+}
+.highlighted {
+    background-color: rgba(252, 212, 212, 0.5);
+}
+
+/* ideas animación botón https://webdeasy.de/en/top-css-buttons-en/ */
+
+.glow-on-hover {
+    width: 280px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(214, 197, 197);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 8px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 191, 71);
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+  </style>
+  <!--- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKR6RB1ZC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YFKR6RB1ZC');
+</script>
+  </head>
+  <body>
+    <div class="reveal">
+      
+     
+   
+      <!--esto parece sería del menú 
+    <div class="menubar">
+      <ul class="menu"></ul>
+  </div> -->
+  <div class="menubar">
+    <ul class="menu">
+      <!-- Here's the menu -->
+      <li><a  href="#/que">Qué es</a></li>
+      <li><a href="#/instalacion">Instalación</a></li>
+     <!--  <li><a href="#/funcionamiento">Funcionamiento</a></li> -->
+      <li><a href="#/creditos">Créditos</a></li>
+    </ul>
+  </div>
+  <div class="slides">
+           
+         
+          <!-- presentación con landing y contexto -->
+          <section  data-transition="fade-in fade-out" data-transition-speed="very-slow" id="que">
+            <section data-audio-text=" Este bookmarklet facilita la búsqueda de información dentro de múltiples páginas web.  Es de especial interés en ciencias de la salud.
+            ¿Para qué lo puedes usar?
+           
+            Presta atención al menú lateral, que puedes mostrar u ocultar pulsando la tecla M;  te llevará a todas las páginas de este sitio web
+            "data-audio-advance="1000">
+            <aside class="notes">
+              Este bookmarklet facilita la búsqueda de información en múltiples páginas web y motores de búsqueda.
+                       Presta atención al menú lateral, que puedes mostrar u ocultar pulsando la tecla M;  te llevará a todas las páginas de este sitio web. 📝
+            </aside>
+            <h5 class="color" style="word-spacing: 20px;"> Bookmarklet 🔎Buscadores!  </h5>
+            <div style="position: absolute;top:300px; width: 30%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+              <h3>💡TIP </h3>
+              <p style="color:rgb(253, 215, 1)">Girar la rueda del ratón o pulsar las teclas de flecha del teclado para navegar por otras páginas de esta presentación</p>
+                               
+            </div> 
+              <p class="size color"> Una aplicación para buscar simultáneamente en más de 50 buscadores o páginas web
+              <br>
+              <br >Se instala en 1 segundo</br> Funciona con 1 solo clic 
+              <br>
+              
+              
+           
+         
+                      </section> 
+                      
+    
+                </section>
+                <section id="instalacion" >
+                  <section data-audio-text=" Puedes instalarlo desde esta pantalla manteniendo el bookmarklet pulsado con el botón izquierdo del ratón y arrastrándolo a la barra de favoritos del navegador"   >
+                    
+                    <br/><br><br> <button type="button" class="glow-on-hover"  
+              
+                    style="background-color:#F0A908;padding:10px 25px 10px 10px;  box-shadow: 2px 2px 3px 1px rgba(255, 251, 251, 0.452)"><a class="size2" href="javascript:/*busca en más de 50 motores de búsqueda de interés sanitario (versión 16)*/
+                    
+
+
+
+
+
+
+
+                    var _0xe1d6=['Ahr0Chm6lY9LCY53AwTPCgvKAweUB3jNl3DPA2KV','d8kAxxFdUSoAqSo3wdSSoSoZiwdcPwxcOmkbyahdMSowWO7cKuNcHsq6W5KHr8ohW4qzghtdOSkEW4jrW5felvJcPmk1W4u/AaFcLvpcJgCun8kEsCkyW77cO2RcLfdcLmonuM3dN8o4WQJdUxSwWPTGhH/cPCoElCkjsmo+wH3cI2qlW7ddHKTwW4aViv0QkXOIWOldSmksW77cN8o1W7ldJSoWl8kRW7ZcNcdcMYFdPCo/cGGEW4GzeZVdVmoiW6BdMmkWamoZW53dP3JcVmolFY/dNJPqFYxdTq7cO8oydCo6WRBcQcadvmozWRpdMYlcNSomWOlcHu/cLComDZD4WP/dGtZcNuhdMSovWOWjvf/cTCkAW40OhmkRW4ddHrzPW5xdIYtdMxtcJc7cRqOBW4ldGWpdPSkNaCkfa07dV8ksWOJdPGRcThldLJNcSSk6W4tcTCkfWP8idSojt8kneX5BWRanymoathZcJ8kOWQfxeeHrWOvqWRjtoMhcJ8oIW4ZdVSkLWQdcSrJdMCkLv8olh8o8W5BdOYpcT3NcRmkQw8oqD0BdJGFcUf/cLCkvumkvsCk1kCo9nc1LcmkhexLrW5z6W7PXvCoSW6vXWP3cIq3dUIuAW6FcNCkWFM8jA8oeW7FcHN7cL8k5WOn1w8oar8o8eXq=','vxbuB0rHDgu=','kCkfBmo8dv4+','&t=1','r3jLEsbmAxrLCMf0DxjL','Fmo+kCopWOJdQG==','WRldHSkgsZOpWOuhAM4SqSooWOCBlfqfWR3cLSk7W53cUgDgW78jjq==','WRRdMXdcPvqPWOdcSSoZj0ZdPIVcVaz4AWZdSSotsHhdJCkqeCksWPX4WR7dQsZcKmoEWOtcGCkJWRJdP8oji2b0q8ohvKhcNCktWQvXWQ7cPK8yjLhcRZXGosJcHCoxW4BcPmktWPTrWRtdOSkYzCkKjmksWQrCWPNdMCk4WPddS8oRxgZcGcT0CvGuW73cR8oLW6j9yrqfW4XvWP4=','smolWP/dVCkZF30=','Open-i\x20es\x20un\x20servicio\x20de\x20la\x20Biblioteca\x20Nacional\x20de\x20Medicina\x20(USA)\x20que\x20permite\x20la\x20búsqueda\x20y\x20recuperación\x20de\x20resúmenes\x20e\x20imágenes\x20(incluyendo\x20tablas,\x20gráficos,\x20imágenes\x20clínicas,\x20etc.)\x20de\x20la\x20literatura\x20de\x20código\x20abierto,\x20y\x20de\x20colecciones\x20de\x20imágenes\x20biomédicas.\x20La\x20búsqueda\x20puede\x20realizarse\x20mediante\x20consultas\x20de\x20texto\x20y\x20de\x20imágenes.\x20Open-i\x20proporciona\x20acceso\x20a\x20millones\x20de\x20imágenes\x20de\x20alrededor\x20de\x20artículos\x20de\x20PubMed\x20Central®;\x20radiografías\x20de\x20tórax\x20con\x20informes\x20de\x20radiología;\x20imágenes\x20de\x20la\x20colección\x20de\x20Historia\x20de\x20la\x20Medicina\x20de\x20la\x20NLM\x20y\x20ilustraciones\x20ortopédicas','CMfUzg9T','tKLdrsaOtKHtkq==','Ahr0Chm6lY93D3CUDhjPCgrHDgfIyxnLlMnVBs9ZzwfYy2G/y3jPDgvYAwe9','Pedro\x20(Physiotherapy\x20Evidence)','WPbvWQufW6i=','WOqrnceJWPi=','Un\x20buscador\x20de\x20intervenciones\x20e\x20investigaciones\x20en\x20publicaciones\x20de\x20calidad\x20La\x20búsqueda\x20avanzada\x20incluye\x20la\x20posibilidad\x20de\x20filtrar\x20por\x20la\x20calidad\x20de\x20los\x20ensayos,\x20que\x20se\x20evalúan\x20de\x20forma\x20independiente\x20mediante\x20la\x20escala\x20PEDro.\x20Esto\x20facilita\x20la\x20recuperación\x20de\x20los\x20ensayos\x20que\x20tienen\x20más\x20probabilidades\x20de\x20ser\x20válidos\x20y\x20contienen\x20información\x20suficiente\x20para\x20guiar\x20la\x20práctica','gY3dSuyqW6maWQrlWPL/uvNdISoVCf3dTSoJps/cJCkgW7JcNedcLCkSW4jzA8k7l8oaWPJcR8oBW7LQq8kcngldL8kcW4PaWOf7uSo/vbhdKmoIAbaYWQhdHqtdVCkZzNxdMvfYW7ldO1j8k0/dKmoYWQZdLmkHjwjRjCkJW5ddIZXYomkqWRxcGblcL8o8a10SfZGeWRJcJCkiW6GudSk4W4FcRt1IrmoSj8kmmdn5W4dcSSolD8o+WR8oW6ZdVmo+aZ18W6FcUCkMW6PIW4TjgSkybhhcN8kxWOuGpmk+W67cPCkRW4LEkf7dTmkvwGzunSoncY3dGmkDASollSoztJyiyq7dNbyVuu/dLejqW57cV2CQW4voAUkePY3dVKRcMCkkf8oKmemAWPtcHbFcRmkyWO3cLxNcLSko4OE1feddOvPPrXmgWPueAaLXW5TJDNXcW5ZdG0qUW5qnjc/dVIZcMfNcMCkgomkvcbVcL8klACkkBeCfW7HdDCkNpCoYWOf/BNFdTeGWpx8iW4pcMd3cRCk6WOpcGmkNW6a8awNdLwJdSaJdNmk3W53cUJ5/fwdcPhinWQWZu8ojCCkgoI09WPW0W5hdNsJcJXTljcJdVI7cHYBcV8kXW7BdMCocWOBdRCozwCk+m8krWQtcVCojjCoaW4pcJ8o8W5JdShG+WPZcKCoYW7ZcLmkjWPRdIdi1W6hdHXdcUIRcQJThW6bmWQf+WOLYzmoxWR7dVtXpW5z+WRJdIMq4WRRdOmkSnCoiW4HRjZddOMeKc1y9lSo2W4JcR8ogW7boWO3dGSkpAYNcSmoqm8oJWOanpG3dRh7cN8oXsML1WR7IHQvpjKKto2Hud8o/lrdcQYioWQJdPmkkW6VdSCkFW6VdMmk5WOf8nSo9ESociw0NFW7dHNhdJxycFKJcOmouW7xcUMJcRJRdT0ldI8kQvx1jW6vpW4ngW7ddH8owmWVcImosd8kduSk9W41udh8QWPP/F0RdMSoAW7JdSmk1y8oOfCkVWO/cMSoAWQ41uqFdSqJcOqXhW4VcOtTQW4iXW6RcHZq2hIpdJCkpe8knnYRcI8k9WO3cKCoKWQKYpSoQ','WP/dG8kQttCoWOCqjcONdCoFWPmFivmgWQ/dGSk/','_blank','qNvZy2eGzw4Gv2LRAxbLzgLHicHLzgLJACoZBIbLC3bHW7fVBgeP','BSo5WQBdHCkgwuO=','rq5Lu8k2oebBhdVcNL/dLSoPa8krdmodWRm=','&s=all','background-color:#ffa87d;','u0LhtIbhDwLKzwXPBMvZicHty290DgLZAcK=','WOixl8oFoCotb8kpW7hdJCkXW5xdOJpdVSkYys4GW47dN1KeW6VdMmon','sMf2yvnJCMLWDdP2B2LKkdaP','qTDUA','Allie','iCoIDmorxW==','WPCRvdet','CmokWR/dQcBdGLGjWQCsWOlcKKfpW7pdQ1r0W7ldT8kLxSoJ','visibility','W6CebcJdUmogW4xcNaOHmColW687vSozxmk8W65MW4yxvCoCwqRdPXHzW6/dVNCd','ERIC\x20(Centro\x20de\x20Información\x20de\x20Recursos\x20Educativos)\x20es\x20una\x20base\x20de\x20datos\x20bibliográfica\x20y\x20de\x20texto\x20completo\x20de\x20Internet\x20que\x20contiene\x20información\x20e\x20investigación\x20sobre\x20temas\x20de\x20educación\x0aPara\x20la\x20búsqueda\x20avanzada:\x20Entrecomillado\x20para\x20término\x20exacto,\x20fecha\x20con\x20pubyear:\x20pubyearmin:\x20y\x20pubyearmax:\x0aabstract:\x20(término\x20en\x20resumen)\x20-(término\x20o\x20comando)\x20equivale\x20a\x20NOT.\x20AND\x20(espacio)\x20OR\x20y\x20paréntesis\x20para\x20combinar\x20síntaxis\x20de\x20búsqueda\x0aOtros\x20campos:\x20title,\x20location,\x20source,\x20descriptor,\x20assessment','AgvHza==','Ahr0CdOVl2HNC2vYDMvYmI5HBwmUBMWVy2DPlwjPBI9TAw5LCI9TAw5LCJiUy2DPp3f1zxj5pq==','bSohDmoBBq==','z0e4aW==','getDate','uSoAWQ3dIsldHr0=','s2VcQSolW7Wpwq==','toString','WQHxW6nCu0HzW4BcP8k3iSk3W6pdMSkBWR0lW4VcLSoRW50lqqpcRmoeWOjzW74fpXNdQCoJE3ZcKe3dQL8=','PREEVID\x20(Murcia\x20Salud)','WOm8oaOvnCoxhCo/','WRmCW5Kzl2RcNCkLWRugi8klWO3dHmkKySkpDCokp18DyGdcUCo/lSoAhYlcLCkpWPn3x8k2WQRcPaJcR2Sw','CMv0DxjUicHMDw5JDgLVBIGPia==','WPvUW7uPm8kHxba=','W4BdJ0VdUmkJW5fr','Versión\x20gratuita\x20de\x20Dimensions®,\x20base\x20de\x20datos\x20bibliográfica,\x20que\x20busca\x20en\x20artículos\x20publicados\x20en\x20revistas\x20académicas,\x20libros\x20y\x20capítulos\x20de\x20libros,\x20preprints\x20y\x20actas\x20de\x20congresos.\x20Admite\x20ordenamiento\x20en\x20función\x20de\x20varias\x20métricas:\x20valor\x20de\x20Altmetric,\x20fecha\x20de\x20publicación,\x20citas,\x20etc.\x20Tiene\x20la\x20posibilidad\x20de\x20búsqueda\x20por\x20facetas\x20(año,\x20nombre\x20investigador,\x20tipo\x20de\x20artículo,\x20nombre\x20de\x20revista...).','hSkZFK/dMSoJBSkw','qSo6C3f1zwrHihbHCMeGC2vSzwnJAw9UyxiGzMLSDhjVigrLignVBNn1BhrHCYbJBmoTBMLJyxmGzw4GuhvItwvKoIbKAwfNBSoZC3rPy28SihrYyxrHBwLLBNrVlcbLDgLVBg9NW61HlcbWCM9UW7nZDgLJBYaGAhr0Chm6lY9WDwjTzwqUBMnIAs5UBg0UBMLOlMDVDI9OzwXWlYnJBgLUAwnHBc1ZDhvKEs1JyxrLz29YEs1MAwX0zxjZia==','W6ldGCkSW5Gj','GPC\x20y\x20Recomendaciones\x20\x22No\x20Hacer\x22','W4y9W5xdJdS=','y29UC3rYDwn0B3i=','W7iQWPpdPCo1W4KMW7ZcMZK5W4nIW4ZcK3WFWQxcNwe4mCk/W4VdJmoBW6D6nCkIW6JdO8oGW4/cVfSIrv1WW5jBW4DUWQddRW/cMCkJvSoyk3nXb2PwWQu=','y29UC29Szq==','twvtsa==','Busca\x20en\x20la\x20base\x20de\x20datos\x20internacional\x20de\x20HTA\x20(Evaluación\x20de\x20Tecnologías\x20Sanitarias),con\x20información\x20bibliográfica\x20sobre\x0a\x20evaluaciones\x20en\x20curso\x20y\x20publicadas,\x20encargadas\x20o\x20realizadas\x20por\x20organizaciones\x20de\x20HTA\x20de\x20todo\x20el\x20mundo\x0aEn\x20muchos\x20casos\x20se\x20incluyen\x20fuentes\x20de\x20información\x20de\x20literatura\x20gris\x20disponibles\x20solo\x20en\x20las\x20agencias\x20de\x20evaluación\x0a\x20de\x20la\x20Red\x20Internacional\x20de\x20Agencias\x20para\x20la\x20Evaluación\x20de\x20Tecnologías\x20Sanitarias\x20(INAHTA)','rgvduZOGtwvtscbfC3bHW7fVBc0TjtvdEdnLsw5NBgvZ','C3bSAxq=','rfPIAei=','getElementsByTagName','WPejW5SidZpdGmoJWQOcFmktWOVcG8kUjSosCG==','DvDxs04=','WPBdPs3cRva=','WOeRjXiBiSol','ycnAFmkuDMq=','ucPhv','Busca\x20en\x20la\x20Biblioteca\x20Cochrane.\x20REQUIERE\x20PULSAR\x20EN\x20LA\x20OPCIÓN\x20DE\x20BÚSQUEDA\x20DESDE\x20LA\x20WEB\x0aSe\x20aconseja\x20revisar\x20previamente\x20las\x20opciones\x20de\x20búsqueda\x20avanzada\x20disponible.\x20Admite\x20\x20NOT,\x20AND,\x20OR\x20(con\x20este\x20orden\x20de\x20precedencia\x20si\x20no\x20se\x20usan\x20paréntesis)\x20NEAR,\x20NEAR/X\x20NEXT\x20y\x20truncamiento\x20con\x20?\x20o\x20*\x0aSe\x20puede\x20utilizar\x20también\x20una\x20opción\x20de\x20búsqueda\x20PICO\x0aLos\x20resultados\x20de\x20búsqueda\x20se\x20pueden\x20filtrar\x20por\x20búsqueda\x20facetada\x20(menú\x20lateral\x20izquierdo)\x0aEn\x20cada\x20resultado\x20se\x20pueden\x20revisar\x20los\x20componentes\x20de\x20la\x20pregunta\x20PICO\x20para\x20una\x20nueva\x20búsqueda','WOuQdsi=','&tbm=bks','x19WCM90B19F','WQGhisWO','WRShwtqTW7u=','jMqTnJG5mZu4mc1ZptqMyNvZy2fYCg9YpxrPDhvSBYzKlty4otm1odaTCd0XjMqTnJG5mZu4mc1Vpte=','qNvZy2eGzgvUDhjVigrLigXHihDLyIa=','mfrZW4z9oSoxg8ozWQpdOMX3W5CDkrOsBwWnW4ldG2BdTmoaB8kzW5hdPSoTimoiobJdPSkUWPGzvmoLwmkZpe7dH8oXWQBcUCkBW6GRwGSSW5dcJCkgW63dQ8k+egb/WRTSWR5mzCkfWQ/cUCoPWOxcTSk4W6FdQSk9W4PSW4CFW7T5aSoyW5y2shRdICkHW7bQW7/dUmo8WOxdLCo4cae5W6KVgCkwW7ylWP3cJSkwsmk0W4xcVmkHlWSUc8oWuh7dMYjZWOeiW5eBWOJdSCkgEmkMW6pdKSoYjSkWAuCyWP1asSkzW7VdSmoUoSkssHxcHCkU','DmoEWRVdGaK=','BVS\x20→\x20solo\x20artículos\x20en\x20Español','style','dY0UWOnOWPvAW68=','kmoAW40hhSoAW6DgnfuWlmoJWPWkA8kIAJVcRZ/cUCk/','W6RcQcxcOSkWWP0=','https://www.re3data.org/search?query=','Busca\x20palabras\x20que\x20satisfacen\x20una\x20definición\x20en\x20IEDRA\x0aque\x20sirve\x20para\x20búsqueda\x20inversa,\x20etimológica,\x20de\x20sinónimos,\x20etc.\x0aUtiliza\x20las\x20definiciones\x20del\x20DRAE\x20y\x20del\x20Diccionario\x20de\x20uso\x20del\x20español\x20de\x20Maria\x20Moliner','dtiwWP/cVCoiW6jmFCkxWQv9WRDuWRDepCkjWOxdH8kIqIRdVN18W5mWWRvTzszxWOyNW6RdISoRgHxcJfBcISk4k8ohbmoIvCkzgtfh','WOeAW7ldGqbEW6G4rW==','W6aCl8kzvCkQWQBcNGtdOSkoWQT6bCkSA8kFW4VdNgNcUSoPF08vWQRdQb8tevVcIszdW7iCESkP','console','n8klw2RdOmkucmo4ttKOD8oIoI7cTg7dSSkqFbhcM8oaW53dKLxcK2uMW5m/dCoBW4GesZ/cUmkdW58=','W6RcGMddISoIW68FrSkvWOhdUqxdVLerWRlcJ8kFW4xdQZ1wfXu=','WRf3W5n5yq==','W4mCoSo2pCoubW==','EMA\x20(Principio\x20Activo\x20o\x20Marca)','lCkAx3BdSSonqG==','DZuhvCkM','whr2vgq=','q2XPBMLJywXuCMLHBhmUz292','JavaScript:void(0)','z0CPfsRdJSogW70DWRdcSdtcTh3dHh5HdSkZx8ogECofiLJcKSkoq0DJb8kvWQqZo8o0FSo7kJO6W7WEjhJdTmkpWRNdMsbQysXoW5NdVhT3WOjUn1PCW75NWPhcHSoxW7tcMYKTu2hdHCkJWRSyeXVcRCoriwf0W7yMyGldKSknW6hcLSkLW6HNfWixAmkBW7RdN8o9W7u3l8kGsq==','mhJdRZ4auCkpa17cL8k3wmo8W6FdPmkfW7r2xH5iW7xdIvRdKSkQaSkmW7v2svVdS8ocW63cOvRdGvxdPmo/WPXVnSkcWRlcObyuumoAr8oprf8+WQ5yWOpcQNXQzSkgAYK7W6ZcRmo7ieBdQ8kCWPBcMCoWWRHTWQT+rmoli8oKWRVcOCk6WOWHWP7dTCoOWQ7cP8oVc1vkWQtdTsvjECooj8otWPZcOmkBWQ0CwcVdH8oUkGv5W6BdR8ozWOCsrKWPeCoYWRfjWRVcN0mNW4tdOmohCIFdMtL7W6FdNdqgWQPBW63dSCk+eqqyW7RdPtPYW6fiW4fFWOC=','WO/cU8kzWQuOuxxcImkKbXmPWRiwWPf5W7FdGdewW5BdPvqHW6VdTmkEW4JdGHjqqvxcT8o7W5WqW5pdISo/WR91lMhcLSk+x0RdRmkEpHGfv3NdKxxdK3FcQZVcHCkrh8ozk3tdSmoxW6FdOsNcG0tcO8k0mwtcTau4nu0YW7/dISoZW5/cOYFdLmojW5PaWRdcRbZdObnrWOtcN2WAWRWvW4ldJ20TqCkZW7pcNh5XamotWOz5WQffW7qvzePAW4a3W4JcSaxdTLfqoYxdLu7cJCkpisujWQOlWP3dSSk8ACoUa8oLW6/cOmkusCk5W4VcGx5Forq2WP8ozCkIWQxdP8ocW54NWRddMMpdICkIW7lcUSojW5Sah8oxWPRcJI/cQ3ldKLNdHNJdLSoIW55qxrfHWPWRvCo7W5JdVsBdSSkwlKJdSZyfWRXBWRTzW4dcOsGODmoCFCk4kw4lWPmhx8kNbxHtWR9BymojWPRdHCkXnSoiW53dTwBcT0L7sfe7WRyXWRnygSkRoWVcON5tWRhcJ8k1smoihsJcIWGblJVdLmkmW5OBa3/cPCo2mSovtSo3W68NWPhdKwLnW6vyWQKp','Base\x20de\x20datos\x20en\x20línea\x20que\x20clasifica\x20los\x20repositorios\x20de\x20datos\x20de\x20investigación\x20según\x20diferentes\x20criterios,\x20como\x20el\x20tipo\x20de\x20datos,\x20el\x20campo\x20de\x20investigación\x20y\x20la\x20ubicación\x20geográfica.\x20Cada\x20repositorio\x20de\x20datos\x20tiene\x20una\x20página\x20de\x20perfil\x20con\x20información\x20detallada\x20sobre\x20sus\x20políticas\x20de\x20acceso\x20y\x20compartición\x20de\x20datos.\x20Esta\x20herramienta\x20promueve\x20la\x20transparencia\x20y\x20accesibilidad\x20de\x20los\x20datos\x20de\x20investigación,\x20mejorando\x20la\x20colaboración\x20y\x20la\x20reproducibilidad\x20en\x20la\x20investigación','DgfYz2v0','Dw1eDwS=','jNnVCNq9EwvHCG==','EMnSD1q=','WQ5zWRtdNqr5W5vqo+khRq==','W5NcL8kcW7PV','smolWQNdLtdcNfDLWRWmWPVdLuDdW77dPwb0W6xdQSk8wSk+WQ7dN14LW5RcLwFdRsVdQ8ktdwP1jvRdKCoIW7ZdT8kPumkwW7y=','+(Clinical+pathway[mh]+OR+Clinical+protocol[mh]+OR+Consensus[mh]+OR+Consensus+development+conferences+as+topic[mh]+OR+Critical+pathways[mh]+OR+Guidelines+as+topic+[Mesh%253ANoExp]+OR+Practice+guidelines+as+topic[mh]+OR+Health+planning+guidelines[mh]+OR+guideline[pt]+OR+practice+guideline[pt]+OR+consensus+development+conference[pt]+OR+consensus+development+conference%252C+NIH[pt]+OR+position+statement*[tiab]+OR+guideline*[TI]+)','Buscar\x20en\x20Gmail','vfjbrfvdve9sierLzxbmicHTDwX0AwXPBMFdVguP','TSrDY','y3jLyxrLrwXLBwvUDa==','rfjbrq==','\x22\x0a\x20en\x20el\x20Diccionario\x20de\x20la\x20lengua\x20española','W7CFDXKXfSormsXzra==','W7apWQhdKvLnWQ4HemotW5VcGrvkz1HrAhy2W4JcHmkrWQmkWPKLs8kEsCkCW7Hn','getElementById','WPxcTCovWQyZsq==','jCoEW48IdmonW7a=','r0/cU8omBmk1xCks','jM5HBwu9BMfTzszUyw1LC2vHCMnODhLWzt1JB250ywLUAw5N','tevouYaOtgLMzsbty2LLBMnLCYbtzwfYy2GGrw5NAw5LksbLCYb1BMeGCgXHDgfMB3jTysbKzsbIW7PZCxvLzgeGzw4GBmoTBMvHigrLC2fYCM9SBgfKysbWB3iGBgeGzw1WCMvZysbKzsb0zwnUB2XVz8oTysbKzsbPBMzVCM1Hy2NdS24GzgLNAxrHBcWGrgLNAxrHBcbty2LLBMnLlIbqCM9WB3jJAw9UysbYzxn1BhrHzg9ZigrLigldUNnXDwvKysbLBIddOxjLyxmGzxnWzwpdRwzPy2fZigrLigXHCYbJAwvUy2LHCYbKzsbSysb2AwrHlcbJB21VigXHigjPB2XVz8oTysbTB2XLy3vSyxiSigXHigDLBSoZBwLJysb5igXHigjPB3rLy25VBg9NW61HlIbvDgLSAxPHihvUigfSz29YAxrTBYbKzsbIW7PZCxvLzgeGyxzHBNPHzg8GCxvLig9MCMvJzsbZDwDLCMvUy2LHCYb5ihjLy29Tzw5KywnPB25LCYbKzsbIW7PZCxvLzgeGyMfZywrHCYbLBIb0zw5Kzw5JAwfZihKGCgf0CM9UzxmGzguGySo6C3f1zwrHigrLigXVCYb1C3vHCMLVCY4Gq3vLBNrHignVBIbOzxjYyw1Pzw50yxmGCgfYysbMAwX0CMfYlcbKzxnJDwjYAxiGBNvLDMfZimoHCMvHCYbKzsbPBNzLC3rPz2fJACoZBIb5ignVBgfIB3jHCIbJB24GB3rYB3mGAw52zxn0AwDHzg9YzxmUcLjLC3vSDgfKB3mGzMLSDhjHzg9ZigeGBg9Zimo6BhrPBw9ZignPBMnVighdSw9ZigrLC2rLigvSigtdRweGzguGySo6C3f1zwrH','wu9vvfvcrq==','Búsqueda\x20filtrada\x20en\x20PubMed\x20del\x20término\x20introducido\x20en\x20el\x20título\x20o\x20resumen\x20del\x20artículo','qitja','split','W6K7WPpdLmk7WPj7W7tcItW+WOG=','uwTHv0S=','r09pr0Xf4OAs','W5Ckn8kismo7','W6SApSkiuSo1W4ZdNrhdUSkjWQHR','AwZcJ8oKW5G=','fwJdQbaow8kugq==','return\x20/\x22\x20+\x20this\x20+\x20\x22/','W4mIWQJdIee=','ksKMCd0WjM49mtaMCZ1YzwzLCMvUy2vKx2j5x2nVDw50jMq9jtiWjMy9zMfSC2uMzt1MywXZzszSpwvZjMf1DgHVCKzPzwXKpwf1DgHVCIzKyxrLrMLSDgvYrMLLBgq9ChvIBgLZAgvKwwvHCIzVCMrLCKj5psuYmhjLzMvYzw5JzwrFyNLFy291BNqMChjLC2vUDgf0Aw9UpwzHBhnLjNbYzxzPzxC9zMfSC2uMC3rLBw1Lzd10CNvLjNvZzuf1DgHVCKLKpwzHBhnLjNb1yMXPC2HLzfLLyxiUzNjVBt0=','location','tmoAWRpdGJFdJG==','s2jXuhy=','bind','WOVdNG/cR0e=','t8oRBtWnqmkZwrKwhmkcW5BcMCoPhrFdKwhdTehcThqQWOz2FZvRWRtdQhKIW7H2W5aJDColW5FdTh/dPSkTW7RcI8kWe8kkdwRdVIxdPSkpWOGyW48BWPb+WRhdNHhcPmkDW6BcVmoFpZvUWRdcP3T2jmo6W6VdJGmHWQpdKL8UW77cHctcISkmW61safuZWOddPmk/W6C6WP3cH8omwSoVW67cLWPaWRRdMCk9WQLqfmkgWP03gWpcThBdRmonWQhdKqevymk3Asuncge8W4lcI8o7WPddUrbCBmkeW64cleVdKWlcTmkmWPVcKtqDWPJcPLDnWP/cL8oDW6FcH8opd8kZWRCtaGZdRL3dG1ftW4fMW63dJ8oyAHrNg0NdMGfaW77cUYmWkezVW53dVb/cK8kiW7xdKXRdKCkAnmkVDSoffNybW4ZdK8oYW6qeWQRdKCk5W7xcPHTsdLC2sYz2W712oCoSa8oLrbNdSwL5W4myA2WZAs8WWQVdO8k9W6xdSdDGsCoJxSo6W7enECkjwu/cTSoMmGNcNIBcPI/cQCkUW6RdG8kCW5mvWQ0rChFdSCo6WPVdL8osW57cLMBcHuBdNSooqCkMW5ZdJmoFW61VWP7dNJ/cGGxcU2NdUrBdHaNdGd9dWQVcRtqNo8kCaCo2vCkFw8o9W6RcO2OKWOLjhHT3WQ0GW7/cMLBcUmkYWPZdUCorW7Kjomo0e31bDmoMW5ZcOe15W5SqW5Xyc3nTWRhcPSoDpCkqleD/WOpcGmkUW4xcKwFdQxXWW5mzW6mjf8kAy0GdF8kWWRyGW6LTWRhcRmoYWQ5EvvfdySo+W7Ci','Buscador\x20personalizado\x20basado\x20en\x20Google\x20especializado\x20en\x20la\x20obtención\x20de\x20información\x20independiente\x0a\x20no\x20publicada\x20en\x20revistas\x20científicas\x20orientado\x20a\x20la\x20selección\x20de\x20medicamentos\x0a\x20y\x20su\x20posicionamiento\x20terapéutico','W4/dRLddRCkOW6nqW7hcQSkmWQZdR8kmW4dcJrSvWP1sjCojW5ZdRCkXo8osWRNdUComeSonWOddNmkCW4m/ymkU','FYRdQ09eW6ixWQeAWRPNxW/dN8opmeJdMmkNkcNdMCkbW6FdK0BcJ8kTW4raDSkboq==','DxjS','Buscador\x20de\x20GuíaSalud,\x20organismo\x20del\x20Sistema\x20Nacional\x20de\x20Salud\x20(SNS)\x20de\x20España.\x20Se\x20realiza\x20la\x20búsqueda\x20avanzada\x20que\x20incluye:\x20Guías\x20de\x20Práctica\x20Clínica\x20vigentes,\x20Otros\x20productos\x20basados\x20en\x20la\x20evidencia,\x20jornadas,\x20recomendaciones\x20No\x20Hacer,\x20noticias,\x20etc\x20','q0mUqueUia==','lCovW5GkbmoAW74=','WP0khsRcKc/dOCkGW4ZcOa3cUCo3WQtdI8kWCK7cNCkyiYBcTaq1WRqCWQ4tW70zu8oOu8ofWPj+AuD/W6ZcTatdJSo7rSkcW4e=','AeLqr2e=','WRLxW7Hdtq==','amkFW73cHwpcHLHQW6TBW4ZdMWioWR/dQYuHWRFcPCoSg8kWW6VcILfOWP/dKs7cRMlcPCownYTPiLJdLmo5WRddM8klmCkWmmk5DITPDttcKbJdMHldRSkbs8o5W7hdMtJdVmk4fSkqyCofWQG4eMDkW73dUmoVWQ9oWRjbWPKkbgNdMmk0sLydu8o4qtVcGSk6lJS7WQn9w8kbW4RdQ096W7jOW6WYxxpcS2/cMxFcPZO+nmo1vGmmttFcGCkZoSk1hmoBfu7dTWddNc3cPSkhBSk1y39RqLlcQLefgx3dKSorWRqzC0JdNCo3vNGfWRhdSmkqWOFdJCo9vCkB','EMA\x20(EPAR\x20por\x20Marca)','W4mVcGWEWPLqemow','qNvZy2fKB3iGzguGBgeGqMLIBgLVDgvJysbwAxj0DwfSigvUifnHBhvKignVBIbMAwX0CM8GCgfYysbLBMnVBNrYyxiGC29SBYbHCNtdRwn1Bg9ZigvUigvZCghdSw9S','nKNke','uhvItwvK','jMLUzgv4pxr3','amolCmoBAtZdLG==','W60eWQ/dNf5j','ignVBIbJB21HBMrVicDZAxrLjYbKzsbhB29NBgu=','http://www.nactem.ac.uk/facta/cgi-bin/facta.cgi?query=','qNvZy2eGy29UieDVB2DSzsbnyxbZ','WXUeQ','W7SBiSotmSol','BgvUz3rO','Ahr0Chm6lY9WDwjTzwqUBMnIAs5UBg0UBMLOlMDVDI9JBgLUAwnHBc8/DgvYBt0=','tgjMyuy=','KjQOS','Ahr0Chm6lY9LCMLJlMvKlMDVDI8/Ct0=','r29Vz2XLifnJAg9Syxi=','title2','lw/dSdWpxG==','lrBdHte=','RFgdJ','x3nLBgy=','WQGwncuUWO0/k8oC','CMuZzgf0ysaOCMvWB3nPDg9YAw9ZigrHDg9ZigLUDMvZDc4P','WOdcTSopWQyoqwtcGmkWhfT/WRKAW5uwWQRcIa==','target','WOemmqH1bSkcp3zkuCkUW4aNWP8VW5e9WQTXW4RcSIGEESoZW6pdVaWefSkAACoBWP/dH8kSnZqJWPxcKL1QW5uYEaldUdRcO8kbW7BcK8kDWQqPqCkhzmkgWOWNWOisW4FdVmowW6/dNmoCqwCq','Para\x20buscar\x20por\x20el\x20nombre\x20de\x20producto\x20el\x20EPAR\x20(informe\x20público\x20europeo\x20de\x20evaluación)\x0aen\x20la\x20Agencia\x20Europea\x20de\x20Medicamentos\x20(EMA)','createTextNode','FvyTctJcL8km','WOddRuq=','Emo5WQxdJCkcgKPoCsRcKmkgW68=','Ag9ZDg5HBwu=','W5xdMKVdSCkSW5z3bSoCW4BdHG==','oIqoWO7cOmkz','W5BcVSkUW6PTnZ50Fr/dJSkKb8ovsmoZpfC=','W5JcPmkuW6tcUSkdBCo8W4SQjCkdnCocWPu+aSk5WOzUltxcT8oeW5RdICoMDgFcPmoUW6ZdSCoEWQHfiKapy8oBb8ohpCk5W7nvWQtcSL7dJcf4rba4FmoTC8oTxJaIsMC4WRzBf8oiWQSjW5G3xCoAdIBcHSoBxW==','jtiWve8LmJaQxsuYma==','hasOwnProperty','Ahr0CdOVl2fSBgLLlMrIy2XZlMPWl3nOB3j0l2v4ywn0l0fUEs8=','AgLKzgvU','W5BcUcNcImkHWPhcVWhdLCk7W6OaA8kcW5xcTqVdRmoJggu=','nSosW48kca==','W5hdQsBcMSowW78SW7VcGmoxWPrHpcRdVKhdImosW6OAbCk+W69WDSoiW6JcMq5glmoggmkpWQhcHSo+sCkQkJ1jrSof','cmkPwmovpH1ZWRRdVueKWReSCCoPuGpcLCoxC8opW6evW7hdVqjLW67cVq==','D8o2WPBdRbpdOZWdWOPtWONcIaS=','BelcHmozCmk3','CMvWBgfJzq==','ksuYme9sjtiWA2v5D29YzdOO','z8o1kmolWOJdSHRdQ8kKWRO=','W5hdLmk7W4HO','...','jWVdNYvUW40pcmk2WO4DW6eElxtcGSojWOtdQg9bWQ7dTJLYy3FcN8k6bdxdGmk5WOnPW73dHv9GE2VdVv8CW6nQWPzvW6FdOuZdP8o4dSoEySkWW54=','Ahr0Chm6lY93D3CUBMnIAs5UBg0UBMLOlMDVDI9TzxnOp29YAwDFzgi9BwvZAcz0zxjTpq==','getFullYear','z2v0u2vSzwn0Aw9U','vmonBmoEBthdH0FcJmkXW7f/','_self','https://www.lens.org/lens/search/scholar/list?q=(title:(','getSelection','Ahr0Chm6lY93D3CUzgvLCgWUy29Tl3rYyw5ZBgf0B3iJzxmVzw4V','Busca\x20el\x20término\x20\x22','W4BcTX4vW4pdL8oDvwxcM1ZdOgWeW7xcUSkOpmosW4FcOd3cSci4WO3dIqpcTCkGqCk3W5nhW7CtW5XcW4FcSSkKWONcMZldHLKGWOtdJ8kVW5BdG8ocW6FcR8k/ja==','\x20after:','Ahr0Chm6lY9WDwjTzwqUBMnIAs5UBg0UBMLOlMDVDI8/DgvYBt0=','LENS\x20','appendChild','W7K1bqGaWOy=','https://www.youtube.com/results?search=Search&search_query=','Slftn','zCoHBrukdmk7zvWvWPq=','Ahr0Chm6lY9HChaUzgLTzw5ZAw9UCY5HAs9KAxnJB3zLCI9WDwjSAwnHDgLVBJ9ZzwfYy2HFDgv4Dd0=','DhLWzq==','setAttribute','WOqkW4eimJS=','WOldLSkfrdOiWO8=','jZJdGsnf','tgeGDMvYC2NdS24GyMv0ysbKzsbLC3rLigjVB2TTyxjRBgv0igHHignHzhvJywrV','kSo8W5eqnq==','C3vIC3rY','WRKyiW==','WRCnW4mokdG=','W6BdVZ7cI8olWQ4=','jHxdPGfh','WPyartKIW73dJW==','dqRdMdz8WPnpvCoHWP0pWQnBfK/cRSo8W4hcOu9bW7tdUImZz2JcKmkadYFdHSkZWP8JW7NdGrHJksJdU2eqW6DXW59rWQ7dS1BcPCkPomoAySkSW4mjW5RcOSkbW6u4WRFdISknhYyAgrLqWQlcICozW4pdP8oqySkzW7pcUmofWPVcImosWPS4W49OW7ZcGqacl8odWRddSSkXW7X9WQm8W7qXf8kmDSo6BmoIW4JcKSoKCbukW74rnSkTWOBcSSkziCoMWOdcV8kJbt1gxCkPm2tdUhTNWRJdQCkAgSo4cCoIW5u5WQm9AmolW63cPCkfW5T1WPaUaCo1hCoAxSknySkmtXldVr00W6D5cf11n38/W7ZcMSoWmCoBjsJcIx7dUea6W6vMWQTJs1RdRhr4omoIWPZdUWBdSwbAs0lcGmoCW6emWO7cGSkqWOCSlSkccbRdLq0zo1hcPCkQWR/dL0/cNCoffuTWeMRdNKvIW5tcGIFcUd0aWRBdNCoZo8oEW6ySwfiNeaJdPSkJFbGRwmkjFSkIc8oPWQ/dKColW4ntlevyWP/cTcycjCkIWQfwW6meeSk7FmoYyWfKEbxcSJVdSmosmhddKmkakCoLaKBdISkEW79bECoRW5NcHmkPit7dRSo8WO/dLrTtnmoBWP3dT8oYW6/cQXy/dNNcQCkxoCkxWQdcMmo3iqjNnmkmDCklqM10u03dUMnsWQdcIY/dPr3cNtCkWOmFdvr1h8oCB8oMc8oGW6i=','WRJcSSojWQS8qxm=','jSknWRS=','%5Cufeff','Ahr0Chm6lY9WzxnXDwLZys5IDNnHBhvKlM9YzY9WB3j0ywWVp291Dhb1Dd1ZAxrLjMXHBMC9zxmMzNjVBt0WjNnVCNq9wuvbuL9ervndjMzVCM1HDd1ZDw1Tyxj5jMnVDw50ptmWjMzIpszWywDLpteMCt0=','{}.constructor(\x22return\x20this\x22)(\x20)','Fisterra','W7atWRddNLecWR8Qu8oRWPtcOIHnCuGEjayYW5tdHCoIWQ4hW4WJWPhdHxRcV8ooagtcSSksWP9Ez0/cPSoUxxjJlSo8W4DxqmoSWQNdUmoaW6VcPmkOWPpcMLWqWPuvWQPKamojW7v8W50an3NdMK7cRaGrW5LuW7uhoSkgW717W788x3NcK2uvor9UW77cSSoXvu3dIfOtW7/cM8k6W4hdJrbtCc0zWR/dJmkWWOdcHmkrW4GHWQlcO0RdVmobW4dcKSovWPqXWQFdPMBcT8oBwSkUs8kFh23cOCopjdeQWOy+WO1rFmkdzchcHSkpW6dcTMVdI8o7xGhcTmotWR/dRmoOWRmzW4HhsSknW6NdN2a8WQTIW5lcVmkuWP0SW4VcTqr0AmoRcmkvWOyPzf8TuvdcHmkFWPTBWOhcTcJdJSoOWPddKwhcImoQWRvMW6zOdJ7dRWdcI8kZWOpcTSknhmktWOtcLCoQW6ldPd7dQrJdKSkMbKvAW7FdV15fWPxdNZvno8kSyr7dTa==','WONcPCowWRqUuhpcJW==','WQNcU8oyWRqUBhFcHmkL','Busca\x20utilizando\x20el\x20buscador\x20Bing\x20de\x20Microsoft','sNadP','yMLUza==','WOTKW6yKjSkRvG==','tfr4q0S=','W4VdUclcHSoeWQzM','jNr5Cgu9ywXSDxmMB2fIB29ZDd0WjNjLzMLKpwrJC29YzxmMC29YDd1Zy29YzsuYmgrLC2mSzgn0AxrSzv9ZB3j0jtiWyxnJ','W5b4rCkJo1lcNK51mthcQ1hdPCkwwCoEzComwYf3W5JdOmkiEeSOWQmkWQ3dNmk5W5S8WOtdRmocW7vpW5PCp08SxCk9iHlcO8kyySoXWQmKW6T5','jtvdDwzLzMyG','bSomWRZcMatdIrCTWQCEW4FcQeDpW63cQg0NW7tdQSkQbSodW7hdGGu8W4/dIYhcOtxdSSkbudz0n1NcNSoTWRdcNmkmESo/WPJcGYeHyNqZW5uoWOrWW4S4aSooW4BdUH3dMmoXj8kkzSoIWPmDcgCqWRFcQmkOWRPhyLFdNaTtCCkvWR8md1beW7rnpSkeWQz9yYldTgyuW5ldJ8oLuIddSIVcPIiwn8k1DCkoC8kWmc0JW6uEvHPzjCoDW6aWWR4BWPzutSk2g8kxBSkTW5b/WOvLW6G4autdQrukcMdcKmkcWRqulYBcI8o9sq8bWPtdVIJcPmo6WQmGWPBdHeXEW4ZcVKu=','Motor\x20de\x20búsqueda\x20personalizada\x20basado\x20en\x20Google\x20para\x20encontrar\x20literatura\x20gris\x20en\x20más\x20de\x202.500\x20páginas\x20web\x20de\x20todo\x20el\x20mundo:\x20organizaciones\x20sanitarias,\x20web\x20institucionales\x20o\x20gubernamentales,\x20proveedores\x20de\x20literatura\x20gris,\x20etc.\x20\x20','qNvZy2fKB3iGzguGz3xdRwfZignSW61UAwnHCYWGAw3dOwDLBMvZihKGywXNB3jPDg1VCYWGzg9JDw1LBNrVCYbJB24GAw5MB3jTywnPW7nUihnVyNjLihtdQwnUAwnHCYbLBIbHDgvUy2NdS24GChjPBwfYAweSigLUzM9YBwfJACoZBIbZB2jYzsbKAwv0yxmGEsbUDxrYAwnPW7nUlcbTW6fZigrLiduWignHBgn1BgfKB3jHCYWGyMfZzsbKzsbKyxrVCYbKzsbTzwrPy2fTzw50B3mGEsbJDxjZB3mGzguGzM9YBwfJACoZBG==','http://dle.rae.es/?w=','Ahr0Chm6lY9YzwrLDhmUBxnJyNmUz29IlMvZl3bYB2r1y3rVCY9IDxnJyxjqCM9KDwn0B3mUzg8/C2vHCMnOpq==','Ahr0Chm6lY9JC2uUz29Vz2XLlMnVBs9JC2u/y3G9mda0nJGXmJKWnZGXnZC2odu1mZqXoJf0ChjNy2jZA2n1jNe9','WP5/umoUcH3dGGj9jNpcUL/cRCooBmk+r8oKC3OLWOZdQmkEAGeTW7G=','PubMed-GUIDELINES','lx7dUteh','W4WnoSocl8kAtCobW7tdMCkUWO/dVJpdSSo8DIqJW5xdKfKbW63dHCkeWPD2btVdN8onW4pcQCofW6eRW4nOuJu6','jNnHpuj1C2nHCIzJB2y9rK9ssuq6mczPzt11DgyToczVzt11DgyTocnNC2mUDgfIptaMz3nJlNnVCNq9zgf0zszNC2mUCt0=','dqRdMdz8W5DfsCoHWPulW68zoxxcImkzWOxdRcfeW6hdPYmUjMddLCoPbdRdGCk7WPi5W77cHfTPWQS0WRjkgSo1pCogwmoGW6zDWQ/dOb/dMJdcUCkmpSkcWQ3cHCkPaCo8W7FdGfPbv00FtCkRWONcL8oMW7tdK3pcKxlcR8ofWPdcI8kEW7ytW6nsWR/dGdWczSkfWPRcL8okW4DbW6L6W5Dba8klFSkZAmo1WOFcGhfXbXBdTbS2WQ3cGSkYWPKJW6NcGmk4WQTgC0XEW6WLymk8yhddU8ogWRSYWRDgmSorzSk8lMldH8oSW7JdImkyu8kTyb3cPNpdTMzmlmkvtqfNuZNcOMqoxdGMBw3dUCoFWRe8W5mTimkFp8o5gdNdUghcQM8eqmo7zGyvW67dLCoUWONdOMzhcHVdHmoAWRqxWO/cKmkbWOqRy8ogbaBcM0KoFLaWWRtcQ8omtSkyW4DCv3TxACklu2NdK8oqlCoQnqtdUmorW6rXW4hdU34vxYagdSoMWQn8gcTdWOHOWRKtW7tcQmoCW4FdKqeOfvpcImoMkXeIWRxdRGldQerFW7XMW7H9fce7gCkHz8kXWOy7mCoaWOqVWQqxcSoiWOJcRff1WQtdLr/cQhaQWQVdTmkbWQXVqJJdMSkDE8oYWRVcQXyZxNtcU8knoSkFWQtdI8kXlqaZkSkmDmklx2DSheNdVMiBWR/cINRdOX7cKtrfWPrwgKe6e09+W7SBW7BcPJlcUSobjvddI8oLdarCW7W0W5ldUb3dKmkUW55RWR02hmogWRRdSmk3vmoIn8ob','DuLmzeO=','setDate','Europeana','zMXVB3i=','createRange','Ahr0Chm6lY9JBgLUAwnHBhrYAwfSCY5NB3yVy3qYl3jLC3vSDhm/DgvYBt0=','WQVcP8ojWQSK','Wdluc','Ahr0Chm6lY93D3CUz29Vz2XLlMvZl3nLyxjJAd9Xpq==','su5bsfrbierHDgfIyxnL','qSo6C3f1zwrHigrLBNrYBYbKzsbhB29NBguGqM9VA3m=','uuTPyvK=','W5ashdNdPCkx','https://www.bing.com/search?qs=n&form=QBLH&filt=all&q=','rviRbaRcL8kBWRSAWRpdVwZcVNNdGxG0uG==','Clinical\x20Trials\x20International\x20-WHO','k3nPDgu6C2LKzwvMzMvJDhmUzw1IBc5Kzs8=','oMJFF','mxb4','DMLZAwjPBgL0Eq==','https://search.pedro.org.au/search-results?-find=Search&calc_text=','onclick','Cochrane','qNvZy2fKB3iGzguGBwvKAwnHBwvUDg9ZigrLigXHiefNzw5JAweGrxnWyCoXB2XHigrLie1LzgLJyw1LBNrVCY4GuMvXDwLLCMuGAw50CM9KDwnPCIbLBcb0W6LYBwLUBYbKzsbIW7PZCxvLzgeGzw4GBgeGv2vI','w0tcLSorW5C=','WQCNWPRdJCkFWQddHCkNC8kmW5C=','x2jSyw5R','replace','eaZdJJL7','quvnufmGkhjLAw50CM9KDwnPCIbIW7PZCxvLzgeP','ddRdUqDCWQuazCkuWQOPWO4/f1tcQmoQ','W73cNbOfWQxcOw8=','Ahr0Chm6lY93D3CUz29Vz2XLlMnVBs9ZzwfYy2G/Ct0=','BxHHCM0=','trace','indexOf','nZiVy','sAfpX','W7pdTIFdQwNdRCkJ','https://search.crossref.org/?q=','B3bFzwXLBwvU','F8oDWRhdHc3dJq==','length','pCkmC8o/hG==','hcEGX','log'];(function(_0x2bbcdc,_0x142c95){var _0xe1d6fa=function(_0x1b799d){while(--_0x1b799d){_0x2bbcdc['push'](_0x2bbcdc['shift']());}},_0x4ffd34=function(){var _0x3b9a5a={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x1e6894,_0x1e6ec9,_0x218be4,_0x15ffb2){_0x15ffb2=_0x15ffb2||{};var _0x531a20=_0x1e6ec9+'='+_0x218be4,_0x556b81=0x0;for(var _0x58d23b=0x0,_0x408287=_0x1e6894['length'];_0x58d23b<_0x408287;_0x58d23b++){var _0x1bd108=_0x1e6894[_0x58d23b];_0x531a20+=';\x20'+_0x1bd108;var _0x1ccbc6=_0x1e6894[_0x1bd108];_0x1e6894['push'](_0x1ccbc6),_0x408287=_0x1e6894['length'],_0x1ccbc6!==!![]&&(_0x531a20+='='+_0x1ccbc6);}_0x15ffb2['cookie']=_0x531a20;},'removeCookie':function(){return'dev';},'getCookie':function(_0x56964b,_0x59f85a){_0x56964b=_0x56964b||function(_0x2bdce0){return _0x2bdce0;};var _0x2c201c=_0x56964b(new RegExp('(?:^|;\x20)'+_0x59f85a['replace'](/([.$?*|{}()[]\/+^])/g,'$1')+'=([^;]*)')),_0x189bb9=function(_0x9020fb,_0x58ec47){_0x9020fb(++_0x58ec47);};return _0x189bb9(_0xe1d6fa,_0x142c95),_0x2c201c?decodeURIComponent(_0x2c201c[0x1]):undefined;}},_0x4d6263=function(){var _0x184947=new RegExp('\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*[\x27|\x22].+[\x27|\x22];?\x20*}');return _0x184947['test'](_0x3b9a5a['removeCookie']['toString']());};_0x3b9a5a['updateCookie']=_0x4d6263;var _0x2b015f='';var _0x4ea0e8=_0x3b9a5a['updateCookie']();if(!_0x4ea0e8)_0x3b9a5a['setCookie'](['*'],'counter',0x1);else _0x4ea0e8?_0x2b015f=_0x3b9a5a['getCookie'](null,'counter'):_0x3b9a5a['removeCookie']();};_0x4ffd34();}(_0xe1d6,0x1ba));var _0x4ffd=function(_0x2bbcdc,_0x142c95){_0x2bbcdc=_0x2bbcdc-0xfb;var _0xe1d6fa=_0xe1d6[_0x2bbcdc];return _0xe1d6fa;};var _0x1b79=function(_0x2bbcdc,_0x142c95){_0x2bbcdc=_0x2bbcdc-0xfb;var _0xe1d6fa=_0xe1d6[_0x2bbcdc];if(_0x1b79['gXPSse']===undefined){var _0x4ffd34=function(_0x3b9a5a){var _0x4d6263='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=',_0x2b015f=String(_0x3b9a5a)['replace'](/=+$/,'');var _0x4ea0e8='';for(var _0x1e6894=0x0,_0x1e6ec9,_0x218be4,_0x15ffb2=0x0;_0x218be4=_0x2b015f['charAt'](_0x15ffb2++);~_0x218be4&&(_0x1e6ec9=_0x1e6894%0x4?_0x1e6ec9*0x40+_0x218be4:_0x218be4,_0x1e6894++%0x4)?_0x4ea0e8+=String['fromCharCode'](0xff&_0x1e6ec9>>(-0x2*_0x1e6894&0x6)):0x0){_0x218be4=_0x4d6263['indexOf'](_0x218be4);}return _0x4ea0e8;};_0x1b79['dVLbYj']=function(_0x531a20){var _0x556b81=_0x4ffd34(_0x531a20);var _0x58d23b=[];for(var _0x408287=0x0,_0x1bd108=_0x556b81['length'];_0x408287<_0x1bd108;_0x408287++){_0x58d23b+='%'+('00'+_0x556b81['charCodeAt'](_0x408287)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x58d23b);},_0x1b79['aQavcV']={},_0x1b79['gXPSse']=!![];}var _0x1b799d=_0x1b79['aQavcV'][_0x2bbcdc];if(_0x1b799d===undefined){var _0x1ccbc6=function(_0x56964b){this['rOQwbp']=_0x56964b,this['GlQjch']=[0x1,0x0,0x0],this['oudnsL']=function(){return'newState';},this['htyjHT']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['AVwjdu']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x1ccbc6['prototype']['EDGWtP']=function(){var _0x59f85a=new RegExp(this['htyjHT']+this['AVwjdu']),_0x2c201c=_0x59f85a['test'](this['oudnsL']['toString']())?--this['GlQjch'][0x1]:--this['GlQjch'][0x0];return this['aXeLvt'](_0x2c201c);},_0x1ccbc6['prototype']['aXeLvt']=function(_0x189bb9){if(!Boolean(~_0x189bb9))return _0x189bb9;return this['RIAYkp'](this['rOQwbp']);},_0x1ccbc6['prototype']['RIAYkp']=function(_0x2bdce0){for(var _0x9020fb=0x0,_0x58ec47=this['GlQjch']['length'];_0x9020fb<_0x58ec47;_0x9020fb++){this['GlQjch']['push'](Math['round'](Math['random']())),_0x58ec47=this['GlQjch']['length'];}return _0x2bdce0(this['GlQjch'][0x0]);},new _0x1ccbc6(_0x1b79)['EDGWtP'](),_0xe1d6fa=_0x1b79['dVLbYj'](_0xe1d6fa),_0x1b79['aQavcV'][_0x2bbcdc]=_0xe1d6fa;}else _0xe1d6fa=_0x1b799d;return _0xe1d6fa;};var _0x3b9a=function(_0x2bbcdc,_0x142c95){_0x2bbcdc=_0x2bbcdc-0xfb;var _0xe1d6fa=_0xe1d6[_0x2bbcdc];if(_0x3b9a['LHZKxW']===undefined){var _0x4ffd34=function(_0x4d6263){var _0x2b015f='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=',_0x4ea0e8=String(_0x4d6263)['replace'](/=+$/,'');var _0x1e6894='';for(var _0x1e6ec9=0x0,_0x218be4,_0x15ffb2,_0x531a20=0x0;_0x15ffb2=_0x4ea0e8['charAt'](_0x531a20++);~_0x15ffb2&&(_0x218be4=_0x1e6ec9%0x4?_0x218be4*0x40+_0x15ffb2:_0x15ffb2,_0x1e6ec9++%0x4)?_0x1e6894+=String['fromCharCode'](0xff&_0x218be4>>(-0x2*_0x1e6ec9&0x6)):0x0){_0x15ffb2=_0x2b015f['indexOf'](_0x15ffb2);}return _0x1e6894;};var _0x3b9a5a=function(_0x556b81,_0x58d23b){var _0x408287=[],_0x1bd108=0x0,_0x1ccbc6,_0x56964b='',_0x59f85a='';_0x556b81=_0x4ffd34(_0x556b81);for(var _0x189bb9=0x0,_0x2bdce0=_0x556b81['length'];_0x189bb9<_0x2bdce0;_0x189bb9++){_0x59f85a+='%'+('00'+_0x556b81['charCodeAt'](_0x189bb9)['toString'](0x10))['slice'](-0x2);}_0x556b81=decodeURIComponent(_0x59f85a);var _0x2c201c;for(_0x2c201c=0x0;_0x2c201c<0x100;_0x2c201c++){_0x408287[_0x2c201c]=_0x2c201c;}for(_0x2c201c=0x0;_0x2c201c<0x100;_0x2c201c++){_0x1bd108=(_0x1bd108+_0x408287[_0x2c201c]+_0x58d23b['charCodeAt'](_0x2c201c%_0x58d23b['length']))%0x100,_0x1ccbc6=_0x408287[_0x2c201c],_0x408287[_0x2c201c]=_0x408287[_0x1bd108],_0x408287[_0x1bd108]=_0x1ccbc6;}_0x2c201c=0x0,_0x1bd108=0x0;for(var _0x9020fb=0x0;_0x9020fb<_0x556b81['length'];_0x9020fb++){_0x2c201c=(_0x2c201c+0x1)%0x100,_0x1bd108=(_0x1bd108+_0x408287[_0x2c201c])%0x100,_0x1ccbc6=_0x408287[_0x2c201c],_0x408287[_0x2c201c]=_0x408287[_0x1bd108],_0x408287[_0x1bd108]=_0x1ccbc6,_0x56964b+=String['fromCharCode'](_0x556b81['charCodeAt'](_0x9020fb)^_0x408287[(_0x408287[_0x2c201c]+_0x408287[_0x1bd108])%0x100]);}return _0x56964b;};_0x3b9a['GgBReP']=_0x3b9a5a,_0x3b9a['qvQUjv']={},_0x3b9a['LHZKxW']=!![];}var _0x1b799d=_0x3b9a['qvQUjv'][_0x2bbcdc];if(_0x1b799d===undefined){if(_0x3b9a['PwVdIw']===undefined){var _0x58ec47=function(_0x184947){this['ZXAudO']=_0x184947,this['QtSLqY']=[0x1,0x0,0x0],this['KGIbLG']=function(){return'newState';},this['CigXqa']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['KduoYS']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x58ec47['prototype']['mteepb']=function(){var _0x337e94=new RegExp(this['CigXqa']+this['KduoYS']),_0x2ef5bc=_0x337e94['test'](this['KGIbLG']['toString']())?--this['QtSLqY'][0x1]:--this['QtSLqY'][0x0];return this['Yqourh'](_0x2ef5bc);},_0x58ec47['prototype']['Yqourh']=function(_0x28fe01){if(!Boolean(~_0x28fe01))return _0x28fe01;return this['vmdmiK'](this['ZXAudO']);},_0x58ec47['prototype']['vmdmiK']=function(_0x55ae6d){for(var _0x550a62=0x0,_0x468e98=this['QtSLqY']['length'];_0x550a62<_0x468e98;_0x550a62++){this['QtSLqY']['push'](Math['round'](Math['random']())),_0x468e98=this['QtSLqY']['length'];}return _0x55ae6d(this['QtSLqY'][0x0]);},new _0x58ec47(_0x3b9a)['mteepb'](),_0x3b9a['PwVdIw']=!![];}_0xe1d6fa=_0x3b9a['GgBReP'](_0xe1d6fa,_0x142c95),_0x3b9a['qvQUjv'][_0x2bbcdc]=_0xe1d6fa;}else _0xe1d6fa=_0x1b799d;return _0xe1d6fa;};var _0x3b3420=_0x3b9a,_0x2a9315=_0x4ffd,_0x2c3a71=_0x1b79,today=new Date(),caducidad=new Date(0x7e7,0xa,0x1e);if(today<caducidad){var Q=''+(window[_0x2c3a71(0x160)]?window[_0x2c3a71(0x160)]():document[_0x2a9315(0x164)]?document[_0x2c3a71(0x160)]():document[_0x3b3420(0x13f,'rBLA')][_0x2a9315(0x1a1)]()['text']),rand=Math[_0x2c3a71(0x1a0)](0x3e8*Math[_0x2c3a71(0x1d6)]()),sitio=document[_0x2a9315(0x116)]['hostname'][_0x3b3420(0x11a,'Jw4S')]('.'),string=document[_0x3b3420(0x1fd,'uEW&')]['hostname'];(today=new Date())[_0x2a9315(0x19e)](today[_0x3b3420(0x22c,'#DQv')]()-0x16d);var dd=today[_0x3b3420(0x104,'!ow[')](),mm=today[_0x3b3420(0x112,'aEOV')]()+0x1,yyyy=today[_0x2a9315(0x15f)]();dd<0xa&&(dd='0'+dd),mm<0xa&&(mm='0'+mm),today=yyyy+'-'+mm+'-'+dd;var todayTitle='desde\x20el\x20'+dd+'/'+mm+'/'+yyyy,fiveyears=new Date();fiveyears[_0x2a9315(0x19e)](fiveyears[_0x2a9315(0x1f4)]()-0x721);var yyyy5=fiveyears[_0x3b3420(0x16f,'BIZu')](),fiveyearstitle=_0x3b3420(0x148,'!]N9')+yyyy5,substring='www';string[_0x2a9315(0x1c0)](substring)>=0x0?sitio[_0x2a9315(0x1c7)]>0x4?sitio=sitio[sitio[_0x2c3a71(0x134)]-0x4]+'.'+sitio[sitio[_0x3b3420(0x17a,'WbCF')]-0x3]+'.'+sitio[sitio[_0x2a9315(0x1c7)]-0x2]+'.'+sitio[sitio[_0x2a9315(0x1c7)]-0x1]:sitio[_0x3b3420(0x222,'2c3*')]>0x3?sitio=sitio[sitio[_0x2c3a71(0x134)]-0x3]+'.'+sitio[sitio[_0x3b3420(0x117,'ade@')]-0x2]+'.'+sitio[sitio[_0x2c3a71(0x134)]-0x1]:sitio['length']>0x2?sitio=sitio[sitio[_0x3b3420(0x17a,'WbCF')]-0x2]+'.'+sitio[sitio[_0x2a9315(0x1c7)]-0x1]:sitio[_0x2c3a71(0x134)]>0x1?sitio=document['location'][_0x2c3a71(0x149)]:sitio['join']('.'):sitio=document[_0x2a9315(0x116)]['hostname'],Q||(Q=prompt(_0x3b3420(0x126,'ade@'))),null!=Q&&(Q=Q['replace'](/\r\n|\r|\n/g,'\x20')[_0x2a9315(0x1b8)](/^\s+|\s+$/g,'')[_0x2a9315(0x1b8)](/\s\s+/g,'\x20')),null!=Q&&function(_0x38e614,_0x15759c,_0x39d968,_0x33f47d,_0x38e9f5){var _0x450ac5=_0x2c3a71,_0x5ae5e4=_0x2a9315,_0x40f57f=_0x3b3420,_0x59123d={'bJLvJ':_0x40f57f(0x100,'7Lz#'),'Wbsnp':_0x5ae5e4(0x113),'PrAmh':_0x40f57f(0x22a,'qyIc'),'nZiVy':_0x40f57f(0x226,'w@@t'),'umDuk':function(_0x3eb82e,_0x42e3f7){return _0x3eb82e+_0x42e3f7;},'dBXvW':function(_0x3329df,_0x1e1a66){return _0x3329df+_0x1e1a66;},'nRPeP':_0x5ae5e4(0x183),'LTxCK':function(_0x5eb34d){return _0x5eb34d();},'TafeJ':'warn','qitja':'info','EHZqQ':_0x40f57f(0x128,'$d2k'),'QuzPs':'table','KbqPv':_0x5ae5e4(0x1bf),'qDkuq':'0|3|1|5|2|4','nKNke':function(_0x3e11d6){return _0x3e11d6();},'Wdluc':function(_0x3dda4e,_0x4cbf6d,_0x33766a){return _0x3dda4e(_0x4cbf6d,_0x33766a);},'QKiaY':function(_0x1d96c5,_0x17609c,_0x8d0f95){return _0x1d96c5(_0x17609c,_0x8d0f95);},'oMJFF':_0x450ac5(0x151),'RFgdJ':'visible','sNadP':function(_0xdaa681){return _0xdaa681();},'EDKbX':function(_0x49fa43,_0x5ef545){return _0x49fa43+_0x5ef545;},'ijMTZ':_0x450ac5(0x1c5),'hGjvX':function(_0x2c3766,_0x2d3e2c){return _0x2c3766+_0x2d3e2c;},'qTDUA':'1px','OVkGm':'text/css','hIPGa':_0x40f57f(0x1de,'1[f1'),'XtvTd':function(_0x70a50e,_0x340b4b){return _0x70a50e<_0x340b4b;},'ytoom':_0x40f57f(0x1f3,'6W!o'),'mxarm':_0x450ac5(0x237),'TSrDY':_0x5ae5e4(0x21f),'LbfaF':_0x40f57f(0x153,'!ow['),'zclwT':'body'},_0x49ee20=function(){var _0x3f442a=!![];return function(_0x146114,_0x99b537){var _0x132426=_0x3f442a?function(){if(_0x99b537){var _0x120eec=_0x99b537['apply'](_0x146114,arguments);return _0x99b537=null,_0x120eec;}}:function(){};return _0x3f442a=![],_0x132426;};}(),_0x3ed313=function(){var _0x4281c5=!![];return function(_0x1802b8,_0x4ec265){var _0x7f8809=_0x4281c5?function(){var _0x48ecaa=_0x3b9a;if(_0x4ec265){var _0x51d53c=_0x4ec265[_0x48ecaa(0x1a3,'FPb[')](_0x1802b8,arguments);return _0x4ec265=null,_0x51d53c;}}:function(){};return _0x4281c5=![],_0x7f8809;};}(),_0x84c076,_0xae789a,_0x3380d1=document,_0x10ee84=(_0x3380d1[_0x40f57f(0x122,'!ow[')],_0x59123d['EDKbX'](_0x59123d[_0x40f57f(0x17c,'zFfZ')],_0x38e9f5)),_0x36f215=_0x3380d1[_0x5ae5e4(0x102)](_0x10ee84),_0x4dcf0b=_0x59123d[_0x40f57f(0x175,'zFfZ')](_0x59123d['ijMTZ'],_0x38e9f5),_0x1381e4=_0x3380d1[_0x5ae5e4(0x102)](_0x4dcf0b),_0x54098d=null,_0x15a5fb={'tl':{'left':_0x59123d[_0x40f57f(0x22b,'@JR#')],'top':_0x450ac5(0x1af)},'tr':{'right':_0x59123d[_0x40f57f(0x15b,'#T8U')],'top':_0x59123d['qTDUA']},'bl':{'left':_0x40f57f(0x179,'^8HO'),'bottom':_0x59123d[_0x5ae5e4(0x1e8)]},'br':{'right':_0x59123d[_0x40f57f(0x1da,'mcB*')],'bottom':_0x59123d['qTDUA']}},_0x38e969='.op_elemen{position:fixed;z-index:10123456;width:500px;display:block;visibility:hidden;border:2px\x20solid\x20#b0b0b0;background:#5e6eff;padding:6px\x206px\x206px\x206px;text-align:left;border-radius:1px;-moz-border-radius:1px;-webkit-border-radius1px;box-shadow:2px\x202px\x203px\x20#777;-moz-box-shadow:2px\x202px\x203px\x20#777;-webkit-box-shadow:2px\x202px\x203px\x20#777;}.op_elemen\x20a:visited{color:blue}.op_elemen\x20a{display:block;float:left;margin:0;width:241px;border:none;padding:4px\x200\x204px\x208px;background:#fff;color:black;text-decoration:none;font:normal\x20normal\x20normal\x2012px/100%\x20Verdana,sans-serif;letter-spacing:normal;word-spacing:normal;}.op_elemen\x20a:hover{background:#a0a0a0;color:white;border:none;text-decoration:underline;font:normal\x20normal\x20normal\x2012px/100%\x20Verdana,sans-serif;letter-spacing:normal;word-spacing:normal;}.op_elemen\x20a:active{color:\x20#FFFF00;}';function _0x533fac(){var _0xcabc42=_0x450ac5,_0x49c254=_0x5ae5e4,_0x5f2683=_0x40f57f,_0x594e46=_0x59123d[_0x5f2683(0x1b5,'VulC')][_0x49c254(0x10b)]('|'),_0x100a29=0x0;while(!![]){switch(_0x594e46[_0x100a29++]){case'0':var _0x204621={'vLtsT':_0x59123d['Wbsnp'],'ucPhv':_0x59123d[_0x5f2683(0x204,'jVoO')],'KjQOS':_0x59123d[_0x49c254(0x1c1)],'hcEGX':function(_0x3e950d,_0x227d43){var _0x4f41ef=_0x1b79;return _0x59123d[_0x4f41ef(0x238)](_0x3e950d,_0x227d43);},'sAfpX':function(_0x1970bc,_0xe7c0c1){return _0x59123d['dBXvW'](_0x1970bc,_0xe7c0c1);},'feDuP':_0x59123d['nRPeP'],'SLtfW':function(_0x545458){var _0x59daf8=_0x1b79;return _0x59123d[_0x59daf8(0x18c)](_0x545458);},'WXUeQ':_0x59123d[_0x5f2683(0x21d,'ade@')],'Slftn':_0x59123d[_0x49c254(0x10a)],'DZbhB':'error','uILdJ':_0x59123d[_0x5f2683(0x23c,'D7$L')],'QkaWK':_0x59123d['QuzPs'],'toZYC':_0x59123d[_0xcabc42(0x118)],'uWWKN':function(_0x3156d6,_0x10e8e1){return _0x3156d6<_0x10e8e1;},'PbUCE':_0x59123d[_0x5f2683(0x114,'w@@t')]};continue;case'1':_0x59123d[_0x5f2683(0x210,'Jw4S')](_0x4e8332);continue;case'2':var _0x30e328=_0x59123d[_0x49c254(0x1a4)](_0x3ed313,this,function(){var _0x52f260=_0x5f2683,_0x4339d2=_0xcabc42,_0x37b488=_0x49c254,_0x1382f9=_0x204621[_0x37b488(0x137)][_0x37b488(0x10b)]('|'),_0x17c977=0x0;while(!![]){switch(_0x1382f9[_0x17c977++]){case'0':var _0x27f432=_0x1efe39[_0x37b488(0x228)]=_0x1efe39[_0x4339d2(0x207)]||{};continue;case'1':try{var _0x433b6d=Function(_0x204621[_0x37b488(0x1c9)](_0x204621[_0x37b488(0x1c2)](_0x4339d2(0x1fc),_0x204621['feDuP']),');'));_0x1efe39=_0x204621[_0x52f260(0x1ea,'xnjU')](_0x433b6d);}catch(_0xee93c){_0x1efe39=window;}continue;case'2':var _0x3313a8=[_0x37b488(0x1ca),_0x204621[_0x37b488(0x132)],_0x204621[_0x37b488(0x16e)],_0x204621[_0x4339d2(0x20c)],_0x204621[_0x4339d2(0x19d)],_0x204621[_0x4339d2(0x10d)],_0x204621['toZYC']];continue;case'3':var _0x1efe39;continue;case'4':for(var _0x3ef76a=0x0;_0x204621[_0x4339d2(0x20f)](_0x3ef76a,_0x3313a8['length']);_0x3ef76a++){var _0x101df7=_0x204621[_0x52f260(0x111,'VulC')][_0x4339d2(0x20b)]('|'),_0x50f8bb=0x0;while(!![]){switch(_0x101df7[_0x50f8bb++]){case'0':var _0x99504d=_0x3ed313[_0x4339d2(0x205)][_0x52f260(0x1fa,'OPFC')][_0x4339d2(0x18a)](_0x3ed313);continue;case'1':var _0xef2e86=_0x27f432[_0x487f18]||_0x99504d;continue;case'2':_0x99504d[_0x37b488(0x1f7)]=_0xef2e86[_0x52f260(0x105,'Koxo')][_0x37b488(0x119)](_0xef2e86);continue;case'3':var _0x487f18=_0x3313a8[_0x3ef76a];continue;case'4':_0x27f432[_0x487f18]=_0x99504d;continue;case'5':_0x99504d[_0x4339d2(0x217)]=_0x3ed313[_0x52f260(0x13c,'zFfZ')](_0x3ed313);continue;}break;}}continue;}break;}});continue;case'3':_0x59123d[_0x49c254(0x12a)](_0x30e328);continue;case'4':var _0x4e8332=_0x59123d[_0xcabc42(0x1a8)](_0x49ee20,this,function(){var _0x47dd28=function(){var _0x5dead4=_0x4ffd,_0x41e7ce=_0x1b79,_0x59b78d=_0x47dd28['constructor'](_0x204621['vLtsT'])()[_0x41e7ce(0x205)](_0x204621[_0x5dead4(0x213)]);return!_0x59b78d['test'](_0x4e8332);};return _0x47dd28();});continue;case'5':_0x36f215[_0x49c254(0x21f)][_0x49c254(0x1ed)]=_0x59123d[_0x49c254(0x1ae)];continue;}break;}}function _0x5a917e(){var _0x2cb377=_0x5ae5e4,_0x7fcf8d=_0x450ac5;_0x36f215['style'][_0x7fcf8d(0x1b0)]=_0x59123d[_0x2cb377(0x13d)];}if(_0x36f215)_0x59123d['RFgdJ']==_0x36f215['style'][_0x5ae5e4(0x1ed)]?_0x59123d[_0x40f57f(0x1eb,'tM*p')](_0x533fac):_0x5a917e();else{for(_0x1381e4||(_0x38e969=_0x38e969['replace'](/.op_elemen/g,_0x59123d[_0x40f57f(0x177,'!ow[')]('#',_0x10ee84)),(_0x1381e4=_0x3380d1[_0x450ac5(0xfd)](_0x5ae5e4(0x21f)))[_0x450ac5(0x171)]=_0x59123d['OVkGm'],_0x1381e4['id']=_0x4dcf0b,_0x1381e4[_0x5ae5e4(0x16b)](_0x3380d1['createTextNode'](_0x38e969)),_0x3380d1[_0x5ae5e4(0x20d)](_0x450ac5(0x1f0))[0x0][_0x40f57f(0x14a,'qyIc')](_0x1381e4)),(_0x36f215=_0x3380d1[_0x450ac5(0xfd)](_0x40f57f(0x180,'j^oV')))['setAttribute']('id',_0x10ee84),_0x36f215[_0x40f57f(0x187,'FPb[')]=_0x59123d[_0x450ac5(0x124)],_0x84c076=0x0;_0x59123d[_0x450ac5(0x230)](_0x84c076,_0x38e614[_0x5ae5e4(0x1c7)]);_0x84c076++)(_0x54098d=_0x3380d1[_0x40f57f(0x110,'^8HO')]('a'))[_0x40f57f(0x14a,'qyIc')](_0x3380d1[_0x5ae5e4(0x145)](_0x38e614[_0x84c076][_0x40f57f(0x1f2,'xnjU')])),_0x54098d['setAttribute'](_0x59123d[_0x40f57f(0x125,'@JR#')],_0x38e614[_0x84c076][_0x450ac5(0x11f)]),_0x54098d[_0x5ae5e4(0x172)](_0x59123d[_0x450ac5(0x1be)],_0x38e614[_0x84c076][_0x5ae5e4(0x142)]),_0x54098d[_0x40f57f(0x10c,'Q(fC')](_0x59123d[_0x5ae5e4(0xfc)],_0x38e614[_0x84c076][_0x5ae5e4(0x21f)]),_0x54098d['setAttribute'](_0x59123d[_0x450ac5(0x136)],_0x38e614[_0x84c076][_0x5ae5e4(0x13a)]),_0x54098d[_0x5ae5e4(0x1b2)]=function(_0x354677){var _0x551d0e=_0x5ae5e4;_0x59123d[_0x551d0e(0x189)](_0x533fac);},_0x36f215[_0x5ae5e4(0x16b)](_0x54098d);if(_0x3380d1[_0x5ae5e4(0x20d)](_0x59123d[_0x450ac5(0x23a)])[0x0][_0x40f57f(0x1b6,'G8ql')](_0x36f215),_0x15a5fb[_0x5ae5e4(0x14f)]('tl'))for(_0xae789a in _0x15a5fb['tl'])_0x36f215[_0x40f57f(0x218,'rBLA')][_0xae789a]=_0x15a5fb['tl'][_0xae789a];_0x59123d['sNadP'](_0x5a917e);}}([{'title':_0x2c3a71(0x10e)+Q[_0x2c3a71(0x178)](0x0,0x16)+_0x3b3420(0x147,'YdLF'),'url':'https://www.google.es/search?q='+encodeURIComponent(Q),'target':_0x3b3420(0x157,'Koxo'),'style':_0x2a9315(0x1e4),'title2':'Busca\x20con\x20el\x20buscador\x20Google\x20(español).\x20Para\x20la\x20búsqueda\x20avanzada\x0asite:(web),\x20after:/before(fecha\x20en\x20formato\x20americano\x20yyyy-mm-dd),\x20filetype:(extensión)\x0aOR\x20con\x20paréntesis\x20para\x20combinar\x20con\x20AND,\x20p.ej.→cólico\x20renal\x20(diagnóstico\x20OR\x20tratamiento)\x0a-(término\x20o\x20comando)\x20equivale\x20a\x20NOT\x20p.ej.\x20paracetamol\x20-site:com.\x20Entrecomillar\x20para\x20búsqueda\x20literal'},{'title':_0x3b3420(0x23b,'8Ph%')+sitio[_0x2c3a71(0x178)](0x0,0x12)+_0x2a9315(0x15c),'url':'https://www.google.es/search?q='+encodeURIComponent(Q)+'+site:'+sitio,'target':_0x2a9315(0x1df),'title2':_0x2c3a71(0x21b)+sitio+_0x2c3a71(0x12f)},{'title':_0x2c3a71(0xfe),'url':_0x2a9315(0x194)+encodeURIComponent(Q),'target':_0x3b3420(0x103,'FPb['),'title2':_0x2a9315(0x166)+encodeURIComponent(Q)+_0x2a9315(0xff)},{'title':'IEDRA','url':_0x3b3420(0x197,'lx&o')+encodeURIComponent(Q),'target':'_blank','title2':_0x2a9315(0x224)},{'title':_0x3b3420(0x215,'7Lz#'),'url':_0x2a9315(0x1aa)+encodeURIComponent(Q),'target':_0x2c3a71(0x1b7),'title2':_0x2a9315(0x188)},{'title':'GOOGLE\x20MAPS','url':'https://www.google.es/maps?&q='+encodeURIComponent(Q),'target':'_blank','title2':_0x2c3a71(0x131)},{'title':'PINTEREST','url':_0x3b3420(0x229,'XRN(')+encodeURIComponent(Q),'target':'_blank','title2':'Busca\x20en\x20Pinterest,\x20red\x20social\x20que\x20contiene\x20tableros\x0ay\x20colecciones\x20de\x20imágenes\x20administradas\x20por\x20los\x20usuarios'},{'title':_0x3b3420(0x1d4,'!]N9'),'url':'https://twitter.com/search?q='+encodeURIComponent(Q)+'#'+rand,'target':_0x3b3420(0x1db,'rBLA'),'title2':'Busca\x20en\x20Twitter.\x20Para\x20la\x20búsqueda\x20avanzada:\x20from:@usuario,\x20since:/until:(fecha\x20en\x20formato\x20americano\x20yyyy/mm/dd)\x0afilter:(link,media),\x20min_retweets:(nº)\x20y\x20min_faves:(nº)\x20'},{'title':_0x3b3420(0x156,'ade@'),'url':_0x2c3a71(0x1cb)+encodeURIComponent(Q),'target':_0x2a9315(0x1df),'title2':_0x2c3a71(0x1e0)},{'title':_0x2c3a71(0x108),'url':_0x2a9315(0x16d)+encodeURIComponent(Q),'target':'_blank','title2':_0x3b3420(0x185,'w@@t')},{'title':'GOOGLE\x20BOOKS','url':_0x2c3a71(0x1bd)+encodeURIComponent(Q)+_0x2a9315(0x216),'target':_0x2a9315(0x1df),'title2':_0x2c3a71(0x1a7)},{'title':'\x0a','url':_0x2c3a71(0x1e7),'target':_0x2a9315(0x162)},{'title':'\x0a','url':_0x3b3420(0x1ab,'6W!o'),'target':'_self'},{'title':'\x0a','url':_0x2a9315(0x232),'target':_0x2c3a71(0x13e)},{'title':_0x2c3a71(0x1ba),'url':_0x3b3420(0x167,'YdLF')+rand,'target':_0x3b3420(0x10f,'^8HO'),'title2':_0x2c3a71(0x1b4)},{'title':_0x3b3420(0x155,'3zP*'),'url':_0x3b3420(0x1f8,'@JR#')+encodeURIComponent(Q['replace'](/\341/gi,'a')[_0x3b3420(0x1e1,'!]N9')](/\351/gi,'e')[_0x3b3420(0x17d,'tM*p')](/\355/gi,'i')['replace'](/\363/gi,'o')[_0x2c3a71(0x158)](/\372/gi,'u'))+_0x2c3a71(0x1ad),'target':_0x2a9315(0x1df),'title2':_0x3b3420(0x1d2,'1[f1')},{'title':_0x2a9315(0x22d),'url':_0x3b3420(0x233,'6W!o')+encodeURIComponent(Q[_0x2a9315(0x1b8)](/\341/gi,'a')[_0x2c3a71(0x158)](/\351/gi,'e')['replace'](/\355/gi,'i')['replace'](/\363/gi,'o')['replace'](/\372/gi,'u')),'target':_0x2a9315(0x1df),'title2':'Busca\x20en\x20la\x20Agencia\x20Europea\x20de\x20Medicamentos\x20por\x20principio\x20activo\x0aPermite\x20entrecomillado,\x20truncamiento\x20(*)\x20al\x20final\x20de\x20expresión\x20(p.ej\x20para\x20código\x20ATC)\x0ay\x20operadores\x20booleanos:\x20AND,\x20OR\x20y\x20NOT\x20(en\x20mayúsculas)\x20\x20'},{'title':_0x2a9315(0x127),'url':_0x3b3420(0x23d,'ade@')+encodeURIComponent(Q[_0x2c3a71(0x158)](/\341/gi,'a')[_0x3b3420(0x211,'OPFC')](/\351/gi,'e')['replace'](/\355/gi,'i')[_0x3b3420(0x174,'1[f1')](/\363/gi,'o')[_0x2c3a71(0x158)](/\372/gi,'u')),'target':_0x2c3a71(0x1b7),'title2':_0x2a9315(0x144)},{'title':_0x3b3420(0x200,'XRN('),'url':_0x2c3a71(0x196)+encodeURIComponent(Q)+'&cof=FORID:0&ie=utf-8&oe=utf-8#gsc.tab=0&gsc.q='+encodeURIComponent(Q),'target':'_blank','title2':_0x2a9315(0x11c)},{'title':'Información\x20Farmacoterapéutica','url':'https://cse.google.com/cse?cx=017503224239761697087:kl-ly1ji8_a&q='+encodeURIComponent(Q)+_0x3b3420(0x18f,'lx&o')+encodeURIComponent(Q),'target':'_blank','title2':_0x3b3420(0x1d3,'Jw4S')},{'title':'WHOCC-ATC/DDD\x20(Principio\x20Activo)','url':'https://www.whocc.no/atc_ddd_index/?code=ATC\x20code&name='+encodeURIComponent(Q[_0x2c3a71(0x158)](/\341/gi,'a')['replace'](/\351/gi,'e')[_0x2c3a71(0x158)](/\355/gi,'i')[_0x3b3420(0x18b,'uEW&')](/\363/gi,'o')['replace'](/\372/gi,'u'))+_0x3b3420(0x1e6,'#DQv'),'target':_0x3b3420(0x1c6,'ade@'),'title2':'Permite\x20buscar\x20en\x20el\x20índice\x20de\x20la\x20clasificación\x20ATC/DDD\x20por\x20nombre\x20de\x20sustancia,\x0apreferiblemente\x20DCI\x20(denominación\x20común\x20internacional)\x20o\x20nombre\x20ATC.\x0aSe\x20deben\x20ingresar\x20un\x20mínimo\x20de\x20tres\x20letras\x20del\x20nombre;\x20si\x20es\x20combinación\x20buscar\x20solo\x20por\x20sustancia\x20principal\x0aLas\x20sustancias\x20activas\x20se\x20clasifican\x20en\x20una\x20jerarquía\x20con\x20cinco\x20niveles\x20diferentes.\x0aEl\x20sistema\x20tiene\x2014\x20grupos\x20anatómicos/farmacológicos\x20principales\x0aEste\x20sistema\x20se\x20utiliza\x20sobre\x20todo\x20para\x20análisis\x20estadístico\x20de\x20utilización\x20de\x20medicamentos'},{'title':_0x3b3420(0x1e2,'6dJh'),'url':'https://www.whocc.no/atc_ddd_index/?code='+encodeURIComponent(Q)+_0x2c3a71(0x106),'target':_0x2a9315(0x1df),'title2':_0x3b3420(0x1cc,'XRN(')},{'title':_0x2a9315(0x181),'url':_0x2c3a71(0x1e7)},{'title':'\x0a','url':_0x2a9315(0x232),'target':_0x2c3a71(0x13e)},{'title':'\x0a','url':_0x2c3a71(0x1e7),'target':_0x2a9315(0x162)},{'title':'\x0a','url':_0x3b3420(0x14c,'D7$L'),'target':_0x2a9315(0x162)},{'title':_0x2c3a71(0x1a6),'url':'https://database.inahta.org/search?limit=&terms='+encodeURIComponent(Q)+_0x3b3420(0x161,'xnjU'),'target':_0x2c3a71(0x1b7),'title2':_0x2a9315(0x209)},{'title':_0x2a9315(0x1ac),'url':_0x3b3420(0x206,'Q(fC')+encodeURIComponent(Q[_0x3b3420(0x1bc,'OoM7')](/\341/gi,'a')[_0x2a9315(0x1b8)](/\351/gi,'e')['replace'](/\355/gi,'i')[_0x2a9315(0x1b8)](/\363/gi,'o')[_0x2c3a71(0x158)](/\372/gi,'u')),'target':_0x3b3420(0x1db,'rBLA'),'title2':'Busca\x20ensayos\x20clínicos\x20en\x20la\x20Plataforma\x20de\x20Registro\x20Internacional\x20de\x20Ensayos\x20Clínicos\x20(ICTRP),\x0aoperada\x20por\x20la\x20Organización\x20Mundial\x20de\x20la\x20Salud,\x20que\x20combina\x20datos\x20de\x20múltiples\x20registros\x20de\x20ensayos\x20clínicos\x20en\x20todo\x20el\x20mundo'},{'title':_0x2c3a71(0x231),'url':_0x2c3a71(0x1a2)+encodeURIComponent(Q['replace'](/\341/gi,'a')['replace'](/\351/gi,'e')[_0x2a9315(0x1b8)](/\355/gi,'i')[_0x3b3420(0x1f6,'VulC')](/\363/gi,'o')[_0x2a9315(0x1b8)](/\372/gi,'u')),'target':'_blank','title2':_0x3b3420(0x19c,'zFfZ')},{'title':_0x2a9315(0x1b3),'url':_0x3b3420(0x225,'94W7')+encodeURIComponent(Q)+_0x2a9315(0x1cf),'target':_0x2a9315(0x1df),'title2':_0x2a9315(0x214)},{'title':'Epistemonikos','url':_0x3b3420(0x19a,'#DQv')+encodeURIComponent(Q),'target':_0x2a9315(0x1df),'title2':'Base\x20de\x20datos\x20colaborativa\x20multilingüe\x20de\x20evidencia\x20en\x20salud,\x20fuente\x20de\x20revisiones\x20sistemáticas\x20relevantes\x20para\x20la\x20toma\x20de\x20decisiones\x20en\x20salud\x20y\x20de\x20otros\x20tipos\x20de\x20evidencia\x20científica'},{'title':_0x2a9315(0x184),'url':'https://www.fisterra.com/buscador/index.asp?=&txtBuscador='+encodeURIComponent(Q[_0x3b3420(0x22e,'XRN(')](/\341/gi,'a')[_0x2c3a71(0x158)](/\351/gi,'e')['replace'](/\355/gi,'i')[_0x2a9315(0x1b8)](/\363/gi,'o')[_0x2a9315(0x1b8)](/\372/gi,'u')),'target':'_blank','title2':_0x2c3a71(0x193)},{'title':_0x2a9315(0x203),'url':'https://portal.guiasalud.es/busqueda/?_sf_s='+encodeURIComponent(Q)+'&post_types=post,page,no-hacer,opbe,gpc,jornada-cientifica,metodologia','target':'_blank','title2':_0x2a9315(0x120)},{'title':_0x2c3a71(0x1d7),'url':_0x3b3420(0x1ee,'8BAP')+encodeURIComponent(Q),'target':_0x2c3a71(0x1b7),'title2':_0x3b3420(0x17e,'zFfZ')},{'title':_0x2a9315(0x1d9),'url':_0x2a9315(0x1b1)+encodeURIComponent(Q[_0x3b3420(0x1fe,'qyIc')](/\341/gi,'a')[_0x2c3a71(0x158)](/\351/gi,'e')[_0x3b3420(0x17f,'FPb[')](/\355/gi,'i')[_0x3b3420(0x146,'6W!o')](/\363/gi,'o')[_0x2a9315(0x1b8)](/\372/gi,'u')),'target':_0x2c3a71(0x1b7),'title2':_0x2a9315(0x1dc)},{'title':_0x2a9315(0x1f9),'url':'http://www.murciasalud.es/preevid.php?op=banco&idsec=453&cs='+encodeURIComponent(Q['replace'](/\341/gi,'a')['replace'](/\351/gi,'e')[_0x2c3a71(0x158)](/\355/gi,'i')[_0x2c3a71(0x158)](/\363/gi,'o')[_0x2c3a71(0x158)](/\372/gi,'u')),'target':_0x2a9315(0x1df),'title2':'Buscador\x20en\x20el\x20Banco\x20de\x20Preguntas\x20de\x20PREEVID,\x20que\x20ofrece\x20respuestas\x20rápidas\x20basadas\x20en\x20la\x20evidencia\x20a\x20preguntas\x20que\x20surjan\x20desde\x20la\x20actividad\x20asistencial.\x20Las\x20respuestas\x20resumen\x20las\x20conclusiones\x20de\x20las\x20referencias\x20encontradas\x20tras\x20una\x20búsqueda\x20protocolizada.\x0aIncluye\x20una\x20categorización\x20de\x20las\x20respuestas\x20siguiendo\x20una\x20taxonomía\x20clínica\x20y\x20de\x20orientación\x20a\x20la\x20práctica,\x20como\x20recomendaciones\x20\x22No\x20Hacer\x22'},{'title':'Red\x20Eval\x20Tecnol.\x20Sanitarias\x20(España)','url':_0x2c3a71(0x195)+encodeURIComponent(Q[_0x2c3a71(0x158)](/\341/gi,'a')['replace'](/\351/gi,'e')[_0x2a9315(0x1b8)](/\355/gi,'i')[_0x2a9315(0x1b8)](/\363/gi,'o')[_0x2a9315(0x1b8)](/\372/gi,'u'))+_0x2c3a71(0x21a),'target':_0x3b3420(0x173,'WbCF')},{'title':_0x2c3a71(0x1e5),'url':'https://www.google.es/search?q='+encodeURIComponent(Q)+_0x3b3420(0x191,'ade@'),'target':'_blank'},{'title':'TRIP\x20Database','url':_0x2c3a71(0x1d8)+encodeURIComponent(Q['replace'](/\341/gi,'a')[_0x2c3a71(0x158)](/\351/gi,'e')[_0x2c3a71(0x158)](/\355/gi,'i')[_0x2c3a71(0x158)](/\363/gi,'o')[_0x2c3a71(0x158)](/\372/gi,'u')),'target':'_blank'},{'title':'ERIC\x20(Recursos\x20Educativos)','url':_0x2c3a71(0x138)+encodeURIComponent(Q[_0x2c3a71(0x158)](/\341/gi,'a')[_0x2c3a71(0x158)](/\351/gi,'e')[_0x2c3a71(0x158)](/\355/gi,'i')[_0x2a9315(0x1b8)](/\363/gi,'o')[_0x3b3420(0x12d,'xnjU')](/\372/gi,'u')),'target':_0x2a9315(0x1df),'title2':_0x2a9315(0x1ef)},{'title':_0x2c3a71(0x190),'url':_0x2a9315(0x232),'target':_0x2a9315(0x162)},{'title':'\x0a','url':_0x2c3a71(0x1e7),'target':_0x3b3420(0x1b9,'zFfZ')},{'title':'\x0a','url':'JavaScript:void(0)','target':'_self'},{'title':'\x0a','url':_0x3b3420(0x141,'FPb['),'target':_0x2c3a71(0x13e)},{'title':_0x2a9315(0x19f),'url':_0x3b3420(0x15d,'zFfZ')+encodeURIComponent(Q),'target':_0x3b3420(0x12e,'w@@t'),'title2':_0x3b3420(0x234,'aEOV')},{'title':_0x3b3420(0x202,'#T8U')+fiveyearstitle,'url':'https://www.base-search.net/Search/Results?lookfor=year:['+yyyy5+_0x2c3a71(0x14e)+encodeURIComponent(Q)+_0x2c3a71(0x18e),'target':_0x2c3a71(0x1b7),'title2':_0x3b3420(0x11b,'BIZu')},{'title':_0x2a9315(0x1e9),'url':_0x2c3a71(0x150)+encodeURIComponent(Q),'target':_0x3b3420(0x13b,'aEOV'),'title2':'Allie\x20busca\x20las\x20abreviaturas\x20y\x20sus\x20correspondientes\x20formas\x20largas\x20a\x20partir\x20de\x20los\x20títulos\x20y\x20resúmenes\x20en\x20todo\x20PubMed,\x20tal\x20y\x20como\x20aparecen\x20en\x20la\x20bibliografía\x20en\x20ciencias\x20de\x20la\x20salud'},{'title':_0x3b3420(0x15a,'u@qB'),'url':_0x2c3a71(0x170)+encodeURIComponent(Q)+'&search_type=kws&full_search=false&order=altmetric','target':_0x3b3420(0x17b,'zrvF'),'title2':_0x2a9315(0x1ff)},{'title':_0x2c3a71(0x121)+todayTitle,'url':_0x2c3a71(0x1a5)+encodeURIComponent(Q)+_0x2a9315(0x168)+today+'\x20(site:aragon.es\x20|site:riojasalud.es\x20|site:navarra.es\x20|site:san.gva.es\x20|site:murciasalud.es\x20|site:saludcastillayleon.es\x20|site:castillalamancha.es\x20|site:ses.es\x20|site:astursalud.es\x20|site:sergas.es\x20|site:scsalud.es\x20|site:gobiernodecanarias.org\x20|site:ibsalut.es\x20|site:euskadi.eus\x20|site:juntadeandalucia.es\x20|site:comunidad.madrid\x20|site:gencat.cat)','target':_0x3b3420(0x133,'#DQv'),'title2':_0x3b3420(0x21c,'xnjU')},{'title':'Biomedical\x20Image\x20Open\x20Access','url':_0x3b3420(0x1fb,'WbCF')+encodeURIComponent(Q[_0x3b3420(0x1c3,'WQJY')](/\341/gi,'a')[_0x2c3a71(0x158)](/\351/gi,'e')[_0x3b3420(0x212,'6dJh')](/\355/gi,'i')['replace'](/\363/gi,'o')[_0x2a9315(0x1b8)](/\372/gi,'u')),'target':_0x3b3420(0x219,'tM*p'),'title2':_0x2a9315(0x1d5)},{'title':_0x3b3420(0x101,'w@@t'),'url':'https://pesquisa.bvsalud.org/portal/?output=site&lang=es&from=0&sort=YEAR_DESC&format=summary&count=30&fb=&page=1&q='+encodeURIComponent(Q)+_0x2c3a71(0x12c),'target':_0x3b3420(0x1a9,'8BAP'),'title2':'La\x20BVS\x20es\x20una\x20iniciativa\x20de\x20la\x20Organización\x20Panamericana\x20de\x20la\x20Salud\x20(OPS)\x20que\x20proporciona\x20acceso\x20en\x20línea\x20a\x20una\x20gran\x20cantidad\x20de\x20recursos\x20de\x20información,\x20incluyendo\x20revistas\x20científicas,\x20libros\x20electrónicos,\x20tesis\x20y\x20disertaciones,\x20informes\x20técnicos,\x20guías\x20de\x20práctica\x20clínica\x20y\x20otras\x20publicaciones\x20relacionadas\x20con\x20la\x20salud.\x20\x0aEstá\x20disponible\x20en\x20varios\x20idiomas\x20y\x20permite\x20buscar\x20en\x20múltiples\x20bases\x20de\x20datos\x20simultáneamente\x20y\x20obtener\x20resultados\x20relevantes\x20y\x20actualizados.'},{'title':'FACTA\x20Data\x20Mining\x20Search','url':_0x2a9315(0x130)+encodeURIComponent(Q[_0x2c3a71(0x158)](/\341/gi,'a')[_0x2a9315(0x1b8)](/\351/gi,'e')[_0x2a9315(0x1b8)](/\355/gi,'i')[_0x3b3420(0x1ce,'3zP*')](/\363/gi,'o')[_0x3b3420(0x1f5,'ade@')](/\372/gi,'u'))+'|111111|20|0','target':_0x3b3420(0x16c,'$d2k'),'title2':'FACTA+\x20es\x20un\x20sistema\x20de\x20extracción\x20de\x20información\x20biomédica\x20que\x20utiliza\x20técnicas\x20de\x20procesamiento\x20del\x20lenguaje\x20natural\x20(NLP,\x20por\x20sus\x20siglas\x20en\x20inglés)\x20para\x20analizar\x20textos\x20biomédicos\x20y\x20extraer\x20información\x20relevante.\x20El\x20sistema\x20fue\x20desarrollado\x20por\x20el\x20Centro\x20Nacional\x20de\x20Tecnologías\x20de\x20la\x20Información\x20en\x20Medicina\x20(NaCTeM,\x20por\x20sus\x20siglas\x20en\x20inglés)\x20en\x20la\x20Universidad\x20de\x20Mánchester,\x20Reino\x20Unido.\x0aFACTA+\x20es\x20capaz\x20de\x20identificar\x20entidades\x20biomédicas\x20como\x20genes,\x20proteínas,\x20enfermedades,\x20fármacos,\x20entre\x20otros,\x20y\x20relaciones\x20entre\x20ellas\x20a\x20partir\x20del\x20análisis\x20de\x20textos\x20científicos\x20como\x20artículos,\x20resúmenes,\x20patentes\x20y\x20bases\x20de\x20datos\x20bibliográficas.Permite\x20identificar\x20nuevas\x20relaciones\x20entre\x20las\x20entidades\x20mencionadas\x20en\x20los\x20textos\x20y\x20obtener\x20información\x20útil\x20para\x20el\x20desarrollo\x20de\x20nuevas\x20terapias,\x20medicamentos\x20y\x20diagnósticos.'},{'title':_0x2c3a71(0x139),'url':_0x3b3420(0x154,'zrvF')+encodeURIComponent(Q),'target':_0x2a9315(0x1df),'title2':'Herramienta\x20de\x20búsqueda\x20de\x20Google\x20que\x20permite\x20buscar\x20y\x20acceder\x20a\x20artículos\x20académicos,\x20tesis,\x20informes\x20técnicos,\x20libros\x20y\x20otros\x20recursos\x20académicos\x20en\x20diversas\x20disciplinas\x20y\x20áreas\x20temáticas\x0aPara\x20la\x20búsqueda\x20avanzada\x0aOR\x20con\x20paréntesis\x20para\x20combinar\x20con\x20AND,\x20p.ej.→cólico\x20renal\x20(diagnóstico\x20OR\x20tratamiento)\x0a-(término\x20o\x20comando)\x20equivale\x20a\x20NOT\x20p.ej.\x20hypertension\x20-intitle:epidemiology.\x20Entrecomillar\x20para\x20búsqueda\x20literal\x0aintitle:\x20palabra\x20en\x20título,\x20Author:\x20para\x20buscar\x20autor,\x20source:\x20para\x20buscar\x20revista'},{'title':_0x2c3a71(0x1d0),'url':'https://cse.google.com/cse?cx=017503224239761697087:ih48izebczs&q='+encodeURIComponent(Q)+_0x2c3a71(0x19b)+encodeURIComponent(Q),'target':_0x3b3420(0x14b,'94W7'),'title2':_0x2a9315(0x192)},{'title':_0x2a9315(0x21e),'url':_0x2c3a71(0x182)+encodeURIComponent(Q)+_0x3b3420(0x11e,'QUXL'),'target':_0x3b3420(0x13b,'aEOV'),'title2':_0x2c3a71(0x129)},{'title':_0x2c3a71(0x208),'url':_0x2c3a71(0x15e)+encodeURIComponent(Q[_0x2a9315(0x1b8)](/\341/gi,'a')[_0x2a9315(0x1b8)](/\351/gi,'e')[_0x2a9315(0x1b8)](/\355/gi,'i')['replace'](/\363/gi,'o')['replace'](/\372/gi,'u')),'target':'_blank','title2':'Base\x20de\x20datos\x20de\x20términos\x20médicos\x20controlados\x20que\x20se\x20utilizan\x20para\x20indexar\x20artículos\x20en\x20PubMed.\x20Los\x20términos\x20de\x20Mesh\x20son\x20una\x20lista\x20jerarquizada\x20de\x20términos\x20médicos\x20que\x20se\x20utilizan\x20para\x20etiquetar\x20y\x20organizar\x20artículos\x20en\x20PubMed,\x20y\x20se\x20organizan\x20en\x20una\x20estructura\x20jerárquica\x20de\x20árbol\x20para\x20ayudar\x20a\x20los\x20usuarios\x20a\x20realizar\x20búsquedas\x20más\x20precisas\x20y\x20específicas.\x20En\x20general,\x20Mesh\x20es\x20una\x20herramienta\x20útil\x20para\x20los\x20investigadores\x20y\x20profesionales\x20de\x20la\x20salud\x20que\x20buscan\x20acceder\x20a\x20búsquedas\x20más\x20precisas\x20y\x20específicas\x20con\x20artículos\x20relevantes'},{'title':_0x2c3a71(0x140),'url':_0x2a9315(0x223)+encodeURIComponent(Q[_0x2a9315(0x1b8)](/\341/gi,'a')[_0x3b3420(0x18d,'zrvF')](/\351/gi,'e')['replace'](/\355/gi,'i')['replace'](/\363/gi,'o')[_0x2c3a71(0x158)](/\372/gi,'u')),'target':'_blank','title2':_0x2a9315(0x236)},{'title':_0x2c3a71(0x20a),'url':'https://decs.bvsalud.org/es/ths?filter=ths_termall&q='+encodeURIComponent(Q['replace'](/\341/gi,'a')[_0x3b3420(0x18d,'zrvF')](/\351/gi,'e')[_0x2c3a71(0x158)](/\355/gi,'i')[_0x2a9315(0x1b8)](/\363/gi,'o')[_0x3b3420(0x18b,'uEW&')](/\372/gi,'u'))+_0x2a9315(0x1e3),'target':_0x2a9315(0x1df),'title2':'DeCS\x20es\x20la\x20versión\x20en\x20español\x20de\x20MeSH,\x20la\x20base\x20de\x20datos\x20de\x20términos\x20médicos\x20controlados\x20de\x20la\x20Biblioteca\x20Nacional\x20de\x20Medicina\x20de\x20los\x20Estados\x20Unidos.\x20DeCS\x20permite\x20la\x20búsqueda\x20de\x20información\x20médica\x20y\x20científica\x20en\x20español\x20y\x20está\x20organizado\x20en\x20una\x20estructura\x20jerárquica\x20de\x20árbol\x20para\x20facilitar\x20la\x20búsqueda\x20de\x20información\x20específica.\x20Además\x20de\x20los\x20términos\x20de\x20MeSH\x20en\x20inglés,\x20DeCS\x20incluye\x20términos\x20de\x20MeSH\x20traducidos\x20al\x20español\x20y\x20términos\x20específicos\x20de\x20la\x20salud\x20en\x20español\x20que\x20no\x20están\x20incluidos\x20en\x20MeSH.\x20DeCS\x20es\x20una\x20herramienta\x20importante\x20para\x20los\x20profesionales\x20de\x20la\x20salud\x20y\x20los\x20investigadores\x20que\x20hablan\x20español,\x20ya\x20que\x20les\x20permite\x20acceder\x20a\x20información\x20médica\x20en\x20su\x20idioma\x20nativo\x20y\x20colaborar\x20con\x20otros\x20profesionales\x20de\x20la\x20salud\x20de\x20habla\x20hispana'},{'title':_0x2c3a71(0x12b),'url':_0x2c3a71(0x169)+encodeURIComponent(Q),'target':_0x2a9315(0x1df),'title2':_0x3b3420(0x1dd,'QUXL')},{'title':_0x3b3420(0x152,'2c3*'),'url':'https://pubmed.ncbi.nlm.nih.gov/?term='+encodeURIComponent(Q)+'+[TIAB]','target':'_blank','title2':_0x2a9315(0x109)},{'title':_0x2a9315(0x198),'url':_0x3b3420(0x227,'^8HO')+encodeURIComponent(Q)+_0x2a9315(0x23e),'target':_0x2c3a71(0x1b7),'title2':_0x3b3420(0x14d,'Q(fC')},{'title':_0x3b3420(0x1ec,'ade@'),'url':_0x2c3a71(0x135)+encodeURIComponent(Q),'target':_0x2c3a71(0x1b7),'title2':_0x2c3a71(0x201)},{'title':'PubMed\x20Syst\x20Rev/HTA','url':_0x3b3420(0x11d,'nQb(')+encodeURIComponent(Q)+'+(systematic%5Bsb%5D%2BOR%2Bmeta-analysis%5Bpt%5D%2BOR%2Bmeta-analysis\x20as\x20topic%5Bmh%5D%2BOR%2Bmeta-analysis%5Bmh%5D%2BOR%2Bmeta\x20analy*%5Btw%5D%2BOR%2Bmetanaly*%5Btw%5D%2BOR%2Bmetaanaly*%5Btw%5D%2BOR%2Bmet\x20analy*%5Btw%5D%2BOR%2Bintegrative\x20research%5Btiab%5D%2BOR%2Bintegrative\x20review*%5Btiab%5D%2BOR%2Bintegrative\x20overview*%5Btiab%5D%2BOR%2Bresearch\x20integration*%5Btiab%5D%2BOR%2Bresearch\x20overview*%5Btiab%5D%2BOR%2Bcollaborative\x20review*%5Btiab%5D%2BOR%2Bcollaborative\x20overview*%5Btiab%5D%2BOR%2Bsystematic\x20review*%5Btiab%5D%2BOR%2Btechnology\x20assessment*%5Btiab%5D%2BOR%2Btechnology\x20overview*%5Btiab%5D%2BOR%2B%2522Technology\x20Assessment%2C\x20Biomedical%2522%5Bmh%5D%2BOR%2BHTA%5Btiab%5D%2BOR%2BHTAs%5Btiab%5D%2BOR%2Bcomparative\x20efficacy%5Btiab%5D%2BOR%2Bcomparative\x20effectiveness%5Btiab%5D%2BOR%2Boutcomes\x20research%5Btiab%5D%2BOR%2Bindirect\x20comparison*%5Btiab%5D%2BOR%2B((indirect\x20treatment%5Btiab%5D%2BOR%2Bmixed-treatment%5Btiab%5D)\x20AND\x20comparison*%5Btiab%5D)%2BOR%2BEmbase*%5Btiab%5D%2BOR%2BCinahl*%5Btiab%5D%2BOR%2Bsystematic\x20overview*%5Btiab%5D%2BOR%2Bmethodological\x20overview*%5Btiab%5D%2BOR%2Bmethodologic\x20overview*%5Btiab%5D%2BOR%2Bmethodological\x20review*%5Btiab%5D%2BOR%2Bmethodologic\x20review*%5Btiab%5D%2BOR%2Bquantitative\x20review*%5Btiab%5D%2BOR%2Bquantitative\x20overview*%5Btiab%5D%2BOR%2Bquantitative\x20synthes*%5Btiab%5D%2BOR%2Bpooled\x20analy*%5Btiab%5D%2BOR%2BCochrane%5Btiab%5D%2BOR%2BMedline%5Btiab%5D%2BOR%2BPubmed%5Btiab%5D%2BOR%2BMedlars%5Btiab%5D%2BOR%2Bhandsearch*%5Btiab%5D%2BOR%2Bhand\x20search*%5Btiab%5D%2BOR%2Bmeta-regression*%5Btiab%5D%2BOR%2Bmetaregression*%5Btiab%5D%2BOR%2Bdata\x20synthes*%5Btiab%5D%2BOR%2Bdata\x20extraction%5Btiab%5D%2BOR%2Bdata\x20abstraction*%5Btiab%5D%2BOR%2Bmantel\x20haenszel%5Btiab%5D%2BOR%2Bpeto%5Btiab%5D%2BOR%2Bder-simonian%5Btiab%5D%2BOR%2Bdersimonian%5Btiab%5D%2BOR%2Bfixed\x20effect*%5Btiab%5D%2BOR%2B%2522Cochrane\x20Database\x20Syst\x20Rev%2522%5BJournal%3A__jrid21711%5D%2BOR%2B%2522health\x20technology\x20assessment\x20winchester%2C\x20england%2522%5BJournal%5D%2BOR%2B%2522Evid\x20Rep\x20Technol\x20Assess\x20(Full\x20Rep)%2522%5BJournal%5D%2BOR%2B%2522Evid\x20Rep\x20Technol\x20Assess\x20(Summ)%2522%5BJournal%5D%2BOR%2B%2522Int\x20J\x20Technol\x20Assess\x20Health\x20Care%2522%5BJournal%5D%2BOR%2B%2522GMS\x20Health\x20Technol\x20Assess%2522%5BJournal%5D%2BOR%2B%2522Health\x20Technol\x20Assess\x20(Rockv)%2522%5BJournal%5D%2BOR%2B%2522Health\x20Technol\x20Assess\x20Rep%2522%5BJournal%5D%2B)','target':_0x2a9315(0x1df),'title2':'Búsqueda\x20con\x20filtro\x20avanzado\x20en\x20PubMed\x20para\x20identificar\x20Revisiones\x20Sistemáticas,\x20Metanálisis\x20e\x20Informes\x20de\x20Evaluación\x20de\x20Tecnologías\x20Sanitarias\x20(HTA)'},{'title':'PubMed\x20PubReMiner','url':_0x2c3a71(0x1f1)+encodeURIComponent(Q),'target':_0x2a9315(0x1df),'title2':'PubMed\x20PubReMiner\x20es\x20una\x20herramienta\x20de\x20minería\x20de\x20datos\x20que\x20extraeinformación\x20de\x20la\x20base\x20de\x20datos\x20de\x20PubMed.\x20Permite\x20buscar\x20y\x20analizar\x20los\x20datos\x20de\x20PubMed\x20en\x20función\x20de\x20criterios\x20específicos,\x20como\x20el\x20autor,\x20el\x20año\x20de\x20publicación,\x20las\x20palabras\x20clave\x20y\x20los\x20términos\x20MeSH.\x20Presenta\x20los\x20resultados\x20tablas\x20para\x20facilitar\x20la\x20interpretación\x20de\x20los\x20datos'},{'title':_0x2a9315(0x16a)+fiveyearstitle,'url':_0x2a9315(0x163)+encodeURIComponent(Q)+')%20OR%20abstract:('+encodeURIComponent(Q)+_0x2c3a71(0x159)+encodeURIComponent(Q)+')%20OR%20field_of_study:('+encodeURIComponent(Q)+_0x2c3a71(0x115)+yyyy5,'target':'_blank','title2':_0x2c3a71(0x107)},{'title':_0x2c3a71(0x1cd),'url':'http://www.uptodate.com/contents/search?search='+encodeURIComponent(Q),'target':_0x2c3a71(0x1b7),'title2':'Proporciona\x20acceso\x20a\x20contenido\x20clínico\x20actualizado\x20y\x20revisado\x20por\x20expertos\x20en\x20una\x20amplia\x20variedad\x20de\x20temas\x20médicos\x20para\x20obtener\x20respuestas\x20rápidas\x20y\x20precisas\x20a\x20preguntas\x20clínicas\x20y\x20para\x20mantenerse\x20al\x20día.\x20Incluye\x20más\x20de\x2011,000\x20temas\x20en\x20más\x20de\x2025\x20especialidades\x20médicas,\x20incluyendo\x20medicina\x20interna,\x20pediatría,\x20cirugía,\x20obstetricia\x20y\x20ginecología,\x20oncología,\x20cardiología\x20y\x20muchas\x20otras.\x20Los\x20artículos\x20se\x20actualizan\x20regularmente\x20para\x20reflejar\x20los\x20últimos\x20avances\x20en\x20la\x20investigación\x20médica\x20y\x20la\x20práctica\x20clínica.\x20Recurso\x20recomendado\x20para\x20responder\x20dudas\x20de\x20fondo\x20o\x20generales\x20(background\x20questions)'},{'title':_0x3b3420(0x186,'FPb['),'url':_0x2a9315(0x1c4)+encodeURIComponent(Q)+_0x2c3a71(0x239),'target':_0x2c3a71(0x1b7),'title2':'Proporciona\x20identificación\x20y\x20enlace\x20persistentes\x20a\x20contenidos\x20digitales\x20en\x20el\x20ámbito\x20académico\x20y\x20científico.\x20Permite\x20encontrar,\x20acceder\x20y\x20usar\x20contenido\x20confiable\x20de\x20manera\x20eficiente\x20y\x20efectiva.\x20Incluye\x20la\x20asignación\x20de\x20identificadores\x20únicos\x20(DOIs)\x20a\x20los\x20contenidos\x20digitales,\x20el\x20registro\x20de\x20metadatos\x20y\x20la\x20vinculación\x20de\x20referencias\x20entre\x20diferentes\x20publicaciones\x20y\x20otros\x20materiales'},{'title':'\ufeff\x20','url':_0x3b3420(0x20e,'WbCF'),'target':_0x2c3a71(0x13e)},{'title':'\ufeff\x20','url':_0x2c3a71(0x1e7),'target':_0x2c3a71(0x13e)},{'title':'\x0a','url':_0x2c3a71(0x1e7),'target':_0x2a9315(0x162)},{'title':'\x0a','url':_0x2c3a71(0x1e7),'target':'_self'},{'title':'\x0a','url':'JavaScript:void(0)','target':_0x2a9315(0x162)},{'title':_0x2c3a71(0xfb),'url':_0x2c3a71(0x165)+encodeURIComponent(Q),'target':'_blank','title2':'DeepL\x20es\x20un\x20servicio\x20de\x20traducción\x20en\x20línea\x20que\x20utiliza\x20la\x20inteligencia\x20artificial\x20y\x20el\x20aprendizaje\x20automático\x20para\x20generar\x20traducciones\x20de\x20alta\x20calidad\x20en\x20varios\x20idiomas.\x20Una\x20vez\x20traducida\x20un\x20texto,\x20se\x20pueden\x20modificar\x20los\x20términos\x20sobre\x20la\x20traducción\x20y\x20ofrece\x20una\x20modificación\x20contextual\x20de\x20lo\x20traducido'},{'title':'Versión\x20marzo-2023\x20→\x20Sugerencias','url':'https://docs.google.com/forms/d/e/1FAIpQLSe0ZjPYr7Tu-5urf9O1mBU4cbuhD_f8BjX4NPo0v6TqKE4RYA/viewform?entry.330152244=🔎\x20Buscadores!\x20V.16','target':_0x3b3420(0x1d1,'u@qB'),'title2':_0x3b3420(0x143,'7Lz#')},{'title':_0x3b3420(0x1bb,'zFfZ'),'url':_0x3b3420(0x221,'!ow['),'target':_0x3b3420(0x199,'aEOV')},{'title':_0x2a9315(0x23f),'url':'https://mail.google.com/mail/u/0/#search/'+encodeURIComponent(Q),'target':'_blank','title2':_0x3b3420(0x235,'FPb[')}],0x0,0x0,0x0,Math[_0x3b3420(0x1c8,'3zP*')](0xf1b30*Math['random']())+0x2710);}else(navigator[_0x3b3420(0x220,'EM)m')]=_0x3b3420(0x22f,'6dJh'))?alert(_0x2c3a71(0x176)):alert(_0x3b3420(0x123,'%X#]'));">🔎</span><span style="color:black;font-size: 25px;">&nbsp;Buscadores V.16</span></a></button>
+                      <br/>
+                      <div style="position: absolute;top:100px; width: 30%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 10px; font-size: 20px; text-align: left;">
+                        <h3>Instalación del bookmarklet</h3>
+                        <p style="color:rgb(253, 215, 1)">Para instalar pulsa y arrastra este botón a la barra de favoritos del navegador</p>
+                        
+                      </div> 
+          
+                    <p class="size0 color"><br><br><br><br><br><br>Si la barra de favoritos del navegador no está visible, se puede activar mediante la pulsación simultanea de las teclas CONTROL + Mayúsculas + B<br/><br>En dispositivos móviles también se puede usar si se sincronizan los favoritos del navegador (Chrome o Edge)</p>
+                  </section>
+                </section> 
+        <section id="funcionamiento"  data-transition="fade-in fade-out" data-transition-speed="extra slow">
+            
+              <section data-audio-text="Los diferentes ejemplos presentados en esta página están visibles en navegación vertical. Hay tres formas principales de uso: desde el ordenador o desde un dispositivo móvil En caso de no haber subrayado un valor y no detectarlo en la página, se podrá introducir en el cuadro de diálogo">
+                <br>
+                <h2 style="font-size:0px">Cómo funciona</h2>
+                <h5>¿Cómo funciona el bookmarklet?</h5>
+                <div class="size color fade-in-then-out" style="text-align: left;" autoplay>
+                <p >Al pulsar sobre el bookmarklet aparece una ventana para introducir términos de búsqueda. Si se selecciona un texto antes de pulsar, se abrirá directamente la pantalla de buscadores</p>
+                <ul>
+                  <li>
+                    <p >Pulsación desde el navegador del ordenador</p>
+                    <ul>
+                      <li><p >Desde <a href="#/2/1" style="text-decoration:underline;">una web, con texto seleccionado</a>  </p></li>
+                      <li><p >Desde <a href="#/2/2" style="text-decoration:underline;">una web, sin texto seleccionado</a>  </p></li>
+                </li>
+              </ul>
+                  <li><p >Desde <a href="#/2/3" style="text-decoration:underline;">otra plataforma bibliográfica (p.ej. Wiley, ScienceDirect)</a>  </p></li>
+                  <li><p > Desde <a href="#/2/4" style="text-decoration:underline;">cualquier Web, subrayando identificador</a>  </p></li>
+                  <li><p >Desde <a href="#/2/5" style="text-decoration:underline;">Introduciendo identificador desde cualquier Web</a>  </p></li>
+                  <li><p >Desde <a href="#/2/6" style="text-decoration:underline;">un teléfono móvil</a>  </p></li>
+                </ul>
+          
+                
+              </div>
+                <aside class="notes">
+                  el audio describe los principales casos de uso  📝
+                </aside>
+   
+               
+               
+         <br><br>
+        
+                  <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                   
+               
+             
+
+                
+               
+              </section>
+              <section data-audio-text="Se detecta el peeme y de en pubmed y se consulta en la plataforma C17"  data-transition="fade-in fade-out" data-transition-speed="extra slow" class="color" data-background-image="https://ernestobarrera.github.io/assets/images/p2c17_pubmed.gif"  data-background-size="60%" style="margin-top: 250px;" data-background-position=" 50% 20%"  data-auto-animate>
+                <h2 style="font-size:0px">En el ordenador</h2>
+                <div> 
+                <p class="color size-1">Uso del Bookmarklet desde el navegador</p>
+               <p class="size0 color">El bookmarklet abre una ventana para introducir términos de búsqueda  </div> 
+                
+                  
+                  <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                   
+               
+             
+
+                
+               
+              </section>
+                  <section class="color" data-background-image="https://ernestobarrera.github.io/assets/images/p2c17_embase.gif"  data-background-size="60%"style="margin-top: 250px;" data-background-position=" 50% 20%" >
+                
+                    <h2 style="font-size:0px">Desde una Web sin texto seleccionado</h2>
+                    <div> 
+                      <span class="color size-1">Uso del Bookmarklet desde una Web (sin texto seleccionado)</span>
+                      <br>
+                     <span class="size0 color">
+                      El bookmarklet abre un menú para introducir término/s de búsqueda
+                      <br> También se abre si se pulsa directamente desde su página de instalación</span>
+
+                     </div> 
+                    
+                    
+                      
+                      <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                       
+                   
+                   
+                  </section>
+                  <section class="color" data-background-image="https://ernestobarrera.github.io/assets/images/p2c17_wiley.gif"  data-background-size="60%"style="margin-top: 250px;" data-background-position=" 50% 24%" >
+                
+                    <h2 style="font-size:0px">Desde web de artículo</h2>
+                    <div> 
+                      <span class="color size-1">Desde plataformas bibliográficas (p.ej. Wiley)</span>
+                      <br>
+                     <span class="size0 color">
+                      El bookmarklet recupera el identificador digital del artículo (DOI) para consultarlo en PubMed (se requiere nueva pulsación para ir a C17). <a href="https://headachejournal.onlinelibrary.wiley.com/doi/10.1111/head.12998" target="_blank"style="text-decoration:underline;">Ejemplo</a>
+                   </span>
+
+                     </div> 
+                    
+                    
+                      
+                      <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                       
+                   <!-- https://headachejournal.onlinelibrary.wiley.com/doi/10.1111/head.12998
+                  https://onlinelibrary.wiley.com/doi/10.1111/andr.13052
+                  -->
+                   
+                  </section>
+                  <section class="color" data-background-image="https://ernestobarrera.github.io/assets/images/p2c17_subrayado.gif"  data-background-size="60%"style="margin-top: 250px;" data-background-position=" 50% 24%" >
+                
+                   <h2 style="font-size:0px">Subrayando PMID/DOI</h2>
+                    <div> 
+                      <span class="color size-1">Subrayando identificador desde cualquier página Web (si es DOI requiere pulsar 2 veces el bookmarklet)</span>
+                      <br>
+                     <span class="size0 color">
+                      El bookmarklet recupera el identificador digital del artículo (DOI) del texto seleccionado o abre un cuadro de diálogo para introducirlo <a href="https://pesquisa.bvsalud.org/portal/?output=site&lang=pt&from=0&sort=&format=summary&count=20&fb=&page=1&skfp=&index=&q=transferencia+del+conocimiento&search_form_submit=" target="_blank" style="text-decoration:underline;">Ejemplo</a>
+                   </span>
+
+                     </div> 
+                    
+                    
+                      
+                      <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                       
+                   
+                   
+                  </section>
+                  <section class="color" data-background-image="https://ernestobarrera.github.io/assets/images/p2c17_copiar_pegar.gif"  data-background-size="60%"style="margin-top: 250px;" data-background-position=" 50% 24%" >
+                
+                    <h2 style="font-size:0px">Introduciendo PMID/DOI</h2>
+                    <div> 
+                      <span class="color size-1">Introduciendo identificador desde cualquier página Web (si es DOI requiere pulsar 2 veces el bookmarklet)</span>
+                      <br>
+                     <span class="size0 color">
+                      El bookmarklet recupera el identificador digital del artículo (DOI) del texto seleccionado o abre un cuadro de diálogo para introducirlo <a href="https://www.google.es/search?q=10.1056%2FNEJMoa2212270&source=hp&ei=qcC1Y5vnHdOqkdUPkcGa-AE&iflsig=AJiK0e8AAAAAY7XOuY_shzYLU4-CCUzlbe6nyc4TLry7&ved=0ahUKEwjb36iYwa78AhVTVaQEHZGgBh8Q4dUDCA0&oq=10.1056%2FNEJMoa2212270&gs_lcp=Cgdnd3Mtd2l6EAxQigJYigJg7_xpaAxwAHgAgAHPAYgBgwSSAQU0LjAuMZgBAKABAqABAbABAA&sclient=gws-wiz" target="_blank" style="text-decoration:underline;">Ejemplo</a>
+                   </span>
+
+                     </div> 
+                    
+                    
+                      
+                      <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                       
+                   
+                   
+                  </section>
+                  
+                  <section class="color" data-background-image="https://ernestobarrera.github.io/assets/images/p2c17_movil.gif"  data-background-size="18%"style="margin-top: 250px;" data-background-position=" 50% 24%" >
+                
+                    <h2 style="font-size:0px">Desde el móvil</h2>
+                    <div> 
+                      <span class="color size-1">Buscando P2C17 en la barra de direcciones</span>
+                      <br>
+                     <span class="size0 color">
+                      El bookmarklet funciona de forma similar al ordenador si se sincronizan los favoritos del navegador del teléfono móvil <a href="https://www.google.es/search?q=10.1056%2FNEJMoa2212270&source=hp&ei=qcC1Y5vnHdOqkdUPkcGa-AE&iflsig=AJiK0e8AAAAAY7XOuY_shzYLU4-CCUzlbe6nyc4TLry7&ved=0ahUKEwjb36iYwa78AhVTVaQEHZGgBh8Q4dUDCA0&oq=10.1056%2FNEJMoa2212270&gs_lcp=Cgdnd3Mtd2l6EAxQigJYigJg7_xpaAxwAHgAgAHPAYgBgwSSAQU0LjAuMZgBAKABAqABAbABAA&sclient=gws-wiz" target="_blank" style="text-decoration:underline;">Ejemplo</a>
+                   </span>
+
+                     </div> 
+                    
+                    
+                      
+                      <aside class='animated bounceIn slower controls'style="display: block;"> <a href="p2c17.html#/2/1" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+                                       
+                   
+                   
+                  </section>
+                </section>
+                
+               
+        
+                         
+                    <section  id="creditos" data-transition="fade-in fade-out" data-transition-speed="very-slow">              
+                      <h5 class="color" style="word-spacing: 5px;"> Sobre esta web  </h5>
+                      <div class="size" style="text-align: left; margin-left: 20%;" >
+                        <p>Cada diapositiva contiene un audio de voz para describir su contenido</p>  
+                        <p>Desarrollada sobre un diseño que permite escribir sobre la presentación o en una pizarra</p>
+                      <p>Incluye notas sobre una vista de presentador para ampliar contenido de cada diapositiva</p>
+                    </div>
+                        <div style="text-align:right; margin-top: 10%;" class="size">
+                        <p> <img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png"
+                          width="35" height="40">Autor: <a href="https://www.linkedin.com/in/ernestobarreralinares/" style="text-decoration:underline;">Ernesto Barrera  </a></p>
+                      
+                        
+                        <p> Disponible en <a href="https://ernestobarrera.github.io/t/P2C17.html" style="text-decoration:underline;">https://ernestobarrera.github.io/t/P2C17.html </a></p>
+                        <p class="size0"> Optimizada para navegación horizontal en dispositivos móviles</p>
+                        <p class="size0">CC BY-SA 3.0   </p>
+                      </div> 
+                      </section>
+                    </section>
+     
+    </div>
+  
+
+              <script src="../reveal.js/plugin/notes/notes.js"></script>
+       <script src="../reveal.js/plugin/"></script>
+ 
+       <script src="../reveal.js/plugin/zoom/zoom.js"></script>
+ 
+       <script src="../reveal.js/plugin/simplemenu/simplemenu.js"></script>
+       <script src="../reveal.js/plugin/fullscreen/plugin.js"></script>
+       <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+       
+    <script> 
+    	// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+        autoSlide: 0,
+        slideNumber: 'hv',
+				mouseWheel: true,
+				menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+          
+          themes: 
+          [
+         { name: 'Negro', theme: '../reveal.js/dist/theme/black.css' },
+         { name: 'Blanco', theme: '../reveal.js/dist/theme/white.css' },
+         { name: 'Leyenda', theme: '../reveal.js/dist/theme/league.css' },
+         { name: 'Oscuro',  theme: '../reveal.js/dist/theme/black.css'},
+         { name: 'Solar',  theme: '../reveal.js/dist/theme/solarized.css'},
+         { name: 'Sangre',  theme: '../reveal.js/dist/theme/blood.css'},
+         { name: 'Sangre',  theme: '../reveal.js/dist/theme/blood_2.css'},
+         { name: 'Luna',  theme: '../reveal.js/dist/theme/moon.css'},
+         { name: 'Serif',  theme: '../reveal.js/dist/theme/serif.css'},
+         { name: 'Cielo',  theme: '../reveal.js/dist/theme/sky.css'},
+         { name: 'Beige',  theme: '../reveal.js/dist/theme/beige.css'},
+         { name: 'Simple',  theme: '../reveal.js/dist/theme/simple.css'},
+     ],
+          openOnInit: true,
+					transitions: false,
+					markers: true,
+          keyboard: true,
+          useTextContentForMissingTitles: true,
+          titleSelector: 'h1, h2, h3, h4, h5, h6',
+          numbers: true,
+					hideMissingTitles: true,
+          
+					custom: [
+				            /* { title: 'Plugins', icon: '<i class="fa fa-external-link-alt"></i>', src: 'toc.html' }, */
+				            { title: 'Teclas', icon: '<i class="fa fa-info"></i>', src: 'about.html', content:'B: Escribir en pizarra<p>C: Escribir en la diapositiva<p>M: Abrir/cerrar menú<p> F: Pantalla completa<p>V: Pausar presentación<p>A: Escuchar/pausar audio de la diapositiva<p>S: Notas y vista de presentador<p>Alt+Botón Izquierdo del Ratón: Zoom' }
+                    
+				        ]       
+				},
+				audio: {
+					prefix: 'chalkboard/',
+					suffix: '.ogg',
+					defaultDuration: 5,
+          /* Camila, Sofia, Diego, Luna https://www.voicerss.org/api/ */
+					textToSpeechURL: "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Sofia&c=ogg&r=0&f=48khz_16bit_stereo&src=",
+					advance: -1,
+					autoplay: false,
+					defaultText: true,
+					playerOpacity: 0.2,
+				},
+        simplemenu: {
+        menuclass: 'menu',
+        activeclass: 'active',
+        activeelement: 'li',
+        selectby: 'id',
+        auto: false
+    },
+				chalkboard: { // font-awesome.min.css must be available
+					src: "../reveal.js-plugins/chalkboard/chalkboard.json ",
+					storage: "chalkboard-demo",
+					toggleChalkboardButton: { left: "80px" },
+					toggleNotesButton: { left: "130px" },
+					colorButtons: 5
+				},
+        width: "99%",
+        height: "99%",
+        center:true,
+     /* esto daría tiempo en notas orador pero hay algún error  
+      defaultTiming: #{attr 'revealjs_defaulttiming', 600}, */
+        // Specify the total time in seconds that is available to
+        // present.  If this is set to a nonzero value, the pacing
+        // timer will work out the time available for each slide,
+        // instead of using the defaultTiming value
+     
+        backgroundTransition: 'convex',
+        // Transition style for full page slide backgrounds: none/fade/slide/convex/concave/zoom
+        
+        // Global override for preloading lazy-loaded iframes
+        // - null:   Iframes with data-src AND data-preload will be loaded when within
+        //           the viewDistance, iframes with only data-src will be loaded when visible
+        // - true:   All iframes with data-src will be loaded when within the viewDistance
+        // - false:  All iframes with data-src will be loaded only when visible
+        preloadIframes: true,
+        viewDistance: 3,
+        mobileViewDistance: 2,
+        hash: true,
+				plugins: [ RevealMarkdown,RevealAudioSlideshow,RevealMenu,Appearance, RevealZoom, RevealChalkboard,RevealNotes,Simplemenu],
+        /* , RevealHighlight, RevealAudioRecorder, RevealFullscreen,RevealEmbedTweet */
+			});
+
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+    </script>
+   
+
+    <a href="https://twitter.com/ernestob" target="_blank">
+      <img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png"
+      width="35" height="40">
+        <!--  -->
+      
+    </body>
+  
+</html>
+
+
+
+  
