@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -18,8 +17,8 @@
   <title> 🤖ChatGPT para Profesionales Sanitarios | @ernestob</title>
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <!-- tema anterior black -->
-  <link rel="stylesheet" href="./reveal.js/dist/theme/blood.css" id="theme">
-  <link rel="stylesheet" href="../reveal.js-plugins/simplemenu/simplemenu.css" id="theme">
+  <link rel="stylesheet" href="../reveal.js/dist/theme/blood.css" id="theme">
+  <link rel="stylesheet" href="../reveal.js/plugin/simplemenu/simplemenu.css" id="theme">
   <link rel="stylesheet" href="../reveal.js/plugin/highlight/zenburn.css">
   <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
   
@@ -41,154 +40,48 @@
 
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <style>
-    /* Establecer el tamaño de fuente base en 16px */
-html {
-  font-size: 26px;
+  <!-- para evitar solapamiento títulos en diapos verticales-->
+.vertical {
+  margin-top: 1em;
+  font-size: 30px;
 }
-
-/* Establecer el tamaño de fuente del párrafo a 1.0rem */
-* {
-  font-size: 1.2rem;
-}
-
-/* Consulta de medios para pantallas más pequeñas */
-@media (max-width: 768px) {
-  html {
-    font-size: 16px;
-  }
- 
-  * {
-    font-size: 0.8rem;
-  }
-}
-
-/* Consulta de medios para pantallas aún más pequeñas */
-@media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-  
-  * {
-    font-size: 1rem;
-  }
-}
-    .cabecera {
-      margin-top: 1em;
-      font-size: 5rem;
-      color: orange;
-      word-spacing: 10px;
-      text-shadow: 3px 3px 4px #000000;
-    }
-    h1.color, h2.color, h3.color, h4.color, h5.color, h6.color {
-  color:  rgb(251, 183, 56);
-  text-shadow: 1px 1px 1px #000;
-}
-    .reveal h1
-    {
-  font-size: 3rem;
-}
-.reveal h2{
-  font-size: 2.5rem;
-}
-.reveal h3{
-  font-size: 2.3rem;
-}
-.reveal h4{
-  font-size: 2.1rem;
-}
-.reveal h5 {
-  font-size: 2rem;
-}
-.vertical{
-  margin-top: 1rem;
-}
-    /* .vertical h1, .vertical h2, .vertical h3, .vertical h4, .vertical h5, .vertical h6 {
-      font-size: 3rem;
-      margin-top: 3rem;
-    } */
-  
-    .titulo {
-      font-size: 4rem;
-      font-weight: bold;
-      font-family: 'Arial', sans-serif;
-    }
-  
-    /* Estilos adicionales */
     .left {
       text-align: left;
+      
     }
-  
     .pie {
-      position: absolute !important;
-      bottom: 5;
-    }
-  
-    .size-1 {
+      position:absolute !important;
+      bottom:5;}
+      .size-1 {
       font-size: 32px;
     }
-  
     .size {
       font-size: 26px;
     }
-  
-    .size0 {
+      .size0 {
       font-size: 20px;
     }
-  
     .size1 {
       font-size: 16px;
     }
-  
     .size2 {
       font-size: 14px;
     }
-  
     .size3 {
-      font-size: 1rem;
+      font-size: 12px;
     }
-  
-    .color {
-      color: rgb(251, 183, 56);
+    .color{
+      color:rgb(255, 191, 71);
     }
-  /* no parece funcionar en esta presentación, referencia en https://revealjs.com/fragments/ */
-  .fragment.blur {
-    filter: blur(5px);
-  }
-  .fragment.blur.visible {
-  filter: none;
-  }
-  
-  
     .footer {
-      position: absolute;
-      left: 35%;
-      bottom: 1em;
-    }
-    .aligned p {
-  margin-left: 15%;
-  text-align: left;
+  position: absolute; 
+  left: 35%;
+  bottom: 1em;
+}
+.highlighted {
+    background-color: rgba(252, 212, 212, 0.5);
 }
 
-.mensaje-usuario {
-  margin-left: 15%;
-  text-align: left;
-  color: #2fa883;
-  font-weight: bold;
-}
-
-.mensaje-chatgpt {
-  margin-left: 15%;
-  text-align: left;
-  color: #3969ab;
-  font-weight: bold;
-}
-    .highlighted {
-      background-color: rgba(252, 212, 212, 0.5);
-    }
-    .controls-arrow {
-  font-size: 10px !important;
-}
-    
 /* ideas animación botón https://webdeasy.de/en/top-css-buttons-en/ */
 
 .glow-on-hover {
@@ -271,24 +164,24 @@ html {
   <div class="reveal">
     <div class="slides">
       <section>
-        <h1 class="color">Introducción a ChatGPT</h1>
-        <h3>Para profesionales sanitarios</h3>
+        <h1>Introducción a ChatGPT</h1>
+        <h2>Para profesionales sanitarios</h2>
       </section>
     <SECTion data-background-image="https://media.giphy.com/media/SUp0ZNb0pmL3G65I2k/giphy-downsized-large.gif" data-background-opacity="0.2">
-      <H4>ChatGPT no cambia la forma en que buscas</H4>
-      <H4 class="fragment color">...Cambia la forma<br>  en que piensas en la búsqueda</H4>
+      <H2>ChatGPT no cambia la forma de buscar</H2>
+      <H1>cambia la forma en que pensamos en la búsqueda</H1>
     
    
     </SECTion>
       <section>
-        <h3 class="color">¿Qué es ChatGPT?</h3>
+        <h2>¿Qué es ChatGPT?</h2>
         <p>ChatGPT es un modelo de lenguaje de inteligencia artificial basado en el aprendizaje profundo. Utiliza un algoritmo de redes neuronales para aprender de grandes cantidades de datos y generar texto coherente y natural en respuesta a una entrada de texto dada.</p>
       </section>
       <section>
         <h2>¿Qué son los prompts?</h2>
         
         <section class="vertical">
-          <h3 class="color">Prompt</h3>
+          <h3>Prompt</h3>
           <p>Los prompts son una técnica utilizada en la inteligencia artificial que permite a los usuarios interactuar con ella haciendo preguntas y obteniendo respuestas específicas. Los prompts funcionan con un sistema de diálogo natural que puede mejorar la calidad de la interacción entre los usuarios y la inteligencia artificial, como ChatGPT.
 
             Para usar los prompts, los usuarios simplemente necesitan introducir una pregunta o frase en un panel de chat. La inteligencia artificial procesará la pregunta y proporcionará una respuesta específica y detallada. Los prompts pueden utilizarse para cualquier tema, desde la salud hasta la tecnología, los negocios y más.
@@ -296,115 +189,99 @@ html {
             En resumen, los prompts son una herramienta poderosa para la comunicación natural que pueden hacer que la interacción con la tecnología sea más fácil y agradable.</p>
         </section>
         <section>
-          <h3 class="color ">Respuesta:</h3>
-          <p class="fragment custom blur">"¡Por supuesto! El COVID-19 es un virus altamente contagioso que se transmite principalmente a través de la saliva o las partículas respiratorias. En cuanto a su área en particular, puedes encontrar información actualizada sobre la propagación del virus y las medidas preventivas recomendadas en los recursos sanitarios locales. "</p>
+          <h3>Respuesta:</h3>
+          <p>"¡Por supuesto! El COVID-19 es un virus altamente contagioso que se transmite principalmente a través de la saliva o las partículas respiratorias. En cuanto a su área en particular, puedes encontrar información actualizada sobre la propagación del virus y las medidas preventivas recomendadas en los recursos sanitarios locales. "</p>
         </section>
-        
         <section>
-          <h3 class="color">Prompt #2</h3>
+          <h3>Prompt #2</h3>
           <p>"Tengo diabetes tipo 2. ¿Cuáles son los síntomas y tratamientos más comunes?"</p>
         </section>
         <section>
-          <h3 class="color">Respuesta:</h3>
-          <p >"La diabetes tipo 2 es una enfermedad crónica en la que el cuerpo no puede regular adecuadamente los niveles de azúcar en la sangre. Los síntomas pueden variar de persona a persona, pero incluyen mareos, visión borrosa y fatiga. Los tratamientos pueden incluir cambios en la dieta, el ejercicio, medicamentos y más."</p>
+          <h3>Respuesta:</h3>
+          <p>"La diabetes tipo 2 es una enfermedad crónica en la que el cuerpo no puede regular adecuadamente los niveles de azúcar en la sangre. Los síntomas pueden variar de persona a persona, pero incluyen mareos, visión borrosa y fatiga. Los tratamientos pueden incluir cambios en la dieta, el ejercicio, medicamentos y más."</p>
         </section>
       </section>
       <section  >
-        <h3>Ejemplos de uso en el ámbito sanitario</h3>
+        <h2>Ejemplos de uso en el ámbito sanitario</h2>
         
-        <section class="vertical" >
+        <section class="vertical">
           
-          <h3 class="color">Generación de texto</h3>
-          <div class="aligned">
-          <p class="aligned mensaje-usuario" >👩🏽‍⚕️Usuario escribe:</p>
-          <blockquote class="size3">
+          <h3 >Generación de texto</h3>
+          <p>Texto de ejemplo:</p>
+          <blockquote>
             "Una mujer de 32 años con antecedente de cáncer de mama acude a su médico por dolor en el seno y fiebre."
           </blockquote>
-        
-          <p  class=" aligned mensaje-chatgpt  ">🤖ChatGPT responde:</p>
-          <blockquote class="size3 ">
+          <p>Resultado de ChatGPT:</p>
+          <blockquote>
             "La mujer puede presentar mastitis, una infección del seno debido a la lactancia. Sin embargo, dado su antecedente de cáncer de mama, es necesario hacer una evaluación para descartar una recurrencia del cáncer."
           </blockquote>
-        </div>
-        
         </section>
     
         <section class="vertical">
-          <h3 class="color">Revisión de redacción</h3>
-<div class="aligned">
-  <p class="aligned mensaje-usuario" >👩🏽‍⚕️Texto de ejemplo:</p>
-  <blockquote class="size3">
-    "El paciente se presentó en el hospital debido a un dolor en el estómago y vómitos, el cual resultó ser causado por un problema digestivo."
-  </blockquote>
-
-  <p class="aligned mensaje-chatgpt" >🤖Resultado de ChatGPT:</p>
-  <blockquote class="size3">
-    "El paciente ingresó al hospital con síntomas de dolor en el estómago y vómitos, que posteriormente fueron confirmados como resultado de un problema digestivo."
-  </blockquote>
-</div>
+          <h3>Revisión de redacción</h3>
+          <p>Texto de ejemplo:</p>
+          <blockquote>
+            "El paciente se presentó en el hospital debido a un dolor en el estómago y vómitos, el cual resultó ser causado por un problema digestivo."
+          </blockquote>
+          <p>Resultado de ChatGPT:</p>
+          <blockquote>
+            "El paciente ingresó al hospital con síntomas de dolor en el estómago y vómitos, que posteriormente fueron confirmados como resultado de un problema digestivo."
+          </blockquote>
         </section>
-
-<section class="vertical">
-  <h3 class="color">Análisis numérico</h3>
-  <div class="aligned">
-    <p class="aligned mensaje-usuario">👩🏽‍⚕️Texto de ejemplo:</p>
-    <blockquote class="size3">
-      "Calcula la dosis de insulina que necesita un paciente con diabetes tipo 1 de 80 kg y una glucemia en ayunas de 200 mg/dl."
-    </blockquote>
-    <p class="aligned mensaje-chatgpt" >🤖Resultado de ChatGPT:</p>
-    <blockquote class="size3">
-      "La dosis de insulina necesaria para un paciente con diabetes tipo 1 de 80 kg y una glucemia en ayunas de 200 mg/dl es de aproximadamente 40 unidades."
-    </blockquote>
-  </div>
-</section>
-
-<section class="vertical">
-  <h3 class="color">Resumen de texto</h3>
-  <div class="aligned">
-    <p class="aligned mensaje-usuario" >👩🏽‍⚕️Texto de ejemplo:</p>
-    <blockquote class="size3">
-      "El libro 'El Gran Gatsby' escrito por F. Scott Fitzgerald cuenta la historia de Jay Gatsby y su relación con la esposa de otro hombre, Daisy. La historia tiene lugar en la década de 1920 en Nueva York durante una época de gran opulencia y extravagancia."
-    </blockquote>
-    <p class="aligned mensaje-chatgpt" >🤖Resultado de ChatGPT:</p>
-    <blockquote class="size3">
-      "El Gran Gatsby es una novela de F. Scott Fitzgerald que sigue la historia de Jay Gatsby y su relación con Daisy, la esposa de otro hombre. Está ambientada en la década de 1920 en Nueva York durante una época de gran opulencia y extravagancia."
-    </blockquote>
-  </div>
-</section>
-
-<section class="vertical">
-  <h3 class="color">Traducción de texto</h3>
-  <div class="aligned">
-    <p class="aligned mensaje-usuario" >👩🏽‍🚀Texto de ejemplo:</p>
-    <blockquote class="size3">
-      "Bonjour, comment ça va?"
-    </blockquote>
-    <p class="aligned mensaje-chatgpt" >🤖Resultado de ChatGPT:</p>
-    <blockquote class="size3">
-      "Hola, ¿cómo estás?"
-    </blockquote>
-  </div>
-</section>
-
-<section class="vertical">
-  <h3 class="color">Creación de esquemas</h3> 
-  <div class="aligned">
-    <p class="aligned mensaje-usuario">👩🏽‍🚀Texto de ejemplo:</p>
-    <blockquote class="size3">
-      "El proceso de fotosíntesis convierte la luz solar en energía química que se utiliza para alimentar a la planta."
-    </blockquote>
-    <p class="aligned mensaje-chatgpt" >🤖Resultado de ChatGPT:</p>
-    <figure>
-      <img src="https://example.com/esquema-fotosintesis.png" alt="Esquema del proceso de fotosíntesis" />
-      <figcaption class="size3">Esquema del proceso de fotosíntesis</figcaption>
-    </figure>
-  </div>
-</section>
+    
+        <section class="vertical">
+          <h3>Análisis numérico</h3>
+          <p>Texto de ejemplo:</p>
+          <blockquote>
+            "Calcula la dosis de insulina que necesita un paciente con diabetes tipo 1 de 80 kg y una glucemia en ayunas de 200 mg/dl."
+          </blockquote>
+          <p>Resultado de ChatGPT:</p>
+          <blockquote>
+            "La dosis de insulina necesaria para un paciente con diabetes tipo 1 de 80 kg y una glucemia en ayunas de 200 mg/dl es de aproximadamente 40 unidades."
+          </blockquote>
+        </section>
+    
+        <section class="vertical">
+          <h3>Resumen de texto</h3>
+          <p>Texto de ejemplo:</p>
+          <blockquote>
+            "El libro 'El Gran Gatsby' escrito por F. Scott Fitzgerald cuenta la historia de Jay Gatsby y su relación con la esposa de otro hombre, Daisy. La historia tiene lugar en la década de 1920 en Nueva York durante una época de gran opulencia y extravagancia."
+          </blockquote>
+          <p>Resultado de ChatGPT:</p>
+          <blockquote>
+            "El Gran Gatsby es una novela de F. Scott Fitzgerald que sigue la historia de Jay Gatsby y su relación con Daisy, la esposa de otro hombre. Está ambientada en la década de 1920 en Nueva York durante una época de gran opulencia y extravagancia."
+          </blockquote>
+        </section>
+    
+        <section class="vertical">
+          <h3>Traducción de texto</h3>
+          <p>Texto de ejemplo:</p>
+          <blockquote>
+            "Bonjour, comment ça va?"
+          </blockquote>
+          <p>Resultado de ChatGPT:</p>
+          <blockquote>
+            "Hola, ¿cómo estás?"
+          </blockquote>
+        </section>
+    
+        <section class="vertical">
+          <h3>Creación de esquemas</h3>
+          <p>Texto de ejemplo:</p>
+          <blockquote>
+            "El proceso de fotosíntesis convierte la luz solar en energía química que se utiliza para alimentar a la planta."
+          </blockquote>
+          <p>Resultado de ChatGPT:</p>
+          <figure>
+            <img src="https://example.com/esquema-fotosintesis.png" alt="Esquema del proceso de fotosíntesis" />
+            <figcaption>Esquema del proceso de fotosíntesis</figcaption>
+          </figure>
+        </blockquote>
       </section>
     </section>
   
     <section data-background-image="https://media.giphy.com/media/l1J9xRLvfhAGVeiys/giphy.gif" >
-      <h2 class="color">Confidencialidad y ética</h2>
+      <h2>Confidencialidad y ética</h2>
       <p>Es importante tener en cuenta que ChatGPT procesa grandes cantidades de datos para poder generar su propio texto. Esto significa que la privacidad de la información es una preocupación importante y que todas las empresas que utilizan tecnología de inteligencia artificial tienen la responsabilidad de proteger los datos de los usuarios y cumplir con los estándares éticos del procesamiento de datos. OpenAI se compromete a mantener altos estándares éticos y de privacidad en el desarrollo y uso de ChatGPT.</p>
     </section>
   
@@ -416,12 +293,12 @@ html {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/js/reveal.min.js"></script>
 
 <script src="../reveal.js/plugin/notes/notes.js"></script>
-<script src="../reveal.js-plugins/"></script>
+<script src="../reveal.js/plugin/"></script>
 
-<script src="../reveal.js-plugins/zoom/zoom.js"></script>
+<script src="../reveal.js/plugin/zoom/zoom.js"></script>
 
-<script src="../reveal.js-plugins/simplemenu/simplemenu.js"></script>
-<script src="../reveal.js-plugins/fullscreen/plugin.js"></script>
+<script src="../reveal.js/plugin/simplemenu/simplemenu.js"></script>
+<script src="../reveal.js/plugin/fullscreen/plugin.js"></script>
 <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
 
 <script> 
