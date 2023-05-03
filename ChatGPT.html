@@ -72,6 +72,13 @@ html {
     font-size: 1rem;
   }
 }
+/* revisar ancho, porque fuente parece que funciona */
+@media screen and (min-width: 600px) {
+  html .slide-menu.slide-menu--left.active{
+    font-size: 0.2rem; /* Establece un tamaño de fuente explícito para pantallas más grandes */
+    width: 60%; /* Cambiar a un ancho deseado para pantallas más grandes */
+  }
+}
     .cabecera {
       margin-top: 1em;
       font-size: 5rem;
@@ -100,7 +107,7 @@ html {
   font-size: 2rem;
 }
 .vertical{
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
     /* .vertical h1, .vertical h2, .vertical h3, .vertical h4, .vertical h5, .vertical h6 {
       font-size: 3rem;
@@ -322,7 +329,7 @@ html {
           </blockquote>
         
           <p  class=" aligned mensaje-chatgpt  ">🤖ChatGPT responde:</p>
-          <blockquote class="size3 ">
+          <blockquote class="fragment custom blur size3 ">
             "La mujer puede presentar mastitis, una infección del seno debido a la lactancia. Sin embargo, dado su antecedente de cáncer de mama, es necesario hacer una evaluación para descartar una recurrencia del cáncer."
           </blockquote>
         </div>
@@ -337,8 +344,8 @@ html {
     "El paciente se presentó en el hospital debido a un dolor en el estómago y vómitos, el cual resultó ser causado por un problema digestivo."
   </blockquote>
 
-  <p class="aligned mensaje-chatgpt" >🤖Resultado de ChatGPT:</p>
-  <blockquote class="size3">
+  <p class="aligned mensaje-chatgpt" >🤖ChatGPT responde:</p>
+  <blockquote class="fragment custom blur size3 ">
     "El paciente ingresó al hospital con síntomas de dolor en el estómago y vómitos, que posteriormente fueron confirmados como resultado de un problema digestivo."
   </blockquote>
 </div>
@@ -351,8 +358,8 @@ html {
     <blockquote class="size3">
       "Calcula la dosis de insulina que necesita un paciente con diabetes tipo 1 de 80 kg y una glucemia en ayunas de 200 mg/dl."
     </blockquote>
-    <p class="aligned mensaje-chatgpt" >🤖Resultado de ChatGPT:</p>
-    <blockquote class="size3">
+    <p class="aligned mensaje-chatgpt" >🤖ChatGPT responde:</p>
+    <blockquote class="fragment custom blur size3 ">
       "La dosis de insulina necesaria para un paciente con diabetes tipo 1 de 80 kg y una glucemia en ayunas de 200 mg/dl es de aproximadamente 40 unidades."
     </blockquote>
   </div>
@@ -365,8 +372,8 @@ html {
     <blockquote class="size3">
       "El libro 'El Gran Gatsby' escrito por F. Scott Fitzgerald cuenta la historia de Jay Gatsby y su relación con la esposa de otro hombre, Daisy. La historia tiene lugar en la década de 1920 en Nueva York durante una época de gran opulencia y extravagancia."
     </blockquote>
-    <p class="aligned mensaje-chatgpt" >🤖Resultado de ChatGPT:</p>
-    <blockquote class="size3">
+    <p class="aligned mensaje-chatgpt" >🤖ChatGPT responde:</p>
+    <blockquote class="fragment custom blur size3 ">
       "El Gran Gatsby es una novela de F. Scott Fitzgerald que sigue la historia de Jay Gatsby y su relación con Daisy, la esposa de otro hombre. Está ambientada en la década de 1920 en Nueva York durante una época de gran opulencia y extravagancia."
     </blockquote>
   </div>
@@ -379,8 +386,8 @@ html {
     <blockquote class="size3">
       "Bonjour, comment ça va?"
     </blockquote>
-    <p class="aligned mensaje-chatgpt" >🤖Resultado de ChatGPT:</p>
-    <blockquote class="size3">
+    <p class="aligned mensaje-chatgpt" >🤖ChatGPT responde:</p>
+    <blockquote class="fragment custom blur size3 ">
       "Hola, ¿cómo estás?"
     </blockquote>
   </div>
@@ -391,11 +398,11 @@ html {
   <div class="aligned">
     <p class="aligned mensaje-usuario">👩🏽‍🚀Texto de ejemplo:</p>
     <blockquote class="size3">
-      "El proceso de fotosíntesis convierte la luz solar en energía química que se utiliza para alimentar a la planta."
+      "El proceso de fotosíntesis convierte la luz solar en energía química que se utiliza para alimentar a la planta.Dame el código de un mapa mental ../..  para entenderlo de forma muy clara"
     </blockquote>
-    <p class="aligned mensaje-chatgpt" >🤖Resultado de ChatGPT:</p>
-    <figure>
-      <img src="https://example.com/esquema-fotosintesis.png" alt="Esquema del proceso de fotosíntesis" />
+    <p class="aligned mensaje-chatgpt" >🤖ChatGPT responde:</p>
+    <figure class="fragment custom blur">
+      <img src="https://www.plantuml.com/plantuml/svg/ZPJRJXin48RlzobSSOb4at0W4gY2HesuA0S1RQzdxKaonOVjsCk1ge_45O-G5-kiTvM5GAMkeYZ-FPx_cz-h7CK4d1nvuw0gFgG5EbIL1V95l25V0ODJ9UYREOVQcqcmWTN6D3ylAe0vt5qlIDzuZ54DjtPVR1gSGMtJDFXq1jB-1Eqj9jBmViqLFQ8QxXM7CJrO_5JuO53zBfGy5s0C-RaQZlBo57XENctdnKbWUfJZO8yjpRr3dvIMB-Iy_PKyjlIbhN4bzSpRMuEiNhPpiaTMEuFEvvvSxNwGIGlHMh57tSdhrNZVaGruQCJYJy4XfBD-WiRpgfbBZRS61-Av1iTeil9vBVAx1ILymxTECXP3Yp3h3TyS6Gt-cPR5MNeLy_v_3_fEHFtz37S5IqELAFWkXjUc1x9_-B6xxlwTw2_-JHmRNyRJyNJQxWKso9q-6EplJqOlzFw2M_Lg0IRSoNJv9HKXsxJSUy8jACKQGmwWWUjWLckni2QVs1GnXRXyyWaZnM9pKnsNCR2cvRDN1fMj7rKC5bXLWgc5DSp8WbHAwGNDcon2L1Whr0GMvQTNY_0JedfGWf94kKKsc7jVC_Wu2-nWPJ0v7qdboUYyEJYtjGuHH0ZtowSv-f1zBX6qfk2brwzw-UH8ItjoLMqZ68WPpKB3sfXyYq4QhterUIYmr902grdjkrOE4vJBPqkw6-SKV49FZfgPX44pwdQL6rPMzdEflFSbSZ-3ZA232ohMPSN1r3grt1C9dAcisy9RIc1Lyo56nH8PCPGMYoFqflid-mi0" alt="Esquema del proceso de fotosíntesis" />
       <figcaption class="size3">Esquema del proceso de fotosíntesis</figcaption>
     </figure>
   </div>
