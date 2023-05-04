@@ -52,13 +52,13 @@ html {
 }
 
 /* Consulta de medios para pantallas más pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   html {
-    font-size: 16px;
+    font-size: 14px;
   }
  
   * {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 
@@ -73,12 +73,18 @@ html {
   }
 }
 /* revisar ancho, porque fuente parece que funciona */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
   html .slide-menu.slide-menu--left.active{
-    font-size: 0.2rem; /* Establece un tamaño de fuente explícito para pantallas más grandes */
+    /* este elemento css consigue aumentar el ancho del menu lateral, pero no consigue cambio de fuente */
+    font-size: 0.2rem important!; /* Establece un tamaño de fuente explícito para pantallas más grandes */
     width: 60%; /* Cambiar a un ancho deseado para pantallas más grandes */
   }
+   /* Agregar una especificidad mayor a las reglas CSS para que no sean sobrescritas */
+   
+  }  
+  
 }
+
     .cabecera {
       margin-top: 1em;
       font-size: 5rem;
@@ -92,23 +98,24 @@ html {
 }
     .reveal h1
     {
-  font-size: 3rem;
+  font-size: 2.2rem;
 }
 .reveal h2{
-  font-size: 2.5rem;
-}
-.reveal h3{
-  font-size: 2.3rem;
-}
-.reveal h4{
-  font-size: 2.1rem;
-}
-.reveal h5 {
   font-size: 2rem;
 }
-.vertical{
-  margin-top: 2rem;
+.reveal h3{
+  font-size: 1.8rem;
 }
+.reveal h4{
+  font-size: 1.6rem;
+}
+.reveal h5 {
+  font-size: 1.4rem;
+}
+.vertical{
+  margin-top: 1.2rem;
+}
+
     /* .vertical h1, .vertical h2, .vertical h3, .vertical h4, .vertical h5, .vertical h6 {
       font-size: 3rem;
       margin-top: 3rem;
@@ -416,7 +423,7 @@ html {
     </section>
   
     <section>
-      <h2>Conclusiones</h2>
+      <h2 class="color">Conclusiones</h2>
       <p>En resumen, ChatGPT es un modelo de lenguaje de inteligencia artificial revolucionario que puede utilizarse para una gran cantidad de tareas de procesamiento de lenguaje natural. Desde la generación de texto coherente hasta la revisión de redacción, el análisis numérico, la traducción de idiomas, la creación de esquemas y la simplificación de textos complejos, ChatGPT ha demostrado ser una herramienta muy útil para profesionales en diversas industrias. Es importante tener en cuenta los aspectos éticos y de privacidad al trabajar con ChatGPT o cualquier otra tecnología de inteligencia artificial y siempre proteger la privacidad de los usuarios y los datos que se manejan.</p>
     </section>
   </div>
@@ -443,8 +450,9 @@ Reveal.initialize({
  slideNumber: 'hv',
  mouseWheel: true,
  menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
-   
+    side: 'left',
    themes: 
+   //texto del menu aparece traducido por cambio en menu.js 
    [
   { name: 'Negro', theme: 'reveal.js/dist/theme/black.css' },
   { name: 'Blanco', theme: 'reveal.js/dist/theme/white.css' },
@@ -452,7 +460,7 @@ Reveal.initialize({
   { name: 'Oscuro',  theme: 'reveal.js/dist/theme/black.css'},
   { name: 'Solar',  theme: 'reveal.js/dist/theme/solarized.css'},
   { name: 'Sangre',  theme: 'reveal.js/dist/theme/blood.css'},
-  { name: 'Sangre',  theme: 'reveal.js/dist/theme/blood_2.css'},
+  /* { name: 'Sangre',  theme: 'reveal.js/dist/theme/blood_2.css'}, */
   { name: 'Luna',  theme: 'reveal.js/dist/theme/moon.css'},
   { name: 'Serif',  theme: 'reveal.js/dist/theme/serif.css'},
   { name: 'Cielo',  theme: 'reveal.js/dist/theme/sky.css'},
