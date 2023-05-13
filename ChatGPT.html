@@ -171,13 +171,18 @@ html {
   .fragment.blur.visible {
   filter: none;
   }
+  .full-height {
+  height: 100vh;
+}
   
-  
-    .footer {
-      position: absolute;
-      left: 35%;
-      bottom: 1em;
-    }
+.footer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 50%;
+  bottom: 3em;
+  transform: translateX(-50%);
+}
     .aligned p {
   margin-left: 15%;
   text-align: left;
@@ -289,23 +294,40 @@ html {
 
   </style>
 </head>
+
 <body>
   <div class="reveal">
     <div class="slides">
       
-      <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" data-background-opacity="0.09">
+      <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" data-background-opacity="0.09" >
         <h1 class="color">Introducción a ChatGPT</h1>
         <h3>Para profesionales sanitarios</h3>
       </section>
-    <SECTion data-background-image="https://media.giphy.com/media/SUp0ZNb0pmL3G65I2k/giphy-downsized-large.gif" data-background-opacity="0.2">
+    <section data-background-image="https://media.giphy.com/media/SUp0ZNb0pmL3G65I2k/giphy-downsized-large.gif" data-background-opacity="0.2">
       <H4>ChatGPT no cambia la forma en que buscas</H4>
       <H4 class="fragment color">...Cambia la forma<br>  en que piensas en la búsqueda</H4>
     
+    
    
-    </SECTion>
+    </section>
+
+    <section class="full-height" data-background-iframe="https://pageviews.wmcloud.org/langviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-365&sort=views&direction=1&view=chart&page=ChatGPT" data-background-opacity="0.7"  data-background-interactive>
+ 
+    
+      <div class="footer">
+      <H6>Nº de visitas a ChatGPT en Wikipedia hasta el <span id="fecha-de-ayer"></span></H6>
+        <H5 class="fragment color">...Sin precedentes</H5>
+      </div>
+   
+    </section>
+
+    
+
+   
       <section>
         <h3 class="color">¿Qué es ChatGPT?</h3>
         <p>CHATGPT es una herramienta de inteligencia artificial que utiliza procesamiento de lenguaje natural para proporcionar respuestas conversacionales en tiempo real. En otras palabras, es un chatbot que puede conversar contigo y responder tus preguntas siempre que las formules en lenguaje natural. CHATGPT utiliza una gran cantidad de datos para mejorar constantemente la calidad de sus respuestas.</p>
+        <div class="tweet" data-src="https://twitter.com/OpenAI/status/1598014522098208769"></div>
       </section>
       <section> <h2 class="color">¿Cómo funciona CHATGPT?</h2> <p>CHATGPT está basado en un modelo de lenguaje llamado GPT (Generative Pre-trained Transformer), el cual es entrenado utilizando grandes conjuntos de datos de texto de toda la web. Este modelo es capaz de aprender a generar texto natural utilizando la información de estos conjuntos de datos. Una vez entrenado, el modelo se puede ajustar para realizar una tarea específica, como la generación de respuestas a preguntas relacionadas con salud.</p> <p>Para utilizar CHATGPT, simplemente se ingresa una pregunta o una frase en lenguaje natural, y la herramienta utiliza su modelo de lenguaje para generar una respuesta relevante y precisa.</p> </section>
       <section> <h2 class="color">Ejemplos de generación de texto por CHATGPT</h2> <ul> <li><strong>Paciente: </strong>¿Qué es la hipertensión?</li> <li><strong>CHATGPT: </strong>La hipertensión es una afección en la que la presión arterial en las arterias es elevada. Es una de las enfermedades cardiovasculares más comunes y puede ser potencialmente peligrosa si no se trata. </li> <li><strong>Paciente: </strong> ¿Cuáles son los síntomas de la neumonía?</li> <li><strong>CHATGPT: </strong> Los síntomas de la neumonía incluyen tos, fiebre, dificultad para respirar, dolor de pecho y fatiga. Si tienes alguno de estos síntomas, es importante que consultes a tu médico.</li> <li><strong>Paciente: </strong> ¿Cuáles son las causas de la diabetes tipo 2?</li> <li><strong>CHATGPT: </strong> La diabetes tipo 2 se produce cuando las células del cuerpo se vuelven resistentes a la insulina o cuando el cuerpo no produce suficiente insulina para mantener los niveles normales de azúcar en sangre. Los factores que pueden contribuir a la diabetes tipo 2 incluyen la obesidad, la falta de ejercicio físico y una dieta poco saludable.</li> </ul> </section>
@@ -460,7 +482,7 @@ html {
         </div>
       </div>
     </section>
-    
+   
   </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/js/reveal.min.js"></script>
 
@@ -476,6 +498,19 @@ html {
 <script> 
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
+function getYesterdayDate() {
+      var ayer = new Date(Date.now() - 86400000);
+      var dia = ayer.getDate();
+      var mes = ayer.getMonth() + 1;
+      var año = ayer.getFullYear();
+      return dia.toString() + '/' + mes.toString() + '/' + año.toString();
+    }
+
+    var fechaSpan = document.getElementById('fecha-de-ayer');
+    fechaSpan.innerHTML = getYesterdayDate();
+
+
+
 Reveal.initialize({
  controls: true,
  progress: true,
@@ -564,7 +599,7 @@ defaultTiming: #{attr 'revealjs_defaulttiming', 600}, */
  viewDistance: 3,
  mobileViewDistance: 2,
  hash: true,
- plugins: [ RevealMarkdown,RevealAudioSlideshow,RevealMenu,Appearance, RevealZoom, RevealChalkboard,RevealNotes,Simplemenu],
+ plugins: [ RevealMarkdown,RevealAudioSlideshow,RevealMenu,Appearance, RevealZoom, RevealChalkboard,RevealNotes,Simplemenu,RevealEmbedTweet],
  /* , RevealHighlight, RevealAudioRecorder, RevealFullscreen,RevealEmbedTweet */
 });
 
