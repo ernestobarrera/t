@@ -1,103 +1,239 @@
-
 <!DOCTYPE html>
-<html>
-  
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-<!-- meta_propio_inicio -->
-<meta name="description" content="Web con recursos para facilitar la búsqueda de información y gestión del conocimiento en Ciencias de la Salud">
-<meta name="author" content="Ernesto Barrera">
-<link rel="icon"  href="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Presentación ChatGPT | ​👨‍⚕️ EB">
-<meta property="og:site_name" content="Recursos para la gestión de información  🔎🩺⚕">
-<meta property="og:url" content="https://ernestobarrera.github.io/">
-<!-- <meta property="og:image" content="https://ernestobarrera.github.io/assets/images/me.png" > -->
-<meta property="article:published_time" content="2023-03-01">
-<meta property="article:author" content="Ernesto Barrera">
-<!-- fin -->
-    <title> 🤖ChatGPT | @ernestob </title>
 
-    <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- meta_propio_inicio -->
+  <meta name="description" content="Presentación: ChatGPT en ciencias de la salud" />
+  <meta name="author" content="Ernesto Barrera" />
+  <link rel="icon"  href="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Herramientas para buscar información sanitaria: ChatGPT para Profesionales Sanitarios | ​👨‍⚕️ EB" />
+  <meta property="og:site_name" content="Recursos para la gestión de información  🔎🩺⚕" />
+  <meta property="og:url" content="https://ernestobarrera.github.io/" />
+  <!-- <meta property="og:image" content="https://ernestobarrera.github.io/assets/images/me.png" > -->
+  <meta property="article:published_time" content="2023-04-30" />
+  <meta property="article:author" content="Ernesto Barrera" />
+  <!-- fin -->
+  <title> 🤖ChatGPT para Profesionales Sanitarios | @ernestob</title>
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <!-- tema anterior black -->
+  <link rel="stylesheet" href="reveal.js/dist/theme/blood.css" id="theme">
+  <link rel="stylesheet" href="../reveal.js-plugins/simplemenu/simplemenu.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/plugin/highlight/zenburn.css">
+  <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
   
-    <!-- tema anterior black -->
-    <link rel="stylesheet" href="../reveal.js/dist/theme/blood.css" id="theme">
-    <link rel="stylesheet" href="../reveal.js/plugin/simplemenu/simplemenu.css" id="theme">
-    <link rel="stylesheet" href="../reveal.js/plugin/highlight/zenburn.css">
-    <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
-    
-    <!-- Animaciones para el plugin appearance https://github.com/Martinomagnifico/reveal.js-appearance-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="../reveal.js-plugins/appearance/appearance.css">
+  <!-- Animaciones para el plugin appearance https://github.com/Martinomagnifico/reveal.js-appearance-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="../reveal.js-plugins/appearance/appearance.css">
+  <script src="reveal.js/dist/reveal.js"></script>
+  <script src="reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="../reveal.js-plugins/menu/menu.js"></script>
+  <script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
+  <script src="../reveal.js-plugins/appearance/appearance.js"></script>
+  <script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
+  <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+  <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
+  <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
 
-
-    <script src="../reveal.js/dist/reveal.js"></script>
-    <script src="../reveal.js/plugin/markdown/markdown.js"></script>
-    <script src="../reveal.js/plugin/highlight/highlight.js"></script>
-    <script src="../reveal.js-plugins/menu/menu.js"></script>
-    <script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
-    <script src="../reveal.js-plugins/appearance/appearance.js"></script>
-    <script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
-    <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
-    <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
-    <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
-    
-    
-    
-  
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
-  
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-     <!-- Estilo personalizado (heredados, valorar cambio a nuevo framework reveal) -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
   <style>
+    /* Establecer el tamaño de fuente base en 16px */
+html {
+  font-size: 26px;
+}
 
+/* Establecer el tamaño de fuente del párrafo a 1.0rem */
+* {
+  font-size: 1.2rem;
+}
 
+/* Consulta de medios para pantallas más pequeñas */
+@media (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+ 
+  * {
+    font-size: 1rem;
+  }
+}
+
+/* Consulta de medios para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  
+  * {
+    font-size: 1rem;
+  }
+}
+/* revisar ancho, porque fuente parece que funciona */
+@media screen and (min-width: 500px) {
+  html .slide-menu.slide-menu--left.active{
+    /* este elemento css consigue aumentar el ancho del menu lateral, pero no consigue cambio de fuente */
+    font-size: 0.2rem important!; /* Establece un tamaño de fuente explícito para pantallas más grandes */
+    width: 60%; /* Cambiar a un ancho deseado para pantallas más grandes */
+  }
+   /* Agregar una especificidad mayor a las reglas CSS para que no sean sobrescritas */
+   
+  }  
+  
+}
+
+    .cabecera {
+      margin-top: 1em;
+      font-size: 5rem;
+      color: orange;
+      word-spacing: 10px;
+      text-shadow: 3px 3px 4px #000000;
+    }
+    h1.color, h2.color, h3.color, h4.color, h5.color, h6.color {
+  color:  rgb(251, 183, 56);
+  text-shadow: 1px 1px 1px #000;
+}
+    .reveal h1
+    {
+  font-size: 2.2rem;
+}
+.reveal h2{
+  font-size: 2rem;
+}
+.reveal h3{
+  font-size: 1.8rem;
+}
+.reveal h4{
+  font-size: 1.6rem;
+}
+.reveal h5 {
+  font-size: 1.4rem;
+}
+.vertical{
+  margin-top: 1.2rem;
+}
+
+    /* .vertical h1, .vertical h2, .vertical h3, .vertical h4, .vertical h5, .vertical h6 {
+      font-size: 3rem;
+      margin-top: 3rem;
+    } */
+  
+    .titulo {
+      font-size: 4rem;
+      font-weight: bold;
+      font-family: 'Arial', sans-serif;
+    }
+  
+    /* Estilos adicionales */
     .left {
       text-align: left;
-      
     }
+  
     .pie {
-      position:absolute !important;
-      bottom:5;}
-      .size-1 {
+      position: absolute !important;
+      bottom: 5;
+    }
+  
+    .size-1 {
       font-size: 32px;
     }
+  
     .size {
       font-size: 26px;
     }
-      .size0 {
+  
+    .size0 {
       font-size: 20px;
     }
+  
     .size1 {
       font-size: 16px;
     }
+  
     .size2 {
       font-size: 14px;
     }
+  
     .size3 {
-      font-size: 12px;
+      font-size: 1rem;
     }
-    .color{
-      color:rgb(255, 191, 71);
+  
+    .color {
+      color: rgb(251, 183, 56);
     }
-    .footer {
-  position: absolute; 
-  left: 35%;
-  bottom: 1em;
+  /* no parece funcionar en esta presentación, referencia en https://revealjs.com/fragments/ */
+  .fragment.blur {
+    filter: blur(5px);
+  }
+  .fragment.blur.visible {
+  filter: none;
+  }
+  .full-height {
+  height: 100vh;
 }
-.highlighted {
-    background-color: rgba(252, 212, 212, 0.5);
+  
+.footer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 50%;
+  bottom: 3em;
+  transform: translateX(-50%);
 }
+    .aligned p {
+  margin-left: 15%;
+  text-align: left;
+}
+.filaImagenTexto {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.filaImagenTexto div {
+  width: 50%;
+}
+.mensaje-usuario {
+  margin-left: 15%;
+  text-align: left;
+  color: #2fa883;
+  font-weight: bold;
+}
+
+.mensaje-chatgpt {
+  margin-left: 15%;
+  text-align: left;
+  color: #3969ab;
+  font-weight: bold;
+}
+    .highlighted {
+      background-color: rgba(252, 212, 212, 0.5);
+    }
+    .controls-arrow {
+  font-size: 10px !important;
+}
+
 
 /* ideas animación botón https://webdeasy.de/en/top-css-buttons-en/ */
 
 .glow-on-hover {
+    width: 280px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(214, 197, 197);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.glow-on-hover:before {
+   
     width: 280px;
     height: 50px;
     border: none;
@@ -158,187 +294,643 @@
 }
 
   </style>
-  <!--- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKR6RB1ZC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+</head>
 
-  gtag('config', 'G-YFKR6RB1ZC');
-</script>
-  </head>
-  <body>
-    <div class="reveal">
-      
-     
-   
-      <!--esto parece sería del menú 
-    <div class="menubar">
-      <ul class="menu"></ul>
-  </div> -->
-  <div class="menubar">
-    <ul class="menu">
-      <!-- Here's the menu -->
-      <li><a  href="#/que">Qué es</a></li>
-      <li><a href="#/instalacion">Instalación</a></li>
-     <!--  <li><a href="#/funcionamiento">Funcionamiento</a></li> -->
-     <li><a href="#/descripcion">Descripción</a></li>
-      <!-- <li><a href="#/creditos">Créditos</a></li> -->
-      <li><a href="#/tuopinion">Tu opinión</a></li>
-    </ul>
-  </div>
-  <div class="slides">
-    <section>
-      <h2>ChatGPT</h2>
-    </section>
-    <section class="transition">
-      <h3>¿Qué es ChatGPT?</h3>
-      <ul class="size color">
-        <li>ChatGPT es un modelo de lenguaje natural creado por OpenAI</li>
-        <li>Está diseñado para responder preguntas en lenguaje natural de manera coherente y útil</li>
-        <li>Se ha entrenado con una gran cantidad de datos de texto</li>
-        <li>Es capaz de mantener conversaciones complejas y proporcionar recomendaciones útiles</li>
-      </ul>
-    </section>
-    <section class="transition">
-      <h3>¿Cómo funciona ChatGPT?</h3>
-      <p class="size color">ChatGPT utiliza una red neuronal para procesar la entrada de lenguaje natural y generar una respuesta coherente. El modelo ha sido entrenado con una gran cantidad de texto relacionado con la salud .</p>
-      <p class="size color">ChatGPT está en constante mejora gracias a la retroalimentación del usuario y la recopilación de datos, lo que ayuda a mejorar la precisión de las respuestas y la relevancia de las recomendaciones generadas.</p>
-    </section>
-    <section class="transition">
-      <h3>Casos de uso de ChatGPT en contextos sanitarios</h3>
-      <ul>
-        <li class="size color">ChatGPT podría utilizarse para brindar información sobre enfermedades y tratamientos médicos, recomendar medidas preventivas y manejar situaciones de emergencia de forma efectiva.</li>
-        <li class="size color">En el área de cuidado de pacientes, ChatGPT podría ser utilizado para monitorear a pacientes remotos y proporcionar recomendaciones personalizadas basadas en los datos recolectados.</li>
-        <li class="size color">ChatGPT también podría utilizarse para mejorar la calidad del soporte técnico al personal médico y administrativo, al responder preguntas comunes y proporcionar información relevante en tiempo real.</li>
-      </ul>
-    </section>
- 
-  </div>
-  
-
-              <script src="../reveal.js/plugin/notes/notes.js"></script>
-       <script src="../reveal.js/plugin/"></script>
- 
-       <script src="../reveal.js/plugin/zoom/zoom.js"></script>
- 
-       <script src="../reveal.js/plugin/simplemenu/simplemenu.js"></script>
-       <script src="../reveal.js/plugin/fullscreen/plugin.js"></script>
-       <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
-       
-    <script> 
-    	// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-        autoSlide: 0,
-        slideNumber: 'c/t',
-				mouseWheel: true,
-				menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
-          
-          themes: 
-          [
-         { name: 'Negro', theme: '../reveal.js/dist/theme/black.css' },
-         { name: 'Blanco', theme: '../reveal.js/dist/theme/white.css' },
-         { name: 'Leyenda', theme: '../reveal.js/dist/theme/league.css' },
-         { name: 'Oscuro',  theme: '../reveal.js/dist/theme/black.css'},
-         { name: 'Solar',  theme: '../reveal.js/dist/theme/solarized.css'},
-         { name: 'Sangre',  theme: '../reveal.js/dist/theme/blood.css'},
-         { name: 'Sangre',  theme: '../reveal.js/dist/theme/blood_2.css'},
-         { name: 'Luna',  theme: '../reveal.js/dist/theme/moon.css'},
-         { name: 'Serif',  theme: '../reveal.js/dist/theme/serif.css'},
-         { name: 'Cielo',  theme: '../reveal.js/dist/theme/sky.css'},
-         { name: 'Beige',  theme: '../reveal.js/dist/theme/beige.css'},
-         { name: 'Simple',  theme: '../reveal.js/dist/theme/simple.css'},
-     ],
-          openOnInit: true,
-					transitions: false,
-					markers: true,
-          keyboard: true,
-          useTextContentForMissingTitles: true,
-          titleSelector: 'h1, h2, h3, h4, h5, h6',
-          numbers: true,
-					hideMissingTitles: true,
-          
-					custom: [
-				            /* { title: 'Plugins', icon: '<i class="fa fa-external-link-alt"></i>', src: 'toc.html' }, */
-				            { title: 'Teclas', icon: '<i class="fa fa-info"></i>', src: 'about.html', content:'B: Escribir en pizarra<p>Botón Derecho Ratón: Borrar<p>C: Escribir en la diapositiva<p>SUPR: Borrar dibujo diapo<p>RETROCESO: Borrar todas diapos<p>M: Abrir/cerrar menú<p> F: Pantalla completa<p>V: Pausar presentación<p>A: Escuchar/pausar audio <p>S: Notas y vista de presentador<p>Alt+Botón Izquierdo del Ratón: Zoom' }
-                    
-				        ]       
-				},
-				audio: {
-					prefix: 'chalkboard/',
-					suffix: '.ogg',
-					defaultDuration: 5,
-          /* Camila, Sofia, Diego, Luna https://www.voicerss.org/api/ */
-					textToSpeechURL: "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Sofia&c=ogg&r=0&f=48khz_16bit_stereo&src=",
-					advance: -1,
-					autoplay: false,
-					defaultText: true,
-					playerOpacity: 0.2,
-				},
-        simplemenu: {
-        menuclass: 'menu',
-        activeclass: 'active',
-        activeelement: 'li',
-        selectby: 'id',
-        auto: false
-    },
-				chalkboard: { // font-awesome.min.css must be available
-					src: "../reveal.js-plugins/chalkboard/chalkboard.json ",
-					storage: "chalkboard-demo",
-					toggleChalkboardButton: { left: "80px" },
-					toggleNotesButton: { left: "130px" },
-					colorButtons: 5
-				},
-        width: "99%",
-        height: "99%",
-        center:true,
-     /* esto daría tiempo en notas orador pero hay algún error  
-      defaultTiming: #{attr 'revealjs_defaulttiming', 600}, */
-        // Specify the total time in seconds that is available to
-        // present.  If this is set to a nonzero value, the pacing
-        // timer will work out the time available for each slide,
-        // instead of using the defaultTiming value
-     
-        backgroundTransition: 'convex',
-        // Transition style for full page slide backgrounds: none/fade/slide/convex/concave/zoom
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" data-background-opacity="0.09" >
+        <h1 class="color" style="margin-top: 100px;">Introducción a ChatGPT</h1>
+        <h3>Para profesionales sanitarios</h3>
+        <div class="fragment blur" style="position: absolute;top:300px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+          <h4>💡TIP </h4>
+          <p style=" font-size: 20px; color:rgb(253, 215, 1)">Esta presentación contiene diapositivas en navegación horizontal y vertical, según se indica en las flechas de abajo a la derecha. Girar la rueda del ratór, pulsar la barra espaciadora o las teclas de flecha del teclado para navegar por ellas</p>
+         <!--  <aside class='animated bounceIn slower controls'style="display: block;"> <a href="ChatGPT.html#/9/2" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>  -->
+        </div> 
         
-        // Global override for preloading lazy-loaded iframes
-        // - null:   Iframes with data-src AND data-preload will be loaded when within
-        //           the viewDistance, iframes with only data-src will be loaded when visible
-        // - true:   All iframes with data-src will be loaded when within the viewDistance
-        // - false:  All iframes with data-src will be loaded only when visible
-        preloadIframes: true,
-        viewDistance: 4,
-        mobileViewDistance: 2,
-        hash: true,
-				plugins: [ RevealMarkdown,RevealAudioSlideshow,RevealMenu,Appearance, RevealZoom, RevealChalkboard,RevealNotes,Simplemenu],
-        /* , RevealHighlight, RevealAudioRecorder, RevealFullscreen,RevealEmbedTweet */
-			});
-
-		function changeTheme(input) {
-			var config = {};
-			config.theme = input.value;
-			Reveal.getPlugin("RevealChalkboard").configure(config);
-			input.blur();
-		}
-    </script>
-   
-
-    <a href="https://twitter.com/ernestob" target="_blank">
-      <img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png"
-      width="35" height="40">
-        <!--  -->
+       
+      </section>
+      <section data-background-image="https://media.giphy.com/media/SUp0ZNb0pmL3G65I2k/giphy-downsized-large.gif" data-background-opacity="0.2">
+        <H4>ChatGPT no cambia la forma en que buscas</H4>
+        <H4 class="fragment color">...Cambia la forma<br>  en que piensas en la búsqueda</H4>
       
-    </body>
+          
+      </section>
+      <section data-audio-text="CHATGPT es una herramienta de inteligencia artificial que utiliza procesamiento de lenguaje natural para proporcionar respuestas conversacionales en tiempo real. En otras palabras, es un chatbot que puede conversar contigo y responder tus preguntas siempre que las formules en lenguaje natural. CHATGPT utiliza una gran cantidad de datos para mejorar constantemente la calidad de sus respuestas">
+        
+        <h4 class="color">¿Qué es ChatGPT?</h4>
+        <p>ChatGPT es un modelo de lenguaje avanzado desarrollado por OpenAI. <br>GPT significa <b>G</b>enerative <b>P</b>retrained <b>T</b>ransformer, que en español sería Transformador Preentrenado Generativo. Es una forma sofisticada de decir que es una inteligencia artificial que ha aprendido a generar texto a partir de una gran cantidad de datos.</p>
+      </section>
+      
+      <section> <h2 class="color">¿Cómo funciona CHATGPT?</h2> <p>Utiliza el modelo de lenguaje llamado GPT, entrenado utilizando grandes conjuntos de datos de texto de toda la web. Este modelo es capaz de aprender a generar texto natural utilizando la información de estos conjuntos de datos. Una vez entrenado, el modelo se puede ajustar para realizar una tarea específica, como la generación de respuestas a preguntas relacionadas con cualquier tema.</p> <p>Para utilizar CHATGPT, se introduce una pregunta o una frase en lenguaje natural, y la herramienta utiliza su modelo de lenguaje para generar una respuesta relevante y precisa.</p> </section>
+      <section data-audio-text="los tokens son la base para el entrenamiento y la generación de texto en modelos de lenguaje como ChatGPT. Durante el entrenamiento, el modelo aprende a predecir el siguiente token en una secuencia de texto dada la historia de los tokens anteriores. Durante la generación, el modelo utiliza lo que ha aprendido para generar el siguiente token en una secuencia de texto">
+        
+        
+        <h2 class="color">Vocabulario clave</h2>
+        <ul>
+          <li><strong>Prompt:</strong> Es la pregunta o instrucción que le das a ChatGPT para generar una respuesta.</li>
+          <li><strong>Plugin:</strong> Es una herramienta que puedes usar para añadir funcionalidades a ChatGPT.</li>
+          <li><strong>Modelo:</strong> Es la versión específica de ChatGPT que estás utilizando.</li>
+          <li><strong>OpenAI:</strong> La organización que desarrolló ChatGPT.</li>
+          <li><strong>Token:</strong> pieza de texto que el modelo considera como una unidad indivisible, puede ser tan corta como un carácter o tan larga como una palabra.</li>
+          <li><strong>Iteración:</strong> Proceso de mejora continua a través de repetidos ciclos de prueba y error.</li>
+        </ul>
+      </section>
+      <section><img style="border: 1px dashed rgb(255, 153, 0);" src="https://ernestobarrera.github.io/assets/images/demo_bookmarklet_buscadores.gif"  height="750" width="1200"></section>
+      <section>
+        <h2 class="color">Características</h2>
+        <ul>
+          <li>Generación de texto coherente y relevante.</li>
+          <li>Capacidad para responder a preguntas.</li>
+          <li>Capacidad para escribir en diferentes estilos.</li>
+          <li>Capacidad para aprender de los inputs del usuario.</li>
+          <li>Memoria de conversación: ChatGPT puede recordar el contexto de una conversación anterior y utilizarlo para generar respuestas más coherentes.</li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="color">Consejos para escribir prompts y Fórmula C.R.E.A.T.E para la ingeniería de prompts</h2>
+        <ul>
+          <li>Sé claro y específico en lo que quieres que haga ChatGPT. Ejemplo: "Como ChatGPT, proporciona recomendaciones para prevenir la propagación del COVID-19 en entornos escolares".</li>
+          <li>Experimenta con diferentes formatos y estilos. Ejemplo: "Como ChatGPT, escribe una lista de verificación para un plan de dieta equilibrada".</li>
+          <li>No tengas miedo de ser creativo con tus prompts. Ejemplo: "Como ChatGPT, crea una historia de ciencia ficción ambientada en el futuro de la medicina".</li>
+          <li>Trata a ChatGPT como un aprendiz. A veces puede ser útil darle a ChatGPT instrucciones claras y detalladas, como si estuvieras hablando con un aprendiz.</li>
+          <li>Ajusta la configuración de ChatGPT si te quedas atascado. Por ejemplo, la configuración de "temperatura" de ChatGPT controla la creatividad de sus respuestas.</li>
+          <li>Fórmula C.R.E.A.T.E:
+            <ul>
+              <li>C: Carácter - Define el papel de la IA. Ejemplo: "Eres un redactor publicitario experimentado con 20 años de experiencia en copias de ventas exitosas".</li>
+              <li>R: Solicitud - Sé específico con lo que necesitas. En lugar de "Escribe un correo electrónico de ventas para un coche deportivo", especifica, "Escribe un correo electrónico convincente para el Cougar Hyper Sport, un coche eléctrico con una aceleración de primera categoría".</li>
+              <li>E: Ejemplos - Opcionalmente, proporciona muestras para resultados más precisos. Los ejemplos de titulares o tonos pueden guiar el estilo de la IA.</li>
+              <li>A: Ajustes - Refina el prompt si no es perfecto. Usa instrucciones como "Evita las viñetas; usa subtítulos".</li>
+              <li>T: Tipo de salida - Describe el formato deseado. Ejemplo: "Produce un artículo de 500 palabras con un título y conclusión".</li>
+              <li>E: Extras - Incorpora instrucciones especiales. Ejemplos: "Ignora las conversaciones anteriores", "Haz preguntas antes de responder", "Explica tu pensamiento", "Resume lo que has dicho".</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2 class="color">Roles dirigidos a dar contexto</h2>
+        <p>Ejemplo: "Eres un experto en educación para la salud de talla mundial, ¿qué medidas de prevención deberíamos tomar para evitar la propagación del COVID-19 en nuestra comunidad?"</p>
+      </section>
+      
+      <section>
+        <h2 class="color">Plugins</h2>
+        <p>Los plugins son herramientas que puedes usar para añadir funcionalidades a ChatGPT. Existen plugins para una variedad de tareas, desde la generación de texto hasta la búsqueda enAquí están las secciones restantes formateadas para Reveal.js:
+      
+      ```html
+      <section>
+        <h2 class="color">Problemas comunes y cómo solucionarlos</h2>
+        <ul>
+          <li><strong>Alucinaciones:</strong> A veces, ChatGPT puede generar información que parece correcta, pero que en realidad es incorrecta o inventada. Siempre verifica la información generada por ChatGPT.</li>
+          <li><strong>Ventana de tokens:</strong> ChatGPT solo puede tener en cuenta los últimos 2048 tokens de contexto. Si tu conversación es más larga, puede que no recuerde información de partes anteriores de la conversación.</li>
+          <li><strong>Antropomorfización:</strong> Aunque es tentador pensar en ChatGPT como un humano, recuerda que es una IA y no comprende el mundo de la misma manera que un humano. ChatGPT está diseñado para generar la respuesta más probablemente correcta, no necesariamente la respuesta correcta. Este sesgo de antropomorfización puede llevar a malentendidos sobre las capacidades de la IA.</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2 class="color">Trucos y recomendaciones</h2>
+        <ul>
+          <li>Experimenta con diferentes prompts.</li>
+          <li>Utiliza plugins para mejorar la funcionalidad de ChatGPT.</li>
+          <li>Asegúrate de entender bien las capacidades y limitaciones de ChatGPT.</li>
+          <li>Hablarle como a un aprendiz: A veces puede ser útil darle a ChatGPT instrucciones claras y detalladas, como si estuvieras hablando con un aprendiz.</li>
+          <li>TL;DR (Too Long; Didn't Read): Si la respuesta de ChatGPT es demasiado larga, puedes escribir "TL;DR" para pedirle un resumen conciso.</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2 class="color">Usos posibles en el ámbito sanitario</h2>
+        <ul>
+          <li>Generar resúmenes de investigaciones médicas.</li>
+          <li>Proporcionar información sobre enfermedades y condiciones de salud.</li>
+          <li>Crear planes de dieta y ejercicio personalizados.</li>
+          <li>Ayudar a los pacientes a entender sus diagnósticos y tratamientos.</li>
+          <li>Generar recordatorios para tomar medicamentos.</li>
+          <li>Proporcionar consejos para mantener un estilo de vida saludable.</li>
+          <li>Ayudar a los profesionales de la salud a redactar informes médicos.</li>
+          <li>Crear contenido educativo sobre salud para diferentes audiencias.</li>
+          <li>Interpretar resultados de pruebas médicas.</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2 class="color">Seguridad, ética y precaución</h2>
+        <ul>
+          <li>El código generado por los chatbots puede contener vulnerabilidades de seguridad. Es importante no aceptar ciegamente lo que ChatGPT proporciona, sino leerlo cuidadosamente y probarlo para asegurarse de que funciona como se espera.</li>
+          <li>No introduzcas datos personales en ChatGPT. Aunque OpenAI ha implementado medidas para proteger la privacidad del usuario, es mejor evitar compartir información personal o sensible.</li>
+          <li>Ten en cuenta el sesgo de entrenamiento de los algoritmos. Los modelos de IA, incluyendo ChatGPT, pueden reflejar y perpetuar los sesgos presentes en los datos de entrenamiento.</li>
+          <li>La regulación y la ética en el uso de la IA son temas importantes. Es esencial utilizar ChatGPT de manera responsable y ética. La IA en la salud, por ejemplo, debe ser utilizada con precaución para evitar violaciones de la privacidad y garantizar la precisión de la información proporcionada.</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2 class="color">Preguntas frecuentes</h2>
+        <ul>
+          <li>¿ChatGPT puede entender y generar cualquier idioma? ChatGPT está entrenado principalmente en datos en inglés, pero puede entender y generar texto en otros idiomas hasta cierto punto.</li>
+          <li>¿ChatGPT puede aprender de los inputs del usuario? Sí, ChatGPT puede aprender de los inputs del usuario y ajustar sus respuestas en función de ellos.</li>
+          <li>¿ChatGPT puede generar contenido ofensivo o inapropiado? OpenAI ha implementado medidas para evitar que ChatGPT genere contenido ofensivo o inapropiado, pero no es perfecto y puede haber casos en los que genere contenido inapropiado.</li>
+          <li>¿Cómo se entrena ChatGPT? ChatGPT se entrena en dos pasos: preentrenamiento y ajuste fino. En el preentrenamiento, ChatGPT aprende a predecir la siguiente palabra en una oración basándose en millones de páginas web. En el ajuste fino, se entrena en un conjunto de datos más pequeño y específico con supervisión humana.</li>
+          <li>¿ChatGPT tiene sesgos? Sí, como cualquier modelo de IA, ChatGPT puede tener sesgos que reflejan los presentes en los datos de entrenamiento. OpenAI está trabajando para mejorar la transparencia y la equidad en sus modelos.</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2 class="color">Recursos adicionales</h2>
+        <ul>
+          <li>Documentación oficial de OpenAI: www.openai.com/documentation</li>
+          <li>Guía de uso de ChatGPT: www.openai.com/chatgpt-guide</li>
+          <li>Foro de la comunidad de OpenAI: www.openai.com/community</li>
+        </ul>
+      </section>
+      
+      <!-- Agrega más secciones aquí -->
+      <section>
+        <h2 class="color">Sección 12: Encadenamiento de prompts</h2>
+        <ul>
+          <li>El encadenamiento de prompts es una técnica que puedes usar para guiar a ChatGPT a través de una serie de pasos para llegar a una respuesta más compleja. Por ejemplo, podrías comenzar pidiendo a ChatGPT que investigue un tema, luego que resuma la información que encontró, y finalmente que genere una presentación basada en ese resumen.</li>
+          <li>Proporciona el esquema ideal para una publicación de blog efectiva y persuasiva.</li>
+          <li>Escribe una lista de titulares atractivos para esta publicación de blog basada en [Tema].</li>
+          <li>Escribe una lista de subtítulos y ganchos para esta misma publicación de blog.</li>
+          <li>Escribe una lista de palabras clave para este blog.</li>
+          <li>Escribe una lista de llamadas a la acción convincentes para la publicación del blog.</li>
+          <li>Combina el mejor titular con los mejores subtítulos, ganchos, palabras clave y llamada a la acción para escribir una publicación de blog para [tema].</li>
+          <li>Reescribe esta publicación de blog en el [Estilo], [Tono], [Voz] y [Personalidad].</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2 class="color">Sección 13: Prompt meta alucinante</h2>
+        <p>¿Cuáles son los prompts de ChatGPT más alucinantes, más impresionantes, más fuera de lo común que realmente mostrarán el poder de ChatGPT? Dame 10.</p>
+      </section>
+      
+      <section>
+        <h2 class="color">Sección 14: Copia creativa exagerada</h2>
+        <p>Toma esta declaración y hazla explotar con hipérbole y cinematografía de redacción de copias.</p>
+      </section>
+      
+      <section>
+        <h2 class="color">Sección 15: Mimic Your Writing Style</h2>
+        <p>Actuando como un escritor fantasma experto, evalúa el tono, estilo, voz, personalidad, Perplejidad y Burstiness utilizados en el siguiente contenido de muestra para que puedas imitarlo.</p>
+      </section>
+      
+      <section>
+        <h2 class="color">Sección 16: Estructura básica de un prompt</h2>
+        <p>Actúa como un [ROL], Crea una [TAREA], muestra como [FORMATO]</p>
+      </section>
+      
+      <section>
+        <h2 class="color">Sección 17: Árbol de pensamiento de Prompt</h2>
+        <p>Tres expertos con habilidades excepcionales de pensamiento lógico están respondiendo colaborativamente a una pregunta utilizando un método de árbol de pensamientos.</p>
+      </section>
+      
+      <section>
+        <h2 class="color">Sección 18: Mejores plugins de ChatGPT</h2>
+        <ul>
+          <li>AskYourPDF</li>
+          <li>Scholar AI</li>
+          <li>Zapier</li>
+          <li>Bardeen</li>
+          <li>Crea código QR</Por supuesto, aquí tienes el código para las secciones restantes:
+      
+      ```html
+      <section>
+        <h2 class="color">Sección 18: Mejores plugins de ChatGPT</h2>
+        <ul>
+          <li>AskYourPDF</li>
+          <li>Scholar AI</li>
+          <li>Zapier</li>
+          <li>Bardeen</li>
+          <li>Crea código QR</li>
+          <li>Vox Script</li>
+          <li>Video Insights</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2 class="color">Sección 19: Top 10 herramientas de IA</h2>
+        <ul>
+          <li>StockIMG</li>
+          <li>Paperpal AI</li>
+          <li>KickResume</li>
+          <li>Lovo AI</li>
+          <li>Bing</li>
+          <li>Bardeen</li>
+          <li>Alicent</li>
+          <li>Writesonic</li>
+          <li>Otter AI</li>
+          <li>TweetHunter</li>
+        </ul>
+      </section>
+      
+      
+      
+      
+      
+
+      
+
+
+
+
+
+
+      <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" data-background-opacity="0.09" >
+        <h1 class="color" style="margin-top: 100px;">Introducción a ChatGPT</h1>
+        <h3>Para profesionales sanitarios</h3>
+        <div class="fragment blur" style="position: absolute;top:300px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+          <h4>💡TIP </h4>
+          <p style=" font-size: 20px; color:rgb(253, 215, 1)">Esta presentación contiene diapositivas en navegación horizontal y vertical, según se indica en las flechas de abajo a la derecha. Girar la rueda del ratór, pulsar la barra espaciadora o las teclas de flecha del teclado para navegar por ellas</p>
+         <!--  <aside class='animated bounceIn slower controls'style="display: block;"> <a href="ChatGPT.html#/9/2" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>  -->
+        </div> 
+        
+       
+      </section>
+
+   
+      
+    <section data-background-image="https://media.giphy.com/media/SUp0ZNb0pmL3G65I2k/giphy-downsized-large.gif" data-background-opacity="0.2">
+      <H4>ChatGPT no cambia la forma en que buscas</H4>
+      <H4 class="fragment color">...Cambia la forma<br>  en que piensas en la búsqueda</H4>
+    
+    
+   
+    </section>
+    <section>
+      
+      <div class="full-height" >
+      
+        <img src="http://www.plantuml.com/plantuml/png/ZLRDRXmt3BxlKwZ8pK1Is_c9WGH5NCTE2hIf4HljnHUkH8-PQCG1fN6yBl8mEURGGv57s1ShfH5sTjORjtiQKH_vVVmaoduL4qXgARWMkjaFwGfRD9q72hFuaK870gsPW_tO2FV17R5dCGzEocyD0IBywVoAxCU0CPgzHq_NDXrUGk_J2OVq3hJyM_JNcCZ2TimPtQBPUpPx6TF2uq-pm0xDNpEZlrDmZa9ZzlRByZUGXe9vN1PlMUXMqy4VUcf2Yo4PYo6XbErVAU2WVkvxN8L6pOyVxPRe-w5F2IZcoMxbkQ6sR_yabwxC_jCXE4fzKjUrlJzG70J8mTddcJ2dTxM3odcM-p87ZtPV5Cw9E45N8ZzlMFxfYXBUqRUfv409FSBbI7WdPN_tksvvl4mJcvzlb7-ylT5DYzIstVNpsNkgiYnqYJXK6wQaBtJ_vO_rkCSxKGz-cnqFZWzE3avEXZqMXrBZkxlFdn_jhyN70nwYPrVW-9DsLowf1WhDeFkPwlwy8Q1qdvLL9QkrrlTEuJlcw0hIczFpsSwEEHMs6A4b38cDGw_zXQQ73sW2f5x0Ash7lC600fQMtuA2JCARn6NZNC3rThL1ZhY5MBOEm_ABfqXncd74uHebJaePCDTyQnRccYpcNQXG4Qp56-qFyWnwXR4aRcJvvLBN0rV4o0Ar3Gm6enNA-cUvZeOjGH7YmKJmlIjflwYKcAYfdIqCh6jsa3XkBrzAA7wk4Qq0Kc2lsVQjGbRb11sicHCkMLgCfbr-TMHBRNEizgtmUNzOb7h78UBo7mYte7kfJta4nkqiYs8ghMLD7fGlikzNX9tmt6CxD0wTO71Qu0DUXFSOkpuBZmOKXaqVohS5j_pQaeLu4Kw5EnPB742gzYeqybpooTNAD77n8XmkUZSg0Z-8hiSD6ecv7O4vVE2OJugzHfNnTw6LUpKVFOu6MX11AUdQMYDG1IXxxuWlmbdVe1H3CiPoY9Wfyd0ONnhLpr4CtYo_j1WozVcwkveRrHAgvzsXH0wb3rTcP637oADXzMuBZjMLFc4WJS5yneck5NGFggYqlNB5qlpoxu1m4Uv5UuXOq5NZlV2fQHOw1LQtxyzh8VJWiQJriGSX7kwdXpcFVbRnMvhiF0IS7jLaluM4Gk0hPdNjBy9hojzSmjVWUytXN6gnVdYlCO88UrzmODLgSk2mNfG5siHnopksklbLyoa8Z7KrsUOPAGD078sEnE1YZtEeCvKerRVa_MJMCKHOi6gxCwDM43PXupni7QZ_zGvEvuwbWR0-UEI6kGDfoXjLjDrvDSlLjXYBaUCR-l2XEXTJgOLj9zblgWeAJpqM1JuqXtVUKCNfavT4LLR89d5JgojIlmGIDWJhL2MjMbnnZbRDERQrgVMSeiUSSmi5WvPYKRaQQFoEclIVAQSU0cNNgvgftnLTLH-799Z7gH8es19lOUuYMVRBRqr-JZ997TTIi-2dGxhyvgZXWUEcysItxvrzzqz2Do5uXS7L_wl_1G00" alt="Imagen de fondo"   style="margin-bottom: 0px;margin-top: 0px;"   >
+        <div style="position: absolute; bottom: 110px; left: 105px; padding: 2px; color: #fff; z-index: 1;">
+          <h4 style="margin: 10;" class="color">Porque ya no es solo "búsqueda"</h4>
+         
+      </div>
+      </div>
+     
+    </section>
+    <!-- codigo eliminado del final de data-background porque la interacción con el fondo pausa transición data-background-interactive -->
+    <section class="full-height" data-background-iframe="https://pageviews.wmcloud.org/langviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-365&sort=views&direction=1&view=chart&page=ChatGPT" data-background-opacity="0.7" >
+ 
+    
+      <div class="footer">
+      <H6>Nº de visitas a ChatGPT en Wikipedia hasta el <span id="fecha-de-ayer"></span></H6>
+        <H5 class="fragment color">Interés sin precedentes</H5>
+      </div>
+   
+    </section>
+
+    <section class="full-height" data-background-iframe="https://chat.openai.com/share/f7d49bb9-96e7-47c6-975f-822e1e97c5d2" data-background-opacity="1" >
+ 
+    
+      <div class="footer">
+      <H6>Nº de visitas a ChatGPT en Wikipedia hasta el <span id="fecha-de-ayer"></span></H6>
+        <H5 class="fragment color">Interés sin precedentes</H5>
+      </div>
+   
+    </section>
+  <!--   <section>
+      <h2>Embeber un tweet</h2>
+      <blockquote class="twitter-tweet">
+        <a href="https://twitter.com/OpenAI/status/1598014522098208769">Texto del tweet</a>
+      </blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </section> -->
+   
   
+    
+    
+    <section>
+      <section>
+        <h3 class="color">¿Qué es ChatGPT?</h3>
+       
+        <p>Herramienta de inteligencia artificial que utiliza procesamiento de lenguaje natural para proporcionar respuestas conversacionales en tiempo real. En otras palabras, es un chatbot que puede conversar contigo y responder tus preguntas siempre que las formules en lenguaje natural. CHATGPT utiliza una gran cantidad de datos para mejorar constantemente la calidad de sus respuestas.</p>
+        
+        <img src="https://th.bing.com/th/id/OIG.gl6kn.FD6PNOUJjrLkU2?pcl=1b1a19&pid=ImgGn"> 
+      </section>
+
+      <section>
+      
+        <div class="full-height" >
+        
+          <img src="https://www.plantuml.com/plantuml/svg/XLRTJXqt4BxVfvWg5oTPfVG08I0bga8Ha4WGeOBQwpdsd7CCNdipzl93rOVf0-IYpy2BTMplmcP3bHK2UppszyttpKXy214vDiRf1jlgfxYcXg2rQ5mLhenhaR611Qgh5VlEwGDlFSEBe_oDCf3PtroiZRfo509iRkoC3ZKjiRFnoBlu6UNvZsIlAHg5p-USctk2pRVL-n3lBFrQEQy9_gf0lZFKshWLR6xbxIdooZZOpfkFdiszN4UxRytADUGYAFb5d8zFZAF2Vc4xUWmzSTxUcEVexwLETiJmPjxZt9gcQ_uqEgvXQwS4dwY-6VQbl3-8DJfCmUhlYhsFdqi50-PvgWlsDkRl17D2Zaddo6yJoM_M9j9t_APCzWJG4YwV0B-xiZN_NxKiBUCtCkzEdjz-lj2fH2BRVEpFvexGKjX6urqlmxUWx-Jy_I_5xb5FZ8oVol7YSEzeJpemdtdMn7ryFj_TFTWQnPyCBj7pDMf_8zNb9fL0XYcytmfleL9DE6G1XDn0vd4l45QN6pKSh37MzV7PHLrNTGsoh6jon1ZDDKcaXWj6tIcZFQ052Yq-_EijADzuc1qFgNwMSqzyW5F1jl9N4voGMtLuIO1mpEZWC2Yq22zFJavVGH1PEuTmZMn8equNFhb8eZ4vPH3sEPgbaPM5bv_sNy5g0CECTO0jAieuBVj4aK5Zz25nQor5J4uHk8wk9NW7detuYfP2lb-uEycMB9VgS_wQj0zUtYCjmEGaA7nRjBXWX2yTlKxfqE2TvuIwm8MnHiY_Xj0fqiGF_m2cEvX6s7WMgAGB1c3HhgCGCVILQ5aX2CbE2oGoANAY2WkwqubwpnzZnprhE6FwEJ8QH_g7vgHSUK5UGptoHyJFsgDTYIAnaL13qQXEJEibGss4AAE8KUerrdfNjAPBQjhUtqYtqG--iQEOGGujj4_GZP655sxoatsLKonY0bbeShS0vg8HR1RAeZ8PxmuIZqub1G8iEwSpGxIPYmNRDrXHURzNRlfA4bq_V0rI9ChkreIOoWoGAURitk9G5KrTM7fkY7CziyU02C8pkVMeTF70j3v5I3rybNxDWY1_wKoaJ5psGvcQ-ahDFLxclaqrUNccJABC8VYM6CMXHQO62moKxdKkEoTs-EptP01ft1hZ4cR5aoKfoVAXY1-H2OVHKHG6boGmI3hqtNJM6dHqYGmsts-puCh81YN4Am-jnNl_ZBHmbxTBMMRfWMnfe6BUMKVoqcYKILdamKBfbZoeZDgex30mOHczVfn4HrYJMakDCxJoXalzEwi-2CN-FuN_0000" alt="Imagen de fondo"   style="margin-bottom: 0px;margin-top: 0px;"   >
+          <div style="position: absolute; top: 10px; right: 2px; padding: 2px; color: #fff; z-index: 1;">
+            <h4 style="margin: 10;" class="color">¿Qué significa<br> "ChatGPT"?</h4>
+            
+           <!--  <p>CHATGPT es una herramienta de inteligencia artificial que utiliza procesamiento de lenguaje natural para proporcionar respuestas conversacionales en tiempo real. En otras palabras, es un chatbot que puede conversar contigo y responder tus preguntas siempre que las formules en lenguaje natural. CHATGPT utiliza una gran cantidad de datos para mejorar constantemente la calidad de sus respuestas</p> -->
+           
+        </div>
+     
+        </div>
+       
+      </section>
+      
+       <section><div class="tweet" data-src="https://twitter.com/OpenAI/status/1598014522098208769"> </section>
+      </section>
+      <section> <h2 class="color">¿Cómo funciona CHATGPT?</h2> <p>CHATGPT está basado en un modelo de lenguaje llamado GPT (Generative Pre-trained Transformer), el cual es entrenado utilizando grandes conjuntos de datos de texto de toda la web. Este modelo es capaz de aprender a generar texto natural utilizando la información de estos conjuntos de datos. Una vez entrenado, el modelo se puede ajustar para realizar una tarea específica, como la generación de respuestas a preguntas relacionadas con salud.</p> <p>Para utilizar CHATGPT, simplemente se ingresa una pregunta o una frase en lenguaje natural, y la herramienta utiliza su modelo de lenguaje para generar una respuesta relevante y precisa.</p> </section>
+      <section> <h2 class="color">Ejemplos de generación de texto por CHATGPT</h2> <ul> <li><strong>Paciente: </strong>¿Qué es la hipertensión?</li> <li><strong>CHATGPT: </strong>La hipertensión es una afección en la que la presión arterial en las arterias es elevada. Es una de las enfermedades cardiovasculares más comunes y puede ser potencialmente peligrosa si no se trata. </li> <li><strong>Paciente: </strong> ¿Cuáles son los síntomas de la neumonía?</li> <li><strong>CHATGPT: </strong> Los síntomas de la neumonía incluyen tos, fiebre, dificultad para respirar, dolor de pecho y fatiga. Si tienes alguno de estos síntomas, es importante que consultes a tu médico.</li> <li><strong>Paciente: </strong> ¿Cuáles son las causas de la diabetes tipo 2?</li> <li><strong>CHATGPT: </strong> La diabetes tipo 2 se produce cuando las células del cuerpo se vuelven resistentes a la insulina o cuando el cuerpo no produce suficiente insulina para mantener los niveles normales de azúcar en sangre. Los factores que pueden contribuir a la diabetes tipo 2 incluyen la obesidad, la falta de ejercicio físico y una dieta poco saludable.</li> </ul> </section>
+      <section>
+        <h2>¿Qué son los prompts?</h2>
+        
+        <section class="vertical">
+          <h3 class="color">Prompt</h3>
+          <p style="text-align: left; ">
+            Es la instrucción que nos permite interactuar con ChatGPT haciendo preguntas y obteniendo respuestas específicas. Funciona en un sistema de diálogo natural con memoria conversacional que mejora la calidad de la interacción entre los usuarios y la inteligencia artificial.
+            <br><br>
+            Podemos entender que los prompts, al influir en el entrenamiento de ChatGPT, lo impulsan a responder en un espacio probabilístico más acorde a nuestras preguntas, lo que mejora la calidad de la interacción entre los usuarios y la inteligencia artificial. 
+            <br><br>
+                    Los prompts son versátiles y se pueden utilizar en diversos temas, desde salud hasta tecnología, negocios y más.
+            <br><br>
+           
+          </p>
+          
+        </section>
+        <section>
+          <h3 class="color ">Respuesta:</h3>
+          <p class="fragment custom blur">"¡Por supuesto! El COVID-19 es un virus altamente contagioso que se transmite principalmente a través de la saliva o las partículas respiratorias. En cuanto a su área en particular, puedes encontrar información actualizada sobre la propagación del virus y las medidas preventivas recomendadas en los recursos sanitarios locales. "</p>
+        </section>
+        
+        <section>
+          <h3 class="color">Prompt #2</h3>
+          <p>"Tengo diabetes tipo 2. ¿Cuáles son los síntomas y tratamientos más comunes?"</p>
+        </section>
+        <section>
+          <h3 class="color">Respuesta:</h3>
+          <p >"La diabetes tipo 2 es una enfermedad crónica en la que el cuerpo no puede regular adecuadamente los niveles de azúcar en la sangre. Los síntomas pueden variar de persona a persona, pero incluyen mareos, visión borrosa y fatiga. Los tratamientos pueden incluir cambios en la dieta, el ejercicio, medicamentos y más."</p>
+        </section>
+      </section>
+      <section  >
+        <h3>Ejemplos de uso en el ámbito sanitario</h3>
+        
+        <section class="vertical" >
+          
+          <h3 class="color">Generación de texto</h3>
+          <div class="aligned">
+          <p class="aligned mensaje-usuario" >👩🏽‍⚕️Usuario escribe:</p>
+          <blockquote class="size3">
+            "Una mujer de 32 años con antecedente de cáncer de mama acude a su médico por dolor en el seno y fiebre."
+          </blockquote>
+        
+          <p  class=" aligned mensaje-chatgpt  ">🤖ChatGPT responde:</p>
+          <blockquote class="fragment custom blur size3 ">
+            "La mujer puede presentar mastitis, una infección del seno debido a la lactancia. Sin embargo, dado su antecedente de cáncer de mama, es necesario hacer una evaluación para descartar una recurrencia del cáncer."
+          </blockquote>
+          <aside class='animated bounceIn slower controls'style="display: block;"> <a href="ChatGPT.html#/9/2" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>
+        </div>
+       
+        </section>
+      
+        <section class="vertical">
+          <h3 class="color">Revisión de redacción</h3>
+<div class="aligned">
+  <p class="aligned mensaje-usuario" >👩🏽‍⚕️Texto de ejemplo:</p>
+  <blockquote class="size3">
+    "El paciente se presentó en el hospital debido a un dolor en el estómago y vómitos, el cual resultó ser causado por un problema digestivo."
+  </blockquote>
+
+  <p class="aligned mensaje-chatgpt" >🤖ChatGPT responde:</p>
+  <blockquote class="fragment custom blur size3 ">
+    "El paciente ingresó al hospital con síntomas de dolor en el estómago y vómitos, que posteriormente fueron confirmados como resultado de un problema digestivo."
+  </blockquote>
+</div>
+        </section>
+
+<section class="vertical">
+  <h3 class="color">Análisis numérico</h3>
+  <div class="aligned">
+    <p class="aligned mensaje-usuario">👩🏽‍⚕️Texto de ejemplo:</p>
+    <blockquote class="size3">
+      "Calcula la dosis de insulina que necesita un paciente con diabetes tipo 1 de 80 kg y una glucemia en ayunas de 200 mg/dl."
+    </blockquote>
+    <p class="aligned mensaje-chatgpt" >🤖ChatGPT responde:</p>
+    <blockquote class="fragment custom blur size3 ">
+      "La dosis de insulina necesaria para un paciente con diabetes tipo 1 de 80 kg y una glucemia en ayunas de 200 mg/dl es de aproximadamente 40 unidades."
+    </blockquote>
+  </div>
+</section>
+
+<section class="vertical">
+  <h3 class="color">Resumen de texto</h3>
+  <div class="aligned">
+    <p class="aligned mensaje-usuario" >👩🏽‍⚕️Texto de ejemplo:</p>
+    <blockquote class="size3">
+      "El libro 'El Gran Gatsby' escrito por F. Scott Fitzgerald cuenta la historia de Jay Gatsby y su relación con la esposa de otro hombre, Daisy. La historia tiene lugar en la década de 1920 en Nueva York durante una época de gran opulencia y extravagancia."
+    </blockquote>
+    <p class="aligned mensaje-chatgpt" >🤖ChatGPT responde:</p>
+    <blockquote class="fragment custom blur size3 ">
+      "El Gran Gatsby es una novela de F. Scott Fitzgerald que sigue la historia de Jay Gatsby y su relación con Daisy, la esposa de otro hombre. Está ambientada en la década de 1920 en Nueva York durante una época de gran opulencia y extravagancia."
+    </blockquote>
+  </div>
+</section>
+
+<section class="vertical">
+  <h3 class="color">Traducción de texto</h3>
+  <div class="aligned">
+    <p class="aligned mensaje-usuario" >👩🏽‍🚀Texto de ejemplo:</p>
+    <blockquote class="size3">
+      "Bonjour, comment ça va?"
+    </blockquote>
+    <p class="aligned mensaje-chatgpt" >🤖ChatGPT responde:</p>
+    <blockquote class="fragment custom blur size3 ">
+      "Hola, ¿cómo estás?"
+    </blockquote>
+  </div>
+</section>
+
+<section class="vertical">
+  <h3 class="color">Creación de esquemas</h3> 
+  <div class="aligned">
+    <p class="aligned mensaje-usuario">👩🏽‍🚀Texto de ejemplo:</p>
+    <blockquote class="size3">
+      "El proceso de fotosíntesis convierte la luz solar en energía química que se utiliza para alimentar a la planta.Dame el código de un mapa mental ../..  para entenderlo de forma muy clara"
+    </blockquote>
+    <p class="aligned mensaje-chatgpt" >🤖ChatGPT responde:</p>
+    <figure class="fragment custom blur">
+      <img src="https://www.plantuml.com/plantuml/svg/ZPJRJXin48RlzobSSOb4at0W4gY2HesuA0S1RQzdxKaonOVjsCk1ge_45O-G5-kiTvM5GAMkeYZ-FPx_cz-h7CK4d1nvuw0gFgG5EbIL1V95l25V0ODJ9UYREOVQcqcmWTN6D3ylAe0vt5qlIDzuZ54DjtPVR1gSGMtJDFXq1jB-1Eqj9jBmViqLFQ8QxXM7CJrO_5JuO53zBfGy5s0C-RaQZlBo57XENctdnKbWUfJZO8yjpRr3dvIMB-Iy_PKyjlIbhN4bzSpRMuEiNhPpiaTMEuFEvvvSxNwGIGlHMh57tSdhrNZVaGruQCJYJy4XfBD-WiRpgfbBZRS61-Av1iTeil9vBVAx1ILymxTECXP3Yp3h3TyS6Gt-cPR5MNeLy_v_3_fEHFtz37S5IqELAFWkXjUc1x9_-B6xxlwTw2_-JHmRNyRJyNJQxWKso9q-6EplJqOlzFw2M_Lg0IRSoNJv9HKXsxJSUy8jACKQGmwWWUjWLckni2QVs1GnXRXyyWaZnM9pKnsNCR2cvRDN1fMj7rKC5bXLWgc5DSp8WbHAwGNDcon2L1Whr0GMvQTNY_0JedfGWf94kKKsc7jVC_Wu2-nWPJ0v7qdboUYyEJYtjGuHH0ZtowSv-f1zBX6qfk2brwzw-UH8ItjoLMqZ68WPpKB3sfXyYq4QhterUIYmr902grdjkrOE4vJBPqkw6-SKV49FZfgPX44pwdQL6rPMzdEflFSbSZ-3ZA232ohMPSN1r3grt1C9dAcisy9RIc1Lyo56nH8PCPGMYoFqflid-mi0" alt="Esquema del proceso de fotosíntesis" />
+      <figcaption class="size3">Esquema del proceso de fotosíntesis</figcaption>
+    </figure>
+  </div>
+</section>
+      </section>
+    </section>
+  
+    <section data-background-image="https://media.giphy.com/media/l1J9xRLvfhAGVeiys/giphy.gif" >
+      <h3 class="color">Confidencialidad y ética</h3>
+      <p>Es importante tener en cuenta que ChatGPT procesa grandes cantidades de datos para poder generar su propio texto. Esto significa que la privacidad de la información es una preocupación importante y que todas las empresas que utilizan tecnología de inteligencia artificial tienen la responsabilidad de proteger los datos de los usuarios y cumplir con los estándares éticos del procesamiento de datos. OpenAI se compromete a mantener altos estándares éticos y de privacidad en el desarrollo y uso de ChatGPT.</p>
+    </section>
+    <section data-background-image="https://media.giphy.com/media/l1J9xRLvfhAGVeiys/giphy.gif" >
+      <h3 class="color">Evaluación HTA</h3>
+      <p>Es una tecnología a evaluar si se dedica a intervenciones sanitarias: eficacia, seguridad, eficiencia, aspectos éticos, legales, económicos, organizativos, sociales, etc. </p>
+    </section>
+    <section data-background-image="https://media.giphy.com/media/l1J9xRLvfhAGVeiys/giphy.gif" >
+      <h4 class="color">Alucinaciones</h4>
+      <p style="text-align: left;">Definidas como la posibilidad de "inventarse" contenidos, como referencias bibliográficas</p>
+      <h4 class="color">Ventana del token</h4>
+      <p style="text-align: left;">Cantidad máxima de palabras, caracteres o símbolos que un modelo de lenguaje como GPT-3 puede procesar en una sola interacción. GPT-3 tiene un límite de alrededor de 4096 tokens. Si el texto excede este límite, es necesario dividirlo en partes más pequeñas o realizar múltiples llamadas al modelo. Es importante considerar esta limitación al interactuar con modelos de lenguaje para asegurarse de que el texto se ajuste dentro de la ventana de tokens permitida.</p>
+    </section>
+  
+  
+    <section>
+      <h2 class="color">Conclusiones</h2>
+      <p>En resumen, ChatGPT es un modelo de lenguaje de inteligencia artificial revolucionario que puede utilizarse para una gran cantidad de tareas de procesamiento de lenguaje natural. Desde la generación de texto coherente hasta la revisión de redacción, el análisis numérico, la traducción de idiomas, la creación de esquemas y la simplificación de textos complejos, ChatGPT ha demostrado ser una herramienta muy útil para profesionales en diversas industrias. Es importante tener en cuenta los aspectos éticos y de privacidad al trabajar con ChatGPT o cualquier otra tecnología de inteligencia artificial y siempre proteger la privacidad de los usuarios y los datos que se manejan. </p>
+      <p class="color">El usuario es responsable de la entrada y salida de texto</p>
+    </section>
+    <section>
+      <h2 class="color">Conclusiones</h2>
+      <div style="display:flex;">
+        <div style="flex-basis:50%; display:flex; justify-content:center; align-items:center;">
+          <iframe src="https://player.vimeo.com/video/176576698?h=3585fd8b83" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          
+        </div>
+        <div style="flex-basis:50%">
+          <p>En resumen, ChatGPT es un modelo de lenguaje de inteligencia artificial revolucionario que puede utilizarse para una gran cantidad de tareas de procesamiento de lenguaje natural. Desde la generación de texto coherente hasta la revisión de redacción, el análisis numérico, la traducción de idiomas, la creación de esquemas y la simplificación de textos complejos, ChatGPT ha demostrado ser una herramienta muy útil para profesionales en diversas industrias. Es importante tener en cuenta los aspectos éticos y de privacidad al trabajar con ChatGPT o cualquier otra tecnología de inteligencia artificial y siempre proteger la privacidad de los usuarios y los datos que se manejan.</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div style="display: flex; align-items: center; justify-content: space-around;">
+        <div style="width: 50%;">
+          <img src="https://th.bing.com/th/id/OIG.BhMiODrbMRMkep6Xyv6F?pid=ImgGn" alt="ChatGPT Futuristic Design" style="max-width: 100%;">
+        </div>
+        <div style="width: 50%;">
+          <h2 class="color">ChatGPT: Diseño Futurista</h2>
+          <p>ChatGPT es una tecnología de vanguardia que permite la comunicación fluida y natural con sistemas de inteligencia artificial.</p>
+        </div>
+      </div>
+    </section>
+
+   
+    
+   
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/js/reveal.min.js"></script>
+
+<script src="reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js-plugins/"></script>
+
+<script src="../reveal.js-plugins/zoom/zoom.js"></script>
+
+<script src="../reveal.js-plugins/simplemenu/simplemenu.js"></script>
+<script src="../reveal.js-plugins/fullscreen/plugin.js"></script>
+<script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+
+<script> 
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+function getYesterdayDate() {
+      var ayer = new Date(Date.now() - 86400000);
+      var dia = ayer.getDate();
+      var mes = ayer.getMonth() + 1;
+      var año = ayer.getFullYear();
+      return dia.toString() + '/' + mes.toString() + '/' + año.toString();
+    }
+
+    var fechaSpan = document.getElementById('fecha-de-ayer');
+    fechaSpan.innerHTML = getYesterdayDate();
+
+
+
+Reveal.initialize({
+ controls: true,
+ progress: true,
+ history: true,
+ center: true,
+ autoSlide: 0,
+ slideNumber: 'hv',
+ mouseWheel: true,
+ menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+    side: 'left',
+   themes: 
+   //texto del menu aparece traducido por cambio en menu.js 
+   [
+  { name: 'Negro', theme: 'reveal.js/dist/theme/black.css' },
+  { name: 'Blanco', theme: 'reveal.js/dist/theme/white.css' },
+  { name: 'Leyenda', theme: 'reveal.js/dist/theme/league.css' },
+  { name: 'Oscuro',  theme: 'reveal.js/dist/theme/black.css'},
+  { name: 'Solar',  theme: 'reveal.js/dist/theme/solarized.css'},
+  { name: 'Sangre',  theme: 'reveal.js/dist/theme/blood.css'},
+  /* { name: 'Sangre',  theme: 'reveal.js/dist/theme/blood_2.css'}, */
+  { name: 'Luna',  theme: 'reveal.js/dist/theme/moon.css'},
+  { name: 'Serif',  theme: 'reveal.js/dist/theme/serif.css'},
+  { name: 'Cielo',  theme: 'reveal.js/dist/theme/sky.css'},
+  { name: 'Beige',  theme: 'reveal.js/dist/theme/beige.css'},
+  { name: 'Simple',  theme: 'reveal.js/dist/theme/simple.css'},
+],
+   openOnInit: false,
+   transitions: false,
+   markers: true,
+   keyboard: true,
+   useTextContentForMissingTitles: true,
+   titleSelector: 'h1, h2, h3, h4, h5, h6',
+   numbers: true,
+   hideMissingTitles: true,
+   
+   custom: [
+             /* { title: 'Plugins', icon: '<i class="fa fa-external-link-alt"></i>', src: 'toc.html' }, */
+             { title: 'Teclas', icon: '<i class="fa fa-info"></i>', src: 'about.html', content:'B: Escribir en pizarra<p>C: Escribir en la diapositiva<p>M: Abrir/cerrar menú<p> F: Pantalla completa<p>V: Pausar presentación<p>A: Escuchar/pausar audio de la diapositiva<p>S: Notas y vista de presentador<p>Alt+Botón Izquierdo del Ratón: Zoom' }
+             
+         ]       
+ },
+ audio: {
+   prefix: 'chalkboard/',
+   suffix: '.ogg',
+   defaultDuration: 5,
+   /* Camila, Sofia, Diego, Luna https://www.voicerss.org/api/ */
+   textToSpeechURL: "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Sofia&c=ogg&r=0&f=48khz_16bit_stereo&src=",
+   advance: -1,
+   autoplay: false,
+   defaultText: true,
+   playerOpacity: 0.2,
+ },
+ simplemenu: {
+ menuclass: 'menu',
+ activeclass: 'active',
+ activeelement: 'li',
+ selectby: 'id',
+ auto: false
+},
+ chalkboard: { // font-awesome.min.css must be available
+   src: "../reveal.js-plugins/chalkboard/chalkboard.json ",
+   storage: "chalkboard-demo",
+   toggleChalkboardButton: { left: "80px" },
+   toggleNotesButton: { left: "130px" },
+   colorButtons: 5
+ },
+ width: "99%",
+ height: "99%",
+ center:true,
+/* esto daría tiempo en notas orador pero hay algún error  
+defaultTiming: #{attr 'revealjs_defaulttiming', 600}, */
+ // Specify the total time in seconds that is available to
+ // present.  If this is set to a nonzero value, the pacing
+ // timer will work out the time available for each slide,
+ // instead of using the defaultTiming value
+
+ backgroundTransition: 'convex',
+ // Transition style for full page slide backgrounds: none/fade/slide/convex/concave/zoom
+ 
+ // Global override for preloading lazy-loaded iframes
+ // - null:   Iframes with data-src AND data-preload will be loaded when within
+ //           the viewDistance, iframes with only data-src will be loaded when visible
+ // - true:   All iframes with data-src will be loaded when within the viewDistance
+ // - false:  All iframes with data-src will be loaded only when visible
+ preloadIframes: true,
+ viewDistance: 3,
+ mobileViewDistance: 2,
+ hash: true,
+ plugins: [ RevealMarkdown,RevealAudioSlideshow,RevealMenu,Appearance, RevealZoom, RevealChalkboard,RevealNotes,Simplemenu,RevealEmbedTweet],
+ /* , RevealHighlight, RevealAudioRecorder, RevealFullscreen,RevealEmbedTweet */
+});
+
+function changeTheme(input) {
+var config = {};
+config.theme = input.value;
+Reveal.getPlugin("RevealChalkboard").configure(config);
+input.blur();
+}
+</script>
+
+
+<a href="https://twitter.com/ernestob" target="_blank">
+<img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png"
+width="35" height="40">
+</body>
 </html>
-
-
-
-  
