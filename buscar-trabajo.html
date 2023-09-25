@@ -96,33 +96,7 @@
                        
           
       </div>
-      <title>Ejemplo de verificación de navegador</title>
-	<script>
-		// Verificar el navegador y la versión
-		var navegador = navigator.userAgent.toLowerCase();
-		var esChrome = /chrome/.test(navegador);
-		var esEdge = /edge/.test(navegador);
-		var version = parseInt(/edg\/([\d]+)/.exec(navegador)[1]);
-
-		// Si no es Chrome o Edge versión 108, mostrar un aviso en rojo
-		if (!((esChrome && version >= 111) || (esEdge && version >= 107))) {
-			var aviso = document.createElement("div");
-			aviso.style.backgroundColor = "red";
-			aviso.style.color = "white";
-			aviso.style.padding = "10px";
-			aviso.style.textAlign = "center";
-			aviso.innerHTML = "Este sitio web funciona mejor en Chrome versión 111 o Edge versión 107 o superior. Navegador actual: "+navegador+". Versión: "+version;
-			document.body.insertBefore(aviso, document.body.firstChild);
-		} else {
-      var aviso = document.createElement("div");
-			aviso.style.backgroundColor = "green";
-			aviso.style.color = "white";
-			aviso.style.padding = "10px";
-			aviso.style.textAlign = "center";
-			aviso.innerHTML = "Este sitio web funciona correctamente con este navegador. Navegador actual: "+navegador+". Versión: "+version;
-			document.body.insertBefore(aviso, document.body.firstChild);
-    }
-	</script>
+   
     </div>
     <script src="reveal.js/dist/reveal.js"></script>
     <script src="reveal.js/plugin/notes/notes.js"></script>
