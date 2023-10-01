@@ -122,24 +122,24 @@ html {
         font-weight: bold;
     }
 
-    .imagen-responsiva {
+   .imagen-responsiva {
     position: fixed;
     z-index: 5;
-    margin-top: 4px;
-    padding-right: 0.4%;
+    top: 0;
     right: 0;
     border: 1;
-    height: 40px; /* Tamaño fijo para pantallas grandes */
+    height: 100px;
     width: auto;
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5); 
 }
 
-/* Ajustar el tamaño de la imagen para pantallas más pequeñas */
 @media (max-width: 1200px) {
     .imagen-responsiva {
-        height: 4vw; /* Ajusta este valor según necesites */
-        min-height: 30px; /* Establece un tamaño mínimo para que no se vuelva demasiado pequeña */
+        height: 4vw;
+        min-height: 30px;
     }
 }
+
 
     
 .vertical{
@@ -332,17 +332,36 @@ html {
   <div class="reveal">
     <div class="slides">
       
-      <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" data-background-opacity="0.09" >
+      <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" data-background-opacity="0.09">
+        <a href="https://www.saludcastillayleon.es/institucion/es/biblioteca/noticias/xvii-jornadas-nacionales-informacion-documentacion-ciencias" target="_blank">
+            <img class="imagen-responsiva" title="XVII Jornadas Nacionales de Información y Documentación en Ciencias de la salud (Bibliosalud 2023).Valladolid 19 y 20 octubre 2023." src="https://pbs.twimg.com/media/FrasYivWIAEi__G?format=png&name=small">
+        </a>
         <h1 class="color" style="margin-top: 100px;">Introducción a ChatGPT</h1>
         <h3>Para profesionales sanitarios</h3>
-        <div class="fragment blur" style="position: absolute;top:300px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
-          <h4>💡TIP </h4>
-          <p style=" font-size: 20px; color:rgb(253, 215, 1)">Esta presentación contiene diapositivas en navegación horizontal y vertical, según se indica en las flechas de abajo a la derecha. Girar la rueda del ratór, pulsar la barra espaciadora o las teclas de flecha del teclado para navegar por ellas</p>
-         <!--  <aside class='animated bounceIn slower controls'style="display: block;"> <a href="ChatGPT.html#/9/2" > <img class="navigate-down highlight enabled fadeInDown r-frame" style="background: rgba(255,255,255,0.1);" width="80" height="110" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow" data-delay="1000"></a></aside>  -->
-        </div> 
-        
-       
-      </section>
+        <div class="fragment blur" style="position: absolute; top: 300px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+            <h4>💡TIP </h4>
+            <p style=" font-size: 20px; color: rgb(253, 215, 1)">Esta presentación contiene diapositivas en navegación horizontal y vertical, según se indica en las flechas de abajo a la derecha. Girar la rueda del ratón, pulsar la barra espaciadora o las teclas de flecha del teclado para navegar por ellas</p>
+        </div>
+        <!-- Añadir tu nombre en la parte inferior izquierda con un estilo similar al TIP -->
+        <div style="position: absolute; top: 350px; left: 10px; width: 25vw; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 10px; font-size: 1.2vw; text-align: center; white-space: nowrap;">
+          <p>Ernesto Barrera Linares</p>
+          <p>Octubre 2023</p>
+          <a href="https://twitter.com/ernestob" target="_blank">
+              <i class="fab fa-twitter" style="margin-right: 10px;"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ernestobarreralinares/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+          </a>
+      </div>
+      
+      
+      
+    </section>
+    
+    
+    
+    
+    
 
    
       
@@ -799,6 +818,7 @@ Para utilizar CHATGPT, simplemente se ingresa una pregunta o una frase en lengua
 <script src="../reveal.js-plugins/"></script>
 
 <script src="../reveal.js-plugins/zoom/zoom.js"></script>
+<script src="../reveal.js-plugins/reveal-onetimer/onetimer.js"></script>
 <script src="../reveal.js-plugins/animate/plugin.js"></script>
 <script src="../reveal.js-plugins/animate/svg.min.js"></script>
 <script src="../reveal.js-plugins/simplemenu/simplemenu.js"></script>
@@ -874,6 +894,7 @@ Reveal.initialize({
    defaultText: true,
    playerOpacity: 0.2,
  },
+ oneTimer: {immediateMode: true}, 
  simplemenu: {
  menuclass: 'menu',
  activeclass: 'active',
@@ -913,7 +934,7 @@ defaultTiming: #{attr 'revealjs_defaulttiming', 600}, */
  viewDistance: 3,
  mobileViewDistance: 2,
  hash: true,
- plugins: [ RevealMarkdown,RevealAudioSlideshow,RevealMenu,Appearance,RevealAnimate,RevealZoom, RevealChalkboard,RevealNotes,Simplemenu,RevealEmbedTweet],
+ plugins: [ RevealMarkdown,RevealAudioSlideshow,RevealMenu,Appearance,RevealAnimate,RevealZoom, RevealChalkboard,RevealNotes,Simplemenu,RevealEmbedTweet,OneTimer],
  /* , RevealHighlight, RevealAudioRecorder, RevealFullscreen,RevealEmbedTweet */
 });
 
@@ -929,9 +950,7 @@ input.blur();
 <a href="https://twitter.com/ernestob" target="_blank">
 <img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png"
 width="35" height="40">
-<a href="https://www.saludcastillayleon.es/institucion/es/biblioteca/noticias/xvii-jornadas-nacionales-informacion-documentacion-ciencias" target="_blank">
-  <img class="imagen-responsiva" title="Logotipo Congreso" src="https://pbs.twimg.com/media/FrasYivWIAEi__G?format=png&name=small">
-</a>
+
 
 
 
