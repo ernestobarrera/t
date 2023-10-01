@@ -112,6 +112,36 @@ html {
 .reveal h5 {
   font-size: 1.4rem;
 }
+.table-cell {
+        border: 1px solid #dddddd;
+        padding: 5px;
+        font-size: 0.85em;
+    }
+
+    .table-cell-header {
+        font-weight: bold;
+    }
+
+    .imagen-responsiva {
+    position: fixed;
+    z-index: 5;
+    margin-top: 4px;
+    padding-right: 0.4%;
+    right: 0;
+    border: 1;
+    height: 40px; /* Tamaño fijo para pantallas grandes */
+    width: auto;
+}
+
+/* Ajustar el tamaño de la imagen para pantallas más pequeñas */
+@media (max-width: 1200px) {
+    .imagen-responsiva {
+        height: 4vw; /* Ajusta este valor según necesites */
+        min-height: 30px; /* Establece un tamaño mínimo para que no se vuelva demasiado pequeña */
+    }
+}
+
+    
 .vertical{
   margin-top: 1.2rem;
 }
@@ -293,6 +323,8 @@ html {
     100% { background-position: 0 0; }
 }
 
+
+
   </style>
 </head>
 
@@ -413,10 +445,11 @@ html {
 Para utilizar CHATGPT, simplemente se ingresa una pregunta o una frase en lenguaje natural, y la herramienta utiliza su modelo de lenguaje para generar una respuesta relevante y precisa.
 </aside>
     </section>
+  
     <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
       <div style="display: flex; align-items: center; justify-content: center; height: 95vh;">
           <div style="flex: 0 1 70%;">
-              <img src="http://www.plantuml.com/plantuml/png/hPL1Rrn53CVl-HHME6mI9Qic3ONcW9gaIOL4KKKZJhruPvpDa7dswyoyG8hw4U00N17aX42K0xtrkb-8Zu3DlDTTjadBWKkxu_7yRV-UxTpB1LFfchYIpmEtcB21HAuWJoF1roi01-ZEfqawzeSI9S5x-mT71uTtx4QIfrIj1r7TNjjEpe8xPyePTjHsB5pwjzi7EtTkR_Usn-4PmSuTWE5SBZNcHA8t4pm-GozV1fv2IHsjF5zPI96bt93TyV7n-tVl0_p7_BRVcPzMyFPSMbN6gQRpVuPS9d8j48Tj2S80-rsHj0VtA6c48fCd39y4H-m2xi5X8YpXWk1GcaOumtv9OTAvC7l9Mv-AMYcfOuJTyItuc8kAe5DPZ2j3QQl77Pi9cq1S1BoAdM5vyEZa2Q_fltlmW9XI3VCeqLP969Wyd2JaV2f9GwolAg4LMEYkrRz--lv7E69rzcYQ9_HLaLN03CgsAylEF_m69t9E79wX9S_c2QLQQDdvbp_Wg9cGzyehmzhdUYU9yhez0hARD-I_WOVaa4Dkh4B5H3oFWqMFHlkDG3_3VdhQXQB6Bk5YoJN1-NdvwRT_mk7iAhekQa039nESX1WyUihs6Dh1L2wN7t_tUuLUMTZxpoYt7UM2zXIIdeGpAVEA4xQsFbh4DVmq-q2a_c-MnOBdl-rcgQA5azqkfRnmijl5hEeGfp0zAo2dYva1hDwdxAHHLmAAKAmnW1Wwhd1WChlAmM7UD7TGLu4M8quIPX1mg5WAQR2ntGDiREmpHfdENk36Xew4-Vjm4Nn8geb6bWf2C_lLgwf5obs6FWCkb4q60jiRts6a33RyO7ViAK54BLLpJg6rxy7ZLOF9tegyfjW1jrPwA7mHA1Mg1B85l-Yx5RZJb59mqXToz0KrRPGz69q6cYGQmIMCYjeeeNNV24eWNbHmb1oozA1iVeinUjhHlpGe5ogYpDiW8z3Jx8gXKSYAAHVaqgDS9laGVGf-RVVMU7SJjcwFFrXNjHE9v6NjzjtnXshKjRBUAvf2LTMqAcSdjXuPVPzK5LIH0qoEeZ2kxMwR-CvuP_tjL1TRriW-4liqg1MSKjAB-j7iF_-wfp9DPw_iQqEYI1TeAtC9zH73w24cBNZJCWHzJwoA3IMre6y2Aw8qUsbDS86kOnnLsXvhiIrb0HnK_k7T-rtBT3z2eekGiVRccQfB2WWkpbvmS1hKsvGxRAJsPPGCMU-AD9XLtGUSyknbBjOuDOLQdJ5uEyEbuJQAIHnbjE82sqM_SCZwurKieOtMPjWEmzWgcc1jw4Np1sHTSI47MsPosfdr4fomyUymAe4RvlCqn99w1ar7MG_W2JBoD962LYJP-fo69O0UzVmCP5A8Q_n4kOi5_O2XJUH2bdT0MDfX2k58MJPOfto-fC5JZTgl7iXXsjc4qJKjT1JLpTajMHfPV-1uF1vj0kLUDP8rc4QnrtEnkJmXZ5v_w1kR9-YRf25A3o-X3p9DU6ej31YdQimmkqg4kKQIVjQ7D3BuUP89a3MUDby_eb8IlelWiEShllg7gYOp_9622MPZHmnHXHUvKath4YWEdIBcq4foGHYzt51wxNonng-r3vEgeievqZGqaWV0KbUrrLJNPeL0kkA9tSB0BTNwVEMU7hec_Wq0" alt="Mapa Mental" style="height: 90vh; width: auto;">
+              <img class="fragment" src="http://www.plantuml.com/plantuml/png/hPL1Rrn53CVl-HHME6mI9Qic3ONcW9gaIOL4KKKZJhruPvpDa7dswyoyG8hw4U00N17aX42K0xtrkb-8Zu3DlDTTjadBWKkxu_7yRV-UxTpB1LFfchYIpmEtcB21HAuWJoF1roi01-ZEfqawzeSI9S5x-mT71uTtx4QIfrIj1r7TNjjEpe8xPyePTjHsB5pwjzi7EtTkR_Usn-4PmSuTWE5SBZNcHA8t4pm-GozV1fv2IHsjF5zPI96bt93TyV7n-tVl0_p7_BRVcPzMyFPSMbN6gQRpVuPS9d8j48Tj2S80-rsHj0VtA6c48fCd39y4H-m2xi5X8YpXWk1GcaOumtv9OTAvC7l9Mv-AMYcfOuJTyItuc8kAe5DPZ2j3QQl77Pi9cq1S1BoAdM5vyEZa2Q_fltlmW9XI3VCeqLP969Wyd2JaV2f9GwolAg4LMEYkrRz--lv7E69rzcYQ9_HLaLN03CgsAylEF_m69t9E79wX9S_c2QLQQDdvbp_Wg9cGzyehmzhdUYU9yhez0hARD-I_WOVaa4Dkh4B5H3oFWqMFHlkDG3_3VdhQXQB6Bk5YoJN1-NdvwRT_mk7iAhekQa039nESX1WyUihs6Dh1L2wN7t_tUuLUMTZxpoYt7UM2zXIIdeGpAVEA4xQsFbh4DVmq-q2a_c-MnOBdl-rcgQA5azqkfRnmijl5hEeGfp0zAo2dYva1hDwdxAHHLmAAKAmnW1Wwhd1WChlAmM7UD7TGLu4M8quIPX1mg5WAQR2ntGDiREmpHfdENk36Xew4-Vjm4Nn8geb6bWf2C_lLgwf5obs6FWCkb4q60jiRts6a33RyO7ViAK54BLLpJg6rxy7ZLOF9tegyfjW1jrPwA7mHA1Mg1B85l-Yx5RZJb59mqXToz0KrRPGz69q6cYGQmIMCYjeeeNNV24eWNbHmb1oozA1iVeinUjhHlpGe5ogYpDiW8z3Jx8gXKSYAAHVaqgDS9laGVGf-RVVMU7SJjcwFFrXNjHE9v6NjzjtnXshKjRBUAvf2LTMqAcSdjXuPVPzK5LIH0qoEeZ2kxMwR-CvuP_tjL1TRriW-4liqg1MSKjAB-j7iF_-wfp9DPw_iQqEYI1TeAtC9zH73w24cBNZJCWHzJwoA3IMre6y2Aw8qUsbDS86kOnnLsXvhiIrb0HnK_k7T-rtBT3z2eekGiVRccQfB2WWkpbvmS1hKsvGxRAJsPPGCMU-AD9XLtGUSyknbBjOuDOLQdJ5uEyEbuJQAIHnbjE82sqM_SCZwurKieOtMPjWEmzWgcc1jw4Np1sHTSI47MsPosfdr4fomyUymAe4RvlCqn99w1ar7MG_W2JBoD962LYJP-fo69O0UzVmCP5A8Q_n4kOi5_O2XJUH2bdT0MDfX2k58MJPOfto-fC5JZTgl7iXXsjc4qJKjT1JLpTajMHfPV-1uF1vj0kLUDP8rc4QnrtEnkJmXZ5v_w1kR9-YRf25A3o-X3p9DU6ej31YdQimmkqg4kKQIVjQ7D3BuUP89a3MUDby_eb8IlelWiEShllg7gYOp_9622MPZHmnHXHUvKath4YWEdIBcq4foGHYzt51wxNonng-r3vEgeievqZGqaWV0KbUrrLJNPeL0kkA9tSB0BTNwVEMU7hec_Wq0" alt="Mapa Mental" style="height: 90vh; width: auto;">
           </div>
           <div style="flex: 0 1 15%; text-align: left; padding-left: 2%;">
               <h4 class="color">¿Cómo funciona<br> "ChatGPT"?</h4>
@@ -659,6 +692,63 @@ Para utilizar CHATGPT, simplemente se ingresa una pregunta o una frase en lengua
     <p style="text-align: left;">Cantidad máxima de palabras, caracteres o símbolos que un modelo de lenguaje como GPT-3 puede procesar en una sola interacción. GPT-3 tiene un límite de alrededor de 4096 tokens. Si el texto excede este límite, es necesario dividirlo en partes más pequeñas o realizar múltiples llamadas al modelo. Es importante considerar esta limitación al interactuar con modelos de lenguaje para asegurarse de que el texto se ajuste dentro de la ventana de tokens permitida.</p>
   </section>
 </section>
+
+
+
+
+
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
+  <h2 class="color">PubMed vs ChatGPT</h2>
+
+  <table style="border-collapse: collapse; width: 98%; font-size: 12px; margin: 0 auto;">
+      <thead style="background-color: #454242">
+          <tr>
+              <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold;">Aspecto</th>
+              <th style="border: 1px solid #dddddd; padding: 6px; text-align: center;">PubMed</th>
+              <th style="border: 1px solid #dddddd; padding: 6px; text-align: center;">ChatGPT</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr class="fragment">
+            <td style="border: 1px solid #dddddd; padding: 5px; font-weight: bold; font-size: 0.85em;">Método de Búsqueda</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Búsqueda Booleana (AND, OR, NOT)</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Búsqueda Semántica y Contextual</td>
+        </tr>
+        <tr class="fragment">
+            <td style="border: 1px solid #dddddd; padding: 5px; font-weight: bold; font-size: 0.85em;">Base de Datos</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Literatura Biomédica Específica (MeSH)</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Variedad de Fuentes, incluyendo Literatura Científica</td>
+        </tr>
+        <tr class="fragment">
+            <td style="border: 1px solid #dddddd; padding: 5px; font-weight: bold; font-size: 0.85em;">Filtrado</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Filtros y Términos MeSH</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Comprensión Contextual y Semántica</td>
+        </tr>
+        <tr class="fragment">
+            <td style="border: 1px solid #dddddd; padding: 5px; font-weight: bold; font-size: 0.85em;">Interacción</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Interfaz de Búsqueda Tradicional</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Interacción Conversacional</td>
+        </tr>
+        <tr class="fragment">
+            <td style="border: 1px solid #dddddd; padding: 5px; font-weight: bold; font-size: 0.85em;">Tecnología Subyacente</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Bases de Datos Relacionales</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Modelos de Red Neuronal con Mecanismos de Atención</td>
+        </tr>
+        <tr class="fragment">
+            <td style="border: 1px solid #dddddd; padding: 5px; font-weight: bold; font-size: 0.85em;">Aspectos Cognitivos</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Interacción Mecanicista con posibles malas búsquedas o filtros</td>
+            <td style="border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;">Interacción Antropomorfizada con respuesta a la inteligencia emocional de los prompts</td>
+        </tr>
+    </tbody>
+    
+  </table>
+ 
+</section>
+
+
+
+
+
     <section data-background-image="https://media.giphy.com/media/l1J9xRLvfhAGVeiys/giphy.gif" >
       <h3 class="color">Confidencialidad y ética</h3>
       <p>Es importante tener en cuenta que ChatGPT procesa grandes cantidades de datos para poder generar su propio texto. Esto significa que la privacidad de la información es una preocupación importante y que todas las empresas que utilizan tecnología de inteligencia artificial tienen la responsabilidad de proteger los datos de los usuarios y cumplir con los estándares éticos del procesamiento de datos. OpenAI se compromete a mantener altos estándares éticos y de privacidad en el desarrollo y uso de ChatGPT.</p>
@@ -709,7 +799,8 @@ Para utilizar CHATGPT, simplemente se ingresa una pregunta o una frase en lengua
 <script src="../reveal.js-plugins/"></script>
 
 <script src="../reveal.js-plugins/zoom/zoom.js"></script>
-
+<script src="../reveal.js-plugins/animate/plugin.js"></script>
+<script src="../reveal.js-plugins/animate/svg.min.js"></script>
 <script src="../reveal.js-plugins/simplemenu/simplemenu.js"></script>
 <script src="../reveal.js-plugins/fullscreen/plugin.js"></script>
 <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
@@ -756,6 +847,7 @@ Reveal.initialize({
   { name: 'Beige',  theme: 'reveal.js/dist/theme/beige.css'},
   { name: 'Simple',  theme: 'reveal.js/dist/theme/simple.css'},
 ],
+
    openOnInit: false,
    transitions: false,
    markers: true,
@@ -789,6 +881,9 @@ Reveal.initialize({
  selectby: 'id',
  auto: false
 },
+animate: {
+		autoplay: true
+	},
  chalkboard: { // font-awesome.min.css must be available
    src: "../reveal.js-plugins/chalkboard/chalkboard.json ",
    storage: "chalkboard-demo",
@@ -818,7 +913,7 @@ defaultTiming: #{attr 'revealjs_defaulttiming', 600}, */
  viewDistance: 3,
  mobileViewDistance: 2,
  hash: true,
- plugins: [ RevealMarkdown,RevealAudioSlideshow,RevealMenu,Appearance, RevealZoom, RevealChalkboard,RevealNotes,Simplemenu,RevealEmbedTweet],
+ plugins: [ RevealMarkdown,RevealAudioSlideshow,RevealMenu,Appearance,RevealAnimate,RevealZoom, RevealChalkboard,RevealNotes,Simplemenu,RevealEmbedTweet],
  /* , RevealHighlight, RevealAudioRecorder, RevealFullscreen,RevealEmbedTweet */
 });
 
@@ -834,5 +929,16 @@ input.blur();
 <a href="https://twitter.com/ernestob" target="_blank">
 <img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png"
 width="35" height="40">
+<a href="https://www.saludcastillayleon.es/institucion/es/biblioteca/noticias/xvii-jornadas-nacionales-informacion-documentacion-ciencias" target="_blank">
+  <img class="imagen-responsiva" title="Logotipo Congreso" src="https://pbs.twimg.com/media/FrasYivWIAEi__G?format=png&name=small">
+</a>
+
+
+
+
+
+
+
+
 </body>
 </html>
