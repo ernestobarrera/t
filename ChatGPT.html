@@ -36,6 +36,7 @@
   <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
   <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
   <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+  
   <!-- Font awesome -->
   <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
 
@@ -515,10 +516,10 @@ Para utilizar CHATGPT, simplemente se ingresa una pregunta o una frase en lengua
       </section>
       <section> <h2 class="color">Ejemplos de generación de texto por CHATGPT</h2> <ul> <li><strong>Paciente: </strong>¿Qué es la hipertensión?</li> <li><strong>CHATGPT: </strong>La hipertensión es una afección en la que la presión arterial en las arterias es elevada. Es una de las enfermedades cardiovasculares más comunes y puede ser potencialmente peligrosa si no se trata. </li> <li><strong>Paciente: </strong> ¿Cuáles son los síntomas de la neumonía?</li> <li><strong>CHATGPT: </strong> Los síntomas de la neumonía incluyen tos, fiebre, dificultad para respirar, dolor de pecho y fatiga. Si tienes alguno de estos síntomas, es importante que consultes a tu médico.</li> <li><strong>Paciente: </strong> ¿Cuáles son las causas de la diabetes tipo 2?</li> <li><strong>CHATGPT: </strong> La diabetes tipo 2 se produce cuando las células del cuerpo se vuelven resistentes a la insulina o cuando el cuerpo no produce suficiente insulina para mantener los niveles normales de azúcar en sangre. Los factores que pueden contribuir a la diabetes tipo 2 incluyen la obesidad, la falta de ejercicio físico y una dieta poco saludable.</li> </ul> </section>
       
-      <section>
+      <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg">
         <h2>¿Qué son los prompts?</h2>
         
-        <section class="vertical">
+        <section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg">
           <h3 class="color">Prompt</h3>
           <p style="text-align: left; ">
             Es la instrucción que nos permite interactuar con ChatGPT haciendo preguntas y obteniendo respuestas específicas. Funciona en un sistema de diálogo natural con memoria conversacional que mejora la calidad de la interacción entre los usuarios y la inteligencia artificial.
@@ -531,7 +532,7 @@ Para utilizar CHATGPT, simplemente se ingresa una pregunta o una frase en lengua
           </p>
           
         </section>
-        <section>
+        <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg">
           <h3 class="color ">Respuesta:</h3>
           <p class="fragment custom blur">"¡Por supuesto! El COVID-19 es un virus altamente contagioso que se transmite principalmente a través de la saliva o las partículas respiratorias. En cuanto a su área en particular, puedes encontrar información actualizada sobre la propagación del virus y las medidas preventivas recomendadas en los recursos sanitarios locales. "</p>
         </section>
@@ -808,7 +809,87 @@ Para utilizar CHATGPT, simplemente se ingresa una pregunta o una frase en lengua
       </div>
     </section>
 
-   
+    <section style="height: 100%; overflow: hidden;">
+      <div style="display: flex; align-items: center; justify-content: center; height: 100%; overflow-y: auto;">
+          <pre style="max-height: 80%; width: 100%;">
+    <code class="language-plantuml ">
+      @startmindmap
+
+      title ¿Qué es ChatGPT?: analizando sus siglas
+      !theme plain
+      skinparam backgroundColor #FFFFFF
+      skinparam arrowThickness 1.5
+      skinparam defaultFontName Helvetica
+      skinparam defaultFontSize 40
+      
+      <style>
+      node {
+          Padding 10
+          Margin 3
+          HorizontalAlignment center
+          LineColor blue
+          LineThickness 3.0
+          RoundCorner 40
+          MaximumWidth 500
+          FontSize 22
+          FontName Verdana
+      }
+      rootNode {
+          LineStyle 8.0;3.0
+          LineColor red
+          BackgroundColor white
+          RoundCorner 0
+          FontSize 22
+      }
+      leafNode {
+          RoundCorner 20
+          HorizontalAlignment left
+          Padding 7
+          FontSize 22
+          FontName Verdana
+          MaximumWidth 600
+          Margin 15
+      }
+      
+      </style>
+      skinparam node {
+          BackgroundColor #E8F8FF
+          BorderColor #0077C2
+          BorderThickness 2
+          Shadowing 1.5
+          nodeWidth 600
+      }
+      skinparam nodeFontStyle {
+          FontStyle Bold
+      }
+      caption  Autor: @ernestob\n Licencia:Creative Commons Atribución-NoComercial 4.0 Internacional
+      
+      * Chat**GPT**
+      ** **G**enerative\n(Generativo)
+      *** Los modelos de Lenguaje a Gran Escala (**LLM**) son una variedad de IA Generativa
+      **** Produce datos completamente nuevos y originales
+      *** Genera contenido nuevo prediciendo palabras basado en contexto previo
+      **** El uso de **prompts** (indicaciones) orientan su algoritmo hacia un 'espacio probabilístico' donde las respuestas se adecuan mejor a las preguntas
+      **** Las respuestas parecen sorprendentemente naturales
+      **** Puede generar hechos no existentes o "alucinaciones"
+      ** **P**re-trained\n (Pre-entrenado)
+      *** Adiestrado con millones de textos extensos de Internet hasta enero de 2022 (excepto modo Bing o uso de **plugins**)
+      *** El pre-entrenamiento es esencial para que el modelo aprenda las relaciones y estructuras fundamentales del lenguaje
+      **** Aprende relaciones estadísticas entre palabras
+      **** Podría decirse que la respuesta se "negocia estadísticamente"
+      ** **T**ransformer\n(Transformador)
+      *** Arquitectura de aprendizaje profundo especializada en procesamiento de lenguaje natural
+      *** Maneja dependencias a largo plazo entre palabras y frases en el texto ("memoria de conversación")
+      **** Limitado por la "**ventana de contexto**", que es el máximo de **tokens** (palabras, partes de palabras o caracteres) que el modelo puede "ver" de la conversación en curso.
+      **** **Atención mecanicista**: Permite ponderar diferentes palabras de una entrada de texto basada en su relevancia
+      **** **Embeddings** (incrustaciones): Representaciones vectoriales que capturan información con matices semánticos y contextuales
+      
+      @endmindmap
+      Note: This mind map was created using PlantUML.
+    </code>
+    </pre>
+    </div>
+  </section>
     
    
   </div>
@@ -849,6 +930,10 @@ Reveal.initialize({
  autoSlide: 0,
  slideNumber: 'hv',
  mouseWheel: true,
+dependencies: [
+    { src: '//cdn.jsdelivr.net/npm/reveal-plantuml' },
+  ],
+
  menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
     side: 'left',
    themes: 
