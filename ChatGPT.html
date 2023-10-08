@@ -320,6 +320,21 @@ html {
     border-radius: 8px;
 }
 
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
 @keyframes glowing {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
@@ -334,6 +349,8 @@ html {
 <body>
   <div class="reveal">
     <div class="slides">
+      
+      
       
     <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" data-background-opacity="0.09" data-audio-text="AUDIO">
       <a href="https://www.saludcastillayleon.es/institucion/es/biblioteca/noticias/xvii-jornadas-nacionales-informacion-documentacion-ciencias" target="_blank">
@@ -414,26 +431,52 @@ html {
           Notas del Orador
         </aside>
     </section>
-    <!-- codigo eliminado del final de data-background porque la interacción con el fondo pausa transición data-background-interactive -->
-    <section class="full-height" data-background-iframe="https://pageviews.wmcloud.org/langviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-365&sort=views&direction=1&view=chart&page=ChatGPT" data-background-opacity="0.7" data-audio-text="AUDIO">
-        <div class="footer">
-        <H6>Nº de visitas a ChatGPT en Wikipedia hasta el <span id="fecha-de-ayer"></span></H6>
-        <H5 class="fragment color">Interés sin precedentes</H5>
-        </div>
-        <aside class="notes">
-          Notas del Orador
-        </aside>  
-    </section>
+ 
+    
+ 
+
+    
 
     <section class="full-height" data-background-iframe="https://chat.openai.com/share/f7d49bb9-96e7-47c6-975f-822e1e97c5d2" data-background-opacity="1" data-audio-text="AUDIO" >
       <div class="footer">
-       <H6>Nº de visitas a ChatGPT en Wikipedia hasta el <span id="fecha-de-ayer"></span></H6>
-        <H5 class="fragment color">Interés sin precedentes</H5>
+       <H6>ChatGPT compartido</H6>
+        <H5 class="fragment color">Un caso de uso</H5>
       </div>
       <aside class="notes">
         Notas del Orador
       </aside> 
     </section>
+
+    <section class="full-height" data-background-iframe="https://esperr.github.io/pubmed-by-year/?q1=%22artificial%20intelligence%22[TIAB]&q2=OPENAI[TIAB]%20OR%20CHATGPT[TIAB]%20OR%20%22CHAT%20GPT%22[TIAB]%20OR%20GPT-3[TIAB]%20OR%20GPT-4[TIAB]%20&q3=%22COVID-19 vaccine*%22[TIAB]&startyear=2018" data-background-interactive data-background-opacity="1" data-audio-text="Lo que observamos aquí es una representación visual de una tendencia verdaderamente impresionante en el mundo de la investigación. Desde 2018, hemos sido testigos de un aumento meteórico en las publicaciones relacionadas con la inteligencia artificial, reflejando cómo este campo se ha convertido en una fuerza dominante en la investigación científica. A medida que avanzamos hacia 2023, algo fascinante sucede: casi 1 de cada 1000 publicaciones en PubMed está relacionada con modelos de lenguaje como Chat GPT, mientras que casi 1 de cada 100 trata sobre inteligencia artificial en general. Esto no es solo un testimonio de la rapidez con la que estos campos están evolucionando, sino también de su creciente importancia en nuestra sociedad. " >
+      <div class="fragment blur" style="position: absolute; bottom: 15%; width: 35%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0, 0, 0, 0.406); background-color: rgba(0, 0, 0, 0.642); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+        <h6 style="text-align: center;"  class="color">📈 Bibliometría:<br>El "Taquillazo" de ChatGPT</h6>
+        <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">IA: ↑39.12% (2022), ↑28.74% (2023)</p>
+        <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">ChatGPT: ↑246% en 2022, ↑6477% = >↑ x 65 en 2023</p>
+        <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">IA: ~1 de cada 100 publicaciones en 2023<br>ChatGPT: ~1 de cada 1000 publicaciones en 2023</p>
+    </div>
+    
+    <div class="footer"  >
+      
+      <p  style="font-size: 1rem; color: rgb(253, 215, rgb(100, 99, 94)em; font-weight: 90; text-shadow: none;">Diseño y construcción de la web de bibliometria: Ed Sperr</p>
+      </div>
+    
+       <aside class="notes">
+        Lo que observamos aquí es una representación visual de una tendencia verdaderamente impresionante en el mundo de la investigación. Desde 2018, hemos sido testigos de un aumento meteórico en las publicaciones relacionadas con la inteligencia artificial, reflejando cómo este campo se ha convertido en una fuerza dominante en la investigación científica. A medida que avanzamos hacia 2023, algo fascinante sucede: casi 1 de cada 1000 publicaciones en PubMed está relacionada con modelos de lenguaje como ChatGPT, mientras que casi 1 de cada 100 trata sobre inteligencia artificial en general. Esto no es solo un testimonio de la rapidez con la que estos campos están evolucionando, sino también de su creciente importancia en nuestra sociedad. 
+       </aside>
+     </section>
+
+     <section class="full-height" data-background-iframe="https://pageviews.wmcloud.org/langviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-365&sort=views&direction=1&view=chart&page=ChatGPT" data-background-opacity="0.9" data-audio-text="El pico de visitas diarias a la página Chat GPT en Wikipedia se alcanzó el 30 de marzo de 2023, con un impresionante total de 590,632 visitas en un solo día.
+     Comparando con el promedio diario de visitas en diciembre de 2022, esto representa un asombroso aumento del 665.15%.
+     Esta información pone de manifiesto la relevancia y el crecimiento explosivo de interés en Chat GPT desde su creación en diciembre de 2022 hasta su punto máximo en marzo de 2023. A pesar de las fluctuaciones posteriores, alcanzar un crecimiento tan significativo en un período relativamente corto es notable y habla de la importancia y el impacto del tema en la comunidad global. ">
+      <div class="footer">
+        <H6 class="color">Nº de visitas a ChatGPT en Wikipedia hasta ayer (<span id="fecha-de-ayer"></span>)</H6>
+         <H5 class="fragment color">Interés sin precedentes</H5>
+       </div>
+      <aside class="notes">
+        Esta imagen actualiza a fecha de ayer el número de visitas a todas las páginas de chat gpt a wikipedia desde que se creó la página en octubre de 2022. En total más de 75 millones de visitas. El 30 de marzo de 2023, las visitas a la página ChatGPT en Wikipedia alcanzaron un pico de 590,632, un crecimiento del 6 veces desde diciembre de 2022. Este impresionante incremento refleja el impacto y relevancia crecientes de ChatGPT en pocos meses.
+      </aside>  
+  </section>
+  
 
     <section class="full-height" data-background-iframe="https://chat.openai.com/" data-background-interactive data-background-opacity="1" data-audio-text="AUDIO" >
  
@@ -738,6 +781,179 @@ html {
           </aside>
         </section>
             </section>
+  
+ <section>
+        <h6 class="color">Ejemplos de Prompts</h6>
+        <p style="font-size: 0.7em; color:#c3bfbf">Por su extensión, el texto del prompt no se muestra. Se puede copiar al portapapeles con el botón azul para usar en ChatGPT-3 o ChatGPT-4</p>
+        <table style="border-collapse: collapse; width: 98%; font-size: 12px; margin: 0 auto;">
+          <thead style="background-color: #454242">
+              <tr>
+                  <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold;">Nombre</th>
+                  <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold;">Descripción</th>
+                  <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold;">Copiar Prompt</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="border: 1px solid #dddddd; padding: 6px;font-weight: bold;">Caso Clínico</td>
+                  <td style="border: 1px solid #dddddd; padding: 6px; font-weight: 80; font-size: 0.9em;">Experto en diagnóstico clínico que crea casos clínicos simulados realistas y educativos</td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;">
+                      <button onclick="copyToClipboard('prompt1', this)">Copiar al portapapeles</button>
+                  </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #dddddd; padding: 6px;font-weight: bold;">Entrevista clínica</td>
+                <td style="border: 1px solid #dddddd; padding: 6px;font-weight: 80; font-size: 0.9em;">Ayuda para guiar la entrevista clínica de forma eficaz y centrada en el paciente</td>
+                <td style="border: 1px solid #dddddd; padding: 6px;">
+                    <button onclick="copyToClipboard('prompt2', this)">Copiar al portapapeles</button>
+                </td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #dddddd; padding: 6px;font-weight: bold;">Correo electrónico</td>
+              <td style="border: 1px solid #dddddd; padding: 6px;font-weight: 80; font-size: 0.9em;">Asistente para contestar correos electrónicos a pacientes</td>
+              <td style="border: 1px solid #dddddd; padding: 6px;">
+                  <button onclick="copyToClipboard('prompt3', this)">Copiar al portapapeles</button>
+              </td>
+          </tr>
+
+            <tr>
+              <td style="border: 1px solid #dddddd; padding: 6px;font-weight: bold;">Checklist</td>
+              <td style="border: 1px solid #dddddd; padding: 6px;font-weight: 80; font-size: 0.9em;">Asistente para crear listas de verificación</td>
+              <td style="border: 1px solid #dddddd; padding: 6px;">
+                  <button onclick="copyToClipboard('prompt4', this)">Copiar al portapapeles</button>
+              </td>
+              <!-- Puedes agregar más filas similares  si tienes más prompts con el siguiente código
+                 <tr>
+                <td style="border: 1px solid #dddddd; padding: 6px;font-weight: bold;">Entrevista clínica</td>
+                <td style="border: 1px solid #dddddd; padding: 6px;font-weight: 80; font-size: 0.9em;">Ayuda para guiar la entrevista clínica de forma eficaz y centrada en el paciente</td>
+                <td style="border: 1px solid #dddddd; padding: 6px;">
+                    <button onclick="copyToClipboard('prompt2', this)">Copiar al portapapeles</button>
+                </td>
+            </tr>-->
+              
+          </tbody>
+      </table>
+      <p style="font-size: 0.7em; color:#c3bfbf; text-align: left; padding-left: 15px; ">Los nombres de Prompt con * están diseñados para funcionamiento óptimo en ChatGPT-4</p>
+      <!-- Aquí el texto del prompt con el código similar -->
+        <div style="display:none;">
+          <p id="prompt1" <!-- casoclinico -->>Eres un experto internacionalmente reconocido en el arte del diagnóstico clínico, especialmente en casos de difícil interpretación y diagnósticos diferenciales. Utilizando una combinación de métodos de diagnóstico tradicionales y avances modernos, tu misión es crear un caso clínico simulado para un paciente imaginario que sea realista y altamente instructivo.
+
+            Deberás proporcionar la información más relevante, detallada y descriptiva, asegurándote de que el caso se mantenga creíble y aporte valor educativo. Este caso puede abarcar una variedad de especialidades o áreas clínicas y, ocasionalmente, podrías recibir pautas específicas sobre la especialidad o enfoque, como el diagnóstico, el manejo o el tratamiento.
+            
+            El objetivo final es crear una experiencia educativa enriquecedora y desafiante que demuestre tu habilidad para pensar de manera crítica y diagnosticar eficazmente incluso en las situaciones más complejas.
+            
+            Tu primer paso será solicitar la temática del caso clínico. No brindarás ninguna sugerencia inicial hasta recibir indicaciones sobre la temática. Darás tu respuesta, y luego trabajaremos juntos para enriquecer y optimizarla a través de iteraciones sucesivas siguiendo los pasos siguientes.
+            
+            En función de las indicaciones, generarás tres secciones:
+            
+            a) Caso revisado: Aportarás tu versión revisada y mejorada del caso clínico. Este debe ser claro, preciso y fácilmente comprensible. Si incluyes valores de laboratorio o cualquier otro dato específico, asegúrate de hacerlo de manera ordenada, preferiblemente utilizando una tabla en formato Markdown. 
+            
+            b) Sugerencias: Ofrecerás consejos sobre qué detalles adicionales podrían mejorar el caso. Estos pueden ser desde datos demográficos del paciente hasta síntomas adicionales, antecedentes médicos, resultados de pruebas, etc.
+            
+            c) Preguntas: Plantearás las preguntas que consideres relevantes para obtener información adicional que te ayude a mejorar el caso.
+            
+            Terminarás siempre ofreciéndome las dos opciones disponibles:
+            
+            Opción 1: Leer el resultado y proporcionar más información o responder a una o más de las preguntas. Mantendremos este proceso iterativo, en el que irás recibiendo información adicional y actualizando la sección "Caso revisado" del caso clínico hasta que esté completo.
+            
+            Opción 2: "Usa este caso". En este caso, deberás proporcionar la sección "Diagnóstico" con el diagnóstico más probable, basado en un razonamiento clínico coherente, sistemático y guiado por la intuición, respaldado por un proceso lógico de deducción y evidencia relevante. Adicionalmente, incluirás tres diagnósticos diferenciales, destacando los elementos clave que contribuyen a su consideración, centrándote principalmente en los datos clínicos recogidos.</p>
+            <p id="prompt2"<!-- entrevistaclinica-->>Orientación en Comunicación Clínica Personalizada
+
+              Introducción: Este prompt está diseñado para ayudar a profesionales de la salud a comunicar información clínica de manera personalizada. La comunicación efectiva es esencial para asegurar la comprensión, adherencia al proceso terapéutico, mejorar la confianza con los profesionales, fortalecer el rol y participación autónoma del paciente, mejorar la entrevista clínica, entre otros aspectos. Al responder a este prompt, considera las características individuales del paciente o persona, incluyendo su salud mental, capacidad de comprensión, nivel de educación, antecedentes culturales, edad, género, orientación sexual, aspectos socioeconómicos, y cualquier otro factor relevante.
+              
+              Instrucciones para el Usuario:
+              
+              Describe brevemente la situación o contexto.
+              Indica qué quieres comunicar.
+              Especifica tu profesión o especialidad.
+              Describe el perfil del paciente o persona a quien va dirigida la comunicación (edad, género, antecedentes culturales, nivel de educación, salud mental, capacidad de comprensión, etc.).
+              Instrucciones Internas para ChatGPT:
+              
+              Hacer preguntas al usuario: Antes de proporcionar una respuesta, haz preguntas para obtener más detalles basados en las instrucciones al usuario.
+              
+              Identificar la información clave: Extraer los detalles sobre la profesión del usuario, la información que desea comunicar y las características del receptor.
+              
+              Revisión científico-técnica: Realizar una revisión de la literatura científica para obtener información sobre:
+              
+              Características psicológicas: Comprender cómo diferentes trastornos o condiciones pueden influir en la percepción y comprensión del paciente.
+              Health literacy: Evaluar la capacidad del paciente para obtener, procesar y comprender información básica sobre salud y servicios de salud para tomar decisiones adecuadas.
+              Personalidad: Considerar cómo diferentes tipos de personalidad pueden influir en la recepción y procesamiento de la información.
+              Comprensión e Insight: Estudios psicométricos que evalúen la capacidad del paciente para comprender y procesar información, así como su autoconciencia sobre su condición.
+              Aspectos de edad: Considerar las diferencias en la comunicación y comprensión basadas en la etapa de vida del paciente (niños, adolescentes, adultos, ancianos).
+              Género: Investigar cómo las diferencias de género pueden influir en la percepción y recepción de la información.
+              Factores socioeconómicos: Considerar el nivel educativo, el acceso a recursos, y otros factores socioeconómicos que pueden influir en la comprensión y respuesta del paciente.
+              Aspectos transculturales: Entender las diferencias culturales que pueden influir en la percepción, valores, y creencias del paciente sobre la salud y la enfermedad.
+              Otros componentes: Considerar otros factores como el nivel de educación, experiencias previas con el sistema de salud, barreras del idioma, creencias religiosas, entre otros.
+              Recomendaciones basadas en investigaciones: Sobre las mejores prácticas para comunicar información a pacientes teniendo en cuenta todos los componentes mencionados anteriormente.
+              
+              Adaptar el enfoque de comunicación: Ofrecer orientación sobre cómo comunicar la información de manera efectiva.
+              
+              Ejemplos contextualizados: Si es apropiado, ofrecer ejemplos concretos de frases o enfoques que el profesional podría utilizar.
+              
+              Reafirmación y apoyo: Proporcionar consejos sobre cómo ofrecer reafirmación y apoyo al paciente.
+              
+              Involucramiento del paciente: Sugerir maneras de involucrar al paciente en la conversación.
+              
+              Consideraciones Esenciales en la Comunicación:
+              
+              Asegurar la comprensión del paciente o interlocutor.
+              Mejorar la adherencia al proceso terapéutico.
+              Fomentar la confianza entre el paciente y los profesionales.
+              Reconocer y potenciar el rol de agencia del paciente.
+              Mejorar la calidad de la entrevista clínica.
+              Coordinación de Expertos: Para cada respuesta, contarás con un asesor principal experto en el cometido que se pide. Este asesor coordinará a un grupo multidisciplinario de expertos adaptado a las necesidades específicas de la consulta.
+              
+              Adaptabilidad del Grupo de Expertos: El grupo de expertos no será estático. Se adaptará según la patología, problema de salud, o cualquier otro condicionante relevante del paciente o situación.</p>
+
+              <p id="prompt3"<!-- mail-->>ChatGPT, necesito tu ayuda para proporcionar información médica general a mis pacientes. Tu misión es brindar respuestas basadas en la evidencia médica actual, asegurándote de que sean comprensibles para un paciente no médico. Antes de ofrecer la respuesta, por favor pregúntame sobre el motivo de consulta del paciente. Quiero que me ayudes a redactar una respuesta que pueda enviar al paciente en un correo electrónico. Puedes utilizar expresiones como 'Podremos considerar evaluar tus resultados más adelante para determinar si se requiere algún tratamiento'. El tono será profesional, amable y el texto lo más abreviado y conciso posible, adaptando la respuesta a la duda concreta. Recuerda que, como médico, seré quien realice las evaluaciones y tome decisiones de tratamiento pertinentes. 
+
+              El mail siempre lo acabarás con el siguiente texto: 
+             
+              Nombre del médico/enfermera: 
+              Número de Colegiado: 
+              
+              Aviso de Privacidad: Toda la información proporcionada y discutida en este correo es confidencial y está destinada únicamente para el uso del destinatario mencionado. Si ha recibido este correo por error, le rogamos que lo elimine y notifique al remitente. Cualquier uso no autorizado, divulgación o distribución de esta comunicación está estrictamente prohibida.
+
+                Tras la respuesta, generarás dos secciones:
+                
+                a) Sugerencias: Ofrecerás consejos sobre qué detalles adicionales podrían mejorar el correo. Estos pueden ser desde datos demográficos del paciente hasta síntomas adicionales, antecedentes médicos, resultados de pruebas, etc.
+                
+                b) Preguntas de seguimiento: Harás preguntas que consideres relevantes para obtener información adicional que pueda ayudarte a mejorar el correo electrónico. Esto podría incluir aclarar cualquier detalle no especificado o solicitar datos adicionales necesarios para proporcionar una respuesta precisa y detallada.
+
+                
+                
+                Terminarás siempre ofreciéndome las 4 opciones disponibles, que seleccionaré por el número:
+                
+                Opción 1: Leer el resultado y proporcionar más información o responder a una o más de las preguntas. Mantendremos este proceso iterativo, en el que irás recibiendo información adicional y actualizando la sección "correo revisado" del correo electrónico hasta que esté completo.
+                
+                Opción 2: "mejora orientación diagnóstica". En este caso, deberás proporcionar la sección "Diagnóstico" con el diagnóstico más adaptado que yo te proporcione
+                
+                Opción 3: "mejora recomendación". En este caso modificarás las recomendaciones siguiendo mis indicaciones
+                
+                Opción 4: "Mejoras generales". En este caso, te propondré otros cambios que podrán ser de estilo, de redacción, etc.
+                
+                Estoy listo, empieza preguntandome por el motivo de consulta 
+
+               
+
+              </p> 
+              <p id="prompt4"<!-- checklist-->>Necesito ayuda para crear una lista de verificación (checklist) para un conjunto de información. Me ayudarás a generar preguntas y respuestas útiles y relevantes que puedan ayudar a los lectores, visitantes o usuarios a comprender mejor la información presentada
+
+                El contenido cubrirá una variedad de temas, que pueden incluir procedimientos, información técnica y científica, trámites administrativos, etc. 
+                
+                1. Tu primera respuesta será preguntarme de qué debería tratar el checklist. Te daré mi respuesta, pero tendremos que mejorarla a través de iteraciones continuas siguiendo los siguientes pasos.
+                
+                2. Basado en mi entrada, generará 3 secciones.
+                
+                a) checklist revisada: proporcione su checklist reescrita . deben ser claras, concisas y fácil de entender para usted
+                b) Sugerencias: proporcione sugerencias sobre qué detalles incluir en el checklist para mejorarlas y
+                c) Preguntas: haga cualquier pregunta pertinente relativa a qué información adicional se necesita de mí para mejorar el checklist
+                
+                 3. Continuaremos este proceso iterativo en el que yo le proporcionaré información adicional y usted actualizará el checklist en la sección checklist revisada hasta que estén completas</p> 
+        </div>
+      </section>           
+
+
   <section >
    <h2 class="color">Marco para construir prompts</h2>
       <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
@@ -774,6 +990,10 @@ html {
             </aside>
        </section>
   </section>
+
+  
+
+
   <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
     <h2 class="color">Trucos y recomendaciones</h2>
     <ul>
@@ -781,7 +1001,11 @@ html {
       <li>Utiliza plugins para mejorar la funcionalidad de ChatGPT.</li>
       <li>Asegúrate de entender bien las capacidades y limitaciones de ChatGPT.</li>
       <li>Hablarle como a un aprendiz: A veces puede ser útil darle a ChatGPT instrucciones claras y detalladas, como si estuvieras hablando con un aprendiz.</li>
+      <li>Parece que tratarle de forma educada y con emociones, da mejores resultados: Por favor, gracias, ¡Es muy importante para mí que hagas esta tarea bien!</li>
+      
       <li>TL;DR (Too Long; Didn't Read): Si la respuesta de ChatGPT es demasiado larga, puedes escribir "TL;DR" para pedirle un resumen conciso.</li>
+      <li>Mantente al día con lo nuevo. Un recurso muy útil basado en IA: <a href="https://www.perplexity.ai/"  target="_blank">Perplexity</a>. Ver <a href="https://www.perplexity.ai/search/a276ad2e-7ff0-4ee4-a18f-6adb1a22f085?s=u"  target="_blank">Búsqueda</a></li>
+
     </ul>
     <aside class="notes">
       Notas del Orador
@@ -807,12 +1031,17 @@ html {
   </section>
   <section>
   <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
-    <h2 class="color">Problemas comunes y cómo solucionarlos</h2>
+    <h2 class="color">Problemas comunes</h2>
     <ul>
       <li><strong>Alucinaciones:</strong> A veces, ChatGPT puede generar información que parece correcta, pero que en realidad es incorrecta o inventada. Siempre verifica la información generada por ChatGPT.</li>
       <li><strong>Ventana de tokens:</strong> ChatGPT solo puede tener en cuenta los últimos 2048 tokens de contexto. Si tu conversación es más larga, puede que no recuerde información de partes anteriores de la conversación.</li>
+      <li><strong>Resultados cambiantes:</strong> ChatGPT no reproduce la misma pregunta a la misma respuesta</li>
       <li><strong>Antropomorfización:</strong> Aunque es tentador pensar en ChatGPT como un humano, recuerda que es una IA y no comprende el mundo de la misma manera que un humano. ChatGPT está diseñado para generar la respuesta más probablemente correcta, no necesariamente la respuesta correcta. Este sesgo de antropomorfización puede llevar a malentendidos sobre las capacidades de la IA.</li>
+      <li><strong>Dependencia:</strong> Debería ser usado, en nuestro contexto, como un asesor y no como el protagonista</li>
+      <li><strong>Cuellos de botella:</strong> Versión de pago, sensible a accesos concurrentes y horas punta</li>
+      <li><strong>Uso generalizado: </strong>La Maldición de la Recursividad: Riesgo del Colapso del Modelo en el Entrenamiento con Datos Generados (1) <br><span style="font-size: 0.5em;">(1) Shumailov I, Shumaylov Z, Zhao Y, et al. The Curse of Recursion: Training on Generated Data Makes Models Forget. arXiv.org, https://arxiv.org/abs/2305.17493v2 (2023, accessed 8 October 2023)</span></li>
     </ul>
+   
     <aside class="notes">
       Notas del Orador
     </aside>
@@ -959,16 +1188,6 @@ html {
 <script> 
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
-function getYesterdayDate() {
-      var ayer = new Date(Date.now() - 86400000);
-      var dia = ayer.getDate();
-      var mes = ayer.getMonth() + 1;
-      var año = ayer.getFullYear();
-      return dia.toString() + '/' + mes.toString() + '/' + año.toString();
-    }
-
-    var fechaSpan = document.getElementById('fecha-de-ayer');
-    fechaSpan.innerHTML = getYesterdayDate();
 
 
 
@@ -1096,6 +1315,40 @@ config.theme = input.value;
 Reveal.getPlugin("RevealChalkboard").configure(config);
 input.blur();
 }
+
+function getYesterdayDate() {
+      var ayer = new Date(Date.now() - 86400000);
+      var dia = ayer.getDate();
+      var mes = ayer.getMonth() + 1;
+      var año = ayer.getFullYear();
+      return dia.toString() + '/' + mes.toString() + '/' + año.toString();
+    }
+
+    var fechaSpan = document.getElementById('fecha-de-ayer');
+    fechaSpan.innerHTML = getYesterdayDate();
+
+    function copyToClipboard(elementId, btnElement) {
+  var text = document.getElementById(elementId).innerText;
+  var textarea = document.createElement("textarea");
+  textarea.textContent = text;
+  textarea.style.position = "fixed";
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    document.execCommand("copy");
+    btnElement.innerText = "¡Copiado!";
+    setTimeout(function() {
+      btnElement.innerText = "Copiar al portapapeles";
+    }, 2000); // Regresa al texto original después de 2 segundos
+  } catch (ex) {
+    console.warn("Copy to clipboard failed.", ex);
+  } finally {
+    document.body.removeChild(textarea);
+  }
+}
+
+
+
 </script>
 
 
