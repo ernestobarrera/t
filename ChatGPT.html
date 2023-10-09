@@ -822,6 +822,13 @@ button:hover {
               <td style="border: 1px solid #dddddd; padding: 6px;">
                   <button onclick="copyToClipboard('prompt4', this)">Copiar al portapapeles</button>
               </td>
+
+              <tr>
+                <td style="border: 1px solid #dddddd; padding: 6px;font-weight: bold;">Perplexity</td>
+                <td style="border: 1px solid #dddddd; padding: 6px;font-weight: 80; font-size: 0.9em;">Arrastra este botón a la barra de marcadores de tu navegador</td>
+                <td style="border: 1px solid #dddddd; padding: 6px;">
+                    <button onclick="copyToClipboard('perplexity', this)">🧠Perplexity</button>
+                </td>
               <!-- Puedes agregar más filas similares  si tienes más prompts con el siguiente código
                  <tr>
                 <td style="border: 1px solid #dddddd; padding: 6px;font-weight: bold;">Entrevista clínica</td>
@@ -950,6 +957,8 @@ button:hover {
                 c) Preguntas: haga cualquier pregunta pertinente relativa a qué información adicional se necesita de mí para mejorar el checklist
                 
                  3. Continuaremos este proceso iterativo en el que yo le proporcionaré información adicional y usted actualizará el checklist en la sección checklist revisada hasta que estén completas</p> 
+
+                 <p id="perplexity">javascript: /*🧠🔎 Perplexity-Trabajo Este bookmarklet facilita la búsqueda de información en Perplexity*/ (function() {    var inputStr = '%s';    var evalua = '' + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text);    if (evalua == %27%27) {        var inputStr = inputStr    } else {        var inputStr = %27%27 + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text);    };    if (!inputStr || (inputStr.length == 2)) inputStr = prompt(%27Perplexity AI es una herramienta de búsqueda conversacional avanzada. Utiliza modelos de lenguaje extensos para respuestas precisas. Ideal para investigaciones, respuestas específicas y uso académico. Puedes especificar fuentes como YouTube, Reddit, Wikipedia y más. También cuenta con un copiloto para ayudarte a guiar tu búsqueda. Introduce tu pregunta o tema de interés:%27, %27%27);    if (inputStr != null) buscar = %27https://www.perplexity.ai/search?q=%27 + encodeURIComponent(inputStr);    window.open(buscar);}());</p>
         </div>
       </section>           
 
