@@ -904,7 +904,68 @@ button:hover {
           </aside>
         </section>
             </section>
-  
+            
+            <section>
+              <h3 class="color">Prompt estructurado para describir una búsqueda</h3>
+              <p style="font-size: small;">((((("critical appraisal" OR "journal club" OR (journal[TIAB] AND club*[TIAB])))) OR ((((("evidence-based practice" OR "evidence-based policy" OR "evidence based practice" OR "evidence-based medicine" OR "evidence based medicine" OR "evidence-based health care" OR "evidence-based healthcare" OR "evidence based health care" OR "evidence based health care" OR "evidence-based dentistry" OR "evidence based dentistry" OR "Evidence-Based Facility Design" OR "evidence-based nursing" OR "evidence based nursing" OR "Evidence-Based Emergency Medicine")))) OR (((((("Evidence-Based Practice"[Mesh]) OR "Evidence-Based Practice/education"[Mesh]) OR "Evidence-Based Medicine"[Mesh]) OR "Evidence-Based Dentistry"[Mesh]) OR "Evidence-Based Nursing"[Mesh] OR "Evidence-Based Facility Design"[Mesh] OR "Evidence-Based Emergency Medicine"[Mesh])))))</p>
+            
+              <table style="font-size: smaller;">
+                  <thead>
+                      <tr>
+                          <th>Componente Prompt</th>
+                          <th>Resumen de Contenido (Incremental)</th>
+                          <th>Prompt completo</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="fragment">
+                          <td>Sencillo</td>
+                          <td >Describe la búsqueda:</td>
+                          <td><button onclick="copyPromptWithSearchToClipboard('prompt0', this)">Copiar</button></td>
+                      <tr class="fragment">
+                          <td>Rol</td>
+                          <td >Define el papel o identidad que debe adoptar la IA.</td>
+                          <td><button onclick="copyPromptWithSearchToClipboard('promptRol', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td>Esencia (Misión)</td>
+                          <td >Describe la misión principal o propósito del prompt.</td>
+                          <td><button onclick="copyPromptWithSearchToClipboard('promptEsencia', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td>Contexto (Medio)</td>
+                          <td >Detalla el entorno o situación en la que se usará el prompt.</td>
+                          <td><button onclick="copyPromptWithSearchToClipboard('promptContexto', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td>Objetivo</td>
+                          <td>Especifica el objetivo principal o resultado deseado del prompt.</td>
+                          <td><button onclick="copyPromptWithSearchToClipboard('promptObjetivo', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td>Requisitos (Detalles)</td>
+                          <td >Lista los pasos o preguntas específicas para lograr el objetivo.</td>
+                          <td><button onclick="copyPromptWithSearchToClipboard('promptRequisitos', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td>Diseño (Formato de Salida)</td>
+                          <td >Describe cómo se debe presentar la respuesta o resultado.</td>
+                          <td><button onclick="copyPromptWithSearchToClipboard('promptDiseño', this)">Copiar</button></td>
+                      </tr>
+                  </tbody>
+              </table>
+              <p id="prompt0" style="display:none;">Describe la búsqueda:</p>
+              <p id="promptRol" style="display:none;">Eres un bibliotecario documentalista. Describe la búsqueda:</p>
+              <p id="promptEsencia" style="display:none;">Eres un bibliotecario documentalista. Tu misión es ayudar a entender y desglosar búsquedas complejas. Describe la búsqueda:               </p>
+              <p id="promptContexto" style="display:none;">Eres un bibliotecario documentalista en un entorno académico. Tu misión es ayudar a entender y desglosar búsquedas complejas para investigaciones académicas. Describe la búsqueda: </p>
+              <p id="promptObjetivo" style="display:none;">Eres un bibliotecario documentalista en un entorno académico. Tu misión es ayudar a entender y desglosar búsquedas complejas para investigaciones académicas. Tu meta es que se puedan identificar y seleccionar los recursos más relevantes. Describe la búsqueda:               </p>
+              <p id="promptRequisitos" style="display:none;">Eres un bibliotecario documentalista en un entorno académico. Tu misión es ayudar a entender y desglosar búsquedas complejas para investigaciones académicas. Tu meta es que se puedan identificar y seleccionar los recursos más relevantes. Es esencial que la información esté actualizada y sea relevante para el ámbito académico. Describe la búsqueda:   </p>
+              <p id="promptDiseño" style="display:none;">Eres un bibliotecario documentalista en un entorno académico. Tu misión es ayudar a entender y desglosar búsquedas complejas para investigaciones académicas. Tu meta es que se puedan identificar y seleccionar los recursos más relevantes. Es esencial que la información esté actualizada y sea relevante para el ámbito académico. Deseas que la respuesta venga en forma de lista con recursos y descripciones claras. Describe la búsqueda: .
+              </p>
+          </section>
+          
+          
+           
  <section>
         <h6 class="color">Ejemplos de Prompts</h6>
         <p style="font-size: 0.7em; color:#c3bfbf">Por su extensión, el texto del prompt no se muestra. Se puede copiar al portapapeles con el botón azul para usar en ChatGPT-3 o ChatGPT-4</p>
@@ -1305,7 +1366,36 @@ button:hover {
       </aside>
     </section>
 
-    
+    <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO" style="text-align: center; font-family: 'Arial', sans-serif;">
+      <h2 style="margin-top: 5%; color: #ecf0f1;">GRACIAS</h2>
+      <p style="font-size: 1.2em; margin-top: 5%; color: #ecf0f1;" data-audio-text="El conocimiento es esencial, pero si no se comparte, pierde su propósito.">El conocimiento que no fluye no tiene valor 🩺</p>
+      <p style="font-size: 1em; margin-top: 5%; color: #ecf0f1;" data-audio-text="Esta presentación ha sido creada con mucho amor, habilidades de programación y una profunda pasión por la formación.">Presentación hecha con ❤️, código y pasión por la formación por <a href="https://twitter.com/ernestob" target="_blank" style="color: #e74c3c;">@ernestob</a></p>
+      
+      <div style="margin-top: 5%; font-size: 0.9em; color: #ecf0f1;">
+          <p data-audio-text="He utilizado diversas tecnologías y herramientas para crear esta presentación.">Herramientas utilizadas:</p>
+          <a href="https://revealjs.com/" target="_blank" style="color: #e74c3c;">Reveal.js</a>,
+          <a href="https://github.com/" target="_blank" style="color: #e74c3c;">GitHub</a>,
+          <a href="https://code.visualstudio.com/" target="_blank" style="color: #e74c3c;">VS Code</a>, y más.
+      </div>
+      
+      <div style="margin-top: 5%; font-size: 0.9em; color: #ecf0f1;">
+          <p data-audio-text="Además, he incorporado inteligencia artificial para enriquecer el contenido.">Potenciada con IA gracias a:</p>
+          <a href="https://openai.com/dall-e-3" target="_blank" style="color: #e74c3c;">DALL·E-3</a>,
+          <a href="https://stability.ai/stable-diffusion" target="_blank" style="color: #e74c3c;">Stable Diffusion</a>, y más.
+      </div>
+      
+      <aside class="notes">
+          Esta diapositiva es un agradecimiento a todos los presentes y una oportunidad para destacar las herramientas y tecnologías que he utilizado para crear esta presentación. La combinación de habilidades tradicionales de programación con la potencia de la inteligencia artificial ha permitido crear una experiencia de aprendizaje enriquecedora.
+      </aside>
+  </section>
+  
+  
+  
+
+
+  
+  
+  
    
   </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/js/reveal.min.js"></script>
@@ -1463,6 +1553,14 @@ function getYesterdayDate() {
     var fechaSpan = document.getElementById('fecha-de-ayer');
     fechaSpan.innerHTML = getYesterdayDate();
 
+
+
+  
+ 
+   
+
+
+
     function copyToClipboard(elementId, btnElement) {
   var text = document.getElementById(elementId).innerText;
   var textarea = document.createElement("textarea");
@@ -1483,7 +1581,30 @@ function getYesterdayDate() {
   }
 }
 
+                            
 
+  var search = '((((("critical appraisal" OR "journal club" OR (journal[TIAB] AND club*[TIAB])))) OR ((((("evidence-based practice" OR "evidence-based policy" OR "evidence based practice" OR "evidence-based medicine" OR "evidence based medicine" OR "evidence-based health care" OR "evidence-based healthcare" OR "evidence based health care" OR "evidence based health care" OR "evidence-based dentistry" OR "evidence based dentistry" OR "Evidence-Based Facility Design" OR "evidence-based nursing" OR "evidence based nursing" OR "Evidence-Based Emergency Medicine")))) OR (((((("Evidence-Based Practice"[Mesh]) OR "Evidence-Based Practice/education"[Mesh]) OR "Evidence-Based Medicine"[Mesh]) OR "Evidence-Based Dentistry"[Mesh]) OR "Evidence-Based Nursing"[Mesh] OR "Evidence-Based Facility Design"[Mesh] OR "Evidence-Based Emergency Medicine"[Mesh])))))'; // Búsqueda completa
+              function copyPromptWithSearchToClipboard(elementId, btnElement) {
+                  var text = document.getElementById(elementId).innerText + ' ' + search;
+                  var textarea = document.createElement("textarea");
+                  textarea.textContent = text;
+                  textarea.style.position = "fixed";
+                  document.body.appendChild(textarea);
+                  textarea.select();
+                  try {
+                      document.execCommand("copy");
+                      btnElement.innerText = "¡Copiado!";
+                      setTimeout(function() {
+                          btnElement.innerText = "Copiar";
+                      }, 2000); // Regresa al texto original después de 2 segundos
+                  } catch (ex) {
+                      console.warn("Copy to clipboard failed.", ex);
+                  } finally {
+                      document.body.removeChild(textarea);
+                  }
+              }
+              
+          
 
 </script>
 
