@@ -412,7 +412,7 @@ section .custom-table th {
       </aside>
       
     </section> 
-    
+
     
     <section data-background-image="https://th.bing.com/th/id/OIG.1WWLJtUNycfosBvenwzJ?pid=ImgGn" data-background-opacity="0.09" data-audio-text="A continuación, presentaré los puntos clave que abordaremos durante esta charla. Navegaremos desde una introducción a ChatGPT hasta discutir sus aplicaciones y desafíos en el ámbito de las Ciencias de la Salud.">
       <h2>Índice de la Presentación</h2>
@@ -1058,11 +1058,11 @@ section .custom-table th {
                       });
                   </script>
                   
-                    <blockquote class="size3" id="userInput" style="text-align: left">
+                    <blockquote class="size3" id="userInput" style="text-align: left; font-size:1.1em">
                         <!-- "Por favor, describe esta búsqueda." -->
                     </blockquote>
                     <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
-                    <blockquote class="fragment custom blur size3" style="text-align: left">
+                    <blockquote class="fragment custom blur size3" style="text-align: left;font-size: 1.1em;">
                         "Se trata de una búsqueda extensa que cubre diferentes términos relacionados con la práctica basada en la evidencia en diversas áreas de la salud."
                     </blockquote>
                 </div>
@@ -1075,126 +1075,194 @@ section .custom-table th {
   <h3 class="color">Bibliotecario experto en ciencias de la salud</h3>
   <div class="aligned">
       <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Obtener el contenido del elemento con id="promptRol"
-            var promptText = document.getElementById("promptRol").textContent;
-            // Insertar el contenido en el bloque "Usuario escribe:"
-            document.getElementById("userInput1").textContent = promptText;
-        });
-    </script>
-    
+
     <blockquote class="size3" id="userInput1" style="text-align: left">
-                <!-- userInput1 -->
+        <!-- userInput1 -->
     </blockquote>
+
     <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
-    <blockquote class="fragment custom blur size3" style="text-align: left">
+    <blockquote class="fragment custom blur size3" style="text-align: left; font-size: 1.1em;">
         "Esta búsqueda aborda múltiples aspectos del ámbito de la salud basado en la evidencia. Utiliza una combinación de términos y campos específicos de PubMed para garantizar una cobertura exhaustiva."
     </blockquote>
     
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const fontSizeInEm = "1.2em"; // Tamaño de fuente deseado en em
+      
+          // Obtener el contenido del elemento con id="promptSimple" y "promptRol"
+          var baseText = document.getElementById("promptSimple").textContent;
+          var rolePromptText = document.getElementById("promptRol").textContent;
+      
+          // Determinar el texto adicional comparando ambos
+          var additionalText = rolePromptText.replace(baseText, "").trim();
+      
+          // Crear el HTML para el texto en negrita y el texto no negrita con el mismo tamaño de fuente en em
+          const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${additionalText}</span>`;
+          const normalText = `<span style="font-size: ${fontSizeInEm};">${baseText}</span>`;
+      
+          // Insertar el contenido en el bloque "Usuario escribe:"
+          document.getElementById("userInput1").innerHTML = normalText + " " + boldText;
+      });
+      </script>
+      
   </div>
 </section>
 
+
+
 <!-- Diapositiva 3 -->
+
 <section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
   <h3 class="color">Misión del bibliotecario</h3>
   <div class="aligned">
       <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+      
+      <blockquote class="size3" id="userInput2" style="text-align: left">
+          <!-- userInput2 -->
+      </blockquote>
+      <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+      <blockquote class="fragment custom blur size3" style="text-align: left; font-size: 1.1em;">
+          "Este es un ejemplo clásico de una búsqueda estructurada en PubMed. Se abordan conceptos esenciales de la práctica basada en la evidencia en diversas áreas de la salud. Las múltiples combinaciones de términos buscan garantizar una cobertura completa y resultados relevantes para investigaciones académicas."
+      </blockquote>
+
       <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Obtener el contenido del elemento con id="promptEsencia"
-            var promptText = document.getElementById("promptEsencia").textContent;
-            // Insertar el contenido en el bloque "Usuario escribe:"
-            document.getElementById("userInput2").textContent = promptText;
-        });
-    </script>
-    
-    <blockquote class="size3" id="userInput2" style="text-align: left">
-        <!-- userInput2 -->
-    </blockquote>
-    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
-    <blockquote class="fragment custom blur size3" style="text-align: left">
-        "Este es un ejemplo clásico de una búsqueda estructurada en PubMed. Se abordan conceptos esenciales de la práctica basada en la evidencia en diversas áreas de la salud. Las múltiples combinaciones de términos buscan garantizar una cobertura completa y resultados relevantes para investigaciones académicas."
-    </blockquote>
-    
+          document.addEventListener("DOMContentLoaded", function() {
+              const fontSizeInEm = "1.2em"; // Tamaño de fuente deseado en em
+
+              // Obtener el contenido del elemento con id="promptRol" y "promptEsencia"
+              var baseText = document.getElementById("promptRol").textContent;
+              var esenciaPromptText = document.getElementById("promptEsencia").textContent;
+
+              // Determinar el texto adicional comparando ambos
+              var additionalText = esenciaPromptText.replace(baseText, "").trim();
+
+              // Crear el HTML para el texto en negrita y el texto no negrita con el mismo tamaño de fuente en em
+              const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${additionalText}</span>`;
+              const normalText = `<span style="font-size: ${fontSizeInEm};">${baseText}</span>`;
+
+              // Insertar el contenido en el bloque "Usuario escribe:"
+              document.getElementById("userInput2").innerHTML = normalText + " " + boldText;
+          });
+      </script>
   </div>
 </section>
+
+
+
 
 <!-- Diapositiva 4 -->
 <section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
   <h3 class="color">Contexto del congreso</h3>
   <div class="aligned">
       <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+      <blockquote class="size3" id="userInput3" style="text-align: left">
+          <!-- userInput3 -->
+      </blockquote>
+      <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+      <blockquote class="fragment custom blur size3" style="text-align: left;font-size: 1.1em;">
+          "Frente a colegas especializados, destacaría que esta búsqueda es un compendio de términos que abarcan desde la práctica basada en la evidencia en medicina hasta áreas más específicas como la odontología y enfermería. Es el tipo de búsqueda que garantizaría a los investigadores una revisión exhaustiva del tema en PubMed."
+      </blockquote>
+
       <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Obtener el contenido del elemento con id="promptContexto"
-            var promptText = document.getElementById("promptContexto").textContent;
-            // Insertar el contenido en el bloque "Usuario escribe:"
-            document.getElementById("userInput3").textContent = promptText;
-        });
-    </script>
-    
-    <blockquote class="size3" id="userInput3" style="text-align: left">
-        <!-- userInput3 -->
-    </blockquote>
-    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
-    <blockquote class="fragment custom blur size3" style="text-align: left">
-        "Frente a colegas especializados, destacaría que esta búsqueda es un compendio de términos que abarcan desde la práctica basada en la evidencia en medicina hasta áreas más específicas como la odontología y enfermería. Es el tipo de búsqueda que garantizaría a los investigadores una revisión exhaustiva del tema en PubMed."
-    </blockquote>
-    
+          document.addEventListener("DOMContentLoaded", function() {
+              const fontSizeInEm = "1.2em"; // Tamaño de fuente deseado en em
+
+              // Obtener el contenido del elemento con id="promptEsencia" y "promptContexto"
+              var baseText = document.getElementById("promptEsencia").textContent;
+              var contextoPromptText = document.getElementById("promptContexto").textContent;
+
+              // Determinar el texto adicional comparando ambos
+              var additionalText = contextoPromptText.replace(baseText, "").trim();
+
+              // Crear el HTML para el texto en negrita y el texto no negrita con el mismo tamaño de fuente en em
+              const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${additionalText}</span>`;
+              const normalText = `<span style="font-size: ${fontSizeInEm};">${baseText}</span>`;
+
+              // Insertar el contenido en el bloque "Usuario escribe:"
+              document.getElementById("userInput3").innerHTML = normalText + " " + boldText;
+          });
+      </script>
   </div>
 </section>
+
 
 <!-- Diapositiva 5 -->
 <section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
   <h3 class="color">Objetivo de la comprensión</h3>
   <div class="aligned">
       <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+      
+      <blockquote class="size3" id="userInput4" style="text-align: left">
+          <!-- userInput4 -->
+      </blockquote>
+      
       <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Obtener el contenido del elemento con id="promptObjetivo"
-            var promptText = document.getElementById("promptObjetivo").textContent;
-            // Insertar el contenido en el bloque "Usuario escribe:"
-            document.getElementById("userInput4").textContent = promptText;
-        });
-    </script>
-    
-    <blockquote class="size3" id="userInput4" style="text-align: left">
-        <!-- userInput4 -->
-    </blockquote>
-    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
-    <blockquote class="fragment custom blur size3" style="text-align: left">
-        "Esta búsqueda es un ejemplo de cómo combinar adecuadamente términos y campos en PubMed para abordar un tema tan amplio como la práctica basada en la evidencia. La estructura meticulosa y la inclusión de múltiples términos garantizan que no se pase por alto ningún artículo relevante. Es una herramienta esencial para cualquier investigador que busque una revisión completa del tema."
-    </blockquote>
-    
+          document.addEventListener("DOMContentLoaded", function() {
+              const fontSizeInEm = "1.2em"; // Tamaño de fuente deseado en em
+
+              // Obtener el contenido acumulado de los elementos anteriores y el nuevo contenido de "promptObjetivo"
+              var baseText = document.getElementById("promptContexto").textContent;
+              var objetivoPromptText = document.getElementById("promptObjetivo").textContent;
+
+              // Determinar el texto adicional comparando ambos
+              var additionalText = objetivoPromptText.replace(baseText, "").trim();
+
+              // Crear el HTML para el texto en negrita y el texto no negrita con el mismo tamaño de fuente en em
+              const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${additionalText}</span>`;
+              const normalText = `<span style="font-size: ${fontSizeInEm};">${baseText}</span>`;
+
+              // Insertar el contenido en el bloque "Usuario escribe:"
+              document.getElementById("userInput4").innerHTML = normalText + " " + boldText;
+          });
+      </script>
+      
+      <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+      <blockquote class="fragment custom blur size3" style="text-align: left; font-size: 1.1em;">
+          "Esta búsqueda es un ejemplo de cómo combinar adecuadamente términos y campos en PubMed para abordar un tema tan amplio como la práctica basada en la evidencia. La estructura meticulosa y la inclusión de múltiples términos garantizan que no se pase por alto ningún artículo relevante. Es una herramienta esencial para cualquier investigador que busque una revisión completa del tema."
+      </blockquote>
   </div>
 </section>
 
+
+<!-- Diapositiva 6 -->
 <!-- Diapositiva 6 -->
 <section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
   <h3 class="color">Uso de terminología comprensible</h3>
   <div class="aligned">
       <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+      
+      <blockquote class="size3" id="userInput5" style="text-align: left">
+          <!-- userInput5 -->
+      </blockquote>
+      
       <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Obtener el contenido del elemento con id="promptRequisitos"
-            var promptText = document.getElementById("promptRequisitos").textContent;
-            // Insertar el contenido en el bloque "Usuario escribe:"
-            document.getElementById("userInput5").textContent = promptText;
-        });
-    </script>
+          document.addEventListener("DOMContentLoaded", function() {
+              const fontSizeInEm = "1.2em"; // Tamaño de fuente deseado en em
+
+              // Obtener el contenido acumulado de los elementos anteriores y el nuevo contenido de "promptRequisitos"
+              var baseText = document.getElementById("promptObjetivo").textContent;
+              var requisitosPromptText = document.getElementById("promptRequisitos").textContent;
+
+              // Determinar el texto adicional comparando ambos
+              var additionalText = requisitosPromptText.replace(baseText, "").trim();
+
+              // Crear el HTML para el texto en negrita y el texto no negrita con el mismo tamaño de fuente en em
+              const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${additionalText}</span>`;
+              const normalText = `<span style="font-size: ${fontSizeInEm};">${baseText}</span>`;
+
+              // Insertar el contenido en el bloque "Usuario escribe:"
+              document.getElementById("userInput5").innerHTML = normalText + " " + boldText;
+          });
+      </script>
+      
+      <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+      <blockquote class="fragment custom blur size3" style="text-align: left; font-size: 1.1em;">
+          "Imagina que estás tejiendo una red para capturar todos los artículos sobre práctica basada en la evidencia en PubMed. Cada término en esta búsqueda es como un hilo en esa red. Algunos hilos, como 'evidence-based medicine', son amplios y capturan muchos artículos. Otros, como 'Evidence-Based Dentistry', son más específicos. Al combinar todos estos hilos, garantizas que tu red sea lo suficientemente fuerte y amplia para capturar toda la información relevante sobre el tema, ya sea un estudio amplio o un hallazgo especializado en un área concreta. Es la esencia del arte y la ciencia detrás de la construcción de búsquedas efectivas."
+      </blockquote>
     
-    <blockquote class="size3" id="userInput5" style="text-align: left">
-        <!-- userInput5 -->
-    </blockquote>
-    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
-    
-    <blockquote class="fragment custom blur size3" style="text-align: left">
-        "Imagina que estás tejiendo una red para capturar todos los artículos sobre práctica basada en la evidencia en PubMed. Cada término en esta búsqueda es como un hilo en esa red. Algunos hilos, como 'evidence-based medicine', son amplios y capturan muchos artículos. Otros, como 'Evidence-Based Dentistry', son más específicos. Al combinar todos estos hilos, garantizas que tu red sea lo suficientemente fuerte y amplia para capturar toda la información relevante sobre el tema, ya sea un estudio amplio o un hallazgo especializado en un área concreta. Es la esencia del arte y la ciencia detrás de la construcción de búsquedas efectivas."
-    </blockquote>
-    
-    </div>
+  </div>
 </section>
+
 
 <!-- Diapositiva 7 -->
 <section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
