@@ -340,8 +340,28 @@ button:hover {
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+/* para tabla incremental de prompts, no funciona por el momento con tamaño de fuentes, que están inline */
+.bold-text {
+    font-weight: bold;
+}
+/* Estilo para la tabla específica */
+section .custom-table {
+    font-size: 0.8em !important; 
+    width: 100% !important;
+}
 
+/* Estilo para las celdas de la tabla específica */
+section .custom-table th, section .custom-table td {
+    padding: 4px 8px !important;
+    border: 1px solid #ccc !important;
+}
 
+/* Estilo para el encabezado de la tabla específica */
+section .custom-table th {
+    background-color: #333 !important;
+    color: #fff !important;
+    font-weight: bold !important;
+}
 
   </style>
 </head>
@@ -480,18 +500,25 @@ button:hover {
         <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">IA: ~1 de cada 100 publicaciones en 2023<br>ChatGPT: ~1 de cada 1000 publicaciones en 2023</p>
     </div>
     
-    <div class="footer"  >
+  <!--   <div class="footer"  >
       <p style="font-size: 1rem; color: #000; font-weight: 90; text-shadow: 1px 1px 2px rgba(253, 215, 1, 0.7);">Diseño y construcción de la web de bibliometria: Ed Sperr</p>
-  </div>
+  </div> -->
+
+  <div class="footer">
+    <H6 class="color">Bibliometría: búsquedas ChatGPT hasta ayer (<span id="fecha-de-ayer"></span>)</H6>
+    
+     <p style="font-size: 1rem; color: #000; font-weight: 90; text-shadow: 1px 1px 2px rgba(253, 215, 1, 0.7);">Diseño y construcción de la web de bibliometria: Ed Sperr</p>
+   </div>
     
        <aside class="notes">
         Lo que observamos aquí es una representación visual de una tendencia verdaderamente impresionante en el mundo de la investigación. Desde 2018, hemos sido testigos de un aumento meteórico en las publicaciones relacionadas con la inteligencia artificial, reflejando cómo este campo se ha convertido en una fuerza dominante en la investigación científica. A medida que avanzamos hacia 2023, algo fascinante sucede: casi 1 de cada 1000 publicaciones en PubMed está relacionada con modelos de lenguaje como ChatGPT, mientras que casi 1 de cada 100 trata sobre inteligencia artificial en general. Esto no es solo un testimonio de la rapidez con la que estos campos están evolucionando, sino también de su creciente importancia en nuestra sociedad. 
        </aside>
      </section>
 
-     <section class="full-height" data-background-iframe="https://pageviews.wmcloud.org/langviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-365&sort=views&direction=1&view=chart&page=ChatGPT" data-background-opacity="0.9" data-audio-text="Tras observar el impacto disruptivo en el ámbito científico, esta diapositiva nos muestra el eco que ChatGPT ha tenido en el público general. El pico de visitas diarias a la página Chat GPT en Wikipedia se alcanzó el 30 de marzo de 2023, con un impresionante total de 590,632 visitas en un solo día.
+     <section class="full-height" data-background-iframe="https://pageviews.wmcloud.org/langviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-365&sort=views&direction=1&view=chart&page=ChatGPT" data-background-opacity="0.9" data-audio-src="../ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/wikipedia_analisis.mp3">
+     <!--  data-audio-text="Tras observar el impacto disruptivo en el ámbito científico, esta diapositiva nos muestra el eco que ChatGPT ha tenido en el público general. El pico de visitas diarias a la página Chat GPT en Wikipedia se alcanzó el 30 de marzo de 2023, con un impresionante total de 590,632 visitas en un solo día.
      Comparando con el promedio diario de visitas en diciembre de 2022, esto representa un asombroso aumento del 665.15%.
-     Esta información pone de manifiesto la relevancia y el crecimiento explosivo de interés en Chat GPT desde su creación en diciembre de 2022 hasta su punto máximo en marzo de 2023. A pesar de las fluctuaciones posteriores, alcanzar un crecimiento tan significativo en un período relativamente corto es notable y habla de la importancia y el impacto del tema en la comunidad global. ">
+     Esta información pone de manifiesto la relevancia y el crecimiento explosivo de interés en Chat GPT desde su creación en diciembre de 2022 hasta su punto máximo en marzo de 2023. A pesar de las fluctuaciones posteriores, alcanzar un crecimiento tan significativo en un período relativamente corto es notable y habla de la importancia y el impacto del tema en la comunidad global. " -->
       <div class="footer">
         <H6 class="color">Nº de visitas a ChatGPT en Wikipedia hasta ayer (<span id="fecha-de-ayer"></span>)</H6>
          <H5 class="fragment color">Interés sin precedentes</H5>
@@ -506,7 +533,7 @@ button:hover {
  
       <div class="footer">
         <H6 class=" color">
-            ChatGPT en producción<span id="fecha-de-ayer"></span><br>
+            ChatGPT en producción</span><br>
             <a href="https://chat.openai.com/" target="_blank" style="text-decoration: underline; color: #3498DB; font-weight: normal; text-transform: none;">Accede a https://chat.openai.com/</a>
         </H6>
     </div>
@@ -904,67 +931,300 @@ button:hover {
           </aside>
         </section>
             </section>
-            
             <section>
-              <h3 class="color">Prompt estructurado para describir una búsqueda</h3>
-              <p style="font-size: small;">((((("critical appraisal" OR "journal club" OR (journal[TIAB] AND club*[TIAB])))) OR ((((("evidence-based practice" OR "evidence-based policy" OR "evidence based practice" OR "evidence-based medicine" OR "evidence based medicine" OR "evidence-based health care" OR "evidence-based healthcare" OR "evidence based health care" OR "evidence based health care" OR "evidence-based dentistry" OR "evidence based dentistry" OR "Evidence-Based Facility Design" OR "evidence-based nursing" OR "evidence based nursing" OR "Evidence-Based Emergency Medicine")))) OR (((((("Evidence-Based Practice"[Mesh]) OR "Evidence-Based Practice/education"[Mesh]) OR "Evidence-Based Medicine"[Mesh]) OR "Evidence-Based Dentistry"[Mesh]) OR "Evidence-Based Nursing"[Mesh] OR "Evidence-Based Facility Design"[Mesh] OR "Evidence-Based Emergency Medicine"[Mesh])))))</p>
-            
-              <table style="font-size: smaller;">
-                  <thead>
+              <section>
+                <h3 class="color">Prompt estructurado para describir una búsqueda</h3>
+                <table style="border-collapse: collapse; width: 98%; margin: 0 auto; font-size: 12px;" class="custom-table">
+                  <thead style="background-color: #454242">
                       <tr>
-                          <th>Componente Prompt</th>
-                          <th>Resumen de Contenido (Incremental)</th>
-                          <th>Prompt completo</th>
+                          <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold; color: white; ">Prompt incremental</th>
+                          <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold; color: white;">Prompt</th>
                       </tr>
                   </thead>
                   <tbody>
-                    <tr class="fragment">
-                          <td>Sencillo</td>
-                          <td >Describe la búsqueda:</td>
-                          <td><button onclick="copyPromptWithSearchToClipboard('prompt0', this)">Copiar</button></td>
-                      <tr class="fragment">
-                          <td>Rol</td>
-                          <td >Define el papel o identidad que debe adoptar la IA.</td>
-                          <td><button onclick="copyPromptWithSearchToClipboard('promptRol', this)">Copiar</button></td>
+                      <tr>
+                          <td id="tablePromptSimple" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptSimple', this)">Copiar</button></td>
                       </tr>
                       <tr class="fragment">
-                          <td>Esencia (Misión)</td>
-                          <td >Describe la misión principal o propósito del prompt.</td>
-                          <td><button onclick="copyPromptWithSearchToClipboard('promptEsencia', this)">Copiar</button></td>
+                          <td id="tablePromptRol" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptRol', this)">Copiar</button></td>
                       </tr>
                       <tr class="fragment">
-                          <td>Contexto (Medio)</td>
-                          <td >Detalla el entorno o situación en la que se usará el prompt.</td>
-                          <td><button onclick="copyPromptWithSearchToClipboard('promptContexto', this)">Copiar</button></td>
+                          <td id="tablePromptEsencia" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptEsencia', this)">Copiar</button></td>
                       </tr>
                       <tr class="fragment">
-                          <td>Objetivo</td>
-                          <td>Especifica el objetivo principal o resultado deseado del prompt.</td>
-                          <td><button onclick="copyPromptWithSearchToClipboard('promptObjetivo', this)">Copiar</button></td>
+                          <td id="tablePromptContexto" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptContexto', this)">Copiar</button></td>
                       </tr>
                       <tr class="fragment">
-                          <td>Requisitos (Detalles)</td>
-                          <td >Lista los pasos o preguntas específicas para lograr el objetivo.</td>
-                          <td><button onclick="copyPromptWithSearchToClipboard('promptRequisitos', this)">Copiar</button></td>
+                          <td id="tablePromptObjetivo" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptObjetivo', this)">Copiar</button></td>
                       </tr>
                       <tr class="fragment">
-                          <td>Diseño (Formato de Salida)</td>
-                          <td >Describe cómo se debe presentar la respuesta o resultado.</td>
-                          <td><button onclick="copyPromptWithSearchToClipboard('promptDiseño', this)">Copiar</button></td>
+                          <td id="tablePromptRequisitos" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptRequisitos', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td id="tablePromptDiseño" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptDiseño', this)">Copiar</button></td>
                       </tr>
                   </tbody>
               </table>
-              <p id="prompt0" style="display:none;">Describe la búsqueda:</p>
-              <p id="promptRol" style="display:none;">Eres un bibliotecario documentalista. Describe la búsqueda:</p>
-              <p id="promptEsencia" style="display:none;">Eres un bibliotecario documentalista. Tu misión es ayudar a entender y desglosar búsquedas complejas. Describe la búsqueda:               </p>
-              <p id="promptContexto" style="display:none;">Eres un bibliotecario documentalista en un entorno académico. Tu misión es ayudar a entender y desglosar búsquedas complejas para investigaciones académicas. Describe la búsqueda: </p>
-              <p id="promptObjetivo" style="display:none;">Eres un bibliotecario documentalista en un entorno académico. Tu misión es ayudar a entender y desglosar búsquedas complejas para investigaciones académicas. Tu meta es que se puedan identificar y seleccionar los recursos más relevantes. Describe la búsqueda:               </p>
-              <p id="promptRequisitos" style="display:none;">Eres un bibliotecario documentalista en un entorno académico. Tu misión es ayudar a entender y desglosar búsquedas complejas para investigaciones académicas. Tu meta es que se puedan identificar y seleccionar los recursos más relevantes. Es esencial que la información esté actualizada y sea relevante para el ámbito académico. Describe la búsqueda:   </p>
-              <p id="promptDiseño" style="display:none;">Eres un bibliotecario documentalista en un entorno académico. Tu misión es ayudar a entender y desglosar búsquedas complejas para investigaciones académicas. Tu meta es que se puedan identificar y seleccionar los recursos más relevantes. Es esencial que la información esté actualizada y sea relevante para el ámbito académico. Deseas que la respuesta venga en forma de lista con recursos y descripciones claras. Describe la búsqueda: .
-              </p>
-          </section>
+            
+                <p id="promptSimple" style="display:none;">Por favor, describe esta búsqueda</p>
+                <p id="promptRol" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed.</p>
+                <p id="promptEsencia" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed. Tu principal misión es ayudar a investigadores a desentrañar búsquedas complejas.</p>
+                <p id="promptContexto" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed. Tu principal misión es ayudar a investigadores a desentrañar búsquedas complejas. Estás en un congreso internacional de bibliotecarios especializados en salud.</p>
+                <p id="promptObjetivo" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed. Tu principal misión es ayudar a investigadores a desentrañar búsquedas complejas. Estás en un congreso internacional de bibliotecarios especializados en salud. Tu objetivo es que tus colegas comprendan su estructura y relevancia.</p>
+                <p id="promptRequisitos" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed. Tu principal misión es ayudar a investigadores a desentrañar búsquedas complejas. Estás en un congreso internacional de bibliotecarios especializados en salud. Tu objetivo es que tus colegas comprendan su estructura y relevancia. Usa una terminología comprensible y ejemplifica cuando sea necesario.</p>
+                <p id="promptDiseño" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed. Tu principal misión es ayudar a investigadores a desentrañar búsquedas complejas. Estás en un congreso internacional de bibliotecarios especializados en salud. Tu objetivo es que tus colegas comprendan su estructura y relevancia. Usa una terminología comprensible y ejemplifica cuando sea necesario. Esto que te pido es muy importante para mí.</p>
+            
+                <script>
+                    // Asegurarse de que el DOM esté completamente cargado
+                   document.addEventListener("DOMContentLoaded", function() {
+    const promptIds = ["promptSimple", "promptRol", "promptEsencia", "promptContexto", "promptObjetivo", "promptRequisitos", "promptDiseño"];
+    let prevText = ""; // Almacenará el texto del prompt anterior
+
+    const fontSizeInEm = "0.8em"; // Tamaño de fuente deseado en em
+
+    promptIds.forEach(function(id) {
+        const promptText = document.getElementById(id).textContent;
+
+        // Determinar el componente nuevo del prompt
+        const newComponent = promptText.replace(prevText, "").trim();
+
+        // Crear el HTML para el texto en negrita y el texto no negrita con el mismo tamaño de fuente en em
+        const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${newComponent}</span>`;
+        const normalText = `<span style="font-size: ${fontSizeInEm};">${promptText.replace(newComponent, "")}</span>`;
+
+        // Actualizar el contenido de la celda de la tabla con ambos textos
+        const tableCellId = "table" + id.charAt(0).toUpperCase() + id.slice(1);
+        document.getElementById(tableCellId).innerHTML = normalText + boldText;
+
+        // Actualizar prevText para la siguiente iteración
+        prevText = promptText;
+    });
+});
+         </script>
+            </section>
+            
+          <!-- Diapositiva 1 -->
+          <section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
+            <style>
+                .flex-container {
+                    display: flex;
+                    flex-direction: column; /* Alinea los elementos en dirección vertical */
+                    justify-content: center; /* Centra los elementos verticalmente */
+                    align-items: center; /* Centra los elementos horizontalmente */
+                    height: 100%; /* Ocupa todo el alto de la diapositiva */
+                }
+        
+                .custom-code-block {
+                    font-size: 0.9em;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    overflow-y: hidden;
+                    line-height: 1.5;
+                }
+        
+                .custom-pre {
+                    vertical-align: top; 
+                    display: block;
+                }
+            </style>
+        
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var codeBlock = document.getElementById("searchCodeBlock");
+                    codeBlock.textContent = search;
+                });
+            </script>
+        
+            <div class="flex-container">
+                <h3 class="color">Descripción simple de la búsqueda</h3>
+                <pre class="custom-pre"><code class="custom-code-block hljs" id="searchCodeBlock">
+                    <!-- Aquí irá el contenido de la variable search -->
+                </code></pre>
+                <div class="aligned">
+                    <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+                    <script>
+                      document.addEventListener("DOMContentLoaded", function() {
+                          // Obtener el contenido del elemento con id="promptContexto"
+                          var promptText = document.getElementById("promptSimple").textContent;
+                          // Insertar el contenido en el bloque "Usuario escribe:"
+                          document.getElementById("userInput").textContent = promptText;
+                      });
+                  </script>
+                  
+                    <blockquote class="size3" id="userInput" style="text-align: left">
+                        <!-- "Por favor, describe esta búsqueda." -->
+                    </blockquote>
+                    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+                    <blockquote class="fragment custom blur size3" style="text-align: left">
+                        "Se trata de una búsqueda extensa que cubre diferentes términos relacionados con la práctica basada en la evidencia en diversas áreas de la salud."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+        
+
+<!-- Diapositiva 2 -->
+<section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
+  <h3 class="color">Bibliotecario experto en ciencias de la salud</h3>
+  <div class="aligned">
+      <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtener el contenido del elemento con id="promptRol"
+            var promptText = document.getElementById("promptRol").textContent;
+            // Insertar el contenido en el bloque "Usuario escribe:"
+            document.getElementById("userInput1").textContent = promptText;
+        });
+    </script>
+    
+    <blockquote class="size3" id="userInput1" style="text-align: left">
+                <!-- userInput1 -->
+    </blockquote>
+    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+    <blockquote class="fragment custom blur size3" style="text-align: left">
+        "Esta búsqueda aborda múltiples aspectos del ámbito de la salud basado en la evidencia. Utiliza una combinación de términos y campos específicos de PubMed para garantizar una cobertura exhaustiva."
+    </blockquote>
+    
+  </div>
+</section>
+
+<!-- Diapositiva 3 -->
+<section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
+  <h3 class="color">Misión del bibliotecario</h3>
+  <div class="aligned">
+      <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtener el contenido del elemento con id="promptEsencia"
+            var promptText = document.getElementById("promptEsencia").textContent;
+            // Insertar el contenido en el bloque "Usuario escribe:"
+            document.getElementById("userInput2").textContent = promptText;
+        });
+    </script>
+    
+    <blockquote class="size3" id="userInput2" style="text-align: left">
+        <!-- userInput2 -->
+    </blockquote>
+    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+    <blockquote class="fragment custom blur size3" style="text-align: left">
+        "Este es un ejemplo clásico de una búsqueda estructurada en PubMed. Se abordan conceptos esenciales de la práctica basada en la evidencia en diversas áreas de la salud. Las múltiples combinaciones de términos buscan garantizar una cobertura completa y resultados relevantes para investigaciones académicas."
+    </blockquote>
+    
+  </div>
+</section>
+
+<!-- Diapositiva 4 -->
+<section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
+  <h3 class="color">Contexto del congreso</h3>
+  <div class="aligned">
+      <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtener el contenido del elemento con id="promptContexto"
+            var promptText = document.getElementById("promptContexto").textContent;
+            // Insertar el contenido en el bloque "Usuario escribe:"
+            document.getElementById("userInput3").textContent = promptText;
+        });
+    </script>
+    
+    <blockquote class="size3" id="userInput3" style="text-align: left">
+        <!-- userInput3 -->
+    </blockquote>
+    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+    <blockquote class="fragment custom blur size3" style="text-align: left">
+        "Frente a colegas especializados, destacaría que esta búsqueda es un compendio de términos que abarcan desde la práctica basada en la evidencia en medicina hasta áreas más específicas como la odontología y enfermería. Es el tipo de búsqueda que garantizaría a los investigadores una revisión exhaustiva del tema en PubMed."
+    </blockquote>
+    
+  </div>
+</section>
+
+<!-- Diapositiva 5 -->
+<section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
+  <h3 class="color">Objetivo de la comprensión</h3>
+  <div class="aligned">
+      <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtener el contenido del elemento con id="promptObjetivo"
+            var promptText = document.getElementById("promptObjetivo").textContent;
+            // Insertar el contenido en el bloque "Usuario escribe:"
+            document.getElementById("userInput4").textContent = promptText;
+        });
+    </script>
+    
+    <blockquote class="size3" id="userInput4" style="text-align: left">
+        <!-- userInput4 -->
+    </blockquote>
+    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+    <blockquote class="fragment custom blur size3" style="text-align: left">
+        "Esta búsqueda es un ejemplo de cómo combinar adecuadamente términos y campos en PubMed para abordar un tema tan amplio como la práctica basada en la evidencia. La estructura meticulosa y la inclusión de múltiples términos garantizan que no se pase por alto ningún artículo relevante. Es una herramienta esencial para cualquier investigador que busque una revisión completa del tema."
+    </blockquote>
+    
+  </div>
+</section>
+
+<!-- Diapositiva 6 -->
+<section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
+  <h3 class="color">Uso de terminología comprensible</h3>
+  <div class="aligned">
+      <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtener el contenido del elemento con id="promptRequisitos"
+            var promptText = document.getElementById("promptRequisitos").textContent;
+            // Insertar el contenido en el bloque "Usuario escribe:"
+            document.getElementById("userInput5").textContent = promptText;
+        });
+    </script>
+    
+    <blockquote class="size3" id="userInput5" style="text-align: left">
+        <!-- userInput5 -->
+    </blockquote>
+    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+    
+    <blockquote class="fragment custom blur size3" style="text-align: left">
+        "Imagina que estás tejiendo una red para capturar todos los artículos sobre práctica basada en la evidencia en PubMed. Cada término en esta búsqueda es como un hilo en esa red. Algunos hilos, como 'evidence-based medicine', son amplios y capturan muchos artículos. Otros, como 'Evidence-Based Dentistry', son más específicos. Al combinar todos estos hilos, garantizas que tu red sea lo suficientemente fuerte y amplia para capturar toda la información relevante sobre el tema, ya sea un estudio amplio o un hallazgo especializado en un área concreta. Es la esencia del arte y la ciencia detrás de la construcción de búsquedas efectivas."
+    </blockquote>
+    
+    </div>
+</section>
+
+<!-- Diapositiva 7 -->
+<section class="vertical" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
+    <h3 class="color">Expectativas de los oyentes</h3>
+    <div class="aligned">
+        <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              // Obtener el contenido del elemento con id="promptDiseño"
+              var promptText = document.getElementById("promptDiseño").textContent;
+              // Insertar el contenido en el bloque "Usuario escribe:"
+              document.getElementById("userInput6").textContent = promptText;
+          });
+      </script>
+      
+      <blockquote class="size3" id="userInput6" style="text-align: left" style="text-align: left">
+          <!-- userInput6 -->
+      </blockquote>
+      <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+      
+      <blockquote class="fragment custom blur size3" style="text-align: left">
+          "Pongámonos en situación. Todos aquí somos expertos en la búsqueda de información. Pero, ¿qué sucede cuando nos enfrentamos a un tema tan vasto y esencial? Esta búsqueda es nuestra herramienta, nuestro mapa. Es como si tuviéramos un GPS que nos guía a través del vasto océano de información en PubMed, asegurándose de que no nos perdamos ningún detalle crucial. Al utilizar términos específicos y generales, es como si estuviéramos ajustando el zoom de nuestro mapa, capturando desde las grandes ideas hasta los detalles más específicos. Y al hacerlo, garantizamos que cada investigación sea exhaustiva y relevante, un reflejo de nuestra dedicación y pasión por el conocimiento."
+      </blockquote>
+      
+    </div>
+</section>
+
+
           
-          
+        </section>
            
  <section>
         <h6 class="color">Ejemplos de Prompts</h6>
@@ -1189,7 +1449,17 @@ button:hover {
   </section>
 
   
+  <section class="full-height" data-background-iframe="https://pbs.twimg.com/media/F8P5MjzbsAEcIIg?format=jpg&name=large" data-background-opacity="1" data-audio-text="Tras observar el impacto disruptivo en el ámbito científico, esta diapositiva nos muestra el eco que ChatGPT ha tenido en el público general. El pico de visitas diarias a la página Chat GPT en Wikipedia se alcanzó el 30 de marzo de 2023, con un impresionante total de 590,632 visitas en un solo día.
+  Comparando con el promedio diario de visitas en diciembre de 2022, esto representa un asombroso aumento del 665.15%.
+  Esta información pone de manifiesto la relevancia y el crecimiento explosivo de interés en Chat GPT desde su creación en diciembre de 2022 hasta su punto máximo en marzo de 2023. A pesar de las fluctuaciones posteriores, alcanzar un crecimiento tan significativo en un período relativamente corto es notable y habla de la importancia y el impacto del tema en la comunidad global. ">
+  <div class="footer" style="margin-bottom: -4vh; background-color: rgba(0, 0, 0, 0.874);">
+    <H6 class="color">ChatGPT ya ya puede "ver" 👁️, "oir"👂 y "hablar"🗣️</H6>
+</div>
 
+   <aside class="notes">
+   En esta imagen vemos un caso de estudio de una versión del chatgpt multimodal, que ya puede ver, oír y hablar. En este ejemplo, con una captura de pantalla de cuatro libros en una estantería, le pedimos que elabore un resumen estructurado para facilitar el uso de "perlas de conocimiento" en contextos sanitarios
+   </aside>  
+</section>
 
   <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
     <h2 class="color">Trucos y recomendaciones</h2>
@@ -1201,7 +1471,10 @@ button:hover {
       <li>Parece que tratarle de forma educada y con emociones, da mejores resultados: Por favor, gracias, ¡Es muy importante para mí que hagas esta tarea bien!</li>
       
       <li>TL;DR (Too Long; Didn't Read): Si la respuesta de ChatGPT es demasiado larga, puedes escribir "TL;DR" para pedirle un resumen conciso.</li>
-      <li>Mantente al día con lo nuevo. Un recurso muy útil basado en IA: <a href="https://www.perplexity.ai/"  target="_blank">Perplexity</a>. Ver <a href="https://www.perplexity.ai/search/a276ad2e-7ff0-4ee4-a18f-6adb1a22f085?s=u"  target="_blank">Búsqueda</a></li>
+      <li>Mantente al día con lo nuevo. Por ejemplo, la multimodalidad o los nuevos plugins </li>
+      <li>Explora otros recursos I.A.. Un repositorio muy útil: <a href="https://theresanaiforthat.com/" target="_blank">There's an Ai for That (hay una IA para eso)</a></li>
+        <li>Un recurso muy útil basado en IA: <a href="https://www.perplexity.ai/"  target="_blank">Perplexity</a>. Ver <a href="https://www.perplexity.ai/search/a276ad2e-7ff0-4ee4-a18f-6adb1a22f085?s=u"  target="_blank">Búsqueda</a></li>
+      
 
     </ul>
     <aside class="notes">
@@ -1479,10 +1752,10 @@ dependencies: [
 		pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
 	}, */
         // ...
-
+/* https://github.com/rajgoel/reveal.js-plugins/blob/master/audio-slideshow/README.md */
  audio: {
    prefix: 'chalkboard/',
-   suffix: '.ogg',
+   suffix: '.mp3',
    defaultDuration: 5,
    /* Camila, Sofia, Diego, Luna https://www.voicerss.org/api/ */
    textToSpeechURL: "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Diego&c=ogg&r=1&f=48khz_16bit_stereo&src=",
@@ -1542,6 +1815,8 @@ Reveal.getPlugin("RevealChalkboard").configure(config);
 input.blur();
 }
 
+
+/* para fecha del día */
 function getYesterdayDate() {
       var ayer = new Date(Date.now() - 86400000);
       var dia = ayer.getDate();
@@ -1550,16 +1825,20 @@ function getYesterdayDate() {
       return dia.toString() + '/' + mes.toString() + '/' + año.toString();
     }
 
+    Reveal.addEventListener('slidechanged', function(event) {
+    // Verifica si la diapositiva actual tiene un elemento con el ID que necesitas
+    var fechaSpan = event.currentSlide.querySelector('[id^="fecha-de-ayer"]');
+    if (fechaSpan) {
+        fechaSpan.innerHTML = getYesterdayDate();
+    }
+});
     var fechaSpan = document.getElementById('fecha-de-ayer');
     fechaSpan.innerHTML = getYesterdayDate();
 
-
-
-  
  
    
 
-
+/* para tabla prompts */
 
     function copyToClipboard(elementId, btnElement) {
   var text = document.getElementById(elementId).innerText;
@@ -1581,9 +1860,10 @@ function getYesterdayDate() {
   }
 }
 
-                            
+           /* para tabla framework incremental */                 
 
   var search = '((((("critical appraisal" OR "journal club" OR (journal[TIAB] AND club*[TIAB])))) OR ((((("evidence-based practice" OR "evidence-based policy" OR "evidence based practice" OR "evidence-based medicine" OR "evidence based medicine" OR "evidence-based health care" OR "evidence-based healthcare" OR "evidence based health care" OR "evidence based health care" OR "evidence-based dentistry" OR "evidence based dentistry" OR "Evidence-Based Facility Design" OR "evidence-based nursing" OR "evidence based nursing" OR "Evidence-Based Emergency Medicine")))) OR (((((("Evidence-Based Practice"[Mesh]) OR "Evidence-Based Practice/education"[Mesh]) OR "Evidence-Based Medicine"[Mesh]) OR "Evidence-Based Dentistry"[Mesh]) OR "Evidence-Based Nursing"[Mesh] OR "Evidence-Based Facility Design"[Mesh] OR "Evidence-Based Emergency Medicine"[Mesh])))))'; // Búsqueda completa
+  document.getElementById("searchString").innerText = search;
               function copyPromptWithSearchToClipboard(elementId, btnElement) {
                   var text = document.getElementById(elementId).innerText + ' ' + search;
                   var textarea = document.createElement("textarea");
