@@ -363,6 +363,50 @@ section .custom-table th {
     font-weight: bold !important;
 }
 
+/* CSS para cajas de https://rs-math.net/beamerkiller/ */
+.reveal .box {
+    width: auto;
+    margin: 1ex auto;
+    line-height: 1.5;
+    padding: 0;
+    text-align: center;
+    overflow: auto;
+    text-align: left;
+    border-radius: 0.5em;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 8px 8px 7px 5px rgba(9, 9, 9, 0.512); /* Sombra más sutil */
+/*     box-shadow: 8px 8px 4px 2px rgba(0, 0, 0, 0.4);
+ */}
+
+.reveal .box .title,
+.reveal .box .content {
+    padding: 0.8ex 3%;
+    border: #ddd 1px solid; /* Borde sutil */
+    
+}
+
+.reveal .box .title {
+    color: rgb(251, 183, 56); /* Aplicando el color directamente */
+    text-shadow: 2px 2px 2px #555; /* Sombra que contraste con el fondo de pizarra */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparente */
+    border-bottom: none;
+    border-radius: 0.5em 0.5em 0 0;
+    font-size: 1.4em;
+    font-weight: 600;
+    
+}
+
+.reveal .box .content {
+    color: #ffffff; /* Blanco */
+    text-shadow: 2px 2px 2px #555; /* Sombra que contraste con el fondo de pizarra */
+    background-color: rgba(0, 0, 0, 0.2); /* Casi transparente */
+    border-radius: 0 0 0.5em 0.5em;
+   
+    font-size: 1.1em;
+}
+
+
+
   </style>
 </head>
 
@@ -512,7 +556,7 @@ section .custom-table th {
    </div>
     
        <aside class="notes">
-        Lo que observamos aquí es una representación visual de una tendencia verdaderamente impresionante en el mundo de la investigación. Desde 2018, hemos sido testigos de un aumento meteórico en las publicaciones relacionadas con la inteligencia artificial, reflejando cómo este campo se ha convertido en una fuerza dominante en la investigación científica. A medida que avanzamos hacia 2023, algo fascinante sucede: casi 1 de cada 1000 publicaciones en PubMed está relacionada con modelos de lenguaje como ChatGPT, mientras que casi 1 de cada 100 trata sobre inteligencia artificial en general. Esto no es solo un testimonio de la rapidez con la que estos campos están evolucionando, sino también de su creciente importancia en nuestra sociedad. 
+        Lo que observamos aquí es una representación visual de una tendencia verdaderamente impresionante en el mundo de la investigación. Desde 2018, hemos sido testigos de un aumento meteórico en las publicaciones relacionadas con la inteligencia artificial, reflejando cómo este campo se ha convertido en una fuerza dominante en la investigación científica. A medida que avanzamos hacia 2023, algo fascinante sucede: casi 1 de cada 1000 publicaciones en PubMed está relacionada con modelos de lenguaje como ChatGPT, mientras que casi 1 de cada 100 trata sobre inteligencia artificial en general. Esto no es solo un testimonio de la rapidez con la que estos campos están evolucionando, sino también de su creciente importancia en nuestra sociedad. ¿que podemos pensar sobre esta tendencia de investigación?
        </aside>
      </section>
 
@@ -756,11 +800,11 @@ section .custom-table th {
 
 </section>
 
-<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO"> <h2 class="color">Ejemplos de generación de texto por CHATGPT</h2> <ul> <li><strong>Paciente: </strong>¿Qué es la hipertensión?</li> <li><strong>CHATGPT: </strong>La hipertensión es una afección en la que la presión arterial en las arterias es elevada. Es una de las enfermedades cardiovasculares más comunes y puede ser potencialmente peligrosa si no se trata. </li> <li><strong>Paciente: </strong> ¿Cuáles son los síntomas de la neumonía?</li> <li><strong>CHATGPT: </strong> Los síntomas de la neumonía incluyen tos, fiebre, dificultad para respirar, dolor de pecho y fatiga. Si tienes alguno de estos síntomas, es importante que consultes a tu médico.</li> <li><strong>Paciente: </strong> ¿Cuáles son las causas de la diabetes tipo 2?</li> <li><strong>CHATGPT: </strong> La diabetes tipo 2 se produce cuando las células del cuerpo se vuelven resistentes a la insulina o cuando el cuerpo no produce suficiente insulina para mantener los niveles normales de azúcar en sangre. Los factores que pueden contribuir a la diabetes tipo 2 incluyen la obesidad, la falta de ejercicio físico y una dieta poco saludable.</li> </ul>
+<!-- <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO"> <h2 class="color">Ejemplos de generación de texto por CHATGPT</h2> <ul> <li><strong>Paciente: </strong>¿Qué es la hipertensión?</li> <li><strong>CHATGPT: </strong>La hipertensión es una afección en la que la presión arterial en las arterias es elevada. Es una de las enfermedades cardiovasculares más comunes y puede ser potencialmente peligrosa si no se trata. </li> <li><strong>Paciente: </strong> ¿Cuáles son los síntomas de la neumonía?</li> <li><strong>CHATGPT: </strong> Los síntomas de la neumonía incluyen tos, fiebre, dificultad para respirar, dolor de pecho y fatiga. Si tienes alguno de estos síntomas, es importante que consultes a tu médico.</li> <li><strong>Paciente: </strong> ¿Cuáles son las causas de la diabetes tipo 2?</li> <li><strong>CHATGPT: </strong> La diabetes tipo 2 se produce cuando las células del cuerpo se vuelven resistentes a la insulina o cuando el cuerpo no produce suficiente insulina para mantener los niveles normales de azúcar en sangre. Los factores que pueden contribuir a la diabetes tipo 2 incluyen la obesidad, la falta de ejercicio físico y una dieta poco saludable.</li> </ul>
   <aside class="notes">
     Notas del Orador
   </aside>
- </section>
+ </section> -->
       
       <section >
         <h2>¿Qué son los prompts?</h2>
@@ -913,24 +957,62 @@ section .custom-table th {
           </aside>
         </section> -->
 
-        <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
-          <h3 class="color">El código: lenguaje universal para creación de contenidos</h3> 
+        <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
+          <h3 class="color">El código: lenguaje universal para creación de contenidos</h3>
           <div class="aligned">
-            <p class="aligned mensaje-usuario">👩🏽‍🚀Texto de ejemplo:</p>
-            <blockquote class="size3">
-              "El proceso de fotosíntesis convierte la luz solar en energía química que se utiliza para alimentar a la planta.Dame el código de un mapa mental ../..  para entenderlo de forma muy clara"
-            </blockquote>
-            <p class="aligned mensaje-chatgpt" >🤖ChatGPT responde:</p>
-            <figure class="fragment custom blur">
-              <img src="https://www.plantuml.com/plantuml/svg/ZPJRJXin48RlzobSSOb4at0W4gY2HesuA0S1RQzdxKaonOVjsCk1ge_45O-G5-kiTvM5GAMkeYZ-FPx_cz-h7CK4d1nvuw0gFgG5EbIL1V95l25V0ODJ9UYREOVQcqcmWTN6D3ylAe0vt5qlIDzuZ54DjtPVR1gSGMtJDFXq1jB-1Eqj9jBmViqLFQ8QxXM7CJrO_5JuO53zBfGy5s0C-RaQZlBo57XENctdnKbWUfJZO8yjpRr3dvIMB-Iy_PKyjlIbhN4bzSpRMuEiNhPpiaTMEuFEvvvSxNwGIGlHMh57tSdhrNZVaGruQCJYJy4XfBD-WiRpgfbBZRS61-Av1iTeil9vBVAx1ILymxTECXP3Yp3h3TyS6Gt-cPR5MNeLy_v_3_fEHFtz37S5IqELAFWkXjUc1x9_-B6xxlwTw2_-JHmRNyRJyNJQxWKso9q-6EplJqOlzFw2M_Lg0IRSoNJv9HKXsxJSUy8jACKQGmwWWUjWLckni2QVs1GnXRXyyWaZnM9pKnsNCR2cvRDN1fMj7rKC5bXLWgc5DSp8WbHAwGNDcon2L1Whr0GMvQTNY_0JedfGWf94kKKsc7jVC_Wu2-nWPJ0v7qdboUYyEJYtjGuHH0ZtowSv-f1zBX6qfk2brwzw-UH8ItjoLMqZ68WPpKB3sfXyYq4QhterUIYmr902grdjkrOE4vJBPqkw6-SKV49FZfgPX44pwdQL6rPMzdEflFSbSZ-3ZA232ohMPSN1r3grt1C9dAcisy9RIc1Lyo56nH8PCPGMYoFqflid-mi0" alt="Esquema del proceso de fotosíntesis" />
-              <figcaption class="size3">Esquema del proceso de fotosíntesis</figcaption>
-            </figure>
+              <p class="aligned mensaje-usuario">👩🏽‍🚀Usuario escribe (Prompt):</p>
+              <blockquote class="size3">
+                  "Dame el código de mapa mental sobre los pasos para diseñar una búsqueda eficaz en PubMed"
+              </blockquote>
+              <p class="aligned mensaje-chatgpt">🤖ChatGPT responde: (botón izquierdo ratón y ALT para zoom en la imagen)</p>
+              <figure >
+                  <img src="https://www.plantuml.com/plantuml/svg/bLPFRrj54B_xKmpYKCbA7CTEKZTOeMvijvL8Qf805oxpzesTRVVjkhExAMt5ZMy0GWW9SU7I0mV4hHSa_8Nu2EneusV7QIHG3k_jxFpvpMz-yvo7FY27IjkomdcZyL6uf8fWRb3RXd-XxHmPAoXGlPYnYxOyTiOnV3mUoD-Q1pAxLnUNMhsmv3tijdfhboLDCPemTZQSOae_O8tcm_Vd-Wr1Tx_HwFlmsj1HmxgIu6q30622PQdj37OxSeGJv9csi2S7UE9OlqdnQ0P6psn5De0Y6uZb6ZxJbgwXjzltxnztQkiASxUrBrOuotso9OQzR3h1RtGLgwzq6IvXlzCM8zHmEzryljcUcCuliNIl17EdyMs3dGkdgtQa-haq2GzQxK-whVOcqj51zy7UWLZXqHq3sCIxlu7ie3xdIe-SAHCIGpZDI6vbwEpVoQUXQRWnYDv6jVOTF6pmrswlpIz59K3zdUjnhwbYDVdRxOzwuzvudEySbyJrSBl3_KThzjLuEwtzpPcqiWoaK8Ps860s8Ap8U_jXCbVkPwG2sbdjMZEpsxkB6J5jOlzV_OgO_tk_2Mv3uJnePs4GW-D3EBx4y7XoyRLDqbDabSPaOyAWhmYENLKvws4GM1THwSMVTllK9IjnSZImrsh3KzaoYohbJ4qrWWw6eEzJtuUTzb4_7WsrfyKV3if4sUAzVncfH1XDjS8tG1OciJYXihyJZ_exAKf4q8I-aWOFhtVWgDdCNircVqTkM9oQyC-lt_-qwTelZeOqrLOBMWib6RYW2lixnL4TsqonJqkoGGiAXWdJBDg0oJkrSqK-w1bAl1NN9lpzr-TnyGvUHatim6D130wOl3DNn9-A4mp98xCp1ZdHPXNDW_DmRF2ASf896YmOFIYnfVYmUCULjicBoT0Lsa0Uq418S5iIat1fsSFrZ6ANOe4a5XbU2h9LAkyia2Shuo4F8amm2CMI-5QZiRqjnFrI4zSPF1ZsnaBSEHbIIzxWOfdq1dVRAVoBe8t0Mhd02Pq_oTW6Ib59B9qCjH9P86i7uY1TRL0VRcGG9hAIocHHpeB9pznyfgub65QbasuB9hz1ieDfUf07woG-aDLbCfDT1p99Z2IB9uR5-w1hmcG2AJBIbPDCL17FICQpPE-t7slsndk3pi6ki9Tcv0F75O46OPGi66YcyHQ9p-R4gKqcdtRN6KAxd6vDx-1qk0NFphRWzDb5HgPSLMYxpbihJyGxgJX1NhmJe7h9XmJXZEFy1jUlGMMmca7UeWde9VdSq7EycVE2erKeGrcIF7fEoT4TmYNDCRXcXbP4BmFDjWgtbcyqG_DwUL9aJ3J8Mq11jQwN-8VlQZPxtMvlT2nidiaIOwN91fVmZgxGnBoJjrPvmf4AJ0yokX9sCimpmanZj6iB0FFQBUCcoPmEJ4A322ylt-1vz85kpJ7dFd7bBG4xSAkHUfejtcVvhXA3AqI8TOcrfgJESS9ROfahV4byNS7WyWEXDCheifj4I7haiFXTHNabAr9dALNl-SyhfOxRxOEHSFiu8gSCmklGgLYH3Hd5BP6UfPQbTTvae0xSr5KMQ9OBnApaSYcfN9XNlmERYZS8qsWp8_VEvJjvJiZgyfvqcty3SgOJb9qczWG35I9AUEbojhI8KpsBWXeDSS3hjMPIkj2yN6po8POwlNXNC04jlxoDXsJBvR_4_m80" alt="Esquema del proceso de fotosíntesis" style="width: 65%; max-height: calc(100% - 100px); display: block;  margin-left: auto; margin-right: auto; margin-top: -2vh;"/>
+                  <figcaption class="size3">Esquema del diseño de búsqueda avanzada en PubMed</figcaption>
+              </figure>
           </div>
           <aside class="notes">
-            Notas del Orador
+              Notas del Orador
           </aside>
-        </section>
-            </section>
+      </section>
+      <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.5" data-audio-text="AUDIO">
+        <h3 class="color">El código: lenguaje universal para creación de contenidos</h3>
+        <div class="aligned">
+            <p class="aligned mensaje-usuario">👩🏽‍🚀Usuario escribe (Prompt):</p>
+            <blockquote class="size3">
+                "Dame el código de mapa mental sobre los pasos para diseñar una búsqueda eficaz en PubMed"
+            </blockquote>
+            <p class="aligned mensaje-chatgpt">🤖ChatGPT responde: (botón izquierdo ratón y ALT para zoom en la imagen)</p>
+            <figure>
+                <img src="https://www.plantuml.com/plantuml/svg/bLPFRrj54B_xKmpYKCbA7CTEKZTOeMvijvL8Qf805oxpzesTRVVjkhExAMt5ZMy0GWW9SU7I0mV4hHSa_8Nu2EneusV7QIHG3k_jxFpvpMz-yvo7FY27IjkomdcZyL6uf8fWRb3RXd-XxHmPAoXGlPYnYxOyTiOnV3mUoD-Q1pAxLnUNMhsmv3tijdfhboLDCPemTZQSOae_O8tcm_Vd-Wr1Tx_HwFlmsj1HmxgIu6q30622PQdj37OxSeGJv9csi2S7UE9OlqdnQ0P6psn5De0Y6uZb6ZxJbgwXjzltxnztQkiASxUrBrOuotso9OQzR3h1RtGLgwzq6IvXlzCM8zHmEzryljcUcCuliNIl17EdyMs3dGkdgtQa-haq2GzQxK-whVOcqj51zy7UWLZXqHq3sCIxlu7ie3xdIe-SAHCIGpZDI6vbwEpVoQUXQRWnYDv6jVOTF6pmrswlpIz59K3zdUjnhwbYDVdRxOzwuzvudEySbyJrSBl3_KThzjLuEwtzpPcqiWoaK8Ps860s8Ap8U_jXCbVkPwG2sbdjMZEpsxkB6J5jOlzV_OgO_tk_2Mv3uJnePs4GW-D3EBx4y7XoyRLDqbDabSPaOyAWhmYENLKvws4GM1THwSMVTllK9IjnSZImrsh3KzaoYohbJ4qrWWw6eEzJtuUTzb4_7WsrfyKV3if4sUAzVncfH1XDjS8tG1OciJYXihyJZ_exAKf4q8I-aWOFhtVWgDdCNircVqTkM9oQyC-lt_-qwTelZeOqrLOBMWib6RYW2lixnL4TsqonJqkoGGiAXWdJBDg0oJkrSqK-w1bAl1NN9lpzr-TnyGvUHatim6D130wOl3DNn9-A4mp98xCp1ZdHPXNDW_DmRF2ASf896YmOFIYnfVYmUCULjicBoT0Lsa0Uq418S5iIat1fsSFrZ6ANOe4a5XbU2h9LAkyia2Shuo4F8amm2CMI-5QZiRqjnFrI4zSPF1ZsnaBSEHbIIzxWOfdq1dVRAVoBe8t0Mhd02Pq_oTW6Ib59B9qCjH9P86i7uY1TRL0VRcGG9hAIocHHpeB9pznyfgub65QbasuB9hz1ieDfUf07woG-aDLbCfDT1p99Z2IB9uR5-w1hmcG2AJBIbPDCL17FICQpPE-t7slsndk3pi6ki9Tcv0F75O46OPGi66YcyHQ9p-R4gKqcdtRN6KAxd6vDx-1qk0NFphRWzDb5HgPSLMYxpbihJyGxgJX1NhmJe7h9XmJXZEFy1jUlGMMmca7UeWde9VdSq7EycVE2erKeGrcIF7fEoT4TmYNDCRXcXbP4BmFDjWgtbcyqG_DwUL9aJ3J8Mq11jQwN-8VlQZPxtMvlT2nidiaIOwN91fVmZgxGnBoJjrPvmf4AJ0yokX9sCimpmanZj6iB0FFQBUCcoPmEJ4A322ylt-1vz85kpJ7dFd7bBG4xSAkHUfejtcVvhXA3AqI8TOcrfgJESS9ROfahV4byNS7WyWEXDCheifj4I7haiFXTHNabAr9dALNl-SyhfOxRxOEHSFiu8gSCmklGgLYH3Hd5BP6UfPQbTTvae0xSr5KMQ9OBnApaSYcfN9XNlmERYZS8qsWp8_VEvJjvJiZgyfvqcty3SgOJb9qczWG35I9AUEbojhI8KpsBWXeDSS3hjMPIkj2yN6po8POwlNXNC04jlxoDXsJBvR_4_m80" alt="Esquema del diseño de búsqueda avanzada en PubMed" style="width: 60%; max-height: calc(100% - 150px); display: block; margin-left: auto; margin-right: auto; margin-top: -3vh;" />
+                <figcaption class="size3">Esquema del diseño de búsqueda avanzada en PubMed</figcaption>
+            </figure>
+        </div>
+        <aside class="notes">
+            Notas del Orador
+        </aside>
+    </section>
+    <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.5" data-audio-text="AUDIO">
+      <h3 class="color" ">El código: lenguaje universal para creación de contenidos</h3>
+      <div class="aligned">
+          <p class="aligned mensaje-usuario" ">👩🏽‍🚀Usuario escribe (Prompt):</p>
+          <blockquote class="size3" ">
+              "Dame el código de mapa mental sobre los pasos para diseñar una búsqueda eficaz en PubMed"
+          </blockquote>
+          <p class="aligned mensaje-chatgpt" ">🤖ChatGPT responde: (botón izquierdo ratón y ALT para zoom en la imagen)</p>
+          <figure>
+              <img src="https://www.plantuml.com/plantuml/svg/bLRBRXl74jtpA-hYBWmG4aMHeaph4hgcHT4s4CcC92URR6fwYbJRFTrqF-JOHdRv0mT142389XiliWYoyoP0-4FvX5HFQpZKo08I2D3CrDJZrAbJFNpeF5fVI9qNk6or_kClgI1OAfIwvLvAlKIB1MGeNYwi2Je_CifO-Ezq7FysFD1Qy_hYKegNcfo3tSvmusLESmpAJutsfyZfnrQY-lJxS_cMe3zejKRElr5qsD8c9tZN0W2OOPvBlO3TNlbuWdOXDUoL3q-CbMyv7jLOoOKkI7iG_8zi-VepgUaQUhTx__vHRssjCVSxWz9wblgqcYpi3QvBVIsBK7mfSty9WrwtDAxXzlhbSwEzQ3g_nDoyZfXxhMzQrXX_MhSJgv_79k51f_k_VgVRH7gytt-mjrzQ7zqnW2RUGGFPVlrSLdfaLCv85E6yGjB8q1lSoQUYkRynY66ZMlVJF3JvwtOtviTH36YqSptk3LNKax_T_l5mEfnEqpjZSxBhuVOdWqSRzdgylSwWEPDEaa4ibA3jHp0D23LvxpvDPkr-HiAZNjIk5JExmxkOYQO6zd_NRnJpF--NuRO4Bhqq6iR16ti0HvVe7yyklj8iFK5QI6IR9VJoYk3858NH3iRUoYm8kVfTRvyQjf9bHmLxdIuyZLkcKN1ERghbfLS48yTz7_IwXwDmE96ELhyPo9corKVtAb2ES3oN0jy2QPY5x8JoqKuu7ErmL1H16qOYDdXmlGE7xNRoQhT7E-MRwDI6ltv-_qFJTPGTJcWkjIpHGauABgZ0qKvsk8vjS-pJdBIN4OM5cQL5OB6pDxTpHSxB1PRnqRKDV_xnULXzW5T1aZNWC2CB1Ymvewx8_h_CDo4N3q6bq39jMj3I6mT72gye9PcXmioY0n5j7EzN7ooVlEnbIT4LCeyEK85dk9rM6M9btCFDZD4UYtcAiMZXLKHMft8yMNBb71MdYy84XP1Ln7SgudvQ4zSRFvWCfv6uSr8aAjxWeafwYxldNge8gtQ14pf_ah2DXQ2SREna8aKf2swZTE2kcjJx6naY4qb9ELi4zwBIDJMVg2kprALPjvabro3Pm9mlp80sCTwJbZcRIMy2cJ4ZR75aOVNHopLXSG8S6UZAn4nKa5rG70-pjxtDxFto_PgzwTwujxyRsUCPEMz3JQ1YcRC5FItaJG5kSvPdIxBS9aFdtJMAKAVfRj0xFfrimREpBJXzTf6G2LDaKc_orYcJFNVbVitGhZv4eBBY8mRXmeRb3QxVW4XWfItlWlBeOlAbeXTuC-U53LgKGwb8Fdv1x6WEu9AMw4qxGSk2YmDDjWAtgZjQe7fJFGbIAYYqMq1UL6n-z-sQpM6_Fpm-YcoUnIN6GZBlXl4UNw4AQITlCJcpWJBa2obPBWLRsNn6c6WCUcC1OBbsIxYfp6p1Kab3Nb4wVX6SfrjpJBbFJ7vBm0PCFL97YzN79DywCPWi2h4giTbKh7F4U7FCKuKlo5vNK5WT449Y75roYn4nFLg_-bM4U4iwIZr2M2lr_O-rKgVTxlvnvFOnzyiP8gyJ8qBykjz1xHct75ktcmn44TI13LqbWIQvG4XApYj9fSAs_Wuq5QyGva4dHkwTntFodD2Aotkns_GDI9bECEuqMKSm5ZvWMSQaRBo8Sxa84JKgiXwlrzgIa9cqrMAJyo6NvPcPMGAgJjxMGzBvzK_Ylm40" alt="Esquema del diseño de búsqueda avanzada en PubMed" style="width: 1010%; max-height: calc(100% - 100px); display: block; margin: 0 auto; margin-top: -2vh;">
+
+             <figcaption class="size3 color" style="margin-top: -5vh;font-weight: 900;">Esquema del diseño de búsqueda avanzada en PubMed</figcaption>
+          </figure>
+      </div>
+      <aside class="notes">
+          Notas del Orador
+      </aside>
+  </section>
+  
+    
+      
+          <!-- </section> lo elimino porque creo no aporta -->  
             <section>
               <section>
                 <h3 class="color">Prompt estructurado para describir una búsqueda</h3>
@@ -1540,6 +1622,32 @@ section .custom-table th {
    </aside>  
 </section>
 
+<section data-transition="zoom" class="full-height" data-background-image="../ernestobarrera.github.io/assets/images/ChatGPT_Biblio/bibliotecaria_sanitarios.png" data-background-opacity="0.8" data-audio-text="AUDIO" style="display: flex; flex-direction: column; justify-content: space-between;">
+    
+  <!-- Header: Título en la parte superior -->
+  <div class="header">
+      <h2 class="title color">crear imagenes</h2>
+  </div>
+
+
+  <!-- Footer: Contenido al pie de la diapositiva -->
+  <div class="footer">
+    <div class="box" style="margin: auto 0;">
+      <div class="title" style="font-size: 80%;">Prompt para DALL-E 3</div>
+      <div class="content" style="font-size: 70%;">
+          Foto ultra-realista en una biblioteca, donde una bibliotecaria documentalista con suéter beige está sentada frente a dos monitores. A su lado, una médica de tez clara y un enfermero de ascendencia africana escuchan atentamente. La habitación tiene un ambiente cálido, con estanterías de madera y plantas verdes. La luz es suave y difusa, creando un ambiente de tranquilidad y confianza. Los tres parecen estar en medio de una conversación amigable y colaborativa. Los monitores muestran una búsqueda en PubMed y en ChatGPT, respectivamente.
+      </div>
+  </div>
+  </div>
+
+  <aside class="notes">
+      Notas del Orador
+  </aside> 
+</section>
+
+
+
+
   <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
     <h2 class="color">Trucos y recomendaciones</h2>
     <ul>
@@ -1578,14 +1686,14 @@ section .custom-table th {
       Notas del Orador
     </aside>
   </section>
-  <section>
+ <!--  <section>
   <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
     <h2 class="color">Problemas comunes</h2>
     <ul>
       <li><strong>Alucinaciones:</strong> A veces, ChatGPT puede generar información que parece correcta, pero que en realidad es incorrecta o inventada. Siempre verifica la información generada por ChatGPT.</li>
       <li><strong>Ventana de tokens:</strong> ChatGPT solo puede tener en cuenta los últimos 2048 tokens de contexto. Si tu conversación es más larga, puede que no recuerde información de partes anteriores de la conversación.</li>
       <li><strong>Resultados cambiantes:</strong> ChatGPT no reproduce la misma pregunta a la misma respuesta</li>
-      <li><strong>Antropomorfización:</strong> Aunque es tentador pensar en ChatGPT como un humano, recuerda que es una IA y no comprende el mundo de la misma manera que un humano. ChatGPT está diseñado para generar la respuesta más probablemente correcta, no necesariamente la respuesta correcta. Este sesgo de antropomorfización puede llevar a malentendidos sobre las capacidades de la IA.</li>
+      <li><strong>Antropomorfización:</strong> Aunque es tentador pensar en ChatGPT como un humano, e incluso puede ser conveniente tratarle como tal, recuerda que es una IA y no comprende el mundo de la misma manera que un humano. ChatGPT está diseñado para generar la respuesta más probablemente correcta, no necesariamente la respuesta correcta. Este sesgo de antropomorfización puede llevar a malentendidos sobre las capacidades de la IA.</li>
       <li><strong>Dependencia:</strong> Debería ser usado, en nuestro contexto, como un asesor y no como el protagonista</li>
       <li><strong>Cuellos de botella:</strong> Versión de pago, sensible a accesos concurrentes y horas punta</li>
       <li><strong>Uso generalizado: </strong>La Maldición de la Recursividad: Riesgo del Colapso del Modelo en el Entrenamiento con Datos Generados (1) <br><span style="font-size: 0.5em;">(1) Shumailov I, Shumaylov Z, Zhao Y, et al. The Curse of Recursion: Training on Generated Data Makes Models Forget. arXiv.org, https://arxiv.org/abs/2305.17493v2 (2023, accessed 8 October 2023)</span></li>
@@ -1610,7 +1718,7 @@ section .custom-table th {
       Notas del Orador
     </aside>
   </section>
-</section>
+</section> -->
 
 <!-- <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
   <h2 class="color">PubMed vs ChatGPT</h2>
@@ -1662,6 +1770,42 @@ section .custom-table th {
   </aside>
 </section> -->
 
+<section data-transition="zoom" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
+  <h2 class="title color">Elementos para el Debate</h2>
+  <section > <!-- First vertical slide: Pros -->
+      <div class="box" >
+          <div class="title color">Pros</div>
+          <div class="content">
+            <ul>
+              <li>Lenguaje conversacional </li>
+              <li>Multimodal</li>
+         
+            </ul>
+      
+          </div>
+      </div>
+  </section>
+  <section data-transition="zoom" > <!-- Second vertical slide: Contras -->
+    <div class="box" style="font-size: 70%;">
+        <div class="title color">Contras</div>
+        <div class="content">
+              
+        <ul>
+          <li>Latencia del modelo </li>
+          <li>LLM no son deterministas</li>
+          <li><strong>Alucinaciones:</strong> A veces, ChatGPT puede generar información que parece correcta, pero que en realidad es incorrecta o inventada. Siempre verifica la información generada por ChatGPT.</li>
+          <li><strong>Ventana de tokens:</strong> ChatGPT solo puede tener en cuenta los últimos 2048 tokens de contexto. Si tu conversación es más larga, puede que no recuerde información de partes anteriores de la conversación.</li>
+          <li><strong>Resultados cambiantes:</strong> ChatGPT no reproduce la misma pregunta a la misma respuesta</li>
+          <li><strong>Antropomorfización:</strong> Aunque es tentador pensar en ChatGPT como un humano, e incluso puede ser conveniente tratarle como tal, recuerda que es una IA y no comprende el mundo de la misma manera que un humano. ChatGPT está diseñado para generar la respuesta más probablemente correcta, no necesariamente la respuesta correcta. Este sesgo de antropomorfización puede llevar a malentendidos sobre las capacidades de la IA.</li>
+          <li><strong>Dependencia:</strong> Debería ser usado, en nuestro contexto, como un asesor y no como el protagonista</li>
+          <li><strong>Cuellos de botella:</strong> Versión de pago, sensible a accesos concurrentes y horas punta</li>
+          <li><strong>Uso generalizado: </strong>La Maldición de la Recursividad: Riesgo del Colapso del Modelo en el Entrenamiento con Datos Generados (1) <br><span style="font-size: 0.5em;">(1) Shumailov I, Shumaylov Z, Zhao Y, et al. The Curse of Recursion: Training on Generated Data Makes Models Forget. arXiv.org, https://arxiv.org/abs/2305.17493v2 (2023, accessed 8 October 2023)</span></li>
+        </ul>
+      
+        </div>
+    </div>
+</section>
+</section>
 
 <section data-background-image="https://media.giphy.com/media/l1J9xRLvfhAGVeiys/giphy.gif" data-audio-text="AUDIO" >
       <h3 class="color">Confidencialidad y ética</h3>
@@ -1801,8 +1945,9 @@ dependencies: [
 ],
 
    openOnInit: false,
-   transitions: false,
-   markers: true,
+  /*  transitions: true,
+   transition: 'convex', // possible values: 'linear', 'slide', 'zoom', 'concave', 'convex', 'fade'. */
+	   markers: true,
    keyboard: true,
    useTextContentForMissingTitles: true,
    titleSelector: 'h1, h2, h3, h4, h5, h6',
