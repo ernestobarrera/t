@@ -46,7 +46,8 @@
   <style>
     /* Establecer el tamaño de fuente base en 16px */
 html {
-  font-size: 26px;
+ /*  font-size: 26px; */ /* AJUSTADO para responsivo en rem */
+  font-size: 1.625rem;
 }
 
 /* Establecer el tamaño de fuente del párrafo a 1.0rem */
@@ -57,7 +58,8 @@ html {
 /* Consulta de medios para pantallas más pequeñas */
 @media (max-width: 900px) {
   html {
-    font-size: 14px;
+/*     font-size: 14px; */ 
+      font-size: 0.875rem;
   }
  
   * {
@@ -68,7 +70,8 @@ html {
 /* Consulta de medios para pantallas aún más pequeñas */
 @media (max-width: 480px) {
   html {
-    font-size: 14px;
+/*     font-size: 14px; */
+font-size: 0.875rem;
   }
   
   * {
@@ -79,14 +82,13 @@ html {
 @media screen and (min-width: 500px) {
   html .slide-menu.slide-menu--left.active{
     /* este elemento css consigue aumentar el ancho del menu lateral, pero no consigue cambio de fuente */
-    font-size: 0.2rem important!; /* Establece un tamaño de fuente explícito para pantallas más grandes */
-    width: 60%; /* Cambiar a un ancho deseado para pantallas más grandes */
+    font-size: 0.2rem !important; /* Establece un tamaño de fuente explícito para pantallas más grandes */
+    width: 6 0%; /* Cambiar a un ancho deseado para pantallas más grandes */
   }
    /* Agregar una especificidad mayor a las reglas CSS para que no sean sobrescritas */
    
   }  
-  
-}
+  }
 
     .cabecera {
       margin-top: 1em;
@@ -155,7 +157,8 @@ html {
     } */
   
     .titulo {
-      font-size: 4rem;
+      /* font-size: 4rem; */
+      font-size: 2.5rem; /* por diseño responsivo, valorar si errores */
       font-weight: bold;
       font-family: 'Arial', sans-serif;
     }
@@ -167,27 +170,34 @@ html {
   
     .pie {
       position: absolute !important;
-      bottom: 5;
+     /*  bottom: 5; */
+     bottom: 0.3125rem;
     }
   
     .size-1 {
-      font-size: 32px;
+ /*      font-size: 32px; */
+ font-size: 2rem;
     }
   
     .size {
-      font-size: 26px;
+      /* font-size: 26px; */
+      font-size: 1.625rem;
+
     }
   
     .size0 {
-      font-size: 20px;
+/*       font-size: 20px; */
+      font-size: 1.25rem;
     }
   
     .size1 {
-      font-size: 16px;
+      /* font-size: 16px; */
+      font-size: 1rem;
     }
   
     .size2 {
-      font-size: 14px;
+      /* font-size: 14px; */
+      font-size: 0.875rem;
     }
   
     .size3 {
@@ -237,7 +247,7 @@ html {
 }
 
 .mensaje-chatgpt {
-  margin-left: 15%;
+  margin-left: 15%; 
   text-align: left;
   color: #3969ab;
   font-weight: bold;
@@ -420,28 +430,25 @@ section .custom-table th {
       
       
       
-    <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" data-background-opacity="0.09" data-audio-text=" Bienvenidos a la presentación 'Introducción a ChatGPT: Una Revolución en la Inteligencia Artificial'. Esta charla es parte de las XVII Jornadas Nacionales de Información y Documentación en Ciencias de la Salud, Bibliosalud 2023, celebradas en Valladolid. Mi nombre es Ernesto Barrera Linares, médico de familia, formador en alfabetización informacional y desarrollador de recursos web y docentes dirigidos a facilitar la transferencia del conocimiento en profesiones sanitarias. Hoy, os presentaré a ChatGPT, una herramienta de inteligencia artificial avanzada desarrollada por OpenAI. A través de esta sesión, exploraremos cómo ChatGPT puede revolucionar nuestra forma de trabajar y colaborar con profesionales sanitarios. Esta presentación está diseñada para ser interactiva, con contenido de audio en cada diapositiva. Así, puede ser utilizada como recurso docente en formato virtual asíncrono. 
-    
-    Un consejo: Esta presentación está optimizada para ser vista en un ordenador. Para avanzar pulsa la barra espaciadora, que te moverá en la secuencia natural de diapositivas, en orden horizontal, y vertical en los casos que estén disponibles.
-    
-    Te animo a explorar todas las opciones más tarde y, por supuesto, a reflexionar sobre cómo la inteligencia artificial puede influir en nuestro trabajo diario. ¡Vamos allá!">
-      
+    <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" data-background-opacity="0.09" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/intro.mp3" >
+      <!-- data-audio-text=" Bienvenidos a esta presentación de 'Introducción a ChatGPT. Esta charla es parte de las XVII Jornadas Nacionales de Información y Documentación en Ciencias de la Salud. Esta presentación ha sido realizada por Ernesto Barrera , médico de familia, formador en alfabetización informacional y desarrollador de recursos web docentes dirigidos a facilitar la transferencia del conocimiento en profesiones sanitarias. Hoy, os presentaré a ChatGPT, una herramienta de inteligencia artificial avanzada desarrollada por OpenAI. En esta sesión, exploraremos algunas formas en las que puede revolucionar nuestra forma de trabajar, como un nuevo recurso de nuestro entorno personal de aprendizaje. Esta presentación está diseñada para ser interactiva, con contenido de audio en cada diapositiva. Así, puede ser utilizada como recurso docente en formato virtual asíncrono y es recomendable verla en un ordenador.    ¡Un consejo!: Para avanzar pulsa la barra espaciadora, que te moverá en la secuencia natural de diapositivas, en orden horizontal y vertical.
+    Te animo a explorar todas las opciones de uso más tarde y, por supuesto,  a reflexionar sobre cómo la inteligencia artificial puede influir en nuestro trabajo diario." -->
 
       
       <a href="https://www.saludcastillayleon.es/institucion/es/biblioteca/noticias/xvii-jornadas-nacionales-informacion-documentacion-ciencias" target="_blank">
           <img class="imagen-responsiva" title="XVII Jornadas Nacionales de Información y Documentación en Ciencias de la salud (Bibliosalud 2023).Valladolid 19 y 20 octubre 2023." src="https://pbs.twimg.com/media/FrasYivWIAEi__G?format=png&name=small">
           
       </a>
-      <h1 class="color" style="margin-top: 100px;">Introducción a ChatGPT</h1>
+      <h1 class="color" style="margin-top: 5vh;">Introducción a ChatGPT</h1>
       <h3>Para profesionales sanitarios</h3>
-      <div class="fragment blur" style="position: absolute; top: 300px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+      <div class="blur" style="position: absolute; top: 300px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 1.2rem; text-align: left;">
           <h4>💡TIP </h4>
-          <p style=" font-size: 20px; color: rgb(253, 215, 1)">Esta presentación contiene diapositivas en navegación horizontal y vertical, según se indica en las flechas de abajo a la derecha. Girar la rueda del ratón, pulsar la barra espaciadora o las teclas de flecha del teclado para navegar por ellas.  </p>
-          <p style=" font-size: 20px; color: rgb(253, 215, 1)">Incluye contenido audio en cada diapositiva para facilitar un uso virtual asíncrono </p>
+          <p style=" font-size: 1.2rem; color: rgb(253, 215, 1)">Esta presentación contiene diapositivas en navegación horizontal y vertical, según se indica en las flechas de abajo a la derecha. Girar la rueda del ratón, pulsar la barra espaciadora o las teclas de flecha del teclado para navegar por ellas.  </p>
+          <p style=" font-size: 1.2rem; color: rgb(253, 215, 1)">Incluye contenido audio en cada diapositiva para facilitar un uso virtual asíncrono </p>
           
       </div>
       <!-- Añadir tu nombre en la parte inferior izquierda con un estilo similar al TIP -->
-      <div style="position: absolute; top: 350px; left: 10px; width: 25vw; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 10px; font-size: 1.2vw; text-align: center; white-space: nowrap;">
+      <div style="position: absolute; top: 350px; left: 10px; width: 25vw; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 10px; font-size: 1.2em; text-align: center;">
         <p>Ernesto Barrera Linares</p>
         <p>Octubre 2023</p>
         <a href="https://twitter.com/ernestob" target="_blank">
@@ -450,9 +457,9 @@ section .custom-table th {
         <a href="https://www.linkedin.com/in/ernestobarreralinares/" target="_blank">
             <i class="fab fa-linkedin"></i>
         </a>
-        <div style="position: absolute; bottom: -8vh; left: 10px; width: 90vw; background-color: rgba(201, 81, 153, 0.886); color: #fff; padding: 0px; font-size: 1.2vw; text-align: center; border-radius: 3px;">
+        <!-- <div style="position: absolute; bottom: -8vh; left: 10px; width: 90vw; background-color: rgba(201, 81, 153, 0.886); color: #fff; padding: 0px; font-size: 1.2vw; text-align: center; border-radius: 3px;">
           XVII Jornadas Nacionales de Información y Documentación en Ciencias de la salud (Bibliosalud 2023). Valladolid, 19 y 20 octubre 2023.
-        </div>
+        </div> -->
     </div>
    
       <aside class="notes">
@@ -468,14 +475,17 @@ section .custom-table th {
     </section> 
 
     
-    <section data-background-image="https://th.bing.com/th/id/OIG.1WWLJtUNycfosBvenwzJ?pid=ImgGn" data-background-opacity="0.09" data-audio-text="En esta presentación, desglosaremos el mundo de ChatGPT y su influencia en las Ciencias de la Salud. A continuación, verás un índice que nos guiará a lo largo de nuestra exploración. Desde entender qué es ChatGPT y su impacto, hasta ejemplos concretos en contextos sanitarios, pasando por cómo funciona y finalmente sus ventajas, desafíos y limitaciones. 
-    Para volver al guión de las diapositivas, puedes pulsar sobre las tres líneas verticales, abajo a la izquierda de la presentación, se abrirá un indice interactivo. Así que si en cualquier momento deseas volver a un punto específico, pueden hacerlo simplemente haciendo clic en el ítem correspondiente. "
+    <section data-background-image="https://th.bing.com/th/id/OIG.1WWLJtUNycfosBvenwzJ?pid=ImgGn" data-background-opacity="0.09" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/indice.mp3">
+
+      <!-- data-audio-text="En esta presentación exploraremos en profundidad ChatGPT y su relevancia en las Ciencias de la Salud. A continuación, te presento un índice que servirá como guía a través de nuestro recorrido. Abordaremos desde la definición de ChatGPT y su impacto, pasando por ejemplos específicos en contextos sanitarios y cómo funciona, hasta llegar a sus ventajas, desafíos y limitaciones.
+
+    Si en algún momento deseas revisar un tema en particular, puedes acceder al guión de las diapositivas pulsando sobre las tres líneas verticales situadas en la parte inferior izquierda de la presentación. Esto desplegará un índice interactivo, permitiéndote seleccionar y dirigirte directamente al ítem de tu interés. " -->
       <h2>Índice de la Presentación</h2>
       <ul>
-          <li><a href="#/1">¿Qué es ChatGPT? Datos de su Impacto</a></li>
-          <li><a href="#/3">Ejemplos y casos de estudio en contextos sanitarios</a></li>
-          <li><a href="#/2">¿Cómo funciona? Aspectos conceptuales, técnicos y terminológicos para facilitar su comprensión </a></li>
-          <li><a href="#/3">Pros, Contras y Limitaciones de su uso en el ámbito de las Ciencias de la Salud</a></li>
+          <li><a style="font-size: 1.6rem;margin-bottom: 2rem" href="#/1">¿Qué es ChatGPT? Datos de su Impacto</a></li>
+          <li><a style="font-size: 1.6rem" href="#/3">Ejemplos y casos de estudio en contextos sanitarios</a></li>
+          <li><a  style="font-size: 1.6rem" href="#/2">¿Cómo funciona? Aspectos conceptuales, técnicos y terminológicos para facilitar su comprensión </a></li>
+          <li><a  style="font-size: 1.6rem" href="#/3">Pros, Contras y Limitaciones de su uso en el ámbito de las Ciencias de la Salud</a></li>
           <!--... (otros ítems para las demás secciones) ...-->
       </ul>
       <style>
@@ -485,9 +495,10 @@ section .custom-table th {
               margin-bottom: 20px;
           }
           ul {
-              font-size: 1.2em; /* Tamaño de fuente más grande para facilidad de lectura */
+              font-size: 2rem; /* Tamaño de fuente más grande para facilidad de lectura */
+              margin-bottom: 2rem;
           }
-          ul li a {
+          ul li a:hover, ul li a:focus {
               color: #3498DB; /* Color azul para los hipervínculos */
               text-decoration: underline; /* Subrayado para indicar que son clicables */
           }
@@ -500,32 +511,33 @@ section .custom-table th {
       </aside>
 </section>
 <section>
-  <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="Imagina una máquina de escribir avanzada que, en lugar de esperar tus palabras, te responde con inteligencia y coherencia. Así es ChatGPT: una herramienta de inteligencia artificial que conversa en tiempo real, no solo como un chatbot ordinario, sino como una interacción avanzada humano-máquina. Piensa en ello como tu asistente personal que ha leído y comprendido miles de libros, artículos y revistas. Con su capacidad para procesar lenguaje natural y su vasto conocimiento, ChatGPT representa un salto significativo en la evolución de las máquinas conversacionales."> 
-
+  <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-src="https://ernestobarrera.github.io\assets\Audio\ChatGPT_Biblio\quees.mp3"> 
+   <!--  data-audio-text="Imagina una máquina de escribir avanzada que, en lugar de esperar a que ingreses palabras, te responde con inteligencia y coherencia. Eso es exactamente lo que es ChatGPT: no es simplemente otro chatbot ordinario, sino una revolucionaria herramienta de inteligencia artificial que conversa en tiempo real. Piénsalo como un asistente personal que ha devorado miles de libros, artículos y revistas, listo para compartir ese conocimiento contigo. Con su capacidad para procesar el lenguaje de manera natural y su vasta base de datos, ChatGPT marca un hito en la evolución de las máquinas conversacionales." -->
     <div style="display: flex; align-items: center; justify-content: space-around;">
       
 
-      <div style="width: 60%;text-align: left;">
+      <div style="width: 70%;text-align: left;">
           <h3 class="color" style="text-align: center;">¿Qué es ChatGPT?</h3>
   
-          <p>Herramienta de inteligencia artificial que utiliza procesamiento de lenguaje natural para proporcionar respuestas conversacionales en tiempo real. En otras palabras, es un chatbot que puede conversar contigo y responder tus preguntas siempre que las formules en lenguaje natural. CHATGPT utiliza una gran cantidad de datos para mejorar constantemente la calidad de sus respuestas.</p>
+          <p style="font-size: 1.3rem;">Herramienta de inteligencia artificial 🧠 que utiliza procesamiento de lenguaje natural para proporcionar respuestas conversacionales en tiempo real. En otras palabras, es un chatbot que puede conversar contigo y responder tus preguntas siempre que las formules en lenguaje natural. CHATGPT utiliza una gran cantidad de datos para mejorar constantemente la calidad de sus respuestas.</p>
        
-              <h6 class="color" >Características</h6>
+              <h5 class="color" >Algunas características</h5>
          
-              <ul style="font-size: 0.9em;">
-                <li>Generación de texto coherente y relevante.</li>
-                <li>Capacidad para responder a preguntas.</li>
-                <li>Capacidad para escribir en diferentes estilos.</li>
-                <li>Capacidad para aprender de los inputs del usuario.</li>
-                <li>Memoria de conversación: ChatGPT puede recordar el contexto de una conversación anterior y utilizarlo para generar respuestas más coherentes.</li>
-                <li>Ahora es multimodal, puede ver, oír leer: el texto como el "tejido conectivo".</li>
+              <ul style="font-size: 1.3rem;line-height: 1.6rem;">
+                <li>📝 Generación de texto coherente y relevante.</li>
+                <li>❓ Capacidad para responder a preguntas.</li>
+                <li>🎨 Capacidad para escribir en diferentes estilos.</li>
+                <li>🔍 Capacidad para aprender de los inputs del usuario.</li>
+                <li>🧠 Memoria de conversación: ChatGPT puede recordar el contexto de una conversación anterior y utilizarlo para generar respuestas más coherentes.</li>
+                <li>👁️ Ahora es multimodal, puede ver, oír y leer: el texto como el "tejido conectivo".</li>
+            </ul>
               </ul>
         
         
-          <p style="font-size: 40px;text-align: center" class="fragment color">"No es magia...es Inteligencia Artificial"</p>
+          <p style="font-size: 2rem;text-align: center" class="fragment color">"No es magia...es Inteligencia Artificial"  ✨</p>
 
       </div>
-      <div style="width: 40%;">
+      <div style="width: 30%;">
           <img src="https://th.bing.com/th/id/OIG.gl6kn.FD6PNOUJjrLkU2?pcl=1b1a19&pid=ImgGn" alt="Imagen representativa de ChatGPT" style="max-width: 100%;">
       </div>
     </div>
@@ -582,7 +594,7 @@ section .custom-table th {
      Esta información pone de manifiesto la relevancia y el crecimiento explosivo de interés en Chat GPT desde su creación en diciembre de 2022 hasta su punto máximo en marzo de 2023. A pesar de las fluctuaciones posteriores, alcanzar un crecimiento tan significativo en un período relativamente corto es notable y habla de la importancia y el impacto del tema en la comunidad global. " -->
       <div class="footer">
         <H6 class="color">Nº de visitas a ChatGPT en Wikipedia hasta ayer (<span id="fecha-de-ayer"></span>)</H6>
-         <H5 class="fragment color">Interés sin precedentes</H5>
+         <H5 class="color">Interés sin precedentes</H5>
        </div>
       <aside class="notes">
         Después de evidenciar la revolución que ChatGPT ha causado en el mundo académico y científico, ahora podemos apreciar cómo este fenómeno ha resonado con igual fuerza entre la población general. Esta imagen actualiza a fecha de ayer el número de visitas a todas las páginas de chat gpt a wikipedia desde que se creó la página en octubre de 2022. En total más de 75 millones de visitas. El 30 de marzo de 2023, las visitas a la página ChatGPT en Wikipedia alcanzaron un pico de 590,632, un crecimiento del 6 veces desde diciembre de 2022. Este impresionante incremento refleja el impacto y relevancia crecientes de ChatGPT en pocos meses.
@@ -590,7 +602,9 @@ section .custom-table th {
   </section>
   
 
-    <section class="full-height" data-background-iframe="https://chat.openai.com/" data-background-opacity="1" data-audio-text= "Lo que estamos viendo es una captura en vivo de la interfaz de usuario de ChatGPT. Estas frases que destellan son solo un pequeño ejemplo de la multitud de solicitudes y tareas que ChatGPT puede manejar. Desde ayudar en la redacción de correos hasta generar ideas creativas, asistir en programación o responder preguntas sobre historia, la versatilidad de ChatGPT es realmente asombrosa. Representa un nueva generación de Internet que está cambiando el modelo de interacción con la web, tal y como lo conocemos hasta ahora" >
+    <section class="full-height" data-background-iframe="https://chat.openai.com/" data-background-opacity="1" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/webproduccion.mp3" >
+
+      <!-- data-audio-text= "Lo que estamos viendo es una captura en vivo de la interfaz de usuario de ChatGPT. Estas frases que destellan son solo un pequeño ejemplo de la multitud de solicitudes y tareas que ChatGPT puede manejar. Desde ayudar en la redacción de correos hasta generar ideas creativas, asistir en programación o responder preguntas sobre historia, la versatilidad de ChatGPT es realmente asombrosa. Representa un nueva generación de Internet que está cambiando el modelo de interacción con la web, tal y como lo conocemos hasta ahora. Y ahora que ya hemos descrito qué es, vamos a ver mejor lo que puede hacer la Inteligencia Artificial" -->
  
       <div class="footer">
         <H6 class=" color">
@@ -616,69 +630,85 @@ section .custom-table th {
     </section> -->
 
     <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
-      <section>
-      <h2 class="color" style="text-align: center;">Algunos ejemplos de uso de ChatGPT</h2>
-      <p>Describir una búsqueda en PubMed</p>
-      <h5 class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h5> <p style="font-size: 0.9em; text-align: left;"> No sé cómo buscar en Pubmed, pero quiero entender cómo funciona esto. Explícame la sintaxis de PubMed (diapositiva superior) de forma que una persona sin conocimientos técnicos pueda entenderla. Organízalo por secciones con encabezados. </p>
+      <section  data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/ejemplopubmed.mp3">
+        <!-- data-audio-text="En esta sección, vamos a explorar algunos ejemplos prácticos de cómo podemos usar ChatGPT. Aquí, el primer caso ilustra cómo ChatGPT puede desglosar y explicar una consulta compleja de PubMed, convirtiéndola en información comprensible para aquellos que no están familiarizados con la sintaxis de búsqueda avanzada. Es un testimonio de su potencial en el ámbito académico y profesional. Usado de esta manera, puede ser una herramienta útil para aquellos que buscan comprender y mejorar sus habilidades de búsqueda en bases de datos académicas como PubMed. Ahora, pulsa la barra espaciadora para continuar y ver en las siguientes diapositivas el resto de la interpretación" -->
+      <h3 class="color" style="text-align: center;">Algunos ejemplos de uso de ChatGPT</h3>
+      <p style="font-size: 1.4rem;">Describir una búsqueda en PubMed</p>
+      <h5 class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h5> <p style="font-size: 1.3rem; text-align: left;"> No sé cómo buscar en Pubmed, pero quiero entender cómo funciona esto. Explícame la sintaxis de PubMed (diapositiva superior) de forma que una persona sin conocimientos técnicos pueda entenderla. Organízalo por secciones con encabezados. </p>
       <pre class="custom-pre"><code class="custom-code-block hljs" >(statin*|rosuvastatin|lovastatin|atorvastatin|pravastatin|pitavastatin) ((((("critical appraisal" OR "journal club" OR (journal[TIAB] AND club*[TIAB])))) OR ((((("evidence-based practice" OR "evidence-based policy" OR "evidence based practice" OR "evidence-based medicine" OR "evidence based medicine" OR "evidence-based health care" OR "evidence-based healthcare" OR "evidence based health care" OR "evidence based health care" OR "evidence-based dentistry" OR "evidence based dentistry" OR "Evidence-Based Facility Design" OR "evidence-based nursing" OR "evidence based nursing" OR "Evidence-Based Emergency Medicine")))) OR (((((("Evidence-Based Practice"[Mesh]) OR "Evidence-Based Practice/education"[Mesh]) OR "Evidence-Based Medicine"[Mesh]) OR "Evidence-Based Dentistry"[Mesh]) OR "Evidence-Based Nursing"[Mesh] OR "Evidence-Based Facility Design"[Mesh] OR "Evidence-Based Emergency Medicine"[Mesh])))))</code></pre>
+
+      <aside class="notes">
+        
+      </aside>
     </section>
+    
       <section>
     
         <h5 class="color" style="text-align: left;">🤖 ChatGPT:</h5>
-        <p style="font-size: 0.9em; text-align: left;">La consulta proporcionada está estructurada de manera compleja para obtener resultados precisos en PubMed. Vamos a desglosarla paso a paso.</p>
+        <p style="font-size: 1.3rem; text-align: left;">La consulta proporcionada está estructurada de manera compleja para obtener resultados precisos en PubMed. Vamos a desglosarla paso a paso.</p>
         
         <!-- Palabras clave y operadores -->
-        <h6  style="text-align: left;">1. Palabras clave y operadores</h6>
-        <p style="font-size: 0.9em; text-align: left;">Las "palabras clave" son las palabras o frases específicas que estamos buscando en la literatura. <br>
+        <h6  class="color" style="text-align: left;">1. Palabras clave y operadores</h6>
+        <p style="font-size: 1.3rem;  text-align: left;">Las "palabras clave" son las palabras o frases específicas que estamos buscando en la literatura. <br>
           Operadores son las herramientas que usamos para decirle al motor de búsqueda cómo queremos que combine o excluya ciertas palabras clave. En PubMed, los operadores principales son: OR, AND y NOT.
        <br>Por ejemplo con ("manzana" OR "pera"), la búsqueda devolverá resultados que contienen la palabra "manzana" o "pera".</p>
         <!-- Términos de búsqueda con "wildcards" -->
-        <h6  style="text-align: left;">2. Términos de búsqueda con "wildcards"</h6>
-        <p style="font-size: 0.9em; text-align: left;">Un "wildcard" es un símbolo que se utiliza para representar uno o más caracteres en una palabra clave. En PubMed, el asterisco (*) es un wildcard común. <br> statin* buscará todas las palabras que comiencen con "statin", como "statins", "statin-induced", etc.</p>
+        <h6 class="color" style="text-align: left;">2. Términos de búsqueda con "wildcards"</h6>
+        <p style="font-size: 1.3rem;  text-align: left;">Un "wildcard" es un símbolo que se utiliza para representar uno o más caracteres en una palabra clave. En PubMed, el asterisco (*) es un wildcard común. <br> statin* buscará todas las palabras que comiencen con "statin", como "statins", "statin-induced", etc.</p>
     
        
       </section>
        <section>
          <!-- Grupos de palabras clave -->
-         <h6  style="text-align: left;">3. Grupos de palabras clave</h6>
-         <p style="font-size: 0.9em; text-align: left;">
+         <h6 class="color" style="text-align: left;">3. Grupos de palabras clave</h6>
+         <p style="font-size: 1.3rem;  text-align: left;">
           La búsqueda se compone de varios grupos de palabras clave, separados por operadores. Estos grupos permiten realizar búsquedas más específicas.</p>
 
           <pre class="custom-pre"><code class="custom-code-block hljs" style="text-align: center;" >(statin*|rosuvastatin|lovastatin|atorvastatin|pravastatin|pitavastatin)</code></pre>
          
-        <p style="font-size: 0.9em; text-align: left;">Esto buscará cualquier mención de términos relacionados con "statin" o los nombres específicos de medicamentos listados. El operador | es equivalente al OR.</p>
+        <p style="font-size: 1.3rem; text-align: left;">Esto buscará cualquier mención de términos relacionados con "statin" o los nombres específicos de medicamentos listados. El operador | es equivalente al OR.</p>
         <!-- Uso de campos específicos -->
-        <h6 style="text-align: left;">4. Uso de campos específicos: [TIAB] y [Mesh]</h6>
-        <p style="font-size: 0.9em; text-align: left;">El campo [TIAB] en PubMed se refiere a "Title/Abstract", lo que significa que la búsqueda se limitará a los títulos y resúmenes de los artículos.</p>
+        <h6 class="color" style="text-align: left;">4. Uso de campos específicos: [TIAB] y [Mesh]</h6>
+        <p style="font-size: 1.3rem;  text-align: left;">El campo [TIAB] en PubMed se refiere a "Title/Abstract", lo que significa que la búsqueda se limitará a los títulos y resúmenes de los artículos.</p>
         <code></code><pre class="custom-pre"><code class="custom-code-block hljs" style="text-align: center;" >journal[TIAB] AND club*[TIAB]</code></pre>
          
-        <p style="font-size: 0.9em; text-align: left;">Esto buscará artículos cuyo título o resumen contenga la palabra "journal" y alguna palabra que comience con "club".</p>
-        <p style="font-size: 0.9em; text-align: left;">[Mesh] se refiere a los "Medical Subject Headings", que son términos estandarizados utilizados para indexar artículos en PubMed.</p>
+        <p style="font-size: 1.3rem;  text-align: left;">Esto buscará artículos cuyo título o resumen contenga la palabra "journal" y alguna palabra que comience con "club".</p>
+        <p style="font-size: 1.3rem;  text-align: left;">[Mesh] se refiere a los "Medical Subject Headings", que son términos estandarizados utilizados para indexar artículos en PubMed.</p>
        <code></code><pre class="custom-pre"><code class="custom-code-block hljs" style="text-align: center;" >"Evidence-Based Practice"[Mesh]</code></pre>
-        <p style="font-size: 0.9em; text-align: left;">Esto buscará artículos que hayan sido indexados bajo el término "Evidence-Based Practice" en el sistema MeSH.</p>
+        <p style="font-size: 1.3rem;  text-align: left;">Esto buscará artículos que hayan sido indexados bajo el término "Evidence-Based Practice" en el sistema MeSH.</p>
     
         <!-- Combinación de grupos -->
-        <h6 style="text-align: left;">5. Combinación de grupos</h6>
-        <p style="font-size: 0.9em; text-align: left;">La consulta completa combina todos estos grupos de palabras clave utilizando operadores OR para abarcar una amplia gama de términos relacionados con la práctica basada en la evidencia y los medicamentos relacionados con "statin".</p>
-        <p style="font-size: 0.9em; text-align: left;">Espero que esta explicación te haya ayudado a entender cómo funciona esta consulta específica en PubMed y cómo se estructura para obtener resultados precisos.</p>
+        <h6 class="color" style="text-align: left;">5. Combinación de grupos</h6>
+        <p style="font-size: 1.3rem;  text-align: left;">La consulta completa combina todos estos grupos de palabras clave utilizando operadores OR para abarcar una amplia gama de términos relacionados con la práctica basada en la evidencia y los medicamentos relacionados con "statin".</p>
+        <p style="font-size: 1.3rem; text-align: left;">Espero que esta explicación te haya ayudado a entender cómo funciona esta consulta específica en PubMed y cómo se estructura para obtener resultados precisos.</p>
       </section>
     </section>
     
+
+    <!-- diapo analisis bibliometrico -->
     <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
-      <section>
-      <h2 class="color" style="text-align: center;">ChatGPT: Quiero un análisis bibliométrico de publicaciones</h2>
-      <h5 class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h5> <p style="font-size: 0.9em; text-align: left;"> Analiza este archivo exportado de Embase con todas las citas obtenidas en la siguiente búsqueda: </p>
+      <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/bibliometria1.mp3"">
+        <!-- En esta diapositiva, solicitamos a ChatGPT que realice un análisis bibliométrico basado en un archivo exportado de Embase. La consulta de búsqueda que se usó se centra en términos relacionados con ChatGPT y versiones específicas como GPT-3 y GPT-4 de OpenAI. A continuación, en la diapositiva inferior, veremos una demostración interactiva de cómo ChatGPT-4 realiza un análisis de datos avanzado sobre estas publicaciones. Pulsa la barra espaciadora o la flecha hacia abajo para verlo-->
+      <h3 class="color" style="text-align: center;">ChatGPT: Quiero un análisis bibliométrico de publicaciones</h3>
+      <h5 class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h5> <p style="font-size: 1.2m; text-align: left;"> Analiza este archivo exportado de Embase con todas las citas obtenidas en la siguiente búsqueda: </p>
     
       <pre class="custom-pre"><code class="custom-code-block hljs" >'chatgpt'/exp OR chatgpt OR 'chat gpt'/exp OR 'chat gpt' OR (('gpt 3' OR 'gpt 4') AND (openai OR llm))</code></pre>
+
+      <aside class="notes">
+        El análisis bibliométrico es una herramienta poderosa en la investigación académica, permitiendo identificar tendencias, autores influyentes y temas emergentes en un campo de estudio. Al aprovechar las capacidades de ChatGPT, podemos simplificar y acelerar este proceso, obteniendo insights valiosos rápidamente. En la demostración que sigue, verás cómo ChatGPT-4 procesa y analiza los datos de publicaciones relacionadas con su propio desarrollo y evolución. Esta consulta está realizada con el modo "Advanced Data Analysis" de ChatGPT, anteriormente llamado Interprete de código
+    </aside> 
     </section>
-    <section class="full-height" data-background-iframe="https://chat.openai.com/share/5a79cc6c-99fe-4ffd-a09a-dc1825a0d7b6" data-background-opacity="1"  data-audio-text="AUDIO"  data-background-interactive>
+    <section class="full-height" data-background-iframe="https://chat.openai.com/share/5a79cc6c-99fe-4ffd-a09a-dc1825a0d7b6" data-background-opacity="1"  ddata-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/bibliometria2.mp3"  data-background-interactive>
+
+      <!-- esta conversación se centra en el análisis bibliométrico de un conjunto de datos relacionado con publicaciones sobre ChatGPT y la inteligencia artificial. Se exploran diversos aspectos, como la polaridad del sentimiento en los títulos, las primeras y últimas palabras en los títulos, y las palabras clave más comunes en los resúmenes. Se identifican tendencias en las palabras clave a lo largo del tiempo y se observa cómo han evolucionado año tras año. Además, se examina la distribución de la longitud de los resúmenes, sugiriendo que la mayoría son concisos, pero algunos ofrecen detalles más extensos. A lo largo de la conversación, se enfrentan desafíos técnicos y se hacen correcciones para proporcionar análisis precisos. La herramienta demuestra ser una solución avanzada para interpretar y analizar datos bibliométricos, especialmente útil para profesionales como bibliotecarios documentalistas interesados en la evolución y percepción de la inteligencia artificial en la literatura académica. -->
+
       <div class="footer" style="position: absolute; bottom: 4vh; width: 70%; background-color: rgba(0, 0, 0, 0.775); padding: 10px 0; text-align: center;">
           <H6 class="color">Análisis bibliométrico con ChatGPT-4 Advanced Data Analysis</H6>
          
       </div>
       <aside class="notes">
-          Notas del Orador
-      </aside> 
+        esta conversación se centra en el análisis bibliométrico de un conjunto de datos relacionado con publicaciones sobre ChatGPT y la inteligencia artificial. Se exploran diversos aspectos, como la polaridad del sentimiento en los títulos, las primeras y últimas palabras en los títulos, y las palabras clave más comunes en los resúmenes. Se identifican tendencias en las palabras clave a lo largo del tiempo y se observa cómo han evolucionado año tras año. Además, se examina la distribución de la longitud de los resúmenes, sugiriendo que la mayoría son concisos, pero algunos ofrecen detalles más extensos. A lo largo de la conversación, se enfrentan desafíos técnicos y se hacen correcciones para proporcionar análisis precisos. La herramienta demuestra ser una solución avanzada para interpretar y analizar datos bibliométricos, especialmente útil para profesionales como bibliotecarios documentalistas interesados en la evolución y percepción de la inteligencia artificial en la literatura académica.
+    </aside> 
   </section>
     
     </section>
@@ -686,49 +716,61 @@ section .custom-table th {
 
     <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
 
-      <h2 class="color" style="text-align: center;">Lectura Crítica por ChatGPT</h2>
+      <h3 class="color" style="text-align: center;">Lectura Crítica por ChatGPT</h3>
       
     
      
     
-      <section>
-        <h5 class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h5> <p style="font-size: 0.9em; text-align: left;"> Quiero que hagas la lectura crítica de un artículo científico </p>
+      <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/ejemplopubmed.mp3">
+        <!-- En este ejemplo, ChatGPT ha identificado y resumido el diseño y el título de un estudio clínico aleatorizado sobre la efectividad de la sertralina. Estos detalles son esenciales para entender el contexto y la metodología del estudio.   La capacidad de ChatGPT para identificar y resumir rápidamente detalles clave de un artículo puede ser valiosa para facilitar la revisión de información científica en poco tiempo. Para los bibliotecarios documentalistas, tener una herramienta que pueda resumir y analizar resultados es esencial. Esto no sólo ahorra tiempo, sino que también garantiza una comprensión clara y precisa de los hallazgos. Este resumen lo podrás seguir viendo en las pantallas inferiores, pulsando la barra espaciadora o la flecha hacia abajo de tu teclado o la pantalla (abajo a la derecha)" -->
+        <h5 class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h5> <p style="font-size: 1.6rem; text-align: left;"> Quiero que hagas la lectura crítica de un artículo científico </p>
         <h5 class="color" style="text-align: left; margin-top: 1vh;">🤖 ChatGPT:</h5>
            <div class="fragment fade-in">
         <h5 class="color" style="text-align: left; margin-top: 3vh; ">Título y Diseño del Estudio</h5>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Título del artículo:</strong> The clinical effectiveness of sertraline in primary care and the role of depression severity and duration (PANDA): a pragmatic, double-blind, placebo-controlled randomised trial.</p>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Traducción al español (y enlace): </strong><a style="font-weight: bold; font-size:1.2em; text-align: center;" href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(19)30366-9/fulltext" target="_blank">La efectividad clínica de la sertralina en atención primaria y el papel de la gravedad y la duración de la depresión (PANDA): un ensayo aleatorizado pragmático, doble ciego y controlado con placebo.</a></p>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Diseño del estudio:</strong> Este es un ensayo clínico aleatorizado, doble ciego y controlado con placebo que se llevó a cabo en 179 centros de atención primaria en el Reino Unido. Se incluyeron pacientes de 18 años o más que presentaban síntomas de depresión durante al menos dos semanas. Los participantes fueron asignados aleatoriamente a recibir sertralina o un placebo. La dosis inicial de sertralina fue de 50 mg/día durante una semana, luego se incrementó a 100 mg/día.</p>
-        <footer ><p style="text-align: left; font-size: 0.8em; margin-top:10vh">*Artículo resumido y analizado por <strong>ChatGPT</strong>. Versión del Prompt: julio 2023</p></footer>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Título del artículo:</strong> The clinical effectiveness of sertraline in primary care and the role of depression severity and duration (PANDA): a pragmatic, double-blind, placebo-controlled randomised trial.</p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Traducción al español (y enlace): </strong><a style="font-weight: bold; font-size:1.2em; text-align: center;" href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(19)30366-9/fulltext" target="_blank">La efectividad clínica de la sertralina en atención primaria y el papel de la gravedad y la duración de la depresión (PANDA): un ensayo aleatorizado pragmático, doble ciego y controlado con placebo.</a></p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Diseño del estudio:</strong> Este es un ensayo clínico aleatorizado, doble ciego y controlado con placebo que se llevó a cabo en 179 centros de atención primaria en el Reino Unido. Se incluyeron pacientes de 18 años o más que presentaban síntomas de depresión durante al menos dos semanas. Los participantes fueron asignados aleatoriamente a recibir sertralina o un placebo. La dosis inicial de sertralina fue de 50 mg/día durante una semana, luego se incrementó a 100 mg/día.</p>
+        <footer ><p style="text-align: left; font-size: 1.2rem; margin-top:10vh">*Artículo resumido y analizado por <strong>ChatGPT</strong>. Versión del Prompt: julio 2023</p></footer>
       </div>
-
+      <aside class="notes">
+        En este ejemplo, ChatGPT ha identificado y resumido el diseño y el título de un estudio clínico aleatorizado sobre la efectividad de la sertralina. Estos detalles son esenciales para entender el contexto y la metodología del estudio.   La capacidad de ChatGPT para identificar y resumir rápidamente detalles clave de un artículo puede ser valiosa para facilitar la revisión de información científica en poco tiempo. Para los bibliotecarios documentalistas, tener una herramienta que pueda resumir y analizar resultados es esencial. Esto no sólo ahorra tiempo, sino que también garantiza una comprensión clara y precisa de los hallazgos. Este resumen lo podrás seguir viendo en las pantallas inferiores, pulsando la barra espaciadora o la flecha hacia abajo de tu teclado o la pantalla (abajo a la derecha)
+    </aside> 
        
       </section>
     
       <section>
         <h5 class="color" style="text-align: left;">Resultados y Conclusiones</h5>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Validez interna:</strong> El estudio parece tener una alta validez interna. Se utilizó un diseño de doble ciego para minimizar el sesgo, y el análisis se realizó en la población por intención de tratar, lo que ayuda a preservar el equilibrio de las características del paciente logrado en la aleatorización. La tasa de abandono fue similar en ambos grupos.</p>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Validez externa:</strong> La validez externa del estudio también parece ser alta. El estudio se realizó en un entorno de atención primaria y los participantes tenían una amplia gama de gravedad de los síntomas de depresión, lo que sugiere que los resultados son aplicables a la población general de pacientes con depresión en atención primaria.</p>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Resultados y conclusiones:</strong> Los resultados mostraron que la sertralina no fue superior al placebo en términos de mejora de los síntomas de depresión a las 6 semanas. Sin embargo, la sertralina fue superior al placebo en términos de reducción de los síntomas de ansiedad y mejora de la calidad de vida a las 6 semanas. A las 12 semanas, la sertralina fue superior al placebo tanto para la depresión como para la ansiedad.</p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Validez interna:</strong> El estudio parece tener una alta validez interna. Se utilizó un diseño de doble ciego para minimizar el sesgo, y el análisis se realizó en la población por intención de tratar, lo que ayuda a preservar el equilibrio de las características del paciente logrado en la aleatorización. La tasa de abandono fue similar en ambos grupos.</p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Validez externa:</strong> La validez externa del estudio también parece ser alta. El estudio se realizó en un entorno de atención primaria y los participantes tenían una amplia gama de gravedad de los síntomas de depresión, lo que sugiere que los resultados son aplicables a la población general de pacientes con depresión en atención primaria.</p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Resultados y conclusiones:</strong> Los resultados mostraron que la sertralina no fue superior al placebo en términos de mejora de los síntomas de depresión a las 6 semanas. Sin embargo, la sertralina fue superior al placebo en términos de reducción de los síntomas de ansiedad y mejora de la calidad de vida a las 6 semanas. A las 12 semanas, la sertralina fue superior al placebo tanto para la depresión como para la ansiedad.</p>
         <!-- Figura 1 -->
         <div style="display: flex; align-items: center; justify-content: center; height: 30vh; margin-top: -1vh;">
           <img src="https://telegra.ph/file/09b5752290ad69aa70d9b.png" alt="Figura 1" style="height: 22vh; width: auto;">
         </div>
+        <aside class="notes">
+      
+        </aside> 
+           
       </section>
     
       <section>
         <h5 class="color" style="text-align: left;">Interpretación (I)</h5>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Aplicabilidad de la evidencia:</strong> Los hallazgos del estudio son relevantes para la práctica clínica. Aunque la sertralina no mostró una mejora en los síntomas de depresión a corto plazo, sí mostró beneficios a largo plazo y en la reducción de los síntomas de ansiedad y la mejora de la calidad de vida.</p>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Jerarquía de la evidencia científica:</strong> Este estudio se sitúa en la cima de la jerarquía de la evidencia científica, ya que es un ensayo clínico aleatorizado.</p>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Posibles conflictos de interés y sesgos:</strong> No se informaron conflictos de interés. Sin embargo, el estudio fue financiado por el National Institute for Health Research, que podría tener un interés en los resultados.</p>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Interpretación de resultados estadísticos:</strong> Los resultados se presentaron como diferencias de medias y razones de probabilidades, con intervalos de confianza del 95%. Se utilizó un nivel de significación del 5%.</p>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Contextualización de los hallazgos:</strong> Los hallazgos del estudio sugieren que la sertralina puede no ser efectiva para mejorar los síntomas de depresión a corto plazo en la atención primaria, pero puede tener beneficios a largo plazo y para los síntomas de ansiedad y la calidad de vida.</p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Aplicabilidad de la evidencia:</strong> Los hallazgos del estudio son relevantes para la práctica clínica. Aunque la sertralina no mostró una mejora en los síntomas de depresión a corto plazo, sí mostró beneficios a largo plazo y en la reducción de los síntomas de ansiedad y la mejora de la calidad de vida.</p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Jerarquía de la evidencia científica:</strong> Este estudio se sitúa en la cima de la jerarquía de la evidencia científica, ya que es un ensayo clínico aleatorizado.</p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Posibles conflictos de interés y sesgos:</strong> No se informaron conflictos de interés. Sin embargo, el estudio fue financiado por el National Institute for Health Research, que podría tener un interés en los resultados.</p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Interpretación de resultados estadísticos:</strong> Los resultados se presentaron como diferencias de medias y razones de probabilidades, con intervalos de confianza del 95%. Se utilizó un nivel de significación del 5%.</p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Contextualización de los hallazgos:</strong> Los hallazgos del estudio sugieren que la sertralina puede no ser efectiva para mejorar los síntomas de depresión a corto plazo en la atención primaria, pero puede tener beneficios a largo plazo y para los síntomas de ansiedad y la calidad de vida.</p>
+
+        <aside class="notes">
+      
+        </aside> 
+           
       </section>
     
       <section>
         <h5 class="color" style="text-align: left; margin-top:8vh">Interpretación (II)</h5>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Calidad del estudio:</strong> 8/10. El estudio fue bien diseñado y ejecutado, pero la falta de un efecto a corto plazo para la depresión es sorprendente y puede reflejar una limitación en la medida de resultado utilizada o en el diseño del estudio.</p>
-        <p style="font-size: 0.8em; text-align: left;"><strong>Resumen de ChatGPT:</strong> Este estudio examinó la efectividad de la sertralina, un antidepresivo comúnmente prescrito, en el tratamiento de la depresión en la atención primaria. Aunque la sertralina no mostró una mejora en los síntomas de depresión a las 6 semanas, sí mostró beneficios a las 12 semanas y en la reducción de los síntomas de ansiedad y la mejora de la calidad de vida. Esto sugiere que la sertralina puede tener un efecto más lento o más sutil que lo que se puede captar con las medidas de resultado a corto plazo. Además, la sertralina puede ser útil para tratar los síntomas de ansiedad en pacientes con depresión.</p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Calidad del estudio:</strong> 8/10. El estudio fue bien diseñado y ejecutado, pero la falta de un efecto a corto plazo para la depresión es sorprendente y puede reflejar una limitación en la medida de resultado utilizada o en el diseño del estudio.</p>
+        <p style="font-size: 1.2rem; text-align: left;"><strong>Resumen de ChatGPT:</strong> Este estudio examinó la efectividad de la sertralina, un antidepresivo comúnmente prescrito, en el tratamiento de la depresión en la atención primaria. Aunque la sertralina no mostró una mejora en los síntomas de depresión a las 6 semanas, sí mostró beneficios a las 12 semanas y en la reducción de los síntomas de ansiedad y la mejora de la calidad de vida. Esto sugiere que la sertralina puede tener un efecto más lento o más sutil que lo que se puede captar con las medidas de resultado a corto plazo. Además, la sertralina puede ser útil para tratar los síntomas de ansiedad en pacientes con depresión.</p>
         <!-- Figura 2 -->
         <div style="display: flex; align-items: center; justify-content: center; height: 50vh; margin-bottom: -2vh;">
           <img src="https://telegra.ph/file/afd9c7a390c39f1a513b0.png" alt="Figura 2" style="height: 50vh; width: auto;">
@@ -737,6 +779,11 @@ section .custom-table th {
       <section>
         <p style="font-size: 1.4em; text-align: left;"><strong style="font-size: 1em;" >Sugerencia de Tweet:</strong> 📢Estudio en @TheLancetPsych muestra que la sertralina puede no mejorar los síntomas de #depresión a corto plazo, pero sí muestra beneficios a largo plazo y para los síntomas de #ansiedad y la calidad de vida. 🧠💊 #SaludMental #Investigación #ChatGPT 🤖👩‍⚕️ <a style="font-weight: bold; font-size:1em; text-align: center;" href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(19)30366-9/fulltext" target="_blank">Link al estudio</a></p>
       </section>
+
+      <aside class="notes">
+      
+      </aside> 
+         
     </section>
     
     
@@ -1243,7 +1290,7 @@ section .custom-table th {
                   }
           
                   .custom-code-block {
-                      font-size: 1.4em;
+                      font-size: 1.8em;
                       white-space: pre-wrap;
                       word-wrap: break-word;
                       overflow-y: hidden;
@@ -1784,7 +1831,7 @@ section .custom-table th {
                 En esta velocidad de vértigo, ChatGPT nos avisa de que introduce la posibilidad de añadir imágenes o audios en septiembre de 2023. Con ChatGPT Vision, estamos entrando en una era donde la inteligencia artificial no solo procesa información, sino que realmente interpreta el mundo a nuestro alrededor. Ya no estamos limitados a palabras o números. Ahora, con una simple imagen, podemos acceder a un mundo de conocimiento. .
             </aside>
         </section>
-           <section class="full-height" data-background-iframe="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="1"  data-audio-text="Un ejemplo sencillo, pero poderoso, es la posibilidad de comprender el contenido de una estantería llena de libros con una simple foto. Imagina las puertas que esto abre en diversos campos y cómo puede revolucionar nuestra forma de aprender y descubrir.">
+           <section class="full-height" data-background-iframe="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="1"  data-audio-text="Un ejemplo sencillo, pero poderoso, es la posibilidad de comprender el contenido de una estantería llena de libros con una simple foto. Imagina las puertas que esto abre en diversos campos y cómo puede revolucionar nuestra forma de aprender y descubrir.">
             <!--  <h5 class="color" style="margin-top: -1vh;">ChatGPT: Conceptos</h5> -->
              <div style="display: flex; align-items: center; justify-content: center; height: 95vh;margin-top: 1vh;">
                  <div style="flex: 0 1 100%; margin-left:-20vh; margin-right:-20vh;">
