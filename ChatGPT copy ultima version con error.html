@@ -46,8 +46,7 @@
   <style>
     /* Establecer el tamaño de fuente base en 16px */
 html {
- /*  font-size: 26px; */ /* AJUSTADO para responsivo en rem */
-  font-size: 1.625rem;
+  font-size: 26px;
 }
 
 /* Establecer el tamaño de fuente del párrafo a 1.0rem */
@@ -58,8 +57,7 @@ html {
 /* Consulta de medios para pantallas más pequeñas */
 @media (max-width: 900px) {
   html {
-/*     font-size: 14px; */ 
-      font-size: 0.875rem;
+    font-size: 14px;
   }
  
   * {
@@ -70,8 +68,7 @@ html {
 /* Consulta de medios para pantallas aún más pequeñas */
 @media (max-width: 480px) {
   html {
-/*     font-size: 14px; */
-font-size: 0.875rem;
+    font-size: 14px;
   }
   
   * {
@@ -82,13 +79,14 @@ font-size: 0.875rem;
 @media screen and (min-width: 500px) {
   html .slide-menu.slide-menu--left.active{
     /* este elemento css consigue aumentar el ancho del menu lateral, pero no consigue cambio de fuente */
-    font-size: 0.2rem !important; /* Establece un tamaño de fuente explícito para pantallas más grandes */
-    width: 6 0%; /* Cambiar a un ancho deseado para pantallas más grandes */
+    font-size: 0.2rem important!; /* Establece un tamaño de fuente explícito para pantallas más grandes */
+    width: 60%; /* Cambiar a un ancho deseado para pantallas más grandes */
   }
    /* Agregar una especificidad mayor a las reglas CSS para que no sean sobrescritas */
    
   }  
-  }
+  
+}
 
     .cabecera {
       margin-top: 1em;
@@ -157,8 +155,7 @@ font-size: 0.875rem;
     } */
   
     .titulo {
-      /* font-size: 4rem; */
-      font-size: 2.5rem; /* por diseño responsivo, valorar si errores */
+      font-size: 4rem;
       font-weight: bold;
       font-family: 'Arial', sans-serif;
     }
@@ -170,34 +167,27 @@ font-size: 0.875rem;
   
     .pie {
       position: absolute !important;
-     /*  bottom: 5; */
-     bottom: 0.3125rem;
+      bottom: 5;
     }
   
     .size-1 {
- /*      font-size: 32px; */
- font-size: 2rem;
+      font-size: 32px;
     }
   
     .size {
-      /* font-size: 26px; */
-      font-size: 1.625rem;
-
+      font-size: 26px;
     }
   
     .size0 {
-/*       font-size: 20px; */
-      font-size: 1.25rem;
+      font-size: 20px;
     }
   
     .size1 {
-      /* font-size: 16px; */
-      font-size: 1rem;
+      font-size: 16px;
     }
   
     .size2 {
-      /* font-size: 14px; */
-      font-size: 0.875rem;
+      font-size: 14px;
     }
   
     .size3 {
@@ -247,7 +237,7 @@ font-size: 0.875rem;
 }
 
 .mensaje-chatgpt {
-  margin-left: 15%; 
+  margin-left: 15%;
   text-align: left;
   color: #3969ab;
   font-weight: bold;
@@ -421,34 +411,28 @@ section .custom-table th {
 </head>
 
 <body>
-  
   <div class="reveal">
-    <a href="https://twitter.com/ernestob" target="_blank">
-      <img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png"
-      width="35" height="40">
     <div class="slides">
       
       
       
-    <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" data-background-opacity="0.09" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/intro.mp3" >
-      <!-- data-audio-text=" Bienvenidos a esta presentación de 'Introducción a ChatGPT. Esta charla es parte de las XVII Jornadas Nacionales de Información y Documentación en Ciencias de la Salud. Esta presentación ha sido realizada por Ernesto Barrera , médico de familia, formador en alfabetización informacional y desarrollador de recursos web docentes dirigidos a facilitar la transferencia del conocimiento en profesiones sanitarias. Hoy, os presentaré a ChatGPT, una herramienta de inteligencia artificial avanzada desarrollada por OpenAI. En esta sesión, exploraremos algunas formas en las que puede revolucionar nuestra forma de trabajar, como un nuevo recurso de nuestro entorno personal de aprendizaje. Esta presentación está diseñada para ser interactiva, con contenido de audio en cada diapositiva. Así, puede ser utilizada como recurso docente en formato virtual asíncrono y es recomendable verla en un ordenador.    ¡Un consejo!: Para avanzar pulsa la barra espaciadora, que te moverá en la secuencia natural de diapositivas, en orden horizontal y vertical.
-    Te animo a explorar todas las opciones de uso más tarde y, por supuesto,  a reflexionar sobre cómo la inteligencia artificial puede influir en nuestro trabajo diario." -->
-
+    <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" data-background-opacity="0.09" data-audio-text=" Bienvenidos a la presentación 'Introducción a ChatGPT para profesionales en ciencias de la salud y colaboradores'! Esta charla forma parte de las XVII Jornadas Nacionales de Información y Documentación en Ciencias de la Salud, Bibliosalud 2023, celebradas en Valladolid. Mi nombre es Ernesto Barrera Linares, médico de familia, formador en alfabetización informacional y desarrollador de recursos dirigidos a facilitar la transferencia del conocimiento en ámbitos sanitarios. Hoy quiero presentaros a ChatGPT, una herramienta que tiene el potencial de revolucionar nuestra forma de trabajar y colaborar con profesionales sanitarios. Antes de comenzar, os informo que esta presentación está diseñada para ser interactiva y contiene contenido de audio en cada diapositiva, de manera que pueda ser utilizada como recurso docente en formato virtual asíncrono Además, puedes hacer anotaciones directamente en las diapositivas o en una pizarra virtual. Todo lo que necesitas, incluido el guión y las opciones de formato, lo encontrarás en el menú de abajo a la izquierda. Y si deseas volver a una diapositiva específica en el futuro, cada una tiene su propia URL que puedes guardar. Os animo a explorarla por vosotros mismos más tarde y a reflexionar sobre cómo la inteligencia artificial puede influir en nuestro trabajo diario. ¡Vamos allá!">
+     
       
       <a href="https://www.saludcastillayleon.es/institucion/es/biblioteca/noticias/xvii-jornadas-nacionales-informacion-documentacion-ciencias" target="_blank">
           <img class="imagen-responsiva" title="XVII Jornadas Nacionales de Información y Documentación en Ciencias de la salud (Bibliosalud 2023).Valladolid 19 y 20 octubre 2023." src="https://pbs.twimg.com/media/FrasYivWIAEi__G?format=png&name=small">
           
       </a>
-      <h1 class="color" style="margin-top: 5vh;">Introducción a ChatGPT</h1>
+      <h1 class="color" style="margin-top: 100px;">Introducción a ChatGPT</h1>
       <h3>Para profesionales sanitarios</h3>
-      <div class="blur" style="position: absolute; top: 300px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 1.2rem; text-align: left;">
+      <div class="fragment blur" style="position: absolute; top: 300px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
           <h4>💡TIP </h4>
-          <p style=" font-size: 1.2rem; color: rgb(253, 215, 1)">Esta presentación contiene diapositivas en navegación horizontal y vertical, según se indica en las flechas de abajo a la derecha. Girar la rueda del ratón, pulsar la barra espaciadora o las teclas de flecha del teclado para navegar por ellas.  </p>
-          <p style=" font-size: 1.2rem; color: rgb(253, 215, 1)">Incluye contenido audio en cada diapositiva para facilitar un uso virtual asíncrono </p>
+          <p style=" font-size: 20px; color: rgb(253, 215, 1)">Esta presentación contiene diapositivas en navegación horizontal y vertical, según se indica en las flechas de abajo a la derecha. Girar la rueda del ratón, pulsar la barra espaciadora o las teclas de flecha del teclado para navegar por ellas.  </p>
+          <p style=" font-size: 20px; color: rgb(253, 215, 1)">Incluye contenido audio en cada diapositiva para facilitar un uso virtual asíncrono </p>
           
       </div>
       <!-- Añadir tu nombre en la parte inferior izquierda con un estilo similar al TIP -->
-      <div style="position: absolute; top: 350px; left: 10px; width: 25vw; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 10px; font-size: 1.2em; text-align: center;">
+      <div style="position: absolute; top: 350px; left: 10px; width: 25vw; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 10px; font-size: 1.2vw; text-align: center; white-space: nowrap;">
         <p>Ernesto Barrera Linares</p>
         <p>Octubre 2023</p>
         <a href="https://twitter.com/ernestob" target="_blank">
@@ -457,35 +441,30 @@ section .custom-table th {
         <a href="https://www.linkedin.com/in/ernestobarreralinares/" target="_blank">
             <i class="fab fa-linkedin"></i>
         </a>
-        <!-- <div style="position: absolute; bottom: -8vh; left: 10px; width: 90vw; background-color: rgba(201, 81, 153, 0.886); color: #fff; padding: 0px; font-size: 1.2vw; text-align: center; border-radius: 3px;">
+        <div style="position: absolute; bottom: -8vh; left: 10px; width: 90vw; background-color: rgba(201, 81, 153, 0.886); color: #fff; padding: 0px; font-size: 1.2vw; text-align: center; border-radius: 3px;">
           XVII Jornadas Nacionales de Información y Documentación en Ciencias de la salud (Bibliosalud 2023). Valladolid, 19 y 20 octubre 2023.
-        </div> -->
+        </div>
     </div>
    
       <aside class="notes">
-        "¡Buenos días a todos! Es un honor estar aquí en las XVII Jornadas Nacionales de Información y Documentación en Ciencias de la Salud. Como muchos de vosotros sabréis, el avance de la tecnología, y en particular de la inteligencia artificial, está redefiniendo muchos ámbitos, incluida la medicina y la documentación en ciencias de la salud. Hoy, os presentaré a ChatGPT, una herramienta que se está convirtiendo en un referente en el ámbito de la inteligencia artificial. A lo largo de esta presentación, exploraremos juntos sus potencialidades y desafíos. Y antes de comenzar, quiero que sepáis que esta presentación es interactiva. Si en algún momento queréis revisar algo, cada diapositiva tiene su propia URL. ¡Comencemos esta exploración juntos!"
+        "¡Buenos días a todos! Es un honor estar aquí en las XVII Jornadas Nacionales de Información y Documentación en Ciencias de la Salud, Bibliosalud 2023. Un evento de esta magnitud merece contenidos a la altura de las expectativas."
+        "Desde mi experiencia como médico de familia, formador en alfabetización informacional y desarrollador de recursos, he colaborado estrechamente con profesionales de bibliotecas y documentalistas en ciencias de la salud. Juntos, hemos identificado la necesidad de herramientas que faciliten la transferencia de conocimiento a y para profesionales sanitarios. Y hoy, quiero presentaros a ChatGPT, una herramienta que considero revolucionaria en este ámbito."
+       
+        "Quiero destacar la interactividad de esta presentación. No es una simple secuencia de diapositivas, sino una herramienta web diseñada para la colaboración y el aprendizaje.""  " Os animo a que la exploréis por vuestra cuenta más tarde, Podéis escuchar un audio en cada diapositiva para facilitar su comprensión, especialmente útil si decidís utilizarla para la docencia en formato virtual asíncrono." "también disponeis de un rotulador o puntero para hacer anotaciones, y a explorar el menú de abajo a la izquierda para acceder al guión y otras opciones." 
+        "Y, si en algún momento queréis guardar o compartir una diapositiva en particular, cada una tiene su propia dirección web única."
         "Y, para iniciar, me gustaría plantearos una pregunta: ¿Cómo creéis que la inteligencia artificial, como ChatGPT, puede influir en la forma en que trabajamos y colaboramos con los profesionales sanitarios? Guardad esa reflexión, y espero que al final podamos debatir y compartir puntos de vista sobre el tema.
-
-        <aside class="notes">
-         
-        </aside>
-        
       </aside>
       
     </section> 
 
     
-    <section data-background-image="https://th.bing.com/th/id/OIG.1WWLJtUNycfosBvenwzJ?pid=ImgGn" data-background-opacity="0.09" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/indice.mp3">
-
-      <!-- data-audio-text="En esta presentación exploraremos en profundidad ChatGPT y su relevancia en las Ciencias de la Salud. A continuación, te presento un índice que servirá como guía a través de nuestro recorrido. Abordaremos desde la definición de ChatGPT y su impacto, pasando por ejemplos específicos en contextos sanitarios y cómo funciona, hasta llegar a sus ventajas, desafíos y limitaciones.
-
-    Si en algún momento deseas revisar un tema en particular, puedes acceder al guión de las diapositivas pulsando sobre las tres líneas verticales situadas en la parte inferior izquierda de la presentación. Esto desplegará un índice interactivo, permitiéndote seleccionar y dirigirte directamente al ítem de tu interés. " -->
+    <section data-background-image="https://th.bing.com/th/id/OIG.1WWLJtUNycfosBvenwzJ?pid=ImgGn" data-background-opacity="0.09" data-audio-text="A continuación, presentaré los puntos clave que abordaremos durante esta charla. Navegaremos desde una introducción a ChatGPT hasta discutir sus aplicaciones y desafíos en el ámbito de las Ciencias de la Salud.">
       <h2>Índice de la Presentación</h2>
       <ul>
-          <li><a style="font-size: 1.6rem;margin-bottom: 2rem" href="#/1">¿Qué es ChatGPT? Datos de su Impacto</a></li>
-          <li><a style="font-size: 1.6rem" href="#/3">Ejemplos y casos de estudio en contextos sanitarios</a></li>
-          <li><a  style="font-size: 1.6rem" href="#/2">¿Cómo funciona? Aspectos conceptuales, técnicos y terminológicos para facilitar su comprensión </a></li>
-          <li><a  style="font-size: 1.6rem" href="#/3">Pros, Contras y Limitaciones de su uso en el ámbito de las Ciencias de la Salud</a></li>
+          <li><a href="#/1">¿Qué es ChatGPT?</a></li>
+          <li><a href="#/2">¿Cómo funciona?</a></li>
+          <li><a href="#/3">Ejemplos de uso en contextos sanitarios</a></li>
+          <li><a href="#/3">Pros y Contras de su uso en el ámbito de las Ciencias de la Salud</a></li>
           <!--... (otros ítems para las demás secciones) ...-->
       </ul>
       <style>
@@ -495,76 +474,61 @@ section .custom-table th {
               margin-bottom: 20px;
           }
           ul {
-              font-size: 2rem; /* Tamaño de fuente más grande para facilidad de lectura */
-              margin-bottom: 2rem;
+              font-size: 1.2em; /* Tamaño de fuente más grande para facilidad de lectura */
           }
-          ul li a:hover, ul li a:focus {
+          ul li a {
               color: #3498DB; /* Color azul para los hipervínculos */
               text-decoration: underline; /* Subrayado para indicar que son clicables */
           }
       </style>
 
-        <aside class="notes">
-          "Para garantizar que todos tengamos una comprensión clara de lo que abordaremos hoy, seguiremos este guión como hilo conductor coherente y estructurado. Quiero destacar que abajo a la izquierda de la presentación se os abrirá, al pulsar sobre las tres líneas verticales un índice es interactivo, así que si en cualquier momento quieren volver a un punto específico, pueden hacerlo simplemente haciendo clic en el ítem correspondiente. Con esto en mente, embarquémonos en esta aventura de descubrimiento."
-        </aside>
-        
+      <aside class="notes">
+        Hoy vamos a embarcarnos en un viaje a través del mundo de ChatGPT, explorando su papel en el ámbito de las Ciencias de la Salud. Antes de sumergirnos en detalles, es esencial entender de forma global los puntos que abordaremos. Esta estructura nos ayudará a seguir un hilo conductor claro y coherente. Al final, espero que todos tengan una comprensión profunda de las posibilidades y desafíos que ChatGPT presenta para los profesionales sanitarios y documentalistas.
       </aside>
 </section>
-<section>
-  <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-src="https://ernestobarrera.github.io\assets\Audio\ChatGPT_Biblio\quees.mp3"> 
-   <!--  data-audio-text="Imagina una máquina de escribir avanzada que, en lugar de esperar a que ingreses palabras, te responde con inteligencia y coherencia. Eso es exactamente lo que es ChatGPT: no es simplemente otro chatbot ordinario, sino una revolucionaria herramienta de inteligencia artificial que conversa en tiempo real. Piénsalo como un asistente personal que ha devorado miles de libros, artículos y revistas, listo para compartir ese conocimiento contigo. Con su capacidad para procesar el lenguaje de manera natural y su vasta base de datos, ChatGPT marca un hito en la evolución de las máquinas conversacionales." -->
-    <div style="display: flex; align-items: center; justify-content: space-around;">
+
       
+<section data-background-image="https://media.giphy.com/media/SUp0ZNb0pmL3G65I2k/giphy-downsized-large.gif" data-background-opacity="0.2"  data-audio-text="Mientras las herramientas tradicionales de búsqueda nos han entrenado para pensar en términos de palabras clave y frases específicas, ChatGPT nos invita a interactuar de una manera más conversacional, más humana.">
+  <H4>ChatGPT no cambia la forma en que buscas</H4>
+  <H4 class="fragment color">...Cambia la forma<br>  en que piensas en la búsqueda</H4>
 
-      <div style="width: 70%;text-align: left;">
-          <h3 class="color" style="text-align: center;">¿Qué es ChatGPT?</h3>
-  
-          <p style="font-size: 1.3rem;">Herramienta de inteligencia artificial 🧠 que utiliza procesamiento de lenguaje natural para proporcionar respuestas conversacionales en tiempo real. En otras palabras, es un chatbot que puede conversar contigo y responder tus preguntas siempre que las formules en lenguaje natural. CHATGPT utiliza una gran cantidad de datos para mejorar constantemente la calidad de sus respuestas.</p>
-       
-              <h5 class="color" >Algunas características</h5>
-         
-              <ul style="font-size: 1.3rem;line-height: 1.6rem;">
-                <li>📝 Generación de texto coherente y relevante.</li>
-                <li>❓ Capacidad para responder a preguntas.</li>
-                <li>🎨 Capacidad para escribir en diferentes estilos.</li>
-                <li>🔍 Capacidad para aprender de los inputs del usuario.</li>
-                <li>🧠 Memoria de conversación: ChatGPT puede recordar el contexto de una conversación anterior y utilizarlo para generar respuestas más coherentes.</li>
-                <li>👁️ Ahora es multimodal, puede ver, oír y leer: el texto como el "tejido conectivo".</li>
-            </ul>
-              </ul>
-        
-        
-          <p style="font-size: 2rem;text-align: center" class="fragment color">"No es magia...es Inteligencia Artificial"  ✨</p>
+  <aside class="notes">
+    En el pasado, cuando queríamos buscar información, solíamos pensar en las palabras clave más adecuadas o en las frases que podrían llevarnos a los resultados deseados. Sin embargo, con ChatGPT, el enfoque cambia. Ahora nos encontramos formulando preguntas, manteniendo conversaciones y esperando respuestas contextualizadas. Es un giro hacia la búsqueda más intuitiva y personalizada, donde el diálogo prevalece sobre la mera consulta.
+  </aside>    
+</section>
 
+
+<section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="La herramienta ChatGPT ha revolucionado la forma en que pensamos en la búsqueda. Ya no se trata simplemente de introducir palabras clave y obtener resultados; es una conversación, un diálogo que se adapta y aprende de nuestras necesidades. En este mapa mental, vemos sus potenciales aplicaciones, desde el procesamiento del lenguaje natural hasta su uso en educación, gestión empresarial y, como se puede intuir, muchas más.">
+  <div class="full-height">
+      <img src="http://www.plantuml.com/plantuml/png/ZLRDRXmt3BxlKwZ8pK1Is_c9WGH5NCTE2hIf4HljnHUkH8-PQCG1fN6yBl8mEURGGv57s1ShfH5sTjORjtiQKH_vVVmaoduL4qXgARWMkjaFwGfRD9q72hFuaK870gsPW_tO2FV17R5dCGzEocyD0IBywVoAxCU0CPgzHq_NDXrUGk_J2OVq3hJyM_JNcCZ2TimPtQBPUpPx6TF2uq-pm0xDNpEZlrDmZa9ZzlRByZUGXe9vN1PlMUXMqy4VUcf2Yo4PYo6XbErVAU2WVkvxN8L6pOyVxPRe-w5F2IZcoMxbkQ6sR_yabwxC_jCXE4fzKjUrlJzG70J8mTddcJ2dTxM3odcM-p87ZtPV5Cw9E45N8ZzlMFxfYXBUqRUfv409FSBbI7WdPN_tksvvl4mJcvzlb7-ylT5DYzIstVNpsNkgiYnqYJXK6wQaBtJ_vO_rkCSxKGz-cnqFZWzE3avEXZqMXrBZkxlFdn_jhyN70nwYPrVW-9DsLowf1WhDeFkPwlwy8Q1qdvLL9QkrrlTEuJlcw0hIczFpsSwEEHMs6A4b38cDGw_zXQQ73sW2f5x0Ash7lC600fQMtuA2JCARn6NZNC3rThL1ZhY5MBOEm_ABfqXncd74uHebJaePCDTyQnRccYpcNQXG4Qp56-qFyWnwXR4aRcJvvLBN0rV4o0Ar3Gm6enNA-cUvZeOjGH7YmKJmlIjflwYKcAYfdIqCh6jsa3XkBrzAA7wk4Qq0Kc2lsVQjGbRb11sicHCkMLgCfbr-TMHBRNEizgtmUNzOb7h78UBo7mYte7kfJta4nkqiYs8ghMLD7fGlikzNX9tmt6CxD0wTO71Qu0DUXFSOkpuBZmOKXaqVohS5j_pQaeLu4Kw5EnPB742gzYeqybpooTNAD77n8XmkUZSg0Z-8hiSD6ecv7O4vVE2OJugzHfNnTw6LUpKVFOu6MX11AUdQMYDG1IXxxuWlmbdVe1H3CiPoY9Wfyd0ONnhLpr4CtYo_j1WozVcwkveRrHAgvzsXH0wb3rTcP637oADXzMuBZjMLFc4WJS5yneck5NGFggYqlNB5qlpoxu1m4Uv5UuXOq5NZlV2fQHOw1LQtxyzh8VJWiQJriGSX7kwdXpcFVbRnMvhiF0IS7jLaluM4Gk0hPdNjBy9hojzSmjVWUytXN6gnVdYlCO88UrzmODLgSk2mNfG5siHnopksklbLyoa8Z7KrsUOPAGD078sEnE1YZtEeCvKerRVa_MJMCKHOi6gxCwDM43PXupni7QZ_zGvEvuwbWR0-UEI6kGDfoXjLjDrvDSlLjXYBaUCR-l2XEXTJgOLj9zblgWeAJpqM1JuqXtVUKCNfavT4LLR89d5JgojIlmGIDWJhL2MjMbnnZbRDERQrgVMSeiUSSmi5WvPYKRaQQFoEclIVAQSU0cNNgvgftnLTLH-799Z7gH8es19lOUuYMVRBRqr-JZ997TTIi-2dGxhyvgZXWUEcysItxvrzzqz2Do5uXS7L_wl_1G00" alt="Imagen de fondo" style="margin-bottom: 0px;margin-top: 0px;">
+    <div style="position: absolute; bottom: 110px; left: 105px; padding: 2px; color: #fff; z-index: 1;">
+      <h4 style="margin: 10;" class="color">Porque ya no es solo "búsqueda"</h4>
+      <div style="position: absolute; bottom: 70px; left: 115px; padding: 2px; color: #000; z-index: 1; text-align: left;">
+        <p style="margin: 5px; font-size: 16px; text-shadow: none;">Estos son solo algunos de los casos de uso posibles.</p>
+        <p style="margin: 5px; font-size: 14px; text-shadow: none;"><sup>*</sup> Puedes hacer zoom en la imagen con el botón izquierdo del ratón + tecla ALT.</p>
       </div>
-      <div style="width: 30%;">
-          <img src="https://th.bing.com/th/id/OIG.gl6kn.FD6PNOUJjrLkU2?pcl=1b1a19&pid=ImgGn" alt="Imagen representativa de ChatGPT" style="max-width: 100%;">
-      </div>
-    </div>
+     </div>
+    <!-- ... (tu código anterior) ... -->
+
+
+
+<!-- ... (resto de tu código) ... -->
+
+  </div>
     <aside class="notes">
-      ChatGPT es una evolución fascinante en el mundo de los chatbots y la inteligencia artificial. Su habilidad para conversar, entender y aprender de las interacciones lo coloca a la vanguardia de las herramientas de comunicación. Imagina combinar la habilidad de un bibliotecario experto y un sabio políglota que ha leído y memorizado miles de libros, con la rapidez y eficiencia de una máquina moderna. Pero ChatGPT va incluso más allá: con su capacidad multimodal, no solo procesa y genera texto, sino también imágenes y audio. Esta habilidad para comprender y generar múltiples formas de entrada y salida lo coloca en una liga completamente diferente en comparación con otros chatbots. Cada vez que interactuamos con él, sigue aprendiendo y mejorando, abriendo posibilidades sin precedentes para la comunicación y la interacción.
+      Atrás quedaron los días en que buscábamos simplemente por el acto de buscar. Con herramientas como ChatGPT, la búsqueda se convierte en un diálogo, una conversación. Este mapa mental presenta una visión panorámica de cómo ChatGPT se entrelaza en diversos dominios, desde el procesamiento del lenguaje hasta la toma de decisiones personales. En el corazón de todo esto, está el deseo de hacer que la interacción con la tecnología sea más natural, intuitiva y, sobre todo, con apariencia de humana.
     </aside>
+</section>
+
  
     
-  </section>    
-      
-      <section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"  data-audio-text="La popularidad y el impacto de ChatGPT no se limitan solo a círculos académicos o tecnológicos. Cuando OpenAI anunció ChatGPT y buscó retroalimentación, la respuesta de la comunidad fue abrumadora, como lo demuestra este tweet. La fascinación y el interés del público en general por esta herramienta son innegables."> 
-        <div class="tweet" data-src="https://twitter.com/OpenAI/status/1598014522098208769"> </div>
-
-       
-
-        
-        <aside class="notes">
-          El tweet que ves aquí es de OpenAI, la organización detrás de ChatGPT. La respuesta a este tweet es un testimonio del impacto y el interés que ChatGPT ha generado en el público. Con miles de comentarios, retweets y favoritos, se puede ver que no solo el mundo científico, sino también el público en general está tomando nota de esta revolución en la comunicación IA.</aside>
-      </section>
-     
-      
-</section>
-      
-
-
  
-      <section class="full-height" data-background-iframe="https://esperr.github.io/pubmed-by-year/?q1=%22artificial%20intelligence%22[TIAB]&q2=OPENAI[TIAB]%20OR%20CHATGPT[TIAB]%20OR%20%22CHAT%20GPT%22[TIAB]%20OR%20GPT-3[TIAB]%20OR%20GPT-4[TIAB]%20&q3=%22COVID-19 vaccine*%22[TIAB]&startyear=2018"  data-background-opacity="1"  data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/bibliometria.mp3">
+
+    
+
+    
+
+    <section class="full-height" data-background-iframe="https://esperr.github.io/pubmed-by-year/?q1=%22artificial%20intelligence%22[TIAB]&q2=OPENAI[TIAB]%20OR%20CHATGPT[TIAB]%20OR%20%22CHAT%20GPT%22[TIAB]%20OR%20GPT-3[TIAB]%20OR%20GPT-4[TIAB]%20&q3=%22COVID-19 vaccine*%22[TIAB]&startyear=2018"  data-background-opacity="1"  data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/bibliometria.mp3">
       <!-- data-audio-text="Lo que observamos aquí es una representación visual de una tendencia verdaderamente impresionante en el mundo de la investigación. Desde 2018, hemos sido testigos de un aumento meteórico en las publicaciones relacionadas con la inteligencia artificial, reflejando cómo este campo se ha convertido en una fuerza dominante en la investigación científica. A medida que avanzamos hacia 2023, algo fascinante sucede: casi 1 de cada 1000 publicaciones en PubMed está relacionada con modelos de lenguaje como Chat GPT, mientras que casi 1 de cada 100 trata sobre inteligencia artificial en general. Esto no es solo un testimonio de la rapidez con la que estos campos están evolucionando, sino también de su creciente importancia en nuestra sociedad. " -->
       <div class="fragment blur" style="position: absolute; bottom: 15%; width: 35%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0, 0, 0, 0.406); background-color: rgba(0, 0, 0, 0.642); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
         <h6 style="text-align: center;"  class="color">📈 Bibliometría:<br>El "Taquillazo" de ChatGPT</h6>
@@ -594,7 +558,7 @@ section .custom-table th {
      Esta información pone de manifiesto la relevancia y el crecimiento explosivo de interés en Chat GPT desde su creación en diciembre de 2022 hasta su punto máximo en marzo de 2023. A pesar de las fluctuaciones posteriores, alcanzar un crecimiento tan significativo en un período relativamente corto es notable y habla de la importancia y el impacto del tema en la comunidad global. " -->
       <div class="footer">
         <H6 class="color">Nº de visitas a ChatGPT en Wikipedia hasta ayer (<span id="fecha-de-ayer"></span>)</H6>
-         <H5 class="color">Interés sin precedentes</H5>
+         <H5 class="fragment color">Interés sin precedentes</H5>
        </div>
       <aside class="notes">
         Después de evidenciar la revolución que ChatGPT ha causado en el mundo académico y científico, ahora podemos apreciar cómo este fenómeno ha resonado con igual fuerza entre la población general. Esta imagen actualiza a fecha de ayer el número de visitas a todas las páginas de chat gpt a wikipedia desde que se creó la página en octubre de 2022. En total más de 75 millones de visitas. El 30 de marzo de 2023, las visitas a la página ChatGPT en Wikipedia alcanzaron un pico de 590,632, un crecimiento del 6 veces desde diciembre de 2022. Este impresionante incremento refleja el impacto y relevancia crecientes de ChatGPT en pocos meses.
@@ -602,9 +566,7 @@ section .custom-table th {
   </section>
   
 
-    <section class="full-height" data-background-iframe="https://chat.openai.com/" data-background-opacity="1" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/webproduccion.mp3" >
-
-      <!-- data-audio-text= "Lo que estamos viendo es una captura en vivo de la interfaz de usuario de ChatGPT. Estas frases que destellan son solo un pequeño ejemplo de la multitud de solicitudes y tareas que ChatGPT puede manejar. Desde ayudar en la redacción de correos hasta generar ideas creativas, asistir en programación o responder preguntas sobre historia, la versatilidad de ChatGPT es realmente asombrosa. Representa un nueva generación de Internet que está cambiando el modelo de interacción con la web, tal y como lo conocemos hasta ahora. Y ahora que ya hemos descrito qué es, vamos a ver mejor lo que puede hacer la Inteligencia Artificial" -->
+    <section class="full-height" data-background-iframe="https://chat.openai.com/" data-background-opacity="1" data-audio-text= "Lo que estamos viendo es una captura en vivo de la interfaz de usuario de ChatGPT. Estas frases que destellan son solo un pequeño ejemplo de la multitud de solicitudes y tareas que ChatGPT puede manejar. Desde ayudar en la redacción de correos hasta generar ideas creativas, asistir en programación o responder preguntas sobre historia, la versatilidad de ChatGPT es realmente asombrosa." >
  
       <div class="footer">
         <H6 class=" color">
@@ -615,298 +577,85 @@ section .custom-table th {
        
       
       <aside class="notes">
-        La interfaz que visualizamos es la ventana directa a ChatGPT. Las frases que aparecen de manera secuencial nos brindan una visión de la diversidad de usos que tiene esta herramienta. Es un reflejo del poder y flexibilidad de ChatGPT, capaz de asistir en una amplia gama de tareas y contextos. Desde ayudar en la redacción de correos hasta generar ideas creativas, asistir en programación o responder preguntas sobre historia, la versatilidad de ChatGPT es realmente asombrosa. Representa un nueva generación de Internet que está cambiando el modelo de interacción con la web, tal y como lo conocemos hasta ahora
+        La interfaz que visualizamos es la ventana directa a ChatGPT. Las frases que aparecen de manera secuencial nos brindan una visión de la diversidad de usos que tiene esta herramienta. Es un reflejo del poder y flexibilidad de ChatGPT, capaz de asistir en una amplia gama de tareas y contextos.
       </aside>
     </section>
 
+    
+ 
+  <!--   <section>
+      <h2>Embeber un tweet</h2>
+      <blockquote class="twitter-tweet">
+        <a href="https://twitter.com/OpenAI/status/1598014522098208769">Texto del tweet</a>
+      </blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </section> -->
    
-    <section data-background-image="https://media.giphy.com/media/SUp0ZNb0pmL3G65I2k/giphy-downsized-large.gif" data-background-opacity="0.2" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/cambiobusqueda.mp3">
-      <!-- Con ChatGPT, la interacción se convierte en un diálogo, llevándonos más allá de la simple búsqueda para entregarnos respuestas contextualizadas. La búsqueda tradicional, como la conocíamos, se centraba en obtener una lista de resultados basados en palabras clave. Pero con ChatGPT, la dinámica cambia por completo. Ahora, en lugar de recibir una página llena de enlaces, obtenemos respuestas directas y relevantes a nuestras preguntas, como si estuviéramos conversando con un experto en el tema. Es un paso adelante hacia una búsqueda más intuitiva y personalizada.Se trata de una transformación radical en nuestra percepción y enfoque hacia la búsqueda de información -->
-      <H3 style="line-height: 1.4">ChatGPT no cambia la forma en que buscas...<br>si no la forma en que pensamos en la búsqueda</H3>
-      <H2 class="color" style="margin-top:3vh">De resultados a respuestas, de consultas a conversaciones</H4>
-    
-      <aside class="notes">
-        La búsqueda tradicional, como la conocíamos, se centraba en obtener una lista de resultados basados en palabras clave. Pero con ChatGPT, la dinámica cambia por completo. Ahora, en lugar de recibir una página llena de enlaces, obtenemos respuestas directas y relevantes a nuestras preguntas, como si estuviéramos conversando con un experto en el tema. Es un paso adelante hacia una búsqueda más intuitiva y personalizada.
-      </aside>    
-    </section>
-    
-    <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/mapaconceptual.mp3">
+   <section>
+      <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="ChatGPT es una revolución en la comunicación conversacional impulsada por la inteligencia artificial.  Imagina una máquina de escribir del siglo XX, pero en lugar de que tú escribas en ella, esta máquina te responde de forma coherente y relevante cuando le haces preguntas. Esa maravilla es ChatGPT, una herramienta de inteligencia artificial que conversa contigo en tiempo real. Es más que un simple chatbot; es un paso hacia la verdadera interacción humano-máquina. No solo responde, sino que lo hace utilizando el procesamiento de lenguaje natural y un vasto conocimiento acumulado. Es como un asistente personal en una máquina de escribir, pero con el cerebro de miles de libros, revistas y escritos humanos, todo en uno."> 
+        <div style="display: flex; align-items: center; justify-content: space-around;">
+          
 
-      <!-- Este mapa conceptual desglosa las múltiples aplicaciones potenciales de ChatGPT. Desde su capacidad en el procesamiento del lenguaje natural, como la generación y análisis de texto, traducción, y conversión de voz a texto, hasta su influencia en campos como la educación, la salud, la gestión empresarial, y la programación. Ya sea asistiendo en la creación de contenido educativo, ayudando en decisiones personales, asesorando en gestión empresarial o incluso en la programación, ChatGPT demuestra ser una herramienta versátil y poderosa en múltiples dominios. Como podrás intuir, las posibilidades son amplias y continúan expandiéndose -->
-      <h4 class="color" style="margin-top: -1vh;">Mapa Conceptual: Las múltiples facetas de ChatGPT</h4>
+          <div style="width: 60%;text-align: left;">
+              <h3 class="color" style="text-align: center;">¿Qué es ChatGPT?</h3>
       
-      <div style="display: flex; align-items: center; justify-content: center; height: 95vh;margin-top: -3vh;">
-          <div style="flex: 0 1 100%; margin-left:-20vh; margin-right:-20vh;">
-              <img src="http://www.plantuml.com/plantuml/png/ZLRDRXmt3BxlKwZ8pK1Is_c9WGH5NCTE2hIf4HljnHUkH8-PQCG1fN6yBl8mEURGGv57s1ShfH5sTjORjtiQKH_vVVmaoduL4qXgARWMkjaFwGfRD9q72hFuaK870gsPW_tO2FV17R5dCGzEocyD0IBywVoAxCU0CPgzHq_NDXrUGk_J2OVq3hJyM_JNcCZ2TimPtQBPUpPx6TF2uq-pm0xDNpEZlrDmZa9ZzlRByZUGXe9vN1PlMUXMqy4VUcf2Yo4PYo6XbErVAU2WVkvxN8L6pOyVxPRe-w5F2IZcoMxbkQ6sR_yabwxC_jCXE4fzKjUrlJzG70J8mTddcJ2dTxM3odcM-p87ZtPV5Cw9E45N8ZzlMFxfYXBUqRUfv409FSBbI7WdPN_tksvvl4mJcvzlb7-ylT5DYzIstVNpsNkgiYnqYJXK6wQaBtJ_vO_rkCSxKGz-cnqFZWzE3avEXZqMXrBZkxlFdn_jhyN70nwYPrVW-9DsLowf1WhDeFkPwlwy8Q1qdvLL9QkrrlTEuJlcw0hIczFpsSwEEHMs6A4b38cDGw_zXQQ73sW2f5x0Ash7lC600fQMtuA2JCARn6NZNC3rThL1ZhY5MBOEm_ABfqXncd74uHebJaePCDTyQnRccYpcNQXG4Qp56-qFyWnwXR4aRcJvvLBN0rV4o0Ar3Gm6enNA-cUvZeOjGH7YmKJmlIjflwYKcAYfdIqCh6jsa3XkBrzAA7wk4Qq0Kc2lsVQjGbRb11sicHCkMLgCfbr-TMHBRNEizgtmUNzOb7h78UBo7mYte7kfJta4nkqiYs8ghMLD7fGlikzNX9tmt6CxD0wTO71Qu0DUXFSOkpuBZmOKXaqVohS5j_pQaeLu4Kw5EnPB742gzYeqybpooTNAD77n8XmkUZSg0Z-8hiSD6ecv7O4vVE2OJugzHfNnTw6LUpKVFOu6MX11AUdQMYDG1IXxxuWlmbdVe1H3CiPoY9Wfyd0ONnhLpr4CtYo_j1WozVcwkveRrHAgvzsXH0wb3rTcP637oADXzMuBZjMLFc4WJS5yneck5NGFggYqlNB5qlpoxu1m4Uv5UuXOq5NZlV2fQHOw1LQtxyzh8VJWiQJriGSX7kwdXpcFVbRnMvhiF0IS7jLaluM4Gk0hPdNjBy9hojzSmjVWUytXN6gnVdYlCO88UrzmODLgSk2mNfG5siHnopksklbLyoa8Z7KrsUOPAGD078sEnE1YZtEeCvKerRVa_MJMCKHOi6gxCwDM43PXupni7QZ_zGvEvuwbWR0-UEI6kGDfoXjLjDrvDSlLjXYBaUCR-l2XEXTJgOLj9zblgWeAJpqM1JuqXtVUKCNfavT4LLR89d5JgojIlmGIDWJhL2MjMbnnZbRDERQrgVMSeiUSSmi5WvPYKRaQQFoEclIVAQSU0cNNgvgftnLTLH-799Z7gH8es19lOUuYMVRBRqr-JZ997TTIi-2dGxhyvgZXWUEcysItxvrzzqz2Do5uXS7L_wl_1G00" alt="Mapa Mental" style="height: 90vh; width: auto;">
-              <div style="position: absolute; bottom: 4%; left: 10%;  color: #000; z-index: 1; text-align: left; background-color: rgba(255, 255, 255, 0.7);  border-radius: 1px;">
-                <p style=" font-size: 0.9rem; text-shadow: none;">Estos son solo algunos de los casos de uso posibles.</p>
-                <p style=" font-size: 0.9rem; text-shadow: none;"><sup>*</sup> Puedes hacer zoom en la imagen con el botón izquierdo del ratón + tecla ALT.</p>
-            </div>
+              <p>Herramienta de inteligencia artificial que utiliza procesamiento de lenguaje natural para proporcionar respuestas conversacionales en tiempo real. En otras palabras, es un chatbot que puede conversar contigo y responder tus preguntas siempre que las formules en lenguaje natural. CHATGPT utiliza una gran cantidad de datos para mejorar constantemente la calidad de sus respuestas.
+              Ahora es multimodal, puede ver, oir leer en un contexto donde el texto vectorizado se podría considerar como el "tejido conectivo"
+              </p>
+              <p style="font-size: 40px;text-align: center" class="fragment color">"No es magia...es Inteligencia Artificial"</p>
+
           </div>
-         
-         <!--  <div style="flex: 0 1 1%; text-align: right; padding-left: 0%;  ">
-              <h4 class="color"><br> "ChatGPT"</h4>
-              <p>Conceptos</p>
-          </div> -->
-      </div>
-      <aside class="notes">
-        Atrás quedaron los días en que buscábamos simplemente por el acto de buscar. Con herramientas como ChatGPT, la búsqueda se convierte en un diálogo, una conversación. Este mapa mental presenta una visión panorámica de cómo ChatGPT se entrelaza en diversos dominios, desde el procesamiento del lenguaje hasta la toma de decisiones personales. En el corazón de todo esto, está el deseo de hacer que la interacción con la tecnología sea más natural, intuitiva y, sobre todo, con apariencia de humana.
-      </aside>
-      <p style="position: absolute; bottom: 4%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em;margin-bottom: -3vh">
-        Imagen elaborada con 
-        <a href="https://www.plantuml.com" target="_blank" style="font-size: inherit; text-decoration: underline;">PlantUML</a> 
-        y 
-        <a href="https://openai.com" target="_blank" style="font-size: inherit; text-decoration: underline;">ChatGPT</a>
-    </p>
-  </section>
-    
-   
-
-    <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
-      <section  data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/ejemplopubmed.mp3">
-        <!-- data-audio-text="En esta sección, vamos a explorar algunos ejemplos prácticos de cómo podemos usar ChatGPT. Aquí, el primer caso ilustra cómo ChatGPT puede desglosar y explicar una consulta compleja de PubMed, convirtiéndola en información comprensible para aquellos que no están familiarizados con la sintaxis de búsqueda avanzada. Es un testimonio de su potencial en el ámbito académico y profesional. Usado de esta manera, puede ser una herramienta útil para aquellos que buscan comprender y mejorar sus habilidades de búsqueda en bases de datos académicas como PubMed. Ahora, pulsa la barra espaciadora para continuar y ver en las siguientes diapositivas el resto de la interpretación" -->
-      <h3 class="color" style="text-align: center;">Algunos ejemplos de uso de ChatGPT</h3>
-      <p style="font-size: 1.4rem;">Describir una búsqueda en PubMed</p>
-      <h5 class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h5> <p style="font-size: 1.3rem; text-align: left;"> No sé cómo buscar en Pubmed, pero quiero entender cómo funciona esto. Explícame la sintaxis de PubMed (diapositiva superior) de forma que una persona sin conocimientos técnicos pueda entenderla. Organízalo por secciones con encabezados. </p>
-      <pre class="custom-pre"><code class="custom-code-block hljs" >(statin*|rosuvastatin|lovastatin|atorvastatin|pravastatin|pitavastatin) ((((("critical appraisal" OR "journal club" OR (journal[TIAB] AND club*[TIAB])))) OR ((((("evidence-based practice" OR "evidence-based policy" OR "evidence based practice" OR "evidence-based medicine" OR "evidence based medicine" OR "evidence-based health care" OR "evidence-based healthcare" OR "evidence based health care" OR "evidence based health care" OR "evidence-based dentistry" OR "evidence based dentistry" OR "Evidence-Based Facility Design" OR "evidence-based nursing" OR "evidence based nursing" OR "Evidence-Based Emergency Medicine")))) OR (((((("Evidence-Based Practice"[Mesh]) OR "Evidence-Based Practice/education"[Mesh]) OR "Evidence-Based Medicine"[Mesh]) OR "Evidence-Based Dentistry"[Mesh]) OR "Evidence-Based Nursing"[Mesh] OR "Evidence-Based Facility Design"[Mesh] OR "Evidence-Based Emergency Medicine"[Mesh])))))</code></pre>
-
-      <aside class="notes">
-        
-      </aside>
-    </section>
-    
-      <section data-audio-text="">
-    
-        <h5 class="color" style="text-align: left;">🤖 ChatGPT:</h5>
-        <p style="font-size: 1.3rem; text-align: left;">La consulta proporcionada está estructurada de manera compleja para obtener resultados precisos en PubMed. Vamos a desglosarla paso a paso.</p>
-        
-        <!-- Palabras clave y operadores -->
-        <h6  class="color" style="text-align: left;">1. Palabras clave y operadores</h6>
-        <p style="font-size: 1.3rem;  text-align: left;">Las "palabras clave" son las palabras o frases específicas que estamos buscando en la literatura. <br>
-          Operadores son las herramientas que usamos para decirle al motor de búsqueda cómo queremos que combine o excluya ciertas palabras clave. En PubMed, los operadores principales son: OR, AND y NOT.
-       <br>Por ejemplo con ("manzana" OR "pera"), la búsqueda devolverá resultados que contienen la palabra "manzana" o "pera".</p>
-        <!-- Términos de búsqueda con "wildcards" -->
-        <h6 class="color" style="text-align: left;">2. Términos de búsqueda con "wildcards"</h6>
-        <p style="font-size: 1.3rem;  text-align: left;">Un "wildcard" es un símbolo que se utiliza para representar uno o más caracteres en una palabra clave. En PubMed, el asterisco (*) es un wildcard común. <br> statin* buscará todas las palabras que comiencen con "statin", como "statins", "statin-induced", etc.</p>
-    
-       
-      </section>
-       <section>
-         <!-- Grupos de palabras clave -->
-         <h6 class="color" style="text-align: left;">3. Grupos de palabras clave</h6>
-         <p style="font-size: 1.3rem;  text-align: left;">
-          La búsqueda se compone de varios grupos de palabras clave, separados por operadores. Estos grupos permiten realizar búsquedas más específicas.</p>
-
-          <pre class="custom-pre"><code class="custom-code-block hljs" style="text-align: center;" >(statin*|rosuvastatin|lovastatin|atorvastatin|pravastatin|pitavastatin)</code></pre>
-         
-        <p style="font-size: 1.3rem; text-align: left;">Esto buscará cualquier mención de términos relacionados con "statin" o los nombres específicos de medicamentos listados. El operador | es equivalente al OR.</p>
-        <!-- Uso de campos específicos -->
-        <h6 class="color" style="text-align: left;">4. Uso de campos específicos: [TIAB] y [Mesh]</h6>
-        <p style="font-size: 1.3rem;  text-align: left;">El campo [TIAB] en PubMed se refiere a "Title/Abstract", lo que significa que la búsqueda se limitará a los títulos y resúmenes de los artículos.</p>
-        <code></code><pre class="custom-pre"><code class="custom-code-block hljs" style="text-align: center;" >journal[TIAB] AND club*[TIAB]</code></pre>
-         
-        <p style="font-size: 1.3rem;  text-align: left;">Esto buscará artículos cuyo título o resumen contenga la palabra "journal" y alguna palabra que comience con "club".</p>
-        <p style="font-size: 1.3rem;  text-align: left;">[Mesh] se refiere a los "Medical Subject Headings", que son términos estandarizados utilizados para indexar artículos en PubMed.</p>
-       <code></code><pre class="custom-pre"><code class="custom-code-block hljs" style="text-align: center;" >"Evidence-Based Practice"[Mesh]</code></pre>
-        <p style="font-size: 1.3rem;  text-align: left;">Esto buscará artículos que hayan sido indexados bajo el término "Evidence-Based Practice" en el sistema MeSH.</p>
-    
-        <!-- Combinación de grupos -->
-        <h6 class="color" style="text-align: left;">5. Combinación de grupos</h6>
-        <p style="font-size: 1.3rem;  text-align: left;">La consulta completa combina todos estos grupos de palabras clave utilizando operadores OR para abarcar una amplia gama de términos relacionados con la práctica basada en la evidencia y los medicamentos relacionados con "statin".</p>
-        <p style="font-size: 1.3rem; text-align: left;">Espero que esta explicación te haya ayudado a entender cómo funciona esta consulta específica en PubMed y cómo se estructura para obtener resultados precisos.</p>
-      </section>
-    </section>
-    
-
-    <!-- diapo analisis bibliometrico -->
-    <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
-      <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/bibliometria1.mp3"">
-        <!-- En esta diapositiva, solicitamos a ChatGPT que realice un análisis bibliométrico basado en un archivo exportado de Embase. La consulta de búsqueda que se usó se centra en términos relacionados con ChatGPT y versiones específicas como GPT-3 y GPT-4 de OpenAI. A continuación, en la diapositiva inferior, veremos una demostración interactiva de cómo ChatGPT-4 realiza un análisis de datos avanzado sobre estas publicaciones. Pulsa la barra espaciadora o la flecha hacia abajo para verlo-->
-      <h3 class="color" style="text-align: center;">ChatGPT: Quiero un análisis bibliométrico de publicaciones</h3>
-      <h5 class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h5> <p style="font-size: 1.2m; text-align: left;"> Analiza este archivo exportado de Embase con todas las citas obtenidas en la siguiente búsqueda: </p>
-    
-      <pre class="custom-pre"><code class="custom-code-block hljs" >'chatgpt'/exp OR chatgpt OR 'chat gpt'/exp OR 'chat gpt' OR (('gpt 3' OR 'gpt 4') AND (openai OR llm))</code></pre>
-
-      <aside class="notes">
-        El análisis bibliométrico es una herramienta poderosa en la investigación académica, permitiendo identificar tendencias, autores influyentes y temas emergentes en un campo de estudio. Al aprovechar las capacidades de ChatGPT, podemos simplificar y acelerar este proceso, obteniendo insights valiosos rápidamente. En la demostración que sigue, verás cómo ChatGPT-4 procesa y analiza los datos de publicaciones relacionadas con su propio desarrollo y evolución. Esta consulta está realizada con el modo "Advanced Data Analysis" de ChatGPT, anteriormente llamado Interprete de código
-    </aside> 
-    </section>
-    <section class="full-height" data-background-iframe="https://chat.openai.com/share/5a79cc6c-99fe-4ffd-a09a-dc1825a0d7b6" data-background-opacity="1"  data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/bibliometria2.mp3"  data-background-interactive>
-
-      <!-- esta conversación se centra en el análisis bibliométrico de un conjunto de datos relacionado con publicaciones sobre ChatGPT y la inteligencia artificial. Se exploran diversos aspectos, como la polaridad del sentimiento en los títulos, las primeras y últimas palabras en los títulos, y las palabras clave más comunes en los resúmenes. Se identifican tendencias en las palabras clave a lo largo del tiempo y se observa cómo han evolucionado año tras año. Además, se examina la distribución de la longitud de los resúmenes, sugiriendo que la mayoría son concisos, pero algunos ofrecen detalles más extensos. A lo largo de la conversación, se enfrentan desafíos técnicos y se hacen correcciones para proporcionar análisis precisos. La herramienta demuestra ser una solución avanzada para interpretar y analizar datos bibliométricos, especialmente útil para profesionales como bibliotecarios documentalistas interesados en la evolución y percepción de la inteligencia artificial en la literatura académica. -->
-
-      <div class="footer" style="position: absolute; bottom: 4vh; width: 70%; background-color: rgba(0, 0, 0, 0.775); padding: 10px 0; text-align: center;">
-          <H6 class="color">Análisis bibliométrico con ChatGPT-4 Advanced Data Analysis</H6>
-         
-      </div>
-      <aside class="notes">
-        esta conversación se centra en el análisis bibliométrico de un conjunto de datos relacionado con publicaciones sobre ChatGPT y la inteligencia artificial. Se exploran diversos aspectos, como la polaridad del sentimiento en los títulos, las primeras y últimas palabras en los títulos, y las palabras clave más comunes en los resúmenes. Se identifican tendencias en las palabras clave a lo largo del tiempo y se observa cómo han evolucionado año tras año. Además, se examina la distribución de la longitud de los resúmenes, sugiriendo que la mayoría son concisos, pero algunos ofrecen detalles más extensos. A lo largo de la conversación, se enfrentan desafíos técnicos y se hacen correcciones para proporcionar análisis precisos. La herramienta demuestra ser una solución avanzada para interpretar y analizar datos bibliométricos, especialmente útil para profesionales como bibliotecarios documentalistas interesados en la evolución y percepción de la inteligencia artificial en la literatura académica.
-    </aside> 
-  </section>
-    
-    </section>
-
-
-    <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
-
-      <h3 class="color" style="text-align: center;">Lectura Crítica por ChatGPT</h3>
-      
-    
-     
-    
-      <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/lecturacritica.mp3">
-        <!-- En este ejemplo, ChatGPT ha identificado y resumido el diseño y el título de un estudio clínico aleatorizado sobre la efectividad de la sertralina. Estos detalles son esenciales para entender el contexto y la metodología del estudio.   La capacidad de ChatGPT para identificar y resumir rápidamente detalles clave de un artículo puede ser valiosa para facilitar la revisión de información científica en poco tiempo. Para los bibliotecarios documentalistas, tener una herramienta que pueda resumir y analizar resultados es esencial. Esto no sólo ahorra tiempo, sino que también garantiza una comprensión clara y precisa de los hallazgos. Este resumen lo podrás seguir viendo en las pantallas inferiores, pulsando la barra espaciadora o la flecha hacia abajo de tu teclado o la pantalla (abajo a la derecha)" -->
-        <h4  class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h4> <p style="font-size: 1.6rem; text-align: left;"> Quiero que hagas la lectura crítica de un artículo científico </p>
-        <h4 class="color" style="text-align: left; margin-top: 8vh;">🤖 ChatGPT:</h4>
-           <div class="fade-in">
-        <h5 class="color" style="text-align: left; margin-top: 3vh; ">Título y Diseño del Estudio</h5>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Título del artículo:</strong> The clinical effectiveness of sertraline in primary care and the role of depression severity and duration (PANDA): a pragmatic, double-blind, placebo-controlled randomised trial.</p>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Traducción al español (y enlace): </strong><a style="font-weight: bold; font-size:1.2em; text-align: center;" href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(19)30366-9/fulltext" target="_blank">La efectividad clínica de la sertralina en atención primaria y el papel de la gravedad y la duración de la depresión (PANDA): un ensayo aleatorizado pragmático, doble ciego y controlado con placebo.</a></p>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Diseño del estudio:</strong> Este es un ensayo clínico aleatorizado, doble ciego y controlado con placebo que se llevó a cabo en 179 centros de atención primaria en el Reino Unido. Se incluyeron pacientes de 18 años o más que presentaban síntomas de depresión durante al menos dos semanas. Los participantes fueron asignados aleatoriamente a recibir sertralina o un placebo. La dosis inicial de sertralina fue de 50 mg/día durante una semana, luego se incrementó a 100 mg/día.</p>
-        <footer ><p style="text-align: left; font-size: 1.2rem; margin-top:10vh">*Artículo resumido y analizado por <strong>ChatGPT</strong>. Versión del Prompt: julio 2023</p></footer>
-      </div>
-      <aside class="notes">
-        En este ejemplo, ChatGPT ha identificado y resumido el diseño y el título de un estudio clínico aleatorizado sobre la efectividad de la sertralina. Estos detalles son esenciales para entender el contexto y la metodología del estudio.   La capacidad de ChatGPT para identificar y resumir rápidamente detalles clave de un artículo puede ser valiosa para facilitar la revisión de información científica en poco tiempo. Para los bibliotecarios documentalistas, tener una herramienta que pueda resumir y analizar resultados es esencial. Esto no sólo ahorra tiempo, sino que también garantiza una comprensión clara y precisa de los hallazgos. Este resumen lo podrás seguir viendo en las pantallas inferiores, pulsando la barra espaciadora o la flecha hacia abajo de tu teclado o la pantalla (abajo a la derecha)
-    </aside> 
-       
-      </section>
-    
-      <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/lecturacritica2.mp3">
-        <!-- Aquí vemos como ChatGPT, continuando con la respuesta anterior, redacta y estructura la presentación de los resultados y conclusiones del estudio, según se le indicó en el prompt elaborado con esta finalidad. Esto incluye la validez interna y externa, así como las principales conclusiones y resultados. Dentro de este último apartado, ha diseñado una tabla para resumir de una forma clara los principales resultados de interés -->
-        <h5 class="color" style="text-align: left;">Resultados y Conclusiones</h5>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Validez interna:</strong> El estudio parece tener una alta validez interna. Se utilizó un diseño de doble ciego para minimizar el sesgo, y el análisis se realizó en la población por intención de tratar, lo que ayuda a preservar el equilibrio de las características del paciente logrado en la aleatorización. La tasa de abandono fue similar en ambos grupos.</p>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Validez externa:</strong> La validez externa del estudio también parece ser alta. El estudio se realizó en un entorno de atención primaria y los participantes tenían una amplia gama de gravedad de los síntomas de depresión, lo que sugiere que los resultados son aplicables a la población general de pacientes con depresión en atención primaria.</p>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Resultados y conclusiones:</strong> Los resultados mostraron que la sertralina no fue superior al placebo en términos de mejora de los síntomas de depresión a las 6 semanas. Sin embargo, la sertralina fue superior al placebo en términos de reducción de los síntomas de ansiedad y mejora de la calidad de vida a las 6 semanas. A las 12 semanas, la sertralina fue superior al placebo tanto para la depresión como para la ansiedad.</p>
-        <!-- Figura 1 -->
-        <div style="display: flex; align-items: center; justify-content: center; height: 30vh; margin-top: -1vh;">
-          <img src="https://telegra.ph/file/09b5752290ad69aa70d9b.png" alt="Figura 1" style="height: 22vh; width: auto;">
+          <div style="width: 40%;">
+              <img src="https://th.bing.com/th/id/OIG.gl6kn.FD6PNOUJjrLkU2?pcl=1b1a19&pid=ImgGn" alt="Imagen representativa de ChatGPT" style="max-width: 100%;">
+          </div>
         </div>
         <aside class="notes">
-      
-        </aside> 
-           
-      </section>
-    
-      <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/lecturacritica3.mp3">
-        <!-- a continuación comprobamos como ChatGPT ofrece una interpretación detallada de la evidencia, contextualizando los hallazgos y discutiendo la relevancia y aplicabilidad del estudio -->
-        <h5 class="color" style="text-align: left;">Interpretación (I)</h5>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Aplicabilidad de la evidencia:</strong> Los hallazgos del estudio son relevantes para la práctica clínica. Aunque la sertralina no mostró una mejora en los síntomas de depresión a corto plazo, sí mostró beneficios a largo plazo y en la reducción de los síntomas de ansiedad y la mejora de la calidad de vida.</p>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Jerarquía de la evidencia científica:</strong> Este estudio se sitúa en la cima de la jerarquía de la evidencia científica, ya que es un ensayo clínico aleatorizado.</p>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Posibles conflictos de interés y sesgos:</strong> No se informaron conflictos de interés. Sin embargo, el estudio fue financiado por el National Institute for Health Research, que podría tener un interés en los resultados.</p>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Interpretación de resultados estadísticos:</strong> Los resultados se presentaron como diferencias de medias y razones de probabilidades, con intervalos de confianza del 95%. Se utilizó un nivel de significación del 5%.</p>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Contextualización de los hallazgos:</strong> Los hallazgos del estudio sugieren que la sertralina puede no ser efectiva para mejorar los síntomas de depresión a corto plazo en la atención primaria, pero puede tener beneficios a largo plazo y para los síntomas de ansiedad y la calidad de vida.</p>
-
-        <aside class="notes">
-      
-        </aside> 
-           
-      </section>
-    
-      <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/lecturacritica4.mp3">
-        <h5 class="color" style="text-align: left; margin-top:8vh">Interpretación (II)</h5>
-        <!-- En este segmento de su respuesta, ChatGPT ofrece un resumen final y una evaluación de la calidad del estudio. Además, proporciona un análisis visual de los hallazgos, lo que puede ser útil para aquellos que prefieren un formato visual -->
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Calidad del estudio:</strong> 8/10. El estudio fue bien diseñado y ejecutado, pero la falta de un efecto a corto plazo para la depresión es sorprendente y puede reflejar una limitación en la medida de resultado utilizada o en el diseño del estudio.</p>
-        <p style="font-size: 1.2rem; text-align: left;"><strong>Resumen de ChatGPT:</strong> Este estudio examinó la efectividad de la sertralina, un antidepresivo comúnmente prescrito, en el tratamiento de la depresión en la atención primaria. Aunque la sertralina no mostró una mejora en los síntomas de depresión a las 6 semanas, sí mostró beneficios a las 12 semanas y en la reducción de los síntomas de ansiedad y la mejora de la calidad de vida. Esto sugiere que la sertralina puede tener un efecto más lento o más sutil que lo que se puede captar con las medidas de resultado a corto plazo. Además, la sertralina puede ser útil para tratar los síntomas de ansiedad en pacientes con depresión.</p>
-        <!-- Figura 2 -->
-        <div style="display: flex; align-items: center; justify-content: center; height: 50vh; margin-bottom: -2vh;">
-          <img src="https://telegra.ph/file/afd9c7a390c39f1a513b0.png" alt="Figura 2" style="height: 50vh; width: auto;">
-        </div>
-      </section>
-      <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/lecturacritica5.mp3">
-        <!-- Para concluir, ChatGPT ha adoptado el rol de 'Community Manager', elaborando un mensaje adaptado para la red social X. Este método ilustra cómo ChatGPT puede asistirnos en la creación de contenidos, ajustando y perfeccionando el mensaje para distintas plataformas y audiencias, con el fin de simplificar y potenciar nuestra presencia en redes sociales. -->
-        <p style="font-size: 1.4em; text-align: left;"><strong style="font-size: 1em;" >Sugerencia de Tweet:</strong> 📢Estudio en @TheLancetPsych muestra que la sertralina puede no mejorar los síntomas de #depresión a corto plazo, pero sí muestra beneficios a largo plazo y para los síntomas de #ansiedad y la calidad de vida. 🧠💊 #SaludMental #Investigación #ChatGPT 🤖👩‍⚕️ <a style="font-weight: bold; font-size:1em; text-align: center;" href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(19)30366-9/fulltext" target="_blank">Link al estudio</a></p>
-      </section>
-
-      <aside class="notes">
-      
-      </aside> 
+          ChatGPT es más que un simple chatbot. Aunque, a primera vista, podría parecer una máquina de escribir del pasado, en realidad es una asombrosa evolución de esa tecnología. Imagina combinar la habilidad de un bibliotecario experto y un sabio políglota que ha leído y memorizado miles de libros, con la rapidez y eficiencia de una máquina moderna. Pero ChatGPT va incluso más allá: con su capacidad multimodal, no solo procesa y genera texto, sino también imágenes y audio. Esta habilidad para comprender y generar múltiples formas de entrada y salida lo coloca en una liga completamente diferente en comparación con otros chatbots. Cada vez que interactuamos con él, sigue aprendiendo y mejorando, abriendo posibilidades sin precedentes para la comunicación y la interacción. Valorar contar como anécdota lo que contó un usuario de reddit respecto a enseñar la foto de una biblioteca y pedirle perlas de conocimiento de cada libro
+        </aside>
+      </section>    
+          
+          <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="OpenAI anunció ChatGPT y pidió a la comunidad su feedback. Esta interacción generó un gran interés, como lo demuestran las miles de interacciones con el tweet. El entusiasmo del público general por esta herramienta es palpable."> 
+            <div class="tweet" data-src="https://twitter.com/OpenAI/status/1598014522098208769"> </div>
+            
+            <aside class="notes">
+              El tweet que ves aquí es de OpenAI, la organización detrás de ChatGPT. La respuesta a este tweet es un testimonio del impacto y el interés que ChatGPT ha generado en el público. Con miles de comentarios, retweets y favoritos, se puede ver que no solo el mundo científico, como vimos con la bibliometría anterior, sino también el público en general está tomando nota de esta revolución en la comunicación IA.</aside>
+          </section>
          
-    </section>
-    
-    
-    <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.5" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/mapamental.mp3">
-      <!-- En esta diapositiva, exploramos otra dimensión útil de ChatGPT: su habilidad para proporcionar respuestas en diferentes formatos. Cuando le pedimos que nos proporcione el código para crear un mapa mental sobre cómo diseñar una búsqueda eficaz en PubMed, no sólo nos proporciona una respuesta textual, sino que también tiene el potencial, según la versión y plugins con los que esté equipado, de ofrecernos una representación gráfica, como un mapa mental. Esta versatilidad resalta la adaptabilidad de ChatGPT para satisfacer una amplia gama de necesidades de los usuarios, desde simples respuestas textuales hasta visualizaciones gráficas complejas. -->
-      <div style="text-align: left;">
-        <h4 class="color" style="display: inline-block; margin-bottom: 0;">👩🏽‍⚕️ Yo:</h4>
-        <p style="font-size: 1.2em; display: inline-block; margin-top: 0; margin-left: 10px;">Dame el código de un mapa mental con los pasos para diseñar una búsqueda eficaz en PubMed</p>
-    </div>
-    
-
-        <h4 class="color " style="text-align: left; margin-top: 2vh;">🤖 ChatGPT:</h4>
-      <div style="position: relative; height: 95vh; margin-top: -1vh;">
-          <div class="fade-in" style="max-width: 100%; max-height: 95%; overflow: hidden;">
-              <img src="https://www.plantuml.com/plantuml/svg/bLRBRXl74jtpA-hYBWmG4aMHeaph4hgcHT4s4CcC92URR6fwYbJRFTrqF-JOHdRv0mT142389XiliWYoyoP0-4FvX5HFQpZKo08I2D3CrDJZrAbJFNpeF5fVI9qNk6or_kClgI1OAfIwvLvAlKIB1MGeNYwi2Je_CifO-Ezq7FysFD1Qy_hYKegNcfo3tSvmusLESmpAJutsfyZfnrQY-lJxS_cMe3zejKRElr5qsD8c9tZN0W2OOPvBlO3TNlbuWdOXDUoL3q-CbMyv7jLOoOKkI7iG_8zi-VepgUaQUhTx__vHRssjCVSxWz9wblgqcYpi3QvBVIsBK7mfSty9WrwtDAxXzlhbSwEzQ3g_nDoyZfXxhMzQrXX_MhSJgv_79k51f_k_VgVRH7gytt-mjrzQ7zqnW2RUGGFPVlrSLdfaLCv85E6yGjB8q1lSoQUYkRynY66ZMlVJF3JvwtOtviTH36YqSptk3LNKax_T_l5mEfnEqpjZSxBhuVOdWqSRzdgylSwWEPDEaa4ibA3jHp0D23LvxpvDPkr-HiAZNjIk5JExmxkOYQO6zd_NRnJpF--NuRO4Bhqq6iR16ti0HvVe7yyklj8iFK5QI6IR9VJoYk3858NH3iRUoYm8kVfTRvyQjf9bHmLxdIuyZLkcKN1ERghbfLS48yTz7_IwXwDmE96ELhyPo9corKVtAb2ES3oN0jy2QPY5x8JoqKuu7ErmL1H16qOYDdXmlGE7xNRoQhT7E-MRwDI6ltv-_qFJTPGTJcWkjIpHGauABgZ0qKvsk8vjS-pJdBIN4OM5cQL5OB6pDxTpHSxB1PRnqRKDV_xnULXzW5T1aZNWC2CB1Ymvewx8_h_CDo4N3q6bq39jMj3I6mT72gye9PcXmioY0n5j7EzN7ooVlEnbIT4LCeyEK85dk9rM6M9btCFDZD4UYtcAiMZXLKHMft8yMNBb71MdYy84XP1Ln7SgudvQ4zSRFvWCfv6uSr8aAjxWeafwYxldNge8gtQ14pf_ah2DXQ2SREna8aKf2swZTE2kcjJx6naY4qb9ELi4zwBIDJMVg2kprALPjvabro3Pm9mlp80sCTwJbZcRIMy2cJ4ZR75aOVNHopLXSG8S6UZAn4nKa5rG70-pjxtDxFto_PgzwTwujxyRsUCPEMz3JQ1YcRC5FItaJG5kSvPdIxBS9aFdtJMAKAVfRj0xFfrimREpBJXzTf6G2LDaKc_orYcJFNVbVitGhZv4eBBY8mRXmeRb3QxVW4XWfItlWlBeOlAbeXTuC-U53LgKGwb8Fdv1x6WEu9AMw4qxGSk2YmDDjWAtgZjQe7fJFGbIAYYqMq1UL6n-z-sQpM6_Fpm-YcoUnIN6GZBlXl4UNw4AQITlCJcpWJBa2obPBWLRsNn6c6WCUcC1OBbsIxYfp6p1Kab3Nb4wVX6SfrjpJBbFJ7vBm0PCFL97YzN79DywCPWi2h4giTbKh7F4U7FCKuKlo5vNK5WT449Y75roYn4nFLg_-bM4U4iwIZr2M2lr_O-rKgVTxlvnvFOnzyiP8gyJ8qBykjz1xHct75ktcmn44TI13LqbWIQvG4XApYj9fSAs_Wuq5QyGva4dHkwTntFodD2Aotkns_GDI9bECEuqMKSm5ZvWMSQaRBo8Sxa84JKgiXwlrzgIa9cqrMAJyo6NvPcPMGAgJjxMGzBvzK_Ylm40" alt="Esquema del diseño de búsqueda avanzada en PubMed" style="max-width: 100%; display: block;">
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="  En esta velocidad de vértigo, ChatGPT nos avisa de que introduce la posibilidad de añadir imágenes o audios en septiembre de 2023. Con ChatGPT Vision, estamos entrando en una era donde la inteligencia artificial no solo procesa información, sino que realmente interpreta el mundo a nuestro alrededor. Ya no estamos limitados a palabras o números. Ahora, con una simple imagen, podemos acceder a un mundo de conocimiento. ">
+          <div style="display: flex; align-items: center; justify-content: space-around;">
+              <!-- Imagen a la izquierda, más ancha -->
+              <div style="width: 50%;">
+                  <a href="https://openai.com/blog/chatgpt-can-now-see-hear-and-speak" target="_blank">
+                      <img src="https://images.openai.com/blob/9c95036b-c2f5-4af8-a9c4-ed6c411f77e4/chatgpt-can-now-see-hear-and-speak-alt.jpg?trim=0,420,0,420&width=2000" alt="ChatGPT Vision" style="max-width: 100%;">
+                      <p style="font-size: 18px; text-align: center; margin-top: -25px;">Imagen de <a href="https://openai.com/blog/chatgpt-can-now-see-hear-and-speak" target="_blank" style="text-decoration: underline; color: inherit;">openai.com</a></p>
+                  </a>
+              </div>
+              <!-- Texto a la derecha, más estrecho con padding izquierdo -->
+              <div style="width: 50%; text-align: left; padding-left: 20px;">
+                  <h3 class="color" style="text-align: center;">Ver el Mundo...<br>...a través de ChatGPT</h3>
+                  <p >Con ChatGPT Vision, estamos entrando en una era donde la inteligencia artificial no solo procesa información, sino que realmente interpreta el mundo a nuestro alrededor. Ya no estamos limitados a palabras o números. Ahora, con una simple imagen, podemos acceder a un mundo de conocimiento.</p>
+                  <p class="fragment color">Para obtener más información, visita <a href="https://openai.com/blog/chatgpt-can-now-see-hear-and-speak" target="_blank" style="text-decoration: underline; color: inherit;">openai.com/blog</a></p>
+              </div>
           </div>
+          <aside class="notes">
+              En esta velocidad de vértigo, ChatGPT nos avisa de que introduce la posibilidad de añadir imágenes o audios en septiembre de 2023. Con ChatGPT Vision, estamos entrando en una era donde la inteligencia artificial no solo procesa información, sino que realmente interpreta el mundo a nuestro alrededor. Ya no estamos limitados a palabras o números. Ahora, con una simple imagen, podemos acceder a un mundo de conocimiento. .
+          </aside>
+      </section>
+      
+      
+      
         
-         <!--  <div class="aligned" style="position: absolute; bottom: -3%; left: 0%; background: rgba(15, 15, 15, 0.8);  max-width: 90%; box-sizing: border-box;">
-              <p class="aligned mensaje-usuario size3">👩🏽‍🚀Usuario escribe (Prompt):</p>
-              <blockquote class="size3 color" style="background: rgba(15, 15, 15, 0.5)" >
-                  "Dame el código de un mapa mental con los pasos para diseñar una búsqueda eficaz en PubMed"
-              </blockquote>
-          </div> -->
-      </div>
-      <aside class="notes">
-          Aquí tenemos un esquema que describe el diseño de una búsqueda avanzada en PubMed. Esta herramienta es esencial para cualquier profesional de la salud que busque información científica actualizada. Es una representación visual que descompone el proceso de búsqueda en pasos lógicos y fáciles de seguir, lo que facilita la comprensión y aplicación de la técnica.
-      </aside>
-  </section>
-  
-  <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/video.mp3">
-    <!-- En esta diapositiva, mostramos cómo ChatGPT-4, con la ayuda de un plugin especializado, es capaz de analizar y resumir un video de YouTube. Se solicitó a ChatGPT identificar los momentos clave de un video formativo titulado 'Búsqueda avanzada para revisiones sistemáticas'. A pesar de que el video está en inglés, ChatGPT proporciona una lista detallada de momentos relevantes traducidos al idioma del usuario. Además, ofrece una descripción contextual del video, que se encuentra ubicada a la izquierda, justo debajo de este. Esta funcionalidad puede ser de gran utilidad para profesionales y estudiantes que necesiten extraer información crucial de contenidos multimedia de manera rápida y eficiente, en contextos de falta de tiempo o sobrecarga de información.-->
-    <h2 class="title color" style="text-align: center;">Resumen de un Video por ChatGPT-4 (con plugin)</h2>
-    <div style="text-align: left;">
-      <h4 class="color" style="display: inline-block; margin-bottom: 0;">👩🏽‍⚕️ Yo:</h4>
-      <p style="font-size: 1.2rem; display: inline-block; margin-top: 0; margin-left: 10px;">Quiero que selecciones los momentos más importantes de este vídeo y presentes el guion completo del video con esa estructura</p>
-    </div>
-    <h4 class="color" style="text-align: left; margin-top: 2vh;">🤖 ChatGPT:</h4>
-    <div class="fade-in" style="display: flex; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 300px; padding: 10px;">
-            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/4h4Yz_0VGJs?si=l5hJdwUCpvXnCbQS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <div style="text-align: left; font-size: 1rem; line-height: 1.4; margin-top:2vh">
-              <strong style="font-size: 1rem; ">Datos del video:<br></strong>
-              <br><strong style="font-size: 1rem;">Título:</strong> Part 3: Advanced Searching for Systematic Reviews (2022)
-              <br><strong style="font-size: 1rem;">Nombre del canal:</strong> <a style="font-size: 1rem;font-weight: bold;" href="https://www.youtube.com/University%20of%20Manitoba%20Libraries" target="_blank">University of Manitoba Libraries</a>
-              <br><strong style="font-size: 1rem;">Número de visualizaciones:</strong> 1,019 (Fecha de consulta: 14 de octubre de 2023)
-              <br><strong style="font-size: 1rem;">Duración:</strong> 5750 segundos (aproximadamente 95 minutos)
-              <br><strong style="font-size: 1rem;">URL del video:</strong> <a style="font-size: 1rem; font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs" target="_blank">Enlace</a>
-          </div>
-        </div>
-        <div style="flex: 2; min-width: 300px; overflow-y: auto; max-height: 90vh; padding: 1vh;">
-            <h3 style="font-size: 1.3em;">Momentos clave:</h3>
-            <ul style="font-size: 1.2rem;">
-                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1280s" target="_blank">Introducción a la búsqueda avanzada</a> - Importancia de pausar y revisar las herramientas de búsqueda.</li>
-                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1312s" target="_blank">Uso de bases de datos bibliográficas</a> - Cómo las bases de datos organizan y buscan información.</li>
-                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1344s" target="_blank">Importancia de las palabras clave y sinónimos</a> - Las bases de datos son literales y no buscan automáticamente sinónimos.</li>
-                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1552s" target="_blank">Limitaciones de PubMed para revisiones sistemáticas</a> - PubMed no es adecuado para revisiones sistemáticas.</li>
-                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=2352s" target="_blank">Uso de encabezados de temas y subencabezados</a> - Cómo usar encabezados para refinar búsquedas.</li>
-                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=2460s" target="_blank">Ejemplo práctico: Búsqueda de "diabetic foot"</a> - Búsqueda de un tema específico utilizando encabezados y palabras clave.</li>
-            </ul>
-        </div>
-    </div>
-    <aside class="notes">
-        Esta diapositiva ofrece un resumen del video sobre técnicas avanzadas de búsqueda para revisiones sistemáticas. Los momentos clave destacan las partes más relevantes del video, que pueden ser de especial interés para los bibliotecarios en ciencias de la salud. Estos puntos clave te ayudarán a entender mejor el contenido del video y a destacar la importancia de las técnicas avanzadas de búsqueda en el ámbito de las ciencias de la salud.
-    </aside>
-</section>
 
-
-
-
-  <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/siglas.mp3">
-
-    <!-- Para comprender a fondo cómo funciona ChatGPT, debemos desvelar el significado detrás de sus siglas. Esta herramienta representa una avanzada intersección de técnicas en procesamiento de lenguaje natural, redefiniendo cómo nos relacionamos con la tecnología. Este mapa conceptual nos introduce a las diversas dimensiones de 'ChatGPT': desde su característica 'Generativa', que le permite fabricar respuestas que parecen increíblemente naturales; su fase de 'Pre-entrenamiento', donde se nutre de vastos conjuntos de textos; hasta su arquitectura 'Transformador', la cual es la base de los Modelos de Lenguaje a Gran Escala (LLM), especialmente diseñada para comprender y generar lenguaje. Presta especial atención a los términos en negrita; son conceptos clave que exploraremos con más detalle más adelante."
-
-¿Qué te parece esta versión?
-
-
-
-
- -->
+    </section>
+ <section>
+  <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="ChatGPT es una herramienta revolucionaria que combina diferentes tecnologías avanzadas de procesamiento de lenguaje natural. En este mapa mental verás sus siglas desglosadas,para comprender mejor cómo funciona. Revisa en negrita los conceptos nuevos, que veremos más adelante explicados">
     <div style="display: flex; align-items: center; justify-content: center; height: 95vh;">
         <div style="flex: 0 1 70%;">
             <img src="http://www.plantuml.com/plantuml/png/ZLPDRnH74BtFhwWi1-mHE8k1W1oKO2pp8TcM0oIvSAcThjrjtDCzzCVQEEB7v9W3f_o0IF4Vo-kU6Qy_4YaMmjirDLMltdlLw-SXie-jjghbhggYZaRexxz-IXT_a0JQMt9yTVp-nnrYoqQVirMEGWeKzC9mgBw9Isc5EiFQLk54suuzjpJZvcJXNR9gpnddwSxBydCbWxrtf--NkZcn4W8zs7fyvQ6IEISJNpeRZnZbNujPITGD_tlEEtqkz6XQLSz2_6paXyew9VHRHVWvPgMqNT23QJaUibzeIm_BuRNp-XplizarUc5RiP4Q_2U-F3xGLdhuCvFaChG6_N2hB_gs7zHRyO0nz3dJRMf_rIekwV6q3rvYtTxkp-DyluXNRBdwKdddub6FVkptBiz4JxUctwFV3M1UL8cykC7twL97kONj5WeqDCBplk6jzEtfVx9aP1wlqVlaVmrucvhlfjTqUV0OaAfdtmuwhjLUAtfhrZlxJry-XRVAC-UL-24-dJvvihTz9RvMhe--Mx9ofu1Vx8T0QRC6zkK6W38Ua8r8Bi-eRnJI6-wYTfPeDqNdT-YvUBIBRlR1GZHOgz6yi-U5eru9xRcsTJRGRlHwbXfzyQUzV-GG5OyyGu-sflGckz5oWwfiggek2rdNMCcwhkgQyB6knOel9J_OZLVZmMtYUKq7Bb0Bx0Q_GU61s4NYZq9ChpnRsWyD6wQDkZuuEAphJGg0dopJYhqMnIg_z6QNBijohbhJiNSgDKAA8methksCHCxU4B99LWX-9kSrH6KZeK3fQo0PILOhroTIvqNfHej5f0EOcUT0CmwCizW-_IoMl9LsVVjzGocuZAskEu_kCI2weIqg5R8aRERsmCEMGY8s2nnZwsY9vumHwQw4BkSI2inufit5rn1ru-wISXQL3M1uv2GeY8z1Y9Kq2VLQ-UWySSa0gaMoIEY17Ln_2TuHo0vMFHAjolmC975CVgG6V2P1oqLXoDDIcYKOj8xaJ8UONmZaQC86Dh73W9DU_-Ewzd8_UjPM57osSOmZta0xLeC9TfK67ezpffDQRGmg54CKRWFwe4ie7Xay9n5KOGZAc0hLszFjRTgGiqQwwBAf7Bt8o-EkQ64I58SMVL_8rAtHj5aEHnBmhwo2oVmmVKf2OWQN4XUYUA3V3CF2JNc2r6JM0isn_SLjRCeOXinWx9xEtPxjgmMo8AgN60KAfD5kemPE-OklJ51P-o05b-6rd8JOnCh20VgrSaNHGGxifMSRviwtuh6FxySJoFU36lvJqb7AA6WsJApFWJvxCS-MMUeaKuImoXha9us4aKGbuyINLYgr3zdAnrorGyb2SYX6zGlutF2vkp4vU9tZbsH6iWZzgcrCMccTrmKU7BCI7xXSK9FDmUUwrI00HPtF94tgUbMMRNob5AhhoRrUtb0KllWTL_zWbUXEn9Qj7R7SotQ8HSyrFZYMFJTHF5RwXbMwiZGJe9iKGlWwrd9x91_SLe-vhdUZsFvHAmrRtMYeMDSxT2mUymYciQfieD9pyMNlrb3G8bak14AJo-NfxwgYKKZPSRBYJFpOTB-TIVcI7AwengSGnqjgXzuAv0zYnn2ju8pClP5Gvcsuo_fQqhRug1-Wx373VSWA0cOjFZleEPAVokLIFHUhnh_kZboK7SAtOA0S8iJe58CrNZYAeXI0aeuDs_ZpuS7MFm00" alt="Mapa Mental" style="height: 90vh; width: auto;">
         </div>
         <div style="flex: 0 1 25%; text-align: left; padding-left: 2%;  ">
-            <h3  class="color">¿Cómo funciona<br> "ChatGPT"?</h3>
-            <p style="font-size: 1.6rem;">Lo que nos dicen sus siglas</p>
+            <h4 class="color">¿Cómo funciona<br> "ChatGPT"?</h4>
+            <p>Sus componentes</p>
         </div>
     </div>
     <aside class="notes">
@@ -921,16 +670,7 @@ section .custom-table th {
 </section>
 
   
-<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/workflow.mp3">
-
-  <!-- Para comprender plenamente el funcionamiento de ChatGPT, es útil examinar su proceso de manera detallada. En esta diapositiva, desglosamos el flujo de trabajo de ChatGPT, explicando cada etapa de manera sencilla:
-Tokenización: Aquí, ChatGPT descompone el texto ingresado en unidades más pequeñas, llamadas 'tokens', que pueden ser palabras o incluso caracteres individuales. Es como separar una frase en sus palabras constituyentes.
-Embeddings (Vectores): En esta fase, cada 'token' se convierte en un vector numérico, que es una representación que ayuda al modelo a entender el significado y el contexto de cada palabra.
-Mecanismo de Atención: Este proceso permite a ChatGPT centrarse en las partes más relevantes del texto, identificando qué palabras o frases son más importantes para generar una respuesta adecuada.
-Arquitectura Transformer: Es el núcleo del modelo que permite procesar y analizar la información en profundidad, considerando el contexto y las relaciones entre las palabras.
-Cálculo de Probabilidades: Basándose en el contexto y el análisis previo, el modelo estima qué palabras tienen más probabilidades de seguir en la respuesta.
-Generación de Respuesta: Con toda la información procesada y analizada, ChatGPT produce una respuesta coherente y adecuada al texto ingresado.
-Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanzada de inteligencia artificial, procesa y genera respuestas basadas en el texto que recibe. -->
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="ChatGPT opera a través de un flujo de trabajo específico, similar a cómo un médico procesa y analiza la información de un paciente. A continuación, desglosaremos este proceso paso a paso, utilizando analogías relacionadas con la medicina para ilustrar cada etapa.">
  
   <div style="display: flex; align-items: center; justify-content: center; height: 95vh;">
       <div style="flex: 0 1 70%;">
@@ -940,9 +680,9 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
         </div>
       
       </p>
-      <div style="flex: 0 1 25%; text-align: left; padding-left: 2%;">
-                <h3 class="color">¿Cómo funciona<br> "ChatGPT"?</h3>
-                <p style="font-size: 1.6rem;">Su flujo de trabajo</p>
+      <div style="flex: 0 1 15%; text-align: left; padding-left: 2%;">
+                <h4 class="color">¿Cómo funciona<br> "ChatGPT"?</h4>
+                <p>El flujo de trabajo</p>
                 
             </div>
             
@@ -979,13 +719,11 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
     
     
       </section>
-
+</section>
 <section>
   
-  <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/conceptos.mp3">
-
-    <!--  como ya hemos visto anteriormente, Chat GPT es una disruptiva herramienta que combina diferentes tecnologías avanzadas de procesamiento de lenguaje natural. En este esquema se describen algunas tecnologías y conceptos que lo respaldan. Estos conceptos nos ayudarán a entender mejor lo que está detrás de su funcionamiento. Revisa en negrita los conceptos nuevos, que veremos más adelante explicados -->
-    <h2 class="color" style="margin-top: -1vh;">ChatGPT: Algunos conceptos</h2>
+  <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="ChatGPT es una herramienta revolucionaria que combina diferentes tecnologías avanzadas de procesamiento de lenguaje natural. En este mapa mental verás sus siglas desglosadas,para comprender mejor cómo funciona. Revisa en negrita los conceptos nuevos, que veremos más adelante explicados">
+    <h5 class="color" style="margin-top: -1vh;">ChatGPT: Conceptos</h5>
     <div style="display: flex; align-items: center; justify-content: center; height: 95vh;margin-top: -3vh;">
         <div style="flex: 0 1 100%; margin-left:-20vh; margin-right:-20vh;">
             <img src="https://www.plantuml.com/plantuml/svg/ZLVBRXlB4TtpAoetm5qG4KsHaYwj289fMOm5MB9WoGuGP5ESAL8jpNIDgtleHn0WYoop28AiiWcy2Wp4Aty2VoYVaEgUXuUY1TW6R4zFTPt7gUwHdpYFudDZqnoBNkzN_ePoWY93OtlkpjW21NEOOtAt52vjUi8P2_nwDWs_EnKemk-kRqnoPyavs1rCEYzJMc2P-HbRVu7QVYe6i--_lp8V2SRxlTwHynyoEkvPJWd-r0FzTObfQkmITaVnyHnbQIpinOVdBEQZxiTicfcbpSbwIFGFalZwXR5KKnyEV_dbPDIkVkCy7kp7rLULJh4aiBTVGxqtUPd_tgJ-1lP7mxZOqXsDc-UElBXqTOCflmkSHxq_zuJPNqGvBVfL40cF1yFVZWV3-qnF3yQFzmxYwjC70hZFT_yUiuFskK9wobcgJ3B2HOT9jyDe_q4_CrhuZI0czz263_cmwTzmsCbFTocXeqTrt9sfw2I_9VzqCflCPjKxbfIa3NVyRFzfP_rRl2EDzrucWpW64QYYTX39R59ep8jSjitibh-YnADTLgLTPtOd3pWJbxQv_xZUECm_hbVfzX8il64BqzAp7CAfQBbdnHGXmJzQ7S64R6Bm44w4q9iLmGddELi7KozcNYPc_TNkNB2kacXX1dk38Po5qsOnqTughkUDLoEEdEe_70sFZyhZanlqlxkyXf_XuiMbDcURKE7PmGTOSOBpCaCn34UFocET1zrttEj3lQdNxyDH4aGVrkVYkD__tx__zdTuMP2TdlNxHu_YQzsZfVt-IrcYDHynSkttTLMNDnRXRKcGaaCHphBrrmPAwMH6hKGW2vuIgssNwo_ej1YCYjG34Vq156yM9XWmw7K9ZgQFdqrcaU0__mFdd5B6y7E_hzvkbKpbRMaKnPU2MoAghGtxDoGk4YTNKBB-ej2ed1hUlu64SmRzryuOgh_t1dMZQq7h5YoQLzEj2rnrL1tgJHfrQqBHdu8arofTycJL53L7nPEWWAVtdXk0gRxUiFgIGtdjTAgDCCEve8CvkXh3bI2KqGgZcGK67fcAi1kTJ_CvnUkcwVoA2Y6dXEhcAzN0ekIxC96yJdfKfq3EB6t82bC6H_dwa_KcuStOPdlJqS5kZEqV_wt66PE8KOMtLHUEHMbDKX7PIkzIE2zyJLlxEIzbtOz1DInBrG1fS0ER42iRUEw3oL1Q1D5iId8U1qtRh5oQrkVd98Av2NQusiFtTLIBqbQ7qIW6EU0ulKj1QT58iz7pBKutOv55AMp9DLXlGbzRJLcTImDyllwabpg7Lvxlo5QMQu1vDUzAMb_zfCr_KfWeHQEDMD63TZHrSwq6Njj05URhJwwUxGXvlxDmGWurl9sTDhp9U3mvFQdEt5_rKl0crs7kfBTT2TD2r2ajkwLEU3lQjTy_yoHDhhgaQvSHDWhEwPObwl76bagq9LUDDmV52w8q_E0qg3lEwDtErGrxU44eLWUwQNnglV90wKZKpb1mmWxebl8YuphRPMbGijY-dGlNlGzSW_O74gxWgZ7iu3rJA5DFOqmRi0LsnZQGtRxiMXN64boNNVxJsz9vWW_0NTUxfaJkAVfxFO71en2we3SHKYsReSvcm-71QGprNt-1w_Ndn0QD8Swj4fYkq8RhosrbgSu_O8Kk52pnbCZ3XZV-_93n0SYrqNxFod3akMDw5ycLa2X75byTQcxQNWg5Cga_9mt0cLraPVmQ2IJhhpbldPF6U8x4mwqC2DfPCFr6Elp0eUK5Bj4RRaV-VFtPSnf77cF8tL3JKj1w2fGfJd35k7i4I8I5MfGJB10uAJEF3SA5ML56BjvCabDgs3MtXL0Abae9DrYy0MezLel3fwmQizYx_SAHR9skrovOmvOJK_ChX5OcyhCbhT0rG-Yq84EXElhgaCTJ6Q-99e_U4tsg_yVqVm00" alt="Mapa Mental" style="height: 90vh; width: auto;">
@@ -1005,12 +743,11 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
       <a href="https://openai.com" target="_blank" style="font-size: inherit; text-decoration: underline;">ChatGPT</a>
   </p>
 </section>
-<section   data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"  data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/conceptos2.mp3">
-  <!-- Para comprender a fondo cómo ChatGPT y el procesamiento de lenguaje natural (conocido por sus siglas en inglés como NLP) están definiendo una nueva generación de internet, es vital familiarizarse con algunos términos clave. A continuación, ampliando el esquema que hemos visto antes, presento una lista de vocabulario esencial que te ayudará a navegar por este, para muchos, nuevo mundo digital -->
-  <h3 class="color">Nueva terminología: Vocabulario clave</h3>
+<section   data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"  data-audio-text="Para comprender a fondo cómo ChatGPT y el procesamiento de lenguaje natural (NLP) están revolucionando el mundo de la salud y la documentación, es vital familiarizarse con algunos términos clave. A continuación, presento una lista de vocabulario esencial que te ayudará a navegar por este emocionante mundo digital.">
+  <h2 class="color">Nueva terminología: Vocabulario clave</h2>
   <ul style="
-  --custom-font-size: 1.2rem;
-  --strong-font-size: 1.2em;  <!-- Define una nueva variable para el tamaño de fuente de la etiqueta strong -->
+  --custom-font-size: 0.7em;
+  --strong-font-size: 1em;  <!-- Define una nueva variable para el tamaño de fuente de la etiqueta strong -->
 ">
   <style>
       ul li {
@@ -1020,21 +757,21 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
       }
   </style>
       <li ><strong>Prompt:</strong> Es la pregunta o instrucción que le das a ChatGPT para generar una respuesta.</li>
-      <li class="fade-in" " ><strong>Plugin:</strong> Herramientas que puedes usar para añadir funcionalidades a ChatGPT. Existen plugins para tareas variadas, desde generación de texto hasta visualizaciones.</li>
-      <li class="fade-in"><strong>Modelo:</strong> Es la versión específica de ChatGPT que estás utilizando. Por ejemplo, GPT-3 o GPT-4.</li>
-      <li class="fade-in"><strong>OpenAI:</strong> La organización que desarrolló ChatGPT y otras tecnologías de inteligencia artificial.</li>
-      <li class="fade-in"><strong>Token:</strong> Pieza de texto que el modelo considera como una unidad indivisible.</li>
-      <li class="fade-in"><strong>Iteración:</strong> Proceso de mejora continua.</li>
-      <li class="fade-in"><strong>Transformer:</strong> Arquitectura de aprendizaje profundo especializada en procesamiento de lenguaje natural.</li>
-      <li class="fade-in"><strong>Ventana de Contexto:</strong> Máximo de tokens que el modelo puede "ver" en una conversación.</li>
-      <li class="fade-in"><strong>Embedding:</strong> Representación vectorial de palabras que captura información semántica.</li>
-      <li class="fade-in"><strong>Atención:</strong> Mecanismo que permite al modelo ponderar diferentes palabras en una entrada basada en su relevancia.</li>
-      <li class="fade-in"><strong>Few-Shot Prompting:</strong> Técnica donde se añaden pocos ejemplos en el prompt para guiar al modelo hacia respuestas específicas.</li>
-      <li class="fade-in"><strong>Few-Shot Learning:</strong> Entrenamiento de un modelo con un pequeño conjunto de datos etiquetados para realizar tareas específicas con pocos ejemplos.</li>
-      <li class="fade-in"><strong>Zero-Shot Prompting:</strong> Proporcionar información contextual o instrucciones en el prompt sin ejemplos etiquetados, permitiendo al modelo generar respuestas basadas en su conocimiento previo.</li>
-      <li class="fade-in"><strong>Shots (ejemplos etiquetados):</strong> Ejemplos etiquetados proporcionados al modelo durante el entrenamiento o el prompting para guiar su comportamiento.</li>
-      <li class="fade-in"><strong>Preparar Modelo (cebar o priming):</strong> Proceso de proporcionar información que puede influir en cómo un modelo procesa datos o responde a entradas específicas.</li>
-      <li class="fade-in"><strong>Fine Tuning:</strong> Optimización de un modelo para un conjunto de datos específico ajustando sus parámetros o pesos, común en el aprendizaje transferido.</li>
+      <li class="fragment custom blur" " ><strong>Plugin:</strong> Herramientas que puedes usar para añadir funcionalidades a ChatGPT. Existen plugins para tareas variadas, desde generación de texto hasta visualizaciones.</li>
+      <li class="fragment custom blur"><strong>Modelo:</strong> Es la versión específica de ChatGPT que estás utilizando. Por ejemplo, GPT-3 o GPT-4.</li>
+      <li class="fragment custom blur"><strong>OpenAI:</strong> La organización que desarrolló ChatGPT y otras tecnologías de inteligencia artificial.</li>
+      <li class="fragment custom blur"><strong>Token:</strong> Pieza de texto que el modelo considera como una unidad indivisible.</li>
+      <li class="fragment custom blur"><strong>Iteración:</strong> Proceso de mejora continua.</li>
+      <li class="fragment custom blur"><strong>Transformer:</strong> Arquitectura de aprendizaje profundo especializada en procesamiento de lenguaje natural.</li>
+      <li class="fragment custom blur"><strong>Ventana de Contexto:</strong> Máximo de tokens que el modelo puede "ver" en una conversación.</li>
+      <li class="fragment custom blur"><strong>Embedding:</strong> Representación vectorial de palabras que captura información semántica.</li>
+      <li class="fragment custom blur"><strong>Atención:</strong> Mecanismo que permite al modelo ponderar diferentes palabras en una entrada basada en su relevancia.</li>
+      <li class="fragment custom blur"><strong>Few-Shot Prompting:</strong> Técnica donde se añaden pocos ejemplos en el prompt para guiar al modelo hacia respuestas específicas.</li>
+      <li class="fragment custom blur"><strong>Few-Shot Learning:</strong> Entrenamiento de un modelo con un pequeño conjunto de datos etiquetados para realizar tareas específicas con pocos ejemplos.</li>
+      <li class="fragment custom blur"><strong>Zero-Shot Prompting:</strong> Proporcionar información contextual o instrucciones en el prompt sin ejemplos etiquetados, permitiendo al modelo generar respuestas basadas en su conocimiento previo.</li>
+      <li class="fragment custom blur"><strong>Shots (ejemplos etiquetados):</strong> Ejemplos etiquetados proporcionados al modelo durante el entrenamiento o el prompting para guiar su comportamiento.</li>
+      <li class="fragment custom blur"><strong>Preparar Modelo (cebar o priming):</strong> Proceso de proporcionar información que puede influir en cómo un modelo procesa datos o responde a entradas específicas.</li>
+      <li class="fragment custom blur"><strong>Fine Tuning:</strong> Optimización de un modelo para un conjunto de datos específico ajustando sus parámetros o pesos, común en el aprendizaje transferido.</li>
       
        </ul>
        <aside class="notes">
@@ -1042,7 +779,20 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
     </aside>
 </section>
   </section>  
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="AUDIO">
+        <h2 class="color" >Características</h2>
+        <ul>
+          <li>Generación de texto coherente y relevante.</li>
+          <li>Capacidad para responder a preguntas.</li>
+          <li>Capacidad para escribir en diferentes estilos.</li>
+          <li>Capacidad para aprender de los inputs del usuario.</li>
+          <li>Memoria de conversación: ChatGPT puede recordar el contexto de una conversación anterior y utilizarlo para generar respuestas más coherentes.</li>
+        </ul>
+    <aside class="notes">
+      Notas del Orador
+    </aside>
 
+</section>
 
 <!-- <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO"> <h2 class="color">Ejemplos de generación de texto por CHATGPT</h2> <ul> <li><strong>Paciente: </strong>¿Qué es la hipertensión?</li> <li><strong>CHATGPT: </strong>La hipertensión es una afección en la que la presión arterial en las arterias es elevada. Es una de las enfermedades cardiovasculares más comunes y puede ser potencialmente peligrosa si no se trata. </li> <li><strong>Paciente: </strong> ¿Cuáles son los síntomas de la neumonía?</li> <li><strong>CHATGPT: </strong> Los síntomas de la neumonía incluyen tos, fiebre, dificultad para respirar, dolor de pecho y fatiga. Si tienes alguno de estos síntomas, es importante que consultes a tu médico.</li> <li><strong>Paciente: </strong> ¿Cuáles son las causas de la diabetes tipo 2?</li> <li><strong>CHATGPT: </strong> La diabetes tipo 2 se produce cuando las células del cuerpo se vuelven resistentes a la insulina o cuando el cuerpo no produce suficiente insulina para mantener los niveles normales de azúcar en sangre. Los factores que pueden contribuir a la diabetes tipo 2 incluyen la obesidad, la falta de ejercicio físico y una dieta poco saludable.</li> </ul>
   <aside class="notes">
@@ -1050,10 +800,10 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
   </aside>
  </section> -->
       
-      <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6">
-        <h3 class="color">¿Qué son los prompts?</h3>
+      <section >
+        <h2>¿Qué son los prompts?</h2>
         
-        <section   data-audio-text="AUDIO">
+        <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
           <h3 class="color">Prompt</h3>
           <p style="text-align: left; ">
             Es la instrucción que nos permite interactuar con ChatGPT haciendo preguntas y obteniendo respuestas específicas. Funciona en un sistema de diálogo natural con memoria conversacional que mejora la calidad de la interacción entre los usuarios y la inteligencia artificial.
@@ -1067,7 +817,7 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
                 Notas del Orador
               </aside>
         </section>
-        <section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="AUDIO">
+        <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="AUDIO">
           <h3 class="color ">Respuesta:</h3>
           <p class="fragment custom blur">"¡Por supuesto! El COVID-19 es un virus altamente contagioso que se transmite principalmente a través de la saliva o las partículas respiratorias. En cuanto a su área en particular, puedes encontrar información actualizada sobre la propagación del virus y las medidas preventivas recomendadas en los recursos sanitarios locales. "</p>
           <aside class="notes">
@@ -1075,14 +825,14 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
           </aside>
         </section>
         
-        <section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="AUDIO">
+        <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="AUDIO">
           <h3 class="color">Prompt #2</h3>
           <p>"Tengo diabetes tipo 2. ¿Cuáles son los síntomas y tratamientos más comunes?"</p>
           <aside class="notes">
             Notas del Orador
           </aside>
         </section>
-        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="AUDIO">
+        <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="AUDIO">
           <h3 class="color">Respuesta:</h3>
           <p >"La diabetes tipo 2 es una enfermedad crónica en la que el cuerpo no puede regular adecuadamente los niveles de azúcar en la sangre. Los síntomas pueden variar de persona a persona, pero incluyen mareos, visión borrosa y fatiga. Los tratamientos pueden incluir cambios en la dieta, el ejercicio, medicamentos y más."</p>
           <aside class="notes">
@@ -1091,7 +841,7 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
           </section>
       </section>
 
-      <section data-markdown  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
+      <section data-markdown  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
           <script type="text/template" >
           <div><h3 class="color" style="margin-bottom:1em">Ejemplos de Prompt</h3></div>
 
@@ -1201,7 +951,22 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
           </aside>
         </section> -->
 
-      
+        <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.5" data-audio-text="AUDIO">
+          <div style="position: relative; height: 95vh;">
+              <div style="max-width: 100%; max-height: 95%; overflow: hidden;">
+                  <img src="https://www.plantuml.com/plantuml/svg/bLRBRXl74jtpA-hYBWmG4aMHeaph4hgcHT4s4CcC92URR6fwYbJRFTrqF-JOHdRv0mT142389XiliWYoyoP0-4FvX5HFQpZKo08I2D3CrDJZrAbJFNpeF5fVI9qNk6or_kClgI1OAfIwvLvAlKIB1MGeNYwi2Je_CifO-Ezq7FysFD1Qy_hYKegNcfo3tSvmusLESmpAJutsfyZfnrQY-lJxS_cMe3zejKRElr5qsD8c9tZN0W2OOPvBlO3TNlbuWdOXDUoL3q-CbMyv7jLOoOKkI7iG_8zi-VepgUaQUhTx__vHRssjCVSxWz9wblgqcYpi3QvBVIsBK7mfSty9WrwtDAxXzlhbSwEzQ3g_nDoyZfXxhMzQrXX_MhSJgv_79k51f_k_VgVRH7gytt-mjrzQ7zqnW2RUGGFPVlrSLdfaLCv85E6yGjB8q1lSoQUYkRynY66ZMlVJF3JvwtOtviTH36YqSptk3LNKax_T_l5mEfnEqpjZSxBhuVOdWqSRzdgylSwWEPDEaa4ibA3jHp0D23LvxpvDPkr-HiAZNjIk5JExmxkOYQO6zd_NRnJpF--NuRO4Bhqq6iR16ti0HvVe7yyklj8iFK5QI6IR9VJoYk3858NH3iRUoYm8kVfTRvyQjf9bHmLxdIuyZLkcKN1ERghbfLS48yTz7_IwXwDmE96ELhyPo9corKVtAb2ES3oN0jy2QPY5x8JoqKuu7ErmL1H16qOYDdXmlGE7xNRoQhT7E-MRwDI6ltv-_qFJTPGTJcWkjIpHGauABgZ0qKvsk8vjS-pJdBIN4OM5cQL5OB6pDxTpHSxB1PRnqRKDV_xnULXzW5T1aZNWC2CB1Ymvewx8_h_CDo4N3q6bq39jMj3I6mT72gye9PcXmioY0n5j7EzN7ooVlEnbIT4LCeyEK85dk9rM6M9btCFDZD4UYtcAiMZXLKHMft8yMNBb71MdYy84XP1Ln7SgudvQ4zSRFvWCfv6uSr8aAjxWeafwYxldNge8gtQ14pf_ah2DXQ2SREna8aKf2swZTE2kcjJx6naY4qb9ELi4zwBIDJMVg2kprALPjvabro3Pm9mlp80sCTwJbZcRIMy2cJ4ZR75aOVNHopLXSG8S6UZAn4nKa5rG70-pjxtDxFto_PgzwTwujxyRsUCPEMz3JQ1YcRC5FItaJG5kSvPdIxBS9aFdtJMAKAVfRj0xFfrimREpBJXzTf6G2LDaKc_orYcJFNVbVitGhZv4eBBY8mRXmeRb3QxVW4XWfItlWlBeOlAbeXTuC-U53LgKGwb8Fdv1x6WEu9AMw4qxGSk2YmDDjWAtgZjQe7fJFGbIAYYqMq1UL6n-z-sQpM6_Fpm-YcoUnIN6GZBlXl4UNw4AQITlCJcpWJBa2obPBWLRsNn6c6WCUcC1OBbsIxYfp6p1Kab3Nb4wVX6SfrjpJBbFJ7vBm0PCFL97YzN79DywCPWi2h4giTbKh7F4U7FCKuKlo5vNK5WT449Y75roYn4nFLg_-bM4U4iwIZr2M2lr_O-rKgVTxlvnvFOnzyiP8gyJ8qBykjz1xHct75ktcmn44TI13LqbWIQvG4XApYj9fSAs_Wuq5QyGva4dHkwTntFodD2Aotkns_GDI9bECEuqMKSm5ZvWMSQaRBo8Sxa84JKgiXwlrzgIa9cqrMAJyo6NvPcPMGAgJjxMGzBvzK_Ylm40" alt="Esquema del diseño de búsqueda avanzada en PubMed" style="max-width: 100%; display: block;">
+              </div>
+              <div class="aligned" style="position: absolute; bottom: -3%; left: 0%; background: rgba(15, 15, 15, 0.8);  max-width: 60%; box-sizing: border-box;">
+                  <p class="aligned mensaje-usuario size3">👩🏽‍🚀Usuario escribe (Prompt):</p>
+                  <blockquote class="size3 color" style="background: rgba(15, 15, 15, 0.5)" >
+                      "Dame el código de mapa mental con los pasos para diseñar una búsqueda eficaz en PubMed"
+                  </blockquote>
+              </div>
+          </div>
+          <aside class="notes">
+              Aquí tenemos un esquema que describe el diseño de una búsqueda avanzada en PubMed. Esta herramienta es esencial para cualquier profesional de la salud que busque información científica actualizada. Es una representación visual que descompone el proceso de búsqueda en pasos lógicos y fáciles de seguir, lo que facilita la comprensión y aplicación de la técnica.
+          </aside>
+      </section>
       
       
       
@@ -1209,10 +974,10 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
     
       
           <!-- </section> lo elimino porque creo no aporta -->  
-            <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
+            <section>
               <section>
-                <h3 class="color" style="margin-top: -3vh;">Prompt estructurado por pasos</h3>
-                <table style="border-collapse: collapse; width: 98%; margin: 0 auto; font-size: 12px; margin-top: -1vh;" class="custom-table">
+                <h3 class="color">Prompt estructurado para describir una búsqueda</h3>
+                <table style="border-collapse: collapse; width: 98%; margin: 0 auto; font-size: 12px;" class="custom-table">
                   <thead style="background-color: #454242">
                       <tr>
                           <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold; color: white; ">Prompt incremental</th>
@@ -1220,65 +985,44 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
                       </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td id="tablePromptSimple" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 0px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptSimple', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptRol" style="border: 1px solid #dddddd; padding: 0px;"></td>
-                      <td style="border: 0px solid #dddddd; padding: 0px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptRol', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptEsencia" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptEsencia', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptContexto" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptContexto', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptObjetivo" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptObjetivo', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptRequisitos" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptRequisitos', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptDiseño" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptDiseño', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
+                      <tr>
+                          <td id="tablePromptSimple" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptSimple', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td id="tablePromptRol" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptRol', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td id="tablePromptEsencia" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptEsencia', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td id="tablePromptContexto" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptContexto', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td id="tablePromptObjetivo" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptObjetivo', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td id="tablePromptRequisitos" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptRequisitos', this)">Copiar</button></td>
+                      </tr>
+                      <tr class="fragment">
+                          <td id="tablePromptDiseño" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button onclick="copyPromptWithSearchToClipboard('promptDiseño', this)">Copiar</button></td>
+                      </tr>
                   </tbody>
               </table>
             
-                <p id="promptSimple" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed</p>
-                <p id="promptRol" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud </p> 
-                <p id="promptEsencia" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea</p>
-                <p id="promptContexto" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas</p>
-                <p id="promptObjetivo" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de ChatGPT como apoyo en esta tarea</p>
-                <p id="promptRequisitos" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de ChatGPT como apoyo en esta tarea. Sin perder la profundidad, adoptarás un estilo muy pedagógico, para amenizar tu exposición, en el que no faltarán ejemplos, emojis, ni elementos que faciliten la comprensión del mensaje, como links a resultados de búsqueda</p>
-                <p id="promptDiseño" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de ChatGPT como apoyo en esta tarea. Sin perder la profundidad, adoptarás un estilo muy pedagógico, para amenizar tu exposición, en el que no faltarán ejemplos, emojis, ni elementos que faciliten la comprensión del mensaje, como links a resultados de búsqueda. Presentarás la información en una tabla exhaustiva, muy clara y didáctica, estructurada paso a paso y un mapa mental</p>
+                <p id="promptSimple" style="display:none;">Por favor, describe esta búsqueda</p>
+                <p id="promptRol" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed.</p>
+                <p id="promptEsencia" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed. Tu principal misión es ayudar a investigadores a desentrañar búsquedas complejas.</p>
+                <p id="promptContexto" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed. Tu principal misión es ayudar a investigadores a desentrañar búsquedas complejas. Estás en un congreso internacional de bibliotecarios especializados en salud.</p>
+                <p id="promptObjetivo" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed. Tu principal misión es ayudar a investigadores a desentrañar búsquedas complejas. Estás en un congreso internacional de bibliotecarios especializados en salud. Tu objetivo es que tus colegas comprendan su estructura y relevancia.</p>
+                <p id="promptRequisitos" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed. Tu principal misión es ayudar a investigadores a desentrañar búsquedas complejas. Estás en un congreso internacional de bibliotecarios especializados en salud. Tu objetivo es que tus colegas comprendan su estructura y relevancia. Usa una terminología comprensible y ejemplifica cuando sea necesario.</p>
+                <p id="promptDiseño" style="display:none;">Por favor, describe esta búsqueda. Eres un bibliotecario experto en ciencias de la salud con fama internacional en el conocimiento avanzado de PubMed. Tu principal misión es ayudar a investigadores a desentrañar búsquedas complejas. Estás en un congreso internacional de bibliotecarios especializados en salud. Tu objetivo es que tus colegas comprendan su estructura y relevancia. Usa una terminología comprensible y ejemplifica cuando sea necesario. Esto que te pido es muy importante para mí.</p>
             
                 <script>
                     // Asegurarse de que el DOM esté completamente cargado
@@ -1286,7 +1030,7 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
     const promptIds = ["promptSimple", "promptRol", "promptEsencia", "promptContexto", "promptObjetivo", "promptRequisitos", "promptDiseño"];
     let prevText = ""; // Almacenará el texto del prompt anterior
 
-    const fontSizeInEm = "0.7em"; // Tamaño de fuente deseado en em
+    const fontSizeInEm = "0.8em"; // Tamaño de fuente deseado en em
 
     promptIds.forEach(function(id) {
         const promptText = document.getElementById(id).textContent;
@@ -1308,155 +1052,154 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
 });
          </script>
             </section>
-            <section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
-              <style>
-                  .flex-container {
-                      display: flex;
-                      flex-direction: column; /* Alinea los elementos en dirección vertical */
-                      justify-content: center; /* Centra los elementos verticalmente */
-                      align-items: center; /* Centra los elementos horizontalmente */
-                      height: 100%; /* Ocupa todo el alto de la diapositiva */
-                  }
-          
-                  .custom-code-block {
-                      font-size: 1.8em;
-                      white-space: pre-wrap;
-                      word-wrap: break-word;
-                      overflow-y: hidden;
-                      line-height: 1.5;
-                  }
-          
-                  .custom-pre {
-                      vertical-align: top; 
-                      display: block;
-                  }
-              </style>
-          
-              <script>
-                  document.addEventListener("DOMContentLoaded", function() {
-                      var codeBlock = document.getElementById("searchCodeBlock");
-                      codeBlock.textContent = search;
-                  });
-              </script>
-          
-              <div class="flex-container">
-                  <h3 class="color">Descripción simple de la búsqueda</h3>
-                  <pre class="custom-pre"><code class="custom-code-block hljs" id="searchCodeBlock">
-                      <-- Aquí irá el contenido de la variable search 
-                  </code></pre>
-                  <div class="aligned">
-                      <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
-                      <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            // Obtener el contenido del elemento con id="promptContexto"
-                            var promptText = document.getElementById("promptSimple").textContent;
-                            // Insertar el contenido en el bloque "Usuario escribe:"
-                            document.getElementById("userInput").textContent = promptText;
-                        });
-                    </script>
-                    
-                      <blockquote class="size3" id="userInput" style="text-align: left; font-size:1.1em">
-                           "Por favor, describe esta búsqueda." 
-                      </blockquote>
-                      <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
-                      <blockquote class="fragment custom blur size3" style="text-align: left;font-size: 1.1em;">
-                          "Se trata de una búsqueda extensa que cubre diferentes términos relacionados con la práctica basada en la evidencia en diversas áreas de la salud."
-                      </blockquote>
-                  </div>
-              </div>
-          </section>
             
-<!-- 
-              
+          <!-- Diapositiva 1 -->
+          <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
+            <style>
+                .flex-container {
+                    display: flex;
+                    flex-direction: column; /* Alinea los elementos en dirección vertical */
+                    justify-content: center; /* Centra los elementos verticalmente */
+                    align-items: center; /* Centra los elementos horizontalmente */
+                    height: 100%; /* Ocupa todo el alto de la diapositiva */
+                }
         
-
-
-            <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
-              <h3 class="color">Bibliotecario experto en ciencias de la salud</h3>
-              <div class="aligned">
-                  <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
-
-                <blockquote class="size3" id="userInput1" style="text-align: left">
-                    <!-- userInput1 
-                </blockquote>
-
-                <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
-                <blockquote class="fragment custom blur size3" style="text-align: left; font-size: 1.1em;">
-                    "Esta búsqueda aborda múltiples aspectos del ámbito de la salud basado en la evidencia. Utiliza una combinación de términos y campos específicos de PubMed para garantizar una cobertura exhaustiva."
-                </blockquote>
-                
-                <script>
-                  document.addEventListener("DOMContentLoaded", function() {
-                      const fontSizeInEm = "1.2em"; // Tamaño de fuente deseado en em
-                  
-                      // Obtener el contenido del elemento con id="promptSimple" y "promptRol"
-                      var baseText = document.getElementById("promptSimple").textContent;
-                      var rolePromptText = document.getElementById("promptRol").textContent;
-                  
-                      // Determinar el texto adicional comparando ambos
-                      var additionalText = rolePromptText.replace(baseText, "").trim();
-                  
-                      // Crear el HTML para el texto en negrita y el texto no negrita con el mismo tamaño de fuente en em
-                      const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${additionalText}</span>`;
-                      const normalText = `<span style="font-size: ${fontSizeInEm};">${baseText}</span>`;
-                  
-                      // Insertar el contenido en el bloque "Usuario escribe:"
-                      document.getElementById("userInput1").innerHTML = normalText + " " + boldText;
-                  });
+                .custom-code-block {
+                    font-size: 1.4em;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    overflow-y: hidden;
+                    line-height: 1.5;
+                }
+        
+                .custom-pre {
+                    vertical-align: top; 
+                    display: block;
+                }
+            </style>
+        
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var codeBlock = document.getElementById("searchCodeBlock");
+                    codeBlock.textContent = search;
+                });
+            </script>
+        
+            <div class="flex-container">
+                <h3 class="color">Descripción simple de la búsqueda</h3>
+                <pre class="custom-pre"><code class="custom-code-block hljs" id="searchCodeBlock">
+                    <!-- Aquí irá el contenido de la variable search -->
+                </code></pre>
+                <div class="aligned">
+                    <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+                    <script>
+                      document.addEventListener("DOMContentLoaded", function() {
+                          // Obtener el contenido del elemento con id="promptContexto"
+                          var promptText = document.getElementById("promptSimple").textContent;
+                          // Insertar el contenido en el bloque "Usuario escribe:"
+                          document.getElementById("userInput").textContent = promptText;
+                      });
                   </script>
                   
-              </div>
-            </section>
-
-
-
-
-
-          <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
-            <h3 class="color">Misión del bibliotecario</h3>
-            <div class="aligned">
-                <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
-                
-                <blockquote class="size3" id="userInput2" style="text-align: left">
-                    <!-- userInput2 
-                </blockquote>
-                <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
-                <blockquote class="fragment custom blur size3" style="text-align: left; font-size: 1.1em;">
-                    "Este es un ejemplo clásico de una búsqueda estructurada en PubMed. Se abordan conceptos esenciales de la práctica basada en la evidencia en diversas áreas de la salud. Las múltiples combinaciones de términos buscan garantizar una cobertura completa y resultados relevantes para investigaciones académicas."
-                </blockquote>
-
-                <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                        const fontSizeInEm = "1.2em"; // Tamaño de fuente deseado en em
-
-                        // Obtener el contenido del elemento con id="promptRol" y "promptEsencia"
-                        var baseText = document.getElementById("promptRol").textContent;
-                        var esenciaPromptText = document.getElementById("promptEsencia").textContent;
-
-                        // Determinar el texto adicional comparando ambos
-                        var additionalText = esenciaPromptText.replace(baseText, "").trim();
-
-                        // Crear el HTML para el texto en negrita y el texto no negrita con el mismo tamaño de fuente en em
-                        const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${additionalText}</span>`;
-                        const normalText = `<span style="font-size: ${fontSizeInEm};">${baseText}</span>`;
-
-                        // Insertar el contenido en el bloque "Usuario escribe:"
-                        document.getElementById("userInput2").innerHTML = normalText + " " + boldText;
-                    });
-                </script>
+                    <blockquote class="size3" id="userInput" style="text-align: left; font-size:1.1em">
+                        <!-- "Por favor, describe esta búsqueda." -->
+                    </blockquote>
+                    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+                    <blockquote class="fragment custom blur size3" style="text-align: left;font-size: 1.1em;">
+                        "Se trata de una búsqueda extensa que cubre diferentes términos relacionados con la práctica basada en la evidencia en diversas áreas de la salud."
+                    </blockquote>
+                </div>
             </div>
-          </section>
+        </section>
+        
+
+<!-- Diapositiva 2 -->
+<section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
+  <h3 class="color">Bibliotecario experto en ciencias de la salud</h3>
+  <div class="aligned">
+      <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+
+    <blockquote class="size3" id="userInput1" style="text-align: left">
+        <!-- userInput1 -->
+    </blockquote>
+
+    <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+    <blockquote class="fragment custom blur size3" style="text-align: left; font-size: 1.1em;">
+        "Esta búsqueda aborda múltiples aspectos del ámbito de la salud basado en la evidencia. Utiliza una combinación de términos y campos específicos de PubMed para garantizar una cobertura exhaustiva."
+    </blockquote>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const fontSizeInEm = "1.2em"; // Tamaño de fuente deseado en em
+      
+          // Obtener el contenido del elemento con id="promptSimple" y "promptRol"
+          var baseText = document.getElementById("promptSimple").textContent;
+          var rolePromptText = document.getElementById("promptRol").textContent;
+      
+          // Determinar el texto adicional comparando ambos
+          var additionalText = rolePromptText.replace(baseText, "").trim();
+      
+          // Crear el HTML para el texto en negrita y el texto no negrita con el mismo tamaño de fuente en em
+          const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${additionalText}</span>`;
+          const normalText = `<span style="font-size: ${fontSizeInEm};">${baseText}</span>`;
+      
+          // Insertar el contenido en el bloque "Usuario escribe:"
+          document.getElementById("userInput1").innerHTML = normalText + " " + boldText;
+      });
+      </script>
+      
+  </div>
+</section>
+
+
+
+<!-- Diapositiva 3 -->
+
+<section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
+  <h3 class="color">Misión del bibliotecario</h3>
+  <div class="aligned">
+      <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
+      
+      <blockquote class="size3" id="userInput2" style="text-align: left">
+          <!-- userInput2 -->
+      </blockquote>
+      <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
+      <blockquote class="fragment custom blur size3" style="text-align: left; font-size: 1.1em;">
+          "Este es un ejemplo clásico de una búsqueda estructurada en PubMed. Se abordan conceptos esenciales de la práctica basada en la evidencia en diversas áreas de la salud. Las múltiples combinaciones de términos buscan garantizar una cobertura completa y resultados relevantes para investigaciones académicas."
+      </blockquote>
+
+      <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              const fontSizeInEm = "1.2em"; // Tamaño de fuente deseado en em
+
+              // Obtener el contenido del elemento con id="promptRol" y "promptEsencia"
+              var baseText = document.getElementById("promptRol").textContent;
+              var esenciaPromptText = document.getElementById("promptEsencia").textContent;
+
+              // Determinar el texto adicional comparando ambos
+              var additionalText = esenciaPromptText.replace(baseText, "").trim();
+
+              // Crear el HTML para el texto en negrita y el texto no negrita con el mismo tamaño de fuente en em
+              const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${additionalText}</span>`;
+              const normalText = `<span style="font-size: ${fontSizeInEm};">${baseText}</span>`;
+
+              // Insertar el contenido en el bloque "Usuario escribe:"
+              document.getElementById("userInput2").innerHTML = normalText + " " + boldText;
+          });
+      </script>
+  </div>
+</section>
 
 
 
 
-<!-- Diapositiva 4 
+<!-- Diapositiva 4 -->
 <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
   <h3 class="color">Contexto del congreso</h3>
   <div class="aligned">
       <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
       <blockquote class="size3" id="userInput3" style="text-align: left">
-          <!-- userInput3 
+          <!-- userInput3 -->
       </blockquote>
       <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
       <blockquote class="fragment custom blur size3" style="text-align: left;font-size: 1.1em;">
@@ -1486,14 +1229,14 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
 </section>
 
 
-<!-- Diapositiva 5 
+<!-- Diapositiva 5 -->
 <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
   <h3 class="color">Objetivo de la comprensión</h3>
   <div class="aligned">
       <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
       
       <blockquote class="size3" id="userInput4" style="text-align: left">
-          <!-- userInput4 
+          <!-- userInput4 -->
       </blockquote>
       
       <script>
@@ -1524,7 +1267,7 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
 </section>
 
 
-<!-- Diapositiva 6 
+<!-- Diapositiva 6 -->
 
 <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
   <h3 class="color">Uso de terminología comprensible</h3>
@@ -1532,7 +1275,7 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
       <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
       
       <blockquote class="size3" id="userInput5" style="text-align: left">
-          <!-- userInput5 
+          <!-- userInput5 -->
       </blockquote>
       
       <script>
@@ -1564,14 +1307,14 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
 </section>
 
 
-<!-- Diapositiva 7 
+<!-- Diapositiva 7 -->
 <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
   <h3 class="color">Hablando con emoción</h3>
   <div class="aligned">
       <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
       
       <blockquote class="size3" id="userInput6" style="text-align: left; font-size: 1.1em;">
-          <!-- userInput6 
+          <!-- userInput6 -->
       </blockquote>
 
       <script>
@@ -1603,12 +1346,10 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
 </section>
 
 
--->
+
           
         </section>
-
-
-        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">      
+        <section>      
           <section>
                  <h3 class="color">Ejemplos de Prompts</h3>
                  <p style="font-size: 0.7em; color:#c3bfbf">Por su extensión, el texto del prompt no se muestra. Se puede copiar al portapapeles con el botón azul para usar en ChatGPT-3 o ChatGPT-4</p>
@@ -1787,7 +1528,7 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
                         
                  </div>
                </section>           
-         <section class="full-height" data-background-iframe="https://chat.openai.com/share/5f9f766b-1b3b-4257-9add-24fa4b4da8f9" data-background-opacity="1"  data-audio-text="AUDIO">
+               <section class="full-height" data-background-iframe="https://chat.openai.com/share/5f9f766b-1b3b-4257-9add-24fa4b4da8f9" data-background-opacity="1"  data-audio-text="AUDIO">
                  <div class="footer" style="position: absolute; bottom: 4vh; width: 60%; background-color: rgba(0, 0, 0, 0.775); padding: 10px 0; text-align: center;">
                      <H6 class="color">Lista de verificación: Caso de estudio (ChatGPT 3)</H6>
                     
@@ -1796,7 +1537,9 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
                      Notas del Orador
                  </aside> 
              </section>
-            
+             
+         
+         
          
              </section> 
            <!-- <section >
@@ -1823,7 +1566,7 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
                  </aside>
                  </section> -->
                </section>
-               <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
+               <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
                    <h3 class="color">Consejos adicionales para la creación de prompts</h3>
                    <ul>
                        <li>Sé claro y específico en lo que quieres que haga ChatGPT. Ejemplo: "Como ChatGPT, proporciona recomendaciones para prevenir la propagación del COVID-19 en entornos escolares".</li>
@@ -1838,29 +1581,8 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
                 </section>
            </section>
          
-           <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="  En esta velocidad de vértigo, ChatGPT nos avisa de que introduce la posibilidad de añadir imágenes o audios en septiembre de 2023. Con ChatGPT Vision, estamos entrando en una era donde la inteligencia artificial no solo procesa información, sino que realmente interpreta el mundo a nuestro alrededor. Ya no estamos limitados a palabras o números. Ahora, con una simple imagen, podemos acceder a un mundo de conocimiento. ">
-            <h3 class="title color">ChatGPT MultiModal</h3>
-            <p style="margin-top:-2vh">ChatGPT ya puede ver, oír y hablar</p>
-            <div style="display: flex; align-items: center; justify-content: space-around;">
-                <!-- Imagen a la izquierda, más ancha -->
-                <div style="width: 50%;">
-                    <a href="https://openai.com/blog/chatgpt-can-now-see-hear-and-speak" target="_blank">
-                        <img src="https://images.openai.com/blob/9c95036b-c2f5-4af8-a9c4-ed6c411f77e4/chatgpt-can-now-see-hear-and-speak-alt.jpg?trim=0,420,0,420&width=2000" alt="ChatGPT Vision" style="max-width: 85%;">
-                        <p style="font-size: 18px; text-align: center; margin-top: -25px;">Imagen de <a href="https://openai.com/blog/chatgpt-can-now-see-hear-and-speak" target="_blank" style="text-decoration: underline; color: inherit;">openai.com</a></p>
-                    </a>
-                </div>
-                <!-- Texto a la derecha, más estrecho con padding izquierdo -->
-                <div style="width: 50%; text-align: left; padding-left: 20px;">
-                    <h4 class="color" style="text-align: center;">Ver el Mundo...<br>...a través de ChatGPT</h4>
-                    <p >Con ChatGPT Vision, estamos entrando en una era donde la inteligencia artificial no solo procesa información, sino que realmente interpreta el mundo a nuestro alrededor. Ya no estamos limitados a palabras o números. Ahora, con una simple imagen, podemos acceder a un mundo de conocimiento.</p>
-                    <p class=" color">Para obtener más información, visita <a href="https://openai.com/blog/chatgpt-can-now-see-hear-and-speak" target="_blank" style="text-decoration: underline; color: inherit;">openai.com/blog</a></p>
-                </div>
-            </div>
-            <aside class="notes">
-                En esta velocidad de vértigo, ChatGPT nos avisa de que introduce la posibilidad de añadir imágenes o audios en septiembre de 2023. Con ChatGPT Vision, estamos entrando en una era donde la inteligencia artificial no solo procesa información, sino que realmente interpreta el mundo a nuestro alrededor. Ya no estamos limitados a palabras o números. Ahora, con una simple imagen, podemos acceder a un mundo de conocimiento. .
-            </aside>
-        </section>
-           <section class="full-height" data-background-iframe="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="1"  data-audio-text="Un ejemplo sencillo, pero poderoso, es la posibilidad de comprender el contenido de una estantería llena de libros con una simple foto. Imagina las puertas que esto abre en diversos campos y cómo puede revolucionar nuestra forma de aprender y descubrir.">
+           
+           <section class="full-height" data-background-iframe="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="1"  data-audio-text="Un ejemplo sencillo, pero poderoso, es la posibilidad de comprender el contenido de una estantería llena de libros con una simple foto. Imagina las puertas que esto abre en diversos campos y cómo puede revolucionar nuestra forma de aprender y descubrir.">
             <!--  <h5 class="color" style="margin-top: -1vh;">ChatGPT: Conceptos</h5> -->
              <div style="display: flex; align-items: center; justify-content: center; height: 95vh;margin-top: 1vh;">
                  <div style="flex: 0 1 100%; margin-left:-20vh; margin-right:-20vh;">
@@ -1899,7 +1621,7 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
          
          
          
-           <section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
+           <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
              <h2 class="color">Trucos y recomendaciones</h2>
              <ul>
                <li>Experimenta con diferentes prompts.</li>
@@ -1920,7 +1642,7 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
              </aside>
            </section>
            
-           <section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
+           <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
              <h2 class="color">Usos posibles en el ámbito sanitario</h2>
              <ul>
                <li>Generar resúmenes de investigaciones médicas.</li>
@@ -1937,64 +1659,6 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
                Notas del Orador
              </aside>
            </section>
-
-
-
-   <section data-transition="zoom" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
-            <h2 class="title color">Elementos para el Debate</h2>
-            <section > <!-- First vertical slide: Pros -->
-                <div class="box" >
-                    <div class="title color">Pros</div>
-                     <div class="content">
-                      <ul>
-                        <li>Acceso rápido a muchos tipos de respuesta</li>
-                        <li>Uso en educación y formación</li>
-                        <li>Lenguaje conversacional </li>
-                        <li>Multimodal</li>
-                        </ul>
-                       </div>
-                     </div>
-                     
-            </section>
-            <section data-transition="zoom" > <!-- Second vertical slide: Contras -->
-              <div class="box" style="font-size: 70%;">
-                  <div class="title color">Contras</div>
-                  <div class="content">
-                        
-                  <ul>
-                    <li><strong>Aspectos éticos:</strong> </li>Sesgos (p.ej. raciales, económicos o étnicos) que podemos "heredar", vulnerabilidad a la manipulación (jailbreaks como las vulnerabilidades multilingües). 
-                    <li><strong>Alucinaciones:</strong> A veces, ChatGPT puede generar información que parece correcta, pero que en realidad es incorrecta o inventada. Siempre verifica la información generada por ChatGPT.</li>
-                    <li><strong>Compromiso de integridad y originalidad en el ámbito académico: </strong>Es importante asegurarse de que el trabajo final sea el resultado del esfuerzo y la comprensión del investigador, autor o estudiante</li>
-                    <li><strong>Responsabilidad y transparencia:</strong> Debería ser usado, en nuestro contexto, como un asesor y no como el protagonista. Eso depende al final de la responsabilidad y conciencia en el uso. Además, la forma en que interactuamos con el influye en la forma en que los algoritmos interactúan con los usuarios en el futuro</li>
-                    <li><strong>Derechos de autor:</strong> </li>
-                    <li><strong>Los modelos de lenguaje grande (LLM) no son deterministas:</strong> producen resultados diferentes incluso con las mismas entradas, con respuestas no predecibles y varían en función de factores como contexto, configuración y entradas específicas. (¿desventaja?)</li>
-                  </ul>
-                
-                  </div>
-              </div>
-          </section>
-         
-          <section data-transition="zoom" > <!-- Tercera diapositiva vertical: limitaciones -->
-            <div class="box" style="font-size: 70%;">
-                <div class="title color">Limitaciones</div>
-                <div class="content">
-                      
-                <ul>
-                  <li><strong>Confidencialidad: </strong>ChatGPT procesa grandes cantidades de datos para poder generar su propio texto. Esto significa que la privacidad de la información es una preocupación importante y que todas las empresas que utilizan tecnología de inteligencia artificial tienen la responsabilidad de proteger los datos de los usuarios y cumplir con los estándares requeridos en la seguridad del procesamiento de datos </li>
-                  <li><strong>Requiere planes estructurados de formación: </strong>Especialmente en el ámbito de las administraciones públicas </li>
-                  <li><strong>Tecnología Sanitaria:</strong>Es una tecnología a evaluar si se dedica a intervenciones sanitarias: eficacia, seguridad, eficiencia, aspectos éticos, legales, económicos, organizativos, sociales, etc.</li>
-                  <li><strong>Ventana de tokens:</strong> ChatGPT solo puede tener en cuenta los últimos 2048 tokens de contexto. Si tu conversación es más larga, puede que no recuerde información de partes anteriores de la conversación.</li>
-                  <li><strong>Antropomorfización:</strong> Aunque es tentador pensar en ChatGPT como un humano, e incluso puede ser conveniente tratarle como tal, recuerda que es una IA y no comprende el mundo de la misma manera que un humano. ChatGPT está diseñado para generar la respuesta más probablemente correcta, no necesariamente la respuesta correcta. Este sesgo de antropomorfización puede llevar a malentendidos sobre las capacidades de la IA.</li>
-                <li><strong>Falta de contexto e implicaciones</strong>  Los modelos de lenguaje, como ChatGPT, no están diseñados para proporcionar un contexto completo para la información que generan. Esto significa que no tienen la capacidad de entender las implicaciones éticas, culturales o políticas de la información proporcionada.</li>
-                <li><strong>Latencia del modelo:</strong> Tiempo que tarda en generar respuestas. Mayor en los modelos más complejos</li>
-                <li><strong>La Maldición de la Recursividad:  </strong>Riesgo del Colapso del Modelo en el Entrenamiento con Datos Generados (1) <br><span style="font-size: 0.5em;">(1) Shumailov I, Shumaylov Z, Zhao Y, et al. The Curse of Recursion: Training on Generated Data Makes Models Forget. arXiv.org, https://arxiv.org/abs/2305.17493v2 (2023, accessed 8 October 2023)</span></li>
-                 
-                  
-                </ul>
-                </div>
-                </div>
-           </section>
-    </section>
           <!--  <section>
            <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
              <h2 class="color">Problemas comunes</h2>
@@ -2079,106 +1743,199 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
            </aside>
          </section> -->
          
-  
-         
-
-
-<!--          <section data-background-image="https://media.giphy.com/media/l1J9xRLvfhAGVeiys/giphy.gif" data-audio-text="AUDIO" >
-          <h3 class="color">Confidencialidad y ética</h3>
-          <p>Es importante tener en cuenta que ChatGPT procesa grandes cantidades de datos para poder generar su propio texto. Esto significa que la privacidad de la información es una preocupación importante y que todas las empresas que utilizan tecnología de inteligencia artificial tienen la responsabilidad de proteger los datos de los usuarios y cumplir con los estándares éticos del procesamiento de datos. OpenAI se compromete a mantener altos estándares éticos y de privacidad en el desarrollo y uso de ChatGPT.</p>
-          <aside class="notes">
-            Notas del Orador
-          </aside>
-        </section> -->
-    <!--     <section data-background-image="https://media.giphy.com/media/l1J9xRLvfhAGVeiys/giphy.gif"  data-audio-text="AUDIO">
-          <h3 class="color">Evaluación HTA</h3>
-          <p>Es una tecnología a evaluar si se dedica a intervenciones sanitarias: eficacia, seguridad, eficiencia, aspectos éticos, legales, económicos, organizativos, sociales, etc. </p>
-          <aside class="notes">
-            Notas del Orador
-          </aside>
-        </section> -->
-        
- <!--        -->
-      
-      
-      
-      
-  <!--       <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
-          <h2 class="color">Conclusiones</h2>
-          <p>En resumen, ChatGPT es un modelo de lenguaje de inteligencia artificial revolucionario que puede utilizarse para una gran cantidad de tareas de procesamiento de lenguaje natural. Desde la generación de texto coherente hasta la revisión de redacción, el análisis numérico, la traducción de idiomas, la creación de esquemas y la simplificación de textos complejos, ChatGPT ha demostrado ser una herramienta muy útil para profesionales en diversas industrias. Es importante tener en cuenta los aspectos éticos y de privacidad al trabajar con ChatGPT o cualquier otra tecnología de inteligencia artificial y siempre proteger la privacidad de los usuarios y los datos que se manejan. </p>
-          <p class="color">El usuario es responsable de la entrada y salida de texto</p>
-          <aside class="notes">
-            Notas del Orador
-          </aside>
-        </section> -->
-<!--         <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
-          <h2 class="color">Conclusiones</h2>
-          <div style="display:flex;">
-            <div style="flex-basis:50%; display:flex; justify-content:center; align-items:center;">
-              <iframe src="https://player.vimeo.com/video/176576698?h=3585fd8b83" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-              
-            </div>
-            <div style="flex-basis:50%">
-              <p>En resumen, ChatGPT es un modelo de lenguaje de inteligencia artificial revolucionario que puede utilizarse para una gran cantidad de tareas de procesamiento de lenguaje natural. Desde la generación de texto coherente hasta la revisión de redacción, el análisis numérico, la traducción de idiomas, la creación de esquemas y la simplificación de textos complejos, ChatGPT ha demostrado ser una herramienta muy útil para profesionales en diversas industrias. Es importante tener en cuenta los aspectos éticos y de privacidad al trabajar con ChatGPT o cualquier otra tecnología de inteligencia artificial y siempre proteger la privacidad de los usuarios y los datos que se manejan.</p>
-            </div>
-          </div>
-          <aside class="notes">
-            Notas del Orador
-          </aside>
-        </section> -->
-    <!--     <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
-          <div style="display: flex; align-items: center; justify-content: space-around;">
-            <div style="width: 50%;">
-              <img src="https://th.bing.com/th/id/OIG.BhMiODrbMRMkep6Xyv6F?pid=ImgGn" alt="ChatGPT Futuristic Design" style="max-width: 100%;">
-            </div>
-            <div style="width: 50%;">
-              <h2 class="color">ChatGPT: Diseño Futurista</h2>
-              <p>ChatGPT es una tecnología de vanguardia que permite la comunicación fluida y natural con sistemas de inteligencia artificial.</p>
-            </div>
-          </div>
-          <aside class="notes">
-            Notas del Orador
-          </aside>
-        </section> -->
-    
-        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6">
-          <h3 style="margin-top: 30vh;">Gracias</h3>
-          <p>Homines, dum docent, discunt 🩺</p>
-          <br>
-          <div style="margin-top: 10vh; text-align: left;margin-left: 20%;font-size: 0.9em;">
-          <p style="text-align: left;font-size: 0.9em;">Esta presentación ha sido creada con finalidad docente por 
-            <a style="font-size: 1.1em;"  href="https://twitter.com/ernestob" title="Twitter de Ernesto B." target="_blank">Ernesto Barrera</a> 
-            <br>Está bajo licencia 
-            <a style="font-size: 1.1em; href="https://creativecommons.org/licenses/by-sa/4.0/" title="License" target="_blank">Creative Commons 
-            CC&nbsp;BY-SA&nbsp;4.0</a>
-          </p>
-          
-         
-              <h5 style="font-size: 70%;margin-top: 3vh; ">Herramientas utilizadas</h5>
-              <p style="font-size: 70%;">
-                  <a style="font-size: 99%;"href="https://revealjs.com/" title="Reveal.js" target="_blank">Reveal.js</a>,
-                  <a style="font-size: 99%;"href="https://github.com/" title="GitHub" target="_blank">GitHub</a>,
-                  <a style="font-size: 99%;"href="https://code.visualstudio.com/" title="VS Code" target="_blank">VS Code</a>, y más.
-              </p>
-          </div>
-          
-          <div style="text-align: left;margin-left: 20%; ">
-              <h5 style="font-size: 70%;">Potenciada con Inteligencia Artificial</h5>
-              <p style="font-size: 70%;">
-                  <a style="font-size: 99%;"href="https://openai.com/dall-e-3" title="DALL·E-3" target="_blank">DALL·E-3</a>,
-                  <a style="font-size: 99%;"href="https://stability.ai/stable-diffusion" title="Stable Diffusion" target="_blank">Stable Diffusion</a>,
-                  <a style="font-size: 99%;"href="https://openai.com/chatgpt" title="ChatGPT" target="_blank">ChatGPT</a>,
-                  <a style="font-size: 99%;"href="https://perplexity.ai" title="Perplexity" target="_blank">Perplexity</a>, y más.
-              </p>
-          </div>
-      
-          <aside class="notes">
-              Esta diapositiva es un agradecimiento a todos los presentes y una oportunidad para destacar las herramientas y tecnologías que he utilizado para crear esta presentación. La combinación de habilidades tradicionales de programación con la potencia de la inteligencia artificial ha permitido crear una experiencia de aprendizaje enriquecedora.
-          </aside>
-        </section>
-        
+         <section data-transition="zoom" data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
+           <h2 class="title color">Elementos para el Debate</h2>
+           <section > <!-- First vertical slide: Pros -->
+               <div class="box" >
+                   <div class="title color">Pros</div>
+                   <div class="content">
+                     <ul>
+                       <li>Acceso rápido a muchos tipos de respuesta</li>
+                       <li>Uso en educación y formación</li>
+                       <li>Lenguaje conversacional </li>
+                       <li>Multimodal</li>
+                  
+                     </ul>
+               
+                   </div>
+               </div>
+           </section>
+           <section data-transition="zoom" > <!-- Second vertical slide: Contras -->
+             <div class="box" style="font-size: 70%;">
+                 <div class="title color">Contras</div>
+                 <div class="content">
+                       
+                 <ul>
+                   <li><strong>Aspectos éticos:</strong> </li>Sesgos (p.ej. raciales, económicos o étnicos) que podemos "heredar", vulnerabilidad a la manipulación (jailbreaks como las vulnerabilidades multilingües). 
+                   <li><strong>Alucinaciones:</strong> A veces, ChatGPT puede generar información que parece correcta, pero que en realidad es incorrecta o inventada. Siempre verifica la información generada por ChatGPT.</li>
+                   <li><strong>Compromiso de integridad y originalidad en el ámbito académico: </strong>Es importante asegurarse de que el trabajo final sea el resultado del esfuerzo y la comprensión del investigador, autor o estudiante</li>
+                   <li><strong>Responsabilidad y transparencia:</strong> Debería ser usado, en nuestro contexto, como un asesor y no como el protagonista. Eso depende al final de la responsabilidad y conciencia en el uso. Además, la forma en que interactuamos con el influye en la forma en que los algoritmos interactúan con los usuarios en el futuro</li>
+                   <li><strong>Derechos de autor:</strong> </li>
+                   <li><strong>Los modelos de lenguaje grande (LLM) no son deterministas:</strong> producen resultados diferentes incluso con las mismas entradas, con respuestas no predecibles y varían en función de factores como contexto, configuración y entradas específicas. (¿desventaja?)</li>
+                 </ul>
+               
+                 </div>
+             </div>
+         </section>
+         <section data-transition="zoom" > <!-- Second vertical slide: Contras -->
+           <div class="box" style="font-size: 70%;">
+               <div class="title color">Limitaciones</div>
+               <div class="content">
+                     
+               <ul>
+                 
+                 <li><strong>Confidencialidad: </strong>ChatGPT procesa grandes cantidades de datos para poder generar su propio texto. Esto significa que la privacidad de la información es una preocupación importante y que todas las empresas que utilizan tecnología de inteligencia artificial tienen la responsabilidad de proteger los datos de los usuarios y cumplir con los estándares requeridos en la seguridad del procesamiento de datos </li>
+                 <li><strong>Requiere planes estructurados de formación: </strong>Especialmente en el ámbito de las administraciones públicas </li>
+                 <li><strong>Tecnología Sanitaria:</strong>Es una tecnología a evaluar si se dedica a intervenciones sanitarias: eficacia, seguridad, eficiencia, aspectos éticos, legales, económicos, organizativos, sociales, etc.</li>
              
-      </div>
+                 <li><strong>Latencia del modelo:</strong> Tiempo que tarda en generar respuestas. Mayor en los modelos más complejos</li>
+                 <li><strong>Cuellos de botella:Versión de pago, sensible a accesos concurrentes y horas punta</li>
+                 <li><strong>Falta de contexto e implicaciones</strong>  Los modelos de lenguaje, como ChatGPT, no están diseñados para proporcionar un contexto completo para la información que generan. Esto significa que no tienen la capacidad de entender las implicaciones éticas, culturales o políticas de la información proporcionada.
+                 
+                 <li><strong>Ventana de tokens:</strong> ChatGPT solo puede tener en cuenta los últimos 2048 tokens de contexto. Si tu conversación es más larga, puede que no recuerde información de partes anteriores de la conversación.</li>
+               
+                 <li><strong>Antropomorfización:</strong> Aunque es tentador pensar en ChatGPT como un humano, e incluso puede ser conveniente tratarle como tal, recuerda que es una IA y no comprende el mundo de la misma manera que un humano. ChatGPT está diseñado para generar la respuesta más probablemente correcta, no necesariamente la respuesta correcta. Este sesgo de antropomorfización puede llevar a malentendidos sobre las capacidades de la IA.</li>
+                
+                
+                 <li><strong>La Maldición de la Recursividad:  </strong>Riesgo del Colapso del Modelo en el Entrenamiento con Datos Generados (1) <br><span style="font-size: 0.5em;">(1) Shumailov I, Shumaylov Z, Zhao Y, et al. The Curse of Recursion: Training on Generated Data Makes Models Forget. arXiv.org, https://arxiv.org/abs/2305.17493v2 (2023, accessed 8 October 2023)</span></li>
+               </ul>
+             
+               </div>
+           </div>
+         </section>
+         </section>
+         
+         <section data-background-image="https://media.giphy.com/media/l1J9xRLvfhAGVeiys/giphy.gif" data-audio-text="AUDIO" >
+               <h3 class="color">Confidencialidad y ética</h3>
+               <p>Es importante tener en cuenta que ChatGPT procesa grandes cantidades de datos para poder generar su propio texto. Esto significa que la privacidad de la información es una preocupación importante y que todas las empresas que utilizan tecnología de inteligencia artificial tienen la responsabilidad de proteger los datos de los usuarios y cumplir con los estándares éticos del procesamiento de datos. OpenAI se compromete a mantener altos estándares éticos y de privacidad en el desarrollo y uso de ChatGPT.</p>
+               <aside class="notes">
+                 Notas del Orador
+               </aside>
+             </section>
+             <section data-background-image="https://media.giphy.com/media/l1J9xRLvfhAGVeiys/giphy.gif"  data-audio-text="AUDIO">
+               <h3 class="color">Evaluación HTA</h3>
+               <p>Es una tecnología a evaluar si se dedica a intervenciones sanitarias: eficacia, seguridad, eficiencia, aspectos éticos, legales, económicos, organizativos, sociales, etc. </p>
+               <aside class="notes">
+                 Notas del Orador
+               </aside>
+             </section>
+             
+             <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="En esta diapositiva, presentamos un resumen del video 'Part 3: Advanced Searching for Systematic Reviews (2022)' del canal University of Manitoba Libraries. A continuación, se destacan los momentos clave del video que son esenciales para los bibliotecarios en ciencias de la salud.">
+               <h2 class="title color" style="text-align: center;">Resumen de un Video</h2>
+               <p class="aligned mensaje-usuario" style="text-align: center;">👩🏽‍⚕️Usuario escribe:</p>
+               <blockquote class="size3" style="text-align: left;">
+                   Quiero que selecciones los momentos más importantes para un bibliotecario y me hagas el guión completo del video con esa estructura
+               </blockquote>
+               <div style="display: flex; flex-wrap: wrap;">
+                   <div style="flex: 1; min-width: 300px; padding: 10px;">
+                       <iframe width="100%" height="400px" src="https://www.youtube.com/embed/4h4Yz_0VGJs?si=l5hJdwUCpvXnCbQS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                       <div style="text-align: left; font-size: 0.9em; line-height: 1.2; margin-top: 10px;">
+                           <strong>Datos del video:</strong>
+                           <br><strong>Título del video:</strong> Part 3: Advanced Searching for Systematic Reviews (2022)
+                           <br><strong>Nombre del canal:</strong> <a href="https://www.youtube.com/University%20of%20Manitoba%20Libraries" target="_blank">University of Manitoba Libraries</a>
+                           <br><strong>Número de visualizaciones:</strong> 1,019 (Fecha de consulta: 14 de octubre de 2023)
+                           <br><strong>Duración:</strong> 5750 segundos (aproximadamente 95 minutos)
+                           <br><strong>URL del video:</strong> <a href="https://www.youtube.com/watch?v=4h4Yz_0VGJs" target="_blank">Enlace</a>
+                       </div>
+                   </div>
+                   <div style="flex: 1; min-width: 300px; overflow-y: auto; max-height: 100vh; padding: 10px;">
+                       <h3>Momentos clave:</h3>
+                       <ul style="font-size: 1em;">
+                         
+                             <li><a href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1280s" target="_blank">Introducción a la búsqueda avanzada</a> - Importancia de pausar y revisar las herramientas de búsqueda.</li>
+                             <li><a href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1312s" target="_blank">Uso de bases de datos bibliográficas</a> - Cómo las bases de datos organizan y buscan información.</li>
+                             <li><a href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1344s" target="_blank">Importancia de las palabras clave y sinónimos</a> - Las bases de datos son literales y no buscan automáticamente sinónimos.</li>
+                             <li><a href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1552s" target="_blank">Limitaciones de PubMed para revisiones sistemáticas</a> - PubMed no es adecuado para revisiones sistemáticas.</li>
+                             <li><a href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=2352s" target="_blank">Uso de encabezados de temas y subencabezados</a> - Cómo usar encabezados para refinar búsquedas.</li>
+                             <li><a href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=2460s" target="_blank">Ejemplo práctico: Búsqueda de "diabetic foot"</a> - Búsqueda de un tema específico utilizando encabezados y palabras clave.</li>
+                       
+                       </ul>
+                   </div>
+               </div>
+               <aside class="notes">
+                   Esta diapositiva ofrece un resumen del video sobre técnicas avanzadas de búsqueda para revisiones sistemáticas. Los momentos clave destacan las partes más relevantes del video, que pueden ser de especial interés para los bibliotecarios en ciencias de la salud. Estos puntos clave te ayudarán a entender mejor el contenido del video y a destacar la importancia de las técnicas avanzadas de búsqueda en el ámbito de las ciencias de la salud.
+               </aside>
+           </section>
+           
+           
+           
+           
+             <section  data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
+               <h2 class="color">Conclusiones</h2>
+               <p>En resumen, ChatGPT es un modelo de lenguaje de inteligencia artificial revolucionario que puede utilizarse para una gran cantidad de tareas de procesamiento de lenguaje natural. Desde la generación de texto coherente hasta la revisión de redacción, el análisis numérico, la traducción de idiomas, la creación de esquemas y la simplificación de textos complejos, ChatGPT ha demostrado ser una herramienta muy útil para profesionales en diversas industrias. Es importante tener en cuenta los aspectos éticos y de privacidad al trabajar con ChatGPT o cualquier otra tecnología de inteligencia artificial y siempre proteger la privacidad de los usuarios y los datos que se manejan. </p>
+               <p class="color">El usuario es responsable de la entrada y salida de texto</p>
+               <aside class="notes">
+                 Notas del Orador
+               </aside>
+             </section>
+             <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
+               <h2 class="color">Conclusiones</h2>
+               <div style="display:flex;">
+                 <div style="flex-basis:50%; display:flex; justify-content:center; align-items:center;">
+                   <iframe src="https://player.vimeo.com/video/176576698?h=3585fd8b83" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                   
+                 </div>
+                 <div style="flex-basis:50%">
+                   <p>En resumen, ChatGPT es un modelo de lenguaje de inteligencia artificial revolucionario que puede utilizarse para una gran cantidad de tareas de procesamiento de lenguaje natural. Desde la generación de texto coherente hasta la revisión de redacción, el análisis numérico, la traducción de idiomas, la creación de esquemas y la simplificación de textos complejos, ChatGPT ha demostrado ser una herramienta muy útil para profesionales en diversas industrias. Es importante tener en cuenta los aspectos éticos y de privacidad al trabajar con ChatGPT o cualquier otra tecnología de inteligencia artificial y siempre proteger la privacidad de los usuarios y los datos que se manejan.</p>
+                 </div>
+               </div>
+               <aside class="notes">
+                 Notas del Orador
+               </aside>
+             </section>
+             <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-text="AUDIO">
+               <div style="display: flex; align-items: center; justify-content: space-around;">
+                 <div style="width: 50%;">
+                   <img src="https://th.bing.com/th/id/OIG.BhMiODrbMRMkep6Xyv6F?pid=ImgGn" alt="ChatGPT Futuristic Design" style="max-width: 100%;">
+                 </div>
+                 <div style="width: 50%;">
+                   <h2 class="color">ChatGPT: Diseño Futurista</h2>
+                   <p>ChatGPT es una tecnología de vanguardia que permite la comunicación fluida y natural con sistemas de inteligencia artificial.</p>
+                 </div>
+               </div>
+               <aside class="notes">
+                 Notas del Orador
+               </aside>
+             </section>
+         
+             <section data-background-image="../ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6">
+               <h3 style="margin-top: 30vh;">Gracias</h3>
+               <p>Homines, dum docent, discunt 🩺</p>
+               <br>
+               <div style="margin-top: 10vh; text-align: left;margin-left: 20%;font-size: 0.9em;">
+               <p style="text-align: left;font-size: 0.9em;">Esta presentación ha sido creada con finalidad docente por 
+                 <a style="font-size: 1.1em;"  href="https://twitter.com/ernestob" title="Twitter de Ernesto B." target="_blank">Ernesto Barrera</a> 
+                 <br>Está bajo licencia 
+                 <a style="font-size: 1.1em; href="https://creativecommons.org/licenses/by-sa/4.0/" title="License" target="_blank">Creative Commons 
+                 CC&nbsp;BY-SA&nbsp;4.0</a>
+               </p>
+               
+              
+                   <h5 style="font-size: 70%;margin-top: 3vh; ">Herramientas utilizadas</h5>
+                   <p style="font-size: 70%;">
+                       <a style="font-size: 99%;"href="https://revealjs.com/" title="Reveal.js" target="_blank">Reveal.js</a>,
+                       <a style="font-size: 99%;"href="https://github.com/" title="GitHub" target="_blank">GitHub</a>,
+                       <a style="font-size: 99%;"href="https://code.visualstudio.com/" title="VS Code" target="_blank">VS Code</a>, y más.
+                   </p>
+               </div>
+               
+               <div style="text-align: left;margin-left: 20%; ">
+                   <h5 style="font-size: 70%;">Potenciada con Inteligencia Artificial</h5>
+                   <p style="font-size: 70%;">
+                       <a style="font-size: 99%;"href="https://openai.com/dall-e-3" title="DALL·E-3" target="_blank">DALL·E-3</a>,
+                       <a style="font-size: 99%;"href="https://stability.ai/stable-diffusion" title="Stable Diffusion" target="_blank">Stable Diffusion</a>,
+                       <a style="font-size: 99%;"href="https://openai.com/chatgpt" title="ChatGPT" target="_blank">ChatGPT</a>,
+                       <a style="font-size: 99%;"href="https://perplexity.ai" title="Perplexity" target="_blank">Perplexity</a>, y más.
+                   </p>
+               </div>
+           
+               <aside class="notes">
+                   Esta diapositiva es un agradecimiento a todos los presentes y una oportunidad para destacar las herramientas y tecnologías que he utilizado para crear esta presentación. La combinación de habilidades tradicionales de programación con la potencia de la inteligencia artificial ha permitido crear una experiencia de aprendizaje enriquecedora.
+               </aside>
+           </section>
+           
+  
+  
    
   </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/js/reveal.min.js"></script>
@@ -2272,7 +2029,7 @@ dependencies: [
    /* Camila, Sofia, Diego, Luna https://www.voicerss.org/api/ */
    textToSpeechURL: "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Diego&c=ogg&r=1&f=48khz_16bit_stereo&src=",
    advance: -1,
-   autoplay: true,
+   autoplay: false,
    defaultText: true,
    playerOpacity: 0.2,
  },
@@ -2401,9 +2158,9 @@ function getYesterdayDate() {
 </script>
 
 
-<!-- <a href="https://twitter.com/ernestob" target="_blank">
+<a href="https://twitter.com/ernestob" target="_blank">
 <img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png"
-width="35" height="40"> -->
+width="35" height="40">
 
 
 
