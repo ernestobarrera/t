@@ -1010,8 +1010,7 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
   <h3 class="color">Nueva terminología: Vocabulario clave</h3>
   <ul style="
   --custom-font-size: 1.2rem;
-  --strong-font-size: 1.2em;  <!-- Define una nueva variable para el tamaño de fuente de la etiqueta strong -->
-">
+  --strong-font-size: 1.2em;  ">
   <style>
       ul li {
           font-size: var(--custom-font-size) !important;
@@ -1050,67 +1049,83 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
   </aside>
  </section> -->
       
+     
       <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6">
-        <h3 class="color">¿Qué son los prompts?</h3>
-        
-        <section   data-audio-text="AUDIO">
-          <h3 class="color">Prompt</h3>
-          <p style="text-align: left; ">
-            Es la instrucción que nos permite interactuar con ChatGPT haciendo preguntas y obteniendo respuestas específicas. Funciona en un sistema de diálogo natural con memoria conversacional que mejora la calidad de la interacción entre los usuarios y la inteligencia artificial.
-            <br><br>
-            Podemos entender que los prompts, al influir en el entrenamiento de ChatGPT, lo impulsan a responder en un espacio probabilístico más acorde a nuestras preguntas, lo que mejora la calidad de la interacción entre los usuarios y la inteligencia artificial. 
-            <br><br>
-                    Los prompts son versátiles y se pueden utilizar en diversos temas, desde salud hasta tecnología, negocios y más.
-            <br><br>
+        <h3 class="color">¿Qué son los prompts y cómo utilizarlos en salud?</h3>
+    
+        <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/prompt.mp3">
+
+          <!-- Dentro del universo de ChatGPT y el procesamiento de lenguaje natural, un elemento crucial es el 'prompt'. Imagina el prompt como la llave que abre las puertas del conocimiento de ChatGPT, permitiéndonos hacer preguntas y recibir respuestas de manera precisa. Esta herramienta es tan versátil que encuentra aplicaciones en múltiples campos, ya sea en salud, tecnología, negocios, entre otros. Veamos en cómo estos prompts se pueden moldear y aplicar específicamente en el sector de la salud -->
+
+
+            <p style="text-align: left; font-size: 1.2rem;">
+                Un <strong>prompt</strong> es la instrucción que nos permite interactuar con ChatGPT, haciéndole preguntas y obteniendo respuestas específicas. Al influir en el entrenamiento de ChatGPT, los prompts impulsan a este modelo de IA a responder de una manera más acorde a nuestras preguntas. Esto mejora significativamente la calidad de la interacción entre los usuarios y la inteligencia artificial. Estos prompts son especialmente versátiles y tienen aplicaciones en diversos campos, desde salud hasta tecnología, negocios y más.
             </p>
-              <aside class="notes">
-                Notas del Orador
-              </aside>
+    
+            <h4 class="color" style="margin-top: 1rem">Ejemplos de Prompt en Salud</h4>
+            <style>
+              .custom-table {
+                  font-size: 1rem !important;
+                  width: 100% !important;
+              }
+              .custom-table th, .custom-table td {
+                  font-size: 1rem !important;
+              }
+              .custom-table td strong {
+        font-size: 1rem !important;  /* o el tamaño que prefieras */
+        font-weight: bold;  /* asegurarse de que sigue siendo en negrita */
+    }
+          </style>
+            <table class="custom-table" style="font-size: 0.7rem; width: 100%;">
+              <thead>
+                  <tr>
+                      <th>Tipo de Prompt</th>
+                      <th>Descripción</th>
+                      <th>Ejemplo en Salud</th>
+                      <th>Respuesta esperada</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td><strong>Informativo</strong></td>
+                      <td>Proporciona información específica</td>
+                      <td>"Síntomas de la gripe"</td>
+                      <td>"La gripe puede causar fiebre, tos, dolor de garganta, etc."</td>
+                  </tr>
+                  
+                  <tr>
+                      <td><strong>Argumentativo</strong></td>
+                      <td>Argumentos a favor o en contra</td>
+                      <td>"Beneficios y riesgos de la vacuna COVID-19"</td>
+                      <td>"Los beneficios de la vacuna COVID-19 incluyen protección contra el virus, reducción de la transmisión, etc. Los riesgos pueden incluir efectos secundarios menores como dolor en el sitio de inyección."</td>
+                  </tr>
+                  <tr>
+                      <td><strong>Estructurado</strong></td>
+                      <td>Organiza la respuesta en secciones</td>
+                      <td>"Síntomas, causas y tratamientos de la diabetes."</td>
+                      <td>"Síntomas: sed excesiva, hambre, fatiga. Causas: resistencia a la insulina, falta de insulina. Tratamientos: medicamentos, dieta, ejercicio."</td>
+                  </tr>
+                  <tr>
+                      <td><strong>Comparativo</strong></td>
+                      <td>Compara elementos</td>
+                      <td>"Efectos secundarios de los medicamentos A y B"</td>
+                      <td>"El medicamento A puede causar náuseas y dolor de cabeza, mientras que el medicamento B puede causar somnolencia y mareos."</td>
+                  </tr>
+                  <tr>
+                      <td><strong>Frameworks P.ej: CIDI</strong></td>
+                      <td>Contexto, intención, diseño e implementación</td>
+                      <td>"En un escenario de telemedicina, proporciona un tratamiento para el dolor crónico (C)"; "Resumen Ejecutivo (I)"; "Lista numerada (D)"; "Describir del proceso" (Im).</td>
+                      <td>"C: Dolor crónico en pacientes de telemedicina. I: Tratar a distancia. D: 1) Evaluación inicial, 2) Prescripción de medicamentos, 3) Terapias complementarias. Im: Uso de videollamadas para consultas."</td>
+                  </tr>
+              </tbody>
+          </table>
+    
+            <aside class="notes">
+                El prompt es una herramienta poderosa que nos permite interactuar de manera efectiva con ChatGPT. Dependiendo de cómo se estructura y presenta el prompt, podemos obtener respuestas detalladas y específicas que se ajusten a nuestras necesidades. En el ámbito de la salud, esto es especialmente útil para obtener información precisa sobre enfermedades, tratamientos, medicamentos y más.
+            </aside>
         </section>
-        <section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="AUDIO">
-          <h3 class="color ">Respuesta:</h3>
-          <p class="fragment custom blur">"¡Por supuesto! El COVID-19 es un virus altamente contagioso que se transmite principalmente a través de la saliva o las partículas respiratorias. En cuanto a su área en particular, puedes encontrar información actualizada sobre la propagación del virus y las medidas preventivas recomendadas en los recursos sanitarios locales. "</p>
-          <aside class="notes">
-            Notas del Orador
-          </aside>
-        </section>
-        
-        <section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="AUDIO">
-          <h3 class="color">Prompt #2</h3>
-          <p>"Tengo diabetes tipo 2. ¿Cuáles son los síntomas y tratamientos más comunes?"</p>
-          <aside class="notes">
-            Notas del Orador
-          </aside>
-        </section>
-        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="AUDIO">
-          <h3 class="color">Respuesta:</h3>
-          <p >"La diabetes tipo 2 es una enfermedad crónica en la que el cuerpo no puede regular adecuadamente los niveles de azúcar en la sangre. Los síntomas pueden variar de persona a persona, pero incluyen mareos, visión borrosa y fatiga. Los tratamientos pueden incluir cambios en la dieta, el ejercicio, medicamentos y más."</p>
-          <aside class="notes">
-            Notas del Orador
-          </aside>
-          </section>
-      </section>
-
-      <section data-markdown  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
-          <script type="text/template" >
-          <div><h3 class="color" style="margin-bottom:1em">Ejemplos de Prompt</h3></div>
-
-          | **Tipo de Prompt**       | **Descripción** | **Ejemplo en Salud** |
-          |:------------------------:|:---------------|:---------------------|
-          | **Informativo**          | <div style="font-size: 0.8em">Proporciona información específica</div> | <div style="font-size: 0.8em">"Síntomas de la gripe"</div> |
-          | **Directivo**            | <div style="font-size: 0.8em">Indica qué acción tomar</div> | <div style="font-size: 0.8em">"Lista de medicamentos para cefalea"</div> |
-          | **Argumentativo**        | <div style="font-size: 0.8em">Argumentos a favor o en contra</div> | <div style="font-size: 0.8em">"Beneficios y riesgos de la vacuna COVID-19"</div> |
-          | **Estructurado**         | <div style="font-size: 0.8em">Organiza la respuesta en secciones</div> | <div style="font-size: 0.8em">"Síntomas, causas y tratamientos de la diabetes."</div> |
-          | **Comparativo**          | <div style="font-size: 0.8em">Compara elementos</div> | <div style="font-size: 0.8em">"Efectos secundarios de los medicamentos A y B"</div> | - |
-          | **Frameworks P.ej: CIDI** | <div style="font-size: 0.8em">Contexto, intención, diseño e implementación</div> | <div style="font-size: 0.8em">"En un escenario de telemedicina, proporciona un tratamiento para el dolor crónico (C)"; "Resumen Ejecutivo (I)"; "Lista numerada (D)"; "Describir del proceso" (Im).</div> |
-
-          </script>
-        <aside class="notes">
-          Notas del Orador
-        </aside>
-      </section>
-      
-      
+    </section>
+    
     <!-- <section  >
         <h3>Ejemplos de uso en el ámbito sanitario</h3>
         
@@ -1201,170 +1216,148 @@ Esperamos que este desglose ayude a aclarar cómo ChatGPT, una herramienta avanz
           </aside>
         </section> -->
 
-      
-      
-      
-      
-  
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-text="AUDIO">
+          <style>
+            .flex-container {
+                display: flex;
+                flex-direction: column; /* Alinea los elementos en dirección vertical */
+                justify-content: center; /* Centra los elementos verticalmente */
+                align-items: center; /* Centra los elementos horizontalmente */
+                height: 100%; /* Ocupa todo el alto de la diapositiva */
+            }
     
+            .custom-code-block {
+                font-size: 1.8em;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                overflow-y: hidden;
+                line-height: 1.5;
+            }
+    
+            .custom-pre {
+                vertical-align: top; 
+                display: block;
+            }
+        </style>
+          <div style="margin-top: -2vh;">
+              <h3 class="color">Descripción de una búsqueda con un Prompt ampliado por pasos</h3>
+              <div class="flex-container">
+                  <pre class="custom-pre" style="font-size: 0.4rem;!important; width: 100%; margin-top: -1vh;">
+                      <code class="custom-code-block hljs" id="searchCodeBlock"></code>
+                  </pre>
+              </div>
       
-          <!-- </section> lo elimino porque creo no aporta -->  
-            <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
-              <section>
-                <h3 class="color" style="margin-top: -3vh;">Prompt estructurado por pasos</h3>
-                <table style="border-collapse: collapse; width: 98%; margin: 0 auto; font-size: 12px; margin-top: -1vh;" class="custom-table">
+           
+              <table style="border-collapse: collapse; width: 100%; margin: 0 auto; font-family: Arial, sans-serif; font-size: 1.1rem; margin-top: -1vh; border: 1px solid black;">
+               
                   <thead style="background-color: #454242">
                       <tr>
-                          <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold; color: white; ">Prompt incremental</th>
-                          <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold; color: white;">Prompt</th>
+                          <th style="text-align: center; width: 85%;">👩🏽‍⚕️ Usuario escribe</th>
+                          <th style="text-align: center; width: 5%;">🤖 ChatGPT</th>
+                          <th style="text-align: center; width: 5%;">Prompt</th>
                       </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td id="tablePromptSimple" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 0px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptSimple', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptRol" style="border: 1px solid #dddddd; padding: 0px;"></td>
-                      <td style="border: 0px solid #dddddd; padding: 0px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptRol', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptEsencia" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptEsencia', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptContexto" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptContexto', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptObjetivo" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptObjetivo', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptRequisitos" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptRequisitos', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
-                  <tr class="fragment">
-                      <td id="tablePromptDiseño" style="border: 1px solid #dddddd; padding: 6px;"></td>
-                      <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
-                          <button style="height: 40px; font-size: 0.8em; display: flex; align-items: center; justify-content: center;" onclick="copyPromptWithSearchToClipboard('promptDiseño', this)">Copiar</button>
-                      </td>
-                  </tr>
-                  
+                      <!-- Se ha ajustado el contenido de las celdas para que no tengan texto y se llenen dinámicamente -->
+                      <tr>
+                          <td id="tablePromptSimple" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px;"><a href="https://chat.openai.com/share/5f76c7ba-a364-4a56-9fc4-3fec9d15880a" target="_blank">Enlace 🌐</a></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
+                              <button style="margin-top: 5px; display: block;" onclick="copyPromptWithSearchToClipboard('promptSimple', this)">Copiar</button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td id="tablePromptRol" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px;"><a href="https://chat.openai.com/share/ea7287fb-3536-4c6d-89e3-ed8f13c26d86" target="_blank">Enlace 🌐</a></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
+                              <button style="margin-top: 5px; display: block;" onclick="copyPromptWithSearchToClipboard('promptRol', this)">Copiar</button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td id="tablePromptEsencia" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px;"><a href="https://chat.openai.com/share/3c3d6900-a0cc-4c70-843f-ae610fd57eaa" target="_blank">Enlace 🌐</a></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
+                              <button style="margin-top: 5px; display: block;" onclick="copyPromptWithSearchToClipboard('promptEsencia', this)">Copiar</button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td id="tablePromptContexto" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px;"><a href="https://chat.openai.com/share/142408e5-544f-450e-a6d9-28f7f287898b" target="_blank">Enlace 🌐</a></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
+                              <button style="margin-top: 5px; display: block;" onclick="copyPromptWithSearchToClipboard('promptContexto', this)">Copiar</button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td id="tablePromptObjetivo" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px;"><a href="https://chat.openai.com/share/cf29f701-84b3-4437-a206-504687569b90" target="_blank">Enlace 🌐</a></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
+                              <button style="margin-top: 5px; display: block;" onclick="copyPromptWithSearchToClipboard('promptObjetivo', this)">Copiar</button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td id="tablePromptRequisitos" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px;"><a href="https://chat.openai.com/share/8f1c0127-fdfa-48b9-8509-7b121480109c" target="_blank">Enlace 🌐</a></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
+                              <button style="margin-top: 5px; display: block;" onclick="copyPromptWithSearchToClipboard('promptRequisitos', this)">Copiar</button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td id="tablePromptDiseño" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px;"><a href="https://chat.openai.com/share/bc55e01d-7b17-41de-8f3c-d69175d0eac2" target="_blank">Enlace 🌐</a></td>
+                          <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;">
+                              <button style="margin-top: 5px; display: block;" onclick="copyPromptWithSearchToClipboard('promptDiseño', this)">Copiar</button>
+                          </td>
+                      </tr>
                   </tbody>
               </table>
-            
-                <p id="promptSimple" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed</p>
-                <p id="promptRol" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud </p> 
-                <p id="promptEsencia" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea</p>
-                <p id="promptContexto" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas</p>
-                <p id="promptObjetivo" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de ChatGPT como apoyo en esta tarea</p>
-                <p id="promptRequisitos" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de ChatGPT como apoyo en esta tarea. Sin perder la profundidad, adoptarás un estilo muy pedagógico, para amenizar tu exposición, en el que no faltarán ejemplos, emojis, ni elementos que faciliten la comprensión del mensaje, como links a resultados de búsqueda</p>
-                <p id="promptDiseño" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de ChatGPT como apoyo en esta tarea. Sin perder la profundidad, adoptarás un estilo muy pedagógico, para amenizar tu exposición, en el que no faltarán ejemplos, emojis, ni elementos que faciliten la comprensión del mensaje, como links a resultados de búsqueda. Presentarás la información en una tabla exhaustiva, muy clara y didáctica, estructurada paso a paso y un mapa mental</p>
-            
-                <script>
-                    // Asegurarse de que el DOM esté completamente cargado
-                   document.addEventListener("DOMContentLoaded", function() {
-    const promptIds = ["promptSimple", "promptRol", "promptEsencia", "promptContexto", "promptObjetivo", "promptRequisitos", "promptDiseño"];
-    let prevText = ""; // Almacenará el texto del prompt anterior
-
-    const fontSizeInEm = "0.7em"; // Tamaño de fuente deseado en em
-
-    promptIds.forEach(function(id) {
-        const promptText = document.getElementById(id).textContent;
-
-        // Determinar el componente nuevo del prompt
-        const newComponent = promptText.replace(prevText, "").trim();
-
-        // Crear el HTML para el texto en negrita y el texto no negrita con el mismo tamaño de fuente en em
-        const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${newComponent}</span>`;
-        const normalText = `<span style="font-size: ${fontSizeInEm};">${promptText.replace(newComponent, "")}</span>`;
-
-        // Actualizar el contenido de la celda de la tabla con ambos textos
-        const tableCellId = "table" + id.charAt(0).toUpperCase() + id.slice(1);
-        document.getElementById(tableCellId).innerHTML = normalText + boldText;
-
-        // Actualizar prevText para la siguiente iteración
-        prevText = promptText;
-    });
-});
-         </script>
-            </section>
-            <section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.4" data-audio-text="AUDIO">
-              <style>
-                  .flex-container {
-                      display: flex;
-                      flex-direction: column; /* Alinea los elementos en dirección vertical */
-                      justify-content: center; /* Centra los elementos verticalmente */
-                      align-items: center; /* Centra los elementos horizontalmente */
-                      height: 100%; /* Ocupa todo el alto de la diapositiva */
-                  }
-          
-                  .custom-code-block {
-                      font-size: 1.8em;
-                      white-space: pre-wrap;
-                      word-wrap: break-word;
-                      overflow-y: hidden;
-                      line-height: 1.5;
-                  }
-          
-                  .custom-pre {
-                      vertical-align: top; 
-                      display: block;
-                  }
-              </style>
-          
+      
+              <p id="promptSimple" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed</p>
+              <p id="promptRol" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud</p>
+              <p id="promptEsencia" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea</p>
+              <p id="promptContexto" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas</p>
+              <p id="promptObjetivo" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de ChatGPT como apoyo en esta tarea</p>
+              <p id="promptRequisitos" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de ChatGPT como apoyo en esta tarea. Sin perder la profundidad, adoptarás un estilo muy pedagógico, para amenizar tu exposición, en el que no faltarán ejemplos, emojis, ni elementos que faciliten la comprensión del mensaje, como links a resultados de búsqueda</p>
+              <p id="promptDiseño" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de ChatGPT como apoyo en esta tarea. Sin perder la profundidad, adoptarás un estilo muy pedagógico, para amenizar tu exposición, en el que no faltarán ejemplos, emojis, ni elementos que faciliten la comprensión del mensaje, como links a resultados de búsqueda. Presentarás la información en una tabla exhaustiva, muy clara y didáctica, estructurada paso a paso y un mapa mental</p>
+      
               <script>
                   document.addEventListener("DOMContentLoaded", function() {
-                      var codeBlock = document.getElementById("searchCodeBlock");
-                      codeBlock.textContent = search;
+                      const promptIds = ["promptSimple", "promptRol", "promptEsencia", "promptContexto", "promptObjetivo", "promptRequisitos", "promptDiseño"];
+                      let prevText = "";
+                      const fontSizeInEm = "0.8em";
+      
+                      promptIds.forEach(function(id) {
+                          const promptText = document.getElementById(id).textContent;
+                          const newComponent = promptText.replace(prevText, "").trim();
+                          const boldText = `<span class="bold-text" style="font-size: ${fontSizeInEm};">${newComponent}</span>`;
+                          const normalText = `<span style="font-size: ${fontSizeInEm};">${promptText.replace(newComponent, "")}</span>`;
+                          const tableCellId = "table" + id.charAt(0).toUpperCase() + id.slice(1);
+                          document.getElementById(tableCellId).innerHTML = normalText + boldText;
+                          prevText = promptText;
+                      });
                   });
               </script>
-          
-              <div class="flex-container">
-                  <h3 class="color">Descripción simple de la búsqueda</h3>
-                  <pre class="custom-pre"><code class="custom-code-block hljs" id="searchCodeBlock">
-                      <-- Aquí irá el contenido de la variable search 
-                  </code></pre>
-                  <div class="aligned">
-                      <p class="aligned mensaje-usuario">👩🏽‍⚕️Usuario escribe:</p>
-                      <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            // Obtener el contenido del elemento con id="promptContexto"
-                            var promptText = document.getElementById("promptSimple").textContent;
-                            // Insertar el contenido en el bloque "Usuario escribe:"
-                            document.getElementById("userInput").textContent = promptText;
-                        });
-                    </script>
+                <script>
+                  document.addEventListener("DOMContentLoaded", function() {
+                      // Obtener el contenido del elemento con id="promptContexto"
+                      var promptText = document.getElementById("promptSimple").textContent;
+                      // Insertar el contenido en el bloque "Usuario escribe:"
+                      document.getElementById("userInput").textContent = promptText;
+                  });
+              </script>
+       <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var codeBlock = document.getElementById("searchCodeBlock");
+            codeBlock.textContent = search;
+        });
+    </script>
+   <!--  <pre class="custom-pre"><code class="custom-code-block hljs" id="searchCodeBlock">
                     
-                      <blockquote class="size3" id="userInput" style="text-align: left; font-size:1.1em">
-                           "Por favor, describe esta búsqueda." 
-                      </blockquote>
-                      <p class="aligned mensaje-chatgpt">🤖ChatGPT responde:</p>
-                      <blockquote class="fragment custom blur size3" style="text-align: left;font-size: 1.1em;">
-                          "Se trata de una búsqueda extensa que cubre diferentes términos relacionados con la práctica basada en la evidencia en diversas áreas de la salud."
-                      </blockquote>
-                  </div>
-              </div>
-          </section>
+    </code></pre> -->
+          </div>
+      </section>
+      
+       
+          
             
 <!-- 
               
