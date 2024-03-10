@@ -31,10 +31,45 @@
     <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
     <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
     <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    
+    
     <style>
       /* Estilo general para las tablas */
      /* Estilos generales para las tablas dentro de .reveal: Establece cómo se deben comportar visualmente las tablas, incluyendo el colapso de bordes, márgenes, ancho, y cómo manejar el texto largo. */
+
+   /* Estilos específicos para enlaces dentro de tablas */
+   table a {
+  color: #053f7e !important; /* Azul estándar para texto del enlace */
+  text-decoration: none; /* Sin subrayado */
+  position: relative;
+  padding-left: 42px; /* Espacio para el ícono y texto "link" */
+  text-decoration: underline !important; 
+}
+
+table a:hover, table a:focus {
+  text-decoration: underline; /* Subrayado al pasar el mouse o al enfocar */
+}
+
+/* Ícono de enlace (cadena) antes del texto del enlace, específicamente para enlaces dentro de tablas */
+
+
+/* Remover el parpadeo */
+/* Quitamos la animación para evitar distracciones */
+
+/* Ajuste del texto "link" para evitar superposición */
+table a:after {
+  font-family: 'Font Awesome 5 Free'; /* FontAwesome */
+  content: '\f0c1'; /* Ícono de enlace/cadena */
+  position: absolute;
+  left: 0px; /* Ajustar para evitar superposición con el ícono */
+  top: 0;
+  color: #0f02c2; /* Color del texto "link" */
+  font-weight: 900; /* Tamaño del texto */
+}
+
+
+
 .reveal table {
     border-collapse: collapse;
     margin-bottom: 20px;
@@ -148,16 +183,25 @@
 
   /* ##Device=Desktops ##Screen=1281px to higher resolution desktops
 */
-  @media (min-width: 1601px) {
-    html {
-      font-size: 130%;
-    }
-
-    * {
-      font-size: 1.2rem;
-    }
+@media (min-width: 1601px) and (max-height: 1380px){
+  html {
+    font-size: 120%; /* Aumenta el tamaño base de la fuente para pantallas anchas */
   }
 
+  * {
+    font-size: 1.3rem; /* Ajusta el tamaño de la fuente de todos los elementos para una mejor legibilidad */
+  }
+}
+
+@media (min-width: 1601px) and (max-height: 1080px){
+  html {
+    font-size: 120%; /* Mantiene el aumento del tamaño base de la fuente para pantallas anchas */
+  }
+
+  * {
+    font-size: 1.1rem; /* Reduce un poco el tamaño de la fuente de todos los elementos para adaptarse a pantallas con menor altura */
+  }
+}
   @media (min-width: 1401px) and (max-width: 1600px) {
     html {
       font-size: 100%;
@@ -188,7 +232,7 @@
     }
 
     * {
-      font-size: 1.1rem;
+      font-size: 1.0rem;
     }
     
   }
@@ -201,7 +245,7 @@
     }
 
     * {
-      font-size: 1.1rem;
+      font-size: 1.0rem;
     }
     .reveal h3 {
       margin-top: 50px; /* Ajustar según la altura del menú */
@@ -212,11 +256,11 @@
 */
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     html {
-      font-size: 120%;
+      font-size: 100%;
     }
 
     * {
-      font-size: 1.1rem;
+      font-size: 0.9rem;
     }
   }
 
@@ -591,19 +635,38 @@
 
 </style>
 
-
 </head>
 <body>
+  
     <div class="reveal" >
-      
+      <div class="custom-logo">
+        <a href="https://twitter.com/ernestob" target="_blank">
+          <img style="margin-top:4px; border: 0;" title="Estoy en Twitter" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png" width="35" height="40">
+        </a>
+      </div>
 
         <div class="slides">
             <!-- Aquí van tus slides -->
             
             <section data-name="Inicio" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/ejemplosprompts.mp3">
-                <h2 class="color">Casos de estudio de ChatGPT en Ciencias de la Salud</h2>
-               <p>Inicio</p>
-              </section>
+              <h2 class="color cabecera">Casos de estudio de ChatGPT en Ciencias de la Salud</h2>
+              <div class="box">
+                  <!-- <div class="title">Objetivo de la Presentación</div>
+                  <div class="content">
+                      <p>Explorar el potencial impacto de ChatGPT en el ámbito de las ciencias de la salud, presentando casos de estudio reales donde esta tecnología puede facilitar avances significativos en investigación, práctica clínica y educación. La presentación describirá usos potenciales en:</p>
+                      <ul>
+                          <li><strong>Mejora de la toma de decisiones:</strong> Integrando análisis predictivos y apoyo en la toma de decisiones clínicas basado en datos.</li>
+                          <li><strong>Formación continua:</strong> Proporcionando recursos educativos personalizados para profesionales y estudiantes de la salud.</li>
+                          <li><strong>Desburocratización de procesos:</strong> Automatizando tareas administrativas para agilizar los flujos de trabajo en entornos sanitarios.</li>
+                          <li><strong>Ayuda diagnóstica:</strong> Mejorando la precisión diagnóstica mediante el análisis de grandes volúmenes de información médica.</li>
+                          <li><strong>Personalización del tratamiento:</strong> Facilitando la adaptación de los planes de tratamiento a las necesidades individuales de los pacientes.</li>
+                      </ul>
+                      
+                  </div> -->
+              </div>
+          </section>
+          
+          
 <!--     <section data-name="Ejemplos" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
 
     <h3 class="color">Ejemplo de Tabla con Casos de Uso</h3>
@@ -1498,28 +1561,24 @@
       <tbody>
         <tr>
           <td><strong>Simulaciones de Casos Clínicos</strong></td>
-          <td><em>"Como un asistente virtual en Medicina Familiar, genera simulaciones interactivas de casos clínicos basadas en síntomas comunes y raros, proporcionando un diagnóstico diferencial y un plan de tratamiento. Incluye variaciones en la presentación del caso y explica tus razonamientos."</em></td>
+          <td><em><a href="https://chat.openai.com/share/b9c627ae-5556-449c-98e7-9831ec977b57" target="_blank">Como un asistente virtual en Medicina Familiar, genera simulaciones interactivas de casos clínicos basadas en síntomas comunes y raros, proporcionando un diagnóstico diferencial y un plan de tratamiento...</a></em></td>
           <td><span class="emoji-grande">👍</span>Fomenta pensamiento crítico.<br><span class="emoji-grande">👎</span> No reemplaza experiencia real.</td>
         </tr>
         <tr>
           <td><strong>Actualización de Protocolos Médicos</strong></td>
-          <td><em>"Actúa como un consultor de conocimientos en Medicina Interna, actualizando los protocolos médicos según las últimas guías. Incluye cambios recientes y su impacto en la práctica clínica. Presenta la información en un formato de lista de verificación."</em></td>
-          <td><span class="emoji-grande">👍</span>Mantiene a residentes actualizados.<br><span class="emoji-grande">👎</span> Requiere verificación por expertos.</td>
+          <td><em><a href="https://chat.openai.com/share/8ada363e-e481-4346-b750-1ec06192f8ce" target="_blank">Como consultor en Medicina Interna, actualiza protocolos médicos basándote en las últimas guías. Este checklist detalla cambios recientes y evalúa su impacto en la práctica clínica, permitiendo una implementación efectiva y actualizada de las mejores prácticas médicas.</a></em></td>          <td><span class="emoji-grande">👍</span>Mantiene a residentes actualizados.<br><span class="emoji-grande">👎</span> Requiere verificación por expertos.</td>
         </tr>
         <tr>
           <td><strong>Interpretación de Pruebas Diagnósticas</strong></td>
-          <td><em>"Como un analista de laboratorio virtual, proporciona interpretaciones detalladas de pruebas diagnósticas comunes, destacando posibles diagnósticos y sugiriendo pruebas adicionales necesarias. Presenta tus análisis en un formato de informe estructurado."</em></td>
-          <td><span class="emoji-grande">👍</span>Enriquece comprensión de pruebas.<br><span class="emoji-grande">👎</span> Limitado por calidad de datos.</td>
+          <td><em><a href="https://chat.openai.com/share/f0b779fc-6ca9-42f3-8dd9-aa9237b4928f" target="_blank">Como un analista de laboratorio virtual, proporciona interpretaciones detalladas de pruebas diagnósticas comunes, destacando posibles diagnósticos y sugiriendo pruebas adicionales necesarias. Presenta tus análisis en un formato de informe estructurado.</a></em></td>          <td><span class="emoji-grande">👍</span>Enriquece comprensión de pruebas.<br><span class="emoji-grande">👎</span> Limitado por calidad de datos.</td>
         </tr>
         <tr>
           <td><strong>Gestión de Urgencias Médicas</strong></td>
-          <td><em>"Simula ser un coordinador de urgencias, generando escenarios de manejo de emergencias médicas y proponiendo protocolos de actuación. Describe el enfoque para situaciones de alta presión y cómo priorizar el tratamiento."</em></td>
-          <td><span class="emoji-grande">👍</span>Prepara para emergencias.<br><span class="emoji-grande">👎</span> No replica presión del entorno.</td>
+          <td><em><a href="https://chat.openai.com/share/00621b6b-f24c-471c-90ac-be0783296fe9" target="_blank">Simula ser un coordinador de urgencias, generando escenarios de manejo de emergencias médicas y proponiendo protocolos de actuación. Describe el enfoque para situaciones de alta presión y cómo priorizar el tratamiento.</a></em></td>          <td><span class="emoji-grande">👍</span>Prepara para emergencias.<br><span class="emoji-grande">👎</span> No replica presión del entorno.</td>
         </tr>
         <tr>
           <td><strong>Revisión de Casos Pediátricos</strong></td>
-          <td><em>"Como un pediatra virtual, revisa casos pediátricos, destacando consideraciones especiales en el diagnóstico y tratamiento de enfermedades en niños. Genera una guía de referencia rápida para enfermedades comunes en pediatría."</em></td>
-          <td><span class="emoji-grande">👍</span>Enfoque en pediatría.<br><span class="emoji-grande">👎</span> Necesita experiencia clínica.</td>
+          <td><em><a href="https://chat.openai.com/share/9f44a1f6-a035-4fa5-ad22-9f177a5bc8fa" target="_blank">Como un pediatra virtual, revisa casos pediátricos, destacando consideraciones especiales en el diagnóstico y tratamiento de enfermedades en niños. Genera una guía de referencia rápida para enfermedades comunes en pediatría.</a></em></td>          <td><span class="emoji-grande">👍</span>Enfoque en pediatría.<br><span class="emoji-grande">👎</span> Necesita experiencia clínica.</td>
         </tr>
         
       </tbody>
@@ -1540,28 +1599,23 @@
       <tbody>
         <tr>
           <td><strong>Guías de Procedimientos Quirúrgicos</strong></td>
-          <td><em>"Funciona como un asistente quirúrgico virtual, proporcionando guías detalladas paso a paso para procedimientos quirúrgicos específicos en Cirugía General. Incluye consideraciones pre y postoperatorias en tu guía."</em></td>
-          <td><span class="emoji-grande">👍</span>Refuerza aprendizaje de procedimientos.<br><span class="emoji-grande">👎</span> No reemplaza supervisión en vivo.</td>
+          <td><em><a href="https://chat.openai.com/share/22a06d77-7c10-4646-b56e-13a21e29fe8d" target="_blank">Funciona como un asistente quirúrgico virtual, proporcionando guías detalladas paso a paso para procedimientos quirúrgicos específicos en Cirugía General. Incluye consideraciones pre y postoperatorias en tu guía.</a></em></td>          <td><span class="emoji-grande">👍</span>Refuerza aprendizaje de procedimientos.<br><span class="emoji-grande">👎</span> No reemplaza supervisión en vivo.</td>
         </tr>
         <tr>
           <td><strong>Técnicas de Enfermería Avanzada</strong></td>
-          <td><em>"Como un mentor de enfermería avanzada, desarrolla tutoriales interactivos sobre técnicas de enfermería especializadas, como la gestión de vías intravenosas y el cuidado de heridas. Presenta cada técnica en un formato de video tutorial."</em></td>
-          <td><span class="emoji-grande">👍</span>Apoyo visual en técnicas.<br><span class="emoji-grande">👎</span> Requiere práctica física.</td>
+          <td><em><a href="https://chat.openai.com/share/ecb36c61-83a7-40d9-ae7e-02845e7aea48" target="_blank">Como un mentor virtual en enfermería avanzada, crea tutoriales interactivos detallando paso a paso técnicas especializadas de enfermería. Enfócate en procedimientos críticos como la gestión de vías intravenosas y el cuidado avanzado de heridas... [Leer más]  Incorpora preguntas frecuentes y solución de problemas comunes.</a></em></td>          <td><span class="emoji-grande">👍</span>Apoyo visual en técnicas.<br><span class="emoji-grande">👎</span> Requiere práctica física.</td>
         </tr>
         <tr>
           <td><strong>Preparación para Farmacoterapia</strong></td>
-          <td><em>"Actúa como un experto en farmacoterapia, proporcionando ejemplos de regímenes de medicación para diferentes condiciones clínicas en Farmacia Hospitalaria. Incluye consideraciones de dosificación y posibles interacciones medicamentosas."</em></td>
-          <td><span class="emoji-grande">👍</span>Profundiza conocimiento en farmacología.<br><span class="emoji-grande">👎</span> Necesita validación clínica.</td>
+          <td><em><a href="https://chat.openai.com/share/9946b24d-5c7c-4454-a6c5-d2b4bd23efa6" target="_blank">Actúa como un experto en farmacoterapia, proporcionando ejemplos de regímenes de medicación para diferentes condiciones clínicas en Farmacia Hospitalaria. Incluye consideraciones de dosificación y posibles interacciones medicamentosas.</a></em></td>          <td><span class="emoji-grande">👍</span>Profundiza conocimiento en farmacología.<br><span class="emoji-grande">👎</span> Necesita validación clínica.</td>
         </tr>
         <tr>
           <td><strong>Psicoterapia y Enfoques Clínicos</strong></td>
-          <td><em>"Como un psicoterapeuta virtual, presenta diferentes enfoques y técnicas de psicoterapia clínica. Desarrolla un manual con ejemplos de casos y recomendaciones de tratamiento."</em></td>
-          <td><span class="emoji-grande">👍</span>Diversifica técnicas de psicoterapia.<br><span class="emoji-grande">👎</span> Experiencia real del paciente varía.</td>
+          <td><em><a href="https://chat.openai.com/share/3f6897a0-5de4-4ca1-afc9-81c187541690" target="_blank">Como psicoterapeuta virtual, sumérgete en el vasto mundo de la psicoterapia clínica, explorando y desplegando una gama de técnicas y enfoques terapéuticos... [Leer más] </a></em></td>          <td><span class="emoji-grande">👍</span>Diversifica técnicas de psicoterapia.<br><span class="emoji-grande">👎</span> Experiencia real del paciente varía.</td>
         </tr>
         <tr>
           <td><strong>Análisis de Bioquímica Clínica</strong></td>
-          <td><em>"Simula ser un bioquímico clínico, enseñando el análisis e interpretación de resultados de pruebas bioquímicas clínicas. Incluye ejemplos de cómo estos resultados pueden influir en decisiones clínicas."</em></td>
-          <td><span class="emoji-grande">👍</span>Mejora interpretación de pruebas.<br><span class="emoji-grande">👎</span> Requiere conocimientos previos.</td>
+          <td><em><a href="https://chat.openai.com/share/e6170a10-6be4-4c6d-b977-352c09cfae91" target="_blank">Eres un avanzado asistente de inteligencia artificial especializado en bioquímica clínica. Tu objetivo es facilitar el aprendizaje interactivo para residentes médicos mediante la interpretación de complejos perfiles bioquímicos... [Leer más]        </a></em></td>          <td><span class="emoji-grande">👍</span>Mejora interpretación de pruebas.<br><span class="emoji-grande">👎</span> Requiere conocimientos previos.</td>
         </tr>
       </tbody>
     </table>
@@ -1582,28 +1636,23 @@
       <tbody>
         <tr>
           <td><strong>Desarrollo de Protocolos de Estudio</strong></td>
-          <td><em>"Como un consultor de investigación en Medicina Legal, ayuda a desarrollar un protocolo de estudio detallado sobre la eficacia de técnicas forenses en la identificación de causas de muerte. Presenta un diseño de estudio estructurado."</em></td>
-          <td><span class="emoji-grande">👍</span>Fomenta precisión en investigación.<br><span class="emoji-grande">👎</span>Necesita ajustes según contexto.</td>
+          <td><em><a href="https://chat.openai.com/share/57f647fa-54fe-4c00-8d7a-10feba3f781d" target="_blank">Diseña una sesión interactiva de simulación clínica para médicos residentes, centrada en el diagnóstico temprano y planes de tratamiento personalizado para diferentes tipos de cáncer. Incluye escenarios basados en casos reales, opciones terapéuticas actualizadas, y técnicas de comunicación efectiva con pacientes y sus familias. Adoptarás el estilo de un journal club de 1 hora</a></em></td>          <td><span class="emoji-grande">👍</span>Fomenta precisión en investigación.<br><span class="emoji-grande">👎</span>Necesita ajustes según contexto.</td>
         </tr>
         <tr>
           <td><strong>Análisis Estadístico de Datos</strong></td>
-          <td><em>"Funciona como un estadístico en proyectos de investigación clínica, proporcionando orientación sobre análisis estadísticos adecuados para diferentes tipos de datos. Genera ejemplos de cómo interpretar los resultados estadísticos."</em></td>
-          <td><span class="emoji-grande">👍</span>Clarifica análisis estadístico.<br><span class="emoji-grande">👎</span>Requiere conocimientos en estadística.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un experto en estadística aplicada a la investigación clínica. Ofrece guía sobre análisis estadísticos para estudios clínicos, subrayando cómo interpretar y aplicar los resultados en decisiones médicas...[leer más para ver conversación] Como residente de oncología, estás a punto de presentar tus hallazgos de un análisis de supervivencia en la próxima Conferencia Internacional de Oncología sobre pacientes con cáncer de pulmón. ¿Cuál es tu principal duda o inquietud sobre cómo estructurar tu presentación para asegurar un máximo impacto entre los especialistas asistentes?</a></em></td>          <td><span class="emoji-grande">👍</span>Clarifica análisis estadístico.<br><span class="emoji-grande">👎</span>Requiere conocimientos en estadística.</td>
         </tr>
         <tr>
           <td><strong>Desarrollo de Propuestas de Investigación</strong></td>
-          <td><em>"Actúa como un asesor en la redacción de propuestas de investigación, ayudando a formular objetivos claros, hipótesis y metodologías para proyectos en Enfermería Pediátrica. Incluye recomendaciones para mejorar la viabilidad del estudio."</em></td>
-          <td><span class="emoji-grande">👍</span>Mejora calidad de propuestas.<br><span class="emoji-grande">👎</span>Puede no cubrir aspectos regulatorios.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un asesor en la redacción de propuestas de investigación, ayudando a formular objetivos claros, hipótesis y metodologías para proyectos en Enfermería Pediátrica. Incluye recomendaciones para mejorar la viabilidad del estudio.</a></em></td>          <td><span class="emoji-grande">👍</span>Mejora calidad de propuestas.<br><span class="emoji-grande">👎</span>Puede no cubrir aspectos regulatorios.</td>
         </tr>
         <tr>
           <td><strong>Revisión Sistemática de Literatura</strong></td>
-          <td><em>"Como un revisor de literatura en Cirugía General, genera un esquema para realizar una revisión sistemática de literatura sobre una técnica quirúrgica específica, incluyendo criterios de inclusión y exclusión."</em></td>
-          <td><span class="emoji-grande">👍</span>Ayuda en síntesis de información.<br><span class="emoji-grande">👎</span>No reemplaza juicio crítico humano.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un revisor de literatura en Cirugía General, genera un esquema para realizar una revisión sistemática de literatura sobre una técnica quirúrgica específica, incluyendo criterios de inclusión y exclusión.</a></em></td>          <td><span class="emoji-grande">👍</span>Ayuda en síntesis de información.<br><span class="emoji-grande">👎</span>No reemplaza juicio crítico humano.</td>
         </tr>
         <tr>
           <td><strong>Evaluación de Tecnologías Sanitarias</strong></td>
-          <td><em>"Como un analista en evaluación de tecnologías sanitarias, guía el desarrollo de un marco para evaluar nuevas tecnologías en radiología, incluyendo criterios de eficacia y seguridad. Presenta un plan de evaluación en forma de reporte."</em></td>
-          <td><span class="emoji-grande">👍</span>Apoya toma de decisiones basada en evidencia.<br><span class="emoji-grande">👎</span>Limitado por actualidad de fuentes.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un analista en evaluación de tecnologías sanitarias, guía el desarrollo de un marco para evaluar nuevas tecnologías en radiología, incluyendo criterios de eficacia y seguridad. Presenta un plan de evaluación en forma de reporte.</a></em></td>          <td><span class="emoji-grande">👍</span>Apoya toma de decisiones basada en evidencia.<br><span class="emoji-grande">👎</span>Limitado por actualidad de fuentes.</td>
         </tr>
       </tbody>
     </table>
@@ -1624,28 +1673,23 @@
       <tbody>
         <tr>
           <td><strong>Actualizaciones en Tratamientos y Terapias</strong></td>
-          <td><em>"Como un recurso educativo en Oncología, proporciona un resumen actualizado de los últimos tratamientos y terapias, destacando estudios clave y su aplicación clínica. Elabora un boletín informativo mensual."</em></td>
-          <td><span class="emoji-grande">👍</span> Mantiene actualizados a profesionales.<br><span class="emoji-grande">👎</span> Puede no cubrir todas novedades.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un recurso educativo en Oncología, proporciona un resumen actualizado de los últimos tratamientos y terapias, destacando estudios clave y su aplicación clínica. Elabora un boletín informativo mensual.</a></em></td>          <td><span class="emoji-grande">👍</span> Mantiene actualizados a profesionales.<br><span class="emoji-grande">👎</span> Puede no cubrir todas novedades.</td>
         </tr>
         <tr>
           <td><strong>Tendencias en Salud Pública</strong></td>
-          <td><em>"Funciona como un experto en Salud Pública, identificando y explicando las últimas tendencias y desafíos en salud pública a nivel global. Prepara una presentación interactiva con gráficos y estadísticas."</em></td>
-          <td><span class="emoji-grande">👍</span> Amplía perspectiva global.<br><span class="emoji-grande">👎</span> Requiere actualizaciones constantes.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Funciona como un experto en Salud Pública, identificando y explicando las últimas tendencias y desafíos en salud pública a nivel global. Prepara una presentación interactiva con gráficos y estadísticas.</a></em></td>          <td><span class="emoji-grande">👍</span> Amplía perspectiva global.<br><span class="emoji-grande">👎</span> Requiere actualizaciones constantes.</td>
         </tr>
         <tr>
           <td><strong>Novedades en Farmacología</strong></td>
-          <td><em>"Actúa como un consultor en Farmacología, resumiendo las últimas novedades en medicamentos y tratamientos farmacológicos. Genera una guía de consulta rápida para farmacéuticos internos."</em></td>
-          <td><span class="emoji-grande">👍</span> Aporta información actual en farmacología.<br><span class="emoji-grande">👎</span> Necesita fuentes primarias.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un consultor en Farmacología, resumiendo las últimas novedades en medicamentos y tratamientos farmacológicos. Genera una guía de consulta rápida para farmacéuticos internos.</a></em></td>          <td><span class="emoji-grande">👍</span> Aporta información actual en farmacología.<br><span class="emoji-grande">👎</span> Necesita fuentes primarias.</td>
         </tr>
         <tr>
           <td><strong>Avances en Técnicas Diagnósticas</strong></td>
-          <td><em>"Como un especialista en Diagnóstico por Imagen, elabora un informe sobre los avances recientes en técnicas de diagnóstico por imagen, incluyendo su impacto en la práctica clínica."</em></td>
-          <td><span class="emoji-grande">👍</span> Actualiza sobre innovaciones tecnológicas.<br><span class="emoji-grande">👎</span> Requiere correlación con experiencia clínica.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un especialista en Diagnóstico por Imagen, elabora un informe sobre los avances recientes en técnicas de diagnóstico por imagen, incluyendo su impacto en la práctica clínica.</a></em></td>          <td><span class="emoji-grande">👍</span> Actualiza sobre innovaciones tecnológicas.<br><span class="emoji-grande">👎</span> Requiere correlación con experiencia clínica.</td>
         </tr>
         <tr>
           <td><strong>Innovaciones en Cuidados Intensivos</strong></td>
-          <td><em>"Simula ser un experto en Cuidados Intensivos, informando sobre innovaciones y mejores prácticas en la atención de pacientes críticos. Crea una serie de seminarios web para formación continua."</em></td>
-          <td><span class="emoji-grande">👍</span> Fomenta mejores prácticas en cuidados críticos.<br><span class="emoji-grande">👎</span> Dinámica de entorno real varía.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Simula ser un experto en Cuidados Intensivos, informando sobre innovaciones y mejores prácticas en la atención de pacientes críticos. Crea una serie de seminarios web para formación continua.</a></em></td>          <td><span class="emoji-grande">👍</span> Fomenta mejores prácticas en cuidados críticos.<br><span class="emoji-grande">👎</span> Dinámica de entorno real varía.</td>
         </tr>
       </tbody>
     </table>
@@ -1665,28 +1709,23 @@
       <tbody>
         <tr>
           <td><strong>Sistema de Evaluación Formativa</strong></td>
-          <td><em>"Desarrolla un sistema de evaluación formativa para residentes en Medicina Interna, incluyendo criterios y métodos de feedback. Presenta un sistema automatizado para seguimiento y evaluación."</em></td>
-          <td><span class="emoji-grande">👍</span> Estandariza la evaluación.<br><span class="emoji-grande">👎</span> Falta de personalización.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Desarrolla un sistema de evaluación formativa para residentes en Medicina Interna, incluyendo criterios y métodos de feedback. Presenta un sistema automatizado para seguimiento y evaluación.</a></em></td>          <td><span class="emoji-grande">👍</span> Estandariza la evaluación.<br><span class="emoji-grande">👎</span> Falta de personalización.</td>
         </tr>
         <tr>
           <td><strong>Feedback Constructivo en Prácticas Clínicas</strong></td>
-          <td><em>"Actúa como un mentor virtual en prácticas clínicas, proporcionando feedback constructivo sobre el desempeño de los residentes en escenarios clínicos simulados. Genera informes de rendimiento individualizados."</em></td>
-          <td><span class="emoji-grande">👍</span> Promueve desarrollo personalizado.<br><span class="emoji-grande">👎</span> Carece de matices humanos en feedback.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un mentor virtual en prácticas clínicas, proporcionando feedback constructivo sobre el desempeño de los residentes en escenarios clínicos simulados. Genera informes de rendimiento individualizados.</a></em></td>          <td><span class="emoji-grande">👍</span> Promueve desarrollo personalizado.<br><span class="emoji-grande">👎</span> Carece de matices humanos en feedback.</td>
         </tr>
         <tr>
           <td><strong>Evaluación de Competencias Quirúrgicas</strong></td>
-          <td><em>"Como un evaluador en Cirugía, crea herramientas de evaluación para competencias quirúrgicas específicas, incluyendo habilidades técnicas y toma de decisiones. Diseña un cuestionario de autoevaluación para cirujanos en formación."</em></td>
-          <td><span class="emoji-grande">👍</span> Enfoca en habilidades quirúrgicas.<br><span class="emoji-grande">👎</span> No captura habilidad práctica.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un evaluador en Cirugía, crea herramientas de evaluación para competencias quirúrgicas específicas, incluyendo habilidades técnicas y toma de decisiones. Diseña un cuestionario de autoevaluación para cirujanos en formación.</a></em></td>          <td><span class="emoji-grande">👍</span> Enfoca en habilidades quirúrgicas.<br><span class="emoji-grande">👎</span> No captura habilidad práctica.</td>
         </tr>
         <tr>
           <td><strong>Monitoreo del Progreso en Enfermería</strong></td>
-          <td><em>"Funciona como un sistema de seguimiento para residentes de Enfermería, monitoreando su progreso y proporcionando recomendaciones para mejorar en áreas específicas. Elabora un dashboard interactivo de progreso."</em></td>
-          <td><span class="emoji-grande">👍</span> Facilita seguimiento del desarrollo.<br><span class="emoji-grande">👎</span> Requiere sistemas de evaluación reales.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Funciona como un sistema de seguimiento para residentes de Enfermería, monitoreando su progreso y proporcionando recomendaciones para mejorar en áreas específicas. Elabora un dashboard interactivo de progreso.</a></em></td>          <td><span class="emoji-grande">👍</span> Facilita seguimiento del desarrollo.<br><span class="emoji-grande">👎</span> Requiere sistemas de evaluación reales.</td>
         </tr>
         <tr>
           <td><strong>Análisis de Habilidades en Farmacología</strong></td>
-          <td><em>"Como un analista en Farmacología Clínica, evalúa las habilidades de los residentes en la prescripción y manejo de medicamentos, utilizando casos de estudio. Proporciona un análisis detallado de cada caso."</em></td>
-          <td><span class="emoji-grande">👍</span> Profundiza en conocimiento farmacológico.<br><span class="emoji-grande">👎</span> La prescripción real varía según contexto.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un analista en Farmacología Clínica, evalúa las habilidades de los residentes en la prescripción y manejo de medicamentos, utilizando casos de estudio. Proporciona un análisis detallado de cada caso.</a></em></td>          <td><span class="emoji-grande">👍</span> Profundiza en conocimiento farmacológico.<br><span class="emoji-grande">👎</span> La prescripción real varía según contexto.</td>
         </tr>
       </tbody>
     </table>
@@ -1707,28 +1746,23 @@
       <tbody>
         <tr>
           <td><strong>Entrenamiento en Comunicación Efectiva</strong></td>
-          <td><em>"Simula ser un coach en comunicación, desarrollando escenarios de interacción paciente-médico para entrenar a los residentes en habilidades de empatía y comunicación efectiva. Incluye análisis de casos y recomendaciones."</em></td>
-          <td><span class="emoji-grande">👍</span> Mejora habilidades de comunicación.<br><span class="emoji-grande">👎</span> No reemplaza interacción humana real.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Simula ser un coach en comunicación, desarrollando escenarios de interacción paciente-médico para entrenar a los residentes en habilidades de empatía y comunicación efectiva. Incluye análisis de casos y recomendaciones.</a></em></td>          <td><span class="emoji-grande">👍</span> Mejora habilidades de comunicación.<br><span class="emoji-grande">👎</span> No reemplaza interacción humana real.</td>
         </tr>
         <tr>
           <td><strong>Gestión de Conflictos en el Entorno Sanitario</strong></td>
-          <td><em>"Actúa como un mediador en situaciones de conflicto, proporcionando ejemplos y estrategias para manejar conflictos entre el personal sanitario y con pacientes. Desarrolla guiones para simulaciones de resolución de conflictos."</em></td>
-          <td><span class="emoji-grande">👍</span> Fomenta la resolución de conflictos.<br><span class="emoji-grande">👎</span> Los escenarios reales pueden ser más complejos.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un mediador en situaciones de conflicto, proporcionando ejemplos y estrategias para manejar conflictos entre el personal sanitario y con pacientes. Desarrolla guiones para simulaciones de resolución de conflictos.</a></em></td>          <td><span class="emoji-grande">👍</span> Fomenta la resolución de conflictos.<br><span class="emoji-grande">👎</span> Los escenarios reales pueden ser más complejos.</td>
         </tr>
         <tr>
           <td><strong>Capacitación en Liderazgo Clínico</strong></td>
-          <td><em>"Como un mentor en liderazgo clínico, crea módulos de formación para desarrollar habilidades de liderazgo en médicos residentes. Incluye ejercicios prácticos y estudios de caso."</em></td>
-          <td><span class="emoji-grande">👍</span> Promueve habilidades de liderazgo.<br><span class="emoji-grande">👎</span> El liderazgo efectivo requiere experiencia práctica.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un mentor en liderazgo clínico, crea módulos de formación para desarrollar habilidades de liderazgo en médicos residentes. Incluye ejercicios prácticos y estudios de caso.</a></em></td>          <td><span class="emoji-grande">👍</span> Promueve habilidades de liderazgo.<br><span class="emoji-grande">👎</span> El liderazgo efectivo requiere experiencia práctica.</td>
         </tr>
         <tr>
           <td><strong>Desarrollo de Habilidades en Entrevistas Clínicas</strong></td>
-          <td><em>"Funciona como un entrenador en entrevistas clínicas, enseñando técnicas para realizar entrevistas efectivas con pacientes. Presenta diferentes enfoques según el tipo de paciente y situación."</em></td>
-          <td><span class="emoji-grande">👍</span> Mejora la interacción con pacientes.<br><span class="emoji-grande">👎</span> Requiere práctica en situaciones reales.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Funciona como un entrenador en entrevistas clínicas, enseñando técnicas para realizar entrevistas efectivas con pacientes. Presenta diferentes enfoques según el tipo de paciente y situación.</a></em></td>          <td><span class="emoji-grande">👍</span> Mejora la interacción con pacientes.<br><span class="emoji-grande">👎</span> Requiere práctica en situaciones reales.</td>
         </tr>
         <tr>
           <td><strong>Comunicación Multidisciplinaria en Salud</strong></td>
-          <td><em>"Como un coordinador de equipos multidisciplinarios, crea ejercicios para mejorar la comunicación y colaboración entre diferentes especialidades sanitarias. Presenta situaciones de caso y estrategias de resolución."</em></td>
-          <td><span class="emoji-grande">👍</span> Fomenta el trabajo en equipo.<br><span class="emoji-grande">👎</span> No captura la complejidad de la comunicación en vivo.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un coordinador de equipos multidisciplinarios, crea ejercicios para mejorar la comunicación y colaboración entre diferentes especialidades sanitarias. Presenta situaciones de caso y estrategias de resolución.</a></em></td>          <td><span class="emoji-grande">👍</span> Fomenta el trabajo en equipo.<br><span class="emoji-grande">👎</span> No captura la complejidad de la comunicación en vivo.</td>
         </tr>
       </tbody>
     </table>
@@ -1748,28 +1782,23 @@
       <tbody>
         <tr>
           <td><strong>Análisis Integral de Casos Complejos</strong></td>
-          <td><em>"Como un experto en manejo de casos complejos en Medicina Forense, analiza diferentes enfoques y genera un plan de manejo integral para casos forenses desafiantes. Presenta un informe detallado con opciones de tratamiento."</em></td>
-          <td><span class="emoji-grande">👍</span> Amplía la visión en casos complicados.<br><span class="emoji-grande">👎</span> Puede carecer de detalles específicos del caso.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un experto en manejo de casos complejos en Medicina Forense, analiza diferentes enfoques y genera un plan de manejo integral para casos forenses desafiantes. Presenta un informe detallado con opciones de tratamiento.</a></em></td>          <td><span class="emoji-grande">👍</span> Amplía la visión en casos complicados.<br><span class="emoji-grande">👎</span> Puede carecer de detalles específicos del caso.</td>
         </tr>
         <tr>
           <td><strong>Gestión de Enfermedades Crónicas</strong></td>
-          <td><em>"Actúa como un especialista en enfermedades crónicas, desarrollando planes de manejo para condiciones crónicas comunes en Medicina Familiar. Incluye estrategias de seguimiento y ajustes de tratamiento."</em></td>
-          <td><span class="emoji-grande">👍</span> Apoya el manejo a largo plazo de enfermedades.<br><span class="emoji-grande">👎</span> Necesita actualizaciones constantes basadas en la evidencia.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un especialista en enfermedades crónicas, desarrollando planes de manejo para condiciones crónicas comunes en Medicina Familiar. Incluye estrategias de seguimiento y ajustes de tratamiento.</a></em></td>          <td><span class="emoji-grande">👍</span> Apoya el manejo a largo plazo de enfermedades.<br><span class="emoji-grande">👎</span> Necesita actualizaciones constantes basadas en la evidencia.</td>
         </tr>
         <tr>
           <td><strong>Estrategias en Oncología</strong></td>
-          <td><em>"Como un consultor en Oncología, proporciona estrategias de manejo para diferentes tipos de cáncer, enfocándote en enfoques multidisciplinarios y opciones de tratamiento personalizadas. Elabora guías de tratamiento."</em></td>
-          <td><span class="emoji-grande">👍</span> Enfoque personalizado en oncología.<br><span class="emoji-grande">👎</span> La complejidad del cáncer requiere adaptación constante.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un consultor en Oncología, proporciona estrategias de manejo para diferentes tipos de cáncer, enfocándote en enfoques multidisciplinarios y opciones de tratamiento personalizadas. Elabora guías de tratamiento.</a></em></td>          <td><span class="emoji-grande">👍</span> Enfoque personalizado en oncología.<br><span class="emoji-grande">👎</span> La complejidad del cáncer requiere adaptación constante.</td>
         </tr>
         <tr>
           <td><strong>Planificación de Cuidados Intensivos</strong></td>
-          <td><em>"Funciona como un coordinador en Cuidados Intensivos, creando planes de cuidado para pacientes críticos, incluyendo enfoques de tratamiento y criterios para la toma de decisiones. Presenta un protocolo estructurado."</em></td>
-          <td><span class="emoji-grande">👍</span> Mejora la preparación para el cuidado crítico.<br><span class="emoji-grande">👎</span> No puede replicar la variabilidad de casos en vivo.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Funciona como un coordinador en Cuidados Intensivos, creando planes de cuidado para pacientes críticos, incluyendo enfoques de tratamiento y criterios para la toma de decisiones. Presenta un protocolo estructurado.</a></em></td>          <td><span class="emoji-grande">👍</span> Mejora la preparación para el cuidado crítico.<br><span class="emoji-grande">👎</span> No puede replicar la variabilidad de casos en vivo.</td>
         </tr>
         <tr>
           <td><strong>Manejo de Casos Pediátricos Específicos</strong></td>
-          <td><em>"Simula ser un pediatra especializado, proporcionando guías para el manejo de casos pediátricos específicos, como enfermedades raras o condiciones crónicas. Desarrolla planes de cuidado detallados y personalizados."</em></td>
-          <td><span class="emoji-grande">👍</span> Enfoque específico en pediatría.<br><span class="emoji-grande">👎</span> Requiere validación y adaptación por especialistas.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Simula ser un pediatra especializado, proporcionando guías para el manejo de casos pediátricos específicos, como enfermedades raras o condiciones crónicas. Desarrolla planes de cuidado detallados y personalizados.</a></em></td>          <td><span class="emoji-grande">👍</span> Enfoque específico en pediatría.<br><span class="emoji-grande">👎</span> Requiere validación y adaptación por especialistas.</td>
         </tr>
       </tbody>
     </table>
@@ -1789,28 +1818,23 @@
       <tbody>
         <tr>
           <td><strong>Optimización de Recursos Hospitalarios</strong></td>
-          <td><em>"Como un asesor en gestión hospitalaria, ayuda a formar a los residentes en optimización de recursos y protocolos administrativos. Analiza casos de estudio y propone mejoras en la gestión de recursos."</em></td>
-          <td><span class="emoji-grande">👍</span> Promueve eficiencia en la gestión.<br><span class="emoji-grande">👎</span> Puede no reflejar la complejidad de la gestión hospitalaria real.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un asesor en gestión hospitalaria, ayuda a formar a los residentes en optimización de recursos y protocolos administrativos. Analiza casos de estudio y propone mejoras en la gestión de recursos.</a></em></td>          <td><span class="emoji-grande">👍</span> Promueve eficiencia en la gestión.<br><span class="emoji-grande">👎</span> Puede no reflejar la complejidad de la gestión hospitalaria real.</td>
         </tr>
         <tr>
           <td><strong>Formación en Políticas de Salud</strong></td>
-          <td><em>"Actúa como un experto en políticas de salud, educando sobre las implicaciones de diferentes políticas sanitarias y su impacto en la práctica clínica. Desarrolla módulos de formación y debates."</em></td>
-          <td><span class="emoji-grande">👍</span> Amplía la comprensión de políticas sanitarias.<br><span class="emoji-grande">👎</span> La política de salud está en constante cambio.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un experto en políticas de salud, educando sobre las implicaciones de diferentes políticas sanitarias y su impacto en la práctica clínica. Desarrolla módulos de formación y debates.</a></em></td>          <td><span class="emoji-grande">👍</span> Amplía la comprensión de políticas sanitarias.<br><span class="emoji-grande">👎</span> La política de salud está en constante cambio.</td>
         </tr>
         <tr>
           <td><strong>Gestión de Calidad en Servicios Sanitarios</strong></td>
-          <td><em>"Como un consultor en gestión de calidad, instruye sobre métodos para mejorar la calidad y seguridad en la prestación de servicios sanitarios. Presenta ejemplos de implementación de mejoras."</em></td>
-          <td><span class="emoji-grande">👍</span> Enfoca en la mejora continua de servicios.<br><span class="emoji-grande">👎</span> Puede requerir adaptación a contextos específicos.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un consultor en gestión de calidad, instruye sobre métodos para mejorar la calidad y seguridad en la prestación de servicios sanitarios. Presenta ejemplos de implementación de mejoras.</a></em></td>          <td><span class="emoji-grande">👍</span> Enfoca en la mejora continua de servicios.<br><span class="emoji-grande">👎</span> Puede requerir adaptación a contextos específicos.</td>
         </tr>
         <tr>
           <td><strong>Capacitación en Liderazgo Administrativo</strong></td>
-          <td><em>"Funciona como un mentor en liderazgo administrativo, proporcionando formación sobre habilidades de liderazgo y gestión en el entorno sanitario. Incluye estudios de caso y ejercicios prácticos."</em></td>
-          <td><span class="emoji-grande">👍</span> Desarrolla habilidades de liderazgo en gestión.<br><span class="emoji-grande">👎</span> El liderazgo efectivo requiere experiencia real.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Funciona como un mentor en liderazgo administrativo, proporcionando formación sobre habilidades de liderazgo y gestión en el entorno sanitario. Incluye estudios de caso y ejercicios prácticos.</a></em></td>          <td><span class="emoji-grande">👍</span> Desarrolla habilidades de liderazgo en gestión.<br><span class="emoji-grande">👎</span> El liderazgo efectivo requiere experiencia real.</td>
         </tr>
         <tr>
           <td><strong>Análisis de Tendencias en Salud</strong></td>
-          <td><em>"Simula ser un analista de tendencias en salud, identificando y explicando las tendencias emergentes en la atención sanitaria y su impacto en la gestión. Elabora un informe con análisis y recomendaciones."</em></td>
-          <td><span class="emoji-grande">👍</span> Ayuda a anticipar y adaptar la práctica clínica a futuras necesidades.<br><span class="emoji-grande">👎</span> Las tendencias pueden cambiar rápidamente.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Simula ser un analista de tendencias en salud, identificando y explicando las tendencias emergentes en la atención sanitaria y su impacto en la gestión. Elabora un informe con análisis y recomendaciones.</a></em></td>          <td><span class="emoji-grande">👍</span> Ayuda a anticipar y adaptar la práctica clínica a futuras necesidades.<br><span class="emoji-grande">👎</span> Las tendencias pueden cambiar rápidamente.</td>
         </tr>
       </tbody>
     </table>
@@ -1830,28 +1854,23 @@
       <tbody>
         <tr>
           <td><strong>Formación en Ética Médica</strong></td>
-          <td><em>"Actúa como un instructor en ética médica, creando módulos de formación sobre dilemas éticos y legales comunes en diversas especialidades. Incluye casos de estudio y análisis de decisiones."</em></td>
-          <td><span class="emoji-grande">👍</span> Sensibiliza sobre la ética en la práctica.<br><span class="emoji-grande">👎</span> Requiere actualización constante según legislaciones.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un instructor en ética médica, creando módulos de formación sobre dilemas éticos y legales comunes en diversas especialidades. Incluye casos de estudio y análisis de decisiones.</a></em></td>          <td><span class="emoji-grande">👍</span> Sensibiliza sobre la ética en la práctica.<br><span class="emoji-grande">👎</span> Requiere actualización constante según legislaciones.</td>
         </tr>
         <tr>
           <td><strong>Debate sobre Cuestiones Éticas Actuales</strong></td>
-          <td><em>"Como un moderador de debates, facilita discusiones sobre cuestiones éticas actuales en el campo de la salud. Proporciona escenarios y preguntas para promover el pensamiento crítico y el debate."</em></td>
-          <td><span class="emoji-grande">👍</span> Estimula la reflexión ética.<br><span class="emoji-grande">👎</span> Puede generar opiniones divergentes.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un moderador de debates, facilita discusiones sobre cuestiones éticas actuales en el campo de la salud. Proporciona escenarios y preguntas para promover el pensamiento crítico y el debate.</a></em></td>          <td><span class="emoji-grande">👍</span> Estimula la reflexión ética.<br><span class="emoji-grande">👎</span> Puede generar opiniones divergentes.</td>
         </tr>
         <tr>
           <td><strong>Análisis de Casos Legales en Medicina</strong></td>
-          <td><em>"Funciona como un analista legal, examinando casos legales relevantes para la práctica médica y sus implicaciones éticas. Elabora informes detallados sobre los casos y sus resultados."</em></td>
-          <td><span class="emoji-grande">👍</span> Proporciona aprendizaje basado en casos reales.<br><span class="emoji-grande">👎</span> No sustituye el asesoramiento legal profesional.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Funciona como un analista legal, examinando casos legales relevantes para la práctica médica y sus implicaciones éticas. Elabora informes detallados sobre los casos y sus resultados.</a></em></td>          <td><span class="emoji-grande">👍</span> Proporciona aprendizaje basado en casos reales.<br><span class="emoji-grande">👎</span> No sustituye el asesoramiento legal profesional.</td>
         </tr>
         <tr>
           <td><strong>Capacitación en Consentimiento Informado</strong></td>
-          <td><em>"Como un educador en comunicación médica, desarrolla material de formación sobre la importancia y la práctica del consentimiento informado en diferentes escenarios clínicos."</em></td>
-          <td><span class="emoji-grande">👍</span> Refuerza la importancia del consentimiento.<br><span class="emoji-grande">👎</span> La aplicación práctica varía según el contexto.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un educador en comunicación médica, desarrolla material de formación sobre la importancia y la práctica del consentimiento informado en diferentes escenarios clínicos.</a></em></td>          <td><span class="emoji-grande">👍</span> Refuerza la importancia del consentimiento.<br><span class="emoji-grande">👎</span> La aplicación práctica varía según el contexto.</td>
         </tr>
         <tr>
           <td><strong>Discusión sobre Diversidad y Equidad en Salud</strong></td>
-          <td><em>"Actúa como un facilitador en temas de diversidad y equidad en salud, promoviendo la discusión y sensibilización sobre estas cuestiones entre los residentes. Genera recursos y guías de discusión."</em></td>
-          <td><span class="emoji-grande">👍</span> Fomenta la inclusión y la equidad.<br><span class="emoji-grande">👎</span> Requiere un enfoque sensible y actualizado.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un facilitador en temas de diversidad y equidad en salud, promoviendo la discusión y sensibilización sobre estas cuestiones entre los residentes. Genera recursos y guías de discusión.</a></em></td>          <td><span class="emoji-grande">👍</span> Fomenta la inclusión y la equidad.<br><span class="emoji-grande">👎</span> Requiere un enfoque sensible y actualizado.</td>
         </tr>
       </tbody>
     </table>
@@ -1871,28 +1890,23 @@
       <tbody>
         <tr>
           <td><strong>Exploración de Innovaciones Tecnológicas</strong></td>
-          <td><em>"Como un experto en innovaciones tecnológicas, explora y presenta las últimas tendencias en tecnología médica, incluyendo su impacto en la práctica clínica actual en Cirugía."</em></td>
-          <td><span class="emoji-grande">👍</span> Fomenta la adaptación tecnológica.<br><span class="emoji-grande">👎</span> Puede no reflejar todas las innovaciones recientes.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un experto en innovaciones tecnológicas, explora y presenta las últimas tendencias en tecnología médica, incluyendo su impacto en la práctica clínica actual en Cirugía.</a></em></td>          <td><span class="emoji-grande">👍</span> Fomenta la adaptación tecnológica.<br><span class="emoji-grande">👎</span> Puede no reflejar todas las innovaciones recientes.</td>
         </tr>
         <tr>
           <td><strong>Integración de Herramientas Digitales en la Práctica</strong></td>
-          <td><em>"Funciona como un consultor en herramientas digitales, asesorando sobre la integración de nuevas tecnologías digitales en la práctica clínica, incluyendo sus beneficios y desafíos."</em></td>
-          <td><span class="emoji-grande">👍</span> Promueve el uso efectivo de la tecnología.<br><span class="emoji-grande">👎</span> Requiere adaptación a diferentes entornos clínicos.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Funciona como un consultor en herramientas digitales, asesorando sobre la integración de nuevas tecnologías digitales en la práctica clínica, incluyendo sus beneficios y desafíos.</a></em></td>          <td><span class="emoji-grande">👍</span> Promueve el uso efectivo de la tecnología.<br><span class="emoji-grande">👎</span> Requiere adaptación a diferentes entornos clínicos.</td>
         </tr>
         <tr>
           <td><strong>Capacitación en Telemedicina</strong></td>
-          <td><em>"Actúa como un formador en telemedicina, desarrollando programas de capacitación para la implementación y uso efectivo de la telemedicina en diferentes especialidades."</em></td>
-          <td><span class="emoji-grande">👍</span> Amplía las capacidades de atención remota.<br><span class="emoji-grande">👎</span> Puede enfrentar barreras tecnológicas y de adaptación.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un formador en telemedicina, desarrollando programas de capacitación para la implementación y uso efectivo de la telemedicina en diferentes especialidades.</a></em></td>          <td><span class="emoji-grande">👍</span> Amplía las capacidades de atención remota.<br><span class="emoji-grande">👎</span> Puede enfrentar barreras tecnológicas y de adaptación.</td>
         </tr>
         <tr>
           <td><strong>Análisis de Big Data en Salud</strong></td>
-          <td><em>"Como un analista de Big Data, instruye sobre cómo utilizar grandes conjuntos de datos para mejorar la atención al paciente y la toma de decisiones en salud."</em></td>
-          <td><span class="emoji-grande">👍</span> Promueve un enfoque basado en datos.<br><span class="emoji-grande">👎</span> Requiere habilidades en análisis de datos y privacidad.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un analista de Big Data, instruye sobre cómo utilizar grandes conjuntos de datos para mejorar la atención al paciente y la toma de decisiones en salud.</a></em></td>          <td><span class="emoji-grande">👍</span> Promueve un enfoque basado en datos.<br><span class="emoji-grande">👎</span> Requiere habilidades en análisis de datos y privacidad.</td>
         </tr>
         <tr>
           <td><strong>Innovación en Dispositivos Médicos</strong></td>
-          <td><em>"Simula ser un ingeniero biomédico, presentando las últimas innovaciones en dispositivos médicos y su aplicación en la práctica clínica, especialmente en la monitorización de pacientes."</em></td>
-          <td><span class="emoji-grande">👍</span> Destaca avances en dispositivos médicos.<br><span class="emoji-grande">👎</span> Necesita correlación con la experiencia clínica y regulaciones.</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Simula ser un ingeniero biomédico, presentando las últimas innovaciones en dispositivos médicos y su aplicación en la práctica clínica, especialmente en la monitorización de pacientes.</a></em></td>          <td><span class="emoji-grande">👍</span> Destaca avances en dispositivos médicos.<br><span class="emoji-grande">👎</span> Necesita correlación con la experiencia clínica y regulaciones.</td>
         </tr>
       </tbody>
     </table>
@@ -1907,8 +1921,15 @@
     </div>
 
     <!-- Scripts de reveal.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/js/reveal.min.js"></script>
-    <script src="reveal.js/plugin/notes/notes.js"></script>
+
+    <!-- He decidido reemplazar la referencia al archivo reveal.min.js alojado en el servidor externo de Cloudflare con una referencia local al archivo reveal.js almacenado en la carpeta 'reveal.js/js' de mi proyecto. Esto se debe a que la referencia anterior al archivo en Cloudflare estaba generando un error 404, así que el archivo no se encontraba disponible en el servidor externo. Así también evito la dependencia de la conectividad externa y reduzco el tiempo de carga de la página al evitar la descarga de archivos desde un servidor externo, garantizando así una mejor experiencia de usuario. Estar atento a posibles errores relacionados con la configuración de ruta del archivo local, como errores 404 si la ruta no está configurada correctamente, y errores de sintaxis si la versión local de reveal.js no es compatible con el proyecto. 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/js/reveal.min.js"></script>
+ Ruta nueva:  <script src="reveal.js/dist/reveal.js" ></script>
+  
+ -->    
+ <script src="reveal.js/dist/reveal.js" ></script>
+
+ <script src="reveal.js/plugin/notes/notes.js"></script>
     <script src="../reveal.js-plugins/"></script>
     <script src="../reveal.js-plugins/zoom/zoom.js"></script>
     <script src="../reveal.js-plugins/reveal-onetimer/onetimer.js"></script>
@@ -2020,7 +2041,7 @@
         viewDistance: 3,
         mobileViewDistance: 2,
         hash: true,
-        plugins: [RevealMarkdown, RevealAudioSlideshow,Simplemenu, RevealMenu, Appearance, RevealAnimate, RevealZoom, RevealChalkboard, RevealNotes,  RevealEmbedTweet, OneTimer
+        plugins: [RevealMarkdown, Simplemenu,/* RevealAudioSlideshow,  */RevealMenu, Appearance, RevealAnimate, RevealZoom, RevealChalkboard, RevealNotes,  RevealEmbedTweet, OneTimer
         ],
       });
   
