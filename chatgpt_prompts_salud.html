@@ -35,6 +35,7 @@
     
     
     <style>
+
       /* Estilo general para las tablas */
      /* Estilos generales para las tablas dentro de .reveal: Establece cómo se deben comportar visualmente las tablas, incluyendo el colapso de bordes, márgenes, ancho, y cómo manejar el texto largo. */
 
@@ -630,6 +631,33 @@ table a:after {
     border-radius: 0 0 0.5em 0.5em;
     font-size: 1.1em;
   }
+  h2.sombra-titulo {
+    text-shadow: 8px 5px 7px rgba(0, 0, 0, 0.5);
+}
+
+
+.shadow-oval {
+  position: relative;
+  text-align: center;
+}
+
+.shadow-oval:after {
+  content: '';
+  position: absolute;
+  top: 150%; /* Coloca la sombra justo debajo del texto */
+  left: 50%; /* Centra la sombra horizontalmente */
+  width: 38%; /* Anchura de la sombra */
+  height: 35px; /* Altura de la sombra */
+  background: rgba(0, 0, 0, 0.4); /* Color y opacidad de la sombra */
+  border-radius: 50%;
+  transform: translateX(-50%) scaleX(2); /* Ajusta para alargar la sombra horizontalmente */
+  filter: blur(8px); /* Difumina los bordes de la sombra */
+  z-index: -1; /* Coloca la sombra detrás del texto */
+}
+
+
+
+
 
 
 
@@ -652,22 +680,12 @@ table a:after {
             <!-- Aquí van tus slides -->
             
             <section data-name="Inicio" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/ejemplosprompts.mp3">
-              <h2 class="color cabecera">Casos de estudio de ChatGPT en Ciencias de la Salud</h2>
-              <div class="box">
-                  <!-- <div class="title">Objetivo de la Presentación</div>
-                  <div class="content">
-                      <p>Explorar el potencial impacto de ChatGPT en el ámbito de las ciencias de la salud, presentando casos de estudio reales donde esta tecnología puede facilitar avances significativos en investigación, práctica clínica y educación. La presentación describirá usos potenciales en:</p>
-                      <ul>
-                          <li><strong>Mejora de la toma de decisiones:</strong> Integrando análisis predictivos y apoyo en la toma de decisiones clínicas basado en datos.</li>
-                          <li><strong>Formación continua:</strong> Proporcionando recursos educativos personalizados para profesionales y estudiantes de la salud.</li>
-                          <li><strong>Desburocratización de procesos:</strong> Automatizando tareas administrativas para agilizar los flujos de trabajo en entornos sanitarios.</li>
-                          <li><strong>Ayuda diagnóstica:</strong> Mejorando la precisión diagnóstica mediante el análisis de grandes volúmenes de información médica.</li>
-                          <li><strong>Personalización del tratamiento:</strong> Facilitando la adaptación de los planes de tratamiento a las necesidades individuales de los pacientes.</li>
-                      </ul>
-                      
-                  </div> -->
-              </div>
-          </section>
+
+              <div class="shadow-oval">
+              <h2 class="color cabecera sombra-titulo">Casos de estudio de ChatGPT en Ciencias de la Salud</h2>
+            </div>
+              
+          </section><!--  -->
           
           
 <!--     <section data-name="Ejemplos" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
@@ -703,852 +721,7 @@ table a:after {
     <p style="font-size: 0.8rem; color:#ffffff; text-align: left; padding-left: 15px;">Puedes adaptar esta tabla a tus necesidades.</p>
 
 </section> -->
-<section data-name="Medicina Familiar">
 
-  
-<section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">1. Gestión de Información Clínica</h3>
-  <div class="tabla-casos-wrapper">
-    <table class="tabla-casos">
-      <thead>
-        <tr>
-          <th>Caso de uso</th>
-          <th>Ejemplo de solicitud</th>
-          <th>Evaluación workflow</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Búsqueda de Información Médica Actualizada</strong></td>
-          <td><em>"Busca las últimas guías de tratamiento para la hipertensión arterial"</em></td>
-          <td><span class="emoji-grande">👍</span>Acceso rápido a información actualizada.<br><span class="emoji-grande">👎</span> Depende de la calidad de las fuentes disponibles.</td>
-        </tr>
-        <tr>
-          <td><strong>Resumen de Historias Clínicas</strong></td>
-          <td><em>"Resume la historia clínica de un paciente con diabetes tipo 2 y EPOC"</em></td>
-          <td><span class="emoji-grande">👍</span>Ahorro de tiempo en la revisión de historiales.<br><span class="emoji-grande">👎</span> Riesgo de omitir detalles clínicos cruciales.</td>
-        </tr>
-        <tr>
-          <td><strong>Interpretación de Resultados de Laboratorio</strong></td>
-          <td><em>"Interpreta estos resultados de laboratorio en el contexto de una enfermedad renal crónica"</em></td>
-          <td><span class="emoji-grande">👍</span>Apoyo en la interpretación y contextualización.<br><span class="emoji-grande">👎</span> No reemplaza el juicio clínico del médico.</td>
-        </tr>
-        <tr>
-          <td><strong>Actualizaciones sobre Medicamentos</strong></td>
-          <td><em>"Proporciona información sobre los últimos antidiabéticos lanzados en 2024"</em></td>
-          <td><span class="emoji-grande">👍</span>Conocimiento actualizado de medicamentos.<br><span class="emoji-grande">👎</span> Puede no estar al día con las últimas aprobaciones.</td>
-        </tr>
-        <tr>
-          <td><strong>Generación de Alertas de Salud Pública</strong></td>
-          <td><em>"Alerta sobre las últimas noticias de brotes epidémicos en mi región"</em></td>
-          <td><span class="emoji-grande">👍</span> Información oportuna para prevención.<br><span class="emoji-grande">👎</span> Limitado por la accesibilidad a datos en tiempo real.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">2. Educación del Paciente y Comunicación</h3>
-  <div class="tabla-casos-wrapper">
-    <table class="tabla-casos">
-      <thead>
-        <tr>
-          <th>Caso de uso</th>
-          <th>Ejemplo de solicitud</th>
-          <th>Evaluación workflow</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Explicaciones de Condiciones Médicas</strong></td>
-          <td><em>"Explica la hipertensión arterial de manera comprensible para un paciente"</em></td>
-          <td><span class="emoji-grande">👍</span>Comunicación clara y efectiva.<br><span class="emoji-grande">👎</span> Puede no ajustarse al nivel de comprensión específico del paciente.</td>
-        </tr>
-        <tr>
-          <td><strong>Consejos de Estilo de Vida</strong></td>
-          <td><em>"Proporciona consejos de estilo de vida para un paciente con riesgo de diabetes"</em></td>
-          <td><span class="emoji-grande">👍</span>Fomenta hábitos saludables.<br><span class="emoji-grande">👎</span> Generalizaciones que pueden no aplicarse a casos individuales.</td>
-        </tr>
-        <tr>
-          <td><strong>Preparación para Procedimientos</strong></td>
-          <td><em>"Describe cómo prepararse para una colonoscopia"</em></td>
-          <td><span class="emoji-grande">👍</span>Instrucciones claras y detalladas.<br><span class="emoji-grande">👎</span> No sustituye las instrucciones personalizadas del médico.</td>
-        </tr>
-        <tr>
-          <td><strong>Manejo de Expectativas de Tratamiento</strong></td>
-          <td><em>"Explica los posibles efectos secundarios de los inhibidores de la ECA"</em></td>
-          <td><span class="emoji-grande">👍</span>Información detallada sobre tratamientos.<br><span class="emoji-grande">👎</span> Posible ansiedad en pacientes al conocer efectos adversos.</td>
-        </tr>
-        <tr>
-          <td><strong>Soporte Psicológico Básico</strong></td>
-          <td><em>"Ofrece consejos para manejar la ansiedad relacionada con problemas de salud"</em></td>
-          <td><span class="emoji-grande">👍</span>Apoyo emocional adicional.<br><span class="emoji-grande">👎</span> No reemplaza la terapia profesional.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">3. Soporte en la Toma de Decisiones Clínicas</h3>
-  <div class="tabla-casos-wrapper">
-    <table class="tabla-casos">
-      <thead>
-        <tr>
-          <th>Caso de uso</th>
-          <th>Ejemplo de solicitud</th>
-          <th>Evaluación workflow</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Sugerencias de Diagnóstico Diferencial</strong></td>
-          <td><em>"Proporciona un diagnóstico diferencial para síntomas de tos y pérdida de peso"</em></td>
-          <td><span class="emoji-grande">👍</span>Amplia gama de posibilidades diagnósticas.<br><span class="emoji-grande">👎</span> Riesgo de sobrecargar con opciones no relevantes.</td>
-        </tr>
-        <tr>
-          <td><strong>Recomendaciones de Pruebas Diagnósticas</strong></td>
-          <td><em>"Sugiere pruebas diagnósticas para sospecha de enfermedad celiaca"</em></td>
-          <td><span class="emoji-grande">👍</span>Ayuda a considerar todas las pruebas pertinentes.<br><span class="emoji-grande">👎</span> Puede sugerir pruebas innecesarias.</td>
-        </tr>
-        <tr>
-          <td><strong>Identificación de Interacciones Medicamentosas</strong></td>
-          <td><em>"Verifica interacciones para un paciente tomando warfarina y amiodarona"</em></td>
-          <td><span class="emoji-grande">👍</span>Prevención de efectos adversos.<br><span class="emoji-grande">👎</span> Puede no estar actualizado con los medicamentos más recientes.</td>
-        </tr>
-        <tr>
-          <td><strong>Estrategias de Manejo de Enfermedades Crónicas</strong></td>
-          <td><em>"Proporciona un plan de manejo para un paciente con artritis reumatoide"</em></td>
-          <td><span class="emoji-grande">👍</span>Integración de múltiples aspectos del manejo.<br><span class="emoji-grande">👎</span> Falta de personalización para necesidades específicas del paciente.</td>
-        </tr>
-        <tr>
-          <td><strong>Consejos sobre Urgencias Médicas</strong></td>
-          <td><em>"Describe el manejo inicial de un ataque asmático agudo"</em></td>
-          <td><span class="emoji-grande">👍</span>Información rápida en situaciones urgentes.<br><span class="emoji-grande">👎</span> No sustituye la intervención médica directa.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">4. Apoyo en Investigación y Educación Médica</h3>
-  <div class="tabla-casos-wrapper">
-    <table class="tabla-casos">
-      <thead>
-        <tr>
-          <th>Caso de uso</th>
-          <th>Ejemplo de solicitud</th>
-          <th>Evaluación workflow</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Revisión de Literatura Médica</strong></td>
-          <td><em>"Realiza una revisión de literatura sobre las últimas terapias para el manejo de la depresión"</em></td>
-          <td><span class="emoji-grande">👍</span>Acceso rápido a una amplia gama de fuentes.<br><span class="emoji-grande">👎</span> Limitado a fuentes disponibles en línea y puede incluir información desactualizada.</td>
-        </tr>
-        <tr>
-          <td><strong>Desarrollo de Material Educativo</strong></td>
-          <td><em>"Crea un folleto informativo sobre la prevención de la obesidad para pacientes"</em></td>
-          <td><span class="emoji-grande">👍</span>Generación rápida de materiales educativos personalizados.<br><span class="emoji-grande">👎</span> Requiere revisión para asegurar precisión clínica.</td>
-        </tr>
-        <tr>
-          <td><strong>Asistencia en la Escritura de Artículos Científicos</strong></td>
-          <td><em>"Ayuda a redactar la introducción de un artículo sobre hipertensión arterial"</em></td>
-          <td><span class="emoji-grande">👍</span>Facilita la redacción y estructuración de manuscritos.<br><span class="emoji-grande">👎</span> Puede requerir una revisión exhaustiva para garantizar la precisión y originalidad.</td>
-        </tr>
-        <tr>
-          <td><strong>Elaboración de Casos Clínicos para Enseñanza</strong></td>
-          <td><em>"Desarrolla un caso clínico interactivo sobre el manejo de la EPOC"</em></td>
-          <td><span class="emoji-grande">👍</span>Enriquece el material educativo con ejemplos prácticos.<br><span class="emoji-grande">👎</span> Necesita ajustes para garantizar la relevancia clínica y educativa.</td>
-        </tr>
-        <tr>
-          <td><strong>Actualización Continua en Medicina</strong></td>
-          <td><em>"Informa sobre los últimos avances en el tratamiento del VIH"</em></td>
-          <td><span class="emoji-grande">👍</span>Mantiene al médico actualizado con los últimos avances.<br><span class="emoji-grande">👎</span> Puede carecer de profundidad en análisis de estudios recientes.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">5. Automatización de Tareas Administrativas</h3>
-  <div class="tabla-casos-wrapper">
-    <table class="tabla-casos">
-      <thead>
-        <tr>
-          <th>Caso de uso</th>
-          <th>Ejemplo de solicitud</th>
-          <th>Evaluación workflow</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Gestión de Citas</strong></td>
-          <td><em>"Organiza un horario de citas para la próxima semana teniendo en cuenta las preferencias de los pacientes"</em></td>
-          <td><span class="emoji-grande">👍</span>Optimización del tiempo y recursos.<br><span class="emoji-grande">👎</span> Requiere integración con sistemas de gestión de pacientes existentes.</td>
-        </tr>
-        <tr>
-          <td><strong>Documentación y Codificación Médica</strong></td>
-          <td><em>"Codifica este informe médico según la Clasificación Internacional de Enfermedades"</em></td>
-          <td><span class="emoji-grande">👍</span>Ahorro de tiempo en tareas repetitivas.<br><span class="emoji-grande">👎</span> Riesgo de errores en la codificación si no se revisa adecuadamente.</td>
-        </tr>
-        <tr>
-          <td><strong>Gestión de Reclamaciones de Seguros</strong></td>
-          <td><em>"Prepara una reclamación de seguro para un procedimiento de atención médica reciente"</em></td>
-          <td><span class="emoji-grande">👍</span>Reduce la carga administrativa.<br><span class="emoji-grande">👎</span> Puede requerir ajustes manuales según las políticas específicas de seguros.</td>
-        </tr>
-        <tr>
-          <td><strong>Automatización de Recordatorios de Citas</strong></td>
-          <td><em>"Envía recordatorios automáticos a pacientes para sus próximas citas"</em></td>
-          <td><span class="emoji-grande">👍</span>Mejora la adherencia del paciente a las citas.<br><span class="emoji-grande">👎</span> Puede requerir consentimiento del paciente para comunicaciones automáticas.</td>
-        </tr>
-        <tr>
-          <td><strong>Compilación de Informes Administrativos</strong></td>
-          <td><em>"Genera un informe mensual de las estadísticas de la clínica"</em></td>
-          <td><span class="emoji-grande">👍</span>Facilita el seguimiento y la gestión administrativa.<br><span class="emoji-grande">👎</span> Puede requerir integración de datos de múltiples fuentes.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">6. Asistencia en Diagnóstico y Tratamiento</h3>
-  <div class="tabla-casos-wrapper">
-    <table class="tabla-casos">
-      <thead>
-        <tr>
-          <th>Caso de uso</th>
-          <th>Ejemplo de solicitud</th>
-          <th>Evaluación workflow</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Sugerencias de Tratamiento Basadas en Síntomas</strong></td>
-          <td><em>"Proporciona opciones de tratamiento para un paciente con síndrome del intestino irritable"</em></td>
-          <td><span class="emoji-grande">👍</span>Diversas opciones terapéuticas basadas en síntomas y evidencia.<br><span class="emoji-grande">👎</span> Necesidad de validación por el médico para cada caso específico.</td>
-        </tr>
-        <tr>
-          <td><strong>Evaluación de Riesgos de Tratamientos</strong></td>
-          <td><em>"Evalúa los riesgos de prescribir NSAIDs a un paciente con antecedentes de úlcera péptica"</em></td>
-          <td><span class="emoji-grande">👍</span>Identificación rápida de riesgos potenciales.<br><span class="emoji-grande">👎</span> No reemplaza la evaluación clínica completa.</td>
-        </tr>
-        <tr>
-          <td><strong>Soporte en Interpretación de Imágenes Médicas</strong></td>
-          <td><em>"Interpreta estos resultados de rayos X de tórax en un paciente con tos crónica"</em></td>
-          <td><span class="emoji-grande">👍</span>Asistencia inicial en la interpretación de imágenes.<br><span class="emoji-grande">👎</span> No puede reemplazar la experiencia de un radiólogo.</td>
-        </tr>
-        <tr>
-          <td><strong>Guía de Referencia para Procedimientos</strong></td>
-          <td><em>"Proporciona un paso a paso para realizar una punción lumbar"</em></td>
-          <td><span class="emoji-grande">👍</span>Soporte útil para procedimientos menos frecuentes.<br><span class="emoji-grande">👎</span> No sustituye la experiencia y capacitación práctica.</td>
-        </tr>
-        <tr>
-          <td><strong>Análisis de Casos Complejos</strong></td>
-          <td><em>"Analiza este caso clínico complejo de un paciente con múltiples comorbilidades"</em></td>
-          <td><span class="emoji-grande">👍</span>Ofrece una perspectiva integral y multidisciplinaria.<br><span class="emoji-grande">👎</span> Puede no abarcar todas las particularidades del caso.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-<section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">7. Manejo de Salud Mental y Bienestar</h3>
-  <div class="tabla-casos-wrapper">
-    <table class="tabla-casos">
-      <thead>
-        <tr>
-          <th>Caso de uso</th>
-          <th>Ejemplo de solicitud</th>
-          <th>Evaluación workflow</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Identificación de Síntomas de Trastornos Mentales</strong></td>
-          <td><em>"Lista los síntomas comunes de la depresión mayor en adultos"</em></td>
-          <td><span class="emoji-grande">👍</span>Ayuda en el reconocimiento temprano de trastornos.<br><span class="emoji-grande">👎</span> No sustituye el diagnóstico clínico.</td>
-        </tr>
-        <tr>
-          <td><strong>Estrategias de Manejo del Estrés</strong></td>
-          <td><em>"Proporciona técnicas de manejo del estrés para pacientes con ansiedad leve"</em></td>
-          <td><span class="emoji-grande">👍</span>Ofrece soporte adicional en salud mental.<br><span class="emoji-grande">👎</span> Puede no ser adecuado para casos graves.</td>
-        </tr>
-        <tr>
-          <td><strong>Información sobre Medicación Psiquiátrica</strong></td>
-          <td><em>"Explica los efectos secundarios del sertralina"</em></td>
-          <td><span class="emoji-grande">👍</span>Información detallada sobre medicamentos.<br><span class="emoji-grande">👎</span> No reemplaza el asesoramiento farmacológico.</td>
-        </tr>
-        <tr>
-          <td><strong>Soporte en Terapia Cognitivo-Conductual</strong></td>
-          <td><em>"Genera ejercicios de TCC para pacientes con trastorno obsesivo-compulsivo"</em></td>
-          <td><span class="emoji-grande">👍</span>Herramienta complementaria en terapia.<br><span class="emoji-grande">👎</span> No reemplaza la terapia personalizada.</td>
-        </tr>
-        <tr>
-          <td><strong>Prevención de Burnout en Profesionales de Salud</strong></td>
-          <td><em>"Proporciona estrategias para prevenir el burnout en médicos"</em></td>
-          <td><span class="emoji-grande">👍</span>Promueve el bienestar del personal médico.<br><span class="emoji-grande">👎</span> Puede no abordar casos específicos de burnout.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">8. Integración de Tecnología y Telemedicina</h3>
-  <div class="tabla-casos-wrapper">
-    <table class="tabla-casos">
-      <thead>
-        <tr>
-          <th>Caso de uso</th>
-          <th>Ejemplo de solicitud</th>
-          <th>Evaluación workflow</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Consultas Virtuales Efectivas</strong></td>
-          <td><em>"Proporciona un guion para realizar consultas virtuales de forma efectiva"</em></td>
-          <td><span class="emoji-grande">👍</span>Mejora la eficiencia de las consultas online.<br><span class="emoji-grande">👎</span> Puede no adaptarse a todas las situaciones clínicas.</td>
-        </tr>
-        <tr>
-          <td><strong>Gestión de Datos de Salud Electrónicos</strong></td>
-          <td><em>"Ayuda a organizar y sintetizar los datos de un registro de salud electrónico"</em></td>
-          <td><span class="emoji-grande">👍</span>Facilita la gestión eficiente de datos.<br><span class="emoji-grande">👎</span> Riesgos de privacidad y seguridad de datos.</td>
-        </tr>
-        <tr>
-          <td><strong>Asesoramiento en Tecnología de Salud</strong></td>
-          <td><em>"Recomienda tecnologías emergentes para mejorar la atención en telemedicina"</em></td>
-          <td><span class="emoji-grande">👍</span>Mantiene al médico actualizado con innovaciones.<br><span class="emoji-grande">👎</span> Puede no cubrir todas las nuevas tecnologías disponibles.</td>
-        </tr>
-        <tr>
-          <td><strong>Monitoreo Remoto del Paciente</strong></td>
-          <td><em>"Proporciona un plan para implementar el monitoreo remoto en pacientes crónicos"</em></td>
-          <td><span class="emoji-grande">👍</span>Extiende la atención más allá del consultorio.<br><span class="emoji-grande">👎</span> Requiere infraestructura y formación adecuada.</td>
-        </tr>
-        <tr>
-          <td><strong>Optimización de Portales de Pacientes</strong></td>
-          <td><em>"Sugiere mejoras para el portal en línea de pacientes de una clínica"</em></td>
-          <td><span class="emoji-grande">👍</span>Mejora la comunicación y acceso a información.<br><span class="emoji-grande">👎</span> Depende de las limitaciones tecnológicas existentes.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">9. Apoyo en Situaciones de Emergencia y Cuidados Críticos</h3>
-  <div class="tabla-casos-wrapper">
-    <table class="tabla-casos">
-      <thead>
-        <tr>
-          <th>Caso de uso</th>
-          <th>Ejemplo de solicitud</th>
-          <th>Evaluación workflow</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Protocolos de Emergencia</strong></td>
-          <td><em>"Describe los pasos iniciales en el manejo de un infarto agudo de miocardio"</em></td>
-          <td><span class="emoji-grande">👍</span>Información rápida y precisa en emergencias.<br><span class="emoji-grande">👎</span> No sustituye la capacitación en emergencias médicas.</td>
-        </tr>
-        <tr>
-          <td><strong>Manejo de Desastres y Pandemias</strong></td>
-          <td><em>"Brinda un plan de acción para manejar un brote de influenza en la comunidad"</em></td>
-          <td><span class="emoji-grande">👍</span>Soporte en planificación y respuesta.<br><span class="emoji-grande">👎</span> Puede no cubrir todas las variables en una crisis real.</td>
-        </tr>
-        <tr>
-          <td><strong>Soporte en Cuidados Intensivos</strong></td>
-          <td><em>"Lista las consideraciones clave en el manejo de pacientes en la UCI con COVID-19"</em></td>
-          <td><span class="emoji-grande">👍</span>Asistencia en manejo de casos complejos.<br><span class="emoji-grande">👎</span> Requiere actualizaciones constantes y conocimiento especializado.</td>
-        </tr>
-        <tr>
-          <td><strong>Capacitación en Reanimación Cardiopulmonar</strong></td>
-          <td><em>"Genera un material de capacitación para RCP básica"</em></td>
-          <td><span class="emoji-grande">👍</span>Apoya la formación en habilidades críticas.<br><span class="emoji-grande">👎</span> No reemplaza la capacitación práctica.</td>
-        </tr>
-        <tr>
-          <td><strong>Guía de Triaje en Emergencias</strong></td>
-          <td><em>"Proporciona un sistema de triaje para usar en un evento de múltiples víctimas"</em></td>
-          <td><span class="emoji-grande">👍</span>Ayuda en la organización y priorización de casos.<br><span class="emoji-grande">👎</span> Requiere adaptación a las circunstancias específicas del evento.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-<section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">10. Gestión de la Salud Poblacional y Prevención</h3>
-  <div class="tabla-casos-wrapper">
-    <table class="tabla-casos">
-      <thead>
-        <tr>
-          <th>Caso de uso</th>
-          <th>Ejemplo de solicitud</th>
-          <th>Evaluación workflow</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Estrategias de Prevención de Enfermedades Crónicas</strong></td>
-          <td><em>"Proporciona un plan de prevención para la diabetes tipo 2 en poblaciones de alto riesgo"</em></td>
-          <td><span class="emoji-grande">👍</span>Apoyo en el desarrollo de estrategias preventivas personalizadas.<br><span class="emoji-grande">👎</span> Requiere ajuste según las características específicas de cada población.</td>
-        </tr>
-        <tr>
-          <td><strong>Promoción de la Salud y Bienestar</strong></td>
-          <td><em>"Desarrolla un programa de promoción de la salud mental para la comunidad"</em></td>
-          <td><span class="emoji-grande">👍</span>Fomenta el bienestar general y la concienciación.<br><span class="emoji-grande">👎</span> Puede no ser suficientemente específico para necesidades individuales.</td>
-        </tr>
-        <tr>
-          <td><strong>Gestión de Campañas de Vacunación</strong></td>
-          <td><em>"Crea un plan de comunicación para una campaña de vacunación contra la gripe"</em></td>
-          <td><span class="emoji-grande">👍</span>Facilita la organización y difusión de campañas de salud pública.<br><span class="emoji-grande">👎</span> Requiere complementarse con estrategias locales y conocimiento del terreno.</td>
-        </tr>
-        <tr>
-          <td><strong>Educación para la Salud en Escuelas</strong></td>
-          <td><em>"Elabora un programa educativo sobre nutrición y ejercicio para niños de escuela primaria"</em></td>
-          <td><span class="emoji-grande">👍</span>Promueve hábitos saludables desde la infancia.<br><span class="emoji-grande">👎</span> Necesita adaptarse a diferentes grupos de edad y contextos culturales.</td>
-        </tr>
-        <tr>
-          <td><strong>Análisis de Tendencias de Salud Pública</strong></td>
-          <td><em>"Analiza las tendencias recientes en enfermedades cardiovasculares en la región"</em></td>
-          <td><span class="emoji-grande">👍</span>Ayuda a identificar patrones y necesidades de salud en la comunidad.<br><span class="emoji-grande">👎</span> La interpretación de datos puede requerir conocimientos estadísticos avanzados.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-</section>
-<section data-name="Psiquiatría">
-  <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">1. Diagnóstico y Evaluación</h3>
-    <div class="tabla-casos-wrapper">
-      <table class="tabla-casos">
-        <thead>
-          <tr>
-            <th>Caso de uso</th>
-            <th>Ejemplo de solicitud</th>
-            <th>Evaluación workflow</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Análisis de Síntomas</strong></td>
-            <td><em>"Analiza estos síntomas y sugiere posibles diagnósticos psiquiátricos."</em></td>
-            <td><span class="emoji-grande">👍</span>Facilita la identificación rápida de posibles condiciones.<br><span class="emoji-grande">👎</span> Puede no capturar la complejidad del caso humano.</td>
-          </tr>
-          <tr>
-            <td><strong>Interpretación de Test Psicológicos</strong></td>
-            <td><em>"Interpreta los resultados de este test psicológico y sugiere implicaciones clínicas."</em></td>
-            <td><span class="emoji-grande">👍</span>Proporciona una segunda opinión rápida.<br><span class="emoji-grande">👎</span> No reemplaza la experiencia clínica.</td>
-          </tr>
-          <tr>
-            <td><strong>Análisis de Historial del Paciente</strong></td>
-            <td><em>"Examina este historial clínico y destaca patrones relevantes para la psiquiatría."</em></td>
-            <td><span class="emoji-grande">👍</span>Ayuda a identificar tendencias o problemas recurrentes.<br><span class="emoji-grande">👎</span> Riesgo de interpretaciones erróneas.</td>
-          </tr>
-          <tr>
-            <td><strong>Evaluación de Riesgo de Suicidio</strong></td>
-            <td><em>"Evalúa el riesgo de suicidio basado en esta transcripción de la sesión."</em></td>
-            <td><span class="emoji-grande">👍</span>Apoyo en la evaluación de riesgo.<br><span class="emoji-grande">👎</span> No sustituye el juicio clínico.</td>
-          </tr>
-          <tr>
-            <td><strong>Seguimiento de Síntomas</strong></td>
-            <td><em>"Analiza el progreso de estos síntomas a lo largo del tiempo."</em></td>
-            <td><span class="emoji-grande">👍</span>Ofrece una visión objetiva del progreso.<br><span class="emoji-grande">👎</span> Puede no capturar matices subjetivos.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  
-  <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">2. Terapia y Consejería</h3>
-    <div class="tabla-casos-wrapper">
-      <table class="tabla-casos">
-        <thead>
-          <tr>
-            <th>Caso de uso</th>
-            <th>Ejemplo de solicitud</th>
-            <th>Evaluación workflow</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Generación de Planes Terapéuticos</strong></td>
-            <td><em>"Crea un plan terapéutico basado en este diagnóstico."</em></td>
-            <td><span class="emoji-grande">👍</span>Aporta ideas innovadoras.<br><span class="emoji-grande">👎</span> Requiere adaptación individualizada.</td>
-          </tr>
-          <tr>
-            <td><strong>Ideas para Intervenciones</strong></td>
-            <td><em>"Sugiere técnicas de intervención para trastorno de ansiedad."</em></td>
-            <td><span class="emoji-grande">👍</span>Ofrece una variedad de opciones.<br><span class="emoji-grande">👎</span> Puede no ajustarse a necesidades específicas.</td>
-          </tr>
-          <tr>
-            <td><strong>Manejo de Crisis</strong></td>
-            <td><em>"Proporciona un guion para manejar una crisis de ansiedad."</em></td>
-            <td><span class="emoji-grande">👍</span>Ayuda en situaciones inmediatas.<br><span class="emoji-grande">👎</span> No reemplaza la intervención humana en crisis.</td>
-          </tr>
-          <tr>
-            <td><strong>Soporte para Terapia Cognitivo-Conductual</strong></td>
-            <td><em>"Desarrolla ejercicios de TCC para la depresión."</em></td>
-            <td><span class="emoji-grande">👍</span>Enriquece el material terapéutico.<br><span class="emoji-grande">👎</span> Necesidad de personalización.</td>
-          </tr>
-          <tr>
-            <td><strong>Estrategias de Afrontamiento</strong></td>
-            <td><em>"Lista estrategias de afrontamiento para el estrés postraumático."</em></td>
-            <td><span class="emoji-grande">👍</span>Amplia gama de estrategias.<br><span class="emoji-grande">👎</span> Puede requerir ajustes clínicos.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  
-  
-  <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">3. Formación y Educación Continua</h3>
-    <div class="tabla-casos-wrapper">
-      <table class="tabla-casos">
-        <thead>
-          <tr>
-            <th>Caso de uso</th>
-            <th>Ejemplo de solicitud</th>
-            <th>Evaluación workflow</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Actualización en Psiquiatría</strong></td>
-            <td><em>"Resume las últimas investigaciones sobre terapia farmacológica en psiquiatría."</em></td>
-            <td><span class="emoji-grande">👍</span>Mantiene actualizado al profesional.<br><span class="emoji-grande">👎</span> Puede omitir investigaciones recientes no incluidas en su entrenamiento.</td>
-          </tr>
-          <tr>
-            <td><strong>Material de Formación</strong></td>
-            <td><em>"Genera material didáctico sobre trastornos de personalidad."</em></td>
-            <td><span class="emoji-grande">👍</span>Facilita la creación de recursos educativos.<br><span class="emoji-grande">👎</span> Requiere revisión y adaptación.</td>
-          </tr>
-          <tr>
-            <td><strong>Preparación para Exámenes</strong></td>
-            <td><em>"Proporciona preguntas tipo examen sobre psicofarmacología."</em></td>
-            <td><span class="emoji-grande">👍</span>Excelente para autoevaluación.<br><span class="emoji-grande">👎</span> Las preguntas pueden no reflejar la complejidad real de los exámenes.</td>
-          </tr>
-          <tr>
-            <td><strong>Estudios de Caso</strong></td>
-            <td><em>"Crea un estudio de caso para trastorno bipolar."</em></td>
-            <td><span class="emoji-grande">👍</span>Ayuda a entender aplicaciones prácticas.<br><span class="emoji-grande">👎</span> Los casos generados pueden ser demasiado genéricos.</td>
-          </tr>
-          <tr>
-            <td><strong>Debates Éticos</strong></td>
-            <td><em>"Presenta argumentos sobre dilemas éticos en psiquiatría."</em></td>
-            <td><span class="emoji-grande">👍</span>Fomenta el pensamiento crítico.<br><span class="emoji-grande">👎</span> Puede carecer de matices específicos de casos reales.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  
-  <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">4. Investigación y Publicación</h3>
-    <div class="tabla-casos-wrapper">
-      <table class="tabla-casos">
-        <thead>
-          <tr>
-            <th>Caso de uso</th>
-            <th>Ejemplo de solicitud</th>
-            <th>Evaluación workflow</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Generación de Hipótesis</strong></td>
-            <td><em>"Sugiere hipótesis de investigación para el estudio del TEPT."</em></td>
-            <td><span class="emoji-grande">👍</span>Fomenta ideas innovadoras.<br><span class="emoji-grande">👎</span> Las hipótesis pueden necesitar validación adicional.</td>
-          </tr>
-          <tr>
-            <td><strong>Análisis de Datos</strong></td>
-            <td><em>"Realiza un análisis preliminar de estos datos de investigación."</em></td>
-            <td><span class="emoji-grande">👍</span>Agiliza el proceso de análisis.<br><span class="emoji-grande">👎</span> No reemplaza el análisis estadístico profesional.</td>
-          </tr>
-          <tr>
-            <td><strong>Redacción de Artículos</strong></td>
-            <td><em>"Ayúdame a estructurar un artículo sobre terapias psicodinámicas."</em></td>
-            <td><span class="emoji-grande">👍</span>Asistencia en la organización y redacción.<br><span class="emoji-grande">👎</span> Requiere revisión exhaustiva.</td>
-          </tr>
-          <tr>
-            <td><strong>Revisión Bibliográfica</strong></td>
-            <td><em>"Realiza una revisión bibliográfica sobre tratamientos para la esquizofrenia."</em></td>
-            <td><span class="emoji-grande">👍</span>Ahorro de tiempo en recopilación de información.<br><span class="emoji-grande">👎</span> Limitado a las fuentes en su base de datos.</td>
-          </tr>
-          <tr>
-            <td><strong>Resúmenes de Conferencias</strong></td>
-            <td><em>"Resume las ponencias clave de esta conferencia de psiquiatría."</em></td>
-            <td><span class="emoji-grande">👍</span>Permite una rápida actualización.<br><span class="emoji-grande">👎</span> Puede omitir detalles clave de las presentaciones.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  
-  <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">5. Gestión de la Información Clínica</h3>
-    <div class="tabla-casos-wrapper">
-      <table class="tabla-casos">
-        <thead>
-          <tr>
-            <th>Caso de uso</th>
-            <th>Ejemplo de solicitud</th>
-            <th>Evaluación workflow</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Organización de Historiales Clínicos</strong></td>
-            <td><em>"Ayúdame a organizar y resumir estos historiales clínicos."</em></td>
-            <td><span class="emoji-grande">👍</span>Mejora la gestión de datos del paciente.<br><span class="emoji-grande">👎</span> Requiere verificación para precisión.</td>
-          </tr>
-          <tr>
-            <td><strong>Análisis de Tendencias de Tratamiento</strong></td>
-            <td><em>"Identifica tendencias en los tratamientos prescritos en estos casos."</em></td>
-            <td><span class="emoji-grande">👍</span>Ofrece perspectivas sobre prácticas clínicas.<br><span class="emoji-grande">👎</span> Puede no reflejar la individualidad de cada caso.</td>
-          </tr>
-          <tr>
-            <td><strong>Creación de Bases de Datos de Casos</strong></td>
-            <td><em>"Desarrolla una base de datos para seguimiento de casos de depresión."</em></td>
-            <td><span class="emoji-grande">👍</span>Facilita el seguimiento y análisis.<br><span class="emoji-grande">👎</span> Necesita mantenimiento y actualización constante.</td>
-          </tr>
-          <tr>
-            <td><strong>Resumen de Sesiones Terapéuticas</strong></td>
-            <td><em>"Resume las notas clave de estas sesiones terapéuticas."</em></td>
-            <td><span class="emoji-grande">👍</span>Ayuda en la documentación y revisión de sesiones.<br><span class="emoji-grande">👎</span> Puede perder detalles importantes.</td>
-          </tr>
-          <tr>
-            <td><strong>Análisis de Efectividad de Tratamientos</strong></td>
-            <td><em>"Evalúa la efectividad de estos tratamientos basándote en los historiales."</em></td>
-            <td><span class="emoji-grande">👍</span>Ofrece una visión general del impacto del tratamiento.<br><span class="emoji-grande">👎</span> No sustituye un análisis clínico detallado.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">6. Comunicación con Pacientes y Familias</h3>
-    <div class="tabla-casos-wrapper">
-      <table class="tabla-casos">
-        <thead>
-          <tr>
-            <th>Caso de uso</th>
-            <th>Ejemplo de solicitud</th>
-            <th>Evaluación workflow</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Explicaciones de Diagnósticos</strong></td>
-            <td><em>"Elabora una explicación simple de este diagnóstico para un paciente."</em></td>
-            <td><span class="emoji-grande">👍</span>Facilita la comunicación clara con los pacientes.<br><span class="emoji-grande">👎</span> Puede requerir adaptaciones para casos específicos.</td>
-          </tr>
-          <tr>
-            <td><strong>Guiones para Educación del Paciente</strong></td>
-            <td><em>"Crea un guion para educar a los pacientes sobre la medicación antipsicótica."</em></td>
-            <td><span class="emoji-grande">👍</span>Ofrece información estructurada y clara.<br><span class="emoji-grande">👎</span> Necesita personalización para cada paciente.</td>
-          </tr>
-          <tr>
-            <td><strong>Material de Apoyo para Familias</strong></td>
-            <td><em>"Genera material de apoyo para familias de pacientes con trastorno de ansiedad."</em></td>
-            <td><span class="emoji-grande">👍</span>Proporciona recursos útiles para el apoyo familiar.<br><span class="emoji-grande">👎</span> Generalización en los materiales.</td>
-          </tr>
-          <tr>
-            <td><strong>Estrategias de Comunicación en Crisis</strong></td>
-            <td><em>"Proporciona estrategias de comunicación para manejar crisis emocionales."</em></td>
-            <td><span class="emoji-grande">👍</span>Ayuda en la preparación para situaciones difíciles.<br><span class="emoji-grande">👎</span> No reemplaza el entrenamiento en manejo de crisis.</td>
-          </tr>
-          <tr>
-            <td><strong>Información sobre Recursos Comunitarios</strong></td>
-            <td><em>"Lista recursos comunitarios disponibles para el tratamiento de adicciones."</em></td>
-            <td><span class="emoji-grande">👍</span>Amplía las opciones de soporte para los pacientes.<br><span class="emoji-grande">👎</span> Requiere actualización constante de la información.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  
-  <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">7. Coordinación de Cuidados</h3>
-    <div class="tabla-casos-wrapper">
-      <table class="tabla-casos">
-        <thead>
-          <tr>
-            <th>Caso de uso</th>
-            <th>Ejemplo de solicitud</th>
-            <th>Evaluación workflow</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Planificación de Cuidados Integrados</strong></td>
-            <td><em>"Desarrolla un plan de cuidados integrados para un paciente con trastorno bipolar."</em></td>
-            <td><span class="emoji-grande">👍</span>Apoya en la coordinación entre distintos profesionales.<br><span class="emoji-grande">👎</span> Puede no considerar todos los aspectos del cuidado individual.</td>
-          </tr>
-          <tr>
-            <td><strong>Gestión de Referencias</strong></td>
-            <td><em>"Crea una lista de especialistas para referencias de pacientes con trastornos de alimentación."</em></td>
-            <td><span class="emoji-grande">👍</span>Agiliza el proceso de referencia.<br><span class="emoji-grande">👎</span> La lista necesita verificación y actualización.</td>
-          </tr>
-          <tr>
-            <td><strong>Seguimiento Post-Alta</strong></td>
-            <td><em>"Proporciona un plan de seguimiento post-alta para un paciente con depresión mayor."</em></td>
-            <td><span class="emoji-grande">👍</span>Ayuda en la continuidad del cuidado.<br><span class="emoji-grande">👎</span> Requiere adaptación a cada caso.</td>
-          </tr>
-          <tr>
-            <td><strong>Integración con Otros Servicios de Salud</strong></td>
-            <td><em>"Sugiere formas de integrar la atención psiquiátrica con otros servicios de salud."</em></td>
-            <td><span class="emoji-grande">👍</span>Promueve un enfoque holístico.<br><span class="emoji-grande">👎</span> Necesita una evaluación detallada de la red de servicios.</td>
-          </tr>
-          <tr>
-            <td><strong>Coordinación con Atención Primaria</strong></td>
-            <td><em>"Elabora un protocolo de comunicación entre psiquiatría y atención primaria."</em></td>
-            <td><span class="emoji-grande">👍</span>Facilita la colaboración efectiva.<br><span class="emoji-grande">👎</span> Necesita ser personalizado para cada entorno clínico.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">8. Gestión y Administración Clínica</h3>
-    <div class="tabla-casos-wrapper">
-      <table class="tabla-casos">
-        <thead>
-          <tr>
-            <th>Caso de uso</th>
-            <th>Ejemplo de solicitud</th>
-            <th>Evaluación workflow</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Optimización de Procesos Clínicos</strong></td>
-            <td><em>"Propón mejoras para optimizar los procesos clínicos en esta clínica psiquiátrica."</em></td>
-            <td><span class="emoji-grande">👍</span>Identifica áreas de mejora.<br><span class="emoji-grande">👎</span> Las sugerencias necesitan validación clínica.</td>
-          </tr>
-          <tr>
-            <td><strong>Gestión de Horarios y Citas</strong></td>
-            <td><em>"Desarrolla un sistema para gestionar eficientemente los horarios y citas."</em></td>
-            <td><span class="emoji-grande">👍</span>Mejora la organización del tiempo.<br><span class="emoji-grande">👎</span> Requiere integración con sistemas existentes.</td>
-          </tr>
-          <tr>
-            <td><strong>Políticas de Privacidad y Confidencialidad</strong></td>
-            <td><em>"Elabora un documento sobre políticas de privacidad y confidencialidad en la práctica psiquiátrica."</em></td>
-            <td><span class="emoji-grande">👍</span>Ayuda a cumplir con normativas legales.<br><span class="emoji-grande">👎</span> Requiere adaptación a leyes locales.</td>
-          </tr>
-          <tr>
-            <td><strong>Evaluación de Satisfacción del Paciente</strong></td>
-            <td><em>"Crea una encuesta para evaluar la satisfacción del paciente con el tratamiento recibido."</em></td>
-            <td><span class="emoji-grande">👍</span>Facilita la retroalimentación de los pacientes.<br><span class="emoji-grande">👎</span> Puede no capturar todas las perspectivas del paciente.</td>
-          </tr>
-          <tr>
-            <td><strong>Desarrollo de Protocolos de Emergencia</strong></td>
-            <td><em>"Genera protocolos para manejar emergencias psiquiátricas en la clínica."</em></td>
-            <td><span class="emoji-grande">👍</span>Prepara al personal para situaciones críticas.<br><span class="emoji-grande">👎</span> Requiere revisión y práctica regular.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  
-  <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">9. Ética y Consideraciones Legales</h3>
-    <div class="tabla-casos-wrapper">
-      <table class="tabla-casos">
-        <thead>
-          <tr>
-            <th>Caso de uso</th>
-            <th>Ejemplo de solicitud</th>
-            <th>Evaluación workflow</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Discusiones sobre Consentimiento Informado</strong></td>
-            <td><em>"Desarrolla un guion para explicar el consentimiento informado en psiquiatría."</em></td>
-            <td><span class="emoji-grande">👍</span>Clarifica aspectos legales importantes.<br><span class="emoji-grande">👎</span> Necesita ajustarse a normativas específicas.</td>
-          </tr>
-          <tr>
-            <td><strong>Debates sobre Privacidad de Datos</strong></td>
-            <td><em>"Analiza las implicaciones de la privacidad de datos en la práctica psiquiátrica."</em></td>
-            <td><span class="emoji-grande">👍</span>Promueve la conciencia sobre la privacidad.<br><span class="emoji-grande">👎</span> No abarca todos los aspectos legales.</td>
-          </tr>
-          <tr>
-            <td><strong>Manejo de Conflictos Éticos</strong></td>
-            <td><em>"Proporciona ejemplos de cómo manejar conflictos éticos en psiquiatría."</em></td>
-            <td><span class="emoji-grande">👍</span>Fomenta la resolución ética de problemas.<br><span class="emoji-grande">👎</span> Los ejemplos pueden no cubrir todos los escenarios posibles.</td>
-          </tr>
-          <tr>
-            <td><strong>Directrices sobre Relaciones con Pacientes</strong></td>
-            <td><em>"Crea directrices sobre la relación terapéutica entre psiquiatras y pacientes."</em></td>
-            <td><span class="emoji-grande">👍</span>Establece límites claros y éticos.<br><span class="emoji-grande">👎</span> Requiere ser adaptado a distintas culturas y contextos.</td>
-          </tr>
-          <tr>
-            <td><strong>Evaluación de Competencia del Paciente</strong></td>
-            <td><em>"Elabora un protocolo para evaluar la competencia del paciente en decisiones clínicas."</em></td>
-            <td><span class="emoji-grande">👍</span>Asiste en decisiones complejas de capacidad.<br><span class="emoji-grande">👎</span> Requiere la intervención de un experto en ética.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  
-  <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">10. Salud Mental y Bienestar del Profesional</h3>
-    <div class="tabla-casos-wrapper">
-      <table class="tabla-casos">
-        <thead>
-          <tr>
-            <th>Caso de uso</th>
-            <th>Ejemplo de solicitud</th>
-            <th>Evaluación workflow</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Estrategias de Autocuidado</strong></td>
-            <td><em>"Sugiere estrategias de autocuidado para psiquiatras."</em></td>
-            <td><span class="emoji-grande">👍</span>Promueve el bienestar del profesional.<br><span class="emoji-grande">👎</span> Las estrategias pueden necesitar personalización.</td>
-          </tr>
-          <tr>
-            <td><strong>Manejo del Estrés Laboral</strong></td>
-            <td><em>"Ofrece consejos para manejar el estrés laboral en psiquiatría."</em></td>
-            <td><span class="emoji-grande">👍</span>Ayuda a mantener un equilibrio saludable.<br><span class="emoji-grande">👎</span> No reemplaza el apoyo profesional.</td>
-          </tr>
-          <tr>
-            <td><strong>Prevención del Burnout</strong></td>
-            <td><em>"Elabora un plan para prevenir el burnout en profesionales de la salud mental."</em></td>
-            <td><span class="emoji-grande">👍</span>Aborda un problema crítico en la profesión.<br><span class="emoji-grande">👎</span> Puede requerir adaptaciones individuales.</td>
-          </tr>
-          <tr>
-            <td><strong>Apoyo para el Desarrollo Profesional</strong></td>
-            <td><em>"Proporciona recursos para el desarrollo profesional continuo en psiquiatría."</em></td>
-            <td><span class="emoji-grande">👍</span>Fomenta el crecimiento profesional.<br><span class="emoji-grande">👎</span> La selección de recursos puede ser limitada.</td>
-          </tr>
-          <tr>
-            <td><strong>Técnicas de Mindfulness y Relajación</strong></td>
-            <td><em>"Enseña técnicas de mindfulness y relajación adaptadas a profesionales de la salud mental."</em></td>
-            <td><span class="emoji-grande">👍</span>Mejora el bienestar personal y profesional.<br><span class="emoji-grande">👎</span> Requiere práctica y compromiso regular.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-      
-  
-
-
-</section>
 <section data-name="Tutor FSE"> 
 <section data-name="Tutor FSE" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
   <h3 class="color">1. Desarrollo de Competencias Clínicas</h3>
@@ -1643,19 +816,19 @@ table a:after {
         </tr>
         <tr>
           <td><strong>Análisis Estadístico de Datos</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un experto en estadística aplicada a la investigación clínica. Ofrece guía sobre análisis estadísticos para estudios clínicos, subrayando cómo interpretar y aplicar los resultados en decisiones médicas...[leer más para ver conversación] Como residente de oncología, estás a punto de presentar tus hallazgos de un análisis de supervivencia en la próxima Conferencia Internacional de Oncología sobre pacientes con cáncer de pulmón. ¿Cuál es tu principal duda o inquietud sobre cómo estructurar tu presentación para asegurar un máximo impacto entre los especialistas asistentes?</a></em></td>          <td><span class="emoji-grande">👍</span>Clarifica análisis estadístico.<br><span class="emoji-grande">👎</span>Requiere conocimientos en estadística.</td>
+          <td><em><a href="https://chat.openai.com/share/b02187e3-f719-461a-bacf-5e23f63176e9" target="_blank">Eres un experto en estadística aplicada a la investigación clínica. Ofrece guía sobre análisis estadísticos para estudios clínicos, subrayando cómo interpretar y aplicar los resultados en decisiones médicas y orientamé en la realización de una presentación en un congreso...[leer conversación completa]</a></em></td>          <td><span class="emoji-grande">👍</span>Clarifica análisis estadístico.<br><span class="emoji-grande">👎</span>Requiere conocimientos en estadística.</td>
         </tr>
         <tr>
           <td><strong>Desarrollo de Propuestas de Investigación</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un asesor en la redacción de propuestas de investigación, ayudando a formular objetivos claros, hipótesis y metodologías para proyectos en Enfermería Pediátrica. Incluye recomendaciones para mejorar la viabilidad del estudio.</a></em></td>          <td><span class="emoji-grande">👍</span>Mejora calidad de propuestas.<br><span class="emoji-grande">👎</span>Puede no cubrir aspectos regulatorios.</td>
+          <td><em><a href="https://chat.openai.com/share/f99c1ec3-e65a-42a9-b6fa-14a61db01a0b" target="_blank">Eres una enfermera con perfil investigador e innovador de fama internacional. Tu misión es asistir en en la creación de una propuesta de investigación en Enfermería Pediátrica transformadora... [leer más]</a></em></td>          <td><span class="emoji-grande">👍</span>Mejora calidad de propuestas.<br><span class="emoji-grande">👎</span>Puede no cubrir aspectos regulatorios.</td>
         </tr>
         <tr>
           <td><strong>Revisión Sistemática de Literatura</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un revisor de literatura en Cirugía General, genera un esquema para realizar una revisión sistemática de literatura sobre una técnica quirúrgica específica, incluyendo criterios de inclusión y exclusión.</a></em></td>          <td><span class="emoji-grande">👍</span>Ayuda en síntesis de información.<br><span class="emoji-grande">👎</span>No reemplaza juicio crítico humano.</td>
+          <td><em><a href="https://chat.openai.com/share/7d4e0879-cb3b-4ced-976a-42e61888e650" target="_blank">Eres un tutor MIR con reconocido perfil académico, clínico e innovador en Cirugía General, redacta un esquema para revisión sistemática sobre técnicas quirúrgicas, detallando criterios de inclusión/exclusión. Enfócate en cómo este proceso apoya la formación de residentes. </a></em></td>          <td><span class="emoji-grande">👍</span>Ayuda en síntesis de información.<br><span class="emoji-grande">👎</span>No reemplaza juicio crítico humano.</td>
         </tr>
         <tr>
           <td><strong>Evaluación de Tecnologías Sanitarias</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un analista en evaluación de tecnologías sanitarias, guía el desarrollo de un marco para evaluar nuevas tecnologías en radiología, incluyendo criterios de eficacia y seguridad. Presenta un plan de evaluación en forma de reporte.</a></em></td>          <td><span class="emoji-grande">👍</span>Apoya toma de decisiones basada en evidencia.<br><span class="emoji-grande">👎</span>Limitado por actualidad de fuentes.</td>
+          <td><em><a href="https://chat.openai.com/share/80bf61a2-6d8b-4c28-9ba7-dd233f414140" target="_blank">Como líder en evaluación de tecnologías sanitarias en radiología, crea un marco integral para analizar innovaciones tecnológicas, centrado en eficacia, seguridad y viabilidad económica...[continua conversación y ejemplo TAC para screening Ca pulmón]</a></em></td>          <td><span class="emoji-grande">👍</span>Apoya toma de decisiones basada en evidencia.<br><span class="emoji-grande">👎</span>Limitado por actualidad de fuentes.</td>
         </tr>
       </tbody>
     </table>
@@ -1663,7 +836,7 @@ table a:after {
 </section>
 
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">4. Educación Continua y Actualizaciones</h3>
+  <h3 class="color">4. Formación Continua y Actualización</h3>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1676,23 +849,188 @@ table a:after {
       <tbody>
         <tr>
           <td><strong>Actualizaciones en Tratamientos y Terapias</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un recurso educativo en Oncología, proporciona un resumen actualizado de los últimos tratamientos y terapias, destacando estudios clave y su aplicación clínica. Elabora un boletín informativo mensual.</a></em></td>          <td><span class="emoji-grande">👍</span> Mantiene actualizados a profesionales.<br><span class="emoji-grande">👎</span> Puede no cubrir todas novedades.</td>
+          <td><em><a href="https://chat.openai.com/share/a107fc08-b731-435d-a889-6b2370355cee" target="_blank">Como experto en Oncología, crea un boletín mensual resumiendo avances recientes en tratamientos y terapias. Incluye estudios clave del último mes, su importancia clínica, y discusiones para la aplicación práctica. El boletín debe ser claro, con secciones para cada avance y enlaces a estudios.</a></em></td>          <td><span class="emoji-grande">👍</span> Mantiene actualizados a profesionales.<br><span class="emoji-grande">👎</span> Puede no cubrir todas novedades.</td>
         </tr>
         <tr>
           <td><strong>Tendencias en Salud Pública</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Funciona como un experto en Salud Pública, identificando y explicando las últimas tendencias y desafíos en salud pública a nivel global. Prepara una presentación interactiva con gráficos y estadísticas.</a></em></td>          <td><span class="emoji-grande">👍</span> Amplía perspectiva global.<br><span class="emoji-grande">👎</span> Requiere actualizaciones constantes.</td>
+          <!-- @startmindmap
+!theme plain
+skinparam backgroundColor #FAFAFA
+skinparam arrowThickness 1.8
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+
+<style>
+node {
+    Padding 12
+    Margin 4
+    HorizontalAlignment center
+    LineColor #0077C2
+    LineThickness 2
+    RoundCorner 20
+    MaximumWidth 250
+    FontSize 14
+    FontName Arial
+    Shadowing 1
+}
+rootNode {
+    LineStyle solid
+    LineColor #E63946
+    BackgroundColor #FAFAFA
+    RoundCorner 20
+    FontSize 16
+    FontStyle Bold
+}
+leafNode {
+    RoundCorner 15
+    HorizontalAlignment left
+    Padding 8
+    FontSize 12
+    FontName Arial
+    MaximumWidth 350
+    Margin 10
+}
+</style>
+
+skinparam node {
+    BackgroundColor #E8F8FF
+    BorderColor #003D5B
+    BorderThickness 2
+    Shadowing 1
+    nodeWidth 230
+}
+skinparam nodeFontStyle {
+    FontStyle Bold
+}
+
+title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
+
+* <color:#E63946>Pandemias y Brotes</color>
+** COVID-19: Variantes emergentes
+*** Tendencias de mutación
+*** Estrategias de vacunación global
+** Vigilancia de nuevas enfermedades
+*** Sistemas de alerta temprana
+*** Cooperación internacional
+** Enfermedades reemergentes
+*** Tuberculosis
+*** Malaria
+
+* <color:#2A9D8F>Salud Mental</color>
+** Aumento en prevalencia
+*** Impacto de la pandemia
+*** Estrategias de prevención
+** Importancia del acceso a servicios
+*** Modelos de atención remota
+*** Integración con atención primaria
+
+* <color:#F4A261>Cambio Climático y Salud</color>
+** Efectos sobre enfermedades transmisibles
+*** Cambios en patrones de vectores
+*** Aumento de brotes de enfermedades relacionadas con el agua
+** Impacto en nutrición
+*** Seguridad alimentaria y cambio climático
+*** Desnutrición en poblaciones vulnerables
+
+* <color:#8338EC>Tecnología en Salud</color>
+** Telemedicina
+*** Aumento de la accesibilidad en áreas remotas
+*** Desafíos en la privacidad de datos
+** IA en diagnósticos
+*** Herramientas de soporte a la decisión clínica
+*** Avances en diagnóstico por imagen
+
+* <color:#FF006E>Acceso a la Salud</color>
+** Desigualdades
+*** Barreras económicas y sociales
+*** Estrategias de inclusión sanitaria
+** Sistemas de salud resilientes
+*** Preparación ante emergencias
+*** Fortalecimiento de sistemas de atención primaria
+
+* <color:#3A86FF>Enfermedades No Transmisibles</color>
+** Obesidad y diabetes
+*** Programas de prevención y educación
+*** Avances en tratamientos y manejo
+** Enfermedades cardiovasculares
+*** Campañas de concientización sobre factores de riesgo
+*** Innovaciones en técnicas quirúrgicas y rehabilitación
+
+* <color:#FFD166>Resistencia Antimicrobiana</color>
+** Uso de antibióticos
+*** Iniciativas para reducir el uso indebido
+*** Desarrollo de nuevos antimicrobianos
+** Surgimiento de resistencias
+*** Vigilancia y respuesta global
+*** Investigación y desarrollo de vacunas
+
+* <color:#118AB2>Salud Global y Derechos Humanos</color>
+** Equidad en salud
+*** Políticas de inclusión y acceso universal
+*** Eliminación de barreras económicas
+** Acceso a vacunas
+*** Campañas de vacunación globales
+*** Cooperación internacional y patentes
+
+* <color:#FFD166>Resistencia Antimicrobiana</color>
+** Uso de antibióticos
+*** Campañas de sensibilización sobre el uso racional
+*** Desarrollo de nuevos antimicrobianos
+** Surgimiento de resistencias
+*** Vigilancia y monitoreo global
+*** Investigación en mecanismos de resistencia
+
+* <color:#118AB2>Salud Global y Derechos Humanos</color>
+** Equidad en salud
+*** Políticas públicas para reducir brechas de acceso
+*** Alianzas globales para financiamiento en salud
+** Acceso a vacunas
+*** Iniciativas de distribución equitativa
+*** Innovación en desarrollo y producción de vacunas
+** Salud y conflictos
+*** Asistencia sanitaria en zonas de conflicto
+*** Protección de infraestructuras de salud
+
+* <color:#6A1B9A>Crisis Sanitarias y Respuesta Internacional</color>
+** Preparación y respuesta a emergencias
+*** Estrategias de respuesta rápida
+*** Cooperación internacional y recursos compartidos
+** Impacto de crisis climáticas en la salud
+*** Medidas de adaptación para sistemas de salud
+*** Prevención de brotes post-desastre
+
+* <color:#D84315>Avances y Desafíos en Salud Digital</color>
+** Digitalización de registros de salud
+*** Seguridad y privacidad de datos
+*** Interoperabilidad entre sistemas
+** Innovación tecnológica en atención sanitaria
+*** Wearables para monitoreo de salud
+*** Plataformas de asesoramiento médico virtual
+
+* <color:#2E7D32>Envejecimiento de la Población y Salud</color>
+** Desafíos en sistemas de cuidado a largo plazo
+*** Sostenibilidad financiera
+*** Formación y recursos humanos
+** Promoción de una vejez saludable
+*** Programas de actividad física y nutrición
+*** Atención integral y multidisciplinaria
+@endmindmap
+ -->
+          <td><em><a href="https://www.plantuml.com/plantuml/png/jLZDSjl84RxpAIQLI-AgZKLAbccNYhNK3sDNnLwLfNZFpK4JwlLW1kaPS4DjvM5yt8CFAT_soXVBD0OGHf2qkQpjYp0OT7_zzTS_qlS-08UAR551FVbJkC4ALMs0xCH_8bi3GwNMe3-Lx1fRd3dZMFrvjPJ_sGrWTZzVtv3-PD5xDVtRF7jPu0OQ4rREXlSGpI-Pm3p-_efkKKsF9fCJ7tO65nFh2bI_J5JyTmb5GRPKqrdx-0wu9AkEseStZkasVWzcQQYq5TgWDDg0tBx-1rdie1ySl7nvDhix7J2dimyfIhR8QdRGEVetLKtr8nNXHirUfCCSh3oFWfEZgnietCyjuib_9knSU3y48xwl94JbdQ5YZFBY-F3LqN5xUle4-K-W7O0T3y-jerDdYWZ486mw86CJqnTFacbm4-vbOJxoDdkSXX5zXqBVaBpfGGHqyhpBTIQ98UqFux-Oh-QhLNhdk42-o-pX-OlJx3pFxJWXyYnEkgmUHY0ZzmDnlpnEv2HGY4ydFiR_UZfVd3IBPLKR0atxhrQXLLTWca9TxdzR6zAW_cxS6epwo-nWTlJNa-VD8aPEjnBuCtMY9OZNNU8Nbs0Bh0YysgbJTW7zoVFsncBox9aw--7Zs_FlfgzUgu_013Q-LbWXboW_nXlFr3L60rQBXSXarOI4gdrtuGD3mB9xkGNTs0vqsK8K7n-f90DYGUxO1hSGdTWDSeK559sRA_81gsG737805Pzh1Wlj-pFdQkJEE4azYYTdau-Bp9nY78VGh95rOvodTF0EZ8IRqpLRlZgVhnQ9w7Secis9MZOYNYUvg3b6O8IIXEnjLOCEJe0RK7N7zsFyo9Te4ttfGyUXPyOeq1gzKw0yyfOqkGwiYozT8YPqdol6oeNEluqUUcQqizcjcgaQ1xewMiwEfuipgDRar9cXQlyva7PgbrIMHtsnGHsYQ-_MZFTofWA3zHLvMfkEvMJHjnH1O6SnYK9CiDmPQ9JpDRkGRk3zv9cKrm9y6uqGKpOm6PWM3xO9J8CGhx1icA851OR4XKGT8z8fIdqNPNlx7FtmVOlNhPFN263R68iC4bPEs_pmS7vnjhX6RUD1kVy2yk43ngxHO0o5D5aOHsmWfPZMP0Ih6DX_PWJVfTFtw62p_vAOD219t8AM3yH80S7vbeobl2y8Ihl_wYMszFaRP8QAX8EMNUz4PQX0R1MeoIUXcFqNIxe3kGKRWOqDHbvOKGKbsdiAMXqS75yibhrS3OnuI45Gp9eP2lmKc96bzBMB3YhIRK_oJXDq4XhN2rbjcWJNWwNGIddKAtnRi1pT6Heg_fAnXhuc81xtNKrJn_9AIi-Wfehw_FZCxE_NqE5oVhnQBUvrdVTENUSraRFnmnfzcy2TyBl60QOh6Qe7tI7UmwBH2VyuGq8H9DH2O0KMVt8Fcg06BiXjmUl600ybMiF-lycVTbQB5RfDVhegtq2gLxd2XBvqNPUnRfjg9A7O_wfjcyD_DSJxtxZi4ifu0oBmD2T6mZcV7XylFc3BTDltbj5_HPhTci12pja_lIH5aaVhQ6WG-DlebY2GZ159icBXYbWwHHC_8blWcegxKWTcPuphXqya3NAdgPgk6YupAV00CJdDXfY4wEi6VO1XoWciRJoY4leC5hdhRZRwd8xfTBuydNKZfnlfkuYOKTz4b6-QIj3TwyUHwzGuakwJY5mivK3wGSti-edIMDeY-mxeXQ6AR0TJ6l4ZXIdE-lhkeUSAUchUe__zOIq1rX1IeVx1oXY1ysZRJZkIToSIxl1yEv5Kpf8KadjQ99B72ZLOyfNp8vFVLYbrMYN79RGMYuc_f9tKV0o1lGNV9xdxQ4Es3JOnChXwIZjvuSea8n-Orar7HGGSsfT3knbO6cf91CGkektrcxderkITjBQD8LbT4luxKeSv8bPldMsX3FVxhXnmi4zsmu0HQwD3mzdKoJDql9oUlbekpfYYBtNLUv66-E6kMxpDAs78rcXSvVq5ndDhF2A7gxp_N5C1_x_-67N3tibsLKMlWOgMfdoFrMqOmze4_IuoQEaT5bHqIYcW3fqp2ICVfBdwXlcMxN-ry-4xIQyFZ3cZv_EZm-cBHJ_uTlVtefJfSoffjAYdew7gMuvAaPeRy8nsnjqJErRQhRdbSjZP0W-hmcGarT2kX_klCWmLPglu8BpMxey8qMHVIKEl635c8C36SKSbUFIE-tAhzhyMigDjYKC39gTkTl7o_70MrvCj_fHlE9B1IxSs7TY72_zzZlCqwhQTf6sFIwTg0xSkqUYajgZZfsyAoD2lMLLoboll9ZMi97rNkRjKDHQKWBvDB0X53nSbq86shRC8rGlJk_7l0yi8QL1_oQtmgyO4AiXhgWtPDXVVeotwFrdz3m00" target="_blank">Eres un experto en visualización de datos de Salud Pública que crearás una infografía detallada que ilustre las últimas tendencias y desafíos en salud pública a nivel global, cubriendo áreas críticas como pandemias, salud mental, cambio climático y salud, tecnología en salud, y más... [leer más]</a></em></td>          <td><span class="emoji-grande">👍</span> Amplía perspectiva global.<br><span class="emoji-grande">👎</span> Requiere actualizaciones constantes.</td>
         </tr>
         <tr>
           <td><strong>Novedades en Farmacología</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un consultor en Farmacología, resumiendo las últimas novedades en medicamentos y tratamientos farmacológicos. Genera una guía de consulta rápida para farmacéuticos internos.</a></em></td>          <td><span class="emoji-grande">👍</span> Aporta información actual en farmacología.<br><span class="emoji-grande">👎</span> Necesita fuentes primarias.</td>
+          <td><em><a href="https://chat.openai.com/share/fc976405-d5ad-4b88-916f-977e87a9938a" target="_blank">Desarrolla 10 casos clínicos para formación sanitaria especializada en farmacología, abarcando temas como farmacocinética y dinámica, interacciones medicamentosas, resistencia a antibióticos, farmacogenética, manejo en poblaciones especiales (ancianos, embarazadas), reacciones adversas a medicamentos, y terapias personalizadas... [leer más]</a></em></td>          <td><span class="emoji-grande">👍</span> Aporta información actual en farmacología.<br><span class="emoji-grande">👎</span> Necesita fuentes primarias.</td>
         </tr>
         <tr>
-          <td><strong>Avances en Técnicas Diagnósticas</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un especialista en Diagnóstico por Imagen, elabora un informe sobre los avances recientes en técnicas de diagnóstico por imagen, incluyendo su impacto en la práctica clínica.</a></em></td>          <td><span class="emoji-grande">👍</span> Actualiza sobre innovaciones tecnológicas.<br><span class="emoji-grande">👎</span> Requiere correlación con experiencia clínica.</td>
+          <td><strong>Lectura crítica de artículos</strong></td>
+          <td><em><a href="https://chat.openai.com/share/9d80aa56-8d9a-4360-a57d-0dee87f8bea7" target="_blank">Desarrolla la lectura crítica en español del artículo...[leer más]</a></em></td>          <td><span class="emoji-grande">👍</span> Actualiza sobre innovaciones tecnológicas.<br><span class="emoji-grande">👎</span> Requiere correlación con experiencia clínica.</td>
         </tr>
+        <!-- indicaciones en el GPT Prompt
+        estamos tratando de desarrollar prompts con indicaciones breves, de 2 o 4 lineas, que presenten casos de exito en la creación de prompts dirigidos a mostrar el potente valor de chatgpt en el ámbito sanitario. El objetivo es visibilizar su potencial aportación al ámbito de la formación sanitaria especializada, tutores y residentes. Incluirás elementos que resalten todo el potencial de chatgpt, desde la originalidad en el enfoque hasta las múltiples posibilidades en los formatos de salida que servirán para ilustrar ese valor inédito. Ahora te iré dando prompts y los perfeccionarás para que den resultados impactantes, con formatos diferentes en cada caso y resultados impactantes -->
         <tr>
-          <td><strong>Innovaciones en Cuidados Intensivos</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Simula ser un experto en Cuidados Intensivos, informando sobre innovaciones y mejores prácticas en la atención de pacientes críticos. Crea una serie de seminarios web para formación continua.</a></em></td>          <td><span class="emoji-grande">👍</span> Fomenta mejores prácticas en cuidados críticos.<br><span class="emoji-grande">👎</span> Dinámica de entorno real varía.</td>
+          <td><strong>"No hacer en entrevista clínica"</strong></td>
+          <td><em><a href="https://chat.openai.com/share/7355535a-b53c-4e96-a506-c2acffbec010" target="_blank">Desarrolla una guía 'Choosing Wisely' para residentes en sus primeros años de formación médica, enfocada en 10 prácticas anticuadas en entrevistas clínicas que deben evitarse...[leer más]</a></em></td>          <td><span class="emoji-grande">👍</span> Fomenta mejores prácticas en cuidados críticos.<br><span class="emoji-grande">👎</span> Dinámica de entorno real varía.</td>
         </tr>
       </tbody>
     </table>
@@ -1712,23 +1050,23 @@ table a:after {
       <tbody>
         <tr>
           <td><strong>Sistema de Evaluación Formativa</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Desarrolla un sistema de evaluación formativa para residentes en Medicina Interna, incluyendo criterios y métodos de feedback. Presenta un sistema automatizado para seguimiento y evaluación.</a></em></td>          <td><span class="emoji-grande">👍</span> Estandariza la evaluación.<br><span class="emoji-grande">👎</span> Falta de personalización.</td>
+          <td><em><a href="https://chat.openai.com/share/76448926-dabb-4815-94a1-6fa8611ad722" target="_blank">Eres un mentor virtual de última generación especializado programado con capacidades avanzadas de procesamiento de lenguaje y análisis, tu objetivo es transformar la formación médica especializada. Proporcionarás evaluaciones precisas, feedback detallado y recomendaciones personalizadas...[leer más]</a></em></td>          <td><span class="emoji-grande">👍</span> Retroalimentación Inmediata y Accesible.<br><span class="emoji-grande">👎</span>  Limitaciones en Evaluación de Competencias Prácticas.</td>
         </tr>
         <tr>
-          <td><strong>Feedback Constructivo en Prácticas Clínicas</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Actúa como un mentor virtual en prácticas clínicas, proporcionando feedback constructivo sobre el desempeño de los residentes en escenarios clínicos simulados. Genera informes de rendimiento individualizados.</a></em></td>          <td><span class="emoji-grande">👍</span> Promueve desarrollo personalizado.<br><span class="emoji-grande">👎</span> Carece de matices humanos en feedback.</td>
+          <td><strong>Apoyo al tutor en la gestión de Evaluaciones Negativas</strong></td>
+          <td><em><a href="https://chat.openai.com/share/c91dbf1d-2335-494e-9160-46e675552c72" target="_blank">Actúa como un mentor virtual en prácticas clínicas, proporcionando feedback constructivo sobre el desempeño de los residentes en escenarios clínicos simulados. Genera informes de rendimiento individualizados.</a></em></td>          <td><span class="emoji-grande">👍</span> Promueve desarrollo personalizado.<br><span class="emoji-grande">👎</span> Carece de empatía y sensibilidad humana en feedback.</td>
         </tr>
         <tr>
           <td><strong>Evaluación de Competencias Quirúrgicas</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un evaluador en Cirugía, crea herramientas de evaluación para competencias quirúrgicas específicas, incluyendo habilidades técnicas y toma de decisiones. Diseña un cuestionario de autoevaluación para cirujanos en formación.</a></em></td>          <td><span class="emoji-grande">👍</span> Enfoca en habilidades quirúrgicas.<br><span class="emoji-grande">👎</span> No captura habilidad práctica.</td>
+          <td><em><a href="https://chat.openai.com/share/99c1898f-2fea-4ae4-a4cf-e15e811c0cfc" target="_blank">Como experto formador sanitario de renombre en evaluación quirúrgica, formula un cuestionario de autoevaluación para cirujanos en formación que se estructura como una encuesta digital...[leer más]</a></em></td>          <td><span class="emoji-grande">👍</span> Enfoca en habilidades quirúrgicas.<br><span class="emoji-grande">👎</span> No captura habilidad práctica.</td>
         </tr>
         <tr>
           <td><strong>Monitoreo del Progreso en Enfermería</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Funciona como un sistema de seguimiento para residentes de Enfermería, monitoreando su progreso y proporcionando recomendaciones para mejorar en áreas específicas. Elabora un dashboard interactivo de progreso.</a></em></td>          <td><span class="emoji-grande">👍</span> Facilita seguimiento del desarrollo.<br><span class="emoji-grande">👎</span> Requiere sistemas de evaluación reales.</td>
+          <td><em><a href="https://chat.openai.com/share/87a0e905-e0b6-478a-bcde-cb4ab75ed113" target="_blank">Como un sistema avanzado de seguimiento de formación especializada para el ámbito sanitario, tu función es analizar y presentar el progreso de los residentes en distintas especialidades de enfermería. Crea un dashboard en formato de tabla que refleje el progreso de los residentes, incluyendo las siguientes especialidades enfermeras...[leer más]</a></em></td>          <td><span class="emoji-grande">👍</span> Facilita seguimiento del desarrollo.<br><span class="emoji-grande">👎</span> Requiere sistemas de evaluación reales.</td>
         </tr>
         <tr>
           <td><strong>Análisis de Habilidades en Farmacología</strong></td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como un analista en Farmacología Clínica, evalúa las habilidades de los residentes en la prescripción y manejo de medicamentos, utilizando casos de estudio. Proporciona un análisis detallado de cada caso.</a></em></td>          <td><span class="emoji-grande">👍</span> Profundiza en conocimiento farmacológico.<br><span class="emoji-grande">👎</span> La prescripción real varía según contexto.</td>
+          <td><em><a href="https://chat.openai.com/share/f3e0dca7-af1a-46ea-abbf-c443fb7136af" target="_blank">Eres un experto analista en Farmacología Clínica con amplia experiencia en la enseñanza y la práctica médica, tu misión es evaluar y mejorar las competencias de residentes en la prescripción y manejo de medicamentos...[leer más]</a></em></td>          <td><span class="emoji-grande">👍</span> Profundiza en conocimiento farmacológico.<br><span class="emoji-grande">👎</span> La prescripción real varía según contexto.</td>
         </tr>
       </tbody>
     </table>
@@ -1916,10 +1254,1275 @@ table a:after {
   </div>
 </section>
 
+</section>
+
+<section data-name="Investigación Sanitaria">
+<!-- Categoría 1: Promoción y Mejora de la Investigación e Innovación Sanitaria -->
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <h3 class="color">1. Promoción y Mejora de la Investigación e Innovación Sanitaria</h3>
+  <div class="tabla-casos-wrapper">
+    
+<table class="tabla-casos">
+  <thead>
+    <tr>
+      <th>Caso de uso</th>
+      <th>Ejemplo de solicitud</th>
+      <th>Evaluación workflow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Identificación de tendencias</td>
+      <td><em><a href="https://chat.openai.com/share/77918dad-f17f-42a3-97c7-f16788ee59a3" target="_blank">Eres un experto analizando tendencias en terapias genómicas. Tu misión es identificar y analizar las tendencias emergentes para informar decisiones de investigación futuras. Proporciona un resumen ejecutivo con recomendaciones específicas para orientar decisiones de investigación estratégicas...[leer conversación completa]</td></a></em></td>
+      <td>👍 Impulsa la innovación y adaptabilidad en modelos de financiación<br>👎 Limitaciones en la aplicación práctica sin análisis de casos reales</td>
+    </tr>
+    <tr>
+      <td>Evaluación de indicadores de resultados</td>
+      <td><em><a href="https://chat.openai.com/share/a5c14196-f245-42d2-8e1f-d2ba6daa224e" target="_blank">Te especializas en la evaluación de investigaciones médicas y tienes la tarea de evaluar los indicadores de éxito de estudios recientes, no solo sobre las vacunas COVID-19, sino también aplicando este aprendizaje para anticipar y prepararse para futuras amenazas pandémicas...[leer más]</td></a></em></td>
+      <td>👍 Facilita identificación de áreas de éxito.<br>👎 Puede requerir datos no disponibles.</td>
+    </tr>
+    <tr>
+      <td>Soporte en evaluación ética</td>
+      <td><em><a href="https://chat.openai.com/share/6487aed2-523a-4a1c-ba27-d0e9520c8f02" target="_blank">Como consultor ético especializado en inteligencia artificial aplicada a diagnósticos médicos, tu tarea es profundizar en la evaluación de los dilemas éticos asociados con el uso de IA en este campo...[leer conversación]</td></a></em></td>
+      <td>👍 Promueve prácticas responsables y construye confianza. <br>👎 Requiere esfuerzos multidisciplinarios y actualizaciones continuas.</td>
+    </tr>
+    <tr>
+      <td>Análisis de necesidades de investigación</td>
+      <td><em><a href="https://chat.openai.com/share/cc6ac9b8-ec49-451f-91eb-123a4a62bf6d" target="_blank">Como un reconocido estratega en investigación médica, enfócate en descubrir áreas poco exploradas dentro de las enfermedades raras. Desarrolla y sugiere estrategias concretas para cerrar estas brechas, potenciando innovaciones significativas y colaboraciones efectivas en el campo.</td></a></em></td>
+      <td>👍 Facilita la generación de ideas y estrategias innovadoras rápidamente.<br>👎 La precisión y relevancia de las sugerencias pueden requerir verificación por expertos del sector.</td>
+    </tr>
+    <tr>
+      <td>Optimización de Procesos en Investigación</td>
+      <td><em><a href="https://chat.openai.com/share/83a7d8be-b03c-4cee-8333-67764429c110" target="_blank">Como coordinador de un proyecto de investigación en salud digital, tu objetivo es explorar el impacto de las aplicaciones móviles en la autogestión de pacientes con enfermedades crónicas...[leer más]</td></a></em></td>
+      <td>👍 Agiliza proceso de revisión.<br>👎 Requiere revisión de fuentes.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</section>
+<!-- Categoría 2: Gestión de Biobancos y Proyectos de Investigación -->
+
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <h3 class="color">2. Gestión de Biobancos y Proyectos de Investigación</h3>
+  <div class="tabla-casos-wrapper">
+<table class="tabla-casos">
+  <thead>
+    <tr>
+      <th>Caso de uso</th>
+      <th>Ejemplo de solicitud</th>
+      <th>Evaluación workflow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gestión de biobancos</td>
+      <td><em><a href="https://chat.openai.com/share/247113c5-a97a-4215-a8f6-407a99944abd" target="_blank">Te encuentras al frente de la gestión de un biobanco y estás explorando maneras de perfeccionar el proceso de almacenamiento y recuperación de muestras biológicas...[ver conversación]</td></a></em></td>
+      <td>👍 Innovación Acelerada: Facilita conceptualización y soluciones avanzadas.
+      <br>👎 Dependencia de la Precisión del Modelo: Requiere verificación humana.</td>
+    </tr>
+    <tr>
+      <td>Autorización de proyectos</td>
+      <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como responsable de un biobanco, necesitas automatizar la revisión de proyectos que solicitan acceso a las muestras. Desarrolla un sistema que evalúe las solicitudes según criterios predefinidos.</td></a></em></td>
+      <td>👍 Reduce tiempos de espera.<br>👎 Decisiones finales requieren revisión humana.</td>
+    </tr>
+    <tr>
+      <td>Optimización de recursos en proyectos</td>
+      <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un gestor de proyectos en un centro de investigación oncológica. Tu tarea es optimizar el uso de recursos en los proyectos, asegurando que las inversiones se alineen con los objetivos estratégicos.</td></a></em></td>
+      <td>👍 Mejora eficiencia de investigación.<br>👎 Requiere adaptación a cada proyecto.</td>
+    </tr>
+    <tr>
+      <td>Evaluación de impacto de biobancos</td>
+      <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como analista de políticas de salud, evalúa el impacto de los biobancos en la investigación biomédica nacional e internacional. Realiza un análisis comparativo y elabora recomendaciones para aumentar su valor.</td></a></em></td>
+      <td>👍 Justifica inversiones.<br>👎 Recolección de datos puede ser extensa.</td>
+    </tr>
+    <tr>
+      <td>Revisión de normativa para biobancos</td>
+      <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como asesor legal especializado en biobancos, revisa y actualiza las guías de buenas prácticas para asegurar que estén al día con las leyes y regulaciones actuales.</td></a></em></td>
+      <td>👍 Asegura cumplimiento.<br>👎 Necesita revisión legal especializada.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</section>
+
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <h3 class="color">3. Fomento y Difusión de la Investigación e Innovación</h3>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Políticas de fomento</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como consultor en políticas de salud, estás encargado de diseñar campañas informativas sobre financiamiento para proyectos en salud mental. Identifica fuentes de financiamiento y desarrolla materiales promocionales.</td></a></em></td>
+          <td>👍 Aumenta visibilidad de recursos.<br>👎 Eficacia depende de difusión.</td>
+        </tr>
+        <tr>
+          <td>Difusión de información</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Te desempeñas como coordinador de comunicaciones en un instituto de investigación. Tu tarea es elaborar resúmenes ejecutivos de avances recientes para distribuir entre investigadores y stakeholders.</td></a></em></td>
+          <td>👍 Facilita intercambio de conocimiento.<br>👎 Necesita actualizaciones constantes.</td>
+        </tr>
+        <tr>
+          <td>Establecimiento de políticas de colaboración</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como director de innovación en un hospital, buscas fomentar la colaboración entre investigadores de diversas disciplinas. Desarrolla una estrategia para crear directorios de colaboración y fomentar proyectos conjuntos.</td></a></em></td>
+          <td>👍 Fomenta colaboración.<br>👎 Requiere gestión activa.</td>
+        </tr>
+        <tr>
+          <td>Evaluación de programas de innovación</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un analista de políticas públicas evaluando la efectividad de programas de subvenciones actuales. Realiza un análisis detallado de su impacto y propone mejoras para futuras convocatorias.</td></a></em></td>
+          <td>👍 Identifica áreas de mejora.<br>👎 Puede requerir acceso a datos de seguimiento.</td>
+        </tr>
+        <tr>
+          <td>Fomento de investigación entre jóvenes</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como coordinador de un programa de mentoría, estás desarrollando iniciativas para estimular el interés en la investigación entre investigadores jóvenes en salud pública global. Diseña un programa de mentorías que conecte jóvenes con expertos.</td></a></em></td>
+          <td>👍 Estimula interés en investigación.<br>👎 Efectividad depende de calidad de mentoría.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <h3 class="color">4. Coordinación y Evaluación de la Formación Sanitaria</h3>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Optimización de programas formativos</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como responsable del desarrollo curricular en una universidad de medicina, tu objetivo es renovar el plan de estudios para incluir formación especializada en genética médica. Evalúa necesidades actuales y propone cambios.</td></a></em></td>
+          <td>👍 Actualiza formación a necesidades actuales.<br>👎 Necesita actualización constante.</td>
+        </tr>
+        <tr>
+          <td>Acreditación de actividades formativas</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres el director de un programa de formación continuada en salud y buscas simplificar el proceso de acreditación mediante la digitalización. Implementa un protocolo para la acreditación digital y evalúa su efectividad.</td></a></em></td>
+          <td>👍 Agiliza proceso de acreditación.<br>👎 Evaluación final requiere inspecciones in situ.</td>
+        </tr>
+        <tr>
+          <td>Evaluación de impacto formativo</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como investigador en educación médica, estás interesado en evaluar el impacto de la formación continuada en la práctica clínica. Diseña un estudio para medir los efectos de la formación en el desempeño profesional.</td></a></em></td>
+          <td>👍 Aporta evidencia sobre eficacia de formación.<br>👎 Requiere datos específicos de seguimiento.</td>
+        </tr>
+        <tr>
+          <td>Desarrollo de competencias digitales</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Diriges un centro de formación en salud y reconoces la necesidad de preparar a los investigadores para la era digital. Desarrolla módulos de formación en competencias digitales específicas para la investigación sanitaria.</td></a></em></td>
+          <td>👍 Prepara investigadores para era digital.<br>👎 Necesita actualización constante.</td>
+        </tr>
+        <tr>
+          <td>Reconocimiento de formaciones internacionales</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como asesor en políticas de educación sanitaria, trabajas en la creación de un sistema que facilite el reconocimiento automático de títulos de formación sanitaria obtenidos en el extranjero. Establece criterios y procedimientos para este reconocimiento.</td></a></em></td>
+          <td>👍 Fomenta diversidad en sector sanitario.<br>👎 Requiere base de datos exhaustiva de equivalencias.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <h3 class="color">5. Optimización del Uso de Terapias Avanzadas</h3>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Seguimiento de terapias avanzadas</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como responsable de un programa de seguimiento clínico, tu misión es implementar un registro para el seguimiento en tiempo real de terapias avanzadas, analizando la seguridad y eficacia en distintos pacientes.</td></a></em></td>
+          <td>👍 Aporta datos sobre seguridad y eficacia.<br>👎 Requiere integración con sistemas de salud electrónicos.</td>
+        </tr>
+        <tr>
+          <td>Planificación de terapias personalizadas</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un científico de datos en oncología trabajando para desarrollar algoritmos que ayuden en la selección de terapias avanzadas personalizadas basadas en el perfil genético del paciente.</td></a></em></td>
+          <td>👍 Promueve tratamientos eficaces y personalizados.<br>👎 Necesita acceso a bases de datos genéticas.</td>
+        </tr>
+        <tr>
+          <td>Evaluación de nuevos medicamentos</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como farmacólogo, realiza análisis de eficacia y coste-efectividad de nuevos medicamentos de terapia avanzada, proporcionando informes que influirán en su inclusión en protocolos de tratamiento.</td></a></em></td>
+          <td>👍 Informa sobre inclusión de nuevos tratamientos.<br>👎 Análisis complejo que requiere múltiples fuentes de datos.</td>
+        </tr>
+        <tr>
+          <td>Capacitación sobre manejo de terapias</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Diriges un programa educativo para profesionales de la salud, desarrollando módulos de capacitación en línea sobre el manejo de terapias avanzadas, incluyendo aspectos prácticos y teóricos.</td></a></em></td>
+          <td>👍 Mejora competencias en terapias innovadoras.<br>👎 Capacitación debe actualizarse continuamente.</td>
+        </tr>
+        <tr>
+          <td>Monitorización de efectos adversos</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como epidemiólogo, estás a cargo de desarrollar un sistema de reporte y análisis de efectos adversos de terapias avanzadas en tiempo real, contribuyendo a la mejora continua de la seguridad del paciente.</td></a></em></td>
+          <td>👍 Potencia seguridad del paciente.<br>👎 Requiere robustez en protección de datos.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <h3 class="color">6. Acreditación de Instituciones y Establecimientos Sanitarios</h3>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Evaluación de estándares de calidad</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como consultor de calidad en el sector sanitario, estás encargado de automatizar la evaluación preliminar de cumplimiento de estándares de calidad en hospitales y clínicas, utilizando herramientas digitales para optimizar el proceso.</td></a></em></td>
+          <td>👍 Eficientiza procesos de acreditación.<br>👎 Evaluación final requiere visitas in situ.</td>
+        </tr>
+        <tr>
+          <td>Revisión de infraestructuras docentes</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un experto en educación médica evaluando la idoneidad de infraestructuras para docencia en instituciones sanitarias. Tu tarea incluye generar informes de evaluación y recomendaciones de mejora.</td></a></em></td>
+          <td>👍 Facilita identificación de mejoras.<br>👎 Complemento con evaluaciones presenciales necesario.</td>
+        </tr>
+        <tr>
+          <td>Monitoreo de cumplimiento continuo</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como director de un organismo regulador, desarrollas un dashboard para el monitoreo continuo del cumplimiento de los requisitos de acreditación por parte de las instituciones sanitarias, buscando transparencia y mejora continua.</td></a></em></td>
+          <td>👍 Visión en tiempo real del estado de cumplimiento.<br>👎 Requiere actualización y mantenimiento constantes.</td>
+        </tr>
+        <tr>
+          <td>Optimización de procesos docentes</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">En tu rol de asesor pedagógico para centros de formación sanitaria, propones mejoras basadas en evaluaciones detalladas para optimizar los procesos de enseñanza y aprendizaje, incluyendo la integración de tecnologías educativas.</td></a></em></td>
+          <td>👍 Mejora calidad de formación sanitaria.<br>👎 Implementación de mejoras necesita ser personalizada.</td>
+        </tr>
+        <tr>
+          <td>Evaluación de programas de especialización</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como especialista en currículo educativo, evalúas la efectividad y relevancia de los programas de especialización ofrecidos por instituciones sanitarias, asegurando que satisfagan las demandas actuales del mercado laboral en el sector salud.</td></a></em></td>
+          <td>👍 Alinea programas con necesidades del mercado laboral.<br>👎 Acceso a datos sensibles y protegidos requerido.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <h3 class="color">7. Fomento de la Colaboración en Investigación e Innovación</h3>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mapeo de colaboraciones</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como coordinador de innovación en un centro de investigación, tu tarea es elaborar un mapa detallado de las colaboraciones actuales entre centros públicos y privados, identificando áreas de oportunidad para nuevas alianzas.</td></a></em></td>
+          <td>👍 Identifica nuevas oportunidades de colaboración.<br>👎 Requiere actualizaciones constantes.</td>
+        </tr>
+        <tr>
+          <td>Desarrollo de la Bio-Región</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un planificador urbano especializado en zonas de innovación, trabajando para diseñar una estrategia integral que promueva el desarrollo de una Bio-Región de Salud y Bienestar, integrando a instituciones académicas, hospitales y empresas.</td></a></em></td>
+          <td>👍 Impulsa ecosistema de innovación en salud.<br>👎 Implementación necesita compromiso a largo plazo.</td>
+        </tr>
+        <tr>
+          <td>Plataforma de intercambio de conocimientos</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como líder de un consorcio de investigación, impulsas la creación de una plataforma digital para facilitar el intercambio de conocimientos y tecnologías entre investigadores de diferentes disciplinas y países.</td></a></em></td>
+          <td>👍 Facilita transferencia de conocimiento.<br>👎 Necesita moderación y gestión efectiva.</td>
+        </tr>
+        <tr>
+          <td>Evaluación de sinergias</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">En tu rol de consultor de innovación, realizas evaluaciones de sinergias potenciales entre proyectos de investigación existentes y el sector privado, buscando maximizar el uso de recursos y acelerar el desarrollo de soluciones innovadoras.</td></a></em></td>
+          <td>👍 Maximiza uso de recursos complementarios.<br>👎 Formación de alianzas puede ser desafiante.</td>
+        </tr>
+        <tr>
+          <td>Fomento de proyectos conjuntos</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como director de una agencia de fomento a la investigación, diseñar programas y convocatorias que incentiven la formación de proyectos de investigación conjuntos entre grupos académicos y empresas, superando barreras disciplinares y sectoriales.</td></a></em></td>
+          <td>👍 Acelera desarrollo y aplicación de innovaciones.<br>👎 Requiere marco de colaboración claro.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <h3 class="color">8. Fomento de Programas de Investigación e Innovación con Fondos Europeos</h3>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Identificación de oportunidades de financiación</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como asesor financiero en un centro de investigación, desarrollas una guía completa de oportunidades de financiación europea para proyectos en salud y biotecnología, facilitando el acceso a recursos para los investigadores.</td></a></em></td>
+          <td>👍 Facilita acceso a financiación.<br>👎 Guía necesita actualizaciones regulares.</td>
+        </tr>
+        <tr>
+          <td>Preparación de propuestas</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un consultor especializado en la redacción de propuestas para financiación de investigación. Ofreces talleres y recursos para mejorar la calidad de las propuestas presentadas por investigadores a programas europeos.</td></a></em></td>
+          <td>👍 Mejora calidad de propuestas.<br>👎 Plantillas necesitan personalización.</td>
+        </tr>
+        <tr>
+          <td>Gestión de proyectos europeos</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como gestor de proyectos en una universidad, implementas un sistema de gestión integral para proyectos financiados con fondos europeos, asegurando el cumplimiento de objetivos y la correcta administración de los recursos.</td></a></em></td>
+          <td>👍 Asegura gestión efectiva de proyectos.<br>👎 Requiere adaptabilidad a diferentes requisitos.</td>
+        </tr>
+        <tr>
+          <td>Red de contacto europea</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">En tu papel de coordinador de relaciones internacionales, trabajas en la creación de una red de contacto para fomentar la formación de consorcios europeos, promoviendo la colaboración transnacional en investigación e innovación.</td></a></em></td>
+          <td>👍 Potencia colaboración internacional.<br>👎 Requiere mantenimiento activo de la red.</td>
+        </tr>
+        <tr>
+          <td>Monitorización de proyectos europeos</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como analista en una agencia de financiación, desarrollas un dashboard para el seguimiento y evaluación de proyectos financiados por la Unión Europea, proporcionando datos clave para la toma de decisiones y la retroalimentación a los beneficiarios.</td></a></em></td>
+          <td>👍 Facilita evaluación de proyectos.<br>👎 Integración de datos de múltiples fuentes necesaria.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <h3 class="color">9. Mejora de la Comunicación Científica</h3>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Estrategias de comunicación efectiva</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como especialista en comunicación para una institución de investigación, tu objetivo es desarrollar estrategias para comunicar hallazgos científicos a un público no especializado, aumentando la comprensión y el apoyo público a la ciencia.</td></a></em></td>
+          <td>👍 Mejora comprensión pública de la ciencia.<br>👎 Requiere habilidades de adaptación de contenidos.</td>
+        </tr>
+        <tr>
+          <td>Talleres de escritura científica</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un editor de una revista científica y organizas talleres sobre escritura científica y comunicación efectiva para investigadores, con el fin de mejorar la calidad y el impacto de las publicaciones.</td></a></em></td>
+          <td>👍 Aumenta calidad de publicaciones científicas.<br>👎 Desarrollo de habilidades continuo necesario.</td>
+        </tr>
+        <tr>
+          <td>Plataformas de divulgación científica</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como director de una unidad de divulgación científica, impulsas el desarrollo de plataformas digitales para la divulgación de investigaciones, buscando aumentar su visibilidad y facilitar el acceso al conocimiento científico.</td></a></em></td>
+          <td>👍 Aumenta visibilidad y apoyo público a la investigación.<br>👎 Requiere contenido atractivo y accesible.</td>
+        </tr>
+        <tr>
+          <td>Comunicación de crisis en salud pública</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">En tu rol como asesor de salud pública, elaboras guías de comunicación para la gestión de crisis sanitarias, asegurando que la información sea precisa, accesible y oportuna para minimizar el impacto en la población.</td></a></em></td>
+          <td>👍 Crítico para gestión efectiva de crisis.<br>👎 Necesita actualización y adaptación constante.</td>
+        </tr>
+        <tr>
+          <td>Fortalecimiento de la presencia en línea</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como consultor de marketing digital enfocado en el ámbito científico, asesoras a investigadores en el desarrollo de su presencia en línea, desde la creación de perfiles en redes sociales hasta la gestión de blogs personales para compartir sus trabajos.</td></a></em></td>
+          <td>👍 Expande alcance y red profesional.<br>👎 Requiere dedicación y estrategia.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <h3 class="color">10. Fomento de la Investigación Transdisciplinaria</h3>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Creación de equipos transdisciplinarios</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como jefe de un departamento de investigación, tu misión es facilitar la formación de equipos para abordar desafíos complejos en salud global, promoviendo la colaboración entre disciplinas.</td></a></em></td>
+          <td>👍 Fomenta soluciones innovadoras.<br>👎 Requiere gestión efectiva de equipos.</td>
+        </tr>
+        <tr>
+          <td>Seminarios transdisciplinarios en línea</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres coordinador académico en una universidad con el objetivo de desarrollar seminarios que promuevan el intercambio entre disciplinas, invitando a expertos de diversas áreas para enriquecer la investigación y educación.</td></a></em></td>
+          <td>👍 Enriquece investigación con perspectivas múltiples.<br>👎 Participación y compromiso pueden variar.</td>
+        </tr>
+        <tr>
+          <td>Plataforma de colaboración virtual</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como innovador tecnológico en una institución de investigación, trabajas en la implementación de una plataforma para la colaboración transdisciplinaria, facilitando el trabajo conjunto de científicos de distintos campos y regiones.</td></a></em></td>
+          <td>👍 Facilita colaboración sin barreras geográficas.<br>👎 Implementación técnica puede ser compleja.</td>
+        </tr>
+        <tr>
+          <td>Fomento de la curiosidad científica</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres el líder de un programa de innovación destinado a estimular la curiosidad científica entre investigadores, incentivando la exploración de áreas fuera de su especialización primaria para fomentar nuevos enfoques y soluciones.</td></a></em></td>
+          <td>👍 Estimula innovación científica.<br>👎 Medición de impacto desafiante.</td>
+        </tr>
+        <tr>
+          <td>Publicaciones transdisciplinarias</td>
+          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como editor de una revista científica, promueves la publicación de investigaciones transdisciplinarias, buscando superar las barreras tradicionales entre disciplinas para abordar problemas complejos de manera holística.</td></a></em></td>
+          <td>👍 Aumenta visibilidad de investigación transdisciplinaria.<br>👎 Aceptación en revistas puede ser reto por naturaleza innovadora.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
 
 </section>
-              
+<section data-name="Medicina Familiar">
+
+  
+  <section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+    <h3 class="color">1. Gestión de Información Clínica</h3>
+    <div class="tabla-casos-wrapper">
+      <table class="tabla-casos">
+        <thead>
+          <tr>
+            <th>Caso de uso</th>
+            <th>Ejemplo de solicitud</th>
+            <th>Evaluación workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Búsqueda de Información Médica Actualizada</strong></td>
+            <td><em>"Busca las últimas guías de tratamiento para la hipertensión arterial"</em></td>
+            <td><span class="emoji-grande">👍</span>Acceso rápido a información actualizada.<br><span class="emoji-grande">👎</span> Depende de la calidad de las fuentes disponibles.</td>
+          </tr>
+          <tr>
+            <td><strong>Resumen de Historias Clínicas</strong></td>
+            <td><em>"Resume la historia clínica de un paciente con diabetes tipo 2 y EPOC"</em></td>
+            <td><span class="emoji-grande">👍</span>Ahorro de tiempo en la revisión de historiales.<br><span class="emoji-grande">👎</span> Riesgo de omitir detalles clínicos cruciales.</td>
+          </tr>
+          <tr>
+            <td><strong>Interpretación de Resultados de Laboratorio</strong></td>
+            <td><em>"Interpreta estos resultados de laboratorio en el contexto de una enfermedad renal crónica"</em></td>
+            <td><span class="emoji-grande">👍</span>Apoyo en la interpretación y contextualización.<br><span class="emoji-grande">👎</span> No reemplaza el juicio clínico del médico.</td>
+          </tr>
+          <tr>
+            <td><strong>Actualizaciones sobre Medicamentos</strong></td>
+            <td><em>"Proporciona información sobre los últimos antidiabéticos lanzados en 2024"</em></td>
+            <td><span class="emoji-grande">👍</span>Conocimiento actualizado de medicamentos.<br><span class="emoji-grande">👎</span> Puede no estar al día con las últimas aprobaciones.</td>
+          </tr>
+          <tr>
+            <td><strong>Generación de Alertas de Salud Pública</strong></td>
+            <td><em>"Alerta sobre las últimas noticias de brotes epidémicos en mi región"</em></td>
+            <td><span class="emoji-grande">👍</span> Información oportuna para prevención.<br><span class="emoji-grande">👎</span> Limitado por la accesibilidad a datos en tiempo real.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+    <h3 class="color">2. Educación del Paciente y Comunicación</h3>
+    <div class="tabla-casos-wrapper">
+      <table class="tabla-casos">
+        <thead>
+          <tr>
+            <th>Caso de uso</th>
+            <th>Ejemplo de solicitud</th>
+            <th>Evaluación workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Explicaciones de Condiciones Médicas</strong></td>
+            <td><em>"Explica la hipertensión arterial de manera comprensible para un paciente"</em></td>
+            <td><span class="emoji-grande">👍</span>Comunicación clara y efectiva.<br><span class="emoji-grande">👎</span> Puede no ajustarse al nivel de comprensión específico del paciente.</td>
+          </tr>
+          <tr>
+            <td><strong>Consejos de Estilo de Vida</strong></td>
+            <td><em>"Proporciona consejos de estilo de vida para un paciente con riesgo de diabetes"</em></td>
+            <td><span class="emoji-grande">👍</span>Fomenta hábitos saludables.<br><span class="emoji-grande">👎</span> Generalizaciones que pueden no aplicarse a casos individuales.</td>
+          </tr>
+          <tr>
+            <td><strong>Preparación para Procedimientos</strong></td>
+            <td><em>"Describe cómo prepararse para una colonoscopia"</em></td>
+            <td><span class="emoji-grande">👍</span>Instrucciones claras y detalladas.<br><span class="emoji-grande">👎</span> No sustituye las instrucciones personalizadas del médico.</td>
+          </tr>
+          <tr>
+            <td><strong>Manejo de Expectativas de Tratamiento</strong></td>
+            <td><em>"Explica los posibles efectos secundarios de los inhibidores de la ECA"</em></td>
+            <td><span class="emoji-grande">👍</span>Información detallada sobre tratamientos.<br><span class="emoji-grande">👎</span> Posible ansiedad en pacientes al conocer efectos adversos.</td>
+          </tr>
+          <tr>
+            <td><strong>Soporte Psicológico Básico</strong></td>
+            <td><em>"Ofrece consejos para manejar la ansiedad relacionada con problemas de salud"</em></td>
+            <td><span class="emoji-grande">👍</span>Apoyo emocional adicional.<br><span class="emoji-grande">👎</span> No reemplaza la terapia profesional.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+    <h3 class="color">3. Soporte en la Toma de Decisiones Clínicas</h3>
+    <div class="tabla-casos-wrapper">
+      <table class="tabla-casos">
+        <thead>
+          <tr>
+            <th>Caso de uso</th>
+            <th>Ejemplo de solicitud</th>
+            <th>Evaluación workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sugerencias de Diagnóstico Diferencial</strong></td>
+            <td><em>"Proporciona un diagnóstico diferencial para síntomas de tos y pérdida de peso"</em></td>
+            <td><span class="emoji-grande">👍</span>Amplia gama de posibilidades diagnósticas.<br><span class="emoji-grande">👎</span> Riesgo de sobrecargar con opciones no relevantes.</td>
+          </tr>
+          <tr>
+            <td><strong>Recomendaciones de Pruebas Diagnósticas</strong></td>
+            <td><em>"Sugiere pruebas diagnósticas para sospecha de enfermedad celiaca"</em></td>
+            <td><span class="emoji-grande">👍</span>Ayuda a considerar todas las pruebas pertinentes.<br><span class="emoji-grande">👎</span> Puede sugerir pruebas innecesarias.</td>
+          </tr>
+          <tr>
+            <td><strong>Identificación de Interacciones Medicamentosas</strong></td>
+            <td><em>"Verifica interacciones para un paciente tomando warfarina y amiodarona"</em></td>
+            <td><span class="emoji-grande">👍</span>Prevención de efectos adversos.<br><span class="emoji-grande">👎</span> Puede no estar actualizado con los medicamentos más recientes.</td>
+          </tr>
+          <tr>
+            <td><strong>Estrategias de Manejo de Enfermedades Crónicas</strong></td>
+            <td><em>"Proporciona un plan de manejo para un paciente con artritis reumatoide"</em></td>
+            <td><span class="emoji-grande">👍</span>Integración de múltiples aspectos del manejo.<br><span class="emoji-grande">👎</span> Falta de personalización para necesidades específicas del paciente.</td>
+          </tr>
+          <tr>
+            <td><strong>Consejos sobre Urgencias Médicas</strong></td>
+            <td><em>"Describe el manejo inicial de un ataque asmático agudo"</em></td>
+            <td><span class="emoji-grande">👍</span>Información rápida en situaciones urgentes.<br><span class="emoji-grande">👎</span> No sustituye la intervención médica directa.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+    <h3 class="color">4. Apoyo en Investigación y Educación Médica</h3>
+    <div class="tabla-casos-wrapper">
+      <table class="tabla-casos">
+        <thead>
+          <tr>
+            <th>Caso de uso</th>
+            <th>Ejemplo de solicitud</th>
+            <th>Evaluación workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Revisión de Literatura Médica</strong></td>
+            <td><em>"Realiza una revisión de literatura sobre las últimas terapias para el manejo de la depresión"</em></td>
+            <td><span class="emoji-grande">👍</span>Acceso rápido a una amplia gama de fuentes.<br><span class="emoji-grande">👎</span> Limitado a fuentes disponibles en línea y puede incluir información desactualizada.</td>
+          </tr>
+          <tr>
+            <td><strong>Desarrollo de Material Educativo</strong></td>
+            <td><em>"Crea un folleto informativo sobre la prevención de la obesidad para pacientes"</em></td>
+            <td><span class="emoji-grande">👍</span>Generación rápida de materiales educativos personalizados.<br><span class="emoji-grande">👎</span> Requiere revisión para asegurar precisión clínica.</td>
+          </tr>
+          <tr>
+            <td><strong>Asistencia en la Escritura de Artículos Científicos</strong></td>
+            <td><em>"Ayuda a redactar la introducción de un artículo sobre hipertensión arterial"</em></td>
+            <td><span class="emoji-grande">👍</span>Facilita la redacción y estructuración de manuscritos.<br><span class="emoji-grande">👎</span> Puede requerir una revisión exhaustiva para garantizar la precisión y originalidad.</td>
+          </tr>
+          <tr>
+            <td><strong>Elaboración de Casos Clínicos para Enseñanza</strong></td>
+            <td><em>"Desarrolla un caso clínico interactivo sobre el manejo de la EPOC"</em></td>
+            <td><span class="emoji-grande">👍</span>Enriquece el material educativo con ejemplos prácticos.<br><span class="emoji-grande">👎</span> Necesita ajustes para garantizar la relevancia clínica y educativa.</td>
+          </tr>
+          <tr>
+            <td><strong>Actualización Continua en Medicina</strong></td>
+            <td><em>"Informa sobre los últimos avances en el tratamiento del VIH"</em></td>
+            <td><span class="emoji-grande">👍</span>Mantiene al médico actualizado con los últimos avances.<br><span class="emoji-grande">👎</span> Puede carecer de profundidad en análisis de estudios recientes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+    <h3 class="color">5. Automatización de Tareas Administrativas</h3>
+    <div class="tabla-casos-wrapper">
+      <table class="tabla-casos">
+        <thead>
+          <tr>
+            <th>Caso de uso</th>
+            <th>Ejemplo de solicitud</th>
+            <th>Evaluación workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Gestión de Citas</strong></td>
+            <td><em>"Organiza un horario de citas para la próxima semana teniendo en cuenta las preferencias de los pacientes"</em></td>
+            <td><span class="emoji-grande">👍</span>Optimización del tiempo y recursos.<br><span class="emoji-grande">👎</span> Requiere integración con sistemas de gestión de pacientes existentes.</td>
+          </tr>
+          <tr>
+            <td><strong>Documentación y Codificación Médica</strong></td>
+            <td><em>"Codifica este informe médico según la Clasificación Internacional de Enfermedades"</em></td>
+            <td><span class="emoji-grande">👍</span>Ahorro de tiempo en tareas repetitivas.<br><span class="emoji-grande">👎</span> Riesgo de errores en la codificación si no se revisa adecuadamente.</td>
+          </tr>
+          <tr>
+            <td><strong>Gestión de Reclamaciones de Seguros</strong></td>
+            <td><em>"Prepara una reclamación de seguro para un procedimiento de atención médica reciente"</em></td>
+            <td><span class="emoji-grande">👍</span>Reduce la carga administrativa.<br><span class="emoji-grande">👎</span> Puede requerir ajustes manuales según las políticas específicas de seguros.</td>
+          </tr>
+          <tr>
+            <td><strong>Automatización de Recordatorios de Citas</strong></td>
+            <td><em>"Envía recordatorios automáticos a pacientes para sus próximas citas"</em></td>
+            <td><span class="emoji-grande">👍</span>Mejora la adherencia del paciente a las citas.<br><span class="emoji-grande">👎</span> Puede requerir consentimiento del paciente para comunicaciones automáticas.</td>
+          </tr>
+          <tr>
+            <td><strong>Compilación de Informes Administrativos</strong></td>
+            <td><em>"Genera un informe mensual de las estadísticas de la clínica"</em></td>
+            <td><span class="emoji-grande">👍</span>Facilita el seguimiento y la gestión administrativa.<br><span class="emoji-grande">👎</span> Puede requerir integración de datos de múltiples fuentes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+    <h3 class="color">6. Asistencia en Diagnóstico y Tratamiento</h3>
+    <div class="tabla-casos-wrapper">
+      <table class="tabla-casos">
+        <thead>
+          <tr>
+            <th>Caso de uso</th>
+            <th>Ejemplo de solicitud</th>
+            <th>Evaluación workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sugerencias de Tratamiento Basadas en Síntomas</strong></td>
+            <td><em>"Proporciona opciones de tratamiento para un paciente con síndrome del intestino irritable"</em></td>
+            <td><span class="emoji-grande">👍</span>Diversas opciones terapéuticas basadas en síntomas y evidencia.<br><span class="emoji-grande">👎</span> Necesidad de validación por el médico para cada caso específico.</td>
+          </tr>
+          <tr>
+            <td><strong>Evaluación de Riesgos de Tratamientos</strong></td>
+            <td><em>"Evalúa los riesgos de prescribir NSAIDs a un paciente con antecedentes de úlcera péptica"</em></td>
+            <td><span class="emoji-grande">👍</span>Identificación rápida de riesgos potenciales.<br><span class="emoji-grande">👎</span> No reemplaza la evaluación clínica completa.</td>
+          </tr>
+          <tr>
+            <td><strong>Soporte en Interpretación de Imágenes Médicas</strong></td>
+            <td><em>"Interpreta estos resultados de rayos X de tórax en un paciente con tos crónica"</em></td>
+            <td><span class="emoji-grande">👍</span>Asistencia inicial en la interpretación de imágenes.<br><span class="emoji-grande">👎</span> No puede reemplazar la experiencia de un radiólogo.</td>
+          </tr>
+          <tr>
+            <td><strong>Guía de Referencia para Procedimientos</strong></td>
+            <td><em>"Proporciona un paso a paso para realizar una punción lumbar"</em></td>
+            <td><span class="emoji-grande">👍</span>Soporte útil para procedimientos menos frecuentes.<br><span class="emoji-grande">👎</span> No sustituye la experiencia y capacitación práctica.</td>
+          </tr>
+          <tr>
+            <td><strong>Análisis de Casos Complejos</strong></td>
+            <td><em>"Analiza este caso clínico complejo de un paciente con múltiples comorbilidades"</em></td>
+            <td><span class="emoji-grande">👍</span>Ofrece una perspectiva integral y multidisciplinaria.<br><span class="emoji-grande">👎</span> Puede no abarcar todas las particularidades del caso.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+    <h3 class="color">7. Manejo de Salud Mental y Bienestar</h3>
+    <div class="tabla-casos-wrapper">
+      <table class="tabla-casos">
+        <thead>
+          <tr>
+            <th>Caso de uso</th>
+            <th>Ejemplo de solicitud</th>
+            <th>Evaluación workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Identificación de Síntomas de Trastornos Mentales</strong></td>
+            <td><em>"Lista los síntomas comunes de la depresión mayor en adultos"</em></td>
+            <td><span class="emoji-grande">👍</span>Ayuda en el reconocimiento temprano de trastornos.<br><span class="emoji-grande">👎</span> No sustituye el diagnóstico clínico.</td>
+          </tr>
+          <tr>
+            <td><strong>Estrategias de Manejo del Estrés</strong></td>
+            <td><em>"Proporciona técnicas de manejo del estrés para pacientes con ansiedad leve"</em></td>
+            <td><span class="emoji-grande">👍</span>Ofrece soporte adicional en salud mental.<br><span class="emoji-grande">👎</span> Puede no ser adecuado para casos graves.</td>
+          </tr>
+          <tr>
+            <td><strong>Información sobre Medicación Psiquiátrica</strong></td>
+            <td><em>"Explica los efectos secundarios del sertralina"</em></td>
+            <td><span class="emoji-grande">👍</span>Información detallada sobre medicamentos.<br><span class="emoji-grande">👎</span> No reemplaza el asesoramiento farmacológico.</td>
+          </tr>
+          <tr>
+            <td><strong>Soporte en Terapia Cognitivo-Conductual</strong></td>
+            <td><em>"Genera ejercicios de TCC para pacientes con trastorno obsesivo-compulsivo"</em></td>
+            <td><span class="emoji-grande">👍</span>Herramienta complementaria en terapia.<br><span class="emoji-grande">👎</span> No reemplaza la terapia personalizada.</td>
+          </tr>
+          <tr>
+            <td><strong>Prevención de Burnout en Profesionales de Salud</strong></td>
+            <td><em>"Proporciona estrategias para prevenir el burnout en médicos"</em></td>
+            <td><span class="emoji-grande">👍</span>Promueve el bienestar del personal médico.<br><span class="emoji-grande">👎</span> Puede no abordar casos específicos de burnout.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+    <h3 class="color">8. Integración de Tecnología y Telemedicina</h3>
+    <div class="tabla-casos-wrapper">
+      <table class="tabla-casos">
+        <thead>
+          <tr>
+            <th>Caso de uso</th>
+            <th>Ejemplo de solicitud</th>
+            <th>Evaluación workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Consultas Virtuales Efectivas</strong></td>
+            <td><em>"Proporciona un guion para realizar consultas virtuales de forma efectiva"</em></td>
+            <td><span class="emoji-grande">👍</span>Mejora la eficiencia de las consultas online.<br><span class="emoji-grande">👎</span> Puede no adaptarse a todas las situaciones clínicas.</td>
+          </tr>
+          <tr>
+            <td><strong>Gestión de Datos de Salud Electrónicos</strong></td>
+            <td><em>"Ayuda a organizar y sintetizar los datos de un registro de salud electrónico"</em></td>
+            <td><span class="emoji-grande">👍</span>Facilita la gestión eficiente de datos.<br><span class="emoji-grande">👎</span> Riesgos de privacidad y seguridad de datos.</td>
+          </tr>
+          <tr>
+            <td><strong>Asesoramiento en Tecnología de Salud</strong></td>
+            <td><em>"Recomienda tecnologías emergentes para mejorar la atención en telemedicina"</em></td>
+            <td><span class="emoji-grande">👍</span>Mantiene al médico actualizado con innovaciones.<br><span class="emoji-grande">👎</span> Puede no cubrir todas las nuevas tecnologías disponibles.</td>
+          </tr>
+          <tr>
+            <td><strong>Monitoreo Remoto del Paciente</strong></td>
+            <td><em>"Proporciona un plan para implementar el monitoreo remoto en pacientes crónicos"</em></td>
+            <td><span class="emoji-grande">👍</span>Extiende la atención más allá del consultorio.<br><span class="emoji-grande">👎</span> Requiere infraestructura y formación adecuada.</td>
+          </tr>
+          <tr>
+            <td><strong>Optimización de Portales de Pacientes</strong></td>
+            <td><em>"Sugiere mejoras para el portal en línea de pacientes de una clínica"</em></td>
+            <td><span class="emoji-grande">👍</span>Mejora la comunicación y acceso a información.<br><span class="emoji-grande">👎</span> Depende de las limitaciones tecnológicas existentes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+    <h3 class="color">9. Apoyo en Situaciones de Emergencia y Cuidados Críticos</h3>
+    <div class="tabla-casos-wrapper">
+      <table class="tabla-casos">
+        <thead>
+          <tr>
+            <th>Caso de uso</th>
+            <th>Ejemplo de solicitud</th>
+            <th>Evaluación workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Protocolos de Emergencia</strong></td>
+            <td><em>"Describe los pasos iniciales en el manejo de un infarto agudo de miocardio"</em></td>
+            <td><span class="emoji-grande">👍</span>Información rápida y precisa en emergencias.<br><span class="emoji-grande">👎</span> No sustituye la capacitación en emergencias médicas.</td>
+          </tr>
+          <tr>
+            <td><strong>Manejo de Desastres y Pandemias</strong></td>
+            <td><em>"Brinda un plan de acción para manejar un brote de influenza en la comunidad"</em></td>
+            <td><span class="emoji-grande">👍</span>Soporte en planificación y respuesta.<br><span class="emoji-grande">👎</span> Puede no cubrir todas las variables en una crisis real.</td>
+          </tr>
+          <tr>
+            <td><strong>Soporte en Cuidados Intensivos</strong></td>
+            <td><em>"Lista las consideraciones clave en el manejo de pacientes en la UCI con COVID-19"</em></td>
+            <td><span class="emoji-grande">👍</span>Asistencia en manejo de casos complejos.<br><span class="emoji-grande">👎</span> Requiere actualizaciones constantes y conocimiento especializado.</td>
+          </tr>
+          <tr>
+            <td><strong>Capacitación en Reanimación Cardiopulmonar</strong></td>
+            <td><em>"Genera un material de capacitación para RCP básica"</em></td>
+            <td><span class="emoji-grande">👍</span>Apoya la formación en habilidades críticas.<br><span class="emoji-grande">👎</span> No reemplaza la capacitación práctica.</td>
+          </tr>
+          <tr>
+            <td><strong>Guía de Triaje en Emergencias</strong></td>
+            <td><em>"Proporciona un sistema de triaje para usar en un evento de múltiples víctimas"</em></td>
+            <td><span class="emoji-grande">👍</span>Ayuda en la organización y priorización de casos.<br><span class="emoji-grande">👎</span> Requiere adaptación a las circunstancias específicas del evento.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+    <h3 class="color">10. Gestión de la Salud Poblacional y Prevención</h3>
+    <div class="tabla-casos-wrapper">
+      <table class="tabla-casos">
+        <thead>
+          <tr>
+            <th>Caso de uso</th>
+            <th>Ejemplo de solicitud</th>
+            <th>Evaluación workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Estrategias de Prevención de Enfermedades Crónicas</strong></td>
+            <td><em>"Proporciona un plan de prevención para la diabetes tipo 2 en poblaciones de alto riesgo"</em></td>
+            <td><span class="emoji-grande">👍</span>Apoyo en el desarrollo de estrategias preventivas personalizadas.<br><span class="emoji-grande">👎</span> Requiere ajuste según las características específicas de cada población.</td>
+          </tr>
+          <tr>
+            <td><strong>Promoción de la Salud y Bienestar</strong></td>
+            <td><em>"Desarrolla un programa de promoción de la salud mental para la comunidad"</em></td>
+            <td><span class="emoji-grande">👍</span>Fomenta el bienestar general y la concienciación.<br><span class="emoji-grande">👎</span> Puede no ser suficientemente específico para necesidades individuales.</td>
+          </tr>
+          <tr>
+            <td><strong>Gestión de Campañas de Vacunación</strong></td>
+            <td><em>"Crea un plan de comunicación para una campaña de vacunación contra la gripe"</em></td>
+            <td><span class="emoji-grande">👍</span>Facilita la organización y difusión de campañas de salud pública.<br><span class="emoji-grande">👎</span> Requiere complementarse con estrategias locales y conocimiento del terreno.</td>
+          </tr>
+          <tr>
+            <td><strong>Educación para la Salud en Escuelas</strong></td>
+            <td><em>"Elabora un programa educativo sobre nutrición y ejercicio para niños de escuela primaria"</em></td>
+            <td><span class="emoji-grande">👍</span>Promueve hábitos saludables desde la infancia.<br><span class="emoji-grande">👎</span> Necesita adaptarse a diferentes grupos de edad y contextos culturales.</td>
+          </tr>
+          <tr>
+            <td><strong>Análisis de Tendencias de Salud Pública</strong></td>
+            <td><em>"Analiza las tendencias recientes en enfermedades cardiovasculares en la región"</em></td>
+            <td><span class="emoji-grande">👍</span>Ayuda a identificar patrones y necesidades de salud en la comunidad.<br><span class="emoji-grande">👎</span> La interpretación de datos puede requerir conocimientos estadísticos avanzados.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  </section>
+  <section data-name="Psiquiatría">
+    <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+      <h3 class="color">1. Diagnóstico y Evaluación</h3>
+      <div class="tabla-casos-wrapper">
+        <table class="tabla-casos">
+          <thead>
+            <tr>
+              <th>Caso de uso</th>
+              <th>Ejemplo de solicitud</th>
+              <th>Evaluación workflow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Análisis de Síntomas</strong></td>
+              <td><em>"Analiza estos síntomas y sugiere posibles diagnósticos psiquiátricos."</em></td>
+              <td><span class="emoji-grande">👍</span>Facilita la identificación rápida de posibles condiciones.<br><span class="emoji-grande">👎</span> Puede no capturar la complejidad del caso humano.</td>
+            </tr>
+            <tr>
+              <td><strong>Interpretación de Test Psicológicos</strong></td>
+              <td><em>"Interpreta los resultados de este test psicológico y sugiere implicaciones clínicas."</em></td>
+              <td><span class="emoji-grande">👍</span>Proporciona una segunda opinión rápida.<br><span class="emoji-grande">👎</span> No reemplaza la experiencia clínica.</td>
+            </tr>
+            <tr>
+              <td><strong>Análisis de Historial del Paciente</strong></td>
+              <td><em>"Examina este historial clínico y destaca patrones relevantes para la psiquiatría."</em></td>
+              <td><span class="emoji-grande">👍</span>Ayuda a identificar tendencias o problemas recurrentes.<br><span class="emoji-grande">👎</span> Riesgo de interpretaciones erróneas.</td>
+            </tr>
+            <tr>
+              <td><strong>Evaluación de Riesgo de Suicidio</strong></td>
+              <td><em>"Evalúa el riesgo de suicidio basado en esta transcripción de la sesión."</em></td>
+              <td><span class="emoji-grande">👍</span>Apoyo en la evaluación de riesgo.<br><span class="emoji-grande">👎</span> No sustituye el juicio clínico.</td>
+            </tr>
+            <tr>
+              <td><strong>Seguimiento de Síntomas</strong></td>
+              <td><em>"Analiza el progreso de estos síntomas a lo largo del tiempo."</em></td>
+              <td><span class="emoji-grande">👍</span>Ofrece una visión objetiva del progreso.<br><span class="emoji-grande">👎</span> Puede no capturar matices subjetivos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+      <h3 class="color">2. Terapia y Consejería</h3>
+      <div class="tabla-casos-wrapper">
+        <table class="tabla-casos">
+          <thead>
+            <tr>
+              <th>Caso de uso</th>
+              <th>Ejemplo de solicitud</th>
+              <th>Evaluación workflow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Generación de Planes Terapéuticos</strong></td>
+              <td><em>"Crea un plan terapéutico basado en este diagnóstico."</em></td>
+              <td><span class="emoji-grande">👍</span>Aporta ideas innovadoras.<br><span class="emoji-grande">👎</span> Requiere adaptación individualizada.</td>
+            </tr>
+            <tr>
+              <td><strong>Ideas para Intervenciones</strong></td>
+              <td><em>"Sugiere técnicas de intervención para trastorno de ansiedad."</em></td>
+              <td><span class="emoji-grande">👍</span>Ofrece una variedad de opciones.<br><span class="emoji-grande">👎</span> Puede no ajustarse a necesidades específicas.</td>
+            </tr>
+            <tr>
+              <td><strong>Manejo de Crisis</strong></td>
+              <td><em>"Proporciona un guion para manejar una crisis de ansiedad."</em></td>
+              <td><span class="emoji-grande">👍</span>Ayuda en situaciones inmediatas.<br><span class="emoji-grande">👎</span> No reemplaza la intervención humana en crisis.</td>
+            </tr>
+            <tr>
+              <td><strong>Soporte para Terapia Cognitivo-Conductual</strong></td>
+              <td><em>"Desarrolla ejercicios de TCC para la depresión."</em></td>
+              <td><span class="emoji-grande">👍</span>Enriquece el material terapéutico.<br><span class="emoji-grande">👎</span> Necesidad de personalización.</td>
+            </tr>
+            <tr>
+              <td><strong>Estrategias de Afrontamiento</strong></td>
+              <td><em>"Lista estrategias de afrontamiento para el estrés postraumático."</em></td>
+              <td><span class="emoji-grande">👍</span>Amplia gama de estrategias.<br><span class="emoji-grande">👎</span> Puede requerir ajustes clínicos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    
+    <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+      <h3 class="color">3. Formación y Educación Continua</h3>
+      <div class="tabla-casos-wrapper">
+        <table class="tabla-casos">
+          <thead>
+            <tr>
+              <th>Caso de uso</th>
+              <th>Ejemplo de solicitud</th>
+              <th>Evaluación workflow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Actualización en Psiquiatría</strong></td>
+              <td><em>"Resume las últimas investigaciones sobre terapia farmacológica en psiquiatría."</em></td>
+              <td><span class="emoji-grande">👍</span>Mantiene actualizado al profesional.<br><span class="emoji-grande">👎</span> Puede omitir investigaciones recientes no incluidas en su entrenamiento.</td>
+            </tr>
+            <tr>
+              <td><strong>Material de Formación</strong></td>
+              <td><em>"Genera material didáctico sobre trastornos de personalidad."</em></td>
+              <td><span class="emoji-grande">👍</span>Facilita la creación de recursos educativos.<br><span class="emoji-grande">👎</span> Requiere revisión y adaptación.</td>
+            </tr>
+            <tr>
+              <td><strong>Preparación para Exámenes</strong></td>
+              <td><em>"Proporciona preguntas tipo examen sobre psicofarmacología."</em></td>
+              <td><span class="emoji-grande">👍</span>Excelente para autoevaluación.<br><span class="emoji-grande">👎</span> Las preguntas pueden no reflejar la complejidad real de los exámenes.</td>
+            </tr>
+            <tr>
+              <td><strong>Estudios de Caso</strong></td>
+              <td><em>"Crea un estudio de caso para trastorno bipolar."</em></td>
+              <td><span class="emoji-grande">👍</span>Ayuda a entender aplicaciones prácticas.<br><span class="emoji-grande">👎</span> Los casos generados pueden ser demasiado genéricos.</td>
+            </tr>
+            <tr>
+              <td><strong>Debates Éticos</strong></td>
+              <td><em>"Presenta argumentos sobre dilemas éticos en psiquiatría."</em></td>
+              <td><span class="emoji-grande">👍</span>Fomenta el pensamiento crítico.<br><span class="emoji-grande">👎</span> Puede carecer de matices específicos de casos reales.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+      <h3 class="color">4. Investigación y Publicación</h3>
+      <div class="tabla-casos-wrapper">
+        <table class="tabla-casos">
+          <thead>
+            <tr>
+              <th>Caso de uso</th>
+              <th>Ejemplo de solicitud</th>
+              <th>Evaluación workflow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Generación de Hipótesis</strong></td>
+              <td><em>"Sugiere hipótesis de investigación para el estudio del TEPT."</em></td>
+              <td><span class="emoji-grande">👍</span>Fomenta ideas innovadoras.<br><span class="emoji-grande">👎</span> Las hipótesis pueden necesitar validación adicional.</td>
+            </tr>
+            <tr>
+              <td><strong>Análisis de Datos</strong></td>
+              <td><em>"Realiza un análisis preliminar de estos datos de investigación."</em></td>
+              <td><span class="emoji-grande">👍</span>Agiliza el proceso de análisis.<br><span class="emoji-grande">👎</span> No reemplaza el análisis estadístico profesional.</td>
+            </tr>
+            <tr>
+              <td><strong>Redacción de Artículos</strong></td>
+              <td><em>"Ayúdame a estructurar un artículo sobre terapias psicodinámicas."</em></td>
+              <td><span class="emoji-grande">👍</span>Asistencia en la organización y redacción.<br><span class="emoji-grande">👎</span> Requiere revisión exhaustiva.</td>
+            </tr>
+            <tr>
+              <td><strong>Revisión Bibliográfica</strong></td>
+              <td><em>"Realiza una revisión bibliográfica sobre tratamientos para la esquizofrenia."</em></td>
+              <td><span class="emoji-grande">👍</span>Ahorro de tiempo en recopilación de información.<br><span class="emoji-grande">👎</span> Limitado a las fuentes en su base de datos.</td>
+            </tr>
+            <tr>
+              <td><strong>Resúmenes de Conferencias</strong></td>
+              <td><em>"Resume las ponencias clave de esta conferencia de psiquiatría."</em></td>
+              <td><span class="emoji-grande">👍</span>Permite una rápida actualización.<br><span class="emoji-grande">👎</span> Puede omitir detalles clave de las presentaciones.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+      <h3 class="color">5. Gestión de la Información Clínica</h3>
+      <div class="tabla-casos-wrapper">
+        <table class="tabla-casos">
+          <thead>
+            <tr>
+              <th>Caso de uso</th>
+              <th>Ejemplo de solicitud</th>
+              <th>Evaluación workflow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Organización de Historiales Clínicos</strong></td>
+              <td><em>"Ayúdame a organizar y resumir estos historiales clínicos."</em></td>
+              <td><span class="emoji-grande">👍</span>Mejora la gestión de datos del paciente.<br><span class="emoji-grande">👎</span> Requiere verificación para precisión.</td>
+            </tr>
+            <tr>
+              <td><strong>Análisis de Tendencias de Tratamiento</strong></td>
+              <td><em>"Identifica tendencias en los tratamientos prescritos en estos casos."</em></td>
+              <td><span class="emoji-grande">👍</span>Ofrece perspectivas sobre prácticas clínicas.<br><span class="emoji-grande">👎</span> Puede no reflejar la individualidad de cada caso.</td>
+            </tr>
+            <tr>
+              <td><strong>Creación de Bases de Datos de Casos</strong></td>
+              <td><em>"Desarrolla una base de datos para seguimiento de casos de depresión."</em></td>
+              <td><span class="emoji-grande">👍</span>Facilita el seguimiento y análisis.<br><span class="emoji-grande">👎</span> Necesita mantenimiento y actualización constante.</td>
+            </tr>
+            <tr>
+              <td><strong>Resumen de Sesiones Terapéuticas</strong></td>
+              <td><em>"Resume las notas clave de estas sesiones terapéuticas."</em></td>
+              <td><span class="emoji-grande">👍</span>Ayuda en la documentación y revisión de sesiones.<br><span class="emoji-grande">👎</span> Puede perder detalles importantes.</td>
+            </tr>
+            <tr>
+              <td><strong>Análisis de Efectividad de Tratamientos</strong></td>
+              <td><em>"Evalúa la efectividad de estos tratamientos basándote en los historiales."</em></td>
+              <td><span class="emoji-grande">👍</span>Ofrece una visión general del impacto del tratamiento.<br><span class="emoji-grande">👎</span> No sustituye un análisis clínico detallado.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+      <h3 class="color">6. Comunicación con Pacientes y Familias</h3>
+      <div class="tabla-casos-wrapper">
+        <table class="tabla-casos">
+          <thead>
+            <tr>
+              <th>Caso de uso</th>
+              <th>Ejemplo de solicitud</th>
+              <th>Evaluación workflow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Explicaciones de Diagnósticos</strong></td>
+              <td><em>"Elabora una explicación simple de este diagnóstico para un paciente."</em></td>
+              <td><span class="emoji-grande">👍</span>Facilita la comunicación clara con los pacientes.<br><span class="emoji-grande">👎</span> Puede requerir adaptaciones para casos específicos.</td>
+            </tr>
+            <tr>
+              <td><strong>Guiones para Educación del Paciente</strong></td>
+              <td><em>"Crea un guion para educar a los pacientes sobre la medicación antipsicótica."</em></td>
+              <td><span class="emoji-grande">👍</span>Ofrece información estructurada y clara.<br><span class="emoji-grande">👎</span> Necesita personalización para cada paciente.</td>
+            </tr>
+            <tr>
+              <td><strong>Material de Apoyo para Familias</strong></td>
+              <td><em>"Genera material de apoyo para familias de pacientes con trastorno de ansiedad."</em></td>
+              <td><span class="emoji-grande">👍</span>Proporciona recursos útiles para el apoyo familiar.<br><span class="emoji-grande">👎</span> Generalización en los materiales.</td>
+            </tr>
+            <tr>
+              <td><strong>Estrategias de Comunicación en Crisis</strong></td>
+              <td><em>"Proporciona estrategias de comunicación para manejar crisis emocionales."</em></td>
+              <td><span class="emoji-grande">👍</span>Ayuda en la preparación para situaciones difíciles.<br><span class="emoji-grande">👎</span> No reemplaza el entrenamiento en manejo de crisis.</td>
+            </tr>
+            <tr>
+              <td><strong>Información sobre Recursos Comunitarios</strong></td>
+              <td><em>"Lista recursos comunitarios disponibles para el tratamiento de adicciones."</em></td>
+              <td><span class="emoji-grande">👍</span>Amplía las opciones de soporte para los pacientes.<br><span class="emoji-grande">👎</span> Requiere actualización constante de la información.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+      <h3 class="color">7. Coordinación de Cuidados</h3>
+      <div class="tabla-casos-wrapper">
+        <table class="tabla-casos">
+          <thead>
+            <tr>
+              <th>Caso de uso</th>
+              <th>Ejemplo de solicitud</th>
+              <th>Evaluación workflow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Planificación de Cuidados Integrados</strong></td>
+              <td><em>"Desarrolla un plan de cuidados integrados para un paciente con trastorno bipolar."</em></td>
+              <td><span class="emoji-grande">👍</span>Apoya en la coordinación entre distintos profesionales.<br><span class="emoji-grande">👎</span> Puede no considerar todos los aspectos del cuidado individual.</td>
+            </tr>
+            <tr>
+              <td><strong>Gestión de Referencias</strong></td>
+              <td><em>"Crea una lista de especialistas para referencias de pacientes con trastornos de alimentación."</em></td>
+              <td><span class="emoji-grande">👍</span>Agiliza el proceso de referencia.<br><span class="emoji-grande">👎</span> La lista necesita verificación y actualización.</td>
+            </tr>
+            <tr>
+              <td><strong>Seguimiento Post-Alta</strong></td>
+              <td><em>"Proporciona un plan de seguimiento post-alta para un paciente con depresión mayor."</em></td>
+              <td><span class="emoji-grande">👍</span>Ayuda en la continuidad del cuidado.<br><span class="emoji-grande">👎</span> Requiere adaptación a cada caso.</td>
+            </tr>
+            <tr>
+              <td><strong>Integración con Otros Servicios de Salud</strong></td>
+              <td><em>"Sugiere formas de integrar la atención psiquiátrica con otros servicios de salud."</em></td>
+              <td><span class="emoji-grande">👍</span>Promueve un enfoque holístico.<br><span class="emoji-grande">👎</span> Necesita una evaluación detallada de la red de servicios.</td>
+            </tr>
+            <tr>
+              <td><strong>Coordinación con Atención Primaria</strong></td>
+              <td><em>"Elabora un protocolo de comunicación entre psiquiatría y atención primaria."</em></td>
+              <td><span class="emoji-grande">👍</span>Facilita la colaboración efectiva.<br><span class="emoji-grande">👎</span> Necesita ser personalizado para cada entorno clínico.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+      <h3 class="color">8. Gestión y Administración Clínica</h3>
+      <div class="tabla-casos-wrapper">
+        <table class="tabla-casos">
+          <thead>
+            <tr>
+              <th>Caso de uso</th>
+              <th>Ejemplo de solicitud</th>
+              <th>Evaluación workflow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Optimización de Procesos Clínicos</strong></td>
+              <td><em>"Propón mejoras para optimizar los procesos clínicos en esta clínica psiquiátrica."</em></td>
+              <td><span class="emoji-grande">👍</span>Identifica áreas de mejora.<br><span class="emoji-grande">👎</span> Las sugerencias necesitan validación clínica.</td>
+            </tr>
+            <tr>
+              <td><strong>Gestión de Horarios y Citas</strong></td>
+              <td><em>"Desarrolla un sistema para gestionar eficientemente los horarios y citas."</em></td>
+              <td><span class="emoji-grande">👍</span>Mejora la organización del tiempo.<br><span class="emoji-grande">👎</span> Requiere integración con sistemas existentes.</td>
+            </tr>
+            <tr>
+              <td><strong>Políticas de Privacidad y Confidencialidad</strong></td>
+              <td><em>"Elabora un documento sobre políticas de privacidad y confidencialidad en la práctica psiquiátrica."</em></td>
+              <td><span class="emoji-grande">👍</span>Ayuda a cumplir con normativas legales.<br><span class="emoji-grande">👎</span> Requiere adaptación a leyes locales.</td>
+            </tr>
+            <tr>
+              <td><strong>Evaluación de Satisfacción del Paciente</strong></td>
+              <td><em>"Crea una encuesta para evaluar la satisfacción del paciente con el tratamiento recibido."</em></td>
+              <td><span class="emoji-grande">👍</span>Facilita la retroalimentación de los pacientes.<br><span class="emoji-grande">👎</span> Puede no capturar todas las perspectivas del paciente.</td>
+            </tr>
+            <tr>
+              <td><strong>Desarrollo de Protocolos de Emergencia</strong></td>
+              <td><em>"Genera protocolos para manejar emergencias psiquiátricas en la clínica."</em></td>
+              <td><span class="emoji-grande">👍</span>Prepara al personal para situaciones críticas.<br><span class="emoji-grande">👎</span> Requiere revisión y práctica regular.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+      <h3 class="color">9. Ética y Consideraciones Legales</h3>
+      <div class="tabla-casos-wrapper">
+        <table class="tabla-casos">
+          <thead>
+            <tr>
+              <th>Caso de uso</th>
+              <th>Ejemplo de solicitud</th>
+              <th>Evaluación workflow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Discusiones sobre Consentimiento Informado</strong></td>
+              <td><em>"Desarrolla un guion para explicar el consentimiento informado en psiquiatría."</em></td>
+              <td><span class="emoji-grande">👍</span>Clarifica aspectos legales importantes.<br><span class="emoji-grande">👎</span> Necesita ajustarse a normativas específicas.</td>
+            </tr>
+            <tr>
+              <td><strong>Debates sobre Privacidad de Datos</strong></td>
+              <td><em>"Analiza las implicaciones de la privacidad de datos en la práctica psiquiátrica."</em></td>
+              <td><span class="emoji-grande">👍</span>Promueve la conciencia sobre la privacidad.<br><span class="emoji-grande">👎</span> No abarca todos los aspectos legales.</td>
+            </tr>
+            <tr>
+              <td><strong>Manejo de Conflictos Éticos</strong></td>
+              <td><em>"Proporciona ejemplos de cómo manejar conflictos éticos en psiquiatría."</em></td>
+              <td><span class="emoji-grande">👍</span>Fomenta la resolución ética de problemas.<br><span class="emoji-grande">👎</span> Los ejemplos pueden no cubrir todos los escenarios posibles.</td>
+            </tr>
+            <tr>
+              <td><strong>Directrices sobre Relaciones con Pacientes</strong></td>
+              <td><em>"Crea directrices sobre la relación terapéutica entre psiquiatras y pacientes."</em></td>
+              <td><span class="emoji-grande">👍</span>Establece límites claros y éticos.<br><span class="emoji-grande">👎</span> Requiere ser adaptado a distintas culturas y contextos.</td>
+            </tr>
+            <tr>
+              <td><strong>Evaluación de Competencia del Paciente</strong></td>
+              <td><em>"Elabora un protocolo para evaluar la competencia del paciente en decisiones clínicas."</em></td>
+              <td><span class="emoji-grande">👍</span>Asiste en decisiones complejas de capacidad.<br><span class="emoji-grande">👎</span> Requiere la intervención de un experto en ética.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+      <h3 class="color">10. Salud Mental y Bienestar del Profesional</h3>
+      <div class="tabla-casos-wrapper">
+        <table class="tabla-casos">
+          <thead>
+            <tr>
+              <th>Caso de uso</th>
+              <th>Ejemplo de solicitud</th>
+              <th>Evaluación workflow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Estrategias de Autocuidado</strong></td>
+              <td><em>"Sugiere estrategias de autocuidado para psiquiatras."</em></td>
+              <td><span class="emoji-grande">👍</span>Promueve el bienestar del profesional.<br><span class="emoji-grande">👎</span> Las estrategias pueden necesitar personalización.</td>
+            </tr>
+            <tr>
+              <td><strong>Manejo del Estrés Laboral</strong></td>
+              <td><em>"Ofrece consejos para manejar el estrés laboral en psiquiatría."</em></td>
+              <td><span class="emoji-grande">👍</span>Ayuda a mantener un equilibrio saludable.<br><span class="emoji-grande">👎</span> No reemplaza el apoyo profesional.</td>
+            </tr>
+            <tr>
+              <td><strong>Prevención del Burnout</strong></td>
+              <td><em>"Elabora un plan para prevenir el burnout en profesionales de la salud mental."</em></td>
+              <td><span class="emoji-grande">👍</span>Aborda un problema crítico en la profesión.<br><span class="emoji-grande">👎</span> Puede requerir adaptaciones individuales.</td>
+            </tr>
+            <tr>
+              <td><strong>Apoyo para el Desarrollo Profesional</strong></td>
+              <td><em>"Proporciona recursos para el desarrollo profesional continuo en psiquiatría."</em></td>
+              <td><span class="emoji-grande">👍</span>Fomenta el crecimiento profesional.<br><span class="emoji-grande">👎</span> La selección de recursos puede ser limitada.</td>
+            </tr>
+            <tr>
+              <td><strong>Técnicas de Mindfulness y Relajación</strong></td>
+              <td><em>"Enseña técnicas de mindfulness y relajación adaptadas a profesionales de la salud mental."</em></td>
+              <td><span class="emoji-grande">👍</span>Mejora el bienestar personal y profesional.<br><span class="emoji-grande">👎</span> Requiere práctica y compromiso regular.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+        
+    
+  
+  
+  </section>         
         </div>
     </div>
 
