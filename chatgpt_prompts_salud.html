@@ -326,6 +326,9 @@ table a:after {
     text-shadow: 3px 3px 4px #000000;
   }
 
+
+
+
   h1.color,
   h2.color,
   h3.color,
@@ -639,6 +642,7 @@ table a:after {
 .shadow-oval {
   position: relative;
   text-align: center;
+  
 }
 
 .shadow-oval:after {
@@ -654,8 +658,38 @@ table a:after {
   filter: blur(8px); /* Difumina los bordes de la sombra */
   z-index: -1; /* Coloca la sombra detrás del texto */
 }
+.shadow-oval-slide {
+  margin-bottom: 20px; /* Espacio adicional debajo del título para la sombra */
+}
 
+.shadow-oval-slide h3 {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
 
+.shadow-oval-slide h3::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 90%; 
+  left: 50%;
+  width: 70%; /* Ajuste para que la sombra tenga al menos el ancho del texto */
+  height: 15px; /* Altura fija de la sombra */
+  background: rgba(0, 0, 0, 0.45); /* Color y opacidad de la sombra */
+  border-radius: 50%;
+  transform: translate(-50%, 0) scaleX(1.5); /* Ajusta la sombra para crear el efecto deseado */
+  filter: blur(3.5px); /* Difumina los bordes de la sombra */
+}
+
+/* detecta enlaces sin construir */
+
+td:nth-child(2) a[href="TU_ENLACE_AQUI"] {
+    text-decoration: none !important; /* Elimina el subrayado */
+    color: rgb(72, 72, 82) !important; /* Cambia el color del texto */
+    pointer-events: none; /* Evita que el enlace sea clickeable */
+    cursor: default; /* Cambia el cursor a predeterminado */
+}
 
 
 
@@ -724,7 +758,10 @@ table a:after {
 
 <section data-name="Tutor FSE"> 
 <section data-name="Tutor FSE" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">1. Desarrollo de Competencias Clínicas</h3>
+  
+  <div class="shadow-oval-slide">
+    <h3 class="color">1. Desarrollo de Competencias Clínicas</h3>
+  </div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -762,7 +799,9 @@ table a:after {
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide"> 
   <h3 class="color">2. Formación en Procedimientos y Técnicas</h3>
+  </div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -799,7 +838,9 @@ table a:after {
 </section>
 
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
   <h3 class="color">3. Investigación y Metodología</h3>
+  </div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -836,7 +877,9 @@ table a:after {
 </section>
 
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
   <h3 class="color">4. Formación Continua y Actualización</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1037,7 +1080,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
   <h3 class="color">5. Evaluación de Residentes</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1074,7 +1119,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
 </section>
 
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
   <h3 class="color">6. Comunicación y Habilidades Interpersonales</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1110,7 +1157,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
   <h3 class="color">7. Manejo de Casos Complejos</h3>
+  </div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1146,7 +1195,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
   <h3 class="color">8. Gestión de la Salud y Administración</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1182,7 +1233,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
   <h3 class="color">9. Ética y Práctica Profesional</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1218,7 +1271,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
   <h3 class="color">10. Tecnología e Innovación en Salud</h3>
+  </div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1259,7 +1314,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
 <section data-name="Investigación Sanitaria">
 <!-- Categoría 1: Promoción y Mejora de la Investigación e Innovación Sanitaria -->
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">1. Promoción y Mejora de la Investigación e Innovación Sanitaria</h3>
+  <div class="shadow-oval-slide">
+<h3 class="color">1. Promoción y Mejora de la Investigación e Innovación Sanitaria</h3>
+</div>
   <div class="tabla-casos-wrapper">
     
 <table class="tabla-casos">
@@ -1303,7 +1360,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
 <!-- Categoría 2: Gestión de Biobancos y Proyectos de Investigación -->
 
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">2. Gestión de Biobancos y Proyectos de Investigación</h3>
+  <div class="shadow-oval-slide">
+<h3 class="color">2. Gestión de Biobancos y Proyectos de Investigación</h3>
+</div>
   <div class="tabla-casos-wrapper">
 <table class="tabla-casos">
   <thead>
@@ -1348,7 +1407,11 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
 </section>
 
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">3. Fomento y Difusión de la Investigación e Innovación</h3>
+  <div class="shadow-oval-slide">
+<div class="shadow-oval-slide">
+<h3 class="color">3. Fomento y Difusión de la Investigación e Innovación</h3>
+</div>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1357,7 +1420,7 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
           <th>Ejemplo de solicitud</th>
           <th>Evaluación workflow</th>
         </tr>
-      </thead>
+      </thead>       
       <tbody>
         <tr>
           <td>Políticas de fomento</td>
@@ -1366,30 +1429,36 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
         </tr>
         <tr>
           <td>Difusión de información</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Te desempeñas como coordinador de comunicaciones en un instituto de investigación. Tu tarea es elaborar resúmenes ejecutivos de avances recientes para distribuir entre investigadores y stakeholders.</td></a></em></td>
-          <td>👍 Facilita intercambio de conocimiento.<br>👎 Necesita actualizaciones constantes.</td>
+          <td><em><a href="https://chat.openai.com/share/ca4196ef-97d5-4013-bd55-19bdbf42e357" target="_blank">Tu rol es resaltar innovaciones en terapias genéticas dentro de nuestro instituto de investigación. Prepara resúmenes ejecutivos concisos, de no más de 300 palabras, para difundir entre investigadores y stakeholders...[leer más]</td></a></em></td>
+          <td>👍 Facilita la comunicación y mejora la claridad para distintas audiencias.<br>👎 Requiere supervisión para alinear las interpretaciones con las intenciones de los investigadores.</td>
         </tr>
+        
         <tr>
           <td>Establecimiento de políticas de colaboración</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como director de innovación en un hospital, buscas fomentar la colaboración entre investigadores de diversas disciplinas. Desarrolla una estrategia para crear directorios de colaboración y fomentar proyectos conjuntos.</td></a></em></td>
-          <td>👍 Fomenta colaboración.<br>👎 Requiere gestión activa.</td>
+          <td><em><a href="https://chat.openai.com/share/79a4feb1-3c49-4efd-a043-b9bb5b13899b" target="_blank">Como director de innovación en un hospital, tu objetivo es impulsar la colaboración interdisciplinaria entre investigadores. Tu tarea es desarrollar una estrategia global que incluya la creación de directorios de colaboración accesibles y el fomento de proyectos conjuntos.</td></a></em></td>
+          <td>👍 Facilita la inclusión de perspectivas diversas en la investigación.<br>👎 Necesita un marco ético y de privacidad robusto.</td>
         </tr>
         <tr>
           <td>Evaluación de programas de innovación</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un analista de políticas públicas evaluando la efectividad de programas de subvenciones actuales. Realiza un análisis detallado de su impacto y propone mejoras para futuras convocatorias.</td></a></em></td>
-          <td>👍 Identifica áreas de mejora.<br>👎 Puede requerir acceso a datos de seguimiento.</td>
+          <td><em><a href="https://chat.openai.com/share/78d39097-0a26-426e-bd7b-9680dcd686da" target="_blank">Como analista de políticas públicas especializado en la evaluación de programas de subvenciones para innovación, tu objetivo es generar un documento que sirva como base para la revisión y optimización de futuras convocatorias...[leer más]</td></a></em></td>
+          <td>👍 Permite mejorar estratégicamente futuras convocatorias basadas en análisis efectivos.<br>👎 Requiere acceso a datos de seguimiento detallados, que pueden ser difíciles de obtener.</td>
         </tr>
         <tr>
           <td>Fomento de investigación entre jóvenes</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como coordinador de un programa de mentoría, estás desarrollando iniciativas para estimular el interés en la investigación entre investigadores jóvenes en salud pública global. Diseña un programa de mentorías que conecte jóvenes con expertos.</td></a></em></td>
-          <td>👍 Estimula interés en investigación.<br>👎 Efectividad depende de calidad de mentoría.</td>
+          <td><em><a href="https://chat.openai.com/share/349436ce-83b1-4c68-ab85-6133e6d50a39" target="_blank">Como coordinador de un innovador programa de mentorías, tu misión es diseñar y lanzar una iniciativa que conecte a jóvenes investigadores con expertos en salud pública global. Este programa buscará despertar y fomentar el interés por la investigación en salud pública global entre los jóvenes, ofreciendo una plataforma de colaboración, aprendizaje y desarrollo profesional...[leer más]</td></a></em></td>
+          <td>👍 Proporciona a los jóvenes acceso directo a la experiencia y sabiduría de expertos consolidados.
+            Contras:<br>👎 El impacto real del programa puede variar ampliamente según la dedicación y habilidad de cada mentor.</td>
         </tr>
       </tbody>
+      
+      
     </table>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">4. Coordinación y Evaluación de la Formación Sanitaria</h3>
+  <div class="shadow-oval-slide">
+<h3 class="color">4. Coordinación y Evaluación de la Formación Sanitaria</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1402,35 +1471,39 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
       <tbody>
         <tr>
           <td>Optimización de programas formativos</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como responsable del desarrollo curricular en una universidad de medicina, tu objetivo es renovar el plan de estudios para incluir formación especializada en genética médica. Evalúa necesidades actuales y propone cambios.</td></a></em></td>
-          <td>👍 Actualiza formación a necesidades actuales.<br>👎 Necesita actualización constante.</td>
+          <td><em><a href="https://chat.openai.com/share/b1f74dbb-a40a-4cee-8e46-78279a01fed8" target="_blank">Como coordinador de desarrollo curricular en una prestigiosa universidad de medicina, enfrentas el desafío de mantener el plan de estudios actualizado con los avances más recientes en el campo médico, particularmente en genética médica.Tu tarea es realizar un análisis exhaustivo de las necesidades actuales en educación médica enfocada en genética...[leer más]</td></a></em></td>
+          <td>👍 Alinea los programas educativos con las demandas contemporáneas. <br>👎 Requiere revisión y renovación periódica del contenido.</td>
         </tr>
         <tr>
           <td>Acreditación de actividades formativas</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres el director de un programa de formación continuada en salud y buscas simplificar el proceso de acreditación mediante la digitalización. Implementa un protocolo para la acreditación digital y evalúa su efectividad.</td></a></em></td>
-          <td>👍 Agiliza proceso de acreditación.<br>👎 Evaluación final requiere inspecciones in situ.</td>
+          <td><em><a href="https://chat.openai.com/share/208d04be-3048-41b3-9589-163a6f1d25d1" target="_blank">Eres el responsable de un programa de formación continuada de renombre internacional en las organizaciones sanitarias. Detalla las etapas específicas que componen tu protocolo de acreditación digital...[leer pregunta completa]</td></a></em></td>
+          <td>👍 Optimiza y acelera el trámite de acreditación, mejorando la accesibilidad y eficiencia para instructores y participantes.<br>👎 Requiere métodos para validar la autenticidad y calidad.</td>
         </tr>
         <tr>
           <td>Evaluación de impacto formativo</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como investigador en educación médica, estás interesado en evaluar el impacto de la formación continuada en la práctica clínica. Diseña un estudio para medir los efectos de la formación en el desempeño profesional.</td></a></em></td>
-          <td>👍 Aporta evidencia sobre eficacia de formación.<br>👎 Requiere datos específicos de seguimiento.</td>
+          <td><em><a href="https://chat.openai.com/share/71e12cb4-f698-4303-99ad-2e989a5e1474" target="_blank">Como investigador en educación médica, estás interesado en evaluar el impacto de la formación continuada en la práctica clínica. Diseña un estudio para medir los efectos de la formación en el desempeño profesional.</td></a></em></td>
+          <td>👍 Aporta evidencia sobre eficacia de formación.<br>👎Necesita recolección detallada y continua de información para análisis.</td>
         </tr>
         <tr>
           <td>Desarrollo de competencias digitales</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Diriges un centro de formación en salud y reconoces la necesidad de preparar a los investigadores para la era digital. Desarrolla módulos de formación en competencias digitales específicas para la investigación sanitaria.</td></a></em></td>
-          <td>👍 Prepara investigadores para era digital.<br>👎 Necesita actualización constante.</td>
+          <td><em><a href="https://chat.openai.com/share/a7496cb6-086f-41ea-a6e4-daa23e3fdd8b" target="_blank">DComo coordinador de formación sanitaria especializado en competencias digitales, enfrentas el desafío de desarrollar y coordinar un programa integral que no solo eleve las habilidades digitales de los profesionales de la salud...[leer más]</td></a></em></td>
+          <td>👍 Equipa a los profesionales de la salud con habilidades digitales esenciales para la era moderna.<br>
+            👎 Requiere actualizaciones frecuentes para mantenerse al día con las tecnologías emergentes.</td>
         </tr>
         <tr>
           <td>Reconocimiento de formaciones internacionales</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como asesor en políticas de educación sanitaria, trabajas en la creación de un sistema que facilite el reconocimiento automático de títulos de formación sanitaria obtenidos en el extranjero. Establece criterios y procedimientos para este reconocimiento.</td></a></em></td>
+          <td><em><a href="https://chat.openai.com/share/ffeba218-e943-47ce-a039-f3ab607749c8" target="_blank">Como asesor en políticas de educación sanitaria, estás a cargo de diseñar un sistema innovador que facilite el reconocimiento automático de títulos de formación sanitaria obtenidos en el extranjero...[leer más]</td></a></em></td>
           <td>👍 Fomenta diversidad en sector sanitario.<br>👎 Requiere base de datos exhaustiva de equivalencias.</td>
+          
         </tr>
       </tbody>
     </table>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">5. Optimización del Uso de Terapias Avanzadas</h3>
+  <div class="shadow-oval-slide">
+<h3 class="color">5. Optimización del Uso de Terapias Avanzadas</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1443,27 +1516,27 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
       <tbody>
         <tr>
           <td>Seguimiento de terapias avanzadas</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como responsable de un programa de seguimiento clínico, tu misión es implementar un registro para el seguimiento en tiempo real de terapias avanzadas, analizando la seguridad y eficacia en distintos pacientes.</td></a></em></td>
-          <td>👍 Aporta datos sobre seguridad y eficacia.<br>👎 Requiere integración con sistemas de salud electrónicos.</td>
+          <td><em><a href="https://chat.openai.com/share/3b2103b5-44c9-4f4f-953c-c215e34e3fef" target="_blank">Eres un ingeniero de software y analista de datos en un hospital de vanguardia que se especializa en terapias avanzadas. Tu misión es liderar el desarrollo de un in novador sistema de registro que permita el seguimiento en tiempo real de la aplicación de estas terapias...[leer más]</td></a></em></td>
+          <td>👍 Facilita el análisis detallado y en tiempo real sobre la seguridad y eficacia.<br>👎 Depende de una integración compleja con HCE.</td>
         </tr>
         <tr>
           <td>Planificación de terapias personalizadas</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un científico de datos en oncología trabajando para desarrollar algoritmos que ayuden en la selección de terapias avanzadas personalizadas basadas en el perfil genético del paciente.</td></a></em></td>
+          <td><em><a href="https://chat.openai.com/share/935fa776-43cd-448b-a75d-52a31b157cdb" target="_blank">Como científico de datos en oncología, tu misión es crear un algoritmo que utilice el perfil genético del paciente para recomendar terapias personalizadas.</td></a></em></td>
           <td>👍 Promueve tratamientos eficaces y personalizados.<br>👎 Necesita acceso a bases de datos genéticas.</td>
         </tr>
         <tr>
-          <td>Evaluación de nuevos medicamentos</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como farmacólogo, realiza análisis de eficacia y coste-efectividad de nuevos medicamentos de terapia avanzada, proporcionando informes que influirán en su inclusión en protocolos de tratamiento.</td></a></em></td>
-          <td>👍 Informa sobre inclusión de nuevos tratamientos.<br>👎 Análisis complejo que requiere múltiples fuentes de datos.</td>
+          <td>Evaluación de nuevas terapias</td>
+          <td><em><a href="https://chat.openai.com/share/4b18eb6a-77e3-4a1c-b0d4-07eecd81b053" target="_blank">Como experto sanitario especializado en terapias avanzadas de reconocido prestigio, tu misión es realizar un análisis detallado de la eficacia, seguridad y eficiencia de los tratamientos CAR-T...[leer más]</td></a></em></td>
+          <td>👍 Facilita procesos de evaluación supervisados .<br>👎 Análisis complejo que requiere múltiples fuentes de datos.</td>
         </tr>
         <tr>
-          <td>Capacitación sobre manejo de terapias</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Diriges un programa educativo para profesionales de la salud, desarrollando módulos de capacitación en línea sobre el manejo de terapias avanzadas, incluyendo aspectos prácticos y teóricos.</td></a></em></td>
-          <td>👍 Mejora competencias en terapias innovadoras.<br>👎 Capacitación debe actualizarse continuamente.</td>
+          <td>Capacitación sobre manejo de terapias avanzadas</td>
+          <td><em><a href="https://chat.openai.com/share/3743401b-9b18-4d46-a2b0-89481af36188" target="_blank">Coordinas un equipo multidisciplinar de un programa de estudios avalado internacionalmente destinado a profesionales de la salud. Estás encargado de crear módulos de capacitación en línea que cubran exhaustivamente el manejo de terapias avanzadas...[leer más]</td></a></em></td>
+          <td>👍 Mejora integral de competencias en terapias innovadoras.<br>👎 Capacitación debe actualizarse continuamente.</td>
         </tr>
         <tr>
-          <td>Monitorización de efectos adversos</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como epidemiólogo, estás a cargo de desarrollar un sistema de reporte y análisis de efectos adversos de terapias avanzadas en tiempo real, contribuyendo a la mejora continua de la seguridad del paciente.</td></a></em></td>
+          <td>Plan de seguridad y evaluación de efectos adversos</td>
+          <td><em><a href="https://chat.openai.com/share/ea60edc2-24db-42f5-abdd-df90114c0e36" target="_blank">Como epidemiólogo experto en la mejora continua de la seguridad del paciente, vas a diseñar un sistema avanzado que permita la monitorización en tiempo real de los efectos adversos asociados a terapias avanzadas...[leer más]</td></a></em></td>
           <td>👍 Potencia seguridad del paciente.<br>👎 Requiere robustez en protección de datos.</td>
         </tr>
       </tbody>
@@ -1471,7 +1544,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">6. Acreditación de Instituciones y Establecimientos Sanitarios</h3>
+  <div class="shadow-oval-slide">
+<h3 class="color">6. Acreditación de Instituciones y Establecimientos Sanitarios</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1484,13 +1559,13 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
       <tbody>
         <tr>
           <td>Evaluación de estándares de calidad</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Como consultor de calidad en el sector sanitario, estás encargado de automatizar la evaluación preliminar de cumplimiento de estándares de calidad en hospitales y clínicas, utilizando herramientas digitales para optimizar el proceso.</td></a></em></td>
+          <td><em><a href="https://chat.openai.com/share/ca2f6059-dec2-4cea-8f64-5a3cccdc5949" target="_blank">Como Consultor Innovador en Tecnología de la Salud, te embarcas en la misión crítica de diseñar un sistema de evaluación de estándares de calidad para hospitales y centros de salud...[leer más]</td></a></em></td>
           <td>👍 Eficientiza procesos de acreditación.<br>👎 Evaluación final requiere visitas in situ.</td>
         </tr>
         <tr>
           <td>Revisión de infraestructuras docentes</td>
-          <td><em><a href="TU_ENLACE_AQUI" target="_blank">Eres un experto en educación médica evaluando la idoneidad de infraestructuras para docencia en instituciones sanitarias. Tu tarea incluye generar informes de evaluación y recomendaciones de mejora.</td></a></em></td>
-          <td>👍 Facilita identificación de mejoras.<br>👎 Complemento con evaluaciones presenciales necesario.</td>
+          <td><em><a href="https://chat.openai.com/share/8cc5e6f8-d652-44b9-9066-9934c47a93df" target="_blank">Eres un consultor experto en educación médica con el encargo de evaluar las infraestructuras docentes en una institución sanitaria. Tu primera tarea es desarrollar un checklist detallado que abarque todos los aspectos críticos a revisar durante tu evaluación...[leer más]</td></a></em></td>
+          <td>👍 Facilita sistematizar la identificación de mejoras.<br>👎 Complemento con evaluaciones presenciales necesario.</td>
         </tr>
         <tr>
           <td>Monitoreo de cumplimiento continuo</td>
@@ -1512,7 +1587,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">7. Fomento de la Colaboración en Investigación e Innovación</h3>
+  <div class="shadow-oval-slide">
+<h3 class="color">7. Fomento de la Colaboración en Investigación e Innovación</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1553,7 +1630,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">8. Fomento de Programas de Investigación e Innovación con Fondos Europeos</h3>
+  <div class="shadow-oval-slide">
+<h3 class="color">8. Fomento de Programas de Investigación e Innovación con Fondos Europeos</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1594,7 +1673,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">9. Mejora de la Comunicación Científica</h3>
+  <div class="shadow-oval-slide">
+<h3 class="color">9. Mejora de la Comunicación Científica</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1635,7 +1716,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </div>
 </section>
 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-  <h3 class="color">10. Fomento de la Investigación Transdisciplinaria</h3>
+  <div class="shadow-oval-slide">
+<h3 class="color">10. Fomento de la Investigación Transdisciplinaria</h3>
+</div>
   <div class="tabla-casos-wrapper">
     <table class="tabla-casos">
       <thead>
@@ -1682,7 +1765,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
 
   
   <section  data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">1. Gestión de Información Clínica</h3>
+    <div class="shadow-oval-slide">
+<h3 class="color">1. Gestión de Información Clínica</h3>
+</div>
     <div class="tabla-casos-wrapper">
       <table class="tabla-casos">
         <thead>
@@ -1724,7 +1809,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </section>
   
   <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">2. Educación del Paciente y Comunicación</h3>
+    <div class="shadow-oval-slide">
+<h3 class="color">2. Educación del Paciente y Comunicación</h3>
+</div>
     <div class="tabla-casos-wrapper">
       <table class="tabla-casos">
         <thead>
@@ -1766,7 +1853,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </section>
   
   <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">3. Soporte en la Toma de Decisiones Clínicas</h3>
+    <div class="shadow-oval-slide">
+<h3 class="color">3. Soporte en la Toma de Decisiones Clínicas</h3>
+</div>
     <div class="tabla-casos-wrapper">
       <table class="tabla-casos">
         <thead>
@@ -1808,7 +1897,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </section>
   
   <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">4. Apoyo en Investigación y Educación Médica</h3>
+    <div class="shadow-oval-slide">
+<h3 class="color">4. Apoyo en Investigación y Educación Médica</h3>
+</div>
     <div class="tabla-casos-wrapper">
       <table class="tabla-casos">
         <thead>
@@ -1850,7 +1941,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </section>
   
   <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">5. Automatización de Tareas Administrativas</h3>
+    <div class="shadow-oval-slide">
+<h3 class="color">5. Automatización de Tareas Administrativas</h3>
+</div>
     <div class="tabla-casos-wrapper">
       <table class="tabla-casos">
         <thead>
@@ -1892,7 +1985,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </section>
   
   <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">6. Asistencia en Diagnóstico y Tratamiento</h3>
+    <div class="shadow-oval-slide">
+<h3 class="color">6. Asistencia en Diagnóstico y Tratamiento</h3>
+</div>
     <div class="tabla-casos-wrapper">
       <table class="tabla-casos">
         <thead>
@@ -1933,7 +2028,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
     </div>
   </section>
   <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">7. Manejo de Salud Mental y Bienestar</h3>
+    <div class="shadow-oval-slide">
+<h3 class="color">7. Manejo de Salud Mental y Bienestar</h3>
+</div>
     <div class="tabla-casos-wrapper">
       <table class="tabla-casos">
         <thead>
@@ -1975,7 +2072,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </section>
   
   <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">8. Integración de Tecnología y Telemedicina</h3>
+    <div class="shadow-oval-slide">
+<h3 class="color">8. Integración de Tecnología y Telemedicina</h3>
+</div>
     <div class="tabla-casos-wrapper">
       <table class="tabla-casos">
         <thead>
@@ -2017,7 +2116,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </section>
   
   <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">9. Apoyo en Situaciones de Emergencia y Cuidados Críticos</h3>
+    <div class="shadow-oval-slide">
+<h3 class="color">9. Apoyo en Situaciones de Emergencia y Cuidados Críticos</h3>
+</div>
     <div class="tabla-casos-wrapper">
       <table class="tabla-casos">
         <thead>
@@ -2058,7 +2159,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
     </div>
   </section>
   <section data-name="Medicina Familiar" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-    <h3 class="color">10. Gestión de la Salud Poblacional y Prevención</h3>
+    <div class="shadow-oval-slide">
+<h3 class="color">10. Gestión de la Salud Poblacional y Prevención</h3>
+</div>
     <div class="tabla-casos-wrapper">
       <table class="tabla-casos">
         <thead>
@@ -2102,7 +2205,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
   </section>
   <section data-name="Psiquiatría">
     <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-      <h3 class="color">1. Diagnóstico y Evaluación</h3>
+      <div class="shadow-oval-slide">
+<h3 class="color">1. Diagnóstico y Evaluación</h3>
+</div>
       <div class="tabla-casos-wrapper">
         <table class="tabla-casos">
           <thead>
@@ -2144,7 +2249,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
     </section>
     
     <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-      <h3 class="color">2. Terapia y Consejería</h3>
+      <div class="shadow-oval-slide">
+<h3 class="color">2. Terapia y Consejería</h3>
+</div>
       <div class="tabla-casos-wrapper">
         <table class="tabla-casos">
           <thead>
@@ -2187,7 +2294,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
     
     
     <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-      <h3 class="color">3. Formación y Educación Continua</h3>
+      <div class="shadow-oval-slide">
+<h3 class="color">3. Formación y Educación Continua</h3>
+</div>
       <div class="tabla-casos-wrapper">
         <table class="tabla-casos">
           <thead>
@@ -2229,7 +2338,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
     </section>
     
     <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-      <h3 class="color">4. Investigación y Publicación</h3>
+      <div class="shadow-oval-slide">
+<h3 class="color">4. Investigación y Publicación</h3>
+</div>
       <div class="tabla-casos-wrapper">
         <table class="tabla-casos">
           <thead>
@@ -2271,7 +2382,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
     </section>
     
     <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-      <h3 class="color">5. Gestión de la Información Clínica</h3>
+      <div class="shadow-oval-slide">
+<h3 class="color">5. Gestión de la Información Clínica</h3>
+</div>
       <div class="tabla-casos-wrapper">
         <table class="tabla-casos">
           <thead>
@@ -2312,7 +2425,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
       </div>
     </section>
     <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-      <h3 class="color">6. Comunicación con Pacientes y Familias</h3>
+      <div class="shadow-oval-slide">
+<h3 class="color">6. Comunicación con Pacientes y Familias</h3>
+</div>
       <div class="tabla-casos-wrapper">
         <table class="tabla-casos">
           <thead>
@@ -2354,7 +2469,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
     </section>
     
     <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-      <h3 class="color">7. Coordinación de Cuidados</h3>
+      <div class="shadow-oval-slide">
+<h3 class="color">7. Coordinación de Cuidados</h3>
+</div>
       <div class="tabla-casos-wrapper">
         <table class="tabla-casos">
           <thead>
@@ -2395,7 +2512,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
       </div>
     </section>
     <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-      <h3 class="color">8. Gestión y Administración Clínica</h3>
+      <div class="shadow-oval-slide">
+<h3 class="color">8. Gestión y Administración Clínica</h3>
+</div>
       <div class="tabla-casos-wrapper">
         <table class="tabla-casos">
           <thead>
@@ -2437,7 +2556,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
     </section>
     
     <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-      <h3 class="color">9. Ética y Consideraciones Legales</h3>
+      <div class="shadow-oval-slide">
+<h3 class="color">9. Ética y Consideraciones Legales</h3>
+</div>
       <div class="tabla-casos-wrapper">
         <table class="tabla-casos">
           <thead>
@@ -2479,7 +2600,9 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
     </section>
     
     <section data-name="Psiquiatría" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
-      <h3 class="color">10. Salud Mental y Bienestar del Profesional</h3>
+      <div class="shadow-oval-slide">
+<h3 class="color">10. Salud Mental y Bienestar del Profesional</h3>
+</div>
       <div class="tabla-casos-wrapper">
         <table class="tabla-casos">
           <thead>
@@ -2724,12 +2847,18 @@ title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
 
     menuButton.addEventListener('click', function() {
         menuContainer.classList.toggle('menu-open'); // Cambia 'menuContainer' por el elemento correcto que deseas mostrar/ocultar
+
+        
     });
 });
 
 
 
+
+
+
     </script>
+    
   </body>
   
   </html>
