@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Presentación: ChatGPT en ciencias de la salud" />
+    <meta name="author" content="Ernesto Barrera" />
+    <link rel="icon" href="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Casos Uso ChatGPT en Investigación y Formación Sanitaria | ​👨‍⚕️ EB" />
+    <meta property="og:site_name" content="Recursos para la gestión de información 🔎🩺⚕" />
+    <meta property="og:url" content="https://ernestobarrera.github.io/" />
+    <meta property="article:published_time" content="2023-04-30" />
+    <meta property="article:author" content="Ernesto Barrera" />
+    <title>🤖ChatGPT: Usos Profesionales </title>
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="reveal.js/dist/theme/white.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js-plugins/simplemenu/simplemenu.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/plugin/highlight/zenburn.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/appearance/appearance.css">
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="../reveal.js-plugins/menu/menu.js"></script>
+    <script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
+    <script src="../reveal.js-plugins/appearance/appearance.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
+    <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+    <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+
+    
+    
+    <style>
+
+      /* Estilo general para las tablas */
+     /* Estilos generales para las tablas dentro de .reveal: Establece cómo se deben comportar visualmente las tablas, incluyendo el colapso de bordes, márgenes, ancho, y cómo manejar el texto largo. */
+
+   /* Estilos específicos para enlaces dentro de tablas */
+   table a {
+  color: #053f7e !important; /* Azul estándar para texto del enlace */
+  text-decoration: none; /* Sin subrayado */
+  position: relative;
+  padding-left: 23px; /* Espacio para el ícono y texto "link" */
+  text-decoration: underline !important; 
+}
+
+table a:hover, table a:focus {
+  text-decoration: underline; /* Subrayado al pasar el mouse o al enfocar */
+}
+
+/* Ícono de enlace (cadena) antes del texto del enlace, específicamente para enlaces dentro de tablas */
+
+
+/* Remover el parpadeo */
+/* Quitamos la animación para evitar distracciones */
+
+/* Ajuste del texto "link" para evitar superposición */
+table a:after {
+  font-family: 'Font Awesome 5 Free'; /* FontAwesome */
+  content: '\f0c1'; /* Ícono de enlace/cadena */
+  position: absolute;
+  left: 0px; /* Ajustar para evitar superposición con el ícono */
+  top: 0;
+  color: #0f02c2; /* Color del texto "link" */
+  font-weight: 900; /* Tamaño del texto */
+}
+
+
+
+.reveal table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+/* Estilos para las celdas (td) y encabezados (th) de las tablas dentro de .reveal: Define los bordes, la alineación del texto, el relleno, y la familia de fuentes. */
+.reveal th, .reveal td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* Estilos específicos para los encabezados de las tablas (th) dentro de .reveal: Cambia el color de fondo, color de texto, tamaño de fuente, familia de fuentes, y añade un borde inferior para destacar. */
+.reveal th {
+    background-color: #f0c4657c;
+    color: black;
+    font-size: 1.1em; /* Para aumentar el tamaño de fuente */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Cambia la familia de fuentes */
+    text-align: center !important;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Estilos para alternar el color de fondo de las filas impares dentro de .reveal, mejorando la legibilidad de la tabla. */
+.reveal tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para alternar el color de fondo de las filas pares dentro de .reveal. */
+.reveal tr:nth-child(even) {
+    background-color: white;
+}
+
+/* Estilos específicos para las tablas con la clase .tabla-casos: Ajusta el ancho, el colapso de bordes, el tamaño de fuente, y permite desbordamiento horizontal. */
+.tabla-casos {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem; /* Ajustable según necesidad */
+    overflow-x: auto;
+}
+
+/* Estilos para el encabezado de las tablas .tabla-casos, definiendo un fondo oscuro y texto claro para contraste. */
+.tabla-casos thead {
+    background-color: #454242;
+    color: #fff;
+}
+
+/* Estilos para las celdas y encabezados dentro de .tabla-casos, estableciendo bordes, relleno, y alineación del texto. */
+.tabla-casos th {
+    background-color: #f0c4657c; /* Color de fondo suave y semi-transparente */
+    color: black; /* Color de texto */
+    font-size: 1.1em; /* Tamaño de fuente ligeramente mayor para destacar */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Familia de fuente específica */
+    text-align: center; /* Alineación central del texto */
+    
+    border-bottom: 1px solid #965017 !important; /* Línea definitoria debajo de los encabezados */
+    padding: 0.5rem; /* Espaciado interno adecuado */
+}
+
+
+.tabla-casos td {
+    border: 1px solid #dddddd;
+    padding: 0.5rem;
+    text-align: left;
+    word-break: break-word !important; /* Esta línea evita que las palabras se dividan incorrectamente */
+
+}
+
+/* Estilos para alternar el color de fondo de las filas impares y pares en .tabla-casos, similar a los estilos en .reveal pero con colores diferentes. */
+.tabla-casos tr:nth-child(odd) {
+    background-color: #e7e5e5;
+}
+.tabla-casos tr:nth-child(even) {
+    background-color: white;
+}
+
+/* Estilos para celdas específicas con la clase .table-cell: Ajusta los bordes, relleno, y tamaño de fuente. */
+.table-cell {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    font-size: 0.85em;
+}
+
+/* Estilos para encabezados de celda específicos con la clase .table-cell-header: Hace el texto en negrita. */
+.table-cell-header {
+    font-weight: bold;
+}
+
+/* Columna de Caso de uso más pequeña */
+.tabla-casos th:nth-child(1), .tabla-casos td:nth-child(1) {
+  width: 20%;
+  padding-left: 0.2rem; /* Ajusta este valor según necesites */
+  padding-right: 0.2rem; /* Asegúrate de que sea simétrico */
+
+}
+
+/* Columna de Ejemplo de solicitud más ancha */
+.tabla-casos th:nth-child(2), .tabla-casos td:nth-child(2) {
+  width: 53%;
+}
+
+/* Columna de Evaluación workflow ampliada */
+.tabla-casos th:nth-child(3), .tabla-casos td:nth-child(3) {
+  width: 27%;
+  line-height: 1.2; /* Ajusta el interlineado para mejorar la legibilidad y aprovechar el espacio */
+}
+
+  /* ##Device=Desktops ##Screen=1281px to higher resolution desktops
+*/
+@media (min-width: 1601px) and (max-height: 1380px){
+  html {
+    font-size: 120%; /* Aumenta el tamaño base de la fuente para pantallas anchas */
+  }
+
+  * {
+    font-size: 1.3rem; /* Ajusta el tamaño de la fuente de todos los elementos para una mejor legibilidad */
+  }
+}
+
+@media (min-width: 1601px) and (max-height: 1080px){
+  html {
+    font-size: 120%; /* Mantiene el aumento del tamaño base de la fuente para pantallas anchas */
+  }
+
+  * {
+    font-size: 1.1rem; /* Reduce un poco el tamaño de la fuente de todos los elementos para adaptarse a pantallas con menor altura */
+  }
+}
+  @media (min-width: 1401px) and (max-width: 1600px) {
+    html {
+      font-size: 100%;
+    }
+
+    * {
+      font-size: 1.2rem;
+    }
+    
+  }
+
+  @media (min-width: 1281px) and (max-width: 1400px) {
+    html {
+      font-size: 100%;
+    }
+
+    * {
+      font-size: 1.1rem;
+    }
+    
+  }
+
+  /* ##Device=Laptops, Desktops ##Screen=B/w 1025px to 1280px
+*/
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    html {
+      font-size: 100%;
+    }
+
+    * {
+      font-size: 1.0rem;
+    }
+    
+  }
+
+  /* ##Device=Tablets, Ipads (portrait) ##Screen=B/w 768px to 1024px
+*/
+  @media (min-width: 768px) and (max-width: 1024px) {
+    html {
+      font-size: 100%;
+    }
+
+    * {
+      font-size: 1.0rem;
+    }
+    .reveal h3 {
+      margin-top: 50px; /* Ajustar según la altura del menú */
+  }
+  }
+
+  /* ##Device=Tablets, Ipads (landscape) ##Screen=B/w 768px to 1024px
+*/
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    html {
+      font-size: 100%;
+    }
+
+    * {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* ##Device=Low Resolution Tablets, Mobiles (Landscape) ##Screen=B/w 481px to 767px
+*/
+  @media (min-width: 481px) and (max-width: 767px) {
+    html {
+      font-size: 0.9rem;
+    }
+
+    * {
+      font-size: 1rem;
+    }
+    .reveal h3 {
+      margin-top: 50px; /* Ajustar según la altura del menú */
+  }
+  }
+
+  /* ##Device=Most of the Smartphones Mobiles (Portrait) ##Screen=B/w 320px to 479px
+*/
+  @media (min-width: 320px) and (max-width: 480px) {
+    html {
+      font-size: 0.8rem;
+    }
+
+    * {
+      font-size: 1rem;
+    }
+    .reveal h3 {
+      margin-top: 50px; /* Ajustar según la altura del menú */
+  }
+  }
+
+  @media (max-width: 319px) {
+    html {
+      font-size: 0.7rem;
+    }
+
+    * {
+      font-size: 0.8rem;
+    }
+    .reveal h3 {
+      margin-top: 50px; /* Ajustar según la altura del menú */
+  }
+  }
+
+  @media screen and (min-width: 500px) {
+    html .slide-menu.slide-menu--left.active {
+      font-size: 0.2rem !important;
+      width: 60%;
+    }
+  }
+  .emoji-grande {
+    font-size: 1.3em; /* Ajusta esto según necesites */
+}
+
+  .cabecera {
+    margin-top: 1em;
+    font-size: 5rem;
+    color: orange;
+    word-spacing: 10px;
+    text-shadow: 3px 3px 4px #000000;
+  }
+
+
+
+
+  h1.color,
+  h2.color,
+  h3.color,
+  h4.color,
+  h5.color,
+  h6.color {
+    color: rgb(251, 183, 56);
+    text-shadow: 1px 1px 1px #000;
+  }
+
+  .reveal h1 {
+    font-size: 2.2rem;
+  }
+
+  .reveal h2 {
+    font-size: 2rem;
+  }
+
+  .reveal h3 {
+    font-size: 1.8rem;
+  }
+
+  .reveal h4 {
+    font-size: 1.6rem;
+  }
+
+  .reveal h5 {
+    font-size: 1.4rem;
+  }
+  
+
+  .imagen-responsiva {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    border: 1;
+    height: 100px;
+    width: auto;
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-width: 1200px) {
+    .imagen-responsiva {
+      height: 4vw;
+      min-height: 30px;
+    }
+  }
+
+  .vertical {
+    margin-top: 1.2rem;
+  }
+
+  .titulo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .pie {
+    position: absolute !important;
+    bottom: 0.3125rem;
+  }
+
+  .size-1 {
+    font-size: 2rem;
+  }
+
+  .size {
+    font-size: 1.625rem;
+  }
+
+  .size0 {
+    font-size: 1.25rem;
+  }
+
+  .size1 {
+    font-size: 1rem;
+  }
+
+  .size2 {
+    font-size: 0.875rem;
+  }
+
+  .size3 {
+    font-size: 1rem;
+  }
+
+  .color {
+    color: rgb(251, 183, 56);
+  }
+
+  .fragment.blur {
+    filter: blur(5px);
+  }
+
+  .fragment.blur.visible {
+    filter: none;
+  }
+
+  .full-height {
+    height: 100vh;
+  }
+
+  .footer {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 50%;
+    bottom: 3em;
+    transform: translateX(-50%);
+  }
+
+  .aligned p {
+    margin-left: 15%;
+    text-align: left;
+  }
+
+  .filaImagenTexto {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .filaImagenTexto div {
+    width: 50%;
+  }
+
+  .mensaje-usuario {
+    margin-left: 15%;
+    text-align: left;
+    color: #2fa883;
+    font-weight: bold;
+  }
+
+  .mensaje-chatgpt {
+    margin-left: 15%;
+    text-align: left;
+    color: #3969ab;
+    font-weight: bold;
+  }
+
+  .highlighted {
+    background-color: rgba(252, 212, 212, 0.5);
+  }
+
+  .controls-arrow {
+    font-size: 10px !important;
+  }
+
+  .glow-on-hover {
+    width: 280px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(214, 197, 197);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 8px;
+  }
+
+  .glow-on-hover:before {
+    width: 280px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(214, 197, 197);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 8px;
+  }
+
+  .glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 8px;
+  }
+
+  .glow-on-hover:active {
+    color: #000
+  }
+
+  .glow-on-hover:active:after {
+    background: transparent;
+  }
+
+  .glow-on-hover:hover:before {
+    opacity: 1;
+  }
+
+  .glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 191, 71);
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: 400% 0;
+    }
+
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  .bold-text {
+    font-weight: bold;
+  }
+
+  section .custom-table {
+    font-size: 0.8em !important;
+    width: 100% !important;
+  }
+
+  section .custom-table th,
+  section .custom-table td {
+    padding: 4px 8px !important;
+    border: 1px solid #ccc !important;
+  }
+
+  section .custom-table th {
+    background-color: #333 !important;
+    color: #fff !important;
+    font-weight: bold !important;
+  }
+
+  .reveal .box {
+    width: auto;
+    margin: 1ex auto;
+    line-height: 1.5;
+    padding: 0;
+    text-align: center;
+    overflow: auto;
+    text-align: left;
+    border-radius: 0.5em;
+    box-shadow: 8px 8px 7px 5px rgba(9, 9, 9, 0.512);
+  }
+
+  .reveal .box .title,
+  .reveal .box .content {
+    padding: 0.8ex 3%;
+    border: #ddd 1px solid;
+  }
+
+  .reveal .box .title {
+    color: rgb(251, 183, 56);
+    text-shadow: 2px 2px 2px #555;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-bottom: none;
+    border-radius: 0.5em 0.5em 0 0;
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+
+  .reveal .box .content {
+    color: #ffffff;
+    text-shadow: 2px 2px 2px #555;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 0.5em 0.5em;
+    font-size: 1.1em;
+  }
+  h2.sombra-titulo {
+    text-shadow: 8px 5px 7px rgba(0, 0, 0, 0.5);
+}
+
+
+.shadow-oval {
+  position: relative;
+  text-align: center;
+  
+}
+
+.shadow-oval:after {
+  content: '';
+  position: absolute;
+  top: 150%; /* Coloca la sombra justo debajo del texto */
+  left: 50%; /* Centra la sombra horizontalmente */
+  width: 38%; /* Anchura de la sombra */
+  height: 35px; /* Altura de la sombra */
+  background: rgba(0, 0, 0, 0.4); /* Color y opacidad de la sombra */
+  border-radius: 50%;
+  transform: translateX(-50%) scaleX(2); /* Ajusta para alargar la sombra horizontalmente */
+  filter: blur(8px); /* Difumina los bordes de la sombra */
+  z-index: -1; /* Coloca la sombra detrás del texto */
+}
+.shadow-oval-slide {
+  margin-bottom: 20px; /* Espacio adicional debajo del título para la sombra */
+}
+
+.shadow-oval-slide h3 {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.shadow-oval-slide h3::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 90%; 
+  left: 50%;
+  width: 70%; /* Ajuste para que la sombra tenga al menos el ancho del texto */
+  height: 15px; /* Altura fija de la sombra */
+  background: rgba(0, 0, 0, 0.45); /* Color y opacidad de la sombra */
+  border-radius: 50%;
+  transform: translate(-50%, 0) scaleX(1.5); /* Ajusta la sombra para crear el efecto deseado */
+  filter: blur(3.5px); /* Difumina los bordes de la sombra */
+}
+
+/* detecta enlaces sin construir */
+
+td:nth-child(2) a[href="TU_ENLACE_AQUI"] {
+    text-decoration: none !important; /* Elimina el subrayado */
+    color: rgb(72, 72, 82) !important; /* Cambia el color del texto */
+    pointer-events: none; /* Evita que el enlace sea clickeable */
+    cursor: default; /* Cambia el cursor a predeterminado */
+}
+
+
+
+
+
+</style>
+
+</head>
+<body>
+  
+    <div class="reveal" >
+    
+
+      <div class="custom-logo">
+         <!-- Este logo se superpone al menú horizontal y requiere cambios en mycustomstyle.css para ajustar el índice z-index y asegurar que esté correctamente superpuesto en relación con simplemenu. Asegúrate de revisar y ajustar los estilos en mycustomstyle.css para garantizar que el logotipo se muestre correctamente y no cause problemas de superposición con el menú horizontal. -->
+        <a href="https://twitter.com/ernestob" target="_blank">
+          <img style="margin-top:4px; border: 0;" title="Estoy en Twitter" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1200px-ChatGPT_logo.svg.png" width="35" height="35">
+        </a>
+      </div>
+
+        <div class="slides">
+            <!-- Aquí van tus slides -->
+            
+            <section data-name="Inicio" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/ejemplosprompts.mp3">
+
+              <div class="shadow-oval">
+              <h2 class="color cabecera sombra-titulo">Casos de estudio de ChatGPT en Ciencias de la Salud</h2>
+              
+            </div>
+            
+          <div class="blur"
+            style="position: absolute; top: 370px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 10px; font-size: 1.0rem; text-align: left;">
+            <h5>💡TIP </h5>
+            <p style=" font-size: 1rem; color: rgb(253, 215, 1)">Esta presentación contiene diapositivas en navegación
+              horizontal y vertical, según se indica en las flechas de abajo a la derecha. Girar la rueda del ratón,
+              pulsar la barra espaciadora o las teclas de flecha del teclado para navegar por ellas.
+            </p>
+            <p style=" font-size: 1rem; color: rgb(253, 215, 1)">Incluye contenido audio en cada diapositiva para
+              facilitar un uso virtual asíncrono </p>
+          </div>
+            <p class="disclaimer" style="margin-top: 100px; color: #CCCCCC; font-family: Roboto, sans-serif; text-align: left; font-size: 1rem;">
+              Los casos de estudio presentados en esta web son ejercicios ficticios desarrollados con el único propósito de ilustrar posibles aplicaciones de la IA en contextos sanitarios. 
+              No deben interpretarse como situaciones reales ni como recomendaciones para la práctica clínica. 
+              Cada escenario debe ser evaluado cuidadosamente en su contexto específico antes de considerar cualquier implementación práctica. Se recomienda encarecidamente a los profesionales de la salud y a las instituciones pertinentes realizar una evaluación rigurosa y exhaustiva de cualquier tecnología antes de su adopción en entornos clínicos. Este material se ofrece exclusivamente con fines educativos y de investigación, sin garantía de resultados específicos en la práctica clínica.
+          </p>
+            <!-- Información del autor, colocada abajo a la derecha -->
+ 
+          </section><!--  -->
+          
+          
+<!--     <section data-name="Ejemplos" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+
+    <h3 class="color">Ejemplo de Tabla con Casos de Uso</h3>
+    <p style="margin-bottom:3vh; font-size: 1.2rem; color:#faf5f5">A continuación se presenta una tabla de ejemplo.</p>
+
+    <div class="tabla-casos-wrapper">
+      <table class="tabla-casos">
+        <thead>
+          <tr>
+            <th>Nombre del Caso</th>
+            <th>Descripción</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Caso 1</td>
+            <td>Descripción del Caso 1</td>
+            <td><button onclick="accionCaso1()">Acción 1</button></td>
+          </tr>
+          <tr>
+            <td>Caso 2</td>
+            <td>Descripción del Caso 2</td>
+            <td><button onclick="accionCaso2()">Acción 2</button></td>
+          </tr>
+          <!-- Agrega más filas según sea necesario -->
+      <!--   </tbody>
+      </table>
+    </div>
+
+    <p style="font-size: 0.8rem; color:#ffffff; text-align: left; padding-left: 15px;">Puedes adaptar esta tabla a tus necesidades.</p>
+
+</section> -->
+
+<section data-name="Formación Sanitaria"> 
+<section data-name="Formación Sanitaria" data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  
+  <div class="shadow-oval-slide">
+    <h3 class="color">1. Desarrollo de Competencias Clínicas</h3>
+  </div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Simulaciones de Casos Clínicos</strong></td>
+          <td><em>Como un asistente virtual en Medicina Familiar, genera simulaciones interactivas de casos clínicos basadas en síntomas comunes y raros, proporcionando un diagnóstico diferencial y un plan de tratamiento...<a href="https://chat.openai.com/share/b9c627ae-5556-449c-98e7-9831ec977b57" target="_blank">[leer más] </a></em></td>
+          <td><span class="emoji-grande">👍</span>Fomenta pensamiento crítico.<br><span class="emoji-grande">👎</span> No reemplaza experiencia real.</td>
+        </tr>
+        <tr>
+          <td><strong>Actualización de Protocolos Médicos</strong></td>
+          <td><em>Como consultor en Medicina Interna, actualiza protocolos médicos basándote en las últimas guías. Este checklist detalla cambios recientes y evalúa su impacto en la práctica clínica, permitiendo una implementación efectiva y actualizada de las mejores prácticas médicas.<a href="https://chat.openai.com/share/8ada363e-e481-4346-b750-1ec06192f8ce" target="_blank">[leer más]</a></em></td>          <td><span class="emoji-grande">👍</span>Mantiene a residentes actualizados.<br><span class="emoji-grande">👎</span> Requiere verificación por expertos.</td>
+        </tr>
+        <tr>
+          <td><strong>Interpretación de Pruebas Diagnósticas</strong></td>
+          <td><em>Como un analista de laboratorio virtual, proporciona interpretaciones detalladas de pruebas diagnósticas comunes, destacando posibles diagnósticos y sugiriendo pruebas adicionales necesarias. Presenta tus análisis en un formato de informe estructurado.<a href="https://chat.openai.com/share/f0b779fc-6ca9-42f3-8dd9-aa9237b4928f" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Enriquece comprensión de pruebas.<br><span class="emoji-grande">👎</span> Limitado por calidad de datos.</td>
+        </tr>
+        <tr>
+          <td><strong>Gestión de Urgencias Médicas</strong></td>
+          <td><em>Simula ser un coordinador de urgencias, generando escenarios de manejo de emergencias médicas y proponiendo protocolos de actuación. Describe el enfoque para situaciones de alta presión y cómo priorizar el tratamiento.<a href="https://chat.openai.com/share/00621b6b-f24c-471c-90ac-be0783296fe9" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Prepara para emergencias.<br><span class="emoji-grande">👎</span> No replica presión del entorno.</td>
+        </tr>
+        <tr>
+          <td><strong>Revisión de Casos Pediátricos</strong></td>
+          <td><em>Como un pediatra virtual, revisa casos pediátricos, destacando consideraciones especiales en el diagnóstico y tratamiento de enfermedades en niños. Genera una guía de referencia rápida para enfermedades comunes en pediatría.<a href="https://chat.openai.com/share/9f44a1f6-a035-4fa5-ad22-9f177a5bc8fa" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Enfoque en pediatría.<br><span class="emoji-grande">👎</span> Necesita experiencia clínica.</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide"> 
+  <h3 class="color">2. Formación en Procedimientos y Técnicas</h3>
+  </div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Guías de Procedimientos Quirúrgicos</strong></td>
+          <td><em>Funciona como un asistente quirúrgico virtual, proporcionando guías detalladas paso a paso para procedimientos quirúrgicos específicos en Cirugía General. Incluye consideraciones pre y postoperatorias en tu guía.<a href="https://chat.openai.com/share/22a06d77-7c10-4646-b56e-13a21e29fe8d" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Refuerza aprendizaje de procedimientos.<br><span class="emoji-grande">👎</span> No reemplaza supervisión en vivo.</td>
+        </tr>
+        <tr>
+          <td><strong>Técnicas de Enfermería Avanzada</strong></td>
+          <td><em>Como un mentor virtual en enfermería avanzada, crea tutoriales interactivos detallando paso a paso técnicas especializadas de enfermería. Enfócate en procedimientos críticos como la gestión de vías intravenosas y el cuidado avanzado de heridas...<a href="https://chat.openai.com/share/ecb36c61-83a7-40d9-ae7e-02845e7aea48" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Apoyo visual en técnicas.<br><span class="emoji-grande">👎</span> Requiere práctica física.</td>
+        </tr>
+        <tr>
+          <td><strong>Preparación para Farmacoterapia</strong></td>
+          <td><em>Actúa como un experto en farmacoterapia, proporcionando ejemplos de regímenes de medicación para diferentes condiciones clínicas en Farmacia Hospitalaria. Incluye consideraciones de dosificación y posibles interacciones medicamentosas.<a href="https://chat.openai.com/share/9946b24d-5c7c-4454-a6c5-d2b4bd23efa6" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Profundiza conocimiento en farmacología.<br><span class="emoji-grande">👎</span> Necesita validación clínica.</td>
+        </tr>
+        <tr>
+          <td><strong>Psicoterapia y Enfoques Clínicos</strong></td>
+          <td><em>Como psicoterapeuta virtual, sumérgete en el vasto mundo de la psicoterapia clínica, explorando y desplegando una gama de técnicas y enfoques terapéuticos...<a href="https://chat.openai.com/share/3f6897a0-5de4-4ca1-afc9-81c187541690" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Diversifica técnicas de psicoterapia.<br><span class="emoji-grande">👎</span> Experiencia real del paciente varía.</td>
+        </tr>
+        <tr>
+          <td><strong>Análisis de Bioquímica Clínica</strong></td>
+          <td><em>Eres un avanzado asistente de inteligencia artificial especializado en bioquímica clínica. Tu objetivo es facilitar el aprendizaje interactivo para residentes médicos mediante la interpretación de complejos perfiles bioquímicos...<a href="https://chat.openai.com/share/e6170a10-6be4-4c6d-b977-352c09cfae91" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Mejora interpretación de pruebas.<br><span class="emoji-grande">👎</span> Requiere conocimientos previos.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+  <h3 class="color">3. Investigación y Metodología</h3>
+  </div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Desarrollo de Protocolos de Estudio</strong></td>
+          <td><em>Diseña una sesión interactiva de simulación clínica para médicos residentes, centrada en el diagnóstico temprano y planes de tratamiento personalizado para diferentes tipos de cáncer. Incluye escenarios basados en casos reales, opciones terapéuticas actualizadas, y técnicas de comunicación efectiva con pacientes y sus familias. Adoptarás el estilo de un journal club de 1 hora<a href="https://chat.openai.com/share/57f647fa-54fe-4c00-8d7a-10feba3f781d" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Fomenta precisión en investigación.<br><span class="emoji-grande">👎</span>Necesita ajustes según contexto.</td>
+        </tr>
+        <tr>
+          <td><strong>Análisis Estadístico de Datos</strong></td>
+          <td><em>Eres un experto en estadística aplicada a la investigación clínica. Ofrece guía sobre análisis estadísticos para estudios clínicos, subrayando cómo interpretar y aplicar los resultados en decisiones médicas y orientamé en la realización de una presentación en un congreso...<a href="https://chat.openai.com/share/b02187e3-f719-461a-bacf-5e23f63176e9" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Clarifica análisis estadístico.<br><span class="emoji-grande">👎</span>Requiere conocimientos en estadística.</td>
+        </tr>
+        <tr>
+          <td><strong>Desarrollo de Propuestas de Investigación</strong></td>
+          <td><em>Eres una enfermera con perfil investigador e innovador de fama internacional. Tu misión es asistir en en la creación de una propuesta de investigación en Enfermería Pediátrica transformadora...<a href="https://chat.openai.com/share/f99c1ec3-e65a-42a9-b6fa-14a61db01a0b" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Mejora calidad de propuestas.<br><span class="emoji-grande">👎</span>Puede no cubrir aspectos regulatorios.</td>
+        </tr>
+        <tr>
+          <td><strong>Revisión Sistemática de Literatura</strong></td>
+          <td><em>Eres un tutor MIR con reconocido perfil académico, clínico e innovador en Cirugía General, redacta un esquema para revisión sistemática sobre técnicas quirúrgicas, detallando criterios de inclusión/exclusión. Enfócate en cómo este proceso apoya la formación de residentes. <a href="https://chat.openai.com/share/7d4e0879-cb3b-4ced-976a-42e61888e650" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Ayuda en síntesis de información.<br><span class="emoji-grande">👎</span>No reemplaza juicio crítico humano.</td>
+        </tr>
+        <tr>
+          <td><strong>Evaluación de Tecnologías Sanitarias</strong></td>
+          <td><em>Como líder en evaluación de tecnologías sanitarias en radiología, crea un marco integral para analizar innovaciones tecnológicas, centrado en eficacia, seguridad y viabilidad económica...(continua conversación y ejemplo TAC para screening Ca pulmón)<a href="https://chat.openai.com/share/80bf61a2-6d8b-4c28-9ba7-dd233f414140" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span>Apoya toma de decisiones basada en evidencia.<br><span class="emoji-grande">👎</span>Limitado por actualidad de fuentes.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+  <h3 class="color">4. Formación Continua y Actualización</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Actualizaciones en Tratamientos y Terapias</strong></td>
+          <td><em>Como experto en Oncología, crea un boletín mensual resumiendo avances recientes en tratamientos y terapias. Incluye estudios clave del último mes, su importancia clínica, y discusiones para la aplicación práctica. El boletín debe ser claro, con secciones para cada avance y enlaces a estudios.<a href="https://chat.openai.com/share/a107fc08-b731-435d-a889-6b2370355cee" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Mantiene actualizados a profesionales.<br><span class="emoji-grande">👎</span> Puede no cubrir todas novedades.</td>
+        </tr>
+        <tr>
+          <td><strong>Tendencias en Salud Pública</strong></td>
+          <!-- @startmindmap
+!theme plain
+skinparam backgroundColor #FAFAFA
+skinparam arrowThickness 1.8
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+
+<style>
+node {
+    Padding 12
+    Margin 4
+    HorizontalAlignment center
+    LineColor #0077C2
+    LineThickness 2
+    RoundCorner 20
+    MaximumWidth 250
+    FontSize 14
+    FontName Arial
+    Shadowing 1
+}
+rootNode {
+    LineStyle solid
+    LineColor #E63946
+    BackgroundColor #FAFAFA
+    RoundCorner 20
+    FontSize 16
+    FontStyle Bold
+}
+leafNode {
+    RoundCorner 15
+    HorizontalAlignment left
+    Padding 8
+    FontSize 12
+    FontName Arial
+    MaximumWidth 350
+    Margin 10
+}
+</style>
+
+skinparam node {
+    BackgroundColor #E8F8FF
+    BorderColor #003D5B
+    BorderThickness 2
+    Shadowing 1
+    nodeWidth 230
+}
+skinparam nodeFontStyle {
+    FontStyle Bold
+}
+
+title <size:18><u>Ampliación en Salud Pública Global (2024)</u></size>
+
+* <color:#E63946>Pandemias y Brotes</color>
+** COVID-19: Variantes emergentes
+*** Tendencias de mutación
+*** Estrategias de vacunación global
+** Vigilancia de nuevas enfermedades
+*** Sistemas de alerta temprana
+*** Cooperación internacional
+** Enfermedades reemergentes
+*** Tuberculosis
+*** Malaria
+
+* <color:#2A9D8F>Salud Mental</color>
+** Aumento en prevalencia
+*** Impacto de la pandemia
+*** Estrategias de prevención
+** Importancia del acceso a servicios
+*** Modelos de atención remota
+*** Integración con atención primaria
+
+* <color:#F4A261>Cambio Climático y Salud</color>
+** Efectos sobre enfermedades transmisibles
+*** Cambios en patrones de vectores
+*** Aumento de brotes de enfermedades relacionadas con el agua
+** Impacto en nutrición
+*** Seguridad alimentaria y cambio climático
+*** Desnutrición en poblaciones vulnerables
+
+* <color:#8338EC>Tecnología en Salud</color>
+** Telemedicina
+*** Aumento de la accesibilidad en áreas remotas
+*** Desafíos en la privacidad de datos
+** IA en diagnósticos
+*** Herramientas de soporte a la decisión clínica
+*** Avances en diagnóstico por imagen
+
+* <color:#FF006E>Acceso a la Salud</color>
+** Desigualdades
+*** Barreras económicas y sociales
+*** Estrategias de inclusión sanitaria
+** Sistemas de salud resilientes
+*** Preparación ante emergencias
+*** Fortalecimiento de sistemas de atención primaria
+
+* <color:#3A86FF>Enfermedades No Transmisibles</color>
+** Obesidad y diabetes
+*** Programas de prevención y educación
+*** Avances en tratamientos y manejo
+** Enfermedades cardiovasculares
+*** Campañas de concientización sobre factores de riesgo
+*** Innovaciones en técnicas quirúrgicas y rehabilitación
+
+* <color:#FFD166>Resistencia Antimicrobiana</color>
+** Uso de antibióticos
+*** Iniciativas para reducir el uso indebido
+*** Desarrollo de nuevos antimicrobianos
+** Surgimiento de resistencias
+*** Vigilancia y respuesta global
+*** Investigación y desarrollo de vacunas
+
+* <color:#118AB2>Salud Global y Derechos Humanos</color>
+** Equidad en salud
+*** Políticas de inclusión y acceso universal
+*** Eliminación de barreras económicas
+** Acceso a vacunas
+*** Campañas de vacunación globales
+*** Cooperación internacional y patentes
+
+* <color:#FFD166>Resistencia Antimicrobiana</color>
+** Uso de antibióticos
+*** Campañas de sensibilización sobre el uso racional
+*** Desarrollo de nuevos antimicrobianos
+** Surgimiento de resistencias
+*** Vigilancia y monitoreo global
+*** Investigación en mecanismos de resistencia
+
+* <color:#118AB2>Salud Global y Derechos Humanos</color>
+** Equidad en salud
+*** Políticas públicas para reducir brechas de acceso
+*** Alianzas globales para financiamiento en salud
+** Acceso a vacunas
+*** Iniciativas de distribución equitativa
+*** Innovación en desarrollo y producción de vacunas
+** Salud y conflictos
+*** Asistencia sanitaria en zonas de conflicto
+*** Protección de infraestructuras de salud
+
+* <color:#6A1B9A>Crisis Sanitarias y Respuesta Internacional</color>
+** Preparación y respuesta a emergencias
+*** Estrategias de respuesta rápida
+*** Cooperación internacional y recursos compartidos
+** Impacto de crisis climáticas en la salud
+*** Medidas de adaptación para sistemas de salud
+*** Prevención de brotes post-desastre
+
+* <color:#D84315>Avances y Desafíos en Salud Digital</color>
+** Digitalización de registros de salud
+*** Seguridad y privacidad de datos
+*** Interoperabilidad entre sistemas
+** Innovación tecnológica en atención sanitaria
+*** Wearables para monitoreo de salud
+*** Plataformas de asesoramiento médico virtual
+
+* <color:#2E7D32>Envejecimiento de la Población y Salud</color>
+** Desafíos en sistemas de cuidado a largo plazo
+*** Sostenibilidad financiera
+*** Formación y recursos humanos
+** Promoción de una vejez saludable
+*** Programas de actividad física y nutrición
+*** Atención integral y multidisciplinaria
+@endmindmap
+ -->
+          <td><em>Eres un experto en visualización de datos de Salud Pública que crearás una infografía detallada que ilustre las últimas tendencias y desafíos en salud pública a nivel global, cubriendo áreas críticas como pandemias, salud mental, cambio climático y salud, tecnología en salud, y más...<a href="https://www.plantuml.com/plantuml/png/jLZDSjl84RxpAIQLI-AgZKLAbccNYhNK3sDNnLwLfNZFpK4JwlLW1kaPS4DjvM5yt8CFAT_soXVBD0OGHf2qkQpjYp0OT7_zzTS_qlS-08UAR551FVbJkC4ALMs0xCH_8bi3GwNMe3-Lx1fRd3dZMFrvjPJ_sGrWTZzVtv3-PD5xDVtRF7jPu0OQ4rREXlSGpI-Pm3p-_efkKKsF9fCJ7tO65nFh2bI_J5JyTmb5GRPKqrdx-0wu9AkEseStZkasVWzcQQYq5TgWDDg0tBx-1rdie1ySl7nvDhix7J2dimyfIhR8QdRGEVetLKtr8nNXHirUfCCSh3oFWfEZgnietCyjuib_9knSU3y48xwl94JbdQ5YZFBY-F3LqN5xUle4-K-W7O0T3y-jerDdYWZ486mw86CJqnTFacbm4-vbOJxoDdkSXX5zXqBVaBpfGGHqyhpBTIQ98UqFux-Oh-QhLNhdk42-o-pX-OlJx3pFxJWXyYnEkgmUHY0ZzmDnlpnEv2HGY4ydFiR_UZfVd3IBPLKR0atxhrQXLLTWca9TxdzR6zAW_cxS6epwo-nWTlJNa-VD8aPEjnBuCtMY9OZNNU8Nbs0Bh0YysgbJTW7zoVFsncBox9aw--7Zs_FlfgzUgu_013Q-LbWXboW_nXlFr3L60rQBXSXarOI4gdrtuGD3mB9xkGNTs0vqsK8K7n-f90DYGUxO1hSGdTWDSeK559sRA_81gsG737805Pzh1Wlj-pFdQkJEE4azYYTdau-Bp9nY78VGh95rOvodTF0EZ8IRqpLRlZgVhnQ9w7Secis9MZOYNYUvg3b6O8IIXEnjLOCEJe0RK7N7zsFyo9Te4ttfGyUXPyOeq1gzKw0yyfOqkGwiYozT8YPqdol6oeNEluqUUcQqizcjcgaQ1xewMiwEfuipgDRar9cXQlyva7PgbrIMHtsnGHsYQ-_MZFTofWA3zHLvMfkEvMJHjnH1O6SnYK9CiDmPQ9JpDRkGRk3zv9cKrm9y6uqGKpOm6PWM3xO9J8CGhx1icA851OR4XKGT8z8fIdqNPNlx7FtmVOlNhPFN263R68iC4bPEs_pmS7vnjhX6RUD1kVy2yk43ngxHO0o5D5aOHsmWfPZMP0Ih6DX_PWJVfTFtw62p_vAOD219t8AM3yH80S7vbeobl2y8Ihl_wYMszFaRP8QAX8EMNUz4PQX0R1MeoIUXcFqNIxe3kGKRWOqDHbvOKGKbsdiAMXqS75yibhrS3OnuI45Gp9eP2lmKc96bzBMB3YhIRK_oJXDq4XhN2rbjcWJNWwNGIddKAtnRi1pT6Heg_fAnXhuc81xtNKrJn_9AIi-Wfehw_FZCxE_NqE5oVhnQBUvrdVTENUSraRFnmnfzcy2TyBl60QOh6Qe7tI7UmwBH2VyuGq8H9DH2O0KMVt8Fcg06BiXjmUl600ybMiF-lycVTbQB5RfDVhegtq2gLxd2XBvqNPUnRfjg9A7O_wfjcyD_DSJxtxZi4ifu0oBmD2T6mZcV7XylFc3BTDltbj5_HPhTci12pja_lIH5aaVhQ6WG-DlebY2GZ159icBXYbWwHHC_8blWcegxKWTcPuphXqya3NAdgPgk6YupAV00CJdDXfY4wEi6VO1XoWciRJoY4leC5hdhRZRwd8xfTBuydNKZfnlfkuYOKTz4b6-QIj3TwyUHwzGuakwJY5mivK3wGSti-edIMDeY-mxeXQ6AR0TJ6l4ZXIdE-lhkeUSAUchUe__zOIq1rX1IeVx1oXY1ysZRJZkIToSIxl1yEv5Kpf8KadjQ99B72ZLOyfNp8vFVLYbrMYN79RGMYuc_f9tKV0o1lGNV9xdxQ4Es3JOnChXwIZjvuSea8n-Orar7HGGSsfT3knbO6cf91CGkektrcxderkITjBQD8LbT4luxKeSv8bPldMsX3FVxhXnmi4zsmu0HQwD3mzdKoJDql9oUlbekpfYYBtNLUv66-E6kMxpDAs78rcXSvVq5ndDhF2A7gxp_N5C1_x_-67N3tibsLKMlWOgMfdoFrMqOmze4_IuoQEaT5bHqIYcW3fqp2ICVfBdwXlcMxN-ry-4xIQyFZ3cZv_EZm-cBHJ_uTlVtefJfSoffjAYdew7gMuvAaPeRy8nsnjqJErRQhRdbSjZP0W-hmcGarT2kX_klCWmLPglu8BpMxey8qMHVIKEl635c8C36SKSbUFIE-tAhzhyMigDjYKC39gTkTl7o_70MrvCj_fHlE9B1IxSs7TY72_zzZlCqwhQTf6sFIwTg0xSkqUYajgZZfsyAoD2lMLLoboll9ZMi97rNkRjKDHQKWBvDB0X53nSbq86shRC8rGlJk_7l0yi8QL1_oQtmgyO4AiXhgWtPDXVVeotwFrdz3m00" target="_blank">[Ver flujograma]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Amplía perspectiva global.<br><span class="emoji-grande">👎</span> Requiere actualizaciones constantes.</td>
+        </tr>
+        <tr>
+          <td><strong>Novedades en Farmacología</strong></td>
+          <td><em>Desarrolla 10 casos clínicos para formación sanitaria especializada en farmacología, abarcando temas como farmacocinética y dinámica, interacciones medicamentosas, resistencia a antibióticos, farmacogenética, manejo en poblaciones especiales (ancianos, embarazadas), reacciones adversas a medicamentos, y terapias personalizadas...<a href="https://chat.openai.com/share/fc976405-d5ad-4b88-916f-977e87a9938a" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Aporta información actual en farmacología.<br><span class="emoji-grande">👎</span> Necesita fuentes primarias.</td>
+        </tr>
+        <tr>
+          <td><strong>Lectura crítica de artículos</strong></td>
+          <td><em>Desarrolla la lectura crítica en español del artículo...<a href="https://chat.openai.com/share/9d80aa56-8d9a-4360-a57d-0dee87f8bea7" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Actualiza sobre innovaciones tecnológicas.<br><span class="emoji-grande">👎</span> Requiere correlación con experiencia clínica.</td>
+        </tr>
+        <!-- indicaciones en el GPT Prompt
+        estamos tratando de desarrollar prompts con indicaciones breves, de 2 o 4 lineas, que presenten casos de exito en la creación de prompts dirigidos a mostrar el potente valor de chatgpt en el ámbito sanitario. El objetivo es visibilizar su potencial aportación al ámbito de la formación sanitaria especializada, tutores y residentes. Incluirás elementos que resalten todo el potencial de chatgpt, desde la originalidad en el enfoque hasta las múltiples posibilidades en los formatos de salida que servirán para ilustrar ese valor inédito. Ahora te iré dando prompts y los perfeccionarás para que den resultados impactantes, con formatos diferentes en cada caso y resultados impactantes -->
+        <tr>
+          <td><strong>"No hacer en entrevista clínica"</strong></td>
+          <td><em>Desarrolla una guía 'Choosing Wisely' para residentes en sus primeros años de formación médica, enfocada en 10 prácticas anticuadas en entrevistas clínicas que deben evitarse...<a href="https://chat.openai.com/share/7355535a-b53c-4e96-a506-c2acffbec010" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Fomenta mejores prácticas en cuidados críticos.<br><span class="emoji-grande">👎</span> Dinámica de entorno real varía.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+  <h3 class="color">5. Evaluación de Residentes</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sistema de Evaluación Formativa</strong></td>
+          <td><em>Eres un mentor virtual de última generación especializado programado con capacidades avanzadas de procesamiento de lenguaje y análisis, tu objetivo es transformar la formación médica especializada. Proporcionarás evaluaciones precisas, feedback detallado y recomendaciones personalizadas...<a href="https://chat.openai.com/share/76448926-dabb-4815-94a1-6fa8611ad722" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Retroalimentación Inmediata y Accesible.<br><span class="emoji-grande">👎</span>  Limitaciones en Evaluación de Competencias Prácticas.</td>
+        </tr>
+        <tr>
+          <td><strong>Apoyo al tutor en la gestión de Evaluaciones Negativas</strong></td>
+          <td><em>Como herramienta avanzada de apoyo en la formación sanitaria especializada, tu objetivo es asistir a un tutor en el proceso de evaluación negativa de un residente, de una manera que promueva el desarrollo y el aprendizaje...<a href="https://chat.openai.com/share/c91dbf1d-2335-494e-9160-46e675552c72" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Promueve desarrollo personalizado.<br><span class="emoji-grande">👎</span> Carece de empatía y sensibilidad humana en feedback.</td>
+        </tr>
+        <tr>
+          <td><strong>Evaluación de Competencias Quirúrgicas</strong></td>
+          <td><em>Como experto formador sanitario de renombre en evaluación quirúrgica, formula un cuestionario de autoevaluación para cirujanos en formación que se estructura como una encuesta digital...<a href="https://chat.openai.com/share/99c1898f-2fea-4ae4-a4cf-e15e811c0cfc" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Enfoca en habilidades quirúrgicas.<br><span class="emoji-grande">👎</span> No captura habilidad práctica.</td>
+        </tr>
+        <tr>
+          <td><strong>Monitorización del Progreso en Enfermería</strong></td>
+          <td><em>Como un sistema avanzado de seguimiento de formación especializada para el ámbito sanitario, tu función es analizar y presentar el progreso de los residentes en distintas especialidades de enfermería. Crea un dashboard en formato de tabla que refleje el progreso de los residentes, incluyendo las siguientes especialidades enfermeras...<a href="https://chat.openai.com/share/87a0e905-e0b6-478a-bcde-cb4ab75ed113" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Facilita seguimiento del desarrollo.<br><span class="emoji-grande">👎</span> Requiere sistemas de evaluación reales.</td>
+        </tr>
+        <tr>
+          <td><strong>Análisis de Habilidades en Farmacología</strong></td>
+          <td><em>Eres un experto analista en Farmacología Clínica con amplia experiencia en la enseñanza y la práctica médica, tu misión es evaluar y mejorar las competencias de residentes en la prescripción y manejo de medicamentos...<a href="https://chat.openai.com/share/f3e0dca7-af1a-46ea-abbf-c443fb7136af" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Profundiza en conocimiento farmacológico.<br><span class="emoji-grande">👎</span> La prescripción real varía según contexto.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+  <h3 class="color">6. Comunicación y Habilidades Interpersonales</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Entrenamiento en Comunicación Efectiva</strong></td>
+          <td><em>Eres un experto en comunicación y relaciones interpersonales, desarrollando un decálogo que sirva como guía para mejorar la empatía, la efectividad comunicativa y la prevención de errores y conflictos entre el personal sanitario y los pacientes...<a href="https://chat.openai.com/share/5cf823bd-5455-4f69-ad3b-20fa8f6c41b4" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Mejora habilidades de comunicación.<br><span class="emoji-grande">👎</span> No reemplaza interacción humana real.</td>
+        </tr>
+        <tr>
+          <td><strong>Gestión de Conflictos en el Entorno Sanitario</strong></td>
+          <td><em>Eres un mediador sanitario experto en resolución de conflictos.  Tu misión es mejorar las habilidades de gestión de conflictos, promoviendo un ambiente laboral positivo y mejorando la calidad de atención al paciente...<a href="https://chat.openai.com/share/2d6c8125-a9e9-4589-9064-0a93752589bd" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Fomenta la resolución de conflictos.<br><span class="emoji-grande">👎</span> Los escenarios reales pueden ser más complejos.</td>
+        </tr>
+        <tr>
+          <td><strong>Capacitación en Liderazgo Clínico para residentes</strong></td>
+          <td><em>Como mentor experto en liderazgo clínico, tu misión es crear un curriculum estructurado y detallado para un programa de formación en liderazgo clínico, que pueda ser fácilmente implementado en programas de residencia en ciencias de la salud. <a href="https://chat.openai.com/share/ba921f9f-4114-4b3b-a52d-be6d43a8da94" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Promueve habilidades de liderazgo.<br><span class="emoji-grande">👎</span> El liderazgo efectivo requiere experiencia práctica.</td>
+        </tr>
+        <tr>
+          <td><strong>Desarrollo de Habilidades en Entrevistas Clínicas</strong></td>
+          <td><em>Eres un entrenador en entrevistas clínicas, enseñando técnicas para realizar entrevistas efectivas con pacientes. Presenta diferentes casos y enfoques según el tipo de paciente y situación analizando todos los aspectos posibles relacionados con estos conocimientos y competencias...<a href="https://chat.openai.com/share/9953f37e-456e-40f1-8807-55748ed97d37" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Mejora la interacción con pacientes.<br><span class="emoji-grande">👎</span> Requiere práctica en situaciones reales.</td>
+        </tr>
+        <tr>
+          <td><strong>Comunicación Multidisciplinaria en Salud</strong></td>
+          <td><em>Eres una enfermera experta en continuidad asistencial. Tu misión es crear materiales y ejercicios enfocados en la comunicación efectiva y estrategias de trabajo en equipo que apoyen la continuidad asistencial...<a href="https://chat.openai.com/share/8f4ab0fb-9a5c-40ee-901f-2f40a50b8cd7" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Contribuye a optimizar la continuidad asistencial.<br><span class="emoji-grande">👎</span> No captura la complejidad de la comunicación en vivo.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+  <h3 class="color">7. Manejo de Casos Complejos</h3>
+  </div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Análisis Integral de Casos Complejos</strong></td>
+          <td><em>Eres experto en formación con recursos tecnológicos. Desarrollarás un documento de proyecto para un programa de formación virtual interactiva destinado a médicos residentes...<a href="https://chat.openai.com/share/098cf509-380a-46ce-84b8-20bf9d71c810" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Feedback Inmediato en en aprendizaje<br><span class="emoji-grande">👎</span> Limitaciones en evaluación de competencias soft.</td>
+        </tr>
+        <tr>
+          <td><strong>Gestión de Enfermedades Crónicas</strong></td>
+          <td><em>Como especialista en enfermedades crónicas utilizando ChatGPT, desarrolla un documento integral para un programa de manejo de enfermedades crónicas dirigido a médicos de familia...<a href="https://chat.openai.com/share/f1962277-5bd1-415f-954b-ce12de001b23" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Apoya el manejo a largo plazo de enfermedades.<br><span class="emoji-grande">👎</span> Necesita actualizaciones constantes basadas en la evidencia.</td>
+        </tr>
+        <tr>
+          <td><strong>Estrategias en Oncología</strong></td>
+          <td><em>Eres un consultor experto en oncología coordinador de un equipo de trabajo multidisciplinar que desarrolla guías de tratamiento detalladas y actualizadas para diversos tipos de cáncer. Estas guías deben abordar enfoques multidisciplinarios...<a href="https://chat.openai.com/share/86422bb8-3879-40be-b28f-d7bf7051e79e" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Enfoque personalizado en oncología.<br><span class="emoji-grande">👎</span> La complejidad del cáncer requiere adaptación constante.</td>
+        </tr>
+        <tr>
+          <td><strong>Planificación de Cuidados Intensivos</strong></td>
+          <td><em>Eres un coordinador interdisciplinario en cuidados intensivos, y desarrollarás un protocolo estructurado de referencia internacional de planes de cuidado para pacientes críticos...<a href="https://chat.openai.com/share/7a6d887c-2a45-4732-b219-6c87c1d2d4e4" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Mejora la preparación para el cuidado crítico.<br><span class="emoji-grande">👎</span> No puede replicar la variabilidad de casos en vivo.</td>
+        </tr>
+        <tr>
+          <td><strong>Manejo de Casos Pediátricos Específicos</strong></td>
+          <td><em>Coordinas un equipo pediátrico specializado, que desarrollará un diagrama de flujo que pueda abordar los aspectos generales que puedan ser utilizados en las guías del paciente pediátrico.<a href="https://www.plantuml.com/plantuml/png/ZLLDRzj64BtpLqoTYmsqy8SJe960Degij3au5MmtG57qCDeTokCiTzJPfGsdy8_9CGUVVCkbGFd7gYKfOMl9QA0BmNdpCUyzZbw5Y1hhoXNVn4kg21OEsHVX0_i5AbOmG_DXhb9xEnOd2i_UZD8lGuHBj7B3VWvHQye2RPOHzQHmz28BU8a4VnK00AyVbV-Dd9ERBYHgIRlNhzqILznbDKQgSjEFTFpyvVTsbWTD5CtpdnsPOtfni05vl1oPyg0yp61ZyPOZYz-0beVc-K6v5PetBezVciEZeeWS7S5KnL0GEA68pg4Li0IdwEcgVHfZa01JijnyYif6Gb6q0XKjPShpopY0YIz9ArBPnvIaP6XXk7dmnU1i_RoCE9YYOVAHXaMnG8tjTB0pkKPNOuTwwzamkfrUZYVQjB71Mqi-Sia6jtL8aDHV79bL77xc44KP7PmsdoqRWJTOiMDKk8KfQH2Fhiyz9Slhn7EUUmdmdYCw2iEbz3a5gse96PNnYWekOVUVly-RUn-bmf0Yl-gSl67ySG_Y9NdO3StzNW7mtG_m-ohs1-nSA8PM2eH9HVtxdJJKOArC5ac146LHa0i4krxs2lAMo-q3_aIU5Dr-qXIZOZ4OYm-rYzX3S2N1iEXtU4U60aU4gTOqmm2JiA24eF1uay4lQicZRe6syvyHElwubci5Ix5ys8lci_4zdGvdefX44zY7CxJBN2TpIUL6lldaE73BxXcrQrW9UUMC5O2qQsJVV478FJTsIvNOuB0ZBhVc2UFSDmyXfcbkuOGCXzNmIvqYLibjqjdrg_W6w5XTZhAoLzO4xOOx00QJ477co93cM4cqhSgTqPyranAqhkqMswYKQasLWb6UiURGhbJELGTswBEBy2vzBbgX4TSypDSJ_7VpKQ0WsjnZIlHrr6xBR-6251TKHuIokGzif4tkA7_KEpcb96tz3RXs4OVOshqt_2hvBbVidEOrjweamKPNTOWKaZxjxZ9Nh50XGpqstyXMx3b4nSZNqdvruZcAaa3ddrhQKvDKiR9nTPwwZBHQuYFQTCBMJkXd1F90BdVL5YUqM5JeXSdHmqqIbx95yjJ3HoRMw8RRQPlOUjiPJLTHwPfy6-ffpB11PahW438xtwxiGXx66723b9HkHRj_Yu2kjhau0InbJLEzzsXgttLyak6i6YoQBpF71ejKD__Iqo77oA54ixdh_ngXDTrTyOgyhIjN5Fy2" target="_blank">[Ver flujograma]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Enfoque específico en pediatría.<br><span class="emoji-grande">👎</span> Requiere validación y adaptación por especialistas.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+  <h3 class="color">8. Gestión y Administración Sanitaria</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Optimización de Recursos Hospitalarios</strong></td>
+          <td><em>Eres una destacada internista y experta en gestión hospitalaria. Tu misión es liderar la capacitación de residentes en la optimización de recursos mediante la implementación de salas virtuales para la gestión del fallo cardíaco...<a href="https://chat.openai.com/share/45a7b9f1-f53e-4dcb-9a09-5d427c83b8c3" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Promueve eficiencia en la gestión.<br><span class="emoji-grande">👎</span> Puede no reflejar la complejidad de la gestión hospitalaria real.</td>
+        </tr>
+        <tr>
+          <td><strong>Formación en Políticas de Salud</strong></td>
+          <td><em>Como experto en políticas de salud, tu objetivo es educar a los profesionales de la salud sobre las diversas políticas sanitarias y su impacto directo en la práctica clínica, con un énfasis particular en la integración de tecnologías digitales. Desarrolla módulos de formación y debates.<a href="https://chat.openai.com/share/cacdf3d1-5c04-45cc-8df3-ad263b86d289" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Ayuda eficaz en formación sobre de políticas sanitarias.<br><span class="emoji-grande">👎</span> Requiere actualización en contenido y formatos.</td>
+        </tr>
+        <tr>
+          <td><strong>Gestión de Calidad en Servicios Sanitarios</strong></td>
+          <td><em> Como consultor en gestión de calidad en contextos sanitarios, tu misión es implementar la filosofía LEAN en la desburocratización de servicios sanitarios...<a href="https://chat.openai.com/share/14f8b501-fae4-4db2-9966-92470f0234f7" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Enfoca en la mejora continua de servicios.<br><span class="emoji-grande">👎</span> Puede requerir adaptación a contextos específicos.</td>
+        </tr>
+        <tr>
+          <td><strong>Análisis de Tendencias en Salud</strong></td>
+          <td><em>Eres el responsable de una consultora internacional en tendencias en salud a la que han contratado para un trabajo de campo, dirigido a identificar las principales 10 tendencias emergentes en la atención sanitaria y su impacto en la gestión.<a href="https://chat.openai.com/share/4a83eff0-9d72-4fc2-a089-09c3b97c1f15" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Facilita la actualización de los líderes sanitarios en últimas tendencias<br><span class="emoji-grande">👎</span> Requiere actualización del contenido formativo para mantener relevancia.</td>
+        </tr>
+        <tr>
+          <td><strong>Desarrollo de Competencias Directivas</strong></td>
+          <td><em>Desarrolla un conjunto de materiales de capacitación dirigidos a directivos y gestores sanitarios, enfocados en la implementación de la inteligencia artificial (IA) en áreas críticas de la gestión sanitaria (tabla y flujograma).<a href="https://chat.openai.com/share/88c32ae5-a9f5-416a-9809-f202291f5eb5" target="_blank">[leer más]   </a><a href="https://www.plantuml.com/plantuml/png/XPI_Rjj03CPtFGN7PEXITBA7Hcqqk801msaUW95e-TpJdNhafK3V9cE7J7c00jMBbVfpbQ8CdGo87ycFlq_o3Gi6YOtD-9jnBGPieF7Eb-VW6m89aHOLFcFbVnXNmmajKvODtTbcv-f0xA4Y2mSi3JcXhJwko8avcL8VTIyETiwK1kqsCoUu-lExO8WEIjJ6CdJFOah_yHhaJ0wkk7k-pW0skQKW20Ytf1O46vtOxu6YeL2JqtdRNdUaqbignprQlaNn38T0rZJ6OI0UPFTYhFc90NOvz2T1xhedQzZmR0vWj7Uaxz5G8Aq8XKTowOY6AeE2Qwyw_hNoFjG3YB6szyw83-JXirSgBkhLtgcHiPwG23vO0dBm_iFvtmRdnmN3eVI8Dav4Mn-WK9kjXtttgrA2soJCBv65k1z55hu6L7XzC9E2BDDeFJKeh1v9WDmAJkDm4hlAdBBKbDniz12ElRZWbdfuYhR2wLubV1Vh0U0XH7f0Xbk3jUjUM7GmJxBYGcLCiINbF29tmrGuqh2fyhoI9NABsGFXamcDoYU4gqijzjkMKE0Jiig1KYAZWQQrr6WTayCt95VPLjHRRIEn8E1IlOnxjhsdYmy8Y-zcxVZ_wQnpUPsDRftpOKdKvb3Vjc--H3Sl6J-KOdxh56_FvR9wESRVvImrxKlYWKekwRCeMBedLs7OPcFBvexgQ2P81y_oRhWnuMBnRNQZqlvVwYy0" target="_blank">     [flujograma]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Ayuda a anticipar y adaptar la práctica clínica a futuras necesidades.<br><span class="emoji-grande">👎</span> Las tendencias pueden cambiar rápidamente.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+  <h3 class="color">9. Ética y Práctica Profesional</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Formación en Ética Médica</strong></td>
+          <td><em>Eres un un instructor en ética médica, Crearás 10 módulos de formación sobre dilemas éticos y legales comunes en diversas especialidades. Incluye casos de estudio y análisis de decisiones.<a href="https://chat.openai.com/share/4e86e079-2118-4110-8e31-2360247a0733" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Sensibiliza sobre la ética en la práctica.<br><span class="emoji-grande">👎</span> Requiere actualización constante según legislaciones.</td>
+        </tr>
+        <tr>
+          <td><strong>Debate sobre Cuestiones Éticas Actuales</strong></td>
+          <td><em>Organiza un debate filosófico profundo entre pensadores de renombre sobre la edición genética...<a href="https://chat.openai.com/share/af5f4fed-4959-4872-9c19-1101bafc9b5e" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Estimula la reflexión ética.<br><span class="emoji-grande">👎</span> Puede generar opiniones divergentes.</td>
+        </tr>
+        <tr>
+          <td><strong>Análisis de Casos Legales en Medicina</strong></td>
+          <td><em>Eres un experto en derecho médico con un profundo conocimiento en litigios relacionados con la medicina. Combinas tu experiencia legal con un entendimiento clínico para analizar casos y orientar a médicos y estudiantes en las implicaciones legales de su práctica...<a href="https://chat.openai.com/share/cddc92ef-0c44-45bf-a5af-c622ee9e1e73" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Proporciona aprendizaje basado en casos reales.<br><span class="emoji-grande">👎</span> No sustituye el asesoramiento legal profesional.</td>
+        </tr>
+        <tr>
+          <td><strong>Capacitación en Consentimiento Informado</strong></td>
+          <td><em>Eres un educador en comunicación médica reconocido internacionalmente, encargado de liderar un equipo de especialistas en diversos campos de la salud que van a elaborar una lista de 10 principales señales de alerta en la práctica del consentimiento informado... <a href="https://chat.openai.com/share/23773f5d-5355-4a80-b2e2-adfb8c2a7918" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Refuerza la importancia del consentimiento.<br><span class="emoji-grande">👎</span> La aplicación práctica varía según el contexto.</td>
+        </tr>
+        <tr>
+          <td><strong>Discusión sobre Diversidad y Equidad en Salud</strong></td>
+          <td><em>Genera un Foro de Deliberación Interdisciplinaria sobre Diversidad y Equidad en Salud,que reunirá a expertos de diversas disciplinas junto a los participantes, resdientes de formación sanitaria especializada, para explorar y profundizar en temas de diversidad y equidad...<a href="https://chat.openai.com/share/2490d796-1935-45cd-8e95-09c9a0d044da" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Fomenta la inclusión y la equidad.<br><span class="emoji-grande">👎</span> Requiere un enfoque sensible y actualizado y supervisado.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+  <h3 class="color">10. Tecnología e Innovación en Salud</h3>
+  </div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Exploración de Innovaciones Tecnológicas</strong></td>
+          <td><em>Como experto en innovaciones tecnológicas, tu objetivo es identificar y analizar las últimas tendencias en tecnología médica que están impactando la práctica clínica en cirugía...<a href="https://chat.openai.com/share/52f21caa-1f3f-4cc6-87ee-1c25aa0aa8aa" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Fomenta la adaptación tecnológica.<br><span class="emoji-grande">👎</span> Puede no reflejar todas las innovaciones recientes.</td>
+        </tr>
+        <tr>
+          <td><strong>Integración de Herramientas Digitales en la Práctica</strong></td>
+          <td><em>Como consultor especializado en herramientas digitales, utiliza tus capacidades para analizar y recomendar la implementación de nuevas tecnologías digitales en el entorno clínico...<a href="https://chat.openai.com/share/b930c095-dd7f-4aad-9913-2115cab53cfd" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Promueve el uso efectivo de la tecnología.<br><span class="emoji-grande">👎</span> Requiere adaptación a diferentes contextos clínicos.</td>
+        </tr>
+        <tr>
+          <td><strong>Capacitación en Telemedicina</strong></td>
+          <td><em>Como Experto en Formación Digital en Telemedicina, tu misión es desarrollar un conjunto de herramientas formativas aplicables a todos los profesionales sanitarios...<a href="https://chat.openai.com/share/6d6f2bbc-8b97-4a55-bdbd-b90f4585a6c1" target="_blank">[leer más]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Amplía las capacidades de atención remota.<br><span class="emoji-grande">👎</span> Puede enfrentar barreras tecnológicas y de adaptación.</td>
+        </tr>
+        <tr>
+          <td><strong>Análisis de Big Data en Salud</strong></td>
+          <td><em>Como Consultor Senior de Análisis de Datos en Salud, desarrollarás recursos educativos que capaciten a los equipos de salud en el uso de Big Data...<a href="https://chat.openai.com/share/62caa2ff-d41a-47d8-bb70-369fc12de60e" target="_blank">[leer más]   </a><a href="https://www.plantuml.com/plantuml/png/TP51JWCn34NtEOLFm06ccrQmwGuXSG3Zk5CBZnCSJwNsMXo1Yp7fgA92i8ZapNlV_jcsG8zvqdGTql341p5nK8JgFCuM29b1xCGjP4IIhq_RfE65gIZJ0a76A6sJh0I3otYCj6iBwUYDE_inSzVvIbm5YUQfAWCLWoWP6-ZohFY48ITi7Qk-J2GPyqDYoz3zQNXshbw8sv_1UoETpmmgKnM-89mX7AqTklcQVE_Q6QfSVaJ3teAzElUhdDkiWVbNmcl8oh027PdULLf0zLABanHRWFk8npBD9lI_xrRLhILQWNLPu0QawFqE9E8cRyht-drlSMBh2nzH5IzZzxSeDMtPSl_ORm00" target="_blank">[diagrama de flujo]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Promueve un enfoque basado en datos.<br><span class="emoji-grande">👎</span> Requiere habilidades en análisis de datos y privacidad.</td>
+        </tr>
+        <tr>
+          <td><strong>Innovación en Dispositivos Médicos</strong></td>
+          <td><em>Como Director de Innovación Biomédica, necesito preparar una presentación para un próximo congreso médico que ilustre cómo las innovaciones en dispositivos de monitorización están transformando la atención clínica...<a href="https://chat.openai.com/share/cbcda29a-90a1-42ee-a24a-2acc7b620298" target="_blank">[leer más]  </a><a href="https://www.plantuml.com/plantuml/png/XLJ1RZD53BxlKrYvHqW82GdzYlwcLGiIXQWKSUd5dN4tfhFZnUCf5CJ3zCYXfpx2lXWxaswIhLhzUyd6Ot_-_7sU_PmCrN8Nca1t1YQWt6uDF2ivOubDkkVOes87FRfxREaNUmm4vHXZ6-WemTCTvc3Nz9UT16vZHz70KJJIGzQX4lvfO7pM8sohagC_bI3wwHFy73oiLl1ZOR8EcJv8-ud-tATTA57SvObwqfe3wp0MrUYvH3kE_Tiqh-F0udBupyHBWcj5puubOg2qW0EJGdIYNGeaiedot-XuU8dW2TgGdII4NXJw76ly9YxXNCdbea3vSrO8Z5aBm5IWBseHlGjE2Hog7vvnJ04xPbQWVaq2WJisz088MqazstHuHNza9YKelprsJD44UahePUhzFQ7QcyxaUJzGhvJgEwgHCWReC6OCC_m7JcoOm8NXERB3sdqZ3k5kDxTZB60UJTBKURsPgVz3ZFA0PJOQ7I0N9GmlRG5Rm6Jo5nrm4erZnYCh2fNBGgj3uBA23tImvQmG0efWJ5qle8IX5j3lebWEEepZUoNFU4j6bN-Xywvhln4gteQPQmLmSbFWws---hP4JW9fqGopIJSysIJR6HcvtJGsSbACTHfKPUiOz-tdnirNvdtZb3gn7PsJRBBi9fzBv2Cbzsf0eZRpReSc3klDdC06rMrVspE5gdVWbgBHJeKSZ7lKuQaZKwcXGkAefqf0NxkU3YzTlOwFu3avfMbtDcXkMtRdS7LWMJzNozMHCV0TB2OZLwkRU4K-kyDUvxZRjKKptO8PI8syXQZUpFMfvUlDh7QzAOL7TM_5hKxW0ihJD9yf-lBbRVu7" target="_blank">[Diagrama]</a></em></td></a></em></td>          <td><span class="emoji-grande">👍</span> Destaca avances en dispositivos médicos.<br><span class="emoji-grande">👎</span> Necesita correlación con la experiencia clínica y regulaciones.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</section>
+
+<section data-name="Investigación Sanitaria">
+<!-- Categoría 1: Promoción y Mejora de la Investigación e Innovación Sanitaria -->
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+<h3 class="color">1. Promoción y Mejora de la Investigación e Innovación Sanitaria</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    
+<table class="tabla-casos">
+  <thead>
+    <tr>
+      <th>Caso de uso</th>
+      <th>Ejemplo de solicitud</th>
+      <th>Evaluación workflow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Identificación de tendencias</strong></td>
+      <td><em>Eres un experto analizando tendencias en terapias genómicas. Tu misión es identificar y analizar las tendencias emergentes para informar decisiones de investigación futuras. Proporciona un resumen ejecutivo con recomendaciones específicas para orientar decisiones de investigación estratégicas...<a href="https://chat.openai.com/share/77918dad-f17f-42a3-97c7-f16788ee59a3" target="_blank">[leer más]</a></em></td>
+
+      <td>👍 Impulsa la innovación y adaptabilidad en modelos de financiación<br>👎 Limitaciones en la aplicación práctica sin análisis de casos reales</td>
+    </tr>
+    <tr>
+      <td><strong>Evaluación de indicadores de resultados</strong></td>
+      <td><em>Te especializas en la evaluación de investigaciones médicas y tienes la tarea de evaluar los indicadores de éxito de estudios recientes, no solo sobre las vacunas COVID-19, sino también aplicando este aprendizaje para anticipar y prepararse para futuras amenazas pandémicas...<a href="https://chat.openai.com/share/a5c14196-f245-42d2-8e1f-d2ba6daa224e" target="_blank">[leer más]</a></em></td>
+
+      <td>👍 Facilita identificación de áreas de éxito.<br>👎 Puede requerir datos no disponibles.</td>
+    </tr>
+    <tr>
+      <td><strong>Soporte en evaluación ética</strong></td>
+      <td><em>Como consultor ético especializado en inteligencia artificial aplicada a diagnósticos médicos, tu tarea es profundizar en la evaluación de los dilemas éticos asociados con el uso de IA en este campo...<a href="https://chat.openai.com/share/6487aed2-523a-4a1c-ba27-d0e9520c8f02" target="_blank">[leer más]</a></em></td>
+
+      <td>👍 Promueve prácticas responsables y construye confianza. <br>👎 Requiere esfuerzos multidisciplinarios y actualizaciones continuas.</td>
+    </tr>
+    <tr>
+      <td><strong>Análisis de necesidades de investigación</strong></td>
+      <td><em>Como un reconocido estratega en investigación médica, enfócate en descubrir áreas poco exploradas dentro de las enfermedades raras. Desarrolla y sugiere estrategias concretas para cerrar estas brechas, potenciando innovaciones significativas y colaboraciones efectivas en el campo.<a href="https://chat.openai.com/share/cc6ac9b8-ec49-451f-91eb-123a4a62bf6d" target="_blank">[leer más]</a></em></td>
+
+      <td>👍 Facilita la generación de ideas y estrategias innovadoras rápidamente.<br>👎 La precisión y relevancia de las sugerencias pueden requerir verificación por expertos del sector.</td>
+    </tr>
+    <tr>
+      <td><strong>Optimización de Procesos en Investigación</strong></td>
+      <td><em>Como coordinador de un proyecto de investigación en salud digital, tu objetivo es explorar el impacto de las aplicaciones móviles en la autogestión de pacientes con enfermedades crónicas...<a href="https://chat.openai.com/share/83a7d8be-b03c-4cee-8333-67764429c110" target="_blank">[leer más]</a></em></td>
+
+      <td>👍 Agiliza proceso de revisión.<br>👎 Requiere revisión de fuentes.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</section>
+<!-- Categoría 2: Gestión de Biobancos y Proyectos de Investigación -->
+
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+<h3 class="color">2. Gestión de Biobancos y Proyectos de Investigación</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+<table class="tabla-casos">
+  <thead>
+    <tr>
+      <th>Caso de uso</th>
+      <th>Ejemplo de solicitud</th>
+      <th>Evaluación workflow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Gestión de biobancos</strong></td>
+      <td><em>Te encuentras al frente de la gestión de un biobanco y estás explorando maneras de perfeccionar el proceso de almacenamiento y recuperación de muestras biológicas...<a href="https://chat.openai.com/share/7ea9ea12-c82e-4b2a-9490-24911d48fb74" target="_blank">[leer más]</a></em></td>
+
+      <td>👍 Innovación Acelerada: Facilita conceptualización y soluciones avanzadas.
+      <br>👎 Dependencia de la Precisión del Modelo: Requiere verificación humana.</td>
+    </tr>
+    <tr>
+      <td><strong>Autorización de proyectos</strong></td>
+      <td><em>Eres un sistema avanzado diseñado para gestionar un biobanco. Tu tarea es automatizar la evaluación de solicitudes de acceso a muestras, basándote en criterios específicos como relevancia científica, ética y cumplimiento <a href="https://chat.openai.com/share/3a894681-5e65-4145-b367-b56b994c9ffa" target="_blank">[leer más]</a></em></td>
+
+      <td>👍 Agiliza significativamente el proceso de revisión preliminar.<br>👎 Las decisiones críticas aún necesitan el juicio experto humano para garantizar la integridad.</td>
+    </tr> 
+    <tr>
+      <td><strong>Optimización de recursos en proyectos</strong></td>
+      <td><em>Como gestor de proyectos en un centro de investigación oncológica, enfrentas el desafío de optimizar el uso de recursos para asegurar que las inversiones se alineen estrechamente con los objetivos estratégicos del centro...<a href="https://chat.openai.com/share/da6f4673-406a-4821-84a7-451ad8f173a2" target="_blank">[leer más]</a></em></td>
+
+      <td>👍 Mejora eficiencia de investigación y acceso rápido a información estratética.<br>👎 Requiere adaptación y actualización constante en cada proyecto.</td>
+    </tr>
+   
+    <tr>
+      <td><strong>Evaluación de impacto de biobancos</strong></td>
+      <td><em>Como analista de políticas de salud, tu tarea es evaluar el impacto de los biobancos en la investigación biomédica, tanto nacional como internacionalmente. Realiza un análisis comparativo para identificar fortalezas, debilidades y áreas de mejora...<a href="https://chat.openai.com/share/bb355b97-1f0b-4d1f-b6df-61a2c35da6c0" target="_blank">[leer más]</a></em></td>
+
+      <td>👍 Justifica inversiones.<br>👎 Recolección de datos puede ser extensa.</td>
+    </tr>
+    <tr>
+      <td><strong>Revisión de normativa para biobancos</strong></td>
+      <td><em>Como un renombrado asesor legal especializado en el ámbito de los biobancos, con profunda experiencia en bioética, derecho de la salud y protección de datos personales, te enfrentas a un desafío crítico: revisar y actualizar las guías de buenas prácticas para biobancos...<a href="https://chat.openai.com/share/223c4826-8f8a-4d7c-9910-bcb29a907df7" target="_blank">[leer más]</a></em></td>
+
+      <td>👍 Asegura cumplimiento.<br>👎 Necesita revisión legal especializada.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</section>
+
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+<div class="shadow-oval-slide">
+<h3 class="color">3. Fomento y Difusión de la Investigación e Innovación</h3>
+</div>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>       
+      <tbody>
+        <tr>
+          <td><strong>Políticas de fomento</strong></td>
+          <td><em>Como consultor en políticas de salud enfocado en salud mental, tu objetivo es crear campañas informativas destacando financiamiento para proyectos de salud mental...<a href="https://chat.openai.com/share/4a75d37a-a66d-43f0-b5cf-d14162b49bf4" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Aumenta visibilidad de recursos.<br>👎 Eficacia depende de difusión.</td>
+        </tr>
+        <tr>
+          <td><strong>Difusión de información</strong></td>
+          <td><em>Tu rol es resaltar innovaciones en terapias genéticas dentro de nuestro instituto de investigación. Prepara resúmenes ejecutivos concisos, de no más de 300 palabras, para difundir entre investigadores y stakeholders...<a href="https://chat.openai.com/share/ca4196ef-97d5-4013-bd55-19bdbf42e357" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Facilita la comunicación y mejora la claridad para distintas audiencias.<br>👎 Requiere supervisión .</td>
+        </tr>
+        
+        <tr>
+          <td><strong>Establecimiento de políticas de colaboración</strong></td>
+          <td><em>Como director de innovación en un hospital, tu objetivo es impulsar la colaboración interdisciplinaria entre investigadores. Tu tarea es desarrollar una estrategia global que incluya la creación de directorios de colaboración accesibles y el fomento de proyectos conjuntos.<a href="https://chat.openai.com/share/79a4feb1-3c49-4efd-a043-b9bb5b13899b" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Facilita la inclusión de perspectivas diversas en la investigación.<br>👎 Necesita un marco ético y de privacidad robusto.</td>
+        </tr>
+        <tr>
+          <td><strong>Evaluación de programas de innovación</strong></td>
+          <td><em>Como analista de políticas públicas especializado en la evaluación de programas de subvenciones para innovación, tu objetivo es generar un documento que sirva como base para la revisión y optimización de futuras convocatorias...<a href="https://chat.openai.com/share/78d39097-0a26-426e-bd7b-9680dcd686da" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Permite mejorar futuras convocatorias con análisis efectivos.<br>👎 Requiere acceso a datos que pueden ser difíciles de obtener.</td>
+        </tr>
+        <tr>
+          <td><strong>Fomento de investigación entre jóvenes</strong></td>
+          <td><em>Como coordinador de un innovador programa de mentorías, tu misión es diseñar y lanzar una iniciativa que conecte a jóvenes investigadores con expertos en salud pública global  ...<a href="https://chat.openai.com/share/349436ce-83b1-4c68-ab85-6133e6d50a39" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Proporciona acceso directo a expertos consolidados.
+            Contras:<br>👎 El impacto varía según la dedicación y habilidad de cada mentor.</td>
+        </tr>
+      </tbody>
+      
+      
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+<h3 class="color">4. Coordinación y Evaluación de la Formación Sanitaria</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Optimización de programas formativos</strong></td>
+          <td><em>Como coordinador de desarrollo curricular en una prestigiosa universidad de medicina, enfrentas el desafío de mantener el plan de estudios actualizado con los avances más recientes en el campo médico, particularmente en genética médica.Tu tarea es realizar un análisis exhaustivo de las necesidades actuales...<a href="https://chat.openai.com/share/b1f74dbb-a40a-4cee-8e46-78279a01fed8" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Alinea los programas educativos con las demandas contemporáneas. <br>👎 Requiere revisión y renovación periódica del contenido.</td>
+        </tr>
+        <tr>
+          <td><strong>Acreditación de actividades formativas</strong></td>
+          <td><em>Eres el responsable de un programa de formación continuada de renombre internacional en las organizaciones sanitarias. Detalla las etapas específicas que componen tu protocolo de acreditación digital...<a href="https://chat.openai.com/share/208d04be-3048-41b3-9589-163a6f1d25d1" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Optimiza y acelera el proceso de acreditación de la formación.<br>👎 Requiere métodos para validar la autenticidad y calidad.</td>
+        </tr>
+        <tr>
+          <td><strong>Evaluación de impacto formativo</strong></td>
+          <td><em>Como investigador en educación médica, estás interesado en evaluar el impacto de la formación continuada en la práctica clínica. Diseña un estudio para medir los efectos de la formación en el desempeño profesional...<a href="https://chat.openai.com/share/71e12cb4-f698-4303-99ad-2e989a5e1474" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Aporta evidencia sobre eficacia de formación.<br>👎Necesita recolección detallada y continua de información para análisis.</td>
+        </tr>
+        <tr>
+          <td><strong>Desarrollo de competencias digitales</strong></td>
+          <td><em>Como coordinador de formación sanitaria especializado en competencias digitales, enfrentas el desafío de desarrollar y coordinar un programa integral que no solo eleve las habilidades digitales de los profesionales de la salud...<a href="https://chat.openai.com/share/a7496cb6-086f-41ea-a6e4-daa23e3fdd8b" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Equipa a los profesionales de la salud con habilidades digitales esenciales.<br>
+            👎 Requiere actualizaciones frecuentes para mantenerse al día.</td>
+        </tr>
+        <tr>
+          <td><strong>Reconocimiento de formaciones internacionales</strong></td>
+          <td><em>Como asesor en políticas de educación sanitaria, estás a cargo de diseñar un sistema innovador que facilite el reconocimiento automático de títulos de formación sanitaria obtenidos en el extranjero...<a href="https://chat.openai.com/share/ffeba218-e943-47ce-a039-f3ab607749c8" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Fomenta diversidad en sector sanitario.<br>👎 Requiere base de datos exhaustiva de equivalencias.</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+<h3 class="color">5. Optimización del Uso de Terapias Avanzadas</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Seguimiento de terapias avanzadas</strong></td>
+          <td><em>Eres un ingeniero de software y analista de datos en un hospital de vanguardia que se especializa en terapias avanzadas. Tu misión es liderar el desarrollo de un in novador sistema de registro que permita el seguimiento en tiempo real de la aplicación de estas terapias...<a href="https://chat.openai.com/share/3b2103b5-44c9-4f4f-953c-c215e34e3fef" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Facilita el análisis detallado y en tiempo real sobre la seguridad y eficacia.<br>👎 Depende de una integración compleja con HCE.</td>
+        </tr>
+        <tr>
+          <td><strong>Planificación de terapias personalizadas</strong></td>
+          <td><em>Como científico de datos en oncología, tu misión es crear un algoritmo que utilice el perfil genético del paciente para recomendar terapias personalizadas.<a href="https://chat.openai.com/share/935fa776-43cd-448b-a75d-52a31b157cdb" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Promueve tratamientos eficaces y personalizados.<br>👎 Necesita acceso a bases de datos genéticas.</td>
+        </tr>
+        <tr>
+          <td><strong>Evaluación de nuevas terapias</strong></td>
+          <td><em>Como experto sanitario especializado en terapias avanzadas de reconocido prestigio, tu misión es realizar un análisis detallado de la eficacia, seguridad y eficiencia de los tratamientos CAR-T...<a href="https://chat.openai.com/share/4b18eb6a-77e3-4a1c-b0d4-07eecd81b053" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Facilita procesos de evaluación supervisados .<br>👎 Análisis complejo que requiere múltiples fuentes de datos.</td>
+        </tr>
+        <tr>
+          <td><strong>Capacitación sobre manejo de terapias avanzadas</strong></td>
+          <td><em>Coordinas un equipo multidisciplinar de un programa de estudios avalado internacionalmente destinado a profesionales de la salud. Estás encargado de crear módulos de capacitación en línea que cubran exhaustivamente el manejo de terapias avanzadas...<a href="https://chat.openai.com/share/3743401b-9b18-4d46-a2b0-89481af36188" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Mejora integral de competencias en terapias innovadoras.<br>👎 Capacitación debe actualizarse continuamente.</td>
+        </tr>
+        <tr>
+          <td><strong>Plan de seguridad y evaluación de efectos adversos</strong></td>
+          <td><em>Como epidemiólogo experto en la mejora continua de la seguridad del paciente, vas a diseñar un sistema avanzado que permita la monitorización en tiempo real de los efectos adversos asociados a terapias avanzadas...<a href="https://chat.openai.com/share/ea60edc2-24db-42f5-abdd-df90114c0e36" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Potencia seguridad del paciente.<br>👎 Requiere robustez en protección de datos.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+<h3 class="color">6. Acreditación de Instituciones y Establecimientos Sanitarios</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Evaluación de estándares de calidad</strong></td>
+          <td><em>Como Consultor Innovador en Tecnología de la Salud, te embarcas en la misión crítica de diseñar un sistema de evaluación de estándares de calidad para hospitales y centros de salud...<a href="https://chat.openai.com/share/ca2f6059-dec2-4cea-8f64-5a3cccdc5949" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Eficientiza procesos de acreditación.<br>👎 Evaluación final requiere visitas in situ.</td>
+        </tr>
+        <tr>
+          <td><strong>Revisión de infraestructuras docentes</strong></td>
+          <td><em>Eres un consultor experto en educación médica con el encargo de evaluar las infraestructuras docentes en una institución sanitaria. Tu primera tarea es desarrollar un checklist detallado que abarque todos los aspectos críticos a revisar durante tu evaluación...<a href="https://chat.openai.com/share/8cc5e6f8-d652-44b9-9066-9934c47a93df" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Facilita sistematizar la identificación de mejoras.<br>👎 Complemento con evaluaciones presenciales necesario.</td>
+        </tr>
+        <tr>
+          <td><strong>Aplicación metodología Lean en la Acreditación Sanitaria</strong></td>
+          <td><em>Como directivo de renombre internacional en el ámbito de la salud, te enfrentas al desafío de asegurar el cumplimiento constante de los más altos estándares de calidad y seguridad para los pacientes en un entorno de normativas de acreditación en constante cambio aplicando la metodología Lean...<a href="https://chat.openai.com/share/33c24641-fd68-4549-91f9-3a9e368d6406" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Promueve la Eficiencia y la Cultura de Mejora Continua.<br>👎  Requiere Compromiso Organizacional y Cambio Cultural.</td>
+        </tr>
+        <tr>
+          <td><strong>Optimización de procesos docentes</strong></td>
+          <td><em>Eres un afamado asesor pedagógico especializado en centros de formación sanitaria, tu misión es identificar áreas clave para la mejora en los procesos de enseñanza y aprendizaje...<a href="https://chat.openai.com/share/07ab6ae2-7f6e-473c-99b3-554301a187f0" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Mejora calidad de formación sanitaria.<br>👎 Implementación de mejoras necesita ser personalizada.</td>
+        </tr>
+        <tr>
+          <td><strong>Evaluación de programas de especialización</strong></td>
+          <td><em>Eres un consultor experto en currículo educativo, especializado en programas de formación en socorrismo, con la tarea de evaluar y mejorar estos programas...<a href="https://chat.openai.com/share/870c15c9-4407-41ef-8b90-0e918a3ff976" target="_blank">[leer más]</a></em></td>
+
+          <td>👍 Alinea programas con necesidades del mercado laboral.<br>👎 Acceso a datos sensibles y protegidos requerido.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+<h3 class="color">7. Fomento de la Colaboración en Investigación e Innovación</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Mapeo de colaboraciones</strong></td>
+          <td><em>Activa un asistente virtual diseñado específicamente para facilitar el mapeo de colaboraciones entre centros de investigación...<a href="https://chat.openai.com/share/3edc8062-8b06-4ff5-92bc-496a8f75ede4" target="_blank">[leer más]</td></a></em></td></a></em></td>
+          <td>👍  asistente virtual que facilita la identificación de ideas clave.<br>👎 Requiere actualizaciones constantes.</td>
+        </tr>
+        <tr>
+          <td><strong>Desarrollo de la Bio-Región</strong></td>
+          <td><em>Eres un planificador urbano especializado en zonas de innovación, trabajando para diseñar una estrategia integral que promueva el desarrollo de una Bio-Región de Salud y Bienestar, integrando a instituciones académicas, hospitales y empresas...<a href="https://chat.openai.com/share/493501df-ee2e-40c3-b126-3a3d6288dcb2" target="_blank">[leer más]</td></a></em></td></a></em></td>
+          <td>👍 Impulsa ecosistema de innovación en salud.<br>👎 Implementación necesita compromiso a largo plazo de múltiples actores.</td>
+        </tr>
+        <tr>
+          <td><strong>Plataforma de intercambio de conocimientos</strong></td>
+          <td><em>Eres el líder de un consorcio de investigación y estás creando una plataforma digital para facilitar el intercambio de conocimientos entre investigadores de diversas disciplinas y países: 10 buenas prácticas, 10 no hacer y checklist...<a href="https://chat.openai.com/share/d8921a03-7f52-47fb-855e-ab3edd9d4297" target="_blank">[leer más]</td></a></em></td></a></em></td>
+          <td>👍 Facilita transferencia de conocimiento.<br>👎 Necesita moderación y gestión efectiva.</td>
+        </tr>
+        <tr>
+          <td><strong>Evaluación de sinergias</strong></td>
+          <td><em>Como consultor de innovación con amplia experiencia en el ámbito sanitario, tu tarea es realizar un análisis exhaustivo de proyectos de investigación en curso y identificar oportunidades de colaboración con el sector privado...<a href="https://chat.openai.com/share/3c08d1bf-e351-4a7d-a750-477a975a1fc4" target="_blank">[leer más]</td></a></em></td></a></em></td>
+          <td>👍 Maximiza uso de recursos complementarios e innovación.<br>👎 Formación de alianzas puede ser desafiante.</td>
+        </tr>
+        <tr>
+          <td><strong>Fomento de proyectos conjuntos</strong></td>
+          <td><em>Como director de una entidad de apoyo a la investigación, te enfocas en diseñar iniciativas que promuevan la colaboración entre el ámbito académico y las empresas, con el fin de superar barreras disciplinarias y sectoriales para acelerar la innovación...<a href="https://chat.openai.com/share/ac0fdf63-cb73-4710-97da-c41e76efa2af" target="_blank">[leer más]</td></a></em></td></a></em></td>
+          <td>👍 Acelera desarrollo y aplicación de innovaciones.<br>👎 Requiere marco de colaboración claro.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+<h3 class="color">8. Fomento de Programas de Investigación e Innovación con Fondos Europeos</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Identificación de oportunidades de financiación</strong></td>
+          <td><em>Como asesor financiero en un centro de investigación, tu misión es compilar una guía completa y accesible sobre las oportunidades de financiación europea para proyectos de salud y biotecnología...<a href="https://chat.openai.com/share/6c83c535-982f-45ee-9623-496057400f41" target="_blank">[leer más]</td></a></em></td>
+          <td>👍 Facilita acceso a financiación.<br>👎 Guía necesita actualizaciones regulares.</td>
+        </tr>
+        <tr>
+          <td><strong>Preparación de propuestas</strong></td>
+          <td><em>Imagina que eres un consultor especializado en la redacción de propuestas para financiamiento de investigación con amplia experiencia en programas europeos. Tu misión es ayudar a investigadores a comprender los criterios clave y las mejores prácticas para la redacción de propuestas exitosas...<a href="https://chat.openai.com/share/a169e8d4-9edf-4cf5-b151-7ff5ceef37d0" target="_blank">[leer más]</a> </td></a></em></td>
+          <td>👍 Mejora calidad de propuestas.<br>👎 Plantillas necesitan personalización.</td>
+        </tr>
+        <tr>
+          <td><strong>Gestión de proyectos europeos</strong></td>
+          <td><em>Eres el coordinador de proyectos en un centro de investigación encargado de liderar iniciativas financiadas con fondos europeos. Tu misión es crear y mantener un sistema que asegure no solo el cumplimiento de los objetivos propuestos y la administración eficaz de los recursos, sino también la adhesión a las normativas y lineamientos específicos de los fondos europeos...<a href="https://chat.openai.com/share/2ad09869-e4c0-4bf7-832d-ab7ad59c530a" target="_blank">[leer más]</td></a></em></td></a></em></td>
+          <td>👍 Asegura gestión efectiva de proyectos.<br>👎 Requiere adaptabilidad a diferentes requisitos.</td>
+        </tr>
+        <tr>
+          <td><strong>Red de contacto europea</strong></td>
+          <td><em>Eres el coordinador de relaciones internacionales encargado de desarrollar una red de contacto europea para impulsar la colaboración transnacional en investigación e innovación...<a href="https://chat.openai.com/share/1fb256ef-3667-4ceb-89ad-4e5ccbe3d67a" target="_blank">[leer más]</td></a></em></td></a></em></td>
+          <td>👍 Potencia colaboración internacional.<br>👎 Requiere mantenimiento activo de la red.</td>
+        </tr>
+        <tr>
+          <td><strong>IA para prever tendencias en financiación europea</strong></td>
+          <td><em>Analiza la colección de casos de éxito de 7 convocatorias pasadas de fondos europeos que te adjunto...<a href="https://chat.openai.com/share/135b13d7-3c61-4488-b1d1-a7e5cd5bd2e9" target="_blank">[leer más]</td></a></em></td></a></em></td>
+          <td>👍 Detecta oportunidades de financiación con IA.<br>👎 Requiere mantenimiento continuo.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+<h3 class="color">9. Mejora de la Comunicación Científica</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Estrategias de comunicación efectiva</strong></td>
+          <td><em>Eres un especialista en comunicación en una institución de investigación, encargado de desarrollar estrategias efectivas para comunicar hallazgos científicos complejos a un público no especializado. <a href="https://chat.openai.com/share/0503ae24-cc21-457c-a211-3a29687f130c" target="_blank">[leer más]</td></a></em></td>
+          <td>👍 Mejora comprensión pública de la ciencia.<br>👎 Requiere habilidades de adaptación de contenidos.</td>
+        </tr>
+        <tr>
+          <td><strong>Talleres de escritura científica</strong></td>
+          <td><em>Eres un editor de una revista científica y organizas talleres sobre escritura científica y comunicación efectiva para investigadores, con el fin de mejorar la calidad y el impacto de las publicaciones.<a href="https://chat.openai.com/share/bec69967-c592-47f7-a687-83461c3de619" target="_blank">[leer más]</a></td></a></em></td>
+          <td>👍 Aumenta calidad de publicaciones científicas.<br>👎 Desarrollo de habilidades continuo necesario.</td>
+        </tr>
+        <tr>
+          <td><strong>Plataformas de divulgación científica</strong></td>
+          <td><em>Eres un asistente virtual inteligente integrado en una innovadora plataforma de divulgación científica. Tu misión es hacer que la ciencia sea accesible y fascinante para todos...<a href="https://chat.openai.com/share/26febfa2-b76a-412e-90ac-4a796d487fa1" target="_blank">[leer más]</a></em></td>
+          <td>👍 Aumenta visibilidad y apoyo público a la investigación.<br>👎 Requiere contenido atractivo y accesible.</td>
+        </tr>
+        <tr>
+          <td><strong>Comunicación de crisis en salud pública</strong></td>
+          <td><em>Elabora una lista de 10 prácticas institucionales a evitar en el manejo de la comunicación de una crisis sanitaria. Para cada una desarrolla formas de identificar que se están produciendo, efectos potencialmente negativos, y formas de afrontarlas o evitarlas.<a href="https://chat.openai.com/share/0edc244c-e86c-4196-934e-2038e8ddd591" target="_blank">[leer más]</a></em></td>
+          <td>👍 Crítico para gestión efectiva de crisis.<br>👎 Necesita actualización y adaptación constante.</td>
+        </tr>
+        <tr>
+          <td><strong>Fortalecimiento de la presencia en línea</strong></td>
+          <td><em>Como consultor de marketing digital enfocado en el ámbito científico, asesoras a investigadores en el desarrollo de su presencia en línea, desde la creación de perfiles en redes sociales hasta la gestión de blogs personales...<a href="https://chat.openai.com/share/68a6113c-e50a-4fa6-a712-50c2734b6870" target="_blank">[leer más]</a></em></td>
+          <td>👍 Expande alcance y red profesional.<br>👎 Requiere dedicación y estrategia.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.95">
+  <div class="shadow-oval-slide">
+<h3 class="color">10. Fomento de la Investigación Transdisciplinaria</h3>
+</div>
+  <div class="tabla-casos-wrapper">
+    <table class="tabla-casos">
+      <thead>
+        <tr>
+          <th>Caso de uso</th>
+          <th>Ejemplo de solicitud</th>
+          <th>Evaluación workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Creación de equipos transdisciplinario</strong>s</td>
+          <td><em>Eres un experto en gestión de la innovación con experiencia en el ámbito sanitario. Tu misión es asesorar a jefes de departamentos de investigación en la creación y gestión de equipos transdisciplinarios destinados a abordar desafíos complejos en salud global...<a href="https://chat.openai.com/share/653bdfad-2a54-4bea-9499-18d95df3b113" target="_blank">[leer más]</a></em></td>
+          <td>👍 Fomenta soluciones innovadoras.<br>👎 Requiere gestión efectiva de equipos.</td>
+        </tr>
+        <tr>
+          <td><strong>Seminarios transdisciplinarios en línea</strong></td>
+          <td><em>Eres un coordinador académico innovador en una prestigiosa universidad. Tu misión principal es conceptualizar y desarrollar una serie de seminarios transdisciplinarios en línea...<a href="https://chat.openai.com/share/cbe0fc2a-341a-4e1f-94c8-a28dca2f7d61" target="_blank">[leer más]</a></em></td>
+          <td>👍 Enriquece investigación con perspectivas múltiples.<br>👎 Participación y compromiso pueden variar.</td>
+        </tr>
+        <tr>
+          <td><strong>Plataforma de colaboración virtual</strong></td>
+          <td><em>Eres un experto con la misión de impulsar el desarrollo de una plataforma virtual que conecte científicos de distintas disciplinas y regiones. Diseñarás una herramienta que facilite el intercambio de conocimientos, superando desafíos técnicos y fomentando su adopción a nivel global...<a href="https://chat.openai.com/share/b5d6197c-6610-4245-95ff-76d22a8fb981" target="_blank">[leer más]</a></em></td>
+          <td>👍 Facilita colaboración sin barreras geográficas.<br>👎 Implementación técnica puede ser compleja.</td>  
+        </tr>
+        <tr>
+          <td><strong>Fomento de la curiosidad científica</strong></td>
+          <td><em>Eres el líder de un programa de mentorías cruzadas en una destacada institución de investigación, diseñado para unir a investigadores de áreas diversas,  como por ejemplo neurociencia e inteligencia artificial (IA).<a href="https://chat.openai.com/share/c1b97579-54ad-4220-9e6a-1039fe3b2918" target="_blank">[leer más]</a></em></td>
+          <td>👍 Estimula innovación científica.<br>👎 Medición de impacto desafiante.</td>
+        </tr>
+        <tr>
+          <td><strong>Investigación en formación sanitaria especializada</strong></td>
+          <td><em>Como experto internacional en formación sanitaria especializada, tu misión es diseñar un sistema integral que preste apoyo para las tareas de investigación a los tutores de especialidades sanitarias....<a href="https://chat.openai.com/share/538c3658-de70-4271-a8b5-5b7e14728704" target="_blank">[leer más]</a></em></td>
+          <td>👍 Integra la investigación científica en la formación sanitaria.<br>👎 Requiere daptación a nuevas metodologías de enseñanza.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+</section>
+      
+        </div>
+    </div>
+
+    <!-- Scripts de reveal.js -->
+
+    <!-- He decidido reemplazar la referencia al archivo reveal.min.js alojado en el servidor externo de Cloudflare con una referencia local al archivo reveal.js almacenado en la carpeta 'reveal.js/js' de mi proyecto. Esto se debe a que la referencia anterior al archivo en Cloudflare estaba generando un error 404, así que el archivo no se encontraba disponible en el servidor externo. Así también evito la dependencia de la conectividad externa y reduzco el tiempo de carga de la página al evitar la descarga de archivos desde un servidor externo, garantizando así una mejor experiencia de usuario. Estar atento a posibles errores relacionados con la configuración de ruta del archivo local, como errores 404 si la ruta no está configurada correctamente, y errores de sintaxis si la versión local de reveal.js no es compatible con el proyecto. 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/js/reveal.min.js"></script>
+ Ruta nueva:  <script src="reveal.js/dist/reveal.js" ></script>
+  
+ -->    
+ <script src="reveal.js/dist/reveal.js" ></script>
+
+ <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="../reveal.js-plugins/"></script>
+    <script src="../reveal.js-plugins/zoom/zoom.js"></script>
+    <script src="../reveal.js-plugins/reveal-onetimer/onetimer.js"></script>
+    <script src="../reveal.js-plugins/animate/plugin.js"></script>
+    <script src="../reveal.js-plugins/animate/svg.min.js"></script>
+    <script src="../reveal.js-plugins/simplemenu/simplemenu.js"></script>
+    <script src="../reveal.js-plugins/fullscreen/plugin.js"></script>
+    <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+    <script>
+      Reveal.initialize({
+        maxScale: 1,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        autoSlide: 0,
+        slideNumber: 'hv',
+        mouseWheel: true,
+        dependencies: [{
+          src: '//cdn.jsdelivr.net/npm/reveal-plantuml'
+        }, ],
+        menu: {
+          side: 'left',
+          themes: [{
+            name: 'Negro',
+            theme: 'reveal.js/dist/theme/black.css'
+          }, {
+            name: 'Blanco',
+            theme: 'reveal.js/dist/theme/white.css'
+          }, {
+            name: 'Leyenda',
+            theme: 'reveal.js/dist/theme/league.css'
+          }, {
+            name: 'Oscuro',
+            theme: 'reveal.js/dist/theme/black.css'
+          }, {
+            name: 'Solar',
+            theme: 'reveal.js/dist/theme/solarized.css'
+          }, {
+            name: 'Sangre',
+            theme: 'reveal.js/dist/theme/blood.css'
+          }, {
+            name: 'Luna',
+            theme: 'reveal.js/dist/theme/moon.css'
+          }, {
+            name: 'Serif',
+            theme: 'reveal.js/dist/theme/serif.css'
+          }, {
+            name: 'Cielo',
+            theme: 'reveal.js/dist/theme/sky.css'
+          }, {
+            name: 'Beige',
+            theme: 'reveal.js/dist/theme/beige.css'
+          }, {
+            name: 'Simple',
+            theme: 'reveal.js/dist/theme/simple.css'
+          }, ],
+          openOnInit: false,
+          markers: true,
+          keyboard: true,
+          useTextContentForMissingTitles: true,
+          titleSelector: 'h1, h2, h3, h4, h5, h6',
+          numbers: true,
+          hideMissingTitles: true,
+          custom: [{
+            title: 'Teclas',
+            icon: '<i class="fa fa-info"></i>',
+            src: 'about.html',
+            content: 'B: Escribir en pizarra<p>Botón Derecho Ratón: Borrar<p>C: Escribir en la diapositiva<p>SUPR: Borrar dibujo diapo<p>RETROCESO: Borrar todas diapos<p>M: Abrir/cerrar menú<p>F: Pantalla completa<p>V: Pausar presentación<p>A: Escuchar/pausar audio <p>S: Notas y vista de presentador<p>Alt+Botón Izquierdo del Ratón: Zoom<p>ESC: Mapa de Diapositivas<p>'
+          }]
+        },
+        audio: {
+          prefix: 'chalkboard/',
+          suffix: '.mp3',
+          defaultDuration: 5,
+          textToSpeechURL: "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Diego&c=ogg&r=1&f=48khz_16bit_stereo&src=",
+          advance: -1,
+          autoplay: false,
+          defaultText: true,
+          playerOpacity: 0.2,
+        },
+        oneTimer: {
+          immediateMode: true
+        },
+        simplemenu: {
+                inherit: "previous",
+                barhtml: {
+                  header: "<div class='menubar'><div class='menu-button'>☰</div><ul class='menu'></ul></div>"
+                },
+                csspath: "../reveal.js-plugins/simplemenu/mycustomstyle.css"
+
+            },
+        chalkboard: {
+          src: "../reveal.js-plugins/chalkboard/chalkboard.json ",
+          storage: "chalkboard-demo",
+          toggleChalkboardButton: {
+            left: "80px"
+          },
+          toggleNotesButton: {
+            left: "130px"
+          },
+          colorButtons: 5
+        },
+        width: "99%",
+        height: "99%",
+        center: true,
+        backgroundTransition: 'fade',
+        preloadIframes: true,
+        viewDistance: 3,
+        mobileViewDistance: 2,
+        hash: true,
+        plugins: [RevealMarkdown, Simplemenu,/* RevealAudioSlideshow,  */RevealMenu, Appearance, RevealAnimate, RevealZoom, RevealChalkboard, RevealNotes,  RevealEmbedTweet, OneTimer
+        ],
+      });
+  
+      function changeTheme(input) {
+        var config = {};
+        config.theme = input.value;
+        Reveal.getPlugin("RevealChalkboard").configure(config);
+        input.blur();
+      }
+  
+      function getYesterdayDate() {
+        var ayer = new Date(Date.now() - 86400000);
+        var dia = ayer.getDate();
+        var mes = ayer.getMonth() + 1;
+        var año = ayer.getFullYear();
+        return dia.toString() + '/' + mes.toString() + '/' + año.toString();
+      }
+      Reveal.addEventListener('slidechanged', function (event) {
+        var fechaSpan = event.currentSlide.querySelector('[id^="fecha-de-ayer"]');
+        if (fechaSpan) {
+          fechaSpan.innerHTML = getYesterdayDate();
+        }
+      });
+      var fechaSpan = document.getElementById('fecha-de-ayer');
+      fechaSpan.innerHTML = getYesterdayDate();
+  
+      function copyToClipboard(elementId, btnElement) {
+        var text = document.getElementById(elementId).innerText;
+        var textarea = document.createElement("textarea");
+        textarea.textContent = text;
+        textarea.style.position = "fixed";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand("copy");
+          btnElement.innerText = "¡Copiado!";
+          setTimeout(function () {
+            btnElement.innerText = "Copiar";
+          }, 2000);
+        } catch (ex) {
+          console.warn("Copy to clipboard failed.", ex);
+        } finally {
+          document.body.removeChild(textarea);
+        }
+      }
+      var search =
+        '((((("critical appraisal" OR "journal club" OR (journal[TIAB] AND club*[TIAB])))) OR ((((("evidence-based practice" OR "evidence-based policy" OR "evidence based practice" OR "evidence-based medicine" OR "evidence based medicine" OR "evidence-based health care" OR "evidence-based healthcare" OR "evidence based health care" OR "evidence based health care" OR "evidence-based dentistry" OR "evidence based dentistry" OR "Evidence-Based Facility Design" OR "evidence-based nursing" OR "evidence based nursing" OR "Evidence-Based Emergency Medicine")))) OR (((((("Evidence-Based Practice"[Mesh]) OR "Evidence-Based Practice/education"[Mesh]) OR "Evidence-Based Medicine"[Mesh]) OR "Evidence-Based Dentistry"[Mesh]) OR "Evidence-Based Nursing"[Mesh] OR "Evidence-Based Facility Design"[Mesh] OR "Evidence-Based Emergency Medicine"[Mesh])))))';
+      document.getElementById("searchString").innerText = search;
+  
+      function copyPromptWithSearchToClipboard(elementId, btnElement) {
+        var text = document.getElementById(elementId).innerText + ' ' + search;
+        var textarea = document.createElement("textarea");
+        textarea.textContent = text;
+        textarea.style.position = "fixed";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand("copy");
+          btnElement.innerText = "¡Copiado!";
+          setTimeout(function () {
+            btnElement.innerText = "Copiar";
+          }, 2000);
+        } catch (ex) {
+          console.warn("Copy to clipboard failed.", ex);
+        } finally {
+          document.body.removeChild(textarea);
+        }
+      }
+     ;
+     document.addEventListener('DOMContentLoaded', function() {
+    var menuButton = document.querySelector('.menu-button');
+    var menuContainer = document.querySelector('.menubar'); // Asegúrate de que este selector corresponde al contenedor de tu menú
+
+    menuButton.addEventListener('click', function() {
+        menuContainer.classList.toggle('menu-open'); // Cambia 'menuContainer' por el elemento correcto que deseas mostrar/ocultar
+
+        
+    });
+});
+
+
+
+
+
+
+    </script>
+    
+  </body>
+  
+  </html>
