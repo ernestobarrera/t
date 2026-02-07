@@ -789,11 +789,110 @@
         gap: 6px;
       }
 
-      .author-credit {
-        max-width: 100%;
-        text-align: left;
+        .author-credit {
+          max-width: 100%;
+          text-align: left;
+        }
       }
-    }
+
+      @media (max-width: 900px), (max-height: 560px) {
+        .reveal .slides section {
+          padding: 0 8px 88px 8px;
+        }
+
+        .reveal h1 {
+          font-size: 1.52em;
+        }
+
+        .reveal h2 {
+          font-size: 1em;
+        }
+
+        .lead {
+          font-size: 0.82em;
+          max-width: 100%;
+        }
+
+        .kicker {
+          font-size: 0.5em;
+          padding: 4px 9px;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 7px;
+          margin-top: 8px;
+        }
+
+        .hero-card {
+          padding: 9px;
+        }
+
+        .meta-wrap {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .meta-card {
+          padding: 10px 11px;
+        }
+
+        .citation {
+          font-size: 0.64em;
+          line-height: 1.35;
+        }
+
+        .keyline {
+          margin-top: 10px;
+          padding: 10px 11px;
+          -webkit-line-clamp: 4;
+        }
+
+        .article-body {
+          margin-top: 10px;
+          padding: 11px;
+          min-height: 34vh;
+        }
+
+        .article-slide {
+          --title-size: 1.08em;
+          --citation-size: 0.62em;
+          --keyline-size: 0.64em;
+          --body-size: 0.64em;
+          --body-lines: 13;
+        }
+
+        .slide-top {
+          gap: 6px;
+        }
+
+        .badge {
+          font-size: 0.47em;
+          padding: 3px 9px;
+        }
+
+        .map-back {
+          font-size: 0.45em;
+          padding: 3px 8px;
+        }
+
+        .cover-footer {
+          left: 10px;
+          right: 10px;
+          bottom: 64px;
+          gap: 5px;
+        }
+
+        .cover-nav-hint {
+          font-size: 0.36em;
+          white-space: normal;
+        }
+
+        .author-credit {
+          font-size: 0.33em;
+          line-height: 1.18;
+        }
+      }
   </style>
 </head>
 
@@ -3279,10 +3378,55 @@
 
     mapSequentialUploadedAudio();
 
+    const getViewportDeckConfig = () => {
+      const compactViewport = window.matchMedia(
+        "(max-width: 1024px), (max-height: 620px)",
+      ).matches;
+      const portraitViewport = window.matchMedia(
+        "(orientation: portrait)",
+      ).matches;
+
+      if (!compactViewport) {
+        return {
+          width: 1600,
+          height: 900,
+          margin: 0.04,
+          viewDistance: 4,
+          mobileViewDistance: 2,
+          audioPlayerStyle:
+            "position: fixed; bottom: 8px; left: 24%; width: 52%; height:60px; z-index: 33;",
+        };
+      }
+
+      if (portraitViewport) {
+        return {
+          width: 540,
+          height: 960,
+          margin: 0.012,
+          viewDistance: 3,
+          mobileViewDistance: 1,
+          audioPlayerStyle:
+            "position: fixed; bottom: 8px; left: 4%; width: 92%; height:48px; z-index: 33;",
+        };
+      }
+
+      return {
+        width: 960,
+        height: 540,
+        margin: 0.012,
+        viewDistance: 3,
+        mobileViewDistance: 1,
+        audioPlayerStyle:
+          "position: fixed; bottom: 6px; left: 7%; width: 86%; height:46px; z-index: 33;",
+      };
+    };
+
+    const viewportDeckConfig = getViewportDeckConfig();
+
     Reveal.initialize({
-      width: 1600,
-      height: 900,
-      margin: 0.04,
+      width: viewportDeckConfig.width,
+      height: viewportDeckConfig.height,
+      margin: viewportDeckConfig.margin,
       controls: true,
       progress: true,
       hash: true,
@@ -3292,8 +3436,8 @@
       backgroundTransition: "fade",
       mouseWheel: true,
       preloadIframes: true,
-      viewDistance: 4,
-      mobileViewDistance: 2,
+      viewDistance: viewportDeckConfig.viewDistance,
+      mobileViewDistance: viewportDeckConfig.mobileViewDistance,
       menu: {
         side: "left",
         markers: true,
@@ -3322,8 +3466,7 @@
         advance: -1,
         autoplay: true,
         playerOpacity: 0.86,
-        playerStyle:
-          "position: fixed; bottom: 8px; left: 24%; width: 52%; height:60px; z-index: 33;",
+        playerStyle: viewportDeckConfig.audioPlayerStyle,
       },
       chalkboard: {
         storage: "biblioteca-articulos-medicos-chalkboard",
@@ -3680,10 +3823,25 @@
       controls.style.pointerEvents = "auto";
     };
 
+    const applyResponsiveDeckConfig = () => {
+      const cfg = getViewportDeckConfig();
+      Reveal.configure({
+        width: cfg.width,
+        height: cfg.height,
+        margin: cfg.margin,
+        viewDistance: cfg.viewDistance,
+        mobileViewDistance: cfg.mobileViewDistance,
+      });
+
+      const controls = document.querySelector(".audio-controls");
+      if (controls) controls.setAttribute("style", cfg.audioPlayerStyle);
+    };
+
     Reveal.on("ready", () => {
       consolidateReferenceCards();
       addMapBackLinks();
       enrichAudioNarratives();
+      applyResponsiveDeckConfig();
       ensureAudioPlayerVisible();
       scheduleFit();
     });
@@ -3691,11 +3849,16 @@
       ensureAudioPlayerVisible();
       scheduleFit();
     });
-    window.addEventListener("resize", scheduleFit);
+    window.addEventListener("resize", () => {
+      applyResponsiveDeckConfig();
+      ensureAudioPlayerVisible();
+      scheduleFit();
+    });
     setTimeout(() => {
       consolidateReferenceCards();
       addMapBackLinks();
       enrichAudioNarratives();
+      applyResponsiveDeckConfig();
       ensureAudioPlayerVisible();
       scheduleFit();
     }, 650);
