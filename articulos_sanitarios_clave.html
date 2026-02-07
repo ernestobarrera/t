@@ -3252,6 +3252,33 @@
       </ul>
     `;
 
+    const mapSequentialUploadedAudio = () => {
+      const audioBase = "assets/articulos_sanitarios_clave";
+      const audioExt = "webm";
+      let sequence = 0;
+      const horizontalSlides = document.querySelectorAll(".reveal .slides > section");
+      horizontalSlides.forEach((slide) => {
+        const verticalSlides = slide.querySelectorAll(":scope > section");
+        if (!verticalSlides.length) {
+          if (slide.hasAttribute("data-audio-src")) return;
+          slide.setAttribute("data-audio-src", `${audioBase}/${sequence}.${audioExt}`);
+          sequence += 1;
+          return;
+        }
+
+        verticalSlides.forEach((verticalSlide) => {
+          if (verticalSlide.hasAttribute("data-audio-src")) return;
+          verticalSlide.setAttribute(
+            "data-audio-src",
+            `${audioBase}/${sequence}.${audioExt}`,
+          );
+          sequence += 1;
+        });
+      });
+    };
+
+    mapSequentialUploadedAudio();
+
     Reveal.initialize({
       width: 1600,
       height: 900,
