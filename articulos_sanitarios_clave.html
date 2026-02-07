@@ -16,10 +16,38 @@
     <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
     <link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme" />
     <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" />
-    <link rel="stylesheet" href="../reveal.js-plugins/menu/menu.css" onerror="this.onerror=null;this.href='reveal.js-plugins/menu/menu.css';" />
-    <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css" onerror="this.onerror=null;this.href='reveal.js-plugins/chalkboard/style.css';" />
-    <link rel="stylesheet" href="../reveal.js-plugins/appearance/appearance.css" onerror="this.onerror=null;this.href='reveal.js-plugins/appearance/appearance.css';" />
-    <link rel="stylesheet" href="../reveal.js-plugins/simplemenu/simplemenu.css" onerror="this.onerror=null;this.href='reveal.js-plugins/simplemenu/simplemenu.css';" />
+    <link
+      rel="stylesheet"
+      href="../reveal.js-plugins/menu/menu.css"
+      onerror="
+        this.onerror = null;
+        this.href = 'reveal.js-plugins/menu/menu.css';
+      "
+    />
+    <link
+      rel="stylesheet"
+      href="../reveal.js-plugins/chalkboard/style.css"
+      onerror="
+        this.onerror = null;
+        this.href = 'reveal.js-plugins/chalkboard/style.css';
+      "
+    />
+    <link
+      rel="stylesheet"
+      href="../reveal.js-plugins/appearance/appearance.css"
+      onerror="
+        this.onerror = null;
+        this.href = 'reveal.js-plugins/appearance/appearance.css';
+      "
+    />
+    <link
+      rel="stylesheet"
+      href="../reveal.js-plugins/simplemenu/simplemenu.css"
+      onerror="
+        this.onerror = null;
+        this.href = 'reveal.js-plugins/simplemenu/simplemenu.css';
+      "
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -567,6 +595,64 @@
         line-height: 1.25;
       }
 
+      .cover-slide {
+        position: relative;
+      }
+
+      .cover-footer {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 74px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .cover-nav-hint {
+        margin: 0;
+        font-size: 0.33em;
+        line-height: 1.2;
+        color: rgba(203, 216, 232, 0.94);
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+      }
+
+      .cover-nav-hint kbd {
+        animation: keyPulse 2.2s ease-in-out infinite;
+      }
+
+      .author-credit {
+        margin: 0;
+        max-width: 52%;
+        text-align: right;
+        font-size: 0.3em;
+        line-height: 1.14;
+        color: rgba(185, 201, 220, 0.88);
+        letter-spacing: 0.01em;
+      }
+
+      .author-credit span {
+        display: block;
+      }
+
+      .author-credit a {
+        color: #b9dcff;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      @keyframes keyPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(185, 220, 255, 0);
+        }
+        50% {
+          box-shadow: 0 0 0 5px rgba(185, 220, 255, 0.18);
+        }
+      }
+
       .article-slide .tip {
         display: none;
       }
@@ -717,6 +803,17 @@
           --body-size: 0.54em;
           --body-lines: 10;
         }
+
+        .cover-footer {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 6px;
+        }
+
+        .author-credit {
+          max-width: 100%;
+          text-align: left;
+        }
       }
     </style>
   </head>
@@ -724,6 +821,7 @@
     <div class="reveal">
       <div class="slides">
         <section
+          class="cover-slide"
           data-audio-text="Bienvenida. Esta biblioteca propone un recorrido por treinta textos que cambiaron la medicina moderna, desde la clínica hasta la ética pública."
         >
           <span class="kicker">Biblioteca comentada</span>
@@ -751,6 +849,25 @@
               <strong>Narración guiada</strong
               ><span>audio breve para cada diapositiva</span>
             </div>
+          </div>
+          <div class="cover-footer">
+            <p class="cover-nav-hint">
+              Navegación: pulsar <kbd>Espacio</kbd> para avanzar.
+            </p>
+            <p class="author-credit">
+              <span
+                >Elaborado por Ernesto Barrera Linares · Médico de Familia ·
+                <br />con apoyo de IA</span
+              >
+              <span>
+                <a
+                  href="https://ernestobarrera.github.io"
+                  target="_blank"
+                  rel="noopener"
+                  >ernestobarrera.github.io</a
+                ></span
+              >
+            </p>
           </div>
           <aside class="notes">
             Apertura: explicar alcance, valor cultural y utilidad práctica de la
@@ -3536,17 +3653,83 @@
     <script src="reveal.js/plugin/highlight/highlight.js"></script>
     <script src="reveal.js/plugin/zoom/zoom.js"></script>
     <script src="reveal.js/plugin/search/search.js"></script>
-    <script src="../reveal.js-plugins/menu/menu.js" onerror="this.onerror=null;this.src='reveal.js-plugins/menu/menu.js';"></script>
-    <script src="../reveal.js-plugins/chalkboard/plugin.js" onerror="this.onerror=null;this.src='reveal.js-plugins/chalkboard/plugin.js';"></script>
-    <script src="../reveal.js-plugins/appearance/appearance.js" onerror="this.onerror=null;this.src='reveal.js-plugins/appearance/appearance.js';"></script>
-    <script src="../reveal.js-plugins/audio-slideshow/plugin.js" onerror="this.onerror=null;this.src='reveal.js-plugins/audio-slideshow/plugin.js';"></script>
-    <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js" onerror="this.onerror=null;this.src='reveal.js-plugins/audio-slideshow/RecordRTC.js';"></script>
-    <script src="../reveal.js-plugins/audio-slideshow/recorder.js" onerror="this.onerror=null;this.src='reveal.js-plugins/audio-slideshow/recorder.js';"></script>
-    <script src="../reveal.js-plugins/embed-tweet/plugin.js" onerror="this.onerror=null;this.src='reveal.js-plugins/embed-tweet/plugin.js';"></script>
-    <script src="../reveal.js-plugins/simplemenu/simplemenu.js" onerror="this.onerror=null;this.src='reveal.js-plugins/simplemenu/simplemenu.js';"></script>
-    <script src="../reveal.js-plugins/fullscreen/plugin.js" onerror="this.onerror=null;this.src='reveal.js-plugins/fullscreen/plugin.js';"></script>
-    <script src="../reveal.js-plugins/animate/plugin.js" onerror="this.onerror=null;this.src='reveal.js-plugins/animate/plugin.js';"></script>
-    <script src="../reveal.js-plugins/animate/svg.min.js" onerror="this.onerror=null;this.src='reveal.js-plugins/animate/svg.min.js';"></script>
+    <script
+      src="../reveal.js-plugins/menu/menu.js"
+      onerror="
+        this.onerror = null;
+        this.src = 'reveal.js-plugins/menu/menu.js';
+      "
+    ></script>
+    <script
+      src="../reveal.js-plugins/chalkboard/plugin.js"
+      onerror="
+        this.onerror = null;
+        this.src = 'reveal.js-plugins/chalkboard/plugin.js';
+      "
+    ></script>
+    <script
+      src="../reveal.js-plugins/appearance/appearance.js"
+      onerror="
+        this.onerror = null;
+        this.src = 'reveal.js-plugins/appearance/appearance.js';
+      "
+    ></script>
+    <script
+      src="../reveal.js-plugins/audio-slideshow/plugin.js"
+      onerror="
+        this.onerror = null;
+        this.src = 'reveal.js-plugins/audio-slideshow/plugin.js';
+      "
+    ></script>
+    <script
+      src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"
+      onerror="
+        this.onerror = null;
+        this.src = 'reveal.js-plugins/audio-slideshow/RecordRTC.js';
+      "
+    ></script>
+    <script
+      src="../reveal.js-plugins/audio-slideshow/recorder.js"
+      onerror="
+        this.onerror = null;
+        this.src = 'reveal.js-plugins/audio-slideshow/recorder.js';
+      "
+    ></script>
+    <script
+      src="../reveal.js-plugins/embed-tweet/plugin.js"
+      onerror="
+        this.onerror = null;
+        this.src = 'reveal.js-plugins/embed-tweet/plugin.js';
+      "
+    ></script>
+    <script
+      src="../reveal.js-plugins/simplemenu/simplemenu.js"
+      onerror="
+        this.onerror = null;
+        this.src = 'reveal.js-plugins/simplemenu/simplemenu.js';
+      "
+    ></script>
+    <script
+      src="../reveal.js-plugins/fullscreen/plugin.js"
+      onerror="
+        this.onerror = null;
+        this.src = 'reveal.js-plugins/fullscreen/plugin.js';
+      "
+    ></script>
+    <script
+      src="../reveal.js-plugins/animate/plugin.js"
+      onerror="
+        this.onerror = null;
+        this.src = 'reveal.js-plugins/animate/plugin.js';
+      "
+    ></script>
+    <script
+      src="../reveal.js-plugins/animate/svg.min.js"
+      onerror="
+        this.onerror = null;
+        this.src = 'reveal.js-plugins/animate/svg.min.js';
+      "
+    ></script>
 
     <script>
       const shortcutsMenuContent = `
@@ -3595,11 +3778,13 @@
           prefix: "assets/audio/biblioteca_articulos_medicos/",
           suffix: ".mp3",
           defaultDuration: 6,
-          defaultText: false,
+          textToSpeechURL:
+            "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Diego&c=ogg&r=1&f=48khz_16bit_stereo&src=",
+          defaultText: true,
           defaultNotes: false,
           defaultAudios: true,
           advance: -1,
-          autoplay: false,
+          autoplay: true,
           playerOpacity: 0.86,
           playerStyle:
             "position: fixed; bottom: 8px; left: 24%; width: 52%; height:60px; z-index: 33;",
