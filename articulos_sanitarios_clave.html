@@ -4555,6 +4555,22 @@
             }
             tip.textContent = lang === "en" ? ui.sourceTip : tip.dataset.i18nEs;
           });
+
+          slide.querySelectorAll(".meta-card .citation").forEach((citation) => {
+            if (!citation.dataset.i18nEs) {
+              citation.dataset.i18nEs = citation.innerHTML;
+            }
+            if (lang === "en") {
+              let citationHtml = citation.dataset.i18nEs;
+              citationHtml = citationHtml.replace(
+                /Conferencia\s+Internacional\s+sobre\s+Atención\s+Primaria\s+de\s+Salud\./g,
+                "International Conference on Primary Health Care.",
+              );
+              citation.innerHTML = citationHtml;
+            } else {
+              citation.innerHTML = citation.dataset.i18nEs;
+            }
+          });
         });
       };
 
