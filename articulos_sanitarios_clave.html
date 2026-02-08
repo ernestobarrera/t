@@ -626,11 +626,92 @@
         animation: keyPulse 2.2s ease-in-out infinite;
       }
 
-      .touch-hint {
-        display: block;
-        margin-top: 3px;
-        opacity: 0.92;
-      }
+    .touch-hint {
+      display: block;
+      margin-top: 3px;
+      opacity: 0.92;
+    }
+
+    .lang-switch {
+      position: fixed;
+      top: 4px;
+      right: 6px;
+      z-index: 70;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 5px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(7, 14, 26, 0.78);
+      backdrop-filter: blur(4px);
+    }
+
+    .lang-switch-label {
+      font-size: 0.43rem;
+      color: #c7d8ec;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-right: 1px;
+      line-height: 1;
+    }
+
+    .lang-switch button {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.07);
+      color: #e7f1fe;
+      border-radius: 999px;
+      font-size: 0.52rem;
+      line-height: 1;
+      font-weight: 800;
+      padding: 3px 6px;
+      min-width: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      cursor: pointer;
+      transition: 0.16s ease;
+    }
+
+    .lang-switch button.active {
+      border-color: rgba(96, 165, 250, 0.7);
+      background: rgba(96, 165, 250, 0.22);
+      color: #f4f9ff;
+    }
+
+    .lang-switch .flag {
+      width: 11px;
+      height: 8px;
+      border-radius: 2px;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.26);
+      flex-shrink: 0;
+      display: inline-block;
+    }
+
+    .lang-switch .flag-es {
+      background: linear-gradient(
+        to bottom,
+        #c60b1e 0 25%,
+        #ffc400 25% 75%,
+        #c60b1e 75% 100%
+      );
+    }
+
+    .lang-switch .flag-en {
+      background:
+        linear-gradient(to right, transparent 39%, #fff 39% 61%, transparent 61%),
+        linear-gradient(to bottom, transparent 39%, #fff 39% 61%, transparent 61%),
+        linear-gradient(to right, transparent 45%, #c8102e 45% 55%, transparent 55%),
+        linear-gradient(to bottom, transparent 45%, #c8102e 45% 55%, transparent 55%),
+        #012169;
+    }
+
+    .lang-switch .lang-code {
+      letter-spacing: 0.03em;
+      font-size: 0.5rem;
+    }
 
       .author-credit {
         margin: 0;
@@ -835,6 +916,31 @@
       }
 
       @media (max-width: 900px), (max-height: 560px) {
+        .lang-switch {
+          top: 3px;
+          right: 4px;
+          padding: 2px 4px;
+          gap: 3px;
+        }
+
+        .lang-switch-label {
+          font-size: 0.4rem;
+        }
+
+        .lang-switch button {
+          font-size: 0.48rem;
+          padding: 2px 5px;
+        }
+
+        .lang-switch .flag {
+          width: 10px;
+          height: 7px;
+        }
+
+        .lang-switch .lang-code {
+          font-size: 0.45rem;
+        }
+
         .reveal .slides section {
           padding: 0 8px 88px 8px;
         }
@@ -949,6 +1055,30 @@
   </head>
 
   <body>
+    <div class="lang-switch" role="group" aria-label="Selector de idioma y audio">
+      <span class="lang-switch-label">Idioma</span>
+      <button
+        type="button"
+        data-lang-btn="es"
+        class="active"
+        aria-label="Español (texto y audio)"
+        title="Español (texto y audio)"
+        aria-pressed="true"
+      >
+        <span class="flag flag-es" aria-hidden="true"></span
+        ><span class="lang-code">ES</span>
+      </button>
+      <button
+        type="button"
+        data-lang-btn="en"
+        aria-label="Inglés (texto y audio)"
+        title="Inglés (texto y audio)"
+        aria-pressed="false"
+      >
+        <span class="flag flag-en" aria-hidden="true"></span
+        ><span class="lang-code">EN</span>
+      </button>
+    </div>
     <div class="reveal">
       <div class="slides">
         <section
@@ -3865,22 +3995,679 @@
         this.src = 'reveal.js-plugins/animate/svg.min.js';
       "
     ></script>
+    <script src="assets/articulos_sanitarios_clave_i18n_en.js"></script>
 
     <script>
-      const shortcutsMenuContent = `
+      const I18N_UI = {
+        es: {
+          htmlLang: "es",
+          documentTitle: "Biblioteca de Artículos Médicos | 30 esenciales",
+          metaDescription: "Biblioteca de 30 artículos médicos esenciales",
+          langLabel: "Idioma",
+          langSwitchAria: "Selector de idioma y audio",
+          langButtons: {
+            es: "Español (texto y audio)",
+            en: "Inglés (texto y audio)",
+          },
+          menuShortcutsTab: "Atajos",
+          menuGuideTitle: "⌨ Guía, atajos y navegacion",
+          spaceKey: "Espacio",
+          navMainTitle: "Navegacion principal",
+          navMainText:
+            "avanza, <kbd>→</kbd>/<kbd>←</kbd> cambia de diapositiva.",
+          menuToggle: "<kbd>M</kbd> abre o cierra el indice lateral",
+          audioToggle:
+            "<kbd>A</kbd> reproduce o pausa el audio de la diapositiva",
+          boardToggle:
+            "<kbd>B</kbd> pizarra · <kbd>C</kbd> anotar sobre la diapositiva",
+          boardClear:
+            "<kbd>Supr</kbd> limpia anotaciones · <kbd>D</kbd> descarga trazos",
+          fullPresenter:
+            "<kbd>F</kbd> pantalla completa · <kbd>S</kbd> vista de presentador",
+          coverKicker: "Biblioteca comentada",
+          coverTitle:
+            "Treinta artículos que cambiaron cómo entendemos la salud y el cuidado",
+          coverLead:
+            "Un recorrido visual y narrado para públicos clínicos y generales, con acceso directo a las publicaciones originales.",
+          coverCardsStrong: [
+            "30 lecturas",
+            "4 bloques",
+            "Fuentes originales",
+            "Narración guiada",
+          ],
+          coverCardsSub: [
+            "hitos entre 1855 y 2006",
+            "clínica, sociedad, método y ética",
+            "enlace inmediato a cada artículo",
+            "audio breve para cada diapositiva",
+          ],
+          coverNavPrefix: "Navegación: pulsar ",
+          coverNavSuffix: " para avanzar.",
+          touchHint: "En móvil, desliza con el dedo para cambiar de diapositiva.",
+          authorLine:
+            "Elaborado por Ernesto Barrera Linares · Médico de Familia ·",
+          authorLine2: "con apoyo de IA",
+          guideKicker: "Guía de lectura",
+          guideTitle: "Cómo leer y navegar esta presentación de forma fluida",
+          guideCardsTitle: [
+            "1. Idea principal",
+            "2. Contexto y valor",
+            "3. Aplicación práctica",
+            "4. Fuente original",
+          ],
+          guideCardsText: [
+            "Empieza por la frase de apertura: condensa el aporte esencial del artículo.",
+            "Después, sitúa el hallazgo en su época y en el problema clínico que resolvió.",
+            "Conecta esa lectura con decisiones asistenciales, organizativas o de salud pública.",
+            "Si necesitas profundizar, entra directamente al artículo desde el enlace incluido.",
+          ],
+          guidePanelTitle: "Orientacion rapida durante la presentacion",
+          guidePanelText:
+            "Esta ayuda también está en el menú lateral. Pulsa <kbd>M</kbd> para abrirlo y entra en <strong>Atajos</strong>.",
+          guideColTitle: ["Navegacion sin friccion", "Controles utiles en directo"],
+          guideColText: [
+            "<kbd>Espacio</kbd> avanza de forma continua. También puedes usar <kbd>→</kbd>/<kbd>←</kbd> para pasar o volver, y <kbd>M</kbd> para abrir el índice lateral.",
+            "<kbd>A</kbd> audio, <kbd>B</kbd> pizarra, <kbd>C</kbd> anotar sobre la diapositiva, <kbd>Supr</kbd> limpiar anotaciones, <kbd>D</kbd> descargar trazos, <kbd>F</kbd> pantalla completa, <kbd>S</kbd> vista de presentador.",
+          ],
+          mapKicker: "Mapa narrativo",
+          mapTitle: "El recorrido tiene cuatro capas de comprensión clínica",
+          mapLead:
+            "No es una lista de papers: es una secuencia para pasar de “qué funciona” a “qué significa cuidar”.",
+          mapBlockTitles: [
+            "I. Hitos clínicos",
+            "II. Perlas durmientes",
+            "III. Metodología",
+            "IV. Bioética y filosofía",
+          ],
+          mapBlockText: [
+            "Estudios que cambiaron decisiones terapéuticas y salud pública de forma inmediata.",
+            "Ideas inicialmente periféricas que terminaron rediseñando la práctica real.",
+            "Herramientas para juzgar causalidad, sesgo, incertidumbre y solidez de resultados.",
+            "Preguntas de fondo: persona, sufrimiento, justicia y responsabilidad social de la medicina.",
+          ],
+          mapBlockCta: [
+            "Abrir bloque I",
+            "Abrir bloque II",
+            "Abrir bloque III",
+            "Abrir bloque IV",
+          ],
+          mapAria: [
+            "Abrir bloque I: Hitos clínicos",
+            "Abrir bloque II: Perlas durmientes",
+            "Abrir bloque III: Metodología",
+            "Abrir bloque IV: Bioética y filosofía",
+          ],
+          mapUseTitle: "Clave de uso",
+          mapUseText:
+            "Si quieres una lectura rápida: empieza por los bloques I y III. Si buscas marco clínico-humanista completo, recorre los cuatro bloques en orden.",
+          finalKicker: "Sintesis final",
+          finalTitle: "Qué nos deja el conjunto: una ontología práctica de la medicina",
+          finalCardTitle: [
+            "1. Nivel biológico",
+            "2. Nivel relacional",
+            "3. Nivel social",
+            "4. Nivel ético",
+          ],
+          finalCardText: [
+            "Los avances técnicos importan, pero no agotan el fenómeno de enfermar.",
+            "La calidad clínica depende también del vínculo, la escucha y la continuidad.",
+            "La distribución de enfermedad y cuidado está modelada por estructuras e inequidad.",
+            "Todo acto médico es una decisión moral, no solo una operación técnica.",
+          ],
+          finalLead:
+            "Leídos juntos, estos artículos no solo explican la medicina moderna: también delimitan sus límites y sus responsabilidades.",
+          mapBackLabel: "Volver al mapa",
+          referenceLabel: "Referencia",
+          primaryLinksLabel: "Enlaces primarios",
+          sourceTip:
+            "Consulta la fuente original para ampliar contexto y límites del estudio.",
+          keylineLabel: "Mensaje clave:",
+          snowPmcLabel: "Texto completo en PMC",
+          pubmedFallbackLabel: "Localizar en PubMed",
+          articleWord: "Artículo",
+          blockNameMap: {
+            "I. Hitos clínicos": "I. Hitos clínicos",
+            "II. Perlas durmientes": "II. Perlas durmientes",
+            "III. Metodología": "III. Metodología",
+            "IV. Bioética y filosofía": "IV. Bioética y filosofía",
+          },
+          introAudio:
+            "Bienvenido a esta biblioteca comentada de treinta artículos que cambiaron cómo entendemos la salud y el cuidado. No es un listado académico: es un viaje narrado por hitos clínicos, ideas que tardaron décadas en ser escuchadas, herramientas metodológicas imprescindibles y reflexiones éticas que siguen interpelándonos. La presentación incluye audio automático en cada diapositiva, que puedes pausar con la tecla A, y enlaces directos a las fuentes originales. Pulsa Espacio para continuar.",
+          guideAudio:
+            "Un consejo antes de empezar: no intentes leer todo lo que aparece en pantalla, eso ya lo harás a tu ritmo, quizá después. Deja que el audio te guíe entre ideas mientras observas la estructura. Cada diapositiva de artículo tiene tres capas: una idea clave destacada, el contexto y relevancia del hallazgo, y acceso directo a la publicación original. Si quieres navegar libremente, pulsa M para abrir el índice lateral con todos los títulos.",
+          mapAudio:
+            "El recorrido se organiza en cuatro bloques. Primero, los hitos clínicos: estudios que transformaron decisiones terapéuticas de forma inmediata. Después, las perlas durmientes: ideas inicialmente marginales que acabaron rediseñando la práctica. Tercero, la metodología: las herramientas que usamos para juzgar qué es cierto. Y finalmente, bioética y filosofía: preguntas sobre persona, sufrimiento, justicia y responsabilidad social de la medicina. Puedes seguir el orden o saltar directamente al bloque que más te interese.",
+          finalAudio:
+            "Llegamos al final del recorrido. Estos treinta artículos convergen en cuatro niveles inseparables de la práctica médica. Primero, el biológico: los avances técnicos importan, pero no agotan el fenómeno de enfermar. Segundo, el relacional: la calidad clínica depende también del vínculo, la escucha y la continuidad. Tercero, el social: la distribución de enfermedad y cuidado está modelada por estructuras e inequidad. Y cuarto, el ético: todo acto médico es una decisión moral, no solo una operación técnica. Leídos juntos, estos artículos no solo explican la medicina moderna: también delimitan sus límites y sus responsabilidades. Gracias por acompañarme.",
+        },
+        en: {
+          htmlLang: "en",
+          documentTitle: "Medical Articles Library | 30 Essentials",
+          metaDescription: "Library of 30 essential medical articles",
+          langLabel: "Language",
+          langSwitchAria: "Language and audio selector",
+          langButtons: {
+            es: "Spanish (text and audio)",
+            en: "English (text and audio)",
+          },
+          menuShortcutsTab: "Shortcuts",
+          menuGuideTitle: "⌨ Guide, shortcuts and navigation",
+          spaceKey: "Space",
+          navMainTitle: "Main navigation",
+          navMainText:
+            "moves forward, <kbd>→</kbd>/<kbd>←</kbd> changes slide.",
+          menuToggle: "<kbd>M</kbd> opens or closes the side index",
+          audioToggle:
+            "<kbd>A</kbd> plays or pauses the slide audio",
+          boardToggle:
+            "<kbd>B</kbd> chalkboard · <kbd>C</kbd> annotate on slide",
+          boardClear:
+            "<kbd>Del</kbd> clear annotations · <kbd>D</kbd> download strokes",
+          fullPresenter:
+            "<kbd>F</kbd> fullscreen · <kbd>S</kbd> speaker view",
+          coverKicker: "Commented library",
+          coverTitle:
+            "Thirty articles that changed how we understand health and care",
+          coverLead:
+            "A visual and narrated route for clinical and general audiences, with direct access to original publications.",
+          coverCardsStrong: [
+            "30 readings",
+            "4 blocks",
+            "Primary sources",
+            "Guided narration",
+          ],
+          coverCardsSub: [
+            "milestones from 1855 to 2006",
+            "clinical, social, methods, and ethics",
+            "direct link to each article",
+            "short audio per slide",
+          ],
+          coverNavPrefix: "Navigation: press ",
+          coverNavSuffix: " to move forward.",
+          touchHint: "On mobile, swipe to move between slides.",
+          authorLine:
+            "Prepared by Ernesto Barrera Linares · Family physician ·",
+          authorLine2: "with AI support",
+          guideKicker: "Reading guide",
+          guideTitle: "How to read and navigate this presentation smoothly",
+          guideCardsTitle: [
+            "1. Core idea",
+            "2. Context and value",
+            "3. Practical use",
+            "4. Original source",
+          ],
+          guideCardsText: [
+            "Start with the opening sentence: it condenses the essential contribution of each article.",
+            "Then place the finding in its historical moment and the clinical problem it addressed.",
+            "Connect the reading to clinical, organizational, or public-health decisions.",
+            "If you need depth, open the original publication directly from the included link.",
+          ],
+          guidePanelTitle: "Quick orientation during the presentation",
+          guidePanelText:
+            "This help is also available in the side menu. Press <kbd>M</kbd> and open <strong>Shortcuts</strong>.",
+          guideColTitle: ["Low-friction navigation", "Useful live controls"],
+          guideColText: [
+            "<kbd>Space</kbd> advances continuously. You can also use <kbd>→</kbd>/<kbd>←</kbd> and <kbd>M</kbd> for the side index.",
+            "<kbd>A</kbd> audio, <kbd>B</kbd> chalkboard, <kbd>C</kbd> annotate on slide, <kbd>Del</kbd> clear annotations, <kbd>D</kbd> download strokes, <kbd>F</kbd> fullscreen, <kbd>S</kbd> speaker view.",
+          ],
+          mapKicker: "Narrative map",
+          mapTitle: "The route has four layers of clinical understanding",
+          mapLead:
+            "This is not a list of papers: it is a sequence from “what works” to “what it means to care.”",
+          mapBlockTitles: [
+            "I. Clinical milestones",
+            "II. Sleeping pearls",
+            "III. Methodology",
+            "IV. Bioethics and philosophy",
+          ],
+          mapBlockText: [
+            "Studies that changed therapeutic and public-health decisions immediately.",
+            "Ideas that started at the margins and eventually reshaped real practice.",
+            "Tools to judge causality, bias, uncertainty, and result robustness.",
+            "Core questions: personhood, suffering, justice, and medicine’s social responsibility.",
+          ],
+          mapBlockCta: [
+            "Open block I",
+            "Open block II",
+            "Open block III",
+            "Open block IV",
+          ],
+          mapAria: [
+            "Open block I: Clinical milestones",
+            "Open block II: Sleeping pearls",
+            "Open block III: Methodology",
+            "Open block IV: Bioethics and philosophy",
+          ],
+          mapUseTitle: "How to use",
+          mapUseText:
+            "For a quick read, start with blocks I and III. For a full clinical-humanistic framework, go through all four in order.",
+          finalKicker: "Final synthesis",
+          finalTitle: "What the whole set leaves us: a practical ontology of medicine",
+          finalCardTitle: [
+            "1. Biological level",
+            "2. Relational level",
+            "3. Social level",
+            "4. Ethical level",
+          ],
+          finalCardText: [
+            "Technical advances matter, but they do not exhaust the phenomenon of illness.",
+            "Clinical quality also depends on relationship, listening, and continuity.",
+            "Illness and care distribution are shaped by structures and inequity.",
+            "Every medical act is a moral decision, not only a technical operation.",
+          ],
+          finalLead:
+            "Read together, these articles not only explain modern medicine: they also define its limits and responsibilities.",
+          mapBackLabel: "Back to map",
+          referenceLabel: "Reference",
+          primaryLinksLabel: "Primary links",
+          sourceTip:
+            "Consult the original source to expand context and study limits.",
+          keylineLabel: "Key message:",
+          snowPmcLabel: "Full text on PMC",
+          pubmedFallbackLabel: "Find in PubMed",
+          articleWord: "Article",
+          blockNameMap: {
+            "I. Hitos clínicos": "I. Clinical milestones",
+            "II. Perlas durmientes": "II. Sleeping pearls",
+            "III. Metodología": "III. Methodology",
+            "IV. Bioética y filosofía": "IV. Bioethics and philosophy",
+          },
+          introAudio:
+            "Welcome to this annotated library of thirty papers that reshaped how we understand health and care. This is not simply an academic list. It is a narrated journey through clinical milestones, overlooked ideas that later changed practice, key methodological tools, and ethical questions that still matter. Each slide includes audio and a direct link to the original source. Press Space to begin.",
+          guideAudio:
+            "One suggestion before we start: do not try to read everything on screen in one pass. Let the audio guide you through the structure, then return to the text at your own pace. Each article slide has three layers: the key message, the context and relevance, and direct access to the original publication. If you prefer to move freely, press M to open the side index.",
+          mapAudio:
+            "The journey is organised in four blocks. First, clinical milestones: studies that changed treatment decisions quickly. Second, sleeping pearls: ideas that began at the margins and later moved to the centre of practice. Third, methodology: tools for deciding what evidence is reliable. Finally, bioethics and philosophy: questions about personhood, suffering, justice and medicine's social responsibility. You can follow the full sequence or jump to the block you need.",
+          finalAudio:
+            "We have reached the end of the route. These thirty papers converge on four inseparable levels of medical practice: biological, relational, social and ethical. Read together, they do more than explain modern medicine. They also define its limits and its responsibilities. Thank you for being part of the journey.",
+        },
+      };
+
+      const SUPPORTED_LANGS = ["es", "en"];
+      const ARTICLE_I18N_EN = Array.isArray(
+        window.ARTICULOS_SANITARIOS_I18N_EN?.articles,
+      )
+        ? window.ARTICULOS_SANITARIOS_I18N_EN.articles
+        : [];
+      const collapseWhitespace = (value) =>
+        String(value || "")
+          .replace(/\s+/g, " ")
+          .trim();
+
+      const getInitialLanguage = () => {
+        const searchLang = new URLSearchParams(window.location.search).get("lang");
+        if (SUPPORTED_LANGS.includes(searchLang)) return searchLang;
+        const stored = localStorage.getItem("articulos_sanitarios_lang");
+        if (SUPPORTED_LANGS.includes(stored)) return stored;
+        return "es";
+      };
+
+      let currentLang = getInitialLanguage();
+
+      const getShortcutsMenuContent = (lang) => {
+        const ui = I18N_UI[lang] || I18N_UI.es;
+        return `
       <ul class="slide-menu-items">
-        <li class="slide-menu-item"><span class="slide-menu-item-title"><strong>Navegacion principal</strong>: <kbd>Espacio</kbd> avanza, <kbd>→</kbd>/<kbd>←</kbd> cambia de diapositiva.</span></li>
-        <li class="slide-menu-item"><span class="slide-menu-item-title"><kbd>M</kbd> abre o cierra el indice lateral</span></li>
-        <li class="slide-menu-item"><span class="slide-menu-item-title"><kbd>A</kbd> reproduce o pausa el audio de la diapositiva</span></li>
-        <li class="slide-menu-item"><span class="slide-menu-item-title"><kbd>B</kbd> pizarra · <kbd>C</kbd> anotar sobre la diapositiva</span></li>
-        <li class="slide-menu-item"><span class="slide-menu-item-title"><kbd>Supr</kbd> limpia anotaciones · <kbd>D</kbd> descarga trazos</span></li>
-        <li class="slide-menu-item"><span class="slide-menu-item-title"><kbd>F</kbd> pantalla completa · <kbd>S</kbd> vista de presentador</span></li>
+        <li class="slide-menu-item"><span class="slide-menu-item-title"><strong>${ui.navMainTitle}</strong>: <kbd>${ui.spaceKey}</kbd> ${ui.navMainText}</span></li>
+        <li class="slide-menu-item"><span class="slide-menu-item-title">${ui.menuToggle}</span></li>
+        <li class="slide-menu-item"><span class="slide-menu-item-title">${ui.audioToggle}</span></li>
+        <li class="slide-menu-item"><span class="slide-menu-item-title">${ui.boardToggle}</span></li>
+        <li class="slide-menu-item"><span class="slide-menu-item-title">${ui.boardClear}</span></li>
+        <li class="slide-menu-item"><span class="slide-menu-item-title">${ui.fullPresenter}</span></li>
       </ul>
     `;
+      };
 
-      const mapSequentialUploadedAudio = () => {
-        const audioBase = "assets/articulos_sanitarios_clave";
-        const audioExt = "webm";
+      const setLanguageButtons = (lang) => {
+        document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
+          const isActive = btn.dataset.langBtn === lang;
+          btn.classList.toggle("active", isActive);
+          btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+      };
+
+      const applyUiTranslations = (lang) => {
+        const ui = I18N_UI[lang] || I18N_UI.es;
+        document.documentElement.lang = ui.htmlLang;
+        document.title = ui.documentTitle;
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) metaDescription.setAttribute("content", ui.metaDescription);
+
+        const langLabel = document.querySelector(".lang-switch-label");
+        if (langLabel) langLabel.textContent = ui.langLabel;
+        const langSwitch = document.querySelector(".lang-switch");
+        if (langSwitch) {
+          langSwitch.setAttribute("aria-label", ui.langSwitchAria || ui.langLabel);
+        }
+        document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
+          const langKey = btn.dataset.langBtn;
+          const buttonLabel = ui.langButtons?.[langKey];
+          if (buttonLabel) {
+            btn.setAttribute("aria-label", buttonLabel);
+            btn.setAttribute("title", buttonLabel);
+          }
+        });
+
+        const sections = document.querySelectorAll(".reveal .slides > section");
+        const cover = sections[0];
+        if (cover) {
+          const kicker = cover.querySelector(".kicker");
+          const title = cover.querySelector("h1");
+          const lead = cover.querySelector(".lead");
+          if (kicker) kicker.textContent = ui.coverKicker;
+          if (title) title.textContent = ui.coverTitle;
+          if (lead) lead.textContent = ui.coverLead;
+
+          const heroStrong = cover.querySelectorAll(".hero-card strong");
+          const heroSub = cover.querySelectorAll(".hero-card span");
+          heroStrong.forEach((node, idx) => {
+            if (ui.coverCardsStrong[idx]) node.textContent = ui.coverCardsStrong[idx];
+          });
+          heroSub.forEach((node, idx) => {
+            if (ui.coverCardsSub[idx]) node.textContent = ui.coverCardsSub[idx];
+          });
+
+          const navHint = cover.querySelector(".cover-nav-hint");
+          if (navHint) {
+            navHint.innerHTML = `${ui.coverNavPrefix}<kbd>${ui.spaceKey}</kbd>${ui.coverNavSuffix}<span class="touch-hint">${ui.touchHint}</span>`;
+          }
+
+          const authorLine = cover.querySelector(".author-credit span:first-child");
+          if (authorLine) authorLine.innerHTML = `${ui.authorLine}<br />${ui.authorLine2}`;
+        }
+
+        const guide = sections[1];
+        if (guide) {
+          guide.setAttribute("data-menu-title", ui.menuGuideTitle);
+          const kicker = guide.querySelector(".kicker");
+          const title = guide.querySelector("h2");
+          if (kicker) kicker.textContent = ui.guideKicker;
+          if (title) title.textContent = ui.guideTitle;
+
+          guide.querySelectorAll(".how-card").forEach((card, idx) => {
+            const cardTitle = card.querySelector("h3");
+            const cardText = card.querySelector("p");
+            if (cardTitle && ui.guideCardsTitle[idx]) {
+              cardTitle.textContent = ui.guideCardsTitle[idx];
+            }
+            if (cardText && ui.guideCardsText[idx]) {
+              cardText.textContent = ui.guideCardsText[idx];
+            }
+          });
+
+          const panelTitle = guide.querySelector(".shortcut-head h3");
+          const panelText = guide.querySelector(".shortcut-head p");
+          if (panelTitle) panelTitle.textContent = ui.guidePanelTitle;
+          if (panelText) panelText.innerHTML = ui.guidePanelText;
+
+          const cols = guide.querySelectorAll(".shortcut-col");
+          cols.forEach((col, idx) => {
+            const colTitle = col.querySelector("h4");
+            const colText = col.querySelector("p");
+            if (colTitle && ui.guideColTitle[idx]) colTitle.textContent = ui.guideColTitle[idx];
+            if (colText && ui.guideColText[idx]) colText.innerHTML = ui.guideColText[idx];
+          });
+        }
+
+        const map = sections[2];
+        if (map) {
+          const kicker = map.querySelector(".kicker");
+          const title = map.querySelector("h2");
+          const lead = map.querySelector(".lead");
+          if (kicker) kicker.textContent = ui.mapKicker;
+          if (title) title.textContent = ui.mapTitle;
+          if (lead) lead.textContent = ui.mapLead;
+
+          map.querySelectorAll(".narrative-block").forEach((block, idx) => {
+            const cardTitle = block.querySelector("h3");
+            const cardText = block.querySelector("p");
+            const cardCta = block.querySelector(".narrative-cta");
+            const cardLink = block.querySelector(".narrative-card-link");
+            if (cardTitle && ui.mapBlockTitles[idx]) cardTitle.textContent = ui.mapBlockTitles[idx];
+            if (cardText && ui.mapBlockText[idx]) cardText.textContent = ui.mapBlockText[idx];
+            if (cardCta && ui.mapBlockCta[idx]) cardCta.textContent = ui.mapBlockCta[idx];
+            if (cardLink && ui.mapAria[idx]) cardLink.setAttribute("aria-label", ui.mapAria[idx]);
+          });
+
+          const useTitle = map.querySelector(".narrative-synthesis h3");
+          const useText = map.querySelector(".narrative-synthesis p");
+          if (useTitle) useTitle.textContent = ui.mapUseTitle;
+          if (useText) useText.textContent = ui.mapUseText;
+        }
+
+        const finalSlide = sections[sections.length - 1];
+        if (finalSlide && finalSlide.querySelector(".how-grid")) {
+          const kicker = finalSlide.querySelector(".kicker");
+          const title = finalSlide.querySelector("h2");
+          const lead = finalSlide.querySelector(".lead");
+          if (kicker) kicker.textContent = ui.finalKicker;
+          if (title) title.textContent = ui.finalTitle;
+          if (lead) lead.textContent = ui.finalLead;
+
+          finalSlide.querySelectorAll(".how-card").forEach((card, idx) => {
+            const cardTitle = card.querySelector("h3");
+            const cardText = card.querySelector("p");
+            if (cardTitle && ui.finalCardTitle[idx]) cardTitle.textContent = ui.finalCardTitle[idx];
+            if (cardText && ui.finalCardText[idx]) cardText.textContent = ui.finalCardText[idx];
+          });
+        }
+      };
+
+      const translateArticleKicker = (text, lang) => {
+        if (lang === "es") return text;
+        const ui = I18N_UI.en;
+        let translated = text;
+        Object.entries(ui.blockNameMap).forEach(([esName, enName]) => {
+          translated = translated.replace(esName, enName);
+        });
+        translated = translated.replace(" · Artículo ", ` · ${ui.articleWord} `);
+        return translated;
+      };
+
+      const applyArticleChromeTranslations = (lang) => {
+        const ui = I18N_UI[lang] || I18N_UI.es;
+        document.querySelectorAll("section.article-slide .slide-top .kicker").forEach((kicker) => {
+          if (!kicker.dataset.kickerEs) {
+            kicker.dataset.kickerEs = collapseWhitespace(kicker.textContent);
+          }
+          kicker.textContent = translateArticleKicker(kicker.dataset.kickerEs, lang);
+        });
+
+        document.querySelectorAll(".keyline strong").forEach((label) => {
+          if (!label.dataset.labelEs) {
+            label.dataset.labelEs = collapseWhitespace(label.textContent);
+          }
+          label.textContent = lang === "en" ? ui.keylineLabel : label.dataset.labelEs;
+        });
+
+        document.querySelectorAll(".map-back").forEach((node) => {
+          node.textContent = ui.mapBackLabel;
+        });
+
+        document.querySelectorAll(".chip.search").forEach((node) => {
+          node.textContent = ui.pubmedFallbackLabel;
+        });
+
+        document.querySelectorAll(".citation-actions .chip.pmcid").forEach((node) => {
+          if (node.href.includes("/PMC5307547/")) {
+            node.textContent = ui.snowPmcLabel;
+          }
+        });
+      };
+
+      const applyArticleContentTranslations = (lang) => {
+        const ui = I18N_UI[lang] || I18N_UI.es;
+        document.querySelectorAll("section.article-slide").forEach((slide, idx) => {
+          const enArticle = ARTICLE_I18N_EN[idx] || null;
+
+          const title = slide.querySelector("h2");
+          if (title && !title.dataset.i18nEs) {
+            title.dataset.i18nEs = title.innerHTML;
+          }
+
+          const keyline = slide.querySelector(".keyline");
+          if (keyline && !keyline.dataset.i18nEs) {
+            keyline.dataset.i18nEs = keyline.innerHTML;
+          }
+
+          const body = slide.querySelector(".article-body p");
+          if (body && !body.dataset.i18nEs) {
+            body.dataset.i18nEs = body.innerHTML;
+          }
+
+          const notes = slide.querySelector("aside.notes");
+          if (notes && !notes.dataset.i18nEs) {
+            notes.dataset.i18nEs = notes.innerHTML;
+          }
+
+          if (lang === "en" && enArticle) {
+            if (title && enArticle.title) title.textContent = enArticle.title;
+            if (keyline && enArticle.keyline) {
+              keyline.innerHTML = `<strong>${ui.keylineLabel}</strong> ${enArticle.keyline}`;
+            }
+            if (body && enArticle.body) body.textContent = enArticle.body;
+            if (notes && enArticle.notes) notes.textContent = enArticle.notes;
+          } else {
+            if (title?.dataset.i18nEs) title.innerHTML = title.dataset.i18nEs;
+            if (keyline?.dataset.i18nEs) keyline.innerHTML = keyline.dataset.i18nEs;
+            if (body?.dataset.i18nEs) body.innerHTML = body.dataset.i18nEs;
+            if (notes?.dataset.i18nEs) notes.innerHTML = notes.dataset.i18nEs;
+          }
+
+          slide.querySelectorAll(".meta-card h3").forEach((heading) => {
+            if (!heading.dataset.i18nEs) {
+              heading.dataset.i18nEs = collapseWhitespace(heading.textContent);
+            }
+            if (lang === "en") {
+              if (/^Referencia$/i.test(heading.dataset.i18nEs)) {
+                heading.textContent = ui.referenceLabel;
+              } else if (/^Enlaces primarios$/i.test(heading.dataset.i18nEs)) {
+                heading.textContent = ui.primaryLinksLabel;
+              }
+            } else {
+              heading.textContent = heading.dataset.i18nEs;
+            }
+          });
+
+          slide.querySelectorAll(".meta-card .tip").forEach((tip) => {
+            if (!tip.dataset.i18nEs) {
+              tip.dataset.i18nEs = collapseWhitespace(tip.textContent);
+            }
+            tip.textContent = lang === "en" ? ui.sourceTip : tip.dataset.i18nEs;
+          });
+        });
+      };
+
+      const applyAudioLanguage = (lang) => {
+        const sections = document.querySelectorAll(".reveal .slides > section");
+        sections.forEach((slide) => {
+          if (slide.dataset.audioText && !slide.dataset.audioTextEs) {
+            slide.dataset.audioTextEs = slide.dataset.audioText;
+          }
+        });
+        if (!sections.length) return;
+
+        const finalIndex = sections.length - 1;
+        const enTopAudio = {
+          0: I18N_UI.en.introAudio,
+          1: I18N_UI.en.guideAudio,
+          2: I18N_UI.en.mapAudio,
+          [finalIndex]: I18N_UI.en.finalAudio,
+        };
+        const esTopAudio = {
+          0: I18N_UI.es.introAudio,
+          1: I18N_UI.es.guideAudio,
+          2: I18N_UI.es.mapAudio,
+          [finalIndex]: I18N_UI.es.finalAudio,
+        };
+
+        const articleIndexes = new Map();
+        document.querySelectorAll("section.article-slide").forEach((slide, idx) => {
+          articleIndexes.set(slide, idx);
+        });
+
+        sections.forEach((slide, idx) => {
+          const articleIdx = articleIndexes.get(slide);
+          if (lang === "en" && articleIdx !== undefined) {
+            const entry = ARTICLE_I18N_EN[articleIdx];
+            if (entry?.audio) {
+              slide.setAttribute("data-audio-text", entry.audio);
+              return;
+            }
+          }
+
+          if (lang === "en" && enTopAudio[idx]) {
+            slide.setAttribute("data-audio-text", enTopAudio[idx]);
+          } else if (lang === "es" && esTopAudio[idx]) {
+            slide.setAttribute("data-audio-text", esTopAudio[idx]);
+          } else if (slide.dataset.audioTextEs) {
+            slide.setAttribute("data-audio-text", slide.dataset.audioTextEs);
+          }
+        });
+      };
+
+      const updateMenuLanguage = (lang) => {
+        if (!window.Reveal || typeof Reveal.getConfig !== "function") return;
+        const menuConfig = Reveal.getConfig().menu || {};
+        Reveal.configure({
+          menu: {
+            ...menuConfig,
+            custom: [
+              {
+                title: I18N_UI[lang].menuShortcutsTab,
+                icon: "⌨",
+                content: getShortcutsMenuContent(lang),
+              },
+            ],
+          },
+        });
+      };
+
+      const setLanguage = (
+        lang,
+        {
+          persist = true,
+          updateUrl = true,
+          refreshMenu = true,
+          reloadForAudio = false,
+        } = {},
+      ) => {
+        const target = SUPPORTED_LANGS.includes(lang) ? lang : "es";
+        const previousLang = currentLang;
+        if (reloadForAudio && target !== previousLang) {
+          localStorage.setItem("articulos_sanitarios_lang", target);
+          const reloadUrl = new URL(window.location.href);
+          reloadUrl.searchParams.set("lang", target);
+          window.location.assign(reloadUrl.toString());
+          return;
+        }
+
+        currentLang = target;
+        applyUiTranslations(target);
+        applyArticleChromeTranslations(target);
+        applyArticleContentTranslations(target);
+        applyAudioLanguage(target);
+        applyAudioSourceLanguage(target);
+        setLanguageButtons(target);
+
+        if (persist) localStorage.setItem("articulos_sanitarios_lang", target);
+        if (updateUrl) {
+          const url = new URL(window.location.href);
+          url.searchParams.set("lang", target);
+          history.replaceState(null, "", url.toString());
+        }
+        if (refreshMenu) updateMenuLanguage(target);
+      };
+
+      document.querySelectorAll("[data-lang-btn]").forEach((button) => {
+        button.addEventListener("click", () => {
+          setLanguage(button.dataset.langBtn, { reloadForAudio: true });
+        });
+      });
+
+      const shortcutsMenuContent = getShortcutsMenuContent(currentLang);
+
+      function forEachSlideInAudioOrder(callback) {
         let sequence = 0;
         const horizontalSlides = document.querySelectorAll(
           ".reveal .slides > section",
@@ -3888,27 +4675,72 @@
         horizontalSlides.forEach((slide) => {
           const verticalSlides = slide.querySelectorAll(":scope > section");
           if (!verticalSlides.length) {
-            if (slide.hasAttribute("data-audio-src")) return;
-            slide.setAttribute(
-              "data-audio-src",
-              `${audioBase}/${sequence}.${audioExt}`,
-            );
+            callback(slide, sequence);
             sequence += 1;
             return;
           }
 
           verticalSlides.forEach((verticalSlide) => {
-            if (verticalSlide.hasAttribute("data-audio-src")) return;
-            verticalSlide.setAttribute(
-              "data-audio-src",
-              `${audioBase}/${sequence}.${audioExt}`,
-            );
+            callback(verticalSlide, sequence);
             sequence += 1;
           });
         });
+      }
+
+      function mapSequentialUploadedAudioByLang(lang, audioBase) {
+        const audioExt = "webm";
+        const attr = `data-audio-src-${lang}`;
+        forEachSlideInAudioOrder((slide, sequence) => {
+          if (!slide.hasAttribute(attr)) {
+            slide.setAttribute(attr, `${audioBase}/${sequence}.${audioExt}`);
+          }
+        });
+      }
+
+      function applyAudioSourceLanguage(lang) {
+        const attr = `data-audio-src-${lang}`;
+        forEachSlideInAudioOrder((slide) => {
+          const source =
+            slide.getAttribute(attr) ||
+            slide.getAttribute("data-audio-src-es") ||
+            slide.getAttribute("data-audio-src-en");
+          if (source) {
+            slide.setAttribute("data-audio-src", source);
+          }
+        });
+
+        const currentSlide =
+          window.Reveal && typeof Reveal.getCurrentSlide === "function"
+            ? Reveal.getCurrentSlide()
+            : null;
+        const player = document.querySelector(".audio-controls > audio");
+        if (!currentSlide || !player) return;
+        const currentSource = currentSlide.getAttribute("data-audio-src");
+        if (!currentSource) return;
+        const playerSource = player.getAttribute("src");
+        if (playerSource !== currentSource) {
+          player.pause();
+          player.setAttribute("src", currentSource);
+          player.load();
+        }
+      }
+
+      const AUDIO_BASE_BY_LANG = {
+        es: "assets/articulos_sanitarios_clave",
+        en: "assets/articulos_sanitarios_clave_en",
       };
 
-      mapSequentialUploadedAudio();
+      Object.entries(AUDIO_BASE_BY_LANG).forEach(([lang, base]) => {
+        mapSequentialUploadedAudioByLang(lang, base);
+      });
+
+      setLanguage(currentLang, {
+        persist: false,
+        updateUrl: false,
+        refreshMenu: false,
+      });
+
+      applyAudioSourceLanguage(currentLang);
 
       const getViewportDeckConfig = () => {
         const compactViewport = window.matchMedia(
@@ -3979,7 +4811,7 @@
           titleSelector: "h1, h2, h3",
           custom: [
             {
-              title: "Atajos",
+              title: I18N_UI[currentLang].menuShortcutsTab,
               icon: "⌨",
               content: shortcutsMenuContent,
             },
@@ -4192,7 +5024,7 @@
                   "https://pmc.ncbi.nlm.nih.gov/articles/PMC5307547/";
                 snowLink.target = "_blank";
                 snowLink.rel = "noopener";
-                snowLink.textContent = "Texto completo en PMC";
+                snowLink.textContent = I18N_UI[currentLang].snowPmcLabel;
                 actions.appendChild(snowLink);
               } else {
                 ids.forEach(({ type, id }) => {
@@ -4205,7 +5037,8 @@
                   fallbackChip.href = `https://pubmed.ncbi.nlm.nih.gov/?term=${buildPubMedQuery(originalText, title)}`;
                   fallbackChip.target = "_blank";
                   fallbackChip.rel = "noopener";
-                  fallbackChip.textContent = "Localizar en PubMed";
+                  fallbackChip.textContent =
+                    I18N_UI[currentLang].pubmedFallbackLabel;
                   actions.appendChild(fallbackChip);
                 }
               }
@@ -4240,7 +5073,7 @@
             const back = document.createElement("a");
             back.className = "map-back";
             back.href = "#/2";
-            back.textContent = "Volver al mapa";
+            back.textContent = I18N_UI[currentLang].mapBackLabel;
             if (badge) {
               top.insertBefore(back, badge);
             } else {
@@ -4279,6 +5112,13 @@
       const enrichAudioNarratives = () => {
         const slides = document.querySelectorAll("section.article-slide");
         slides.forEach((slide, idx) => {
+          if (slide.dataset.audioText) {
+            if (!slide.dataset.audioTextEs) {
+              slide.dataset.audioTextEs = slide.dataset.audioText;
+            }
+            return;
+          }
+
           const number = idx + 1;
           const title = normalizeText(
             slide.querySelector("h2")?.textContent || `Artículo ${number}`,
@@ -4295,6 +5135,7 @@
           );
 
           slide.setAttribute("data-audio-text", narrative);
+          slide.dataset.audioTextEs = narrative;
           const notes = slide.querySelector("aside.notes");
           if (notes) notes.textContent = narrative;
         });
@@ -4374,6 +5215,11 @@
         consolidateReferenceCards();
         addMapBackLinks();
         enrichAudioNarratives();
+        setLanguage(currentLang, {
+          persist: false,
+          updateUrl: false,
+          refreshMenu: true,
+        });
         applyResponsiveDeckConfig();
         ensureAudioPlayerVisible();
         scheduleFit();
@@ -4391,6 +5237,11 @@
         consolidateReferenceCards();
         addMapBackLinks();
         enrichAudioNarratives();
+        setLanguage(currentLang, {
+          persist: false,
+          updateUrl: false,
+          refreshMenu: true,
+        });
         applyResponsiveDeckConfig();
         ensureAudioPlayerVisible();
         scheduleFit();
