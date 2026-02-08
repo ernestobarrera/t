@@ -301,6 +301,12 @@
             gap: 10px;
         }
 
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
         /* Métricas */
         .metric-box {
             text-align: center;
@@ -336,31 +342,6 @@
             margin-right: 8px;
         }
 
-        /* Demo overlay */
-        .demo-overlay {
-            position: absolute;
-            bottom: 60px;
-            right: 40px;
-        }
-
-        .demo-overlay .glass-panel {
-            padding: 10px 20px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 0.9;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 1;
-                transform: scale(1.05);
-            }
-        }
 
         /* Badges */
         .badge {
@@ -796,6 +777,96 @@
                 </div>
             </section>
 
+            <!-- SLIDE: Hoja de Ruta (añadida 2026-02-06) -->
+            <section data-menu-title="🗺️ Hoja de Ruta"
+                data-audio-text="Esta es nuestra hoja de ruta para las próximas dos horas. Cinco bloques: empezamos con un impacto inicial, luego fundamentos técnicos, después demos en vivo, un descanso, práctica guiada en grupos, y cerramos con los mensajes clave y evaluación.">
+                <h2>🗺️ Hoja de Ruta: 120 minutos</h2>
+                <p style="font-size: 0.75em; color: var(--text-muted); margin-bottom: 20px;">
+                    Haz clic en cualquier bloque para saltar directamente
+                </p>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="grid-5" style="gap: 10px;">
+                        <!-- Bloque 1 -->
+                        <a href="#/4" style="text-decoration: none;">
+                            <div class="glass-panel"
+                                style="border-top: 4px solid var(--accent); cursor: pointer; transition: transform 0.2s;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                <span style="font-size: 1.5em;">⚡</span>
+                                <h4 style="margin: 8px 0 4px; font-size: 0.85em; color: var(--accent);">Bloque 1</h4>
+                                <p style="font-size: 0.7em; margin: 0; color: var(--text-main);">Ruptura</p>
+                                <p style="font-size: 0.6em; color: var(--text-muted); margin: 4px 0 0;">15 min</p>
+                            </div>
+                        </a>
+                        <!-- Bloque 2 -->
+                        <a href="#/5" style="text-decoration: none;">
+                            <div class="glass-panel"
+                                style="border-top: 4px solid var(--primary); cursor: pointer; transition: transform 0.2s;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                <span style="font-size: 1.5em;">🧠</span>
+                                <h4 style="margin: 8px 0 4px; font-size: 0.85em; color: var(--primary);">Bloque 2</h4>
+                                <p style="font-size: 0.7em; margin: 0; color: var(--text-main);">Fundamentos</p>
+                                <p style="font-size: 0.6em; color: var(--text-muted); margin: 4px 0 0;">45 min</p>
+                            </div>
+                        </a>
+                        <!-- Bloque 3 -->
+                        <a href="#/8" style="text-decoration: none;">
+                            <div class="glass-panel"
+                                style="border-top: 4px solid var(--secondary); cursor: pointer; transition: transform 0.2s;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                <span style="font-size: 1.5em;">🛠️</span>
+                                <h4 style="margin: 8px 0 4px; font-size: 0.85em; color: var(--secondary);">Bloque 3</h4>
+                                <p style="font-size: 0.7em; margin: 0; color: var(--text-main);">Demos</p>
+                                <p style="font-size: 0.6em; color: var(--text-muted); margin: 4px 0 0;">40 min</p>
+                            </div>
+                        </a>
+                        <!-- Bloque 4 -->
+                        <a href="#/9" style="text-decoration: none;">
+                            <div class="glass-panel"
+                                style="border-top: 4px solid #a855f7; cursor: pointer; transition: transform 0.2s;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                <span style="font-size: 1.5em;">✍️</span>
+                                <h4 style="margin: 8px 0 4px; font-size: 0.85em; color: #a855f7;">Bloque 4</h4>
+                                <p style="font-size: 0.7em; margin: 0; color: var(--text-main);">Práctica</p>
+                                <p style="font-size: 0.6em; color: var(--text-muted); margin: 4px 0 0;">25 min</p>
+                            </div>
+                        </a>
+                        <!-- Bloque 5 -->
+                        <a href="#/10" style="text-decoration: none;">
+                            <div class="glass-panel"
+                                style="border-top: 4px solid var(--pediatric-green); cursor: pointer; transition: transform 0.2s;"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                <span style="font-size: 1.5em;">🏁</span>
+                                <h4 style="margin: 8px 0 4px; font-size: 0.85em; color: var(--pediatric-green);">Bloque
+                                    5</h4>
+                                <p style="font-size: 0.7em; margin: 0; color: var(--text-main);">Cierre</p>
+                                <p style="font-size: 0.6em; color: var(--text-muted); margin: 4px 0 0;">20 min</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Línea de tiempo visual -->
+                    <div style="margin-top: 20px; padding: 10px; background: rgba(96,165,250,0.1); border-radius: 8px;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; font-size: 0.7em;">
+                            <span>0'</span>
+                            <span style="color: var(--accent);">15'</span>
+                            <span style="color: var(--primary);">60'</span>
+                            <span style="color: var(--text-muted);">☕ Pausa</span>
+                            <span style="color: var(--secondary);">100'</span>
+                            <span style="color: #a855f7;">125'</span>
+                            <span style="color: var(--pediatric-green);">145'</span>
+                        </div>
+                        <div
+                            style="height: 8px; background: linear-gradient(to right, var(--accent) 12.5%, var(--primary) 12.5%, var(--primary) 50%, #666 50%, #666 54%, var(--secondary) 54%, var(--secondary) 75%, #a855f7 75%, #a855f7 87.5%, var(--pediatric-green) 87.5%); border-radius: 4px; margin-top: 8px;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- SLIDE: Glosario de conceptos emergentes -->
             <section data-menu-title="Glosario IA"
                 data-audio-text="Antes de empezar, vamos a alinear vocabulario. Estos son los conceptos clave que usaremos durante el seminario.">
@@ -910,7 +981,6 @@
                     </p>
                 </div>
             </section> -->
-            </section>
 
             <!-- ═══════════════════════════════════════════════════════════════ -->
             <!-- BLOQUE 1: RUPTURA (15 min) -->
@@ -957,40 +1027,34 @@
                 </section>
                 <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
                     data-audio-src="https://ernestobarrera.github.io\assets\Audio\ChatGPT_Biblio\tweet.mp3">
+                    <!-- Tweet embed con fallback -->
                     <div class="tweet" data-src="https://twitter.com/OpenAI/status/1598014522098208769"></div>
+                    <!-- Fallback si no carga el tweet -->
+                    <noscript>
+                        <div class="glass-panel"
+                            style="max-width: 600px; margin: 50px auto; padding: 30px; text-align: left;">
+                            <p style="font-size: 1.2em; font-weight: 600; color: var(--primary);">@OpenAI · 30 Nov 2022
+                            </p>
+                            <p style="font-size: 1.5em; margin: 15px 0;">Introducing ChatGPT</p>
+                            <p style="font-size: 1em; color: var(--text-muted);">Try talking with ChatGPT, our new AI
+                                system which is optimized for dialogue.</p>
+                            <p style="font-size: 0.8em; color: var(--accent); margin-top: 15px;">chat.openai.com</p>
+                        </div>
+                    </noscript>
                 </section>
                 <section class="full-height" style="position: relative;"
                     data-background-iframe="https://esperr.github.io/pubmed-by-year/?q1=((%20%22ChatGPT%22[TIAB]%20OR%20%22Claude%22[TIAB]%20OR%20%22Gemini%22[TIAB]%20OR%20%22Perplexity%22[TIAB]%20OR%20%22Anthropic%22[TIAB]%20OR%20%22Bard%22[TIAB]%20OR%20%22Deepseek%22[TIAB]%20OR%20%22Google%20NotebookLM%22[TIAB]%20OR%20%22Qwen%22[TIAB]%20OR%20%22InternLM%22[TIAB]%20OR%20%22Baichuan%22[TIAB]%20OR%20(%22Llama%22[TIAB]%20AND%20%22AI%22[TIAB])%20OR%20(%22Llama%202%22[TIAB]%20AND%20%22AI%22[TIAB])%20OR%20(%22Mistral%22[TIAB]%20AND%20%22AI%22[TIAB])%20OR%20(%22Mixtral%22[TIAB]%20AND%20%22AI%22[TIAB])%20OR%20%22Grok%22[TIAB]%20OR%20%22SenseNova%22[TIAB]%20OR%20%22GitHub%20Copilot%22[TIAB]%20OR%20%22Microsoft%20Copilot%22[TIAB]%20OR%20%22Large%20Language%20Model*%22[TIAB]%20OR%20%22Generative%20Artificial%20Intelligence%22[TIAB]%20OR%20%22Transformer%22[TIAB]%20OR%20%22Attention%20Mechanism%22[TIAB]%20OR%20%22Pretrained%20Transformer%22[TIAB]%20OR%20%22pre-trained%20transformer*%22[TIAB]%20OR%20%22Self-Attention%22[TIAB]%20OR%20%22Embeddings%22[TIAB]%20OR%20%22Generative%20Artificial%20Intelligence%22[Mesh]%20OR%20%22Natural%20Language%20Processing%22[Mesh]%20))&q2=(%22COVID-19%22%20OR%20%22COVID19%22%20OR%20%22COVID-19%22[MeSH%20Terms]%20OR%20%22COVID-19%20Vaccines%22%20OR%20%22COVID-19%20Vaccines%22[MeSH%20Terms]%20OR%20%22COVID-19%20serotherapy%22%20OR%20%22COVID-19%20serotherapy%22[%20MeSH%20Terms]%20OR%20%22COVID-19%20Nucleic%20Acid%20Testing%22%20OR%20%22covid-19%20nucleic%20acid%20testing%22[MeSH%20Terms]%20OR%20%22COVID-19%20Serological%20Testing%22%20OR%20%22covid-19%20serological%20testing%22[MeSH%20Terms]%20OR%20%22COVID-19%20Testing%22%20OR%20%22covid-19%20testing%22[MeSH%20Terms]%20OR%20%22SARS-CoV-2%22%20OR%20%22SARSCoV2%22%20OR%20%22SARSCoV-2%22%20OR%20%22SARS-CoV2%22%20OR%20%22sars-cov-2%22[MeSH%20Terms]%20OR%20%22Severe%20Acute%20Respiratory%20Syndrome%20Coronavirus%202%22%20OR%20%222019%20NCOV%22%20OR%20((%22coronavirus%22[MeSH%20Terms]%20OR%20%22coronavirus%22%20OR%20%22COV%22%20OR%20%22NCOV%22)%20AND%202019/11/01[PDAT]%20:%203000/12/31[PDAT]))%20AND%20(%22therapeutics%22[MeSH%20Terms]%20OR%20%22therapeutics%22[All%20Fields]%20OR%20%22treatments%22[All%20Fields]%20OR%20%22therapy%22[MeSH%20Subheading]%20OR%20%22therapy%22[All%20Fields]%20OR%20%22treatment%22[All%20Fields]%20OR%20%22treatment%20s%22[All%20Fields]%20OR%20%22treat*%22[All%20Fields]%20OR%20(%22clinical%20trial%22[Publication%20Type]%20OR%20%22clinical%20trials%20as%20topic%22[MeSH%20Terms]%20OR%20%22clinical%20trials%22[All%20Fields])%20OR%20(%22clinical%20trial%22[Publication%20Type]%20OR%20%22clinical%20trials%20as%20topic%22[MeSH%20Terms]%20OR%20%22clinical%20trial%22[All%20Fields])%20OR%20(%22randomized%20controlled%20trial%22[Publication%20Type]%20OR%20%22randomized%20controlled%20trials%20as%20topic%22[MeSH%20Terms]%20OR%20%22randomized%20controlled%20trial%22[All%20Fields]%20OR%20%22randomised%20controlled%20trial%22[All%20Fields])%20OR%20(%22randomized%20controlled%20trial%22[Publication%20Type]%20OR%20%22randomized%20controlled%20trials%20as%20topic%22[MeSH%20Terms]%20OR%20%22randomized%20controlled%20trials%22[All%20Fields]%20OR%20%22randomised%20controlled%20trials%22[All%20Fields])%20OR%20(%22therapeutics%22[MeSH%20Terms]%20OR%20%22therapeutics%22[All%20Fields]%20OR%20%22therapies%22[All%20Fields]%20OR%20%22therapy%22[MeSH%20Subheading]%20OR%20%22therapy%22[All%20Fields]%20OR%20%22therapy%20s%22[All%20Fields]%20OR%20%22therapys%22[All%20Fields])%20OR%20(%22therapeutical%22[All%20Fields]%20OR%20%22therapeutically%22[All%20Fields]%20OR%20%22therapeuticals%22[All%20Fields]%20OR%20%22therapeutics%22[MeSH%20Terms]%20OR%20%22therapeutics%22[All%20Fields]%20OR%20%22therapeutic%22[All%20Fields]))&q3=OPENAI[TIAB]%20OR%20CHATGPT[TIAB]%20OR%20%22CHAT%20GPT%22[TIAB]%20OR%20GPT-3[TlAB]%20OR%20GPT-4*[TlAB]&startyear=2019&endyear=2026"
                     data-background-opacity="0.9"
                     data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/bibliometria.mp3">
                     <div class="biblio-card"
-                        style="position: absolute; bottom: 15%; width: 35%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0, 0, 0, 0.406); background-color: rgba(0, 0, 0, 0.642); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
-                        <h4 style="text-align: center;">📈 Bibliometría:<br>IA en PubMed (lectura clínica)</h4>
-
-                        <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">
-                            IA/LLM (términos amplios): ↑<b>106,83%</b> (2023), ↑<b>60,38%</b> (2024)
+                        style="position: absolute; bottom: 15%; width: 35%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0, 0, 0, 0.406); background-color: rgba(0, 0, 0, 0.85); color: #fff; padding: 25px; font-size: 20px; text-align: center;">
+                        <h4 style="margin: 0 0 15px;">📈 IA en PubMed</h4>
+                        <p style="font-size: 1.8rem; color: rgb(253, 215, 1); font-weight: 700; margin: 15px 0;">
+                            De <b>1</b> de cada <b>215</b> publicaciones<br>
+                            a <b>1</b> de cada <b>90</b> en dos años
                         </p>
-
-                        <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">
-                            Impulso inicial (ChatGPT/GPT): ↑<b>8.361,81%</b> (2023) ⇒ <b>×84,62</b>; luego se modera:
-                            ↑<b>81,75%</b> (2024)
-                        </p>
-
-                        <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">
-                            Después el crecimiento se reparte (IA/LLM sin ChatGPT/GPT): ↑<b>51,86%</b> (2024),
-                            ↑<b>61,87%</b> (2025)
-                        </p>
-
-                        <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">
-                            En proporciones fáciles: en 2023 IA/LLM ≈ <b>1</b> de cada <b>215</b> publicaciones y
-                            ChatGPT ≈ <b>1</b> de cada <b>752</b>.<br>
-                            En 2025 IA/LLM ≈ <b>1</b> de cada <b>90</b> y ya equivale al <b>95,80%</b> del volumen de
-                            COVID terapéutica (2025).
-                        </p>
-
-                        <p style="font-size: 0.85rem; opacity: 0.85; margin-top: 10px;">
-                            Cálculos verificados directamente sobre <b>PubMed by Year.csv</b> (métrica: resultados por
-                            100.000 publicaciones).
+                        <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 15px;">
+                            El crecimiento supera al de COVID terapéutica
                         </p>
                     </div>
                     <div class="footer"
@@ -1168,6 +1232,32 @@
                     </div>
                     <p class="source-note">Wang G, et al. NPJ Digital Medicine. 2026 · <a
                             href="https://doi.org/10.1038/s41746-026-02382-2" target="_blank" rel="noopener">DOI</a></p>
+                </section>
+
+                <!-- SLIDE: Microactividad post-Paradoja (añadida 2026-02-06) -->
+                <section data-menu-title="Pausa: ¿Experiencias?"
+                    data-audio-text="Antes de seguir con más evidencia, me gustaría saber: ¿alguno de vosotros ha tenido ya una experiencia, buena o mala, usando IA en consulta? Levantad la mano si queréis compartirla brevemente.">
+                    <h2 style="font-size: 2em;">🤔 Pausa para reflexión</h2>
+                    <div class="glass-panel" style="max-width: 800px; margin: 30px auto; padding: 30px;">
+                        <p style="font-size: 1.2em; margin-bottom: 20px;">
+                            ¿Alguno ha tenido ya una <strong style="color: var(--primary);">experiencia</strong>
+                            usando IA en consulta?
+                        </p>
+                        <div class="grid-2" style="max-width: 600px; margin: 0 auto;">
+                            <div style="text-align: center; padding: 15px;">
+                                <span style="font-size: 2.5em;">👍</span>
+                                <p style="font-size: 0.9em; color: var(--secondary);">Positiva</p>
+                            </div>
+                            <div style="text-align: center; padding: 15px;">
+                                <span style="font-size: 2.5em;">👎</span>
+                                <p style="font-size: 0.9em; color: #ef4444;">Negativa</p>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.85em; color: var(--text-muted); margin-top: 20px;">
+                            <i class="fa-solid fa-hand" style="color: var(--accent);"></i>
+                            Levantad la mano si queréis compartir (1-2 min)
+                        </p>
+                    </div>
                 </section>
 
                 <!-- SLIDE: Transición Evidencia (portada serie NotebookLM) -->
@@ -1633,86 +1723,49 @@
                             rel="noopener">1021:#2</a></p>
                 </section>
 
-                <!-- SLIDE: Open-source -->
-                <section class="wide-slide" data-menu-title="Open-source clínico"
-                    data-audio-text="Modelos open-source como DeepSeek ya rinden al nivel de los propietarios y permiten despliegue local.">
+                <!-- SLIDE: Ecosistema IA (fusión open-source + especializados 2026-02-06) -->
+                <section class="wide-slide" data-menu-title="Ecosistema IA 2026"
+                    data-audio-text="El ecosistema de IA médica se diversifica. Por un lado, modelos open-source como DeepSeek ya igualan a los propietarios y permiten despliegue local. Por otro, los modelos médicos especializados superan a los generalistas en diagnóstico complejo, aunque la evidencia aún es escasa.">
                     <div class="title-wrapper">
-                        <h2 class="assertion-title">Los modelos <span class="highlight">open-source</span> ya igualan a
-                            los propietarios</h2>
-                        <p class="subtitle">Rendimiento comparable + despliegue local</p>
+                        <h2 class="assertion-title">El ecosistema IA se <span class="highlight">diversifica</span></h2>
+                        <p class="subtitle">Open-source compite en rendimiento · Especializados destacan en diagnóstico
+                        </p>
                     </div>
-                    <div class="grid-2" style="max-width: 1100px; margin: 20px auto; gap: 12px;">
+                    <div class="grid-2" style="max-width: 1100px; margin: 15px auto; gap: 15px;">
+                        <!-- Open-source -->
                         <div class="glass-panel" style="border-top: 4px solid var(--primary);">
-                            <h4 style="color: var(--primary); margin-bottom: 8px;">
-                                <i class="fa-solid fa-scale-balanced"></i> DeepSeek V3/R1
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">
+                                <i class="fa-solid fa-scale-balanced"></i> Open-source ya iguala
                             </h4>
-                            <p style="font-size: 0.82em; margin: 0 0 6px;">
-                                "Using 125 patient cases" en comparación directa
+                            <p style="font-size: 0.82em; margin: 0 0 8px;">
+                                DeepSeek V3/R1: "125 patient cases" con rendimiento comparable
                             </p>
                             <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
-                                Rinde igual o mejor que modelos propietarios
+                                <i class="fa-solid fa-shield"></i> Permite despliegue local + privacidad
                             </p>
                         </div>
+                        <!-- Especializados -->
                         <div class="glass-panel" style="border-top: 4px solid var(--secondary);">
-                            <h4 style="color: var(--secondary); margin-bottom: 8px;">
-                                <i class="fa-solid fa-shield"></i> Despliegue local
+                            <h4 style="color: var(--secondary); margin-bottom: 10px;">
+                                <i class="fa-solid fa-microscope"></i> Especializados superan
                             </h4>
-                            <p style="font-size: 0.82em; margin: 0 0 6px;">
-                                "allow efficient fine-tuning on local data in hospitals"
+                            <p style="font-size: 0.82em; margin: 0 0 8px;">
+                                MedFound (176B) supera LLMs base en 8 especialidades
                             </p>
                             <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
-                                Privacidad y cumplimiento normativo
+                                <i class="fa-solid fa-triangle-exclamation"></i> Solo 6.45% de estudios los evalúan
                             </p>
                         </div>
                     </div>
-                    <div class="glass-panel" style="max-width: 900px; margin: 14px auto;">
+                    <div class="glass-panel" style="max-width: 900px; margin: 12px auto;">
                         <p style="font-size: 0.82em; text-align: center; margin: 0;">
-                            <strong>Acción:</strong> priorizar modelos on-premise cuando hay restricciones de datos.
+                            <strong>Acción:</strong> On-premise para restricciones de datos · Especializados para
+                            diagnóstico
                         </p>
                     </div>
                     <p class="source-note">Refs: <a href="https://doi.org/10.1038/s41591-025-03727-2" target="_blank"
-                            rel="noopener">1021:#3</a></p>
-                </section>
-
-                <!-- SLIDE: Modelos especializados -->
-                <section class="wide-slide" data-menu-title="Modelos médicos"
-                    data-audio-text="Los modelos médicos especializados superan a los generalistas en diagnóstico complejo.">
-                    <div class="title-wrapper">
-                        <h2 class="assertion-title">Los modelos médicos <span class="highlight">especializados</span>
-                            superan a los generalistas</h2>
-                        <p class="subtitle">Menos hype, más entrenamiento clínico específico</p>
-                    </div>
-                    <div class="grid-2" style="max-width: 1100px; margin: 20px auto;">
-                        <div class="glass-panel" style="border-top: 4px solid var(--primary);">
-                            <h4 style="color: var(--primary);"><i class="fa-solid fa-microscope"></i> MedFound (176B)
-                            </h4>
-                            <p style="font-size: 0.82em; margin: 0 0 6px;">
-                                "generalist medical language model with 176 billion parameters"
-                            </p>
-                            <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
-                                Supera a LLMs base en comunes, externos y raros (8 especialidades)
-                            </p>
-                        </div>
-                        <div class="glass-panel" style="border-top: 4px solid var(--secondary);">
-                            <h4 style="color: var(--secondary);"><i class="fa-solid fa-triangle-exclamation"></i>
-                                Evidencia aún escasa</h4>
-                            <p style="font-size: 0.82em; margin: 0 0 6px;">
-                                "medical-domain LLMs accounted for only 6.45%"
-                            </p>
-                            <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
-                                Necesidad de validación clínica externa
-                            </p>
-                        </div>
-                    </div>
-                    <div class="glass-panel" style="max-width: 900px; margin: 14px auto;">
-                        <p style="font-size: 0.82em; text-align: center; margin: 0;">
-                            <strong>Acción:</strong> si el objetivo es diagnóstico, priorizar modelos médicos con
-                            validación externa.
-                        </p>
-                    </div>
-                    <p class="source-note">Refs: <a href="https://doi.org/10.1038/s41591-024-03416-6" target="_blank"
-                            rel="noopener">1021:#5</a>; <a href="https://doi.org/10.1186/s12911-025-02954-4"
-                            target="_blank" rel="noopener">1021:#2</a></p>
+                            rel="noopener">1021:#3</a>; <a href="https://doi.org/10.1038/s41591-024-03416-6"
+                            target="_blank" rel="noopener">1021:#5</a></p>
                 </section>
 
                 <!-- SLIDE: Documentación y evidencia (con infografía IA Ambiental) -->
@@ -2486,63 +2539,6 @@
             <!-- BLOQUE 5: CIERRE (20 min) -->
             <!-- ═══════════════════════════════════════════════════════════════ -->
 
-            <!-- NUEVA SLIDE: Modelo Sándwich Expandido (añadida 2026-02-01) -->
-            <section class="wide-slide" data-menu-title="Modelo Sándwich"
-                data-audio-text="El Modelo Sándwich resume la filosofía de colaboración humano-IA. Primera capa, el pan superior: el humano define la estrategia, elige la herramienta, formula la pregunta correcta. Capa central, el relleno: la IA procesa masivamente datos, genera borradores, sintetiza evidencia. Tercera capa, el pan inferior: el humano verifica, valida, y toma la decisión final. La verificación humana al final es innegociable.">
-                <div class="title-wrapper">
-                    <h2 class="assertion-title">El <span class="highlight">Modelo Sándwich</span>: colaboración
-                        estructurada</h2>
-                    <p class="subtitle">Humano define → IA procesa → Humano verifica (innegociable)</p>
-                </div>
-                <div style="max-width: 800px; margin: 20px auto;">
-                    <!-- Pan superior -->
-                    <div class="glass-panel"
-                        style="border-radius: 16px 16px 0 0; border-bottom: none; border-top: 6px solid var(--primary); padding: 12px;">
-                        <div style="display: flex; align-items: center; gap: 15px; justify-content: center;">
-                            <span style="font-size: 2rem;">🧠</span>
-                            <div style="text-align: left;">
-                                <h4 style="margin: 0; color: var(--primary); font-size: 1.1rem;">PAN SUPERIOR: Humano
-                                </h4>
-                                <p style="font-size: 0.8em; margin: 4px 0 0;">Define estrategia · Elige herramienta ·
-                                    Formula pregunta correcta</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Relleno IA -->
-                    <div
-                        style="background: linear-gradient(135deg, rgba(96,165,250,0.3), rgba(52,211,153,0.3)); padding: 20px; border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1);">
-                        <div style="display: flex; align-items: center; gap: 15px; justify-content: center;">
-                            <span style="font-size: 2.5rem;">🤖</span>
-                            <div style="text-align: left;">
-                                <h4 style="margin: 0; color: var(--accent); font-size: 1.2rem;">RELLENO: IA</h4>
-                                <p style="font-size: 0.85em; margin: 4px 0 0;">Procesa datos · Genera borradores ·
-                                    Sintetiza evidencia · Busca patrones</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Pan inferior -->
-                    <div class="glass-panel"
-                        style="border-radius: 0 0 16px 16px; border-top: none; border-bottom: 6px solid var(--secondary); padding: 12px;">
-                        <div style="display: flex; align-items: center; gap: 15px; justify-content: center;">
-                            <span style="font-size: 2rem;">✅</span>
-                            <div style="text-align: left;">
-                                <h4 style="margin: 0; color: var(--secondary); font-size: 1.1rem;">PAN INFERIOR: Humano
-                                </h4>
-                                <p style="font-size: 0.8em; margin: 4px 0 0;">Verifica hechos · Valida contexto · Decide
-                                    y asume responsabilidad</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-panel"
-                    style="max-width: 700px; margin: 14px auto; background: rgba(251,191,36,0.15); border: 2px solid var(--accent);">
-                    <p style="font-size: 0.9em; text-align: center; margin: 0;">
-                        <i class="fa-solid fa-shield-halved" style="color: var(--accent); margin-right: 8px;"></i>
-                        La verificación humana al final <strong>NO es opcional</strong>
-                    </p>
-                </div>
-            </section>
-
             <section>
                 <section data-menu-title="Bloque 5: Cierre"
                     data-audio-text="Llegamos al cierre. Vamos a recapitular lo que hemos aprendido y a hacer el test oficial.">
@@ -2552,6 +2548,67 @@
                         <p style="color: var(--text-muted);">Lo que nos llevamos para casa</p>
                         <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 20px;">
                             <i class="fa-solid fa-clock"></i> 20 minutos
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SLIDE: Modelo Sándwich (movida al Bloque 5 - 2026-02-06) -->
+                <section class="wide-slide" data-menu-title="Modelo Sándwich"
+                    data-audio-text="El Modelo Sándwich resume la filosofía de colaboración humano-IA. Primera capa, el pan superior: el humano define la estrategia, elige la herramienta, formula la pregunta correcta. Capa central, el relleno: la IA procesa masivamente datos, genera borradores, sintetiza evidencia. Tercera capa, el pan inferior: el humano verifica, valida, y toma la decisión final. La verificación humana al final es innegociable.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">El <span class="highlight">Modelo Sándwich</span>: colaboración
+                            estructurada</h2>
+                        <p class="subtitle">Humano define → IA procesa → Humano verifica (innegociable)</p>
+                    </div>
+                    <div style="max-width: 800px; margin: 20px auto;">
+                        <!-- Pan superior -->
+                        <div class="glass-panel"
+                            style="border-radius: 16px 16px 0 0; border-bottom: none; border-top: 6px solid var(--primary); padding: 12px;">
+                            <div style="display: flex; align-items: center; gap: 15px; justify-content: center;">
+                                <span style="font-size: 2rem;">🧠</span>
+                                <div style="text-align: left;">
+                                    <h4 style="margin: 0; color: var(--primary); font-size: 1.1rem;">PAN SUPERIOR:
+                                        Humano
+                                    </h4>
+                                    <p style="font-size: 0.8em; margin: 4px 0 0;">Define estrategia · Elige herramienta
+                                        ·
+                                        Formula pregunta correcta</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Relleno IA -->
+                        <div
+                            style="background: linear-gradient(135deg, rgba(96,165,250,0.3), rgba(52,211,153,0.3)); padding: 20px; border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1);">
+                            <div style="display: flex; align-items: center; gap: 15px; justify-content: center;">
+                                <span style="font-size: 2.5rem;">🤖</span>
+                                <div style="text-align: left;">
+                                    <h4 style="margin: 0; color: var(--accent); font-size: 1.2rem;">RELLENO: IA</h4>
+                                    <p style="font-size: 0.85em; margin: 4px 0 0;">Procesa datos · Genera borradores ·
+                                        Sintetiza evidencia · Busca patrones</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pan inferior -->
+                        <div class="glass-panel"
+                            style="border-radius: 0 0 16px 16px; border-top: none; border-bottom: 6px solid var(--secondary); padding: 12px;">
+                            <div style="display: flex; align-items: center; gap: 15px; justify-content: center;">
+                                <span style="font-size: 2rem;">✅</span>
+                                <div style="text-align: left;">
+                                    <h4 style="margin: 0; color: var(--secondary); font-size: 1.1rem;">PAN INFERIOR:
+                                        Humano
+                                    </h4>
+                                    <p style="font-size: 0.8em; margin: 4px 0 0;">Verifica hechos · Valida contexto ·
+                                        Decide
+                                        y asume responsabilidad</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-panel"
+                        style="max-width: 700px; margin: 14px auto; background: rgba(251,191,36,0.15); border: 2px solid var(--accent);">
+                        <p style="font-size: 0.9em; text-align: center; margin: 0;">
+                            <i class="fa-solid fa-shield-halved" style="color: var(--accent); margin-right: 8px;"></i>
+                            La verificación humana al final <strong>NO es opcional</strong>
                         </p>
                     </div>
                 </section>
@@ -2624,6 +2681,34 @@
                         <p style="font-size: 0.8em; margin: 0;">
                             <strong>✓ Respuesta: 5</strong> — Bajo riesgo clínico, alto valor comunicativo,
                             siempre con revisión del pediatra antes de entregar.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SLIDE: Pregunta Test 2 (añadida 2026-02-06) -->
+                <section data-menu-title="Pregunta Test 2"
+                    data-audio-text="Pregunta de evaluación número dos. ¿Cuál es el riesgo principal de la paradoja Humano más IA que vimos en el seminario?">
+                    <h3>📋 Pregunta de Evaluación 2</h3>
+                    <div class="glass-panel" style="max-width: 900px; margin: 15px auto; text-align: left;">
+                        <p style="font-size: 0.9em;">
+                            Según la paradoja "H+IA" presentada en el seminario, ¿cuál es el <strong>riesgo
+                                principal</strong>
+                            de añadir supervisión humana a las respuestas de IA?
+                        </p>
+                        <ol style="font-size: 0.8em; margin-top: 15px;">
+                            <li>Aumentar el coste económico de cada consulta</li>
+                            <li style="color: var(--secondary); font-weight: 600;">Generar falsa confianza sin reducir
+                                errores (26-36%)</li>
+                            <li>Ralentizar excesivamente el flujo de trabajo</li>
+                            <li>Reducir la autonomía profesional del pediatra</li>
+                            <li>Crear dependencia tecnológica irreversible</li>
+                        </ol>
+                    </div>
+                    <div class="fragment glass-panel"
+                        style="max-width: 800px; margin: 15px auto; background: rgba(52,211,153,0.1); border: 1px solid var(--secondary);">
+                        <p style="font-size: 0.8em; margin: 0;">
+                            <strong>✓ Respuesta: 2</strong> — Meta-análisis Wang 2026: la supervisión humana
+                            no siempre mejora los resultados y puede dar falsa seguridad.
                         </p>
                     </div>
                 </section>
