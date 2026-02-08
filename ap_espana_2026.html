@@ -1,0 +1,1200 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Presentación del informe La Atención Primaria en España 2025">
+    <meta name="author" content="Ernesto Barrera">
+    <title>Atención Primaria en España 2025 | Presentación basada en evidencia</title>
+
+    <link rel="stylesheet" href="reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="reveal.js/dist/theme/white.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="reveal.js-plugins/menu/menu.css">
+    <link rel="stylesheet" href="reveal.js-plugins/chalkboard/style.css">
+    <link rel="stylesheet" href="reveal.js-plugins/appearance/appearance.css">
+    <link rel="stylesheet" href="reveal.js-plugins/simplemenu/simplemenu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --ink: #1b2a41;
+            --muted: #52637a;
+            --paper: #f4f4ef;
+            --card: rgba(255, 255, 255, 0.88);
+            --line: rgba(27, 42, 65, 0.12);
+            --accent: #7f1d1d;
+            --accent-soft: rgba(127, 29, 29, 0.1);
+            --teal: #0f766e;
+            --teal-soft: rgba(15, 118, 110, 0.1);
+            --amber: #b45309;
+            --danger: #b91c1c;
+        }
+
+        body {
+            font-family: "Alegreya Sans", sans-serif;
+            background: var(--paper);
+        }
+
+        .reveal {
+            font-family: "Alegreya Sans", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 10% 15%, rgba(127, 29, 29, 0.12), transparent 42%),
+                radial-gradient(circle at 80% 12%, rgba(15, 118, 110, 0.14), transparent 45%),
+                linear-gradient(160deg, #f9f9f6 0%, #f0f2ef 60%, #ecefea 100%);
+        }
+
+        .reveal .slides {
+            text-align: left;
+        }
+
+        .reveal .slides section {
+            padding: 0 20px;
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            text-transform: none;
+            letter-spacing: 0.01em;
+            color: var(--ink);
+            margin: 0 0 0.3em 0;
+        }
+
+        .reveal h1 {
+            font-size: 2.1em;
+            line-height: 1.05;
+            font-weight: 800;
+        }
+
+        .reveal h2 {
+            font-size: 1.38em;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .reveal h3 {
+            font-size: 1.08em;
+            font-weight: 700;
+        }
+
+        .reveal p,
+        .reveal li {
+            color: var(--ink);
+            font-size: 0.82em;
+            line-height: 1.35;
+        }
+
+        .lead {
+            font-size: 0.95em;
+            color: var(--muted);
+            max-width: 86%;
+        }
+
+        .assertion {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-left: 10px solid var(--accent);
+            border-radius: 16px;
+            padding: 16px 20px;
+            box-shadow: 0 12px 28px rgba(27, 42, 65, 0.08);
+            margin-bottom: 14px;
+            animation: riseIn .55s ease both;
+        }
+
+        .assertion.alt {
+            border-left-color: var(--teal);
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-soft);
+            border: 1px solid rgba(127, 29, 29, 0.22);
+            color: var(--accent);
+            border-radius: 999px;
+            padding: 6px 14px;
+            margin-bottom: 12px;
+            font-size: 0.55em;
+            font-weight: 800;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+
+        .section-tag.teal {
+            background: var(--teal-soft);
+            border-color: rgba(15, 118, 110, 0.24);
+            color: var(--teal);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .metric-card,
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 14px 16px;
+            box-shadow: 0 10px 24px rgba(27, 42, 65, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::after,
+        .card::after {
+            content: "";
+            position: absolute;
+            inset: 0 auto auto 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), rgba(127, 29, 29, 0));
+        }
+
+        .metric-value {
+            font-size: 1.62em;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 0.64em;
+            color: var(--muted);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .metric-note {
+            font-size: 0.58em;
+            margin-top: 6px;
+            color: var(--muted);
+        }
+
+        .agenda {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.78em;
+        }
+
+        .agenda td {
+            border-bottom: 1px solid var(--line);
+            padding: 10px 8px;
+            vertical-align: middle;
+        }
+
+        .agenda .n {
+            width: 64px;
+            font-size: 1.1em;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .bar-row {
+            display: grid;
+            grid-template-columns: 180px 1fr 70px;
+            gap: 10px;
+            align-items: center;
+            margin: 8px 0;
+        }
+
+        .bar-label {
+            font-size: 0.63em;
+            font-weight: 700;
+            color: var(--muted);
+        }
+
+        .bar-track {
+            height: 18px;
+            border-radius: 999px;
+            background: rgba(27, 42, 65, 0.08);
+            overflow: hidden;
+            border: 1px solid rgba(27, 42, 65, 0.12);
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), #b45309);
+            border-radius: 999px;
+        }
+
+        .bar-fill.teal {
+            background: linear-gradient(90deg, var(--teal), #0ea5a2);
+        }
+
+        .bar-value {
+            font-size: 0.68em;
+            font-weight: 800;
+            color: var(--ink);
+            text-align: right;
+        }
+
+        .mini-kpi {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-right: 16px;
+            margin-top: 4px;
+        }
+
+        .mini-kpi strong {
+            font-size: 1.08em;
+            color: var(--accent);
+        }
+
+        .mini-kpi span {
+            font-size: 0.6em;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 700;
+        }
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .timeline-step {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 10px 12px;
+            box-shadow: 0 8px 18px rgba(27, 42, 65, 0.07);
+        }
+
+        .timeline-step .year {
+            color: var(--accent);
+            font-size: 0.62em;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .timeline-step .txt {
+            font-size: 0.68em;
+            color: var(--ink);
+            margin-top: 3px;
+        }
+
+        .grade-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.69em;
+        }
+
+        .grade-table th,
+        .grade-table td {
+            border: 1px solid var(--line);
+            padding: 8px 10px;
+            text-align: left;
+        }
+
+        .grade-table th {
+            background: rgba(27, 42, 65, 0.06);
+            font-size: 0.92em;
+            color: var(--ink);
+        }
+
+        .grade {
+            display: inline-block;
+            border-radius: 999px;
+            padding: 3px 10px;
+            font-size: 0.88em;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+        }
+
+        .grade.high {
+            background: rgba(13, 148, 136, 0.14);
+            color: #0f766e;
+        }
+
+        .grade.medium {
+            background: rgba(180, 83, 9, 0.14);
+            color: #b45309;
+        }
+
+        .grade.low {
+            background: rgba(185, 28, 28, 0.14);
+            color: #b91c1c;
+        }
+
+        .pause-box {
+            background: linear-gradient(120deg, rgba(15, 118, 110, 0.12), rgba(127, 29, 29, 0.1));
+            border: 2px solid rgba(27, 42, 65, 0.14);
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 16px 30px rgba(27, 42, 65, 0.08);
+        }
+
+        .pause-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .pause-box li {
+            font-size: 0.78em;
+            margin: 8px 0;
+        }
+
+        .source a,
+        .sources-slide a {
+            color: var(--teal);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--teal);
+        }
+
+        .source a:hover,
+        .sources-slide a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .sources-slide {
+            font-size: 0.68em;
+            line-height: 1.32;
+        }
+
+        .sources-slide li {
+            margin: 6px 0;
+        }
+
+        .source {
+            margin-top: 10px;
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.47em;
+            letter-spacing: 0.01em;
+            color: var(--muted);
+            border-top: 1px dashed rgba(27, 42, 65, 0.2);
+            padding-top: 7px;
+        }
+
+        .quote-strip {
+            border-left: 4px solid var(--teal);
+            background: rgba(15, 118, 110, 0.08);
+            padding: 10px 14px;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.78em;
+            color: #134e4a;
+            margin: 8px 0 12px 0;
+        }
+
+        .scenario {
+            border-top: 5px solid var(--accent);
+        }
+
+        .scenario h3 {
+            font-size: 0.86em;
+            margin-bottom: 5px;
+        }
+
+        .scenario p {
+            font-size: 0.66em;
+            color: var(--muted);
+        }
+
+        .scenario.teal {
+            border-top-color: var(--teal);
+        }
+
+        .scenario.amber {
+            border-top-color: var(--amber);
+        }
+
+        .fade-seq > * {
+            animation: riseIn .55s ease both;
+        }
+
+        .fade-seq > *:nth-child(2) {
+            animation-delay: .07s;
+        }
+
+        .fade-seq > *:nth-child(3) {
+            animation-delay: .14s;
+        }
+
+        .fade-seq > *:nth-child(4) {
+            animation-delay: .21s;
+        }
+
+        @keyframes riseIn {
+            from {
+                transform: translateY(8px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 1280px) {
+            .reveal h1 {
+                font-size: 1.84em;
+            }
+
+            .reveal h2 {
+                font-size: 1.26em;
+            }
+
+            .metric-value {
+                font-size: 1.4em;
+            }
+
+            .bar-row {
+                grid-template-columns: 160px 1fr 60px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .grid-2,
+            .grid-3,
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .bar-row {
+                grid-template-columns: 120px 1fr 55px;
+            }
+
+            .reveal .slides section {
+                padding: 0 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Para activar audio por diapositiva: añade data-audio-src="assets/audio/tu-audio.mp3" en cada <section>. -->
+
+            <section>
+                <span class="section-tag">Informe 2025</span>
+                <div class="assertion">
+                    <h1>La Atención Primaria en España necesita rediseño estructural, no parches incrementales.</h1>
+                    <p class="lead">Síntesis del <em>Informe AP España 2025</em>, elaborado mediante revisión sistemática de literatura científica (PubMed, Scholar Gateway) y literatura gris institucional (Ministerio de Sanidad, OMS, OCDE, sociedades científicas), con búsqueda asistida por inteligencia artificial.</p>
+                    <p class="lead">Para la reflexión y el debate entre profesionales, gestores y responsables sanitarios.</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-step">
+                        <div class="year">Magnitud</div>
+                        <div class="txt">Volumen asistencial y acceso</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="year">Nudos críticos</div>
+                        <div class="txt">RRHH, multimorbilidad, fragmentación</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="year">Evidencia</div>
+                        <div class="txt">GRADE y estudios clave</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="year">Acción</div>
+                        <div class="txt">Recomendaciones 2026+</div>
+                    </div>
+                </div>
+                <div class="source">Metodología: revisión sistemática con búsqueda en PubMed, Scholar Gateway y fuentes institucionales. Período: 2020-2025. Elaboración: febrero de 2026.</div>
+                <aside class="notes">Bienvenidos. Esta presentación sintetiza un informe elaborado mediante revisión sistemática de la literatura científica y la literatura gris institucional, con búsquedas estructuradas en bases de datos biomédicas y fuentes oficiales del Ministerio de Sanidad, organismos internacionales y sociedades científicas. El objetivo no es describir la crisis como si fuera nueva, sino estructurar la complejidad con la mejor evidencia disponible para que las decisiones que tomemos estén informadas. Recorreremos cuatro bloques: magnitud del sistema, nudos críticos, certeza de la evidencia y opciones de acción.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag teal">Ruta de la sesión</span>
+                <div class="assertion alt">
+                    <h2>La presentación se organiza para tomar decisiones, no solo para describir problemas.</h2>
+                </div>
+                <table class="agenda">
+                    <tr>
+                        <td class="n">1</td>
+                        <td>Qué está ocurriendo: carga, acceso y satisfacción</td>
+                    </tr>
+                    <tr>
+                        <td class="n">2</td>
+                        <td>Por qué ocurre: presión asistencial, multimorbilidad y organización</td>
+                    </tr>
+                    <tr>
+                        <td class="n">3</td>
+                        <td>Qué evidencia es más sólida y qué sigue incierto</td>
+                    </tr>
+                    <tr>
+                        <td class="n">4</td>
+                        <td>Qué hacer desde práctica clínica, investigación y política sanitaria</td>
+                    </tr>
+                </table>
+                <div class="source">Marco metodológico: segmentación por carga cognitiva, formato afirmación-evidencia.</div>
+                <aside class="notes">La estructura avanza de lo descriptivo a lo decisional. Empezaremos situando la magnitud y el acceso, pasaremos a analizar por qué ocurre lo que ocurre, evaluaremos qué evidencia es más sólida y qué permanece incierto, y cerraremos con recomendaciones concretas para la práctica, la investigación y la política. En cada bloque, las diapositivas siguen un formato de afirmación seguida de evidencia, pensado para facilitar el debate posterior.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Bloque 1 · Situación</span>
+                <div class="assertion">
+                    <h2>La AP sostiene un volumen enorme con alta valoración ciudadana, pero con accesibilidad en deterioro.</h2>
+                </div>
+                <div class="grid-4 fade-seq" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:12px;">
+                    <div class="metric-card">
+                        <div class="metric-value">385 M</div>
+                        <div class="metric-label">Consultas/año</div>
+                        <div class="metric-note">Medicina, pediatría y enfermería.</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">96.016</div>
+                        <div class="metric-label">Profesionales</div>
+                        <div class="metric-note">3.055 centros + 10.036 consultorios.</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">79,2%</div>
+                        <div class="metric-label">Uso en 12 meses</div>
+                        <div class="metric-note">Casi 8 de cada 10 personas.</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">83,1%</div>
+                        <div class="metric-label">Satisfacción</div>
+                        <div class="metric-note">Cuando se accede a la consulta.</div>
+                    </div>
+                </div>
+                <div class="source">Plan de Acción AP 2025-2027; Barómetro Sanitario 2024.</div>
+                <aside class="notes">Comencemos con la fotografía del sistema. Trescientos ochenta y cinco millones de consultas al año equivalen a más de ocho consultas por habitante, una de las tasas más altas de Europa. Y sin embargo, cuando el ciudadano accede a la consulta, la satisfacción es alta. La paradoja es que el problema no está dentro de la consulta, sino en llegar a ella. Estos cuatro indicadores enmarcan la tensión central de la presentación.</aside>
+            </section>
+
+            <section data-auto-animate>
+                <span class="section-tag">Bloque 1 · Acceso</span>
+                <div class="assertion">
+                    <h2>El tiempo medio para cita se duplicó entre 2017 y 2024 y aumenta el desvío a urgencias.</h2>
+                </div>
+                <div class="card">
+                    <div class="bar-row fragment fade-up">
+                        <div class="bar-label">Espera 2017</div>
+                        <div class="bar-track"><div class="bar-fill teal" style="width: 47.7%;"></div></div>
+                        <div class="bar-value">4,14 días</div>
+                    </div>
+                    <div class="bar-row fragment fade-up">
+                        <div class="bar-label">Espera 2024</div>
+                        <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+                        <div class="bar-value">8,67 días</div>
+                    </div>
+                </div>
+                <div class="card fragment fade-up" style="margin-top: 10px;">
+                    <div class="mini-kpi"><strong>25,4%</strong><span>con dificultades para cita</span></div>
+                    <div class="mini-kpi"><strong>33,9%</strong><span>acude a urgencias como alternativa</span></div>
+                    <div class="mini-kpi"><strong>38,7%</strong><span>percibe desigualdad territorial</span></div>
+                </div>
+                <div class="source">Barómetro Sanitario 2017-2024; CIS febrero 2025.</div>
+                <aside class="notes">La evolución temporal es lo más preocupante. No hablamos de un problema estático: el tiempo de espera se ha duplicado en siete años. Y la respuesta espontánea de un cuarto de la población ante la dificultad de cita es acudir a urgencias, generando una cascada de consecuencias sobre todo el sistema. La percepción de desigualdad territorial ha crecido quince puntos en cinco años, erosionando la confianza ciudadana en la equidad del sistema.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Bloque 2 · Calidad asistencial</span>
+                <div class="assertion">
+                    <h2>La presión asistencial española se mantiene por encima de los umbrales considerados sostenibles.</h2>
+                </div>
+                <div class="grid-3 fade-seq">
+                    <div class="card">
+                        <h3>Volumen diario</h3>
+                        <p><strong>28-33</strong> pacientes/día de media, con áreas por encima de <strong>40</strong> y picos de <strong>60</strong>.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Duración de consulta</h3>
+                        <p><strong>5-8 min</strong> en España frente a <strong>15-25 min</strong> en países nórdicos.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Referencia UEMO</h3>
+                        <p>Objetivo de sostenibilidad: <strong>≥15 min</strong> y <strong>&lt;25</strong> consultas/día.</p>
+                    </div>
+                </div>
+                <div class="quote-strip fragment fade-up">Conclusión operativa: con esta carga, el sistema prioriza throughput frente a razonamiento clínico profundo.</div>
+                <div class="source">Fundación CIVIO; Irving et al. BMJ Open 2017; UEMO; informe AP 2025.</div>
+                <aside class="notes">Entramos en el segundo bloque, donde analizamos las causas. La presión asistencial es el factor transversal. Los datos de la Fundación CIVIO y las sociedades científicas coinciden: estamos sistemáticamente por encima de los umbrales que la UEMO considera sostenibles. La diferencia con los países nórdicos no es solo de minutos por consulta, sino de lo que es posible hacer clínicamente dentro de ese tiempo: explorar, escuchar, razonar y decidir con el paciente.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Bloque 2 · Seguridad</span>
+                <div class="assertion">
+                    <h2>Menos tiempo clínico y más interrupciones se asocian con más incidentes y daño evitable.</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="metric-value">2-3</div>
+                        <div class="metric-label">Incidentes de seguridad por cada 100 consultas</div>
+                        <div class="metric-note">Aproximadamente 4% se asocia a daño severo.</div>
+                    </div>
+                    <div class="card">
+                        <div class="metric-value">4 de cada 10</div>
+                        <div class="metric-label">Pacientes con algún daño en AP/ambulatoria</div>
+                        <div class="metric-note">Alrededor del 50% potencialmente evitable.</div>
+                    </div>
+                </div>
+                <div class="quote-strip fragment fade-up">Mensaje clínico: la presión asistencial no solo afecta experiencia, también afecta seguridad del paciente.</div>
+                <div class="source">Panesar et al. BMJ Quality &amp; Safety; European Health Report 2025.</div>
+                <aside class="notes">Aquí la presión asistencial deja de ser un problema de confort profesional y se convierte en un problema clínico. Dos a tres incidentes por cada cien consultas puede parecer poco, pero multiplicado por trescientos ochenta y cinco millones de consultas anuales, la magnitud absoluta es considerable. Y aproximadamente la mitad de estos eventos son potencialmente evitables. Esto conecta directamente con los tiempos de consulta que acabamos de ver.</aside>
+            </section>
+            <section>
+                <span class="section-tag">Bloque 2 · Complejidad clínica</span>
+                <div class="assertion">
+                    <h2>La multimorbilidad ya define el trabajo real de AP y no encaja en guías de enfermedad única.</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="bar-row">
+                            <div class="bar-label">Población con multimorbilidad</div>
+                            <div class="bar-track"><div class="bar-fill" style="width: 23.2%;"></div></div>
+                            <div class="bar-value">23,2%</div>
+                        </div>
+                        <div class="bar-row">
+                            <div class="bar-label">Incremento crónicos 2019-2025</div>
+                            <div class="bar-track"><div class="bar-fill teal" style="width: 54.2%;"></div></div>
+                            <div class="bar-value">+10,84%</div>
+                        </div>
+                        <p style="font-size:0.66em; color:var(--muted);">+2,34 millones de personas con al menos un problema crónico.</p>
+                    </div>
+                    <div class="card">
+                        <div class="mini-kpi"><strong>14,9</strong><span>contactos AP/año en multimórbidos</span></div>
+                        <div class="mini-kpi"><strong>25,3%</strong><span>polimedicación en cohorte Madrid</span></div>
+                        <div class="mini-kpi"><strong>10-15 años</strong><span>inicio más temprano en áreas desfavorecidas</span></div>
+                        <p style="margin-top:10px; font-size:0.66em; color:var(--muted);">Implica rediseñar seguimiento, deprescripción y coordinación.</p>
+                    </div>
+                </div>
+                <div class="source">Barnett et al. Lancet 2012; Barrio-Cortes et al. 2024; Nature Communications 2023; informe AP 2025.</div>
+                <aside class="notes">La multimorbilidad es quizá el cambio de paradigma menos visible pero más profundo. Nuestras guías clínicas siguen pensadas para enfermedades individuales, pero el paciente real de atención primaria presenta múltiples condiciones que interactúan. Y el inicio diez a quince años antes en áreas desfavorecidas confirma que la multimorbilidad es también un marcador de inequidad. Esto tiene implicaciones directas para la organización del trabajo, la formación y la deprescripción.</aside>
+            </section>
+
+            <section>
+                <div class="pause-box">
+                    <span class="section-tag teal">Pausa de activación</span>
+                    <h2>Si mañana liberas 10 minutos por agenda, ¿dónde obtienes más valor clínico?</h2>
+                    <ul>
+                        <li class="fragment fade-up">Revisión estructurada de medicación y deprescripción.</li>
+                        <li class="fragment fade-up">Coordinación activa con enfermería y administrativo clínico.</li>
+                        <li class="fragment fade-up">Continuidad intencionada para pacientes complejos.</li>
+                    </ul>
+                </div>
+                <aside class="notes">Hagamos una pausa breve. Pensad en vuestra agenda de mañana. Si consiguierais liberar diez minutos reales, protegidos, ¿dónde obtendríais más valor clínico? Esta pregunta no tiene una respuesta única, pero obliga a priorizar. La evidencia que veremos a continuación puede ayudar a orientar esa decisión. Tomad un momento para reflexionar antes de continuar.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Bloque 2 · Recursos humanos</span>
+                <div class="assertion">
+                    <h2>El problema de médicos de familia es de relevo, distribución y condiciones laborales, no solo de stock.</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="mini-kpi"><strong>4.502</strong><span>déficit actual estimado</span></div>
+                        <div class="mini-kpi"><strong>5.496</strong><span>pico proyectado en 2029</span></div>
+                        <div class="mini-kpi"><strong>4,4/1000</strong><span>médicos en España (OCDE 3,9)</span></div>
+                        <div class="mini-kpi"><strong>94,8/100k</strong><span>MFyC (UE 72,9)</span></div>
+                    </div>
+                    <div class="card">
+                        <div class="mini-kpi"><strong>54,9%</strong><span>médicos AP &gt;50 años</span></div>
+                        <div class="mini-kpi"><strong>&gt;17.000</strong><span>jubilaciones 2023-2028</span></div>
+                        <div class="mini-kpi"><strong>12.371</strong><span>MIR que finalizan en ese periodo</span></div>
+                        <div class="mini-kpi"><strong>246</strong><span>plazas MFyC desiertas en 2024</span></div>
+                    </div>
+                </div>
+                <div class="source">Ministerio de Sanidad (necesidad especialistas 2023-2035), OMC 2025, datos MIR 2024-2025.</div>
+                <aside class="notes">El déficit de médicos de familia es real, pero conviene matizar el discurso. España tiene más médicos por habitante que la media de la OCDE y más especialistas en medicina familiar que la media europea. El problema es de distribución territorial, de pirámide de edad invertida y de condiciones laborales que hacen poco atractiva la especialidad. Las diecisiete mil jubilaciones proyectadas hasta dos mil veintiocho no se compensan con el ritmo actual de formación MIR.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Bloque 2 · Burnout</span>
+                <div class="assertion">
+                    <h2>El desgaste profesional en AP tiene magnitud epidémica y componentes claramente estructurales.</h2>
+                </div>
+                <div class="grid-3 fade-seq">
+                    <div class="metric-card">
+                        <div class="metric-value">18%</div>
+                        <div class="metric-label">Burnout global en AP</div>
+                        <div class="metric-note">Metaanálisis CSIC-ISCIII 2025.</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">24%</div>
+                        <div class="metric-label">Burnout en médicos</div>
+                        <div class="metric-note">Criterios estandarizados Maslach.</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">52%</div>
+                        <div class="metric-label">Al menos 1 dimensión afectada</div>
+                        <div class="metric-note">Riesgo de erosión sostenida.</div>
+                    </div>
+                </div>
+                <div class="card fragment fade-up" style="margin-top:10px;">
+                    <div class="mini-kpi"><strong>75%</strong><span>se siente desprotegido por la administración</span></div>
+                    <div class="mini-kpi"><strong>75%</strong><span>valora negativamente la conciliación</span></div>
+                    <div class="mini-kpi"><strong>31%</strong><span>valora positivamente infraestructuras</span></div>
+                </div>
+                <div class="source">Metaanálisis Gaceta Sanitaria 2025 (<a href="https://doi.org/10.1016/j.gaceta.2025.102449" target="_blank">DOI</a>); encuesta OMC 2024-2025.</div>
+                <aside class="notes">El metaanálisis del CSIC y el ISCIII es el primero específico del sistema nacional de salud español. Un veinticuatro por ciento de burnout completo en médicos es una cifra que debería alarmar. Pero quizá más relevante es que tres de cada cuatro se sienten desprotegidos por la administración. Los factores son estructurales: sobrecarga, falta de recursos, incertidumbre laboral. No se resuelven con programas de resiliencia individual, sino con rediseño organizativo.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Bloque 2 · Organización del sistema</span>
+                <div class="assertion">
+                    <h2>La AP sigue infrafinanciada y fragmentada en su interfaz clínica y digital.</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="bar-row">
+                            <div class="bar-label">Gasto público en AP (actual)</div>
+                            <div class="bar-track"><div class="bar-fill" style="width: 56.6%;"></div></div>
+                            <div class="bar-value">14,14%</div>
+                        </div>
+                        <div class="bar-row">
+                            <div class="bar-label">Recomendación OMS</div>
+                            <div class="bar-track"><div class="bar-fill teal" style="width: 100%;"></div></div>
+                            <div class="bar-value">25%</div>
+                        </div>
+                        <div class="mini-kpi"><strong>105 días</strong><span>espera media a especialista</span></div>
+                        <div class="mini-kpi"><strong>45,1%</strong><span>valora bien coordinación AP-hospital</span></div>
+                    </div>
+                    <div class="card">
+                        <div class="mini-kpi"><strong>17</strong><span>historias clínicas autonómicas</span></div>
+                        <div class="mini-kpi"><strong>9 CCAA</strong><span>sin interoperabilidad interna completa</span></div>
+                        <div class="mini-kpi"><strong>91%</strong><span>población con datos en HCDSNS</span></div>
+                        <div class="mini-kpi"><strong>12 CCAA</strong><span>Patient Summary en MyHealth@EU</span></div>
+                        <p style="font-size:0.66em; margin-top:8px; color:var(--muted);">Paradoja: más avance en interoperabilidad europea que en la interna.</p>
+                    </div>
+                </div>
+                <div class="source">Informe AP 2025; Ministerio de Sanidad 2024-2025; FADSP 2024.</div>
+                <aside class="notes">El catorce por ciento del gasto sanitario en atención primaria es una cifra que lleva estancada dos décadas. La brecha con el veinticinco por ciento recomendado por la OMS es considerable. Y la fragmentación digital, con diecisiete historias clínicas autonómicas incompatibles, añade ineficiencia cotidiana. La paradoja de avanzar más en interoperabilidad europea que en la interna dice mucho sobre las prioridades reales del sistema.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Bloque 2 · IT y tiempo clínico</span>
+                <div class="assertion">
+                    <h2>La incapacidad temporal por contingencias comunes está consumiendo una parte creciente de agenda en AP.</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="metric-value">4,7 M → 8,6 M</div>
+                        <div class="metric-label">Episodios ITCC (2017-2024)</div>
+                        <div class="metric-note">Incidencia: 21,4 → 33,9 por 1.000 afiliados (+58,4%).</div>
+                    </div>
+                    <div class="card">
+                        <div class="metric-value">&gt;65%</div>
+                        <div class="metric-label">Bajas de menos de 15 días</div>
+                        <div class="metric-note">Las de 0-3 días aumentan un +141% acumulado.</div>
+                    </div>
+                    <div class="card">
+                        <div class="metric-value">31,8%</div>
+                        <div class="metric-label">Personas con más de 1 IT/año</div>
+                        <div class="metric-note">El 25% de personas concentra el 55% de episodios en 2024.</div>
+                    </div>
+                </div>
+                <div class="quote-strip fragment fade-up">Lectura operativa para AP: cuando el volumen se concentra en procesos breves y repetidos, la IT puede canibalizar tiempo de alto valor clínico si se gestiona como trámite y no como proceso clínico-laboral integrado.</div>
+                <div class="source"><a href="https://www.airef.es/es/estudios/incapacidad-temporal/" target="_blank">AIReF, Spending Review 2022-2026 Fase 2: Incapacidad Temporal</a> (febrero 2026), síntesis ejecutiva y bloque 2.1-2.4.</div>
+                <aside class="notes">La incapacidad temporal merece atención específica por su impacto directo en la agenda de atención primaria. Los datos de la AIReF, publicados en febrero de dos mil veintiséis, documentan un aumento del cincuenta y ocho por ciento en la incidencia entre dos mil diecisiete y dos mil veinticuatro. Cuando más del sesenta y cinco por ciento de las bajas duran menos de quince días, la carga administrativa recurrente sobre el médico de familia es muy significativa y compite con tiempo de alto valor clínico.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Bloque 2 · IT y tiempo clínico</span>
+                <div class="assertion">
+                    <h2>El objetivo no es “endurecer” la IT: es recuperar tiempo asistencial útil en AP con mejor gobernanza del proceso.</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Dónde se pierde valor en consulta</h3>
+                        <p>AP emite baja, confirmación y alta sin información laboral estructurada suficiente.</p>
+                        <p>Faltan datos sobre ocupación, exigencias del puesto, riesgos, adaptación y teletrabajo.</p>
+                        <p>Esto aumenta variabilidad, revisitas y carga administrativa de bajo rendimiento clínico.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Qué propone AIReF para proteger agenda clínica</h3>
+                        <p>Integrar datos laborales en sistemas de AP y soporte de decisión sobre duración esperada.</p>
+                        <p>Reforzar conexión operativa AP-inspección-unidad IT con alertas tempranas y criterios homogéneos.</p>
+                        <p>Implicar más a empresas grandes en prevención, seguimiento y reincorporación gradual.</p>
+                    </div>
+                </div>
+                <div class="quote-strip">Los datos confirman que la IT compite por tiempo clínico. La respuesta eficiente es rediseño organizativo e informacional, no solo más presión sobre el médico de AP.</div>
+                <div class="source"><a href="https://www.airef.es/es/estudios/incapacidad-temporal/" target="_blank">AIReF, Spending Review 2022-2026 Fase 2: Incapacidad Temporal</a> (febrero 2026), Propuestas 2-4.</div>
+                <aside class="notes">La propuesta no es endurecer la prestación, sino mejorar la gobernanza del proceso. El médico de atención primaria emite la baja sin información estructurada sobre el puesto de trabajo, las exigencias laborales o las posibilidades de adaptación. Integrar esos datos en los sistemas clínicos y reforzar la conexión con la inspección médica liberaría tiempo asistencial. Es un problema de diseño organizativo e informacional, no de actitud del profesional.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Bloque 2 · Salud digital</span>
+                <div class="assertion">
+                    <h2>La digitalización ya es universal en infraestructura, pero su diseño de uso resta tiempo clínico.</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <h3>Adopción</h3>
+                        <p>&gt;95% de médicos usan HCE y receta electrónica en todas las CCAA.</p>
+                        <p>Telemedicina en 2020: 49,2% del total de consultas (picos del 71,6%).</p>
+                    </div>
+                    <div class="card">
+                        <h3>Carga de trabajo</h3>
+                        <p>49,2% de la jornada en HCE/administración y solo 27% en contacto directo.</p>
+                        <p>"Pajama time": ~90 minutos diarios extra de documentación.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Usabilidad e inequidad</h3>
+                        <p>SUS: 45,9/100 (percentil 9 inferior).</p>
+                        <p>9,38 M de personas &gt;65 años con riesgo de exclusión digital.</p>
+                    </div>
+                </div>
+                <div class="source">Barómetro 2024; SEMFYC; estrategia de salud digital SNS; informe AP 2025.</div>
+                <aside class="notes">La digitalización es universal en infraestructura pero problemática en diseño de uso. Que casi la mitad de la jornada se dedique a la historia clínica electrónica y tareas administrativas, con solo un veintisiete por ciento en contacto directo con pacientes, indica un problema de diseño, no de adopción tecnológica. Y los nueve millones de personas mayores con riesgo de exclusión digital recuerdan que la equidad también tiene una dimensión tecnológica que no podemos ignorar.</aside>
+            </section>
+            <section>
+                <span class="section-tag">Bloque 2 · IA clínica</span>
+                <div class="assertion">
+                    <h2>En IA diagnóstica, el beneficio depende del contexto y del modo de integración profesional.</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Evidencia de mejora en contexto de recursos limitados</h3>
+                        <div class="mini-kpi"><strong>39.849</strong><span>visitas (Kenia)</span></div>
+                        <div class="mini-kpi"><strong>-16%</strong><span>errores diagnósticos</span></div>
+                        <div class="mini-kpi"><strong>-13%</strong><span>errores de tratamiento</span></div>
+                        <div class="mini-kpi"><strong>100%</strong><span>clínicos reportan mejor calidad</span></div>
+                    </div>
+                    <div class="card">
+                        <h3>Performance paradox en contexto de alta capacitación</h3>
+                        <div class="mini-kpi"><strong>92%</strong><span>GPT-4 solo</span></div>
+                        <div class="mini-kpi"><strong>76%</strong><span>médicos + GPT-4</span></div>
+                        <div class="mini-kpi"><strong>74%</strong><span>médicos sin IA</span></div>
+                        <div class="mini-kpi"><strong>-14 pp</strong><span>automation bias con recomendaciones erróneas</span></div>
+                    </div>
+                </div>
+                <div class="quote-strip fragment fade-up">Implicación: la estrategia no es "dar acceso a IA", sino entrenar su uso seguro y monitorizar resultados clínicos reales.</div>
+                <div class="source">JAMA Network Open 2024 (<a href="https://doi.org/10.1001/jamanetworkopen.2024.40969" target="_blank">DOI</a>); FUTURE-AI BMJ 2025 (<a href="https://doi.org/10.1136/bmj-2024-078178" target="_blank">DOI</a>); estudio Kenia 2024.</div>
+                <aside class="notes">La inteligencia artificial en el diagnóstico arroja resultados que invitan a la cautela. En contextos de recursos limitados, la mejora es clara. Pero en contextos de alta capacitación, aparece la paradoja del rendimiento: el acceso a la herramienta no mejora automáticamente la decisión clínica y puede introducir sesgos de automatización. La estrategia no es simplemente dar acceso a la tecnología, sino formar para su uso seguro y monitorizar resultados clínicos reales.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag teal">Bloque 3 · Evidencia robusta</span>
+                <div class="assertion alt">
+                    <h2>La continuidad del cuidado tiene una de las señales de impacto más fuertes en resultados duros.</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="metric-value">81,8%</div>
+                        <div class="metric-label">Estudios de alta calidad con menor mortalidad</div>
+                        <div class="metric-note">Revisión sistemática de continuidad y mortalidad.</div>
+                        <div class="metric-value" style="margin-top:10px;">hasta -30%</div>
+                        <div class="metric-label">Mortalidad con relaciones &gt;15 años</div>
+                    </div>
+                    <div class="card">
+                        <div class="mini-kpi"><strong>-28%</strong><span>hospitalizaciones evitables</span></div>
+                        <div class="mini-kpi"><strong>-30%</strong><span>visitas a urgencias</span></div>
+                        <div class="mini-kpi"><strong>-5,2%</strong><span>demanda total potencial</span></div>
+                        <div class="mini-kpi"><strong>UPC 72% vs 66%</strong><span>centros no formativos vs formativos (Cataluña)</span></div>
+                    </div>
+                </div>
+                <div class="source">Pereira Gray et al. BMJ Open 2018; documento de longitudinalidad Ministerio-OMS-Observatorio (diciembre 2025); BMC HSR 2021.</div>
+                <aside class="notes">Entramos en el tercer bloque, dedicado a la evidencia más robusta. La continuidad del cuidado tiene una señal de impacto excepcionalmente fuerte. Que más del ochenta por ciento de los estudios de alta calidad encuentren reducción de mortalidad es una cifra que debería influir en cómo organizamos las agendas. El documento del Ministerio y la OMS cuantifica el beneficio para España: hasta un treinta por ciento menos de mortalidad con relaciones de más de quince años con el mismo profesional.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag teal">Bloque 3 · Tensión clave</span>
+                <div class="assertion alt">
+                    <h2>Accesibilidad y continuidad no son excluyentes, pero requieren rediseño explícito de agenda y equipo.</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <h3>Lo que pide la ciudadanía</h3>
+                        <p><strong>25,4%</strong> reporta dificultad de cita.</p>
+                        <p><strong>83,1%</strong> está satisfecha tras la consulta.</p>
+                    </div>
+                    <div class="card">
+                        <h3>El coste de resolver solo con inmediatez</h3>
+                        <p><strong>33,9%</strong> acaba en urgencias cuando falla la cita.</p>
+                        <p>Pérdida de continuidad y duplicidad de pruebas.</p>
+                    </div>
+                    <div class="card">
+                        <h3>La palanca de equilibrio</h3>
+                        <p>Advanced Access + buddy system + microequipos asignados.</p>
+                        <p><strong>86,6%</strong> acepta continuidad con enfermería si se explica el modelo.</p>
+                    </div>
+                </div>
+                <div class="source">Barómetro Sanitario 2024; documento longitudinalidad 2025; informe AP 2025.</div>
+                <aside class="notes">La tensión entre accesibilidad y continuidad es real, pero no es un dilema sin solución. Los modelos de Advanced Access y el concepto de buddy system demuestran que se pueden conciliar. Lo importante es que casi el noventa por ciento de ciudadanos acepta la continuidad con enfermería cuando se le explica el modelo. Hay receptividad al cambio si se diseña bien y se comunica con transparencia. El cambio de narrativa, de cita rápida a equipo de referencia, es viable.</aside>
+            </section>
+
+            <section>
+                <div class="pause-box">
+                    <span class="section-tag">Pausa de decisión</span>
+                    <h2>¿Qué indicador pondrías mañana en el cuadro de mando de tu centro?</h2>
+                    <ul>
+                        <li class="fragment fade-up">Índice de proveedor usual de cuidados (UPC).</li>
+                        <li class="fragment fade-up">Tiempo real por consulta clínica efectiva.</li>
+                        <li class="fragment fade-up">Porcentaje de carga burocrática delegada al equipo no médico.</li>
+                    </ul>
+                </div>
+                <aside class="notes">Segunda pausa. Si tuvierais que elegir un indicador nuevo para el cuadro de mando de vuestro centro, ¿cuál sería? Las tres opciones son complementarias, pero la pregunta obliga a pensar en qué medir para mejorar. Actualmente, la continuidad no se mide de forma sistemática en la mayoría de centros. Lo que no se mide no se gestiona. Y lo que se mide de forma inadecuada puede distorsionar las prioridades.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag teal">Bloque 3 · GRADE</span>
+                <div class="assertion alt">
+                    <h2>La evidencia disponible ya permite priorizar intervenciones, aunque no todas con la misma certeza.</h2>
+                </div>
+                <table class="grade-table">
+                    <thead>
+                        <tr>
+                            <th>Conclusión</th>
+                            <th>Certeza</th>
+                            <th>Lectura práctica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Continuidad reduce mortalidad</td>
+                            <td><span class="grade medium">Moderada</span></td>
+                            <td>Prioridad estratégica inmediata.</td>
+                        </tr>
+                        <tr>
+                            <td>Burnout en médicos AP &gt;20%</td>
+                            <td><span class="grade medium">Moderada</span></td>
+                            <td>Problema estructural, no individual.</td>
+                        </tr>
+                        <tr>
+                            <td>Enfermería avanzada sustituye tareas concretas</td>
+                            <td><span class="grade high">Moderada-Alta</span></td>
+                            <td>Redistribución funcional viable.</td>
+                        </tr>
+                        <tr>
+                            <td>Presión asistencial compromete seguridad</td>
+                            <td><span class="grade low">Baja-Moderada</span></td>
+                            <td>Precaución: asociación plausible y consistente.</td>
+                        </tr>
+                        <tr>
+                            <td>IA mejora rendimiento diagnóstico de AP</td>
+                            <td><span class="grade low">Baja</span></td>
+                            <td>Implementar con evaluación continua.</td>
+                        </tr>
+                        <tr>
+                            <td>Modelos integrados mejoran eficiencia</td>
+                            <td><span class="grade low">Baja</span></td>
+                            <td>Pilotos con diseño cuasi-experimental.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="source">Sección 6.1 del informe AP 2025 (síntesis GRADE).</div>
+                <aside class="notes">Esta tabla resume el nivel de certeza de las principales conclusiones del informe. Observad que la evidencia más robusta corresponde a la enfermería avanzada y la continuidad del cuidado, mientras que la inteligencia artificial y los modelos integrados tienen certeza baja. Esto no significa que no funcionen, sino que la evidencia aún no permite afirmarlo con confianza suficiente. Las decisiones deben calibrarse según este gradiente de certeza.</aside>
+            </section>
+            <section>
+                <span class="section-tag">Bloque 4 · Práctica clínica</span>
+                <div class="assertion">
+                    <h2>La mejora de resultados en 2026 depende de rediseñar el uso del tiempo clínico en cuatro frentes.</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Gestión de demanda</h3>
+                        <p>Espaciar revisiones de crónicos estables y derivar tareas apropiadas a enfermería.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Deprescripción</h3>
+                        <p>Aplicar STOPP-START de forma sistemática en polimedicación, con agenda protegida.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Continuidad intencionada</h3>
+                        <p>Priorizar pacientes complejos con médico/equipo de referencia (buddy system).</p>
+                    </div>
+                    <div class="card">
+                        <h3>Uso crítico de IA</h3>
+                        <p>No aceptar recomendaciones automáticas sin verificación clínica contextual.</p>
+                    </div>
+                </div>
+                <div class="source">Sección 7.1 del informe AP 2025.</div>
+                <aside class="notes">Pasamos al cuarto y último bloque: qué hacer. Desde la práctica clínica, las cuatro líneas de acción convergen en un mismo principio: rediseñar el uso del tiempo. Gestionar la demanda con criterio, deprescribir con agenda protegida, priorizar la continuidad en pacientes complejos y usar la inteligencia artificial sin delegar el juicio clínico. Son cambios que pueden iniciarse a nivel de equipo, sin esperar reformas estructurales completas.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Bloque 4 · Política sanitaria</span>
+                <div class="assertion">
+                    <h2>Hay cinco decisiones de política con alto potencial de retorno en calidad, seguridad y retención.</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <h3>Financiación</h3>
+                        <p>Senda finalista hacia el 25% del gasto sanitario público en AP.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Plantillas</h3>
+                        <p>Estabilización y reducción de temporalidad para proteger continuidad.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Equipos ampliados</h3>
+                        <p>Despliegue con evaluación: enfermería avanzada, farmacéuticos y administrativo en salud.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Interoperabilidad</h3>
+                        <p>Objetivo operativo: dejar de funcionar como 17 sistemas digitales aislados.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Indicadores de continuidad</h3>
+                        <p>UPC y tiempo medio de relación en incentivos y cuadros de mando.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Evaluación de IA</h3>
+                        <p>Proyectos piloto con outcomes clínicos, no solo métricas de proceso.</p>
+                    </div>
+                </div>
+                <div class="source">Secciones 7.2 y 7.3 del informe AP 2025.</div>
+                <aside class="notes">Desde la política sanitaria, las decisiones tienen en común que requieren voluntad sostenida, no anuncios puntuales. La financiación finalista, la estabilización de plantillas, los equipos ampliados, la interoperabilidad digital, los indicadores de continuidad y la evaluación rigurosa de la inteligencia artificial son intervenciones que necesitan años para madurar. Pero el coste de no iniciarlas es acumulativo y se transfiere al sistema en forma de deterioro progresivo.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Bloque 4 · Escenarios</span>
+                <div class="assertion">
+                    <h2>Entre 2026 y 2030 se decide si la AP se fortalece, se degrada o es desplazada por nuevos actores.</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card scenario teal">
+                        <h3>Escenario 1 · Reforma estructural</h3>
+                        <p>Equipos ampliados, continuidad reforzada, integración AP-hospital e inversión sostenida.</p>
+                    </div>
+                    <div class="card scenario amber">
+                        <h3>Escenario 2 · Declive progresivo</h3>
+                        <p>Saturación mantenida, fuga de profesionales y crecimiento de doble velocidad público-privada.</p>
+                    </div>
+                    <div class="card scenario">
+                        <h3>Escenario 3 · Disrupción externa</h3>
+                        <p>Retailers, aseguradoras y plataformas digitales capturan demanda de "primary care lite".</p>
+                    </div>
+                </div>
+                <div class="quote-strip">El coste de no decidir también es una decisión: desplaza riesgo clínico, económico y de equidad al sistema.</div>
+                <div class="source">Cierre integrador del informe AP 2025.</div>
+                <aside class="notes">Estos tres escenarios no son predicciones, sino herramientas para pensar. La reforma estructural es posible, el declive progresivo es probable si no se actúa, y la disrupción por actores externos ya está en marcha en otros países. No decidir también es una decisión, y desplaza el riesgo hacia los pacientes y hacia la equidad del sistema. La ventana entre dos mil veintiséis y dos mil treinta es crítica para definir la trayectoria.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag teal">Cierre</span>
+                <div class="assertion alt">
+                    <h2>Cinco mensajes para retener después de la sesión</h2>
+                </div>
+                <ol style="margin-left: 22px;">
+                    <li>La AP española tiene alto rendimiento histórico, pero el modelo operativo actual está agotado.</li>
+                    <li>La presión asistencial y el burnout son problemas de seguridad clínica, no solo de confort profesional.</li>
+                    <li>La continuidad es una intervención basada en evidencia con impacto en mortalidad y uso de servicios.</li>
+                    <li>La IA puede ayudar, pero sin gobernanza clínica aumenta el riesgo de automation bias.</li>
+                    <li>La ventana 2026-2030 es crítica para evitar deterioro estructural y pérdida de equidad.</li>
+                </ol>
+                <div class="source">Documento origen: <em>Informe AP España 2025</em>.</div>
+                <aside class="notes">Cinco mensajes para retener. El modelo actual ha producido buenos resultados históricos, pero está agotado. La presión asistencial es un problema de seguridad clínica. La continuidad salva vidas. La inteligencia artificial necesita gobernanza clínica. Y la ventana de oportunidad es limitada. Gracias por vuestra atención. El debate es vuestro.</aside>
+            </section>
+
+            <section>
+                <span class="section-tag">Fuentes clave</span>
+                <div class="assertion">
+                    <h2>Referencias principales usadas en el informe</h2>
+                </div>
+                <ul class="sources-slide">
+                    <li>Pereira Gray et al. 2018. Continuity of care and mortality. <em>BMJ Open.</em> <a href="https://doi.org/10.1136/bmjopen-2017-021161" target="_blank">DOI: 10.1136/bmjopen-2017-021161</a></li>
+                    <li>Barnett et al. 2012. Epidemiology of multimorbidity. <em>Lancet.</em> <a href="https://doi.org/10.1016/S0140-6736(12)60240-2" target="_blank">DOI: 10.1016/S0140-6736(12)60240-2</a></li>
+                    <li>CSIC-ISCIII 2025. Burnout en AP del SNS. <em>Gac Sanit.</em> <a href="https://doi.org/10.1016/j.gaceta.2025.102449" target="_blank">DOI: 10.1016/j.gaceta.2025.102449</a></li>
+                    <li>Laurant et al. 2018. Nurses as substitutes. <em>Cochrane Database Syst Rev.</em> <a href="https://doi.org/10.1002/14651858.CD001271.pub3" target="_blank">DOI: 10.1002/14651858.CD001271.pub3</a></li>
+                    <li>Irving et al. 2017. Consultation length. <em>BMJ Open.</em> <a href="https://doi.org/10.1136/bmjopen-2017-017902" target="_blank">DOI: 10.1136/bmjopen-2017-017902</a></li>
+                    <li>Panesar et al. 2016. Patient safety in primary care. <em>BMJ Qual Saf.</em> <a href="https://doi.org/10.1136/bmjqs-2015-004178" target="_blank">DOI: 10.1136/bmjqs-2015-004178</a></li>
+                    <li>Goh et al. 2024. LLM and diagnostic reasoning. <em>JAMA Netw Open.</em> <a href="https://doi.org/10.1001/jamanetworkopen.2024.40969" target="_blank">DOI: 10.1001/jamanetworkopen.2024.40969</a></li>
+                    <li>FUTURE-AI Consortium 2025. Guideline for trustworthy AI in healthcare. <em>BMJ.</em> <a href="https://doi.org/10.1136/bmj-2024-078178" target="_blank">DOI: 10.1136/bmj-2024-078178</a></li>
+                    <li>WHO Europe 2023. PHC transformation in Spain. <a href="https://www.who.int/europe/publications/i/item/WHO-EURO-2023-8071-47839-70649" target="_blank">Enlace</a></li>
+                    <li>European Observatory 2024. Spain Health System Review. <a href="https://eurohealthobservatory.who.int/publications/i/spain-health-system-review-2024" target="_blank">Enlace</a></li>
+                    <li>AIReF 2026. Spending Review 2022-2026 Fase 2: Incapacidad Temporal. <a href="https://www.airef.es/es/estudios/incapacidad-temporal/" target="_blank">Enlace</a></li>
+                </ul>
+                <aside class="notes">Esta diapositiva recoge las referencias principales con enlaces directos a los artículos originales. El informe completo incluye quince estudios indexados con evaluación de diseño, hallazgos e implicaciones, además de la literatura gris institucional española e internacional utilizada en la revisión.</aside>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script src="reveal.js/plugin/search/search.js"></script>
+    <script src="reveal.js-plugins/menu/menu.js"></script>
+    <script src="reveal.js-plugins/chalkboard/plugin.js"></script>
+    <script src="reveal.js-plugins/appearance/appearance.js"></script>
+    <script src="reveal.js-plugins/audio-slideshow/plugin.js"></script>
+    <script src="reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+    <script src="reveal.js-plugins/audio-slideshow/recorder.js"></script>
+    <script src="reveal.js-plugins/embed-tweet/plugin.js"></script>
+    <script src="reveal.js-plugins/simplemenu/simplemenu.js"></script>
+    <script src="reveal.js-plugins/fullscreen/plugin.js"></script>
+    <script src="reveal.js-plugins/animate/plugin.js"></script>
+    <script src="reveal.js-plugins/animate/svg.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            width: 1600,
+            height: 900,
+            margin: 0.05,
+            controls: true,
+            progress: true,
+            hash: true,
+            center: false,
+            slideNumber: "c/t",
+            transition: "slide",
+            backgroundTransition: "fade",
+            viewDistance: 4,
+            mobileViewDistance: 2,
+            mouseWheel: true,
+            preloadIframes: true,
+            audioStartAtFragment: false,
+            menu: {
+                side: "left",
+                markers: true,
+                openButton: true,
+                keyboard: true
+            },
+            simplemenu: {
+                auto: false
+            },
+            audio: {
+                prefix: "assets/audio/ap_espana_2025/",
+                suffix: ".mp3",
+                defaultDuration: 5,
+                defaultText: false,
+                defaultNotes: false,
+                defaultAudios: true,
+                advance: -1,
+                autoplay: false,
+                playerOpacity: 0.85,
+                playerStyle: "position: fixed; bottom: 6px; left: 22%; width: 56%; height:72px; z-index: 33;"
+            },
+            chalkboard: {
+                storage: "ap-espana-2025-chalkboard",
+                toggleChalkboardButton: { left: "80px" },
+                toggleNotesButton: { left: "130px" }
+            },
+            animate: {
+                autoplay: true
+            },
+            plugins: [
+                RevealMarkdown,
+                RevealNotes,
+                RevealHighlight,
+                RevealZoom,
+                RevealSearch,
+                RevealMenu,
+                RevealChalkboard,
+                Appearance,
+                RevealAudioSlideshow,
+                Simplemenu,
+                RevealFullscreen,
+                RevealAnimate,
+                RevealEmbedTweet
+            ]
+        });
+    </script>
+</body>
+</html>
+
