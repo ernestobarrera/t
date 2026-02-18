@@ -3130,33 +3130,181 @@
           <section
             class="wide-slide"
             data-menu-title="Riesgo: Dr. AI"
-            data-audio-text="Cuando los padres consultan a la IA sobre emergencias, el riesgo es muy alto. El 89.5% de las respuestas sobre primeros auxilios y reanimación contenían fallos o alucinaciones. La acción es clara: debemos educar activamente a las familias sobre las limitaciones de la IA en emergencias médicas."
+            data-audio-text="Esto me preocupa especialmente como clínico. No por nosotros, sino por lo que hacen las familias cuando no estamos delante. Los datos que veis hablan por sí solos. En un estudio con veintidós escenarios pediátricos de emergencia, ChatGPT y GPT-4 dieron instrucciones de primeros auxilios correctas en menos de la mitad de los casos. En un segundo estudio centrado exclusivamente en reanimación cardiopulmonar pediátrica, menos del diez por ciento de las respuestas cumplía las guías de la American Heart Association. Pensad en la escena: una madre a las tres de la madrugada, el niño atragantado, el móvil en la mano. La respuesta puede sonar impecable. Y puede estar equivocada en lo que importa: la posición, la fuerza, la secuencia. Nuestra responsabilidad no es solo usar bien la IA. Es educar activamente a las familias sobre sus limitaciones. Ante una emergencia, llama al ciento doce. La IA no salva vidas. El ciento doce sí."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
-                En urgencias pediátricas, la IA puede
-                <span class="highlight">fallar 9 de 10 veces</span>
+                En urgencias pediátricas, la IA
+                <span class="highlight">puede fallar cuando más importa</span>
               </h2>
               <p class="subtitle">
-                89.5% de respuestas con fallos en primeros auxilios y RCP
+                Dos estudios independientes muestran fallos graves en primeros
+                auxilios y RCP
               </p>
             </div>
-            <div style="max-width: 900px; margin: 20px auto">
-              <img
-                src="aepap-2026/assets/slide_fallos_rcp.jpg"
-                alt="Gráfico mostrando 89.5% de respuestas incorrectas sobre primeros auxilios"
+
+            <!-- Grid de dos métricas -->
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                max-width: 820px;
+                margin: 20px auto 0;
+              "
+            >
+              <!-- Card 1: Bushuven -->
+              <div
                 style="
-                  width: 100%;
-                  border-radius: 12px;
-                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                  background: rgba(239, 68, 68, 0.08);
+                  border: 1px solid rgba(239, 68, 68, 0.35);
+                  border-radius: 14px;
+                  padding: 24px 20px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: center;
+                  gap: 10px;
                 "
-              />
+              >
+                <div
+                  style="
+                    font-size: 0.68em;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    color: #94a3b8;
+                    line-height: 1.3;
+                  "
+                >
+                  Primeros auxilios pediátricos
+                </div>
+
+                <div
+                  style="
+                    font-size: 3.4em;
+                    font-weight: 800;
+                    color: #ef4444;
+                    line-height: 1;
+                    margin: 4px 0;
+                  "
+                >
+                  1 de cada 2
+                </div>
+
+                <div
+                  style="font-size: 0.82em; color: #e2e8f0; line-height: 1.45"
+                >
+                  escenarios con instrucciones<br />de primeros auxilios
+                  <strong>incorrectas</strong>
+                </div>
+
+                <!-- Barra -->
+                <div
+                  style="
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.08);
+                    border-radius: 99px;
+                    height: 6px;
+                    margin: 4px 0;
+                  "
+                >
+                  <div
+                    style="
+                      background: #ef4444;
+                      width: 54%;
+                      height: 100%;
+                      border-radius: 99px;
+                    "
+                  ></div>
+                </div>
+
+                <div
+                  style="font-size: 0.62em; color: #64748b; line-height: 1.4"
+                >
+                  Bushuven et al., J Med Syst 2023<br />
+                  22 escenarios PALS · ChatGPT + GPT-4
+                </div>
+              </div>
+
+              <!-- Card 2: Kular -->
+              <div
+                style="
+                  background: rgba(239, 68, 68, 0.08);
+                  border: 1px solid rgba(239, 68, 68, 0.35);
+                  border-radius: 14px;
+                  padding: 24px 20px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: center;
+                  gap: 10px;
+                "
+              >
+                <div
+                  style="
+                    font-size: 0.68em;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    color: #94a3b8;
+                    line-height: 1.3;
+                  "
+                >
+                  RCP pediátrica · Guías AHA
+                </div>
+
+                <div
+                  style="
+                    font-size: 3.4em;
+                    font-weight: 800;
+                    color: #ef4444;
+                    line-height: 1;
+                    margin: 4px 0;
+                  "
+                >
+                  &lt;10%
+                </div>
+
+                <div
+                  style="font-size: 0.82em; color: #e2e8f0; line-height: 1.45"
+                >
+                  de las respuestas cumple<br />las guías de
+                  <strong>reanimación</strong>
+                </div>
+
+                <!-- Barra -->
+                <div
+                  style="
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.08);
+                    border-radius: 99px;
+                    height: 6px;
+                    margin: 4px 0;
+                  "
+                >
+                  <div
+                    style="
+                      background: #ef4444;
+                      width: 10%;
+                      height: 100%;
+                      border-radius: 99px;
+                    "
+                  ></div>
+                </div>
+
+                <div
+                  style="font-size: 0.62em; color: #64748b; line-height: 1.4"
+                >
+                  Kular &amp; Kumar, Cureus 2025<br />
+                  DOI: 10.7759/cureus.89234
+                </div>
+              </div>
             </div>
+
             <div
               class="glass-panel"
               style="
-                max-width: 900px;
-                margin: 14px auto;
+                max-width: 820px;
+                margin: 16px auto 0;
                 background: rgba(239, 68, 68, 0.1);
                 border: 1px solid #ef4444;
               "
@@ -3166,17 +3314,25 @@
                   class="fa-solid fa-exclamation-triangle"
                   style="color: #ef4444; margin-right: 8px"
                 ></i>
-                <strong>Acción:</strong> Educar a las familias sobre las
-                limitaciones de la IA en urgencias. Recomendar siempre llamar al
-                112.
+                <strong>Acción:</strong> Educar activamente a las familias sobre
+                las limitaciones de la IA en urgencias. Recomendar siempre
+                llamar al 112.
               </p>
             </div>
+
             <p class="source-note">
               <a
-                href="https://doi.org/10.1016/S2589-7500(24)00249-X"
+                href="https://doi.org/10.1007/s10916-023-02019-x"
                 target="_blank"
                 rel="noopener"
-                >Pan et al. Lancet Digit Health 2025</a
+                >Bushuven et al. J Med Syst 2023</a
+              >
+              &nbsp;·&nbsp;
+              <a
+                href="https://doi.org/10.7759/cureus.89234"
+                target="_blank"
+                rel="noopener"
+                >Kular &amp; Kumar Cureus 2025</a
               >
             </p>
           </section>
@@ -3432,7 +3588,7 @@
                 href="https://doi.org/10.2196/64486"
                 target="_blank"
                 rel="noopener"
-                >Gong et al. JMIR 2025</a
+                >Wang et al. JMIR 2025</a
               >
               · NMA · 168 artículos · 35,896 preguntas · 3,063 casos
             </p>
@@ -3446,7 +3602,7 @@
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
-                Con RAG, evaluar sesgo sigue en
+                Con RAG*, evaluar sesgo sigue en
                 <span class="highlight">zona roja</span>
               </h2>
               <p class="subtitle">
@@ -3462,7 +3618,7 @@
                 <div class="metric-value" style="color: #ef4444">ICC 0.27</div>
                 <div class="metric-label">concordancia LM vs revisor</div>
                 <p style="font-size: 0.72em; margin: 4px 0 0">
-                  "poor agreement"
+                  "acuerdo pobre"
                 </p>
               </div>
               <div
@@ -3472,9 +3628,9 @@
                 <div class="metric-value" style="color: var(--accent)">
                   14.8-29.6%
                 </div>
-                <div class="metric-label">percent agreement</div>
+                <div class="metric-label">acuerdo porcentual</div>
                 <p style="font-size: 0.72em; margin: 4px 0 0">
-                  "ranged from 14.8% to 29.6%"
+                  "entre el 14,8% y el 29,6%"
                 </p>
               </div>
             </div>
@@ -3487,188 +3643,272 @@
                 humana.
               </p>
             </div>
+
             <p class="source-note">
               Refs:
               <a
                 href="https://doi.org/10.1016/j.jposna.2025.100294"
                 target="_blank"
                 rel="noopener"
-                >Beber et al. JPOSNA 2025</a
+                >Beber et al. JPOSNA 2026</a
               >
+              <br />
+              <br />
+              <br />
+            </p>
+
+            <p
+              style="
+                font-size: 0.52em;
+                margin: 4px auto 0;
+                max-width: 95%;
+                opacity: 0.7;
+                line-height: 1.35;
+                text-align: left;
+              "
+            >
+              <strong>* RAG</strong> (<em>Retrieval-Augmented Generation</em>):
+              el modelo responde solo desde documentos proporcionados por el
+              usuario. Reduce alucinaciones, pero no garantiza juicio crítico.
             </p>
           </section>
 
           <!-- SLIDE: Precisión Diagnóstica (2B.12, con Takita + zoom pediátrico) -->
           <section
             class="wide-slide"
-            data-menu-title="Precisión Diagnóstica"
-            data-audio-text="Zoom al diagnóstico pediátrico. En entornos rurales, la IA iguala prácticamente al pediatra: 87.3% frente a 91.3%, no significativo. Pero a nivel global, según el meta-análisis de Takita con 83 estudios, la IA es equivalente solo al médico no especialista. El especialista sigue siendo superior en 15.8 puntos. En salud mental, la transición de GPT-3.5 a GPT-4 mejoró significativamente: F1 de 0.41 a 0.655. La progresión es real, pero aún no estamos en autonomía para diagnóstico."
+            data-menu-title="Diagnóstico Pediátrico"
+            data-audio-text=""
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
-                En zona rural, la IA
-                <span class="highlight">iguala al pediatra</span>
+                En pediatría, el rendimiento
+                <span class="highlight">depende del contexto</span>
               </h2>
               <p class="subtitle">
-                87.3% IA vs 91.3% pediatra (NS); en global, 15.8 pp por debajo
-                del especialista
+                Prometedora en tareas acotadas; frágil con pacientes jóvenes y
+                complejos
               </p>
             </div>
             <div
-              class="grid-3"
-              style="max-width: 950px; margin: 12px auto; gap: 12px"
+              class="grid-2"
+              style="max-width: 980px; margin: 8px auto; gap: 14px"
             >
-              <!-- Panel 1: Diagnóstico rural -->
+              <!-- Panel 1: Donde se acerca -->
               <div
                 class="glass-panel"
                 style="
                   text-align: center;
-                  border-top: 4px solid #42a5f5;
-                  padding: 15px;
+                  border-top: 4px solid #66bb6a;
+                  padding: 8px 10px;
                 "
               >
                 <h4
-                  style="color: #42a5f5; margin-bottom: 8px; font-size: 0.85em"
+                  style="color: #66bb6a; margin-bottom: 4px; font-size: 0.92em"
                 >
-                  Diagnóstico rural
+                  Tareas acotadas: la IA se acerca
                 </h4>
+                <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
+                  Dx rural pediátrico · GPT-3 fine-tuned · 500 casos
+                </p>
                 <div
                   style="
                     display: flex;
                     justify-content: center;
-                    gap: 1rem;
-                    margin: 12px 0;
+                    gap: 1.2rem;
+                    margin: 4px 0;
                   "
                 >
                   <div>
                     <div
                       style="
-                        font-size: 1.6rem;
+                        font-size: 1.7rem;
                         font-weight: 700;
                         color: var(--primary);
                       "
                     >
                       91.3%
                     </div>
-                    <small>Pediatra</small>
+                    <span style="font-size: 0.88em">Pediatra</span>
                   </div>
-                  <div style="font-size: 1.3em; align-self: center">≈</div>
+                  <div style="font-size: 1.4em; align-self: center">≈</div>
                   <div>
                     <div
                       style="
-                        font-size: 1.6rem;
+                        font-size: 1.7rem;
                         font-weight: 700;
                         color: var(--secondary);
                       "
                     >
                       87.3%
                     </div>
-                    <small>GPT-3</small>
+                    <span style="font-size: 0.88em">GPT-3</span>
                   </div>
                 </div>
-                <p style="font-size: 0.72em; color: #aaa">
-                  P=.47, diferencia no significativa
+                <p style="font-size: 0.72em; color: #777; margin: 2px 0">
+                  P=.47, NS · Mansoor, JMIRx Med 2025
                 </p>
-                <p style="font-size: 0.68em; color: #aaa">Del Monte 2025</p>
-              </div>
-              <!-- Panel 2: Puente a evidencia global -->
-              <div
-                class="glass-panel"
-                style="
-                  text-align: center;
-                  border-top: 4px solid #ffa726;
-                  padding: 15px;
-                "
-              >
-                <h4
-                  style="color: #ffa726; margin-bottom: 8px; font-size: 0.85em"
+                <hr
+                  style="
+                    border: none;
+                    border-top: 1px solid rgba(255, 255, 255, 0.08);
+                    margin: 5px 0;
+                  "
+                />
+                <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
+                  Urgencias pediátricas · 80 casos reales · Turín
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    gap: 1.2rem;
+                    margin: 4px 0;
+                  "
                 >
-                  Mensaje de encaje
-                </h4>
-                <p style="font-size: 0.82em; margin: 12px 0">
-                  Para datos globales (52.1% y brecha con especialista) → ver
-                  slide anterior
-                </p>
-                <p style="font-size: 0.68em; color: #aaa">
-                  Aquí nos centramos en el matiz pediátrico aplicable
-                </p>
-              </div>
-              <!-- Panel 3: Salud mental -->
-              <div
-                class="glass-panel"
-                style="
-                  text-align: center;
-                  border-top: 4px solid #66bb6a;
-                  padding: 15px;
-                "
-              >
-                <h4
-                  style="color: #66bb6a; margin-bottom: 8px; font-size: 0.85em"
-                >
-                  Salud mental pediátrica
-                </h4>
-                <div style="margin: 12px 0">
-                  <div style="font-size: 1.3rem; font-weight: 700; color: #aaa">
-                    <span
-                      class="abbr-tip"
-                      data-info="F1 score: media armónica de precisión y sensibilidad, valorada de 0 a 1"
-                      >F1</span
+                  <div>
+                    <div
+                      style="
+                        font-size: 1.7rem;
+                        font-weight: 700;
+                        color: var(--secondary);
+                      "
                     >
-                    0.41
+                      72.5
+                    </div>
+                    <span style="font-size: 0.88em">ChatGPT-4o</span>
                   </div>
-                  <div style="font-size: 1em; color: var(--accent)">↓</div>
+                  <div style="font-size: 1.4em; align-self: center">&gt;</div>
+                  <div>
+                    <div
+                      style="
+                        font-size: 1.7rem;
+                        font-weight: 700;
+                        color: var(--primary);
+                      "
+                    >
+                      61.9
+                    </div>
+                    <span style="font-size: 0.88em">Pediatras urg.</span>
+                  </div>
+                </div>
+                <p style="font-size: 0.72em; color: #777; margin: 2px 0">
+                  P&lt;.05 · Del Monte, Front Digit Health 2025
+                </p>
+              </div>
+              <!-- Panel 2: Donde falla -->
+              <div
+                class="glass-panel"
+                style="
+                  text-align: center;
+                  border-top: 4px solid #ef5350;
+                  padding: 8px 10px;
+                "
+              >
+                <h4
+                  style="color: #ef5350; margin-bottom: 4px; font-size: 0.92em"
+                >
+                  Pacientes jóvenes: la IA falla más
+                </h4>
+                <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
+                  Psiquiatría · 9.923 pacientes · 6 centros
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    gap: 1.2rem;
+                    margin: 4px 0;
+                    align-items: center;
+                  "
+                >
+                  <div>
+                    <div
+                      style="
+                        font-size: 1.7rem;
+                        font-weight: 700;
+                        color: #ef5350;
+                      "
+                    >
+                      61%
+                    </div>
+                    <span style="font-size: 0.88em">Adolescentes</span>
+                  </div>
+                  <div style="font-size: 1.5em; color: #aaa">→</div>
+                  <div>
+                    <div
+                      style="
+                        font-size: 1.7rem;
+                        font-weight: 700;
+                        color: #66bb6a;
+                      "
+                    >
+                      79%
+                    </div>
+                    <span style="font-size: 0.88em">≥60 años</span>
+                  </div>
+                </div>
+                <p style="font-size: 0.72em; color: #777; margin: 2px 0">
+                  GPT-4.0, P&lt;.001 · Sun, JMIR Med Inform 2026
+                </p>
+                <hr
+                  style="
+                    border: none;
+                    border-top: 1px solid rgba(255, 255, 255, 0.08);
+                    margin: 5px 0;
+                  "
+                />
+                <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
+                  Trastornos conductuales de la infancia (F9)
+                </p>
+                <div style="margin: 4px 0">
                   <div
-                    style="font-size: 1.6rem; font-weight: 700; color: #66bb6a"
+                    style="font-size: 2rem; font-weight: 700; color: #ef5350"
                   >
-                    <span
-                      class="abbr-tip"
-                      data-info="F1 score: media armónica de precisión y sensibilidad, valorada de 0 a 1"
-                      >F1</span
-                    >
-                    0.655
+                    44.9%
                   </div>
+                  <span style="font-size: 0.88em">Precisión GPT-4.0</span>
                 </div>
-                <p style="font-size: 0.75em">GPT-3.5 → GPT-4 (P&lt;0.001)</p>
-                <p style="font-size: 0.68em; color: #aaa">Psiquiatría 2025</p>
+                <p style="font-size: 0.72em; color: #777; margin: 2px 0">
+                  Peor categoría diagnóstica junto a F6
+                </p>
               </div>
             </div>
+            <!-- Barra Patrón: ancha, ajustada -->
             <div
               class="glass-panel"
               style="
-                max-width: 900px;
-                margin: 10px auto;
+                max-width: 980px;
+                margin: 6px auto;
                 text-align: center;
-                padding: 10px;
+                padding: 7px 20px;
               "
             >
-              <p style="font-size: 0.82em; margin: 0">
-                <strong style="color: var(--accent)"
-                  >Implicación clínica:</strong
-                >
-                útil para cribado y segunda opinión; el diagnóstico final sigue
-                siendo del pediatra.
+              <p style="font-size: 0.92em; margin: 0; line-height: 1.3">
+                <strong style="color: var(--accent)">Patrón:</strong>
+                cuanto más estructurada la tarea, mejor rinde. Cuanto más juicio
+                clínico y más joven el paciente, más lejos queda.
               </p>
             </div>
             <p class="source-note">
               <a
-                href="https://doi.org/10.1038/s41746-025-01543-z"
+                href="https://doi.org/10.2196/65263"
                 target="_blank"
                 rel="noopener"
-                >Takita 2025</a
+                >Mansoor 2025</a
               >
-              |
+              ·
               <a
-                href="https://doi.org/10.2196/65263"
+                href="https://doi.org/10.3389/fdgth.2025.1624786"
                 target="_blank"
                 rel="noopener"
                 >Del Monte 2025</a
               >
-              |
+              ·
               <a
                 href="https://doi.org/10.2196/77699"
                 target="_blank"
                 rel="noopener"
-                >Psiquiatría 2025</a
+                >Sun 2026</a
               >
             </p>
           </section>
@@ -3677,7 +3917,7 @@
           <section
             class="wide-slide"
             data-menu-title="Velocidad ≠ Fiabilidad ≠ Consenso"
-            data-audio-text="Tres lecciones del mismo caso clínico, la escoliosis del adolescente. Velocidad: la IA clasifica 100 veces más rápido, pero todos los modelos fallaron en reproducir sus propios resultados tras una semana. Fiabilidad: la IA puede alcanzar 100% en guías protocolizadas, pero fabrica hasta el 91% de sus citas bibliográficas. Consenso: los cirujanos coinciden el 92% de las veces, los modelos de lenguaje solo entre el 1.6 y el 10%. Rápido no es fiable. Fiable no es consistente."
+            data-audio-text="Tres estudios recientes, tres lecciones, para entender por qué velocidad, fiabilidad y consenso son cosas distintas. Y por qué confundirlas es el error más frecuente cuando evaluamos IA. Velocidad. En escoliosis adolescente, cuatro modelos de lenguaje clasificaron radiografías cien veces más rápido que los cirujanos: segundos frente a once o doce minutos. Pero cuando se repitió exactamente la misma prueba una semana después, con las mismas imágenes y las mismas instrucciones, los modelos dieron resultados distintos. Kappa prácticamente cero. Es decir: el mismo paciente puede recibir una clasificación diferente según el día. La velocidad no compró reproducibilidad. Fiabilidad. En otorrinolaringología pediátrica, ChatGPT-cuatro alcanzó kappa de uno en adherencia a guías clínicas de tubos de timpanostomía. Perfección. Pero cuando se evaluó la misma categoría de herramienta para generar citas bibliográficas en radiología, la tasa de referencias inventadas osciló entre el tres y el sesenta y uno por ciento, según el modelo. Veinte veces más error de un modelo a otro. Perfecto donde la respuesta está codificada en una guía. Impredecible donde tiene que construir la respuesta. Consenso. Los cirujanos expertos coinciden el noventa y dos por ciento de las veces. Los modelos de lenguaje, entre el uno con seis y el diez con dos por ciento. Eso es acuerdo por azar. Como lanzar una moneda. La misma tecnología. Tres dimensiones. Tres perfiles de fallo completamente distintos. Y la clave: en ninguna de las tres puedes predecir cuándo va a fallar. Eso tiene consecuencias directas en cómo leemos los sesgos que genera, que es lo que vemos ahora."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -3689,7 +3929,7 @@
                 reproducibilidad ni consenso entre modelos
               </p>
             </div>
-            <div class="grid-3" style="max-width: 950px; margin: 12px auto">
+            <div class="grid-3" style="max-width: 960px; margin: 12px auto">
               <!-- Panel 1: Velocidad -->
               <div
                 class="glass-panel"
@@ -3722,27 +3962,27 @@
                     100×
                   </div>
                   <p style="font-size: 0.72em; margin: 4px 0">
-                    IA: 7-48 seg vs humano: 11-12 min
+                    IA: 7–48 s &nbsp;vs&nbsp; cirujano: 11–12 min
                   </p>
                 </div>
                 <div
                   style="
                     background: rgba(239, 68, 68, 0.15);
                     border-radius: 8px;
-                    padding: 8px;
+                    padding: 8px 10px;
                     margin-top: 8px;
                   "
                 >
                   <p
                     style="
-                      font-size: 0.7em;
+                      font-size: 0.68em;
                       margin: 0;
                       color: #ef5350;
                       font-weight: 600;
                     "
                   >
-                    ⚠️ Todos los modelos fallaron en reproducibilidad tras 1
-                    semana
+                    ⚠️ Test-retest a 1 semana: todos los modelos dieron
+                    resultados distintos (κ&nbsp;≈&nbsp;0)
                   </p>
                 </div>
               </div>
@@ -3781,26 +4021,28 @@
                   <p style="font-size: 0.72em; margin: 4px 0">
                     <span class="abbr-tip" data-info="Otorrinolaringología"
                       >ORL</span
-                    >: 100% en guías protocolizadas
+                    >
+                    pediátrica: 100% en guías protocolizadas
                   </p>
                 </div>
                 <div
                   style="
                     background: rgba(239, 68, 68, 0.15);
                     border-radius: 8px;
-                    padding: 8px;
+                    padding: 8px 10px;
                     margin-top: 8px;
                   "
                 >
                   <p
                     style="
-                      font-size: 0.7em;
+                      font-size: 0.68em;
                       margin: 0;
                       color: #ef5350;
                       font-weight: 600;
                     "
                   >
-                    ⚠️ Pero 91.4% de citas bibliográficas eran fabricadas (Bard)
+                    ⚠️ Misma herramienta en citas bibliográficas: 3–61%
+                    fabricadas según modelo
                   </p>
                 </div>
               </div>
@@ -3845,24 +4087,23 @@
                   style="
                     background: rgba(239, 68, 68, 0.15);
                     border-radius: 8px;
-                    padding: 8px;
+                    padding: 8px 10px;
                     margin-top: 8px;
                   "
                 >
                   <p
                     style="
-                      font-size: 0.7em;
+                      font-size: 0.68em;
                       margin: 0;
                       color: #ef5350;
                       font-weight: 600;
                     "
                   >
-                    ⚠️ Modelos de lenguaje: solo 1.6-10.2% (<span
+                    ⚠️ Modelos de lenguaje: 1.6–10.2% (<span
                       class="abbr-tip"
                       data-info="Kappa de Cohen: concordancia inter-observador (1.0 = acuerdo perfecto)"
                       >κ</span
-                    >
-                    ≈ 0)
+                    >&nbsp;≈&nbsp;0) — acuerdo por azar
                   </p>
                 </div>
               </div>
@@ -3882,26 +4123,30 @@
                 <span style="color: #ef5350">falta</span>
               </p>
             </div>
-            <p class="source-note">
+            <p
+              class="source-note"
+              style="max-width: 960px; margin: 4px auto 0; font-size: 0.48em"
+            >
+              Aktan et al.
               <a
                 href="https://doi.org/10.3390/diagnostics15243219"
                 target="_blank"
                 rel="noopener"
-                >Diagnostics 2025</a
+                ><em>Diagnostics</em> 2025</a
               >
-              |
+              · Durgut &amp; Dikici
               <a
                 href="https://doi.org/10.1007/s00405-025-09630-3"
                 target="_blank"
                 rel="noopener"
-                >ORL 2025</a
+                ><em>Eur Arch Otorhinolaryngol</em> 2026</a
               >
-              |
+              · Güneş et al.
               <a
                 href="https://doi.org/10.4274/dir.2025.253101"
                 target="_blank"
                 rel="noopener"
-                >Radiología 2025</a
+                ><em>Diagn Interv Radiol</em> 2025</a
               >
             </p>
           </section>
