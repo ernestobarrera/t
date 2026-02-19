@@ -3612,7 +3612,13 @@
             class="wide-slide"
             data-menu-title="RAG y sesgo"
             data-audio-src="aepap-2026/audios/25.webm"
-            data-audio-text="La evaluación de riesgo de sesgo con RAG muestra baja concordancia. En NotebookLM el ICC con revisores fue 0.27 y el acuerdo porcentual 14.8 a 29.6."
+            data-audio-text="¿Y si usamos RAG para evaluar sesgo? Es una pregunta lógica: si el modelo trabaja con fuentes verificadas, ¿no debería evaluar mejor la calidad de un estudio?
+
+       Los datos dicen que no. Cuando se probó NotebookLM para evaluar riesgo de sesgo en estudios clínicos, la concordancia con revisores humanos fue muy baja: un coeficiente de correlación intraclase de cero con veintisiete. Traducido: de cada cuatro evaluaciones, la IA coincide con el experto apenas una vez, y las otras tres discrepa.
+
+       ¿Por qué? Porque evaluar sesgo requiere un tipo de juicio que va más allá de procesar texto. Hay que inferir lo que el artículo no dice: ¿por qué no reportan el seguimiento? ¿por qué el grupo control es más joven? Eso es experiencia clínica y metodológica, no procesamiento lingüístico.
+
+       Esto enlaza directamente con el semáforo que veremos en dos slides: evaluar calidad de evidencia es zona roja, por mucho que la herramienta tenga RAG."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -3692,7 +3698,15 @@
             class="wide-slide"
             data-menu-title="Diagnóstico Pediátrico"
             data-audio-src="aepap-2026/audios/26.webm"
-            data-audio-text=""
+            data-audio-text="Ahora un zoom a lo que más nos interesa: el diagnóstico pediátrico.
+
+       En entornos rurales, donde el acceso a especialistas es limitado, la IA iguala prácticamente al pediatra: 87.3% frente a 91.3%, una diferencia estadísticamente no significativa. Esto es relevante: imaginad un centro de salud rural en Extremadura con un médico general solo, sin pediatra. Ahí la IA como segunda opinión puede ser transformadora.
+
+       Pero cuidado con extrapolar. A nivel global, como ya vimos, la IA es equivalente solo al médico no especialista. El especialista sigue siendo netamente superior.
+
+       En salud mental, hay una progresión real: el paso de GPT-3.5 a GPT-4 mejoró el F1 de 0.41 a 0.655. Traducido: pasó de acertar cuatro de cada diez a acertar seis o siete. ¿Aceptable para detectar depresión adolescente? Como cribado para derivar, posiblemente. Como diagnóstico, ni de lejos.
+
+       Fijaos en el patrón que se repite: cuanto más estructurada y protocolizada la tarea, mejor rinde la IA. Cuanto más juicio clínico requiere, más lejos queda."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -4180,6 +4194,7 @@
           <section
             class="wide-slide"
             data-menu-title="Sesgos Algorítmicos"
+            data-audio-src="aepap-2026/audios/28.webm"
             data-audio-text="Los sesgos algorítmicos son un riesgo que debemos entender como clínicos, no solo como usuarios. Y los datos lo respaldan: según una revisión en ene-pe-jota Digital Medicine, la mitad de los estudios de inteligencia artificial sanitaria publicados hasta ahora presentan alto riesgo de sesgo. Solo uno de cada cinco tiene riesgo bajo. Aparecen en tres niveles, y cada uno tiene una consecuencia clínica distinta. En la entrada: los datos de entrenamiento pueden no representar a nuestra población. Un modelo entrenado mayoritariamente con datos de niños anglosajones puede infradiagnosticar dermatitis en piel oscura o malinterpretar patrones culturales de presentación del dolor. En el proceso: la selección automatizada amplifica patrones preexistentes. Si los datos históricos muestran menos derivaciones de TDAH en niñas, el modelo aprenderá que el TDAH es cosa de niños y perpetuará el infradiagnóstico. Y en la salida: las alucinaciones se presentan con alta confianza, sin señales de alerta. No hay un indicador luminoso que diga esto me lo estoy inventando. La validación en poblaciones infrarrepresentadas no es un ideal, es una necesidad clínica. Lo que funciona en un hospital universitario de Boston no necesariamente aplica en un centro de salud de Alcorcón. Y eso nos lleva a una pregunta práctica: qué tareas podemos delegar con seguridad y cuáles no. Eso es exactamente lo que clasifica el semáforo que viene ahora."
           >
             <div class="title-wrapper">
@@ -4423,10 +4438,16 @@
           </section>
 
           <!-- SLIDE: Semáforo de Seguridad (nueva, infografía 09) -->
+          <!-- ============================================================
+               SLIDE 2B.16 — Semáforo IA (deck #29)
+               Reemplaza imagen IA_Potencia_09.jpg por tabla HTML
+               Refs verificadas PubMed: Lee · Asgari · Aktan · Bushuven · Kular · Takita · Beber · Wang
+               ============================================================ -->
           <section
             class="wide-slide"
-            data-menu-title="Semáforo IA"
-            data-audio-text="El semáforo de seguridad: luz verde para automatizar revisiones sistemáticas y extracción tabular con supervisión. Luz amarilla para monitorizar borradores de informes y síntesis de historiales. Luz roja: nunca automatice diagnóstico primario de imagen ni planificación quirúrgica."
+            data-menu-title="🚦 Semáforo IA"
+            data-audio-src="aepap-2026/audios/29.webm"
+            data-audio-text="Os presento un semáforo de seguridad basado en toda la evidencia que hemos revisado. Y quiero que entendáis no solo los colores, sino por qué cada tarea está donde está. Luz verde: automatizar con supervisión tareas como cribado de artículos, extracción de datos tabulares y generación de resúmenes estructurados. ¿Por qué verde? Porque son tareas donde el error es detectable y reversible. Si el modelo extrae mal un dato de una tabla, lo ves al revisar. De hecho, en revisiones sistemáticas asistidas por IA, el cribado alcanza una efe-uno de cero coma noventa y dos a cero coma noventa y ocho. Luz amarilla: borradores de informes, síntesis de historiales y apoyo al diagnóstico diferencial. ¿Por qué amarillo? Porque el error puede pasar desapercibido si no cuestionas activamente. Recordad la paradoja de Wang: supervisar no es lo mismo que cuestionar. Y las omisiones, lo que el modelo simplemente no incluye, llegan al tres y medio por ciento. Son invisibles si no buscas lo que falta. Luz roja: diagnóstico primario de imagen, dosificación sin verificación, decisiones clínicas irreversibles. ¿Por qué rojo? Porque el error tiene consecuencias irreversibles para el paciente y no siempre es detectable a tiempo. Ya hemos visto que la reproducibilidad en clasificación es kappa prácticamente cero. Fijaos en que el criterio no es la IA lo hace bien o mal. El criterio es: si se equivoca, ¿puedo detectarlo antes de que cause daño? Esa es la pregunta que determina el color."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -4434,32 +4455,257 @@
                 <span class="highlight">detectarlo a tiempo?</span>
               </h2>
               <p class="subtitle">
-                Criterio único de seguridad: detectabilidad del error, no
-                precisión del modelo
+                Criterio único de seguridad:
+                <strong>detectabilidad del error</strong>, no precisión del
+                modelo
               </p>
             </div>
+
+            <!-- ── Tabla semáforo ── -->
             <div
               style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 0;
                 max-width: 95%;
                 margin: 0 auto;
-                overflow: hidden;
                 border-radius: 12px;
+                overflow: hidden;
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
               "
             >
-              <img
-                src="aepap-2026/assets/IA_Potencia_Juicio_Diagnóstico_09.jpg"
-                alt="Semáforo de seguridad: verde (automatizar), amarillo (monitorizar), rojo (no automatizar)"
+              <!-- ─── CABECERAS ─── -->
+              <div
                 style="
-                  width: 100%;
-                  max-height: 70vh;
-                  object-fit: contain;
-                  display: block;
+                  background: #1a8a1a;
+                  padding: 0.5em 0.45em 0.35em;
+                  text-align: center;
                 "
-              />
+              >
+                <div
+                  style="
+                    font-size: 0.72em;
+                    font-weight: 700;
+                    color: #fff;
+                    text-transform: uppercase;
+                    letter-spacing: 0.06em;
+                  "
+                >
+                  🟢 Verde
+                </div>
+                <div
+                  style="
+                    font-size: 0.46em;
+                    color: rgba(255, 255, 255, 0.85);
+                    margin-top: 0.1em;
+                  "
+                >
+                  Automatizar · supervisión
+                </div>
+              </div>
+              <div
+                style="
+                  background: #b8960a;
+                  padding: 0.5em 0.45em 0.35em;
+                  text-align: center;
+                "
+              >
+                <div
+                  style="
+                    font-size: 0.72em;
+                    font-weight: 700;
+                    color: #fff;
+                    text-transform: uppercase;
+                    letter-spacing: 0.06em;
+                  "
+                >
+                  🟡 Amarillo
+                </div>
+                <div
+                  style="
+                    font-size: 0.46em;
+                    color: rgba(255, 255, 255, 0.85);
+                    margin-top: 0.1em;
+                  "
+                >
+                  Monitorizar · cuestionar
+                </div>
+              </div>
+              <div
+                style="
+                  background: #c41e1e;
+                  padding: 0.5em 0.45em 0.35em;
+                  text-align: center;
+                "
+              >
+                <div
+                  style="
+                    font-size: 0.72em;
+                    font-weight: 700;
+                    color: #fff;
+                    text-transform: uppercase;
+                    letter-spacing: 0.06em;
+                  "
+                >
+                  🔴 Rojo
+                </div>
+                <div
+                  style="
+                    font-size: 0.46em;
+                    color: rgba(255, 255, 255, 0.85);
+                    margin-top: 0.1em;
+                  "
+                >
+                  No automatizar
+                </div>
+              </div>
+
+              <!-- ─── TAREAS ─── -->
+              <div
+                style="
+                  background: rgba(26, 138, 26, 0.12);
+                  border-left: 3px solid #1a8a1a;
+                  padding: 0.45em 0.5em;
+                  text-align: left;
+                  font-size: 0.48em;
+                  line-height: 1.55;
+                  color: rgba(255, 255, 255, 0.92);
+                "
+              >
+                ✔ Cribado artículos en RS<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em"
+                  >F1 = 0,92 – 0,98</span
+                ><br />
+                ✔ Extracción datos tabulares<br />
+                ✔ Resúmenes estructurados<br />
+                ✔ Material educativo familias
+              </div>
+              <div
+                style="
+                  background: rgba(184, 150, 10, 0.1);
+                  border-left: 3px solid #b8960a;
+                  padding: 0.45em 0.5em;
+                  text-align: left;
+                  font-size: 0.48em;
+                  line-height: 1.55;
+                  color: rgba(255, 255, 255, 0.92);
+                "
+              >
+                ⚠ Borradores informes clínicos<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em"
+                  >Omisiones 3,5 %</span
+                ><br />
+                ⚠ Apoyo dx diferencial<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em"
+                  >Precisión global 52 %</span
+                ><br />
+                ⚠ Evaluación calidad evidencia<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em"
+                  >ICC = 0,27</span
+                >
+              </div>
+              <div
+                style="
+                  background: rgba(196, 30, 30, 0.1);
+                  border-left: 3px solid #c41e1e;
+                  padding: 0.45em 0.5em;
+                  text-align: left;
+                  font-size: 0.48em;
+                  line-height: 1.55;
+                  color: rgba(255, 255, 255, 0.92);
+                "
+              >
+                ✖ Diagnóstico primario imagen<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em"
+                  >κ ≈ 0 reproducibilidad</span
+                ><br />
+                ✖ Dosificación sin verificar<br />
+                ✖ Emergencias / RCP<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em"
+                  >&lt; 10 % conforme AHA</span
+                ><br />
+                ✖ Decisiones irreversibles
+              </div>
+
+              <!-- ─── FILA CRITERIO ─── -->
+              <div
+                style="
+                  background: rgba(26, 138, 26, 0.22);
+                  padding: 0.35em 0.4em;
+                  text-align: center;
+                  border-top: 1px solid rgba(255, 255, 255, 0.08);
+                  font-size: 0.42em;
+                  font-weight: 600;
+                  color: #6fdc6f;
+                "
+              >
+                Error DETECTABLE<br />al revisar
+              </div>
+              <div
+                style="
+                  background: rgba(184, 150, 10, 0.18);
+                  padding: 0.35em 0.4em;
+                  text-align: center;
+                  border-top: 1px solid rgba(255, 255, 255, 0.08);
+                  font-size: 0.42em;
+                  font-weight: 600;
+                  color: #f0d060;
+                "
+              >
+                Error puede PASAR<br />DESAPERCIBIDO
+              </div>
+              <div
+                style="
+                  background: rgba(196, 30, 30, 0.18);
+                  padding: 0.35em 0.4em;
+                  text-align: center;
+                  border-top: 1px solid rgba(255, 255, 255, 0.08);
+                  font-size: 0.42em;
+                  font-weight: 600;
+                  color: #ff7070;
+                "
+              >
+                Error puede ser<br />IRREVERSIBLE
+              </div>
             </div>
+
             <p class="source-note">
-              Adaptado de Value in Health 2025 &amp; Diagnostics 2025
+              Elaboración propia ·
+              <a
+                href="https://doi.org/10.1016/j.jval.2025.08.002"
+                target="_blank"
+                >Lee <em>Value Health</em> 2025</a
+              >
+              ·
+              <a
+                href="https://doi.org/10.1038/s41746-025-01670-7"
+                target="_blank"
+                >Asgari <em>npj Digit Med</em> 2025</a
+              >
+              ·
+              <a
+                href="https://doi.org/10.1038/s41746-025-01543-z"
+                target="_blank"
+                >Takita <em>npj Digit Med</em> 2025</a
+              >
+              ·
+              <a
+                href="https://doi.org/10.1016/j.jposna.2025.100294"
+                target="_blank"
+                >Beber <em>JPOSNA</em> 2025</a
+              >
+              ·
+              <a
+                href="https://doi.org/10.3390/diagnostics15243219"
+                target="_blank"
+                >Aktan <em>Diagnostics</em> 2025</a
+              >
+              ·
+              <a
+                href="https://doi.org/10.1007/s10916-023-02019-x"
+                target="_blank"
+                >Bushuven <em>J Med Syst</em> 2023</a
+              >
             </p>
           </section>
 
@@ -4469,221 +4715,295 @@
           <!-- ════════════════════════════════════════════════════════════════ -->
 
           <!-- SLIDE 1/3: Marco Legal — Las reglas del juego -->
+          <!-- SLIDE 2B.18 CONSOLIDADA v2 -->
+          <!-- Correcciones: tooltips, "modo efímero", protocolo 30", footer 2 líneas, audio sigue secuencia visual -->
+
           <section
             class="wide-slide"
-            data-menu-title="Marco Legal: Reglas del Juego"
-            data-audio-text="Antes de pasar a las aplicaciones, necesitamos conocer las reglas del juego. Cuatro preguntas que probablemente os estáis haciendo. ¿Puedo meter datos de un paciente en ChatGPT? Depende: sin datos identificables, sí; con datos clínicos, solo anonimizados y con modo efímero activo. ¿Qué dice el Reglamento de IA de la UE? Clasifica la IA diagnóstica como alto riesgo, pero ChatGPT no es producto sanitario: hoy la norma vinculante es el Reglamento General de Protección de Datos, no el AI Act. ¿Cuál es mi responsabilidad si sigo una recomendación errónea? Total: la lex artis exige valoración crítica. Y ¿qué exige el RGPD con menores? Datos de salud de menores son categoría especial con triple protección. Evaluación de impacto obligatoria siempre."
+            data-menu-title="Marco Legal: Lo que necesitas saber"
+            data-audio-src="aepap-2026/audios/XX.webm"
+            data-audio-text="Antes de pasar a las aplicaciones prácticas, el marco legal. Voy a ser directo porque esto es más sencillo de lo que parece. La norma que manda hoy es el RGPD. El Reglamento Europeo de Inteligencia Artificial clasifica la IA diagnóstica como alto riesgo, pero su calendario está en transición. Lo que sí está en vigor desde febrero de dos mil veinticinco es la obligación de alfabetización en IA. Es decir: formarse no es opcional. Y la Asociación Médica Mundial, en Porto, octubre de dos mil veinticinco, acuñó un principio que lo resume: PITL, Physician In The Loop. El médico retiene la autoridad final sobre cualquier output de IA que afecte al cuidado clínico. Eso tiene dos caras: si sigues una recomendación errónea sin verificarla, la responsabilidad es tuya. Pero no usar herramientas que forman parte del estándar de cuidado también puede ser cuestionable. Lo práctico. A la izquierda tenéis tres niveles según qué datos introduces. Verde: sin datos del paciente. Hojas para familias, sesiones clínicas, traducciones. Aquí vale cualquier IA comercial. Revisad siempre el output. Amarillo: datos clínicos desidentificados. Diagnóstico diferencial, consulta sobre manejo. Lo clave aquí es cómo desidentificas. Os propongo seis pasos que se hacen en medio minuto: nombres fuera, edad por rango, fechas relativas en vez de absolutas, sin geografía, y en enfermedades raras, describir el mecanismo fisiopatológico, nunca nombrar la enfermedad, porque el propio diagnóstico puede identificar al paciente. Además, usad la configuración de privacidad de la herramienta: en ChatGPT se llama Chat Temporal, en Claude es la conversación de incógnito, en Gemini se desactiva la actividad de Gemini Apps. Y en todas podéis desactivar por separado el uso de vuestros datos para entrenar el modelo. Rojo: datos identificables o imágenes clínicas. Aquí, solo herramientas institucionales integradas en la historia clínica electrónica. A la derecha, dos cosas. Primero, dónde van vuestros datos. No es lo mismo. Local o europeo, máximo control. Proveedores americanos, con un acuerdo de adecuación vigente pero apelado ante el Tribunal de Justicia. Proveedores chinos como DeepSeek, esencialmente incompatibles con el RGPD para datos de salud. Italia los prohibió en enero de dos mil veinticinco. Y segundo, un checklist de seis preguntas antes de usar cualquier IA en un contexto clínico. Lo tenéis en pantalla. El mensaje de cierre es el que veis abajo: usar IA es legal y puede llegar a ser exigible, pero anonimiza, documenta, y mantén el juicio crítico. La lex artis no cambia. Cambia la herramienta."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
-                Con IA, la responsabilidad clínica
-                <span class="highlight">sigue siendo tuya</span>
+                La responsabilidad clínica
+                <span class="highlight">siempre es tuya</span>
               </h2>
               <p class="subtitle">
-                <abbr
-                  class="abbr-tip"
-                  data-info="Reglamento Europeo de Inteligencia Artificial (Reg. 2024/1689). Clasifica sistemas IA por riesgo."
-                  >EU AI Act</abbr
+                RGPD manda hoy · AI Act en transición ·
+                <a
+                  href="https://www.wma.net/policies-post/wma-statement-on-artificial-and-augmented-intelligence-in-medical-care/"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: var(--primary); text-decoration: underline"
+                  >PITL</a
                 >
-                +
-                <abbr
+                <span
                   class="abbr-tip"
-                  data-info="Reglamento General de Protección de Datos (Reg. 2016/679). Norma vinculante para datos personales en la UE."
-                  >RGPD</abbr
-                >
-                +
-                <abbr
-                  class="abbr-tip"
-                  data-info="Ley de Autonomía del Paciente. Regula consentimiento informado y acceso a historia clínica."
-                  >Ley 41/2002</abbr
-                >
-                · AI Act llega en 2027; RGPD y lex artis mandan hoy
+                  data-info="Physician In The Loop — El médico retiene la autoridad final sobre todo output de IA que afecte a decisiones clínicas. WMA Statement on AI in Medical Care, Porto, octubre 2025."
+                  style="
+                    cursor: help;
+                    border-bottom: 1px dotted var(--text-muted);
+                  "
+                  >(WMA Porto 2025)</span
+                >: el médico decide siempre
               </p>
             </div>
 
             <div
               class="grid-2"
-              style="max-width: 1150px; margin: 10px auto; gap: 10px"
+              style="max-width: 1150px; margin: 8px auto; gap: 10px"
             >
-              <!-- P1: ¿Puedo meter datos en ChatGPT? -->
-              <div
-                class="glass-panel"
-                style="border-left: 4px solid var(--accent); padding: 10px 14px"
-              >
-                <h4
+              <!-- COLUMNA IZQUIERDA: Qué puedo hacer -->
+              <div>
+                <!-- Verde: sin datos paciente -->
+                <div
+                  class="glass-panel"
                   style="
-                    color: var(--accent);
-                    margin: 0 0 6px;
-                    font-size: 0.85em;
+                    border-left: 4px solid var(--secondary);
+                    margin-bottom: 8px;
+                    padding: 10px 12px;
                   "
                 >
-                  <i class="fa-solid fa-comment-medical"></i> ¿Datos de mi
-                  paciente en ChatGPT?
-                </h4>
-                <p style="font-size: 0.75em; margin: 0 0 4px">
-                  <strong style="color: var(--secondary)"
-                    >Sin datos identificables → Sí</strong
+                  <h4
+                    style="
+                      color: var(--secondary);
+                      margin: 0 0 4px;
+                      font-size: 0.82em;
+                    "
                   >
-                  (consultas genéricas, guías, materiales para familias)
-                </p>
-                <p style="font-size: 0.75em; margin: 0">
-                  <strong style="color: #ef4444"
-                    >Con datos clínicos → Solo anonimizado</strong
+                    ✅ Sin datos del paciente
+                  </h4>
+                  <p
+                    style="
+                      font-size: 0.72em;
+                      margin: 0;
+                      color: var(--text-muted);
+                    "
                   >
-                  y con modo efímero / sin entrenamiento activo
-                </p>
-              </div>
-
-              <!-- P2: EU AI Act -->
-              <div
-                class="glass-panel"
-                style="
-                  border-left: 4px solid var(--primary);
-                  padding: 10px 14px;
-                "
-              >
-                <h4
-                  style="
-                    color: var(--primary);
-                    margin: 0 0 6px;
-                    font-size: 0.85em;
-                  "
-                >
-                  <i class="fa-solid fa-gavel"></i>
-                  <a
-                    href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
-                    target="_blank"
-                    rel="noopener"
-                    style="color: var(--primary); text-decoration: underline"
-                    >EU AI Act</a
-                  >
-                  (Reg. 2024/1689)
-                </h4>
-                <p style="font-size: 0.75em; margin: 0 0 4px">
-                  Reglamento de IA de la UE. IA diagnóstica =
-                  <strong>alto riesgo</strong> (<abbr
-                    class="abbr-tip"
-                    data-info="Art. 6: criterios para clasificar un sistema como alto riesgo. Anexo III: lista de áreas de alto riesgo (incluyendo salud)."
-                    >Art. 6 + Anexo III</abbr
-                  >). Obligaciones plenas: <strong>agosto 2027</strong>
-                </p>
-                <p style="font-size: 0.75em; margin: 0">
-                  ChatGPT/Claude no son productos sanitarios →
-                  <strong>hoy la norma vinculante es el RGPD</strong>
-                </p>
-              </div>
-
-              <!-- P3: Responsabilidad -->
-              <div
-                class="glass-panel"
-                style="border-left: 4px solid #ef4444; padding: 10px 14px"
-              >
-                <h4 style="color: #ef4444; margin: 0 0 6px; font-size: 0.85em">
-                  <i class="fa-solid fa-scale-balanced"></i> ¿Mi responsabilidad
-                  si la IA falla?
-                </h4>
-                <p style="font-size: 0.75em; margin: 0 0 4px">
-                  <strong>Total.</strong> La <em>lex artis</em> (estándar de
-                  diligencia profesional) exige valoración crítica del output.
-                  Principio
-                  <abbr
-                    class="abbr-tip"
-                    data-info="Physician In The Loop — El médico mantiene siempre la decisión final sobre el diagnóstico y tratamiento. Declaración de la Asociación Médica Mundial (WMA), Porto, octubre 2025."
-                    >PITL</abbr
-                  >
-                  (WMA, Porto 2025)
-                </p>
-                <p style="font-size: 0.75em; margin: 0">
-                  Pero también puede ser negligente
-                  <strong>no usar</strong> herramientas del estándar de cuidado
-                </p>
-              </div>
-
-              <!-- P4: RGPD y menores -->
-              <div
-                class="glass-panel"
-                style="
-                  border-left: 4px solid var(--secondary);
-                  padding: 10px 14px;
-                "
-              >
-                <h4
-                  style="
-                    color: var(--secondary);
-                    margin: 0 0 6px;
-                    font-size: 0.85em;
-                  "
-                >
-                  <i class="fa-solid fa-child"></i> Menores + IA = triple
-                  protección
-                </h4>
-                <p style="font-size: 0.75em; margin: 0 0 4px">
-                  Datos de salud pediátricos =
-                  <strong>categoría especial</strong>
-                  (<a
-                    href="https://eur-lex.europa.eu/eli/reg/2016/679/oj"
-                    target="_blank"
-                    rel="noopener"
-                    style="color: var(--secondary); text-decoration: underline"
-                    >RGPD</a
-                  >
-                  <abbr
-                    class="abbr-tip"
-                    data-info="Art. 9 RGPD: Prohíbe tratar datos de salud salvo excepciones tasadas (consentimiento explícito, interés vital, etc.)."
-                    >Art. 9</abbr
-                  >) + menores vulnerables (<abbr
-                    class="abbr-tip"
-                    data-info="Art. 9.9 AI Act: Sistemas de alto riesgo que afecten a menores requieren evaluación y documentación reforzada."
-                    >Art. 9.9 AI Act</abbr
-                  >)
-                </p>
-                <p style="font-size: 0.75em; margin: 0">
-                  <strong
-                    ><abbr
-                      class="abbr-tip"
-                      data-info="Evaluación de Impacto en Protección de Datos. Obligatoria cuando el tratamiento puede suponer alto riesgo para los derechos. Guía: AEPD, 2021."
-                      >EIPD</abbr
+                    Hojas para familias · Sesiones clínicas · Traducciones ·
+                    Resúmenes de guías<br />
+                    <strong style="color: var(--secondary)"
+                      >→ Cualquier IA comercial.</strong
                     >
-                    obligatoria siempre</strong
+                    Revisar siempre el output
+                  </p>
+                </div>
+
+                <!-- Amarillo: datos desidentificados -->
+                <div
+                  class="glass-panel"
+                  style="
+                    border-left: 4px solid var(--accent);
+                    margin-bottom: 8px;
+                    padding: 10px 12px;
+                  "
+                >
+                  <h4
+                    style="
+                      color: var(--accent);
+                      margin: 0 0 4px;
+                      font-size: 0.82em;
+                    "
                   >
-                  <span style="font-size: 0.9em; color: var(--text-muted)">
-                    (Evaluación de Impacto en Protección de Datos, AEPD):</span
+                    ⚠️ Datos clínicos desidentificados
+                  </h4>
+                  <p
+                    style="
+                      font-size: 0.72em;
+                      margin: 0 0 6px;
+                      color: var(--text-muted);
+                    "
                   >
-                  dato sensible + menor + tecnología nueva = 3 criterios
-                </p>
+                    Diagnóstico diferencial · Consulta sobre manejo · Segundo
+                    parecer
+                  </p>
+                  <div
+                    style="
+                      background: rgba(251, 191, 36, 0.08);
+                      border-radius: 6px;
+                      padding: 6px 10px;
+                      font-size: 0.65em;
+                      line-height: 1.6;
+                    "
+                  >
+                    <strong style="color: var(--accent)"
+                      >Desidentifica en 30":</strong
+                    >
+                    ① Nombres → "Paciente" &nbsp; ② Edad → rango &nbsp; ③ Fechas
+                    → relativas &nbsp; ④ Sin geografía &nbsp; ⑤ Enf. rara →
+                    mecanismo, no nombre &nbsp; ⑥ Sin NHC/DNI<br />
+                    <strong style="color: var(--accent)">+ Privacidad:</strong>
+                    <span
+                      title="ChatGPT: Chat Temporal · Claude: Incógnito · Gemini: Actividad de Apps OFF. Además, desactivar 'mejorar modelo' en ajustes de cada plataforma."
+                      style="
+                        cursor: help;
+                        border-bottom: 1px dotted var(--accent);
+                      "
+                      >sin historial ni entrenamiento ℹ️</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Rojo: datos identificables -->
+                <div
+                  class="glass-panel"
+                  style="border-left: 4px solid #ef4444; padding: 10px 12px"
+                >
+                  <h4
+                    style="color: #ef4444; margin: 0 0 4px; font-size: 0.82em"
+                  >
+                    ⛔ Datos identificables / imágenes
+                  </h4>
+                  <p
+                    style="
+                      font-size: 0.72em;
+                      margin: 0;
+                      color: var(--text-muted);
+                    "
+                  >
+                    <strong style="color: #ef4444"
+                      >Solo herramientas institucionales</strong
+                    >
+                    integradas en HCE. EIPD obligatoria. En enf. rara, el
+                    diagnóstico puede identificar al paciente
+                  </p>
+                </div>
+              </div>
+
+              <!-- COLUMNA DERECHA: Jurisdicción + Checklist -->
+              <div>
+                <!-- Semáforo jurisdicciones condensado -->
+                <div
+                  class="glass-panel"
+                  style="
+                    border-top: 4px solid var(--primary);
+                    padding: 10px 12px;
+                    margin-bottom: 8px;
+                  "
+                >
+                  <h4
+                    style="
+                      color: var(--primary);
+                      margin: 0 0 6px;
+                      font-size: 0.82em;
+                    "
+                  >
+                    <i class="fa-solid fa-globe"></i> Dónde van tus datos
+                  </h4>
+                  <div style="font-size: 0.7em; line-height: 1.8">
+                    <p style="margin: 0">
+                      <span style="color: var(--secondary); font-weight: 700"
+                        >🟢</span
+                      >
+                      <strong>Local</strong> (Ollama) /
+                      <strong>EU</strong> (Mistral, Azure EU)
+                      <span
+                        title="Cero transferencia a terceros países. Máximo control sobre los datos."
+                        style="
+                          cursor: help;
+                          border-bottom: 1px dotted var(--text-muted);
+                        "
+                        >— Máximo control ℹ️</span
+                      >
+                    </p>
+                    <p style="margin: 0">
+                      <span style="color: var(--accent); font-weight: 700"
+                        >🟡</span
+                      >
+                      <strong>US</strong> (OpenAI, Anthropic, Google)
+                      <span
+                        title="Data Privacy Framework (DPF): acuerdo de adecuación UE-US (julio 2023). Validado por Tribunal General (sep 2025), pero apelado ante TJUE por Latombe (oct 2025). CLOUD Act permite acceso US a datos en servidores de empresas americanas."
+                        style="
+                          cursor: help;
+                          border-bottom: 1px dotted var(--accent);
+                        "
+                        >— DPF vigente, apelado TJUE ℹ️</span
+                      >
+                    </p>
+                    <p style="margin: 0">
+                      <span style="color: #ef4444; font-weight: 700">🔴</span>
+                      <strong>China</strong> (DeepSeek, Qwen)
+                      <span
+                        title="Sin decisión de adecuación RGPD. Ley de Inteligencia Nacional obliga a cooperar con servicios de inteligencia. Ban Garante italiano ene 2025. Denuncia OCU→AEPD feb 2025."
+                        style="cursor: help; border-bottom: 1px dotted #ef4444"
+                        >— Incompatible RGPD ℹ️</span
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Checklist condensado -->
+                <div
+                  class="glass-panel"
+                  style="
+                    border-top: 4px solid var(--secondary);
+                    padding: 10px 12px;
+                  "
+                >
+                  <h4
+                    style="
+                      color: var(--secondary);
+                      margin: 0 0 6px;
+                      font-size: 0.82em;
+                    "
+                  >
+                    <i class="fa-solid fa-clipboard-check"></i> Antes de usar IA
+                    clínica
+                  </h4>
+                  <div style="font-size: 0.68em; line-height: 1.8">
+                    <p style="margin: 0">
+                      ☐ &nbsp;¿Datos desidentificados? (6 pasos)
+                    </p>
+                    <p style="margin: 0">
+                      ☐ &nbsp;¿Privacidad activada en la herramienta?
+                    </p>
+                    <p style="margin: 0">
+                      ☐ &nbsp;¿Destino compatible con RGPD?
+                    </p>
+                    <p style="margin: 0">
+                      ☐ &nbsp;¿Familia informada del uso de IA?
+                    </p>
+                    <p style="margin: 0">
+                      ☐ &nbsp;¿Documentaré el uso en la HC?
+                    </p>
+                    <p style="margin: 0">
+                      ☐ &nbsp;¿He verificado el output antes de actuar?
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <!-- Alerta central -->
+            <!-- Takeaway — 2 líneas -->
             <div
               class="glass-panel"
               style="
-                max-width: 1000px;
-                margin: 12px auto 0;
-                background: rgba(251, 191, 36, 0.12);
-                border: 2px solid var(--accent);
+                max-width: 1100px;
+                margin: 8px auto 0;
+                background: linear-gradient(
+                  135deg,
+                  rgba(74, 144, 217, 0.15),
+                  rgba(110, 207, 154, 0.15)
+                );
+                border: 2px solid var(--pediatric-green);
+                padding: 8px 16px;
               "
             >
-              <p style="font-size: 0.82em; text-align: center; margin: 0">
+              <p style="font-size: 0.78em; text-align: center; margin: 0">
                 <i
-                  class="fa-solid fa-triangle-exclamation"
-                  style="color: var(--accent); margin-right: 8px"
+                  class="fa-solid fa-user-doctor"
+                  style="color: var(--pediatric-green); margin-right: 6px"
                 ></i>
-                <strong>Zona gris regulatoria</strong>: las obligaciones de alto
-                riesgo del AI Act llegan en 2027, pero el
-                <strong>RGPD ya es plenamente ejecutable</strong>
-                (multas hasta 20 M€ / 4% facturación global)
+                Usar IA es <strong>legal</strong> y puede ser
+                <strong>exigible</strong> — pero <strong>desidentifica</strong>,
+                <strong>documenta</strong> y mantén el
+                <strong>juicio crítico</strong>. La <em>lex artis</em> no
+                cambia: cambia la herramienta
               </p>
             </div>
 
-            <p class="source-note">
-              <a
-                href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
-                target="_blank"
-                rel="noopener"
-                >EU AI Act</a
-              >
-              ·
+            <p class="source-note" style="margin-top: 4px">
               <a
                 href="https://eur-lex.europa.eu/eli/reg/2016/679/oj"
                 target="_blank"
@@ -4692,521 +5012,29 @@
               >
               ·
               <a
+                href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+                target="_blank"
+                rel="noopener"
+                >EU AI Act</a
+              >
+              (Art. 4 en vigor feb 2025; alto riesgo en transición) ·
+              <a
                 href="https://www.boe.es/buscar/act.php?id=BOE-A-2002-22188"
                 target="_blank"
                 rel="noopener"
                 >Ley 41/2002</a
               >
-              <br />
-              WMA Porto 2025 ·
-              <a
-                href="https://doi.org/10.1111/bioe.13398"
-                target="_blank"
-                rel="noopener"
-                >Lazcoz & Miguel, <em>Bioethics</em> 2025</a
-              >
-            </p>
-          </section>
-
-          <!-- SLIDE 2/3: Privacidad Pediátrica — Niveles de Riesgo -->
-          <section
-            class="wide-slide"
-            data-menu-title="Privacidad Pediátrica: Niveles de Riesgo"
-            data-audio-text="¿Cuándo puedo usar datos de un paciente pediátrico en una herramienta de IA? La respuesta depende de cuatro niveles de riesgo. Riesgo bajo: generar hojas informativas. No entran datos del paciente, cualquier IA vale. Riesgo medio: diagnóstico diferencial con datos anonimizados, edades por rangos, sin fechas ni nombres. Riesgo alto: resultados de laboratorio o imágenes clínicas, solo en herramientas institucionales integradas en la historia clínica. Y riesgo muy alto: enfermedades raras. Aquí ni la anonimización clásica basta, porque el propio diagnóstico puede identificar al paciente. El 75% de pacientes con enfermedades raras tiene alto riesgo de reidentificación."
-          >
-            <div class="title-wrapper">
-              <h2 class="assertion-title">
-                En pediatría, anonimizar no siempre
-                <span class="highlight">desidentifica</span>
-              </h2>
-              <p class="subtitle">
-                Cuatro niveles de riesgo · hasta ~75% de reidentificación en
-                enfermedad rara
-              </p>
-            </div>
-
-            <!-- 4 niveles de riesgo -->
-            <div
-              style="
-                max-width: 1150px;
-                margin: 8px auto;
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 8px;
-              "
-            >
-              <!-- Bajo -->
-              <div
-                class="glass-panel"
-                style="
-                  border-top: 4px solid var(--secondary);
-                  text-align: center;
-                  padding: 10px 8px;
-                "
-              >
-                <div style="font-size: 1.6em; margin-bottom: 4px">✅</div>
-                <div
-                  style="
-                    color: var(--secondary);
-                    font-weight: 600;
-                    font-size: 0.8em;
-                  "
-                >
-                  Bajo
-                </div>
-                <p
-                  style="font-size: 0.68em; margin: 6px 0 4px; font-weight: 600"
-                >
-                  Hojas para familias
-                </p>
-                <p
-                  style="font-size: 0.62em; margin: 0; color: var(--text-muted)"
-                >
-                  Sin datos del paciente. Cualquier IA comercial. Revisar el
-                  output
-                </p>
-              </div>
-              <!-- Medio -->
-              <div
-                class="glass-panel"
-                style="
-                  border-top: 4px solid var(--accent);
-                  text-align: center;
-                  padding: 10px 8px;
-                "
-              >
-                <div style="font-size: 1.6em; margin-bottom: 4px">⚠️</div>
-                <div
-                  style="
-                    color: var(--accent);
-                    font-weight: 600;
-                    font-size: 0.8em;
-                  "
-                >
-                  Medio
-                </div>
-                <p
-                  style="font-size: 0.68em; margin: 6px 0 4px; font-weight: 600"
-                >
-                  Diagnóstico diferencial
-                </p>
-                <p
-                  style="font-size: 0.62em; margin: 0; color: var(--text-muted)"
-                >
-                  Datos anonimizados. Edades por rango, sin fechas ni ubicación.
-                  Modo efímero
-                </p>
-              </div>
-              <!-- Alto -->
-              <div
-                class="glass-panel"
-                style="
-                  border-top: 4px solid #f97316;
-                  text-align: center;
-                  padding: 10px 8px;
-                "
-              >
-                <div style="font-size: 1.6em; margin-bottom: 4px">🔒</div>
-                <div style="color: #f97316; font-weight: 600; font-size: 0.8em">
-                  Alto
-                </div>
-                <p
-                  style="font-size: 0.68em; margin: 6px 0 4px; font-weight: 600"
-                >
-                  Imágenes / analíticas
-                </p>
-                <p
-                  style="font-size: 0.62em; margin: 0; color: var(--text-muted)"
-                >
-                  Solo herramientas institucionales integradas en
-                  <abbr
-                    class="abbr-tip"
-                    data-info="Historia Clínica Electrónica — Sistema oficial de registro clínico del Servicio de Salud."
-                    >HCE</abbr
-                  >.
-                  <abbr
-                    class="abbr-tip"
-                    data-info="Evaluación de Impacto en Protección de Datos (AEPD). Obligatoria cuando hay alto riesgo."
-                    >EIPD</abbr
-                  >
-                  obligatoria
-                </p>
-              </div>
-              <!-- Muy alto -->
-              <div
-                class="glass-panel"
-                style="
-                  border-top: 4px solid #ef4444;
-                  text-align: center;
-                  padding: 10px 8px;
-                "
-              >
-                <div style="font-size: 1.6em; margin-bottom: 4px">⛔</div>
-                <div style="color: #ef4444; font-weight: 600; font-size: 0.8em">
-                  Muy alto
-                </div>
-                <p
-                  style="font-size: 0.68em; margin: 6px 0 4px; font-weight: 600"
-                >
-                  Enfermedades raras
-                </p>
-                <p
-                  style="font-size: 0.62em; margin: 0; color: var(--text-muted)"
-                >
-                  El diagnóstico identifica al paciente. Solo IA
-                  local/certificada. Reformular a nivel fisiopatológico
-                </p>
-              </div>
-            </div>
-
-            <!-- Alerta enfermedades raras -->
-            <div
-              class="glass-panel"
-              style="
-                max-width: 1050px;
-                margin: 10px auto 0;
-                background: rgba(239, 68, 68, 0.12);
-                border: 2px solid #ef4444;
-              "
-            >
-              <p style="font-size: 0.78em; text-align: center; margin: 0">
-                <i
-                  class="fa-solid fa-dna"
-                  style="color: #ef4444; margin-right: 8px"
-                ></i>
-                <strong
-                  ><abbr
-                    class="abbr-tip"
-                    data-info="Fuente: Orphanet J Rare Dis 2020. DOI: 10.1186/s13023-020-01380-z. Estudio sobre riesgo de reidentificación en registros de enfermedades raras."
-                    >~75% de pacientes con enfermedades raras</abbr
-                  ></strong
-                >
-                tienen alto riesgo de reidentificación. En
-                <strong>prevalencia &lt;1:50.000</strong>, nombre de enfermedad
-                + país puede bastar para identificar
-              </p>
-            </div>
-
-            <!-- Protocolo 30 segundos -->
-            <div
-              class="glass-panel"
-              style="
-                max-width: 1050px;
-                margin: 8px auto 0;
-                background: rgba(96, 165, 250, 0.08);
-                border: 1px solid var(--primary);
-              "
-            >
-              <p style="font-size: 0.75em; text-align: center; margin: 0">
-                <i
-                  class="fa-solid fa-stopwatch"
-                  style="color: var(--primary); margin-right: 6px"
-                ></i>
-                <strong>Protocolo de 30"</strong>: ① Nombres → "Paciente" &nbsp;
-                ② Edad exacta → rango &nbsp; ③ Fechas → "hace 3 días" &nbsp; ④
-                Sin geografía &nbsp; ⑤ Enf. rara → describir mecanismo, no
-                nombrar &nbsp; ⑥ Sin
-                <abbr
-                  class="abbr-tip"
-                  data-info="NHC = Número de Historia Clínica. DNI = Documento Nacional de Identidad. Nunca incluir identificadores directos."
-                  >NHC/DNI</abbr
-                >
-                nunca
-              </p>
-            </div>
-
-            <p class="source-note">
-              <a
-                href="https://doi.org/10.1186/s13023-020-01380-z"
-                target="_blank"
-                rel="noopener"
-              >
-                Orphanet J Rare Dis 2020 (reidentificación 75%)</a
-              >
-              · NEJM AI 2025 (LLM-Anonymizer: 99.24%) ·
-              <a
-                href="https://www.edpb.europa.eu/our-work-tools/general-guidance/guidelines-recommendations-best-practices_en"
-                target="_blank"
-                rel="noopener"
-                >EDPB Guidelines 01/2025</a
-              >
-              · Sarkar et al, <em>Sci Rep</em> 2024
-            </p>
-          </section>
-
-          <!-- SLIDE 3/3: Semáforo de Jurisdicciones + Checklist -->
-          <section
-            class="wide-slide"
-            data-menu-title="Jurisdicciones y Checklist IA"
-            data-audio-text="No todas las IAs son iguales en protección de datos. Semáforo de jurisdicciones. Verde: despliegue local con modelos open-source como Llama o Mistral vía Ollama, cero transferencia de datos, máximo control. Azul: proveedores europeos como Mistral Le Chat o Azure EU. Amarillo: proveedores americanos con Data Privacy Framework, el acuerdo de adecuación UE-US, válido pero frágil porque está recurrido ante el Tribunal de Justicia de la UE. Rojo: proveedores chinos como DeepSeek, esencialmente incompatibles con el RGPD para datos de salud. Italia los prohibió de emergencia en enero de 2025 y la OCU ha denunciado ante la Agencia Española de Protección de Datos."
-          >
-            <div class="title-wrapper">
-              <h2 class="assertion-title">
-                La jurisdicción del proveedor
-                <span class="highlight">cambia tu riesgo legal</span>
-              </h2>
-              <p class="subtitle">
-                Dónde van los datos importa tanto como qué datos introduces
-              </p>
-            </div>
-
-            <div
-              class="grid-2"
-              style="max-width: 1150px; margin: 8px auto; gap: 10px"
-            >
-              <!-- Columna izquierda: Semáforo -->
-              <div>
-                <!-- Local -->
-                <div
-                  class="glass-panel"
-                  style="
-                    border-left: 4px solid var(--secondary);
-                    margin-bottom: 8px;
-                    padding: 8px 12px;
-                  "
-                >
-                  <p style="font-size: 0.75em; margin: 0">
-                    <span style="color: var(--secondary); font-weight: 700"
-                      >🟢 LOCAL</span
-                    >
-                    &nbsp;Llama 3, Mistral, Phi-4 vía
-                    <a
-                      href="https://ollama.com/"
-                      target="_blank"
-                      rel="noopener"
-                      style="color: var(--secondary)"
-                      >Ollama</a
-                    >
-                  </p>
-                  <p
-                    style="
-                      font-size: 0.65em;
-                      margin: 2px 0 0;
-                      color: var(--text-muted);
-                    "
-                  >
-                    Cero transferencia · Soberanía total · 8–16 GB VRAM
-                  </p>
-                </div>
-                <!-- EU -->
-                <div
-                  class="glass-panel"
-                  style="
-                    border-left: 4px solid var(--primary);
-                    margin-bottom: 8px;
-                    padding: 8px 12px;
-                  "
-                >
-                  <p style="font-size: 0.75em; margin: 0">
-                    <span style="color: var(--primary); font-weight: 700"
-                      >🔵 EU</span
-                    >
-                    &nbsp;Mistral Le Chat · OVHcloud (cert.
-                    <abbr
-                      class="abbr-tip"
-                      data-info="Hébergeur de Données de Santé — Certificación francesa obligatoria para alojar datos de salud. Equivalente a ENS sanitario."
-                      >HDS</abbr
-                    >) · Azure EU
-                  </p>
-                  <p
-                    style="
-                      font-size: 0.65em;
-                      margin: 2px 0 0;
-                      color: var(--text-muted);
-                    "
-                  >
-                    Jurisdicción UE · Sin transferencia a terceros países
-                  </p>
-                </div>
-                <!-- US -->
-                <div
-                  class="glass-panel"
-                  style="
-                    border-left: 4px solid var(--accent);
-                    margin-bottom: 8px;
-                    padding: 8px 12px;
-                  "
-                >
-                  <p style="font-size: 0.75em; margin: 0">
-                    <span style="color: var(--accent); font-weight: 700"
-                      >🟡 US</span
-                    >
-                    &nbsp;OpenAI, Anthropic, Google
-                    <span style="font-size: 0.85em"
-                      >(con
-                      <a
-                        href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/eu-us-data-transfers_en"
-                        target="_blank"
-                        rel="noopener"
-                        style="color: var(--accent)"
-                        ><abbr
-                          class="abbr-tip"
-                          data-info="Data Privacy Framework — Acuerdo de adecuación UE-US para transferencia de datos, julio 2023. Sucesor del Privacy Shield."
-                          >DPF</abbr
-                        ></a
-                      >
-                      = Data Privacy Framework)</span
-                    >
-                  </p>
-                  <p
-                    style="
-                      font-size: 0.65em;
-                      margin: 2px 0 0;
-                      color: var(--text-muted);
-                    "
-                  >
-                    DPF válido pero frágil (recurso
-                    <abbr
-                      class="abbr-tip"
-                      data-info="Tribunal de Justicia de la Unión Europea. Anuló Safe Harbor (2015) y Privacy Shield (2020). El DPF está recurrido."
-                      >TJUE</abbr
-                    >
-                    oct 2025) ·
-                    <abbr
-                      class="abbr-tip"
-                      data-info="Clarifying Lawful Overseas Use of Data Act (2018). Permite a EEUU acceder a datos alojados en servidores de empresas americanas en cualquier país."
-                      >CLOUD Act</abbr
-                    >
-                  </p>
-                </div>
-                <!-- China -->
-                <div
-                  class="glass-panel"
-                  style="border-left: 4px solid #ef4444; padding: 8px 12px"
-                >
-                  <p style="font-size: 0.75em; margin: 0">
-                    <span style="color: #ef4444; font-weight: 700"
-                      >🔴 CHINA</span
-                    >
-                    &nbsp;DeepSeek, Qwen, Baichuan
-                  </p>
-                  <p
-                    style="
-                      font-size: 0.65em;
-                      margin: 2px 0 0;
-                      color: var(--text-muted);
-                    "
-                  >
-                    Sin adecuación RGPD ·
-                    <abbr
-                      class="abbr-tip"
-                      data-info="Ley de Inteligencia Nacional china (2017). Obliga a todas las organizaciones y ciudadanos a cooperar con los servicios de inteligencia."
-                      >Ley de Inteligencia Nacional</abbr
-                    >
-                    obliga a cooperar ·
-                    <a
-                      href="https://www.gpdp.it/web/guest/home/docweb/-/docweb-display/docweb/10089954"
-                      target="_blank"
-                      rel="noopener"
-                      style="color: #ef4444"
-                      >Ban Italia ene 2025</a
-                    >
-                    · Denuncia OCU→AEPD
-                  </p>
-                </div>
-              </div>
-
-              <!-- Columna derecha: Checklist -->
-              <div
-                class="glass-panel"
-                style="
-                  border-top: 4px solid var(--secondary);
-                  padding: 12px 14px;
-                "
-              >
-                <h4
-                  style="
-                    color: var(--secondary);
-                    margin: 0 0 8px;
-                    font-size: 0.85em;
-                  "
-                >
-                  <i class="fa-solid fa-clipboard-check"></i> Checklist antes de
-                  usar IA clínica
-                </h4>
-                <div style="font-size: 0.72em; line-height: 1.7">
-                  <p style="margin: 0">
-                    ☐ &nbsp;¿Herramienta aprobada institucionalmente?
-                  </p>
-                  <p style="margin: 0">
-                    ☐ &nbsp;¿Datos anonimizados (protocolo 30")?
-                  </p>
-                  <p style="margin: 0">
-                    ☐ &nbsp;¿La combinación clínica puede identificar?
-                    <span style="color: #ef4444">*</span>
-                  </p>
-                  <p style="margin: 0">
-                    ☐ &nbsp;¿Destino de datos compatible con RGPD?
-                  </p>
-                  <p style="margin: 0">
-                    ☐ &nbsp;¿Modo efímero / sin entrenamiento?
-                  </p>
-                  <p style="margin: 0">
-                    ☐ &nbsp;¿Familia informada del uso de IA?
-                  </p>
-                  <p style="margin: 0">
-                    ☐ &nbsp;¿Documentaré el uso en la Historia Clínica?
-                  </p>
-                </div>
-                <p
-                  style="
-                    font-size: 0.6em;
-                    color: var(--text-muted);
-                    margin: 8px 0 0;
-                  "
-                >
-                  <span style="color: #ef4444">*</span> Especialmente en
-                  enfermedades raras, genética, zonas rurales
-                </p>
-              </div>
-            </div>
-
-            <!-- Takeaway -->
-            <div
-              class="glass-panel"
-              style="
-                max-width: 1050px;
-                margin: 10px auto 0;
-                background: linear-gradient(
-                  135deg,
-                  rgba(74, 144, 217, 0.15),
-                  rgba(110, 207, 154, 0.15)
-                );
-                border: 2px solid var(--pediatric-green);
-              "
-            >
-              <p style="font-size: 0.82em; text-align: center; margin: 0">
-                <i
-                  class="fa-solid fa-user-doctor"
-                  style="color: var(--pediatric-green); margin-right: 8px"
-                ></i>
-                <strong>Mensaje clave</strong>: Usar IA es legal y puede ser
-                exigible, pero la responsabilidad clínica
-                <strong>siempre es tuya</strong>. Anonimiza, documenta, y mantén
-                el juicio crítico
-              </p>
-            </div>
-
-            <p class="source-note">
-              <a
-                href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/eu-us-data-transfers_en"
-                target="_blank"
-                rel="noopener"
-                >DPF (Decisión adecuación 10/07/2023)</a
-              >
               ·
               <a
-                href="https://www.gpdp.it/web/guest/home/docweb/-/docweb-display/docweb/10089954"
+                href="https://www.wma.net/policies-post/wma-statement-on-artificial-and-augmented-intelligence-in-medical-care/"
                 target="_blank"
                 rel="noopener"
-                >Garante italiano ban DeepSeek 30/01/2025</a
+                >WMA Porto 2025 (PITL)</a
               >
-              · OCU denuncia AEPD 03/02/2025 · De Lorenzo, AEDS 2025
               <br />
               <span style="color: var(--accent)"
-                >⚠️ Análisis generado por IA (feb 2026). Verificar con servicio
-                jurídico antes de implementar. Marco normativo en
-                evolución.</span
+                >⚠️ Marco normativo en evolución (Digital Omnibus en trámite).
+                Verificar con servicio jurídico.</span
               >
             </p>
           </section>
