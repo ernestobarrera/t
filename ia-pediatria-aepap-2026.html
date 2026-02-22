@@ -6538,6 +6538,174 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
               </p>
             </div>
           </section>
+
+          <!-- SLIDE: Técnicas de Prompting con Evidencia -->
+          <section
+            data-menu-title="Técnicas de Prompting"
+            data-audio-text="Las 4 técnicas de prompting con mayor impacto según la evidencia son: Chain-of-Thought, que mejora del 17 al 58 por ciento pidiendo 'piensa paso a paso'. Few-shot, dando ejemplos antes de la consulta. RAG, conectando a fuentes verificadas para reducir alucinaciones. Y Self-Consistency, generando varias respuestas y eligiendo la más frecuente. Pero atención: cambios triviales en el formato pueden causar variaciones de hasta 76 puntos porcentuales."
+          >
+            <div class="title-wrapper">
+              <h2 class="assertion-title">
+                El formato del prompt puede mover
+                <span class="highlight">precisión hasta 76 pp</span>
+              </h2>
+              <p class="subtitle">
+                58 técnicas documentadas · cuatro con impacto reproducible en
+                resultados clínicos
+              </p>
+            </div>
+
+            <div
+              class="grid-2"
+              style="max-width: 1000px; margin: 20px auto; gap: 16px"
+            >
+              <!-- Columna izquierda -->
+              <div
+                class="glass-panel"
+                style="border-top: 3px solid var(--primary)"
+              >
+                <h4
+                  style="
+                    color: var(--primary);
+                    margin-bottom: 12px;
+                    font-size: 0.95em;
+                  "
+                >
+                  <i class="fa-solid fa-brain"></i> Chain-of-Thought (CoT)
+                </h4>
+                <p style="font-size: 0.85em; margin: 0 0 8px">
+                  "Piensa paso a paso" antes de responder
+                </p>
+                <div
+                  style="
+                    font-size: 1.4em;
+                    color: var(--accent);
+                    font-weight: 600;
+                    margin-bottom: 8px;
+                  "
+                >
+                  17,9% → 58,1%
+                </div>
+                <p
+                  style="font-size: 0.72em; color: var(--text-muted); margin: 0"
+                >
+                  Mejora en GSM8K (Wei et al., NeurIPS 2022)
+                </p>
+              </div>
+
+              <!-- Columna derecha -->
+              <div
+                class="glass-panel"
+                style="border-top: 3px solid var(--primary)"
+              >
+                <h4
+                  style="
+                    color: var(--primary);
+                    margin-bottom: 12px;
+                    font-size: 0.95em;
+                  "
+                >
+                  <i class="fa-solid fa-database"></i> RAG (Retrieval-Augmented)
+                </h4>
+                <p style="font-size: 0.85em; margin: 0 0 8px">
+                  Conectar a fuentes verificadas
+                </p>
+                <div
+                  style="
+                    font-size: 1.4em;
+                    color: var(--accent);
+                    font-weight: 600;
+                    margin-bottom: 8px;
+                  "
+                >
+                  -18 a -40%
+                </div>
+                <p
+                  style="font-size: 0.72em; color: var(--text-muted); margin: 0"
+                >
+                  Reducción de alucinaciones (Lewis et al., 2020)
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="grid-2"
+              style="max-width: 1000px; margin: 0 auto 16px; gap: 16px"
+            >
+              <div
+                class="glass-panel"
+                style="border-top: 3px solid var(--secondary)"
+              >
+                <h4
+                  style="
+                    color: var(--secondary);
+                    margin-bottom: 8px;
+                    font-size: 0.9em;
+                  "
+                >
+                  <i class="fa-solid fa-list-ol"></i> Few-shot
+                </h4>
+                <p
+                  style="font-size: 0.8em; color: var(--text-muted); margin: 0"
+                >
+                  Dar 2-3 ejemplos antes de la consulta. El formato importa más
+                  que las etiquetas.
+                </p>
+              </div>
+
+              <div
+                class="glass-panel"
+                style="border-top: 3px solid var(--secondary)"
+              >
+                <h4
+                  style="
+                    color: var(--secondary);
+                    margin-bottom: 8px;
+                    font-size: 0.9em;
+                  "
+                >
+                  <i class="fa-solid fa-dice"></i> Self-Consistency
+                </h4>
+                <p
+                  style="font-size: 0.8em; color: var(--text-muted); margin: 0"
+                >
+                  Generar múltiples respuestas y votar la más frecuente
+                  (+17,9pp).
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="glass-panel"
+              style="
+                max-width: 900px;
+                margin: 0 auto;
+                background: rgba(239, 68, 68, 0.08);
+                border: 1px solid rgba(239, 68, 68, 0.4);
+              "
+            >
+              <p style="font-size: 0.85em; text-align: center; margin: 0">
+                <i
+                  class="fa-solid fa-triangle-exclamation"
+                  style="color: #ef4444; margin-right: 8px"
+                ></i>
+                <strong>Atención:</strong> Cambios triviales (espaciado,
+                puntuación) causan variaciones de hasta
+                <strong style="color: #ef4444">76pp</strong> en precisión
+                <span style="opacity: 0.7">(Sclar et al., ICLR 2024)</span>
+              </p>
+            </div>
+
+            <p class="source-note">
+              Wei 2022 · Kojima 2022 · Wang 2023 · Sclar 2024 ·
+              <a
+                href="https://arxiv.org/abs/2406.06608"
+                target="_blank"
+                rel="noopener"
+                >Schulhoff 2024</a
+              >
+            </p>
+          </section>
           <!-- ============================================================
                SLIDE #36 — GPTs, Gems y personalización
                Deck: #36 | Bloque 2C | Audio: ~62s
@@ -6565,87 +6733,153 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
               GPTs (ChatGPT) · Gems (Gemini) · Proyectos (Claude)
             </p>
 
-            <div class="grid-2" style="max-width: 920px; margin: 0 auto; gap: 20px; align-items: start">
-
+            <div
+              class="grid-2"
+              style="
+                max-width: 920px;
+                margin: 0 auto;
+                gap: 20px;
+                align-items: start;
+              "
+            >
               <!-- Panel izquierdo: Ejemplos pediátricos -->
               <div class="glass-panel" style="padding: 15px 18px">
-                <h4 style="color: var(--primary); margin: 0 0 10px; font-size: 0.9em">
-                  <i class="fa-solid fa-stethoscope"></i> Ejemplos para tu consulta
+                <h4
+                  style="
+                    color: var(--primary);
+                    margin: 0 0 10px;
+                    font-size: 0.9em;
+                  "
+                >
+                  <i class="fa-solid fa-stethoscope"></i> Ejemplos para tu
+                  consulta
                 </h4>
                 <div style="font-size: 0.8em; line-height: 1.6">
                   <p style="margin: 0 0 8px">
-                    <i class="fa-solid fa-file-medical" style="color: var(--secondary); width: 18px"></i>
-                    <strong>Traductor clínico:</strong> convierte analíticas en lenguaje para padres
+                    <i
+                      class="fa-solid fa-file-medical"
+                      style="color: var(--secondary); width: 18px"
+                    ></i>
+                    <strong>Traductor clínico:</strong> convierte analíticas en
+                    lenguaje para padres
                   </p>
                   <p style="margin: 0 0 8px">
-                    <i class="fa-solid fa-list-check" style="color: var(--secondary); width: 18px"></i>
-                    <strong>Codificador CIE-10:</strong> sugiere códigos a partir de tu texto libre
+                    <i
+                      class="fa-solid fa-list-check"
+                      style="color: var(--secondary); width: 18px"
+                    ></i>
+                    <strong>Codificador CIE-10:</strong> sugiere códigos a
+                    partir de tu texto libre
                   </p>
                   <p style="margin: 0 0 8px">
-                    <i class="fa-solid fa-book-medical" style="color: var(--secondary); width: 18px"></i>
-                    <strong>Preparador de sesiones:</strong> estructura casos clínicos para docencia
+                    <i
+                      class="fa-solid fa-book-medical"
+                      style="color: var(--secondary); width: 18px"
+                    ></i>
+                    <strong>Preparador de sesiones:</strong> estructura casos
+                    clínicos para docencia
                   </p>
                   <p style="margin: 0">
-                    <i class="fa-solid fa-chart-line" style="color: var(--secondary); width: 18px"></i>
-                    <strong>Revisor de informes:</strong> detecta inconsistencias y sugiere ampliación
+                    <i
+                      class="fa-solid fa-chart-line"
+                      style="color: var(--secondary); width: 18px"
+                    ></i>
+                    <strong>Revisor de informes:</strong> detecta
+                    inconsistencias y sugiere ampliación
                   </p>
                 </div>
               </div>
 
               <!-- Panel derecho: 3 pasos -->
               <div class="glass-panel" style="padding: 15px 18px">
-                <h4 style="color: var(--accent); margin: 0 0 10px; font-size: 0.9em">
+                <h4
+                  style="
+                    color: var(--accent);
+                    margin: 0 0 10px;
+                    font-size: 0.9em;
+                  "
+                >
                   <i class="fa-solid fa-shoe-prints"></i> Créalo en 3 pasos
                 </h4>
                 <div style="font-size: 0.8em; line-height: 1.6">
                   <p style="margin: 0 0 12px">
-                    <span style="
-                      display: inline-block;
-                      width: 24px; height: 24px;
-                      background: var(--primary);
-                      border-radius: 50%;
-                      text-align: center;
-                      line-height: 24px;
-                      font-weight: bold;
-                      font-size: 0.85em;
-                      margin-right: 6px;
-                    ">1</span>
-                    <strong>Define rol + contexto</strong><br>
-                    <span style="color: var(--text-muted); margin-left: 30px; display: inline-block">
+                    <span
+                      style="
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        background: var(--primary);
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 24px;
+                        font-weight: bold;
+                        font-size: 0.85em;
+                        margin-right: 6px;
+                      "
+                      >1</span
+                    >
+                    <strong>Define rol + contexto</strong><br />
+                    <span
+                      style="
+                        color: var(--text-muted);
+                        margin-left: 30px;
+                        display: inline-block;
+                      "
+                    >
                       Usa RECORD o Callens como plantilla
                     </span>
                   </p>
                   <p style="margin: 0 0 12px">
-                    <span style="
-                      display: inline-block;
-                      width: 24px; height: 24px;
-                      background: var(--primary);
-                      border-radius: 50%;
-                      text-align: center;
-                      line-height: 24px;
-                      font-weight: bold;
-                      font-size: 0.85em;
-                      margin-right: 6px;
-                    ">2</span>
-                    <strong>Sube documentos de referencia</strong><br>
-                    <span style="color: var(--text-muted); margin-left: 30px; display: inline-block">
+                    <span
+                      style="
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        background: var(--primary);
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 24px;
+                        font-weight: bold;
+                        font-size: 0.85em;
+                        margin-right: 6px;
+                      "
+                      >2</span
+                    >
+                    <strong>Sube documentos de referencia</strong><br />
+                    <span
+                      style="
+                        color: var(--text-muted);
+                        margin-left: 30px;
+                        display: inline-block;
+                      "
+                    >
                       Protocolos, guías, formularios propios
                     </span>
                   </p>
                   <p style="margin: 0">
-                    <span style="
-                      display: inline-block;
-                      width: 24px; height: 24px;
-                      background: var(--primary);
-                      border-radius: 50%;
-                      text-align: center;
-                      line-height: 24px;
-                      font-weight: bold;
-                      font-size: 0.85em;
-                      margin-right: 6px;
-                    ">3</span>
-                    <strong>Prueba con casos reales y ajusta</strong><br>
-                    <span style="color: var(--text-muted); margin-left: 30px; display: inline-block">
+                    <span
+                      style="
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        background: var(--primary);
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 24px;
+                        font-weight: bold;
+                        font-size: 0.85em;
+                        margin-right: 6px;
+                      "
+                      >3</span
+                    >
+                    <strong>Prueba con casos reales y ajusta</strong><br />
+                    <span
+                      style="
+                        color: var(--text-muted);
+                        margin-left: 30px;
+                        display: inline-block;
+                      "
+                    >
                       Iterativo — no sale perfecto a la primera
                     </span>
                   </p>
@@ -6665,13 +6899,16 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
               "
             >
               <p style="font-size: 0.78em; text-align: center; margin: 0">
-                <i class="fa-solid fa-triangle-exclamation" style="color: #ef4444"></i>
+                <i
+                  class="fa-solid fa-triangle-exclamation"
+                  style="color: #ef4444"
+                ></i>
                 <strong style="color: #ef4444">Limitación clave:</strong>
-                Un GPT/Gem hereda las alucinaciones del modelo base —
-                pero con tu formato, lo que las hace <em>más creíbles</em> y potencialmente más peligrosas
+                Un GPT/Gem hereda las alucinaciones del modelo base — pero con
+                tu formato, lo que las hace <em>más creíbles</em> y
+                potencialmente más peligrosas
               </p>
             </div>
-
           </section>
           <!-- SLIDE #37: Tu caja de herramientas (fusión 3.1+3.2+2C.6+2C.7) -->
           <!-- 🔧 NOTA: Slide Pirámide 5.0 irá DESPUÉS de esta -->
@@ -8310,7 +8547,7 @@ Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en direc
             </p>
           </section>
 
-<!-- SLIDE: Documentación y evidencia (con infografía IA Ambiental) -->
+          <!-- SLIDE: Documentación y evidencia (con infografía IA Ambiental) -->
           <section
             class="wide-slide"
             data-visibility="hidden"
@@ -9020,7 +9257,7 @@ Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en direc
                   margin-top: 20px;
                 "
               >
-                <i class="fa-solid fa-clock"></i> 40 minutos
+                <i class="fa-solid fa-clock"></i>~12 minutos
               </p>
             </div>
           </section>
