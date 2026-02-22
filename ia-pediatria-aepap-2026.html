@@ -9456,7 +9456,14 @@ Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en direc
         <section>
           <section
             data-menu-title="Bloque 3: Demos en Vivo"
-            data-audio-text="Ahora viene una parte más práctica. Vamos a ver dos herramientas en acción: NotebookLM para documentación clínica, y la Pirámide de Evidencia cinco punto cero interactiva para elegir herramienta."
+            data-audio-text="Bien. Hasta aquí, evidencia y herramientas. Pero hay una diferencia entre saber que algo funciona y verlo funcionar. Y esa es la idea de este bloque: dos demos, dos preguntas distintas.
+
+La primera: ¿cuántas revisiones sistemáticas o artículos de revista de impacto publicados en el último mes en vuestras diez patologías más frecuentes habéis tenido tiempo de leer? Probablemente ninguna. No por falta de interés, sino por falta de tiempo. NotebookLM, de Google, ataca exactamente ese problema. Vamos a ver cómo.
+
+La segunda: cuando una inteligencia artificial os devuelve una respuesta clínica con tres citas de PubMed de diferente perfil metodológico ¿qué nivel de evidencia tiene eso? No es opinión de experto, no es una revisión sistemática, no es un ensayo clínico. No encaja en ningún peldaño de la pirámide  que usamos para jerarquizar el nivel de la evidencia científica. Aprovecharemos un recurso que establece conexiones entre la evidencia científica y las respuestas generadas por la inteligencia artificial: nnos servirá para entender qué lugar ocupan las respuestas de la IA en la jerarquía de la evidencia, y qué es lo que realmente nos está diciendo, y qué no.
+
+Después pasaremos a interaccionar con algún modelo. Pero primero, vamos a ver qué es posible."
+            data-audio-src="aepap-2026/audios/43.webm"
           >
             <div class="section-intro">
               <i
@@ -9686,281 +9693,445 @@ Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en direc
             </p>
           </section>
 
-          <!-- SLIDE: Demo NotebookLM - Actualización Periódica (añadida 2026-02-08) -->
+          <!-- SLIDE #44: Demo NotebookLM - Actualización Periódica -->
           <section
             class="wide-slide"
             data-menu-title="Demo: NotebookLM Actualización"
-            data-audio-text="Vamos a ver un caso de uso real de NotebookLM. Partimos de una búsqueda avanzada en PubMed que recoge revisiones sistemáticas y metaanálisis del último mes en las patologías más frecuentes de nuestra consulta pediátrica. NotebookLM procesa esos artículos y genera tres productos: un podcast tipo journal club de más de 20 minutos, una presentación de diapositivas y un vídeo resumen. Todo a partir de la misma fuente de evidencia verificable."
+            data-audio-text="NotebookLM es una herramienta de Google que se ha convertido en uno de los asistentes cognitivos más populares del último año, y tiene una razón técnica clara. ¿Recordáis el erre-a-ge que vimos hace unas slides? NotebookLM es erre-a-ge en su forma más pura. Un modelo de lenguaje que solo puede generar a partir de los documentos que tú le subes. No busca en internet, no recurre a su entrenamiento general, no inventa. Si le cargas diez abstracts de PubMed, su universo de conocimiento son esos diez abstracts, y cada afirmación que hace incluye la cita al documento de origen. Pero no solo acepta artículos. Podéis subir archivos PDF, páginas web, vídeos de YouTube, documentos de Google Drive, presentaciones. Hay compañeros que lo usan para preparar sesiones clínicas cargando las guías de referencia. Otros le suben protocolos de su centro y le preguntan dudas como si fuera un tutor que se ha leído todo. También funciona para revisar material educativo: le cargas tus hojas para familias junto con la guía clínica y le pides que detecte inconsistencias. En todos los casos, la clave es la misma: solo trabaja con lo que le das. Nada más. Ahora veamos lo que ha producido. Tenéis cuatro productos enlazados en pantalla. El primero es un podcast general, Tu dosis periódica de evidencia científica, disponible en Spotify. El segundo es otro podcast, este generado a partir de una búsqueda de PubMed con revisiones sistemáticas y metaanálisis del último mes en doce patologías pediátricas frecuentes. Si le dais al play en el reproductor de la slide, escucharéis un fragmento. Podéis escucharlo entero de camino a casa. El tercero es una presentación de diapositivas. Y aquí hay algo que no debería sorprendernos pero que ha sorprendido a muchos compañeros: cuando una profesión lleva décadas transmitiendo conocimiento con diapositivas, ofrecerle una herramienta que transforma evidencia en presentaciones listas para una sesión clínica tiene un encaje que no necesita explicación. Y el cuarto es un vídeo resumen narrado. Cuatro formatos, la misma evidencia, cero invención. Hacéis clic y lo comprobáis vosotros mismos."
           >
+            <!-- Overlay para imagen NotebookLM (hidden por defecto) -->
+            <div
+              id="nlm-preview"
+              onclick="this.style.display = 'none'"
+              style="
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 999;
+                background: rgba(0, 0, 0, 0.88);
+                cursor: pointer;
+                backdrop-filter: blur(4px);
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  max-width: 92%;
+                  max-height: 88%;
+                "
+              >
+                <img
+                  src="aepap-2026/assets/notebookllm.png"
+                  alt="Interfaz de Google NotebookLM"
+                  style="
+                    width: 100%;
+                    border-radius: 12px;
+                    box-shadow: 0 16px 64px rgba(96, 165, 250, 0.35);
+                  "
+                />
+                <p
+                  style="
+                    text-align: center;
+                    font-size: 0.7em;
+                    color: var(--text-muted);
+                    margin-top: 12px;
+                  "
+                >
+                  <i
+                    class="fa-solid fa-hand-pointer"
+                    style="margin-right: 6px"
+                  ></i>
+                  Clic en cualquier parte para cerrar
+                </p>
+              </div>
+            </div>
+
             <div class="title-wrapper">
               <h2 class="assertion-title">
-                De PubMed a
-                <span class="highlight">podcast, vídeo y presentación</span> en
-                minutos
+                NotebookLM: de tus fuentes a
+                <span class="highlight">podcast, vídeo y presentación</span>
               </h2>
               <p class="subtitle">
-                NotebookLM como motor de síntesis para actualización periódica
+                Asistente cognitivo RAG de Google · Solo genera desde tus
+                documentos · Gratuito
               </p>
             </div>
 
-            <!-- Pipeline visual -->
-            <div style="max-width: 1000px; margin: 12px auto">
+            <!-- Layout principal -->
+            <div style="max-width: 1080px; margin: 10px auto">
               <div
                 style="
                   display: flex;
-                  align-items: center;
+                  align-items: stretch;
                   justify-content: center;
-                  gap: 8px;
+                  gap: 10px;
                   flex-wrap: nowrap;
                 "
               >
-                <!-- Paso 1: PubMed -->
+                <!-- COLUMNA IZQ: NotebookLM (protagonista) -->
                 <div
                   class="glass-panel"
                   style="
-                    flex: 1;
+                    flex: 1.4;
                     text-align: center;
-                    padding: 10px 8px;
-                    border-top: 4px solid var(--primary);
-                    min-width: 0;
-                  "
-                >
-                  <span style="font-size: 1.8em">🔍</span>
-                  <h4
-                    style="
-                      color: var(--primary);
-                      margin: 6px 0 2px;
-                      font-size: 0.8em;
-                    "
-                  >
-                    1. Búsqueda PubMed
-                  </h4>
-                  <p
-                    style="
-                      font-size: 0.62em;
-                      color: var(--text-muted);
-                      margin: 0;
-                      line-height: 1.3;
-                    "
-                  >
-                    RS + MA · 10 patologías<br />Último mes · Países OCDE<br />
-                    <span style="color: var(--accent)">&lt;100 artículos</span>
-                  </p>
-                </div>
-                <!-- Flecha -->
-                <i
-                  class="fa-solid fa-arrow-right"
-                  style="color: var(--accent); font-size: 1.2em; flex-shrink: 0"
-                ></i>
-                <!-- Paso 2: NotebookLM -->
-                <div
-                  class="glass-panel"
-                  style="
-                    flex: 1.2;
-                    text-align: center;
-                    padding: 10px 8px;
+                    padding: 14px 12px;
                     border-top: 4px solid var(--accent);
                     background: rgba(251, 191, 36, 0.08);
                     min-width: 0;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                   "
+                  onclick="
+                    document.getElementById('nlm-preview').style.display =
+                      'block'
+                  "
+                  title="Clic para ver la interfaz de NotebookLM"
                 >
-                  <span style="font-size: 1.8em">🧠</span>
-                  <h4
+                  <div>
+                    <span style="font-size: 2em">🧠</span>
+                    <h4
+                      style="
+                        color: var(--accent);
+                        margin: 6px 0 4px;
+                        font-size: 0.9em;
+                      "
+                    >
+                      NotebookLM
+                    </h4>
+                    <p
+                      style="
+                        font-size: 0.6em;
+                        color: var(--text-muted);
+                        margin: 0;
+                        line-height: 1.35;
+                      "
+                    >
+                      RAG puro: solo genera desde
+                      <em>tus</em> fuentes
+                    </p>
+                  </div>
+                  <!-- Tipos de fuentes aceptadas -->
+                  <div
                     style="
-                      color: var(--accent);
-                      margin: 6px 0 2px;
-                      font-size: 0.8em;
+                      display: flex;
+                      flex-wrap: wrap;
+                      justify-content: center;
+                      gap: 4px 6px;
+                      margin-top: 10px;
                     "
                   >
-                    2. NotebookLM
-                  </h4>
+                    <span
+                      style="
+                        font-size: 0.5em;
+                        background: rgba(96, 165, 250, 0.15);
+                        padding: 2px 7px;
+                        border-radius: 10px;
+                        color: var(--primary);
+                      "
+                      ><i
+                        class="fa-solid fa-file-pdf"
+                        style="margin-right: 3px"
+                      ></i
+                      >PDFs</span
+                    >
+                    <span
+                      style="
+                        font-size: 0.5em;
+                        background: rgba(96, 165, 250, 0.15);
+                        padding: 2px 7px;
+                        border-radius: 10px;
+                        color: var(--primary);
+                      "
+                      ><i
+                        class="fa-solid fa-newspaper"
+                        style="margin-right: 3px"
+                      ></i
+                      >Artículos</span
+                    >
+                    <span
+                      style="
+                        font-size: 0.5em;
+                        background: rgba(96, 165, 250, 0.15);
+                        padding: 2px 7px;
+                        border-radius: 10px;
+                        color: var(--primary);
+                      "
+                      ><i
+                        class="fa-solid fa-globe"
+                        style="margin-right: 3px"
+                      ></i
+                      >Webs</span
+                    >
+                    <span
+                      style="
+                        font-size: 0.5em;
+                        background: rgba(96, 165, 250, 0.15);
+                        padding: 2px 7px;
+                        border-radius: 10px;
+                        color: var(--primary);
+                      "
+                      ><i
+                        class="fa-brands fa-youtube"
+                        style="margin-right: 3px"
+                      ></i
+                      >YouTube</span
+                    >
+                    <span
+                      style="
+                        font-size: 0.5em;
+                        background: rgba(96, 165, 250, 0.15);
+                        padding: 2px 7px;
+                        border-radius: 10px;
+                        color: var(--primary);
+                      "
+                      ><i
+                        class="fa-brands fa-google-drive"
+                        style="margin-right: 3px"
+                      ></i
+                      >Drive</span
+                    >
+                    <span
+                      style="
+                        font-size: 0.5em;
+                        background: rgba(96, 165, 250, 0.15);
+                        padding: 2px 7px;
+                        border-radius: 10px;
+                        color: var(--primary);
+                      "
+                      ><i class="fa-solid fa-copy" style="margin-right: 3px"></i
+                      >Texto</span
+                    >
+                  </div>
                   <p
                     style="
-                      font-size: 0.62em;
-                      color: var(--text-muted);
-                      margin: 0;
-                      line-height: 1.3;
+                      font-size: 0.5em;
+                      color: var(--primary);
+                      margin: 8px 0 0;
                     "
                   >
-                    Carga abstracts<br />Prompt con instrucciones<br />
-                    <span style="color: var(--accent)"
-                      >RAG sobre tus fuentes</span
-                    >
+                    <i class="fa-solid fa-eye" style="margin-right: 3px"></i
+                    >Clic: ver interfaz
                   </p>
                 </div>
+
                 <!-- Flecha -->
-                <i
-                  class="fa-solid fa-arrow-right"
-                  style="color: var(--accent); font-size: 1.2em; flex-shrink: 0"
-                ></i>
-                <!-- Paso 3: Outputs -->
-                <div style="flex: 1.5; min-width: 0">
-                  <div style="display: flex; flex-direction: column; gap: 6px">
-                    <a
-                      href="https://open.spotify.com/episode/03NjclGsidSVGpa8aLXLj9"
-                      target="_blank"
-                      rel="noopener"
-                      class="glass-panel clickable-output-card"
-                      style="
-                        text-decoration: none;
-                        padding: 6px 10px;
-                        border-left: 4px solid var(--secondary);
-                        display: flex;
-                        align-items: center;
-                        gap: 10px;
-                      "
-                    >
-                      <span style="font-size: 1.3em">🎙️</span>
-                      <div style="text-align: left">
+                <div style="display: flex; align-items: center; flex-shrink: 0">
+                  <i
+                    class="fa-solid fa-arrow-right"
+                    style="color: var(--accent); font-size: 1.4em"
+                  ></i>
+                </div>
+
+                <!-- COLUMNA DER: 4 Outputs -->
+                <div
+                  style="
+                    flex: 2;
+                    min-width: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                  "
+                >
+                  <!-- Output 1: Podcast Spotify -->
+                  <a
+                    href="https://open.spotify.com/episode/03NjclGsidSVGpa8aLXLj9"
+                    target="_blank"
+                    rel="noopener"
+                    class="glass-panel clickable-output-card"
+                    style="
+                      text-decoration: none;
+                      padding: 6px 10px;
+                      border-left: 4px solid var(--secondary);
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                    "
+                  >
+                    <span style="font-size: 1.2em">🎙️</span>
+                    <div style="text-align: left; flex: 1">
+                      <h4
+                        style="
+                          color: var(--secondary);
+                          margin: 0;
+                          font-size: 0.72em;
+                        "
+                      >
+                        Podcast · Spotify
+                      </h4>
+                      <p
+                        style="
+                          font-size: 0.52em;
+                          color: var(--text-muted);
+                          margin: 0;
+                        "
+                      >
+                        "Tu dosis periódica de evidencia científica"
+                      </p>
+                    </div>
+                  </a>
+
+                  <!-- Output 2: Podcast PubMed RS/MA -->
+                  <div
+                    class="glass-panel"
+                    style="padding: 6px 10px; border-left: 4px solid #f59e0b"
+                  >
+                    <div style="display: flex; align-items: center; gap: 10px">
+                      <span style="font-size: 1.2em">🔬</span>
+                      <div style="text-align: left; flex: 1">
                         <h4
-                          style="
-                            color: var(--secondary);
-                            margin: 0;
-                            font-size: 0.75em;
-                          "
+                          style="color: #f59e0b; margin: 0; font-size: 0.72em"
                         >
-                          Podcast
+                          Podcast · PubMed RS/MA
                         </h4>
                         <p
                           style="
-                            font-size: 0.58em;
+                            font-size: 0.52em;
                             color: var(--text-muted);
                             margin: 0;
                           "
                         >
-                          Journal club · &gt;20 min · Spotify
+                          12 patologías pediátricas · Último mes · Países OCDE ·
+                          <a
+                            href="https://pubmed.ncbi.nlm.nih.gov/?term=((((hasabstract%20AND%20(%20%20%20%22Child%22%5BMesh%5D%20OR%20%22Infant%22%5BMesh%5D%20OR%20%22Adolescent%22%5BMesh%5D%20OR%20%20%20pediatric*%5Btiab%5D%20OR%20paediatric*%5Btiab%5D%20%20)%20%20AND%20%20(%20(%20%20%20%22Attention%20Deficit%20Disorder%20with%20Hyperactivity%22%5BMesh%5D%20%20%20OR%20ADHD%5Btiab%5D%20OR%20TDAH%5Btiab%5D%20%20%20OR%20%22attention%20deficit%20hyperactivity%22%5Btiab%3A~2%5D%20%20%20OR%20%22attention%20deficit%20disorder%22%5Btiab%5D%20%20%20OR%20%22hyperkinetic%20disorder*%22%5Btiab%5D%20)%20OR%20(%20%20%20%22Autism%20Spectrum%20Disorder%22%5BMesh%5D%20%20%20OR%20autism%5Btiab%5D%20OR%20autistic%5Btiab%5D%20%20%20OR%20ASD%5Btiab%5D%20OR%20TEA%5Btiab%5D%20%20%20OR%20%22trastorno*%20del%20espectro%20autista%22%5Btiab%5D%20)%20OR%20(%20%20%20%22Bronchiolitis%22%5BMesh%5D%20%20%20OR%20bronchiolitis%5Btiab%5D%20OR%20bronquiolitis%5Btiab%5D%20%20%20OR%20RSV%5Btiab%5D%20%20%20OR%20%22respiratory%20syncytial%20virus%22%5Btiab%5D%20%20%20OR%20%22virus%20sincitial%20respiratorio%22%5Btiab%5D%20)%20OR%20(%20%20%20%22Asthma%22%5BMesh%5D%20%20%20OR%20asthma%5Btiab%5D%20%20%20OR%20wheez*%5Btiab%5D%20%20%20OR%20sibilanc*%5Btiab%5D%20%20%20OR%20%22episodic%20viral%20wheez*%22%5Btiab%5D%20%20%20OR%20%22recurrent%20wheez*%22%5Btiab%5D%20)%20OR%20(%20%20%20%22Upper%20Respiratory%20Tract%20Infections%22%5BMesh%5D%20%20%20OR%20%22respiratory%20tract%20infection*%22%5Btiab%5D%20%20%20OR%20%22upper%20respiratory%22%5Btiab%5D%20%20%20OR%20%22common%20cold%22%5Btiab%5D%20%20%20OR%20%22upper%20respiratory%20infection*%22%5Btiab%5D%20%20%20OR%20resfriado*%5Btiab%5D%20%20%20OR%20catarro*%5Btiab%5D%20)%20OR%20(%20%20%20%22Otitis%20Media%22%5BMesh%5D%20%20%20OR%20otitis%5Btiab%5D%20%20%20OR%20%22otitis%20media%22%5Btiab%5D%20%20%20OR%20%22acute%20otitis%22%5Btiab%5D%20%20%20OR%20%22otitis%20media%20with%20effusion%22%5Btiab%5D%20%20%20OR%20%22otitis%20media%20aguda%22%5Btiab%5D%20)%20OR%20(%20%20%20%22Gastroenteritis%22%5BMesh%5D%20%20%20OR%20gastroenteritis%5Btiab%5D%20%20%20OR%20diarrhea%5Btiab%5D%20OR%20diarrhoea%5Btiab%5D%20OR%20diarrea%5Btiab%5D%20%20%20OR%20vomiting%5Btiab%5D%20OR%20v%C3%B3mit*%5Btiab%5D%20)%20OR%20(%20%20%20%22Dermatitis%2C%20Atopic%22%5BMesh%5D%20%20%20OR%20%22atopic%20dermatitis%22%5Btiab%5D%20%20%20OR%20%22dermatitis%20atopic*%22%5Btiab%5D%20%20%20OR%20%22dermatitis%20at%C3%B3pica%22%5Btiab%5D%20%20%20OR%20eczema%5Btiab%5D%20OR%20eccema%5Btiab%5D%20)%20OR%20(%20%20%20%22Obesity%22%5BMesh%5D%20%20%20OR%20%22Pediatric%20Obesity%22%5BMesh%5D%20%20%20OR%20obes*%5Btiab%5D%20%20%20OR%20overweight%5Btiab%5D%20%20%20OR%20sobrepeso%5Btiab%5D%20%20%20OR%20%22body%20mass%20index%22%5Btiab%5D%20%20%20OR%20BMI%5Btiab%5D%20)%20OR%20(%20%20%20%22Anxiety%20Disorders%22%5BMesh%5D%20%20%20OR%20anxiety%5Btiab%5D%20OR%20anxious%5Btiab%5D%20%20%20OR%20%22trastorno*%20de%20ansiedad%22%5Btiab%5D%20%20%20OR%20%22social%20anxiety%22%5Btiab%5D%20%20%20OR%20%22generalized%20anxiety%22%5Btiab%5D%20)%20OR%20(%20%22Fever%22%5BMesh%5D%20OR%20%22Fever%20of%20Unknown%20Origin%22%5BMesh%5D%20OR%20fever%5Btiab%5D%20OR%20febrile%5Btiab%5D%20OR%20%22fiebre%20sin%20foco%22%5Btiab%5D%20)%20OR%20(%20%22Constipation%22%5BMesh%5D%20OR%20constipation%5Btiab%5D%20OR%20estre%C3%B1imiento%5Btiab%5D%20OR%20%22functional%20constipation%22%5Btiab%5D%20OR%20encopresis%5Btiab%5D%20)%20)%20%20AND%20(adolescent%5BFilter%5D%20OR%20allchild%5BFilter%5D%20OR%20allinfant%5BFilter%5D%20OR%20child%5BFilter%5D%20OR%20infant%5BFilter%5D%20OR%20newborn%5BFilter%5D%20OR%20preschoolchild%5BFilter%5D))%20AND%20((systematic%5Bsb%5D%7C%22meta-analysis%22%5Bpt%5D%7C%22meta-analysis%20as%20topic%22%5Bmh%5D%7Cmeta%20analy*%5Btw%5D%7Cmetanaly*%5Btw%5D%7Cmetaanaly*%5Btw%5D%7Cmet%20analy*%5Btw%5D%7Cintegrative%20research%5Btiab%5D%7Cintegrative%20review*%5Btiab%5D%7Cintegrative%20overview*%5Btiab%5D%7Cresearch%20integration*%5Btiab%5D%7Cresearch%20overview*%5Btiab%5D%7Ccollaborative%20review*%5Btiab%5D%7Ccollaborative%20overview*%5Btiab%5D%7C%22systematic%20review%22%5Bpt%5D%7C%22systematic%20reviews%20as%20topic%22%5Bmh%5D%7Csystematic%20review*%5Btiab%5D%7Ctechnology%20assessment*%5Btiab%5D%7Ctechnology%20overview*%5Btiab%5D%7Ctechnology%20appraisal*%5Btiab%5D%7C%22Technology%20Assessment%2C%20Biomedical%22%5Bmh%5D%7CHTA%5Btiab%5D%7CHTAs%5Btiab%5D%7Ccomparative%20efficacy%5Btiab%5D%7Ccomparative%20effectiveness%5Btiab%5D%7Coutcomes%20research%5Btiab%5D%7Cindirect%20comparison*%5Btiab%5D%7CBayesian%20comparison%5Btiab%5D%7C((indirect%20treatment%5Btiab%5D%7Cmixed-treatment%5Btiab%5D)%20AND%20comparison*%5Btiab%5D)%7CEmbase*%5Btiab%5D%7CCinahl*%5Btiab%5D%7Csystematic%20overview*%5Btiab%5D%7Cmethodological%20overview*%5Btiab%5D%7Cmethodologic%20overview*%5Btiab%5D%7Cmethodological%20review*%5Btiab%5D%7Cmethodologic%20review*%5Btiab%5D%7Cquantitative%20review*%5Btiab%5D%7C%20quantitative%20overview*%5Btiab%5D%7Cquantitative%20synthes*%5Btiab%5D%7Cpooled%20analy*%5Btiab%5D%7CCochrane%5Btiab%5D%7CMedline%5Btiab%5D%7CPubmed%5Btiab%5D%7CMedlars%5Btiab%5D%7Chandsearch*%5Btiab%5D%7Chand%20search*%5Btiab%5D%7Cmeta-regression*%5Btiab%5D%7Cmetaregression*%5Btiab%5D%7Cdata%20synthes*%5Btiab%5D%7Cdata%20extraction%5Btiab%5D%7Cdata%20abstraction*%5Btiab%5D%7Cmantel%20haenszel%5Btiab%5D%7Cpeto%5Btiab%5D%7Cder-simonian%5Btiab%5D%7Cdersimonian%5Btiab%5D%7Cfixed%20effect*%5Btiab%5D%7Cmultiple%20treatment%20comparison%5Btiab%5D%7Cmixed%20treatment%20meta-analys*%5Btiab%5D%7Cumbrella%20review*%5Btiab%5D%7C((multiple%20paramet*%5Btiab%5D)%20AND%20(evidence%20synthesis%5Btiab%5D))%7C((multi-paramet*%5Btiab%5D)%20AND%20(evidence%20synthesis%5Btiab%5D))%7C((multiparameter*%5Btiab%5D)%20AND%20(evidence%20synthesis%5Btiab%5D))%7C%22Cochrane%20Database%20Syst%20Rev%22%5BTA%5D%7C%22health%20technology%20assessment%20winchester%2C%20england%22%5BTA%5D%7C%20%22Evid%20Rep%20Technol%20Assess%20(Full%20Rep)%22%5BTA%5D%7C%22Evid%20Rep%20Technol%20Assess%20(Summ)%22%5BTA%5D%7C%22Int%20J%20Technol%20Assess%20Health%20Care%22%5BTA%5D%7C%22GMS%20Health%20Technol%20Assess%22%5BTA%5D%7C%22Health%20Technol%20Assess%20(Rockv)%22%5BTA%5D%7C%22Health%20Technol%20Assess%20Rep%22%5BTA%5D)))%20AND%20((Infan*%7Cnewborn*%7Cnew-born*%7Cperinat*%7Cneonat*%7Cbaby*%7Cbabies%7Ctoddler*%7Cminors%7Cminors*%7Cboy%7Cboys%7Cboyfriend%7Cboyhood%7Cgirl*%7Ckid%7Ckids%7Cchild%7Cchild*%7Cchildren*%7Cschoolchild*%7Cschool%20child%5Btiab%5D%7Cschool%20child*%5Btiab%5D%7Cadolescen*%7Cjuvenil*%7Cyouth*%7Cteen*%7Cunder*age*%7Cpubescen*%7Cpediatrics%5Bmh%5D%7Cpediatric*%7Cpaediatric*%7Cpeadiatric*%7Cschool%5Btiab%5D%7Cschool*%5Btiab%5D%7Cprematur*%7Cpreterm*)))%20NOT%20((afghanistan%5BMesh%3ANoExp%5D%20OR%20africa%5BMesh%3ANoExp%5D%20OR%20%22africa%2C%20northern%22%5BMesh%3ANoExp%5D%20OR%20%22africa%2C%20central%22%5BMesh%3ANoExp%5D%20OR%20%22africa%2C%20eastern%22%5BMesh%3ANoExp%5D%20OR%20%22africa%20south%20of%20the%20sahara%22%5BMesh%3ANoExp%5D%20OR%20%22africa%2C%20southern%22%5BMesh%3ANoExp%5D%20OR%20%22africa%2C%20western%22%5BMesh%3ANoExp%5D%20OR%20albania%5BMesh%3ANoExp%5D%20OR%20algeria%5BMesh%3ANoExp%5D%20OR%20andorra%5BMesh%3ANoExp%5D%20OR%20angola%5BMesh%3ANoExp%5D%20OR%20%22antigua%20and%20barbuda%22%5BMesh%3ANoExp%5D%20OR%20argentina%5BMesh%3ANoExp%5D%20OR%20armenia%5BMesh%3ANoExp%5D%20OR%20azerbaijan%5BMesh%3ANoExp%5D%20OR%20bahamas%5BMesh%3ANoExp%5D%20OR%20bahrain%5BMesh%3ANoExp%5D%20OR%20bangladesh%5BMesh%3ANoExp%5D%20OR%20barbados%5BMesh%3ANoExp%5D%20OR%20belize%5BMesh%3ANoExp%5D%20OR%20benin%5BMesh%3ANoExp%5D%20OR%20bhutan%5BMesh%3ANoExp%5D%20OR%20bolivia%5BMesh%3ANoExp%5D%20OR%20borneo%5BMesh%3ANoExp%5D%20OR%20%22bosnia%20and%20herzegovina%22%5BMesh%3ANoExp%5D%20OR%20botswana%5BMesh%3ANoExp%5D%20OR%20brazil%5BMesh%3ANoExp%5D%20OR%20brunei%5BMesh%3ANoExp%5D%20OR%20bulgaria%5BMesh%3ANoExp%5D%20OR%20%22burkina%20faso%22%5BMesh%3ANoExp%5D%20OR%20burundi%5BMesh%3ANoExp%5D%20OR%20%22cabo%20verde%22%5BMesh%3ANoExp%5D%20OR%20cambodia%5BMesh%3ANoExp%5D%20OR%20cameroon%5BMesh%3ANoExp%5D%20OR%20%22central%20african%20republic%22%5BMesh%3ANoExp%5D%20OR%20chad%5BMesh%3ANoExp%5D%20OR%20china%5BMesh%5D%20OR%20comoros%5BMesh%3ANoExp%5D%20OR%20congo%5BMesh%3ANoExp%5D%20OR%20croatia%5BMesh%3ANoExp%5D%20OR%20cuba%5BMesh%3ANoExp%5D%20OR%20%22democratic%20republic%20of%20the%20congo%22%5BMesh%3ANoExp%5D%20OR%20cyprus%5BMesh%3ANoExp%5D%20OR%20djibouti%5BMesh%3ANoExp%5D%20OR%20dominica%5BMesh%3ANoExp%5D%20OR%20%22dominican%20republic%22%5BMesh%3ANoExp%5D%20OR%20ecuador%5BMesh%3ANoExp%5D%20OR%20egypt%5BMesh%3ANoExp%5D%20OR%20%22el%20salvador%22%5BMesh%3ANoExp%5D%20OR%20%22equatorial%20guinea%22%5BMesh%3ANoExp%5D%20OR%20eritrea%5BMesh%3ANoExp%5D%20OR%20eswatini%5BMesh%3ANoExp%5D%20OR%20ethiopia%5BMesh%3ANoExp%5D%20OR%20fiji%5BMesh%3ANoExp%5D%20OR%20gabon%5BMesh%3ANoExp%5D%20OR%20gambia%5BMesh%3ANoExp%5D%20OR%20%22georgia%20(republic)%22%5BMesh%3ANoExp%5D%20OR%20ghana%5BMesh%3ANoExp%5D%20OR%20grenada%5BMesh%3ANoExp%5D%20OR%20guatemala%5BMesh%3ANoExp%5D%20OR%20guinea%5BMesh%3ANoExp%5D%20OR%20guinea-bissau%5BMesh%3ANoExp%5D%20OR%20guyana%5BMesh%3ANoExp%5D%20OR%20haiti%5BMesh%3ANoExp%5D%20OR%20honduras%5BMesh%3ANoExp%5D%20OR%20%22independent%20state%20of%20samoa%22%5BMesh%3ANoExp%5D%20OR%20india%5BMesh%5D%20OR%20%22indian%20ocean%20islands%22%5BMesh%3ANoExp%5D%20OR%20indochina%5BMesh%3ANoExp%5D%20OR%20indonesia%5BMesh%3ANoExp%5D%20OR%20iran%5BMesh%3ANoExp%5D%20OR%20iraq%5BMesh%3ANoExp%5D%20OR%20jamaica%5BMesh%3ANoExp%5D%20OR%20jordan%5BMesh%3ANoExp%5D%20OR%20kazakhstan%5BMesh%3ANoExp%5D%20OR%20kenya%5BMesh%3ANoExp%5D%20OR%20kosovo%5BMesh%3ANoExp%5D%20OR%20kuwait%5BMesh%3ANoExp%5D%20OR%20kyrgyzstan%5BMesh%3ANoExp%5D%20OR%20laos%5BMesh%3ANoExp%5D%20OR%20lebanon%5BMesh%3ANoExp%5D%20OR%20liechtenstein%5BMesh%3ANoExp%5D%20OR%20lesotho%5BMesh%3ANoExp%5D%20OR%20liberia%5BMesh%3ANoExp%5D%20OR%20libya%5BMesh%3ANoExp%5D%20OR%20madagascar%5BMesh%3ANoExp%5D%20OR%20malaysia%5BMesh%3ANoExp%5D%20OR%20malawi%5BMesh%3ANoExp%5D%20OR%20mali%5BMesh%3ANoExp%5D%20OR%20malta%5BMesh%3ANoExp%5D%20OR%20mauritania%5BMesh%3ANoExp%5D%20OR%20mauritius%5BMesh%3ANoExp%5D%20OR%20%22mekong%20valley%22%5BMesh%3ANoExp%5D%20OR%20melanesia%5BMesh%3ANoExp%5D%20OR%20micronesia%5BMesh%3ANoExp%5D%20OR%20monaco%5BMesh%3ANoExp%5D%20OR%20mongolia%5BMesh%3ANoExp%5D%20OR%20montenegro%5BMesh%3ANoExp%5D%20OR%20morocco%5BMesh%3ANoExp%5D%20OR%20mozambique%5BMesh%3ANoExp%5D%20OR%20myanmar%5BMesh%3ANoExp%5D%20OR%20namibia%5BMesh%3ANoExp%5D%20OR%20nepal%5BMesh%3ANoExp%5D%20OR%20nicaragua%5BMesh%3ANoExp%5D%20OR%20niger%5BMesh%3ANoExp%5D%20OR%20nigeria%5BMesh%3ANoExp%5D%20OR%20oman%5BMesh%3ANoExp%5D%20OR%20pakistan%5BMesh%3ANoExp%5D%20OR%20palau%5BMesh%3ANoExp%5D%20OR%20panama%5BMesh%5D%20OR%20%22papua%20new%20guinea%22%5BMesh%3ANoExp%5D%20OR%20paraguay%5BMesh%3ANoExp%5D%20OR%20peru%5BMesh%3ANoExp%5D%20OR%20philippines%5BMesh%3ANoExp%5D%20OR%20qatar%5BMesh%3ANoExp%5D%20OR%20%22republic%20of%20belarus%22%5BMesh%3ANoExp%5D%20OR%20%22republic%20of%20north%20macedonia%22%5BMesh%3ANoExp%5D%20OR%20romania%5BMesh%3ANoExp%5D%20OR%20russia%5BMesh%5D%20OR%20rwanda%5BMesh%3ANoExp%5D%20OR%20%22saint%20kitts%20and%20nevis%22%5BMesh%3ANoExp%5D%20OR%20%22saint%20lucia%22%5BMesh%3ANoExp%5D%20OR%20%22saint%20vincent%20and%20the%20grenadines%22%5BMesh%3ANoExp%5D%20OR%20%22sao%20tome%20and%20principe%22%5BMesh%3ANoExp%5D%20OR%20%22saudi%20arabia%22%5BMesh%3ANoExp%5D%20OR%20serbia%5BMesh%3ANoExp%5D%20OR%20%22sierra%20leone%22%5BMesh%3ANoExp%5D%20OR%20senegal%5BMesh%3ANoExp%5D%20OR%20seychelles%5BMesh%3ANoExp%5D%20OR%20singapore%5BMesh%3ANoExp%5D%20OR%20somalia%5BMesh%3ANoExp%5D%20OR%20%22south%20sudan%22%5BMesh%3ANoExp%5D%20OR%20%22sri%20lanka%22%5BMesh%3ANoExp%5D%20OR%20sudan%5BMesh%3ANoExp%5D%20OR%20suriname%5BMesh%3ANoExp%5D%20OR%20syria%5BMesh%3ANoExp%5D%20OR%20taiwan%5BMesh%3ANoExp%5D%20OR%20tajikistan%5BMesh%3ANoExp%5D%20OR%20tanzania%5BMesh%3ANoExp%5D%20OR%20thailand%5BMesh%3ANoExp%5D%20OR%20timor-leste%5BMesh%3ANoExp%5D%20OR%20togo%5BMesh%3ANoExp%5D%20OR%20tonga%5BMesh%3ANoExp%5D%20OR%20%22trinidad%20and%20tobago%22%5BMesh%3ANoExp%5D%20OR%20tunisia%5BMesh%3ANoExp%5D%20OR%20turkmenistan%5BMesh%3ANoExp%5D%20OR%20uganda%5BMesh%3ANoExp%5D%20OR%20ukraine%5BMesh%3ANoExp%5D%20OR%20%22united%20arab%20emirates%22%5BMesh%3ANoExp%5D%20OR%20uruguay%5BMesh%3ANoExp%5D%20OR%20uzbekistan%5BMesh%3ANoExp%5D%20OR%20vanuatu%5BMesh%3ANoExp%5D%20OR%20venezuela%5BMesh%3ANoExp%5D%20OR%20vietnam%5BMesh%3ANoExp%5D%20OR%20%22west%20indies%22%5BMesh%3ANoExp%5D%20OR%20yemen%5BMesh%3ANoExp%5D%20OR%20zambia%5BMesh%3ANoExp%5D%20OR%20zimbabwe%5BMesh%3ANoExp%5D)%20NOT%20(%22Organisation%20for%20Economic%20Co-Operation%20and%20Development%22%5BMesh%3ANoExp%5D%20OR%20(Australasia%5BMesh%3ANoExp%5D%20OR%20australia%5BMesh%5D%20OR%20austria%5BMesh%3ANoExp%5D%20OR%20%22baltic%20states%22%5BMesh%3ANoExp%5D%20OR%20belgium%5BMesh%3ANoExp%5D%20OR%20canada%5BMesh%5D%20OR%20chile%5BMesh%3ANoExp%5D%20OR%20colombia%5BMesh%3ANoExp%5D%20OR%20%22costa%20rica%22%5BMesh%3ANoExp%5D%20OR%20%22czech%20republic%22%5BMesh%3ANoExp%5D%20OR%20denmark%5BMesh%5D%20OR%20estonia%5BMesh%3ANoExp%5D%20OR%20europe%5BMesh%3ANoExp%5D%20OR%20finland%5BMesh%3ANoExp%5D%20OR%20france%5BMesh%5D%20OR%20germany%5BMesh%5D%20OR%20greece%5BMesh%3ANoExp%5D%20OR%20hungary%5BMesh%3ANoExp%5D%20OR%20iceland%5BMesh%3ANoExp%5D%20OR%20ireland%5BMesh%3ANoExp%5D%20OR%20israel%5BMesh%3ANoExp%5D%20OR%20italy%5BMesh%5D%20OR%20japan%5BMesh%5D%20OR%20korea%5BMesh%3ANoExp%5D%20OR%20latvia%5BMesh%3ANoExp%5D%20OR%20lithuania%5BMesh%3ANoExp%5D%20OR%20luxembourg%5BMesh%3ANoExp%5D%20OR%20mexico%5BMesh%3ANoExp%5D%20OR%20netherlands%5BMesh%3ANoExp%5D%20OR%20%22new%20zealand%22%5BMesh%3ANoExp%5D%20OR%20%22north%20america%22%5BMesh%3ANoExp%5D%20OR%20norway%5BMesh%5D%20OR%20poland%5BMesh%3ANoExp%5D%20OR%20portugal%5BMesh%3ANoExp%5D%20OR%20%22republic%20of%20korea%22%5BMesh%5D%20OR%20%22scandinavian%20and%20nordic%20countries%22%5BMesh%3ANoExp%5D%20OR%20slovakia%5BMesh%3ANoExp%5D%20OR%20slovenia%5BMesh%3ANoExp%5D%20OR%20spain%5BMesh%3ANoExp%5D%20OR%20sweden%5BMesh%3ANoExp%5D%20OR%20switzerland%5BMesh%3ANoExp%5D%20OR%20turkey%5BMesh%3ANoExp%5D%20OR%20%22united%20kingdom%22%5BMesh%5D%20OR%20%22united%20states%22%5BMesh%5D)OR%20%22European%20Union%22%5BMesh%3ANoExp%5D%20OR%20%22Developed%20Countries%22%5BMesh%3ANoExp%5D)))%20AND%20(%22last%2030%20days%22%5Bdp%5D)&size=50"
+                            target="_blank"
+                            rel="noopener"
+                            style="color: #f59e0b"
+                            >Ver búsqueda</a
+                          >
                         </p>
                       </div>
-                    </a>
-                    <a
-                      href="https://drive.google.com/file/d/18KwwuLOOHR7wHn_L_HEfW0CFZf8yngrr/view"
-                      target="_blank"
-                      rel="noopener"
-                      class="glass-panel clickable-output-card"
+                    </div>
+                    <!-- Reproductor de audio -->
+                    <div
                       style="
-                        text-decoration: none;
-                        padding: 6px 10px;
-                        border-left: 4px solid var(--primary);
                         display: flex;
                         align-items: center;
-                        gap: 10px;
-                        animation-delay: 0.4s;
+                        gap: 8px;
+                        margin-top: 5px;
+                        padding-left: 32px;
                       "
                     >
-                      <span style="font-size: 1.3em">📊</span>
-                      <div style="text-align: left">
-                        <h4
-                          style="
-                            color: var(--primary);
-                            margin: 0;
-                            font-size: 0.75em;
-                          "
-                        >
-                          Presentación
-                        </h4>
-                        <p
-                          style="
-                            font-size: 0.58em;
-                            color: var(--text-muted);
-                            margin: 0;
-                          "
-                        >
-                          Diapositivas PDF · Google Drive
-                        </p>
-                      </div>
-                    </a>
-                    <a
-                      href="https://www.youtube.com/watch?v=ezMVCZtmUeA"
-                      target="_blank"
-                      rel="noopener"
-                      class="glass-panel clickable-output-card"
-                      style="
-                        text-decoration: none;
-                        padding: 6px 10px;
-                        border-left: 4px solid #a855f7;
-                        display: flex;
-                        align-items: center;
-                        gap: 10px;
-                        animation-delay: 0.8s;
-                      "
-                    >
-                      <span style="font-size: 1.3em">🎬</span>
-                      <div style="text-align: left">
-                        <h4
-                          style="color: #a855f7; margin: 0; font-size: 0.75em"
-                        >
-                          Vídeo
-                        </h4>
-                        <p
-                          style="
-                            font-size: 0.58em;
-                            color: var(--text-muted);
-                            margin: 0;
-                          "
-                        >
-                          Resumen visual narrado · YouTube
-                        </p>
-                      </div>
-                    </a>
+                      <i
+                        class="fa-solid fa-headphones"
+                        style="color: #f59e0b; font-size: 0.75em"
+                      ></i>
+                      <audio
+                        controls
+                        preload="none"
+                        style="width: 100%; height: 26px; opacity: 0.85"
+                      >
+                        <source
+                          src="aepap-2026/assets/podcast_ultimo_mes_pediatria.m4a"
+                          type="audio/mp4"
+                        />
+                      </audio>
+                    </div>
                   </div>
+
+                  <!-- Output 3: Presentación -->
+                  <a
+                    href="https://drive.google.com/file/d/18KwwuLOOHR7wHn_L_HEfW0CFZf8yngrr/view"
+                    target="_blank"
+                    rel="noopener"
+                    class="glass-panel clickable-output-card"
+                    style="
+                      text-decoration: none;
+                      padding: 6px 10px;
+                      border-left: 4px solid var(--primary);
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                    "
+                  >
+                    <span style="font-size: 1.2em">📊</span>
+                    <div style="text-align: left; flex: 1">
+                      <h4
+                        style="
+                          color: var(--primary);
+                          margin: 0;
+                          font-size: 0.72em;
+                        "
+                      >
+                        Presentación
+                      </h4>
+                      <p
+                        style="
+                          font-size: 0.52em;
+                          color: var(--text-muted);
+                          margin: 0;
+                        "
+                      >
+                        Diapositivas para sesión clínica · Google Drive
+                      </p>
+                    </div>
+                  </a>
+
+                  <!-- Output 4: Vídeo -->
+                  <a
+                    href="https://www.youtube.com/watch?v=ezMVCZtmUeA"
+                    target="_blank"
+                    rel="noopener"
+                    class="glass-panel clickable-output-card"
+                    style="
+                      text-decoration: none;
+                      padding: 6px 10px;
+                      border-left: 4px solid #a855f7;
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                    "
+                  >
+                    <span style="font-size: 1.2em">🎬</span>
+                    <div style="text-align: left; flex: 1">
+                      <h4 style="color: #a855f7; margin: 0; font-size: 0.72em">
+                        Vídeo
+                      </h4>
+                      <p
+                        style="
+                          font-size: 0.52em;
+                          color: var(--text-muted);
+                          margin: 0;
+                        "
+                      >
+                        Resumen visual narrado · YouTube
+                      </p>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <!-- Caja de contexto -->
+            <!-- Caja de seguridad RAG -->
             <div
               class="glass-panel"
               style="
-                max-width: 950px;
-                margin: 12px auto;
+                max-width: 1030px;
+                margin: 8px auto 0;
                 background: rgba(52, 211, 153, 0.08);
                 border: 1px solid var(--secondary);
               "
             >
-              <p style="font-size: 0.78em; text-align: center; margin: 0">
+              <p style="font-size: 0.72em; text-align: center; margin: 0">
                 <i
                   class="fa-solid fa-shield-halved"
                   style="color: var(--secondary); margin-right: 8px"
                 ></i>
-                <strong>¿Por qué NotebookLM?</strong> RAG sobre
-                <em>tus</em> fuentes → cita artículo y revista · No alucina
-                fuera de lo que le das · Gratis
+                <strong>Cada cita incluye artículo y revista de origen</strong>
+                · No alucina fuera de lo que le das · Verificable
               </p>
             </div>
 
-            <!-- Subtítulo del caso de uso -->
-            <div
-              class="glass-panel"
-              style="max-width: 950px; margin: 8px auto; padding: 8px 14px"
-            >
-              <p
-                style="
-                  font-size: 0.72em;
-                  text-align: center;
-                  margin: 0;
-                  color: var(--text-muted);
-                "
-              >
-                <i
-                  class="fa-solid fa-stethoscope"
-                  style="color: var(--primary); margin-right: 6px"
-                ></i>
-                <strong style="color: var(--text-main)">Caso de uso:</strong>
-                "Tu dosis periódica de evidencia" — TDAH · TEA · Bronquiolitis ·
-                Asma · IVRS · Otitis · GEA · Dermatitis atópica · Obesidad ·
-                Ansiedad
-              </p>
-            </div>
-
-            <p class="source-note">
-              Filtro PubMed: RS/MA · Último mes · Población pediátrica · Países
-              OCDE ·
-              <a
-                href="https://pubmed.ncbi.nlm.nih.gov/?term=((((hasabstract%20AND%20(%20%20%20%22Child%22%5BMesh%5D%20OR%20%22Infant%22%5BMesh%5D%20OR%20%22Adolescent%22%5BMesh%5D%20OR%20%20%20pediatric*%5Btiab%5D%20OR%20paediatric*%5Btiab%5D%20%20)%20%20AND%20%20(%20(%20%20%20%22Attention%20Deficit%20Disorder%20with%20Hyperactivity%22%5BMesh%5D%20%20%20OR%20ADHD%5Btiab%5D%20OR%20TDAH%5Btiab%5D%20%20%20OR%20%22attention%20deficit%20hyperactivity%22%5Btiab%3A~2%5D%20%20%20OR%20%22attention%20deficit%20disorder%22%5Btiab%5D%20%20%20OR%20%22hyperkinetic%20disorder*%22%5Btiab%5D%20)%20OR%20(%20%20%20%22Autism%20Spectrum%20Disorder%22%5BMesh%5D%20%20%20OR%20autism%5Btiab%5D%20OR%20autistic%5Btiab%5D%20%20%20OR%20ASD%5Btiab%5D%20OR%20TEA%5Btiab%5D%20%20%20OR%20%22trastorno*%20del%20espectro%20autista%22%5Btiab%5D%20)%20OR%20(%20%20%20%22Bronchiolitis%22%5BMesh%5D%20%20%20OR%20bronchiolitis%5Btiab%5D%20OR%20bronquiolitis%5Btiab%5D%20%20%20OR%20RSV%5Btiab%5D%20%20%20OR%20%22respiratory%20syncytial%20virus%22%5Btiab%5D%20%20%20OR%20%22virus%20sincitial%20respiratorio%22%5Btiab%5D%20)%20OR%20(%20%20%20%22Asthma%22%5BMesh%5D%20%20%20OR%20asthma%5Btiab%5D%20%20%20OR%20wheez*%5Btiab%5D%20%20%20OR%20sibilanc*%5Btiab%5D%20%20%20OR%20%22episodic%20viral%20wheez*%22%5Btiab%5D%20%20%20OR%20%22recurrent%20wheez*%22%5Btiab%5D%20)%20OR%20(%20%20%20%22Upper%20Respiratory%20Tract%20Infections%22%5BMesh%5D%20%20%20OR%20%22respiratory%20tract%20infection*%22%5Btiab%5D%20%20%20OR%20%22upper%20respiratory%22%5Btiab%5D%20%20%20OR%20%22common%20cold%22%5Btiab%5D%20%20%20OR%20%22upper%20respiratory%20infection*%22%5Btiab%5D%20%20%20OR%20resfriado*%5Btiab%5D%20%20%20OR%20catarro*%5Btiab%5D%20)%20OR%20(%20%20%20%22Otitis%20Media%22%5BMesh%5D%20%20%20OR%20otitis%5Btiab%5D%20%20%20OR%20%22otitis%20media%22%5Btiab%5D%20%20%20OR%20%22acute%20otitis%22%5Btiab%5D%20%20%20OR%20%22otitis%20media%20with%20effusion%22%5Btiab%5D%20%20%20OR%20%22otitis%20media%20aguda%22%5Btiab%5D%20)%20OR%20(%20%20%20%22Gastroenteritis%22%5BMesh%5D%20%20%20OR%20gastroenteritis%5Btiab%5D%20%20%20OR%20diarrhea%5Btiab%5D%20OR%20diarrhoea%5Btiab%5D%20OR%20diarrea%5Btiab%5D%20%20%20OR%20vomiting%5Btiab%5D%20OR%20v%C3%B3mit*%5Btiab%5D%20)%20OR%20(%20%20%20%22Dermatitis%2C%20Atopic%22%5BMesh%5D%20%20%20OR%20%22atopic%20dermatitis%22%5Btiab%5D%20%20%20OR%20%22dermatitis%20atopic*%22%5Btiab%5D%20%20%20OR%20%22dermatitis%20at%C3%B3pica%22%5Btiab%5D%20%20%20OR%20eczema%5Btiab%5D%20OR%20eccema%5Btiab%5D%20)%20OR%20(%20%20%20%22Obesity%22%5BMesh%5D%20%20%20OR%20%22Pediatric%20Obesity%22%5BMesh%5D%20%20%20OR%20obes*%5Btiab%5D%20%20%20OR%20overweight%5Btiab%5D%20%20%20OR%20sobrepeso%5Btiab%5D%20%20%20OR%20%22body%20mass%20index%22%5Btiab%5D%20%20%20OR%20BMI%5Btiab%5D%20)%20OR%20(%20%20%20%22Anxiety%20Disorders%22%5BMesh%5D%20%20%20OR%20anxiety%5Btiab%5D%20OR%20anxious%5Btiab%5D%20%20%20OR%20%22trastorno*%20de%20ansiedad%22%5Btiab%5D%20%20%20OR%20%22social%20anxiety%22%5Btiab%5D%20%20%20OR%20%22generalized%20anxiety%22%5Btiab%5D%20)%20OR%20(%20%22Fever%22%5BMesh%5D%20OR%20%22Fever%20of%20Unknown%20Origin%22%5BMesh%5D%20OR%20fever%5Btiab%5D%20OR%20febrile%5Btiab%5D%20OR%20%22fiebre%20sin%20foco%22%5Btiab%5D%20)%20OR%20(%20%22Constipation%22%5BMesh%5D%20OR%20constipation%5Btiab%5D%20OR%20estre%C3%B1imiento%5Btiab%5D%20OR%20%22functional%20constipation%22%5Btiab%5D%20OR%20encopresis%5Btiab%5D%20)%20)%20%20AND%20(adolescent%5BFilter%5D%20OR%20allchild%5BFilter%5D%20OR%20allinfant%5BFilter%5D%20OR%20child%5BFilter%5D%20OR%20infant%5BFilter%5D%20OR%20newborn%5BFilter%5D%20OR%20preschoolchild%5BFilter%5D))%20AND%20((systematic%5Bsb%5D%7C%22meta-analysis%22%5Bpt%5D%7C%22meta-analysis%20as%20topic%22%5Bmh%5D%7Cmeta%20analy*%5Btw%5D%7Cmetanaly*%5Btw%5D%7Cmetaanaly*%5Btw%5D%7Cmet%20analy*%5Btw%5D%7Cintegrative%20research%5Btiab%5D%7Cintegrative%20review*%5Btiab%5D%7Cintegrative%20overview*%5Btiab%5D%7Cresearch%20integration*%5Btiab%5D%7Cresearch%20overview*%5Btiab%5D%7Ccollaborative%20review*%5Btiab%5D%7Ccollaborative%20overview*%5Btiab%5D%7C%22systematic%20review%22%5Bpt%5D%7C%22systematic%20reviews%20as%20topic%22%5Bmh%5D%7Csystematic%20review*%5Btiab%5D%7Ctechnology%20assessment*%5Btiab%5D%7Ctechnology%20overview*%5Btiab%5D%7Ctechnology%20appraisal*%5Btiab%5D%7C%22Technology%20Assessment%2C%20Biomedical%22%5Bmh%5D%7CHTA%5Btiab%5D%7CHTAs%5Btiab%5D%7Ccomparative%20efficacy%5Btiab%5D%7Ccomparative%20effectiveness%5Btiab%5D%7Coutcomes%20research%5Btiab%5D%7Cindirect%20comparison*%5Btiab%5D%7CBayesian%20comparison%5Btiab%5D%7C((indirect%20treatment%5Btiab%5D%7Cmixed-treatment%5Btiab%5D)%20AND%20comparison*%5Btiab%5D)%7CEmbase*%5Btiab%5D%7CCinahl*%5Btiab%5D%7Csystematic%20overview*%5Btiab%5D%7Cmethodological%20overview*%5Btiab%5D%7Cmethodologic%20overview*%5Btiab%5D%7Cmethodological%20review*%5Btiab%5D%7Cmethodologic%20review*%5Btiab%5D%7Cquantitative%20review*%5Btiab%5D%7C%20quantitative%20overview*%5Btiab%5D%7Cquantitative%20synthes*%5Btiab%5D%7Cpooled%20analy*%5Btiab%5D%7CCochrane%5Btiab%5D%7CMedline%5Btiab%5D%7CPubmed%5Btiab%5D%7CMedlars%5Btiab%5D%7Chandsearch*%5Btiab%5D%7Chand%20search*%5Btiab%5D%7Cmeta-regression*%5Btiab%5D%7Cmetaregression*%5Btiab%5D%7Cdata%20synthes*%5Btiab%5D%7Cdata%20extraction%5Btiab%5D%7Cdata%20abstraction*%5Btiab%5D%7Cmantel%20haenszel%5Btiab%5D%7Cpeto%5Btiab%5D%7Cder-simonian%5Btiab%5D%7Cdersimonian%5Btiab%5D%7Cfixed%20effect*%5Btiab%5D%7Cmultiple%20treatment%20comparison%5Btiab%5D%7Cmixed%20treatment%20meta-analys*%5Btiab%5D%7Cumbrella%20review*%5Btiab%5D%7C((multiple%20paramet*%5Btiab%5D)%20AND%20(evidence%20synthesis%5Btiab%5D))%7C((multi-paramet*%5Btiab%5D)%20AND%20(evidence%20synthesis%5Btiab%5D))%7C((multiparameter*%5Btiab%5D)%20AND%20(evidence%20synthesis%5Btiab%5D))%7C%22Cochrane%20Database%20Syst%20Rev%22%5BTA%5D%7C%22health%20technology%20assessment%20winchester%2C%20england%22%5BTA%5D%7C%20%22Evid%20Rep%20Technol%20Assess%20(Full%20Rep)%22%5BTA%5D%7C%22Evid%20Rep%20Technol%20Assess%20(Summ)%22%5BTA%5D%7C%22Int%20J%20Technol%20Assess%20Health%20Care%22%5BTA%5D%7C%22GMS%20Health%20Technol%20Assess%22%5BTA%5D%7C%22Health%20Technol%20Assess%20(Rockv)%22%5BTA%5D%7C%22Health%20Technol%20Assess%20Rep%22%5BTA%5D)))%20AND%20((Infan*%7Cnewborn*%7Cnew-born*%7Cperinat*%7Cneonat*%7Cbaby*%7Cbabies%7Ctoddler*%7Cminors%7Cminors*%7Cboy%7Cboys%7Cboyfriend%7Cboyhood%7Cgirl*%7Ckid%7Ckids%7Cchild%7Cchild*%7Cchildren*%7Cschoolchild*%7Cschool%20child%5Btiab%5D%7Cschool%20child*%5Btiab%5D%7Cadolescen*%7Cjuvenil*%7Cyouth*%7Cteen*%7Cunder*age*%7Cpubescen*%7Cpediatrics%5Bmh%5D%7Cpediatric*%7Cpaediatric*%7Cpeadiatric*%7Cschool%5Btiab%5D%7Cschool*%5Btiab%5D%7Cprematur*%7Cpreterm*)))%20NOT%20((afghanistan%5BMesh%3ANoExp%5D%20OR%20africa%5BMesh%3ANoExp%5D%20OR%20%22africa%2C%20northern%22%5BMesh%3ANoExp%5D%20OR%20%22africa%2C%20central%22%5BMesh%3ANoExp%5D%20OR%20%22africa%2C%20eastern%22%5BMesh%3ANoExp%5D%20OR%20%22africa%20south%20of%20the%20sahara%22%5BMesh%3ANoExp%5D%20OR%20%22africa%2C%20southern%22%5BMesh%3ANoExp%5D%20OR%20%22africa%2C%20western%22%5BMesh%3ANoExp%5D%20OR%20albania%5BMesh%3ANoExp%5D%20OR%20algeria%5BMesh%3ANoExp%5D%20OR%20andorra%5BMesh%3ANoExp%5D%20OR%20angola%5BMesh%3ANoExp%5D%20OR%20%22antigua%20and%20barbuda%22%5BMesh%3ANoExp%5D%20OR%20argentina%5BMesh%3ANoExp%5D%20OR%20armenia%5BMesh%3ANoExp%5D%20OR%20azerbaijan%5BMesh%3ANoExp%5D%20OR%20bahamas%5BMesh%3ANoExp%5D%20OR%20bahrain%5BMesh%3ANoExp%5D%20OR%20bangladesh%5BMesh%3ANoExp%5D%20OR%20barbados%5BMesh%3ANoExp%5D%20OR%20belize%5BMesh%3ANoExp%5D%20OR%20benin%5BMesh%3ANoExp%5D%20OR%20bhutan%5BMesh%3ANoExp%5D%20OR%20bolivia%5BMesh%3ANoExp%5D%20OR%20borneo%5BMesh%3ANoExp%5D%20OR%20%22bosnia%20and%20herzegovina%22%5BMesh%3ANoExp%5D%20OR%20botswana%5BMesh%3ANoExp%5D%20OR%20brazil%5BMesh%3ANoExp%5D%20OR%20brunei%5BMesh%3ANoExp%5D%20OR%20bulgaria%5BMesh%3ANoExp%5D%20OR%20%22burkina%20faso%22%5BMesh%3ANoExp%5D%20OR%20burundi%5BMesh%3ANoExp%5D%20OR%20%22cabo%20verde%22%5BMesh%3ANoExp%5D%20OR%20cambodia%5BMesh%3ANoExp%5D%20OR%20cameroon%5BMesh%3ANoExp%5D%20OR%20%22central%20african%20republic%22%5BMesh%3ANoExp%5D%20OR%20chad%5BMesh%3ANoExp%5D%20OR%20china%5BMesh%5D%20OR%20comoros%5BMesh%3ANoExp%5D%20OR%20congo%5BMesh%3ANoExp%5D%20OR%20croatia%5BMesh%3ANoExp%5D%20OR%20cuba%5BMesh%3ANoExp%5D%20OR%20%22democratic%20republic%20of%20the%20congo%22%5BMesh%3ANoExp%5D%20OR%20cyprus%5BMesh%3ANoExp%5D%20OR%20djibouti%5BMesh%3ANoExp%5D%20OR%20dominica%5BMesh%3ANoExp%5D%20OR%20%22dominican%20republic%22%5BMesh%3ANoExp%5D%20OR%20ecuador%5BMesh%3ANoExp%5D%20OR%20egypt%5BMesh%3ANoExp%5D%20OR%20%22el%20salvador%22%5BMesh%3ANoExp%5D%20OR%20%22equatorial%20guinea%22%5BMesh%3ANoExp%5D%20OR%20eritrea%5BMesh%3ANoExp%5D%20OR%20eswatini%5BMesh%3ANoExp%5D%20OR%20ethiopia%5BMesh%3ANoExp%5D%20OR%20fiji%5BMesh%3ANoExp%5D%20OR%20gabon%5BMesh%3ANoExp%5D%20OR%20gambia%5BMesh%3ANoExp%5D%20OR%20%22georgia%20(republic)%22%5BMesh%3ANoExp%5D%20OR%20ghana%5BMesh%3ANoExp%5D%20OR%20grenada%5BMesh%3ANoExp%5D%20OR%20guatemala%5BMesh%3ANoExp%5D%20OR%20guinea%5BMesh%3ANoExp%5D%20OR%20guinea-bissau%5BMesh%3ANoExp%5D%20OR%20guyana%5BMesh%3ANoExp%5D%20OR%20haiti%5BMesh%3ANoExp%5D%20OR%20honduras%5BMesh%3ANoExp%5D%20OR%20%22independent%20state%20of%20samoa%22%5BMesh%3ANoExp%5D%20OR%20india%5BMesh%5D%20OR%20%22indian%20ocean%20islands%22%5BMesh%3ANoExp%5D%20OR%20indochina%5BMesh%3ANoExp%5D%20OR%20indonesia%5BMesh%3ANoExp%5D%20OR%20iran%5BMesh%3ANoExp%5D%20OR%20iraq%5BMesh%3ANoExp%5D%20OR%20jamaica%5BMesh%3ANoExp%5D%20OR%20jordan%5BMesh%3ANoExp%5D%20OR%20kazakhstan%5BMesh%3ANoExp%5D%20OR%20kenya%5BMesh%3ANoExp%5D%20OR%20kosovo%5BMesh%3ANoExp%5D%20OR%20kuwait%5BMesh%3ANoExp%5D%20OR%20kyrgyzstan%5BMesh%3ANoExp%5D%20OR%20laos%5BMesh%3ANoExp%5D%20OR%20lebanon%5BMesh%3ANoExp%5D%20OR%20liechtenstein%5BMesh%3ANoExp%5D%20OR%20lesotho%5BMesh%3ANoExp%5D%20OR%20liberia%5BMesh%3ANoExp%5D%20OR%20libya%5BMesh%3ANoExp%5D%20OR%20madagascar%5BMesh%3ANoExp%5D%20OR%20malaysia%5BMesh%3ANoExp%5D%20OR%20malawi%5BMesh%3ANoExp%5D%20OR%20mali%5BMesh%3ANoExp%5D%20OR%20malta%5BMesh%3ANoExp%5D%20OR%20mauritania%5BMesh%3ANoExp%5D%20OR%20mauritius%5BMesh%3ANoExp%5D%20OR%20%22mekong%20valley%22%5BMesh%3ANoExp%5D%20OR%20melanesia%5BMesh%3ANoExp%5D%20OR%20micronesia%5BMesh%3ANoExp%5D%20OR%20monaco%5BMesh%3ANoExp%5D%20OR%20mongolia%5BMesh%3ANoExp%5D%20OR%20montenegro%5BMesh%3ANoExp%5D%20OR%20morocco%5BMesh%3ANoExp%5D%20OR%20mozambique%5BMesh%3ANoExp%5D%20OR%20myanmar%5BMesh%3ANoExp%5D%20OR%20namibia%5BMesh%3ANoExp%5D%20OR%20nepal%5BMesh%3ANoExp%5D%20OR%20nicaragua%5BMesh%3ANoExp%5D%20OR%20niger%5BMesh%3ANoExp%5D%20OR%20nigeria%5BMesh%3ANoExp%5D%20OR%20oman%5BMesh%3ANoExp%5D%20OR%20pakistan%5BMesh%3ANoExp%5D%20OR%20palau%5BMesh%3ANoExp%5D%20OR%20panama%5BMesh%5D%20OR%20%22papua%20new%20guinea%22%5BMesh%3ANoExp%5D%20OR%20paraguay%5BMesh%3ANoExp%5D%20OR%20peru%5BMesh%3ANoExp%5D%20OR%20philippines%5BMesh%3ANoExp%5D%20OR%20qatar%5BMesh%3ANoExp%5D%20OR%20%22republic%20of%20belarus%22%5BMesh%3ANoExp%5D%20OR%20%22republic%20of%20north%20macedonia%22%5BMesh%3ANoExp%5D%20OR%20romania%5BMesh%3ANoExp%5D%20OR%20russia%5BMesh%5D%20OR%20rwanda%5BMesh%3ANoExp%5D%20OR%20%22saint%20kitts%20and%20nevis%22%5BMesh%3ANoExp%5D%20OR%20%22saint%20lucia%22%5BMesh%3ANoExp%5D%20OR%20%22saint%20vincent%20and%20the%20grenadines%22%5BMesh%3ANoExp%5D%20OR%20%22sao%20tome%20and%20principe%22%5BMesh%3ANoExp%5D%20OR%20%22saudi%20arabia%22%5BMesh%3ANoExp%5D%20OR%20serbia%5BMesh%3ANoExp%5D%20OR%20%22sierra%20leone%22%5BMesh%3ANoExp%5D%20OR%20senegal%5BMesh%3ANoExp%5D%20OR%20seychelles%5BMesh%3ANoExp%5D%20OR%20singapore%5BMesh%3ANoExp%5D%20OR%20somalia%5BMesh%3ANoExp%5D%20OR%20%22south%20sudan%22%5BMesh%3ANoExp%5D%20OR%20%22sri%20lanka%22%5BMesh%3ANoExp%5D%20OR%20sudan%5BMesh%3ANoExp%5D%20OR%20suriname%5BMesh%3ANoExp%5D%20OR%20syria%5BMesh%3ANoExp%5D%20OR%20taiwan%5BMesh%3ANoExp%5D%20OR%20tajikistan%5BMesh%3ANoExp%5D%20OR%20tanzania%5BMesh%3ANoExp%5D%20OR%20thailand%5BMesh%3ANoExp%5D%20OR%20timor-leste%5BMesh%3ANoExp%5D%20OR%20togo%5BMesh%3ANoExp%5D%20OR%20tonga%5BMesh%3ANoExp%5D%20OR%20%22trinidad%20and%20tobago%22%5BMesh%3ANoExp%5D%20OR%20tunisia%5BMesh%3ANoExp%5D%20OR%20turkmenistan%5BMesh%3ANoExp%5D%20OR%20uganda%5BMesh%3ANoExp%5D%20OR%20ukraine%5BMesh%3ANoExp%5D%20OR%20%22united%20arab%20emirates%22%5BMesh%3ANoExp%5D%20OR%20uruguay%5BMesh%3ANoExp%5D%20OR%20uzbekistan%5BMesh%3ANoExp%5D%20OR%20vanuatu%5BMesh%3ANoExp%5D%20OR%20venezuela%5BMesh%3ANoExp%5D%20OR%20vietnam%5BMesh%3ANoExp%5D%20OR%20%22west%20indies%22%5BMesh%3ANoExp%5D%20OR%20yemen%5BMesh%3ANoExp%5D%20OR%20zambia%5BMesh%3ANoExp%5D%20OR%20zimbabwe%5BMesh%3ANoExp%5D)%20NOT%20(%22Organisation%20for%20Economic%20Co-Operation%20and%20Development%22%5BMesh%3ANoExp%5D%20OR%20(Australasia%5BMesh%3ANoExp%5D%20OR%20australia%5BMesh%5D%20OR%20austria%5BMesh%3ANoExp%5D%20OR%20%22baltic%20states%22%5BMesh%3ANoExp%5D%20OR%20belgium%5BMesh%3ANoExp%5D%20OR%20canada%5BMesh%5D%20OR%20chile%5BMesh%3ANoExp%5D%20OR%20colombia%5BMesh%3ANoExp%5D%20OR%20%22costa%20rica%22%5BMesh%3ANoExp%5D%20OR%20%22czech%20republic%22%5BMesh%3ANoExp%5D%20OR%20denmark%5BMesh%5D%20OR%20estonia%5BMesh%3ANoExp%5D%20OR%20europe%5BMesh%3ANoExp%5D%20OR%20finland%5BMesh%3ANoExp%5D%20OR%20france%5BMesh%5D%20OR%20germany%5BMesh%5D%20OR%20greece%5BMesh%3ANoExp%5D%20OR%20hungary%5BMesh%3ANoExp%5D%20OR%20iceland%5BMesh%3ANoExp%5D%20OR%20ireland%5BMesh%3ANoExp%5D%20OR%20israel%5BMesh%3ANoExp%5D%20OR%20italy%5BMesh%5D%20OR%20japan%5BMesh%5D%20OR%20korea%5BMesh%3ANoExp%5D%20OR%20latvia%5BMesh%3ANoExp%5D%20OR%20lithuania%5BMesh%3ANoExp%5D%20OR%20luxembourg%5BMesh%3ANoExp%5D%20OR%20mexico%5BMesh%3ANoExp%5D%20OR%20netherlands%5BMesh%3ANoExp%5D%20OR%20%22new%20zealand%22%5BMesh%3ANoExp%5D%20OR%20%22north%20america%22%5BMesh%3ANoExp%5D%20OR%20norway%5BMesh%5D%20OR%20poland%5BMesh%3ANoExp%5D%20OR%20portugal%5BMesh%3ANoExp%5D%20OR%20%22republic%20of%20korea%22%5BMesh%5D%20OR%20%22scandinavian%20and%20nordic%20countries%22%5BMesh%3ANoExp%5D%20OR%20slovakia%5BMesh%3ANoExp%5D%20OR%20slovenia%5BMesh%3ANoExp%5D%20OR%20spain%5BMesh%3ANoExp%5D%20OR%20sweden%5BMesh%3ANoExp%5D%20OR%20switzerland%5BMesh%3ANoExp%5D%20OR%20turkey%5BMesh%3ANoExp%5D%20OR%20%22united%20kingdom%22%5BMesh%5D%20OR%20%22united%20states%22%5BMesh%5D)OR%20%22European%20Union%22%5BMesh%3ANoExp%5D%20OR%20%22Developed%20Countries%22%5BMesh%3ANoExp%5D)))%20AND%20(%22last%2030%20days%22%5Bdp%5D)&size=50"
-                target="_blank"
-                rel="noopener"
-                >Ver búsqueda en PubMed</a
-              >
+            <p class="source-note" style="margin-top: 4px">
+              Google NotebookLM · notebooklm.google.com · Gratuito · Máx. 50
+              fuentes por notebook
             </p>
           </section>
 
