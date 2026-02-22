@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textos de Audio (EN) - Artículos Sanitarios Clave</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .config-box {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .config-box h3 {
+            color: #fbbf24;
+            margin-top: 0;
+        }
+
+        .config-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .config-box li {
+            margin: 8px 0;
+        }
+
+        .config-box a {
+            color: #60a5fa;
+        }
+
+        .audio-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .audio-item:hover {
+            border-color: rgba(251, 191, 36, 0.4);
+        }
+
+        .audio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .audio-number {
+            background: #fbbf24;
+            color: #1a1a2e;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .audio-filename {
+            color: #94a3b8;
+            font-size: 13px;
+            font-family: monospace;
+        }
+
+        .audio-text {
+            line-height: 1.6;
+            font-size: 15px;
+            color: #d1d5db;
+            margin-bottom: 15px;
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        }
+
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            height: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #10b981, #34d399);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .counter {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .done-badge {
+            display: none;
+            background: #10b981;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .audio-item.done .done-badge {
+            display: inline;
+        }
+
+        .audio-item.done {
+            opacity: 0.6;
+        }
+
+        .audio-item.done .audio-header {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎙️ Textos de Audio para OpenTTS</h1>
+    <p class="subtitle">Biblioteca de 35 Artículos Sanitarios Clave (Narración en inglés)</p>
+
+    <div class="config-box">
+        <h3>⚙️ Configuración en OpenTTS.ai</h3>
+        <ul>
+            <li><strong>URL:</strong> <a href="https://www.opentts.ai/" target="_blank">https://www.opentts.ai/</a></li>
+            <li><strong>Rate:</strong> 1.1</li>
+            <li><strong>Pitch:</strong> 1.0</li>
+            <li><strong>Voice:</strong> Google ENGLISH (UK)</li>
+        </ul>
+        <p style="margin-top: 15px; font-size: 14px; color: #94a3b8;">
+            📁 Guarda cada audio con el nombre indicado en <code>assets/articulos_sanitarios_clave_en/</code>
+        </p>
+    </div>
+
+    <div class="counter">
+        Progreso: <span id="done-count">0</span> / <span id="total-count">0</span> audios
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill">0%</div>
+    </div>
+
+    <div id="audio-list"></div>
+
+    <script>
+        const audios = [
+            { num: "00", name: "0.webm", text: `Welcome to this annotated library of thirty-five papers that reshaped how we understand health and care. This is not simply an academic list. It is a narrated journey through clinical milestones, overlooked ideas that later changed practice, key methodological tools, and ethical questions that still matter. Each slide includes audio and a direct link to the original source. Press Space to begin.` },
+            { num: "01", name: "1.webm", text: `One suggestion before we start: do not try to read everything on screen in one pass. Let the audio guide you through the structure, then return to the text at your own pace. Each article slide has three layers: the key message, the context and relevance, and direct access to the original publication. If you prefer to move freely, press M to open the side index.` },
+            { num: "02", name: "2.webm", text: `The journey is organised in five blocks. First, clinical milestones: studies that changed treatment decisions quickly. Second, sleeping pearls: ideas that began at the margins and later moved to the centre of practice. Third, methodology: tools for deciding what evidence is reliable. Fourth, bioethics and philosophy: questions about personhood, suffering, justice and medicine's social responsibility. Fifth, key additions: five papers incorporated in this iteration for their enduring clinical and public-health impact. You can follow the full sequence or jump to the block you need.` },
+            { num: "03", name: "3.webm", text: `We begin in London, 1854. John Snow traces a cholera outbreak house by house and finds a common source: one public water pump. The striking part is this: he acts before the mechanism is known, removing the handle decades before Koch identifies the bacillus. This is the birth of modern epidemiology. It also leaves a lasting lesson: robust observational evidence can justify action, even before biology catches up.` },
+            { num: "04", name: "4.webm", text: `In 1929, a laboratory accident changed medicine. Alexander Fleming noticed that Penicillium mould was destroying nearby staphylococci and documented its antibacterial effect. He did not purify penicillin, that came later with Florey and Chain, but the foundation was laid. Before antibiotics, pneumonia, sepsis and wound infections were often fatal. This serendipitous finding opened the antibiotic era.` },
+            { num: "05", name: "5.webm", text: `Before 1948, treatments were often judged by authority, tradition and clinical impression. The MRC streptomycin trial, designed by Austin Bradford Hill, introduced concealed allocation, randomisation and blinded radiograph assessment. It is the first modern randomised controlled trial. It showed streptomycin reduced deaths from tuberculosis. More importantly, it established the method that underpins every serious trial that followed.` },
+            { num: "06", name: "6.webm", text: `In the early 1950s, when smoking was socially normal, Doll and Bradford Hill published a case-control study showing a strong association between tobacco and lung cancer. Doll himself stopped smoking once he saw the data. The later British Doctors follow-up, over five decades, made the causal link decisive. The long resistance to these findings is instructive. Economic interests and cultural habits can delay acceptance of clear evidence.` },
+            { num: "07", name: "7.webm", text: `This paper introduced a concept we now take for granted: the risk factor. Using more than five thousand adults recruited from 1948 onwards, Framingham quantified coronary risk from hypertension, raised cholesterol and left ventricular hypertrophy. Before Framingham, atherosclerosis was often treated as inevitable ageing. This work showed coronary disease is predictable, modifiable and, to an extent, preventable. It helped launch preventive cardiology as we know it.` },
+            { num: "08", name: "8.webm", text: `Here we see a cheap treatment with enormous impact. ISIS-2 enrolled over seventeen thousand patients with acute myocardial infarction across sixteen countries. Aspirin reduced vascular mortality by 23 percent; combined with streptokinase, by 42 percent. The trial also demonstrated the value of large, simple megatrials for detecting clinically important effects. Before this generation of evidence, in-hospital mortality after myocardial infarction was dramatically higher.` },
+            { num: "09", name: "9.webm", text: `The cholesterol argument changed with 4S. For the first time, a statin trial showed lower all-cause mortality, not just fewer cardiac events, in patients with coronary disease. Simvastatin reduced overall mortality by about 30 percent, and benefit was so clear the trial stopped early. Earlier interventions had left room for scepticism. 4S largely closed that debate and accelerated the statin era.` },
+            { num: "10", name: "10.webm", text: `Michael Balint offered a deceptively simple idea: in general practice, the most frequently used drug is the doctor. Like any drug, it needs indications, dose and awareness of adverse effects. Initially this sounded soft to many clinicians. In practice, it proved durable and influential. Balint groups are now part of family medicine training in many countries. The message remains current: the clinical relationship is not background, it is therapeutic.` },
+            { num: "11", name: "11.webm", text: `Julian Tudor Hart stated a law that medicine still struggles to confront: the availability of good care tends to vary inversely with need. And this pattern is strongest where care is most exposed to market forces. The phrase became famous, often quoted, less often implemented. Hart also showed an alternative in his own long-term practice, where premature mortality fell compared with neighbouring communities. It is both diagnosis and challenge.` },
+            { num: "12", name: "12.webm", text: `Archie Cochrane spent decades arguing for a simple principle: effective treatments should be identified rigorously and made accessible. In 1972 he called for an international trial register and explicit standards for judging evidence. He did not see those goals achieved in his lifetime. The Cochrane Collaboration emerged only after his death and now underpins evidence synthesis worldwide. Sometimes good ideas arrive before institutions are ready for them.` },
+            { num: "13", name: "13.webm", text: `Kleinman and colleagues drew a crucial distinction: disease is the biomedical process; illness is the lived experience of the person. They asked clinicians to explore patients' own explanatory models: what caused this, what does it mean, what is feared, what is expected. The paper was initially sidelined in mainstream medicine. Today it is foundational for cultural competence and narrative practice. It reminds us that diagnosis without meaning is incomplete care.` },
+            { num: "14", name: "14.webm", text: `Whitehall overturned a comfortable assumption. Among British civil servants, mortality rose stepwise down the occupational hierarchy, even though everyone had employment and NHS access. This was not simply about poverty; it was about status, control and social structure. The study provided hard evidence for the social gradient in health. Much of modern work on social determinants begins here.` },
+            { num: "15", name: "15.webm", text: `Ian McWhinney argued that the classic clinical method, inherited from nineteenth-century medicine, no longer met all contemporary needs. The blind spot was clear: medicine had tools for organs, but weak tools for inner experience. He called for an epistemological shift, drawing on phenomenology to understand the person in front of us. This became a philosophical base for patient-centred clinical method.` },
+            { num: "16", name: "16.webm", text: `Barbara Starfield and colleagues synthesised evidence showing that strong primary care saves lives. A modest increase in primary care physician supply was associated with meaningful reductions in mortality. The implication was policy-relevant and substantial. Yet the translation into US health policy was minimal. It is a classic case where evidence was clear, but system incentives moved in another direction.` },
+            { num: "17", name: "17.webm", text: `In 1965, Bradford Hill proposed nine viewpoints for thinking about causation in observational research: strength, consistency, temporality and others we still teach. Crucially, he did not present a rigid checklist. No single point proves causality; none is universally required. That nuance is often lost. The paper is enduring not because it gives certainty, but because it structures disciplined judgement.` },
+            { num: "18", name: "18.webm", text: `Geoffrey Rose reframed prevention with a powerful paradox. Measures that produce the greatest population benefit may offer little obvious gain to each individual. Shifting the whole risk distribution, even slightly, can outperform treating only those at highest risk. That logic explains why policies such as salt reduction or seat-belt laws are so effective and politically difficult. It remains central to public health strategy.` },
+            { num: "19", name: "19.webm", text: `Sackett and colleagues defined evidence-based medicine as the integration of best available evidence, clinical expertise and patient values. Not protocol worship, and not intuition alone. Sackett was explicit: evidence without judgement is dangerous, but judgement without evidence is equally risky. The paper challenged medicine's default reliance on authority and anecdote. Its core triad still frames good clinical decisions.` },
+            { num: "20", name: "20.webm", text: `Ioannidis asked an uncomfortable question: why are so many published findings unlikely to be true? Using a formal probabilistic framework, he showed how low power, multiple comparisons, bias and conflicts of interest erode reliability. The paper became a landmark for the reproducibility debate. Its practical message is not cynicism, but methodological humility and stronger study design.` },
+            { num: "21", name: "21.webm", text: `CONSORT made a simple but radical point: poor reporting is not cosmetic, it distorts effect estimates and harms inference. By standardising trial reporting with a checklist and participant-flow diagram, it changed how randomised trials are written, reviewed and interpreted. Adoption by hundreds of journals reflects that shift. Transparency is not paperwork; it is a condition for scientific trust.` },
+            { num: "22", name: "22.webm", text: `Before GRADE, guideline groups used a patchwork of incompatible grading systems. GRADE offered a common language for certainty, from high to very low, and separated certainty of evidence from strength of recommendation. That distinction improved clarity for clinicians and policy-makers. Its broad adoption by WHO, Cochrane and many professional bodies made it the dominant framework globally.` },
+            { num: "23", name: "23.webm", text: `In 1848, Rudolf Virchow investigated typhus in Upper Silesia and concluded the roots were social and political, not merely biological. He recommended education, civic rights and structural reform, not just medical measures. His famous line followed: medicine is a social science, and politics is medicine on a large scale. Virchow also transformed pathology through cellular theory. Few figures reshaped both biology and social medicine so profoundly.` },
+            { num: "24", name: "24.webm", text: `Francis Peabody wrote that the secret of caring for the patient is caring for the patient. It sounds simple, but it is a clinical epistemology. He warned that increasing specialisation can fragment the person's story and weaken judgement. His insight remains sharp today, especially in patients whose symptoms cannot be reduced to isolated organs. Caring is not the opposite of rigour; it is part of it.` },
+            { num: "25", name: "25.webm", text: `Donabedian gave us the classic triad for quality: structure, process and outcomes. Later he added a line technocratic systems rarely like to hear: the secret of quality is love. The point is not sentimentality. Metrics matter, but they rest on an ethic of care. Without that foundation, indicators become hollow.` },
+            { num: "26", name: "26.webm", text: `Henry Beecher documented twenty-two ethically troubling studies published in leading journals, where patients were exposed to risk without proper consent. The disturbing fact was not concealment; many details were in plain sight. Peer review and professional self-regulation had failed. The paper helped catalyse modern research ethics oversight and, ultimately, Belmont-era reform.` },
+            { num: "27", name: "27.webm", text: `Ivan Illich argued that medicine can produce harm at three levels: clinical, social and cultural iatrogenesis. Beyond direct adverse effects, he warned that medicine may colonise normal life events and weaken cultural capacities to face pain, ageing and death. One may contest parts of his thesis, but many concerns resonate today in overdiagnosis, overtreatment and pharmaceutical dependency debates.` },
+            { num: "28", name: "28.webm", text: `Thomas McKeown asked who really drove mortality decline in the great epidemics. He showed that large reductions in deaths from infections often preceded effective vaccines or antibiotics, highlighting nutrition and living conditions. Some specifics remain debated, but the central question endures: what truly creates health at population level? The paper helped anchor modern thinking on social determinants.` },
+            { num: "29", name: "29.webm", text: `George Engel argued that a purely biomedical model is not just narrow but scientifically incomplete. Illness unfolds across interacting levels: molecular, personal, family and social. Reducing explanation to one level distorts understanding. The biopsychosocial model therefore treats narrative, context and emotion as clinical data, not optional extras. It remains a corrective to persistent reductionism.` },
+            { num: "30", name: "30.webm", text: `At Alma-Ata in 1978, 134 countries declared health a fundamental human right and positioned primary health care as the route to Health for All. The statement linked health explicitly with equity, participation and social development. Its headline target was not fully achieved by 2000, but its political and moral influence has been lasting. For primary care, this is a foundational text.` },
+            { num: "31", name: "31.webm", text: `Eric Cassell clarified a distinction with major clinical consequences: pain and suffering are not the same. Pain is a bodily signal; suffering concerns threat to the integrity of the person. A patient may have severe pain without suffering, or modest pain with profound suffering, depending on meaning and context. If medicine treats disease and pain alone, it will repeatedly miss what matters most to patients. This insight underpins modern palliative care.` },
+            { num: "32", name: "32.webm", text: `Paul Farmer brought structural violence into everyday clinical reasoning. Racism, poverty, gender inequality and political force do not sit outside disease; they shape exposure, vulnerability and access to care. Ignoring those structures produces a distorted account of causality. Using HIV in the United States and Rwanda, he showed how the same pathogen yields radically different outcomes across social arrangements. It is a modern extension of Virchow's thesis: medicine is unavoidably political.` },
+            { num: "33", name: "33.webm", text: `In 1953, Virginia Apgar proposed a rapid bedside score for newborn assessment. It used five observable signs and could be applied within minutes after birth. The contribution was practical and scalable: it standardized communication, guided immediate action, and made perinatal care more auditable. The Apgar score is still used worldwide and remains a model of high-impact clinical simplicity.` },
+            { num: "34", name: "34.webm", text: `In 1983, Barré-Sinoussi and colleagues isolated the retrovirus associated with AIDS. That finding changed the trajectory of the epidemic response. Once the causal agent was identified, diagnostics, surveillance, and treatment development could advance on firm ground. The paper is a landmark in translating laboratory discovery into large-scale clinical and public-health impact.` },
+            { num: "35", name: "35.webm", text: `Karikó and colleagues solved a core problem in mRNA therapeutics: unwanted innate immune activation. Their work on nucleoside modification made RNA constructs better tolerated and clinically usable. Years later, that mechanism became central to mRNA vaccine deployment during COVID-19. It is a landmark case of basic science with delayed but transformative clinical impact.` },
+            { num: "36", name: "36.webm", text: `In 2012, Jinek and colleagues showed that CRISPR-Cas9 could be programmed to cut DNA at chosen sequences. That transformed a bacterial defense system into a general editing platform. The downstream effects were immediate in basic research and rapidly expanded into translational medicine. This is a classic enabling paper: it changed capabilities across entire domains rather than one narrow application.` },
+            { num: "37", name: "37.webm", text: `Hall and colleagues linked early-onset familial breast cancer to chromosome 17q21, opening the path to BRCA1 mapping. The clinical consequences were far-reaching: better hereditary risk stratification, stronger genetic counseling pathways, and more personalized prevention and care decisions. This paper sits at the transition point from observational heredity patterns to precision oncology.` },
+            { num: "38", name: "38.webm", text: `We have reached the end of the route. These thirty-five papers converge on four inseparable levels of medical practice: biological, relational, social and ethical. Read together, they do more than explain modern medicine. They also define its limits and its responsibilities. Thank you for being part of the journey.` }
+        ];
+
+        const doneSet = new Set(JSON.parse(localStorage.getItem('opentts_done_en') || '[]'));
+
+        function updateProgress() {
+            const count = doneSet.size;
+            document.getElementById('done-count').textContent = count;
+            document.getElementById('total-count').textContent = audios.length;
+            const pct = Math.round((count / audios.length) * 100);
+            const fill = document.getElementById('progress-fill');
+            fill.style.width = pct + '%';
+            fill.textContent = pct + '%';
+        }
+
+        function copyText(index, btn) {
+            const text = audios[index].text;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = '✓ Copiado';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '📋 Copiar texto';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        function markDone(index) {
+            const item = document.getElementById('item-' + index);
+            if (doneSet.has(index)) {
+                doneSet.delete(index);
+                item.classList.remove('done');
+            } else {
+                doneSet.add(index);
+                item.classList.add('done');
+            }
+            localStorage.setItem('opentts_done_en', JSON.stringify([...doneSet]));
+            updateProgress();
+        }
+
+        function renderList() {
+            const container = document.getElementById('audio-list');
+            container.innerHTML = audios.map((a, i) => `
+        <div class="audio-item ${doneSet.has(i) ? 'done' : ''}" id="item-${i}">
+          <div class="audio-header">
+            <span>
+              <span class="audio-number">${a.num}</span>
+              <span class="done-badge">✓ Hecho</span>
+            </span>
+            <span class="audio-filename">${a.name}</span>
+          </div>
+          <div class="audio-text">${a.text}</div>
+          <button class="copy-btn" onclick="copyText(${i}, this)">📋 Copiar texto</button>
+          <button class="copy-btn" style="margin-left: 10px; background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);" onclick="markDone(${i})">
+            ${doneSet.has(i) ? '↩️ Desmarcar' : '✓ Marcar hecho'}
+          </button>
+        </div>
+      `).join('');
+        }
+
+        renderList();
+        updateProgress();
+    </script>
+</body>
+
+</html>

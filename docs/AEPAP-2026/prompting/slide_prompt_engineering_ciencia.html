@@ -1,0 +1,201 @@
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- SLIDE: La Ciencia del Prompt Engineering (evidencia cuantitativa)     -->
+<!-- UBICACIÓN: Bloque 2C, DESPUÉS de "Prompt Engineering Clínico"        -->
+<!--   (la slide con data-menu-title="Prompt Engineering Clínico"         -->
+<!--    que termina con "Callens S, et al. 2026")                         -->
+<!--   e INMEDIATAMENTE ANTES de "Mapa 2025-2026"                        -->
+<!--   (la slide con data-menu-title="Mapa 2025-2026")                   -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<section class="wide-slide" data-menu-title="Ciencia del Prompting"
+    data-audio-text="La ingeniería de prompts no es un arte: es una ciencia empírica con diferencias cuantificables de hasta 76 puntos porcentuales según cómo formulemos la instrucción. Vamos a ver qué dice la evidencia sobre las técnicas que realmente funcionan, cómo han evolucionado, y por qué los modelos de razonamiento como o1 o DeepSeek R1 están cambiando las reglas del juego. Para nosotros como pediatras, el mensaje clave es: la técnica importa, pero cada vez más lo que importa es dar el contexto correcto, no las palabras perfectas.">
+
+    <!-- TÍTULO + SUBTÍTULO -->
+    <div class="title-wrapper">
+        <h2 class="assertion-title">
+            La ingeniería de prompts es una
+            <span class="highlight">ciencia empírica</span>, no un arte
+        </h2>
+        <p class="subtitle">
+            Hasta 76pp de variación por formato · 58 técnicas documentadas · Evolución
+            hacia ingeniería de contexto
+        </p>
+    </div>
+
+    <!-- CUERPO: Grid principal 2 columnas -->
+    <div class="grid-2" style="max-width: 1150px; margin: 8px auto; gap: 12px; align-items: start;">
+
+        <!-- COLUMNA IZQUIERDA: Técnicas con evidencia -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+
+            <!-- Panel 1: Técnicas fundamentales -->
+            <div class="glass-panel" style="border-left: 4px solid var(--primary); padding: 8px 10px;">
+                <h4 style="color: var(--primary); margin-bottom: 6px; font-size: 0.82em;">
+                    <i class="fa-solid fa-layer-group"></i> Técnicas con mayor impacto
+                </h4>
+                <div style="font-size: 0.68em; line-height: 1.45; color: var(--text-muted);">
+                    <p style="margin: 0 0 4px;">
+                        <strong style="color: var(--secondary);">Chain-of-Thought (CoT)</strong> ·
+                        "Piensa paso a paso" — En GSM8K: <strong style="color: var(--accent);">17,9% → 58,1%</strong>
+                        <span style="opacity: 0.7;">(Wei et al., NeurIPS 2022)</span>
+                    </p>
+                    <p style="margin: 0 0 4px;">
+                        <strong style="color: var(--secondary);">Few-shot</strong> ·
+                        Dar 2-3 ejemplos antes de la consulta —
+                        Las etiquetas correctas importan menos que el formato
+                        <span style="opacity: 0.7;">(Min et al., EMNLP 2022)</span>
+                    </p>
+                    <p style="margin: 0 0 4px;">
+                        <strong style="color: var(--secondary);">RAG</strong> ·
+                        Conectar a fuentes verificadas — Reduce alucinaciones
+                        <strong style="color: var(--accent);">18-40%</strong>
+                        <span style="opacity: 0.7;">(Lewis et al., NeurIPS 2020; Gao et al., 2024)</span>
+                    </p>
+                    <p style="margin: 0;">
+                        <strong style="color: var(--secondary);">Self-Consistency</strong> ·
+                        Generar múltiples respuestas y votar la más frecuente —
+                        <strong style="color: var(--accent);">+17,9pp</strong> en GSM8K
+                        <span style="opacity: 0.7;">(Wang et al., ICLR 2023)</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Panel 2: Ejemplo pediátrico comparativo -->
+            <div class="glass-panel"
+                style="border-left: 4px solid var(--accent); padding: 8px 10px; background: rgba(251,191,36,0.06);">
+                <h4 style="color: var(--accent); margin-bottom: 6px; font-size: 0.82em;">
+                    <i class="fa-solid fa-child"></i> Ejemplo pediátrico: Fiebre sin foco en lactante
+                </h4>
+                <div style="font-size: 0.65em; line-height: 1.4; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                    <div>
+                        <p style="margin: 0 0 2px; color: #ef4444; font-weight: 600;">❌ Prompt naíf</p>
+                        <p style="margin: 0; color: var(--text-muted); font-style: italic;">
+                            "¿Qué hago con un bebé con fiebre?"
+                        </p>
+                    </div>
+                    <div>
+                        <p style="margin: 0 0 2px; color: var(--secondary); font-weight: 600;">✅ Prompt RECORD + CoT</p>
+                        <p style="margin: 0; color: var(--text-muted); font-style: italic;">
+                            "[Rol] Pediatra AP · [Contexto] Lactante 2m, 38.5°C, 6h, BEG ·
+                            [Objetivo] Diagnóstico diferencial + criterios derivación ·
+                            Razona paso a paso según protocolo NICE"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 3: Sensibilidad del formato -->
+            <div class="glass-panel" style="border-left: 4px solid #ef4444; padding: 8px 10px;">
+                <h4 style="color: #ef4444; margin-bottom: 4px; font-size: 0.82em;">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Atención: el formato importa más de lo que creemos
+                </h4>
+                <p style="font-size: 0.68em; color: var(--text-muted); margin: 0; line-height: 1.4;">
+                    Cambios triviales (espaciado, puntuación, delimitadores) causan variaciones de hasta
+                    <strong style="color: #ef4444;">76pp</strong> en precisión.
+                    Efecto <strong>no se elimina</strong> con más parámetros ni más ejemplos.
+                    <span style="opacity: 0.7;">(Sclar et al., ICLR 2024)</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: Evolución + Modelos de razonamiento -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+
+            <!-- Panel 4: Cambio de paradigma — Modelos de razonamiento -->
+            <div class="glass-panel"
+                style="border-left: 4px solid #a855f7; padding: 8px 10px; background: rgba(168,85,247,0.06);">
+                <h4 style="color: #a855f7; margin-bottom: 6px; font-size: 0.82em;">
+                    <i class="fa-solid fa-bolt"></i> 2025: Los modelos de razonamiento cambian las reglas
+                </h4>
+                <div style="font-size: 0.68em; line-height: 1.45; color: var(--text-muted);">
+                    <p style="margin: 0 0 4px;">
+                        <strong style="color: #a855f7;">o1/o3, DeepSeek-R1</strong> internalizan el CoT →
+                        pedirles "piensa paso a paso" es <strong>redundante o perjudicial</strong>
+                    </p>
+                    <p style="margin: 0 0 4px;">
+                        En GPQA Diamond: CoT solo mejora
+                        <strong style="color: var(--accent);">+2,9%</strong> en o3-mini (no significativo) vs
+                        <strong style="color: var(--secondary);">+13,5%</strong> en Gemini Flash 2.0 (sin razonamiento)
+                        <span style="opacity: 0.7;">(Meincke, Mollick et al., Wharton 2025)</span>
+                    </p>
+                    <p style="margin: 0;">
+                        OpenAI: <em>"Estos modelos funcionan mejor con prompts directos"</em> —
+                        GPT-4.5 fue su <strong>último modelo sin CoT nativo</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Panel 5: De Prompt Engineering a Context Engineering -->
+            <div class="glass-panel" style="border-left: 4px solid var(--secondary); padding: 8px 10px;">
+                <h4 style="color: var(--secondary); margin-bottom: 6px; font-size: 0.82em;">
+                    <i class="fa-solid fa-arrows-spin"></i> La evolución: Prompt → Context Engineering
+                </h4>
+                <div style="font-size: 0.68em; line-height: 1.4; color: var(--text-muted);">
+                    <p style="margin: 0 0 4px;">
+                        Ya no se trata de <em>las palabras perfectas</em>, sino de
+                        <strong style="color: var(--secondary);">dar la información correcta en el momento
+                            adecuado</strong>:
+                        herramientas, memoria, fuentes verificadas, orquestación
+                        <span style="opacity: 0.7;">(Anthropic, 2025; DSPy, Khattab et al., ICLR 2024)</span>
+                    </p>
+                    <p style="margin: 0;">
+                        Transferibilidad entre modelos es baja (<strong>IoU &lt; 0,2</strong>) →
+                        No existen "prompts universales óptimos"
+                        <span style="opacity: 0.7;">(arXiv:2411.10541)</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Panel 6: Implicación para el pediatra -->
+            <div class="glass-panel"
+                style="border-left: 4px solid var(--pediatric-green); padding: 8px 10px; background: rgba(110,207,154,0.08);">
+                <h4 style="color: var(--pediatric-green); margin-bottom: 6px; font-size: 0.82em;">
+                    <i class="fa-solid fa-stethoscope"></i> ¿Qué significa esto para el pediatra de AP?
+                </h4>
+                <div style="font-size: 0.68em; line-height: 1.4; color: var(--text-muted);">
+                    <p style="margin: 0 0 3px;">
+                        <strong>1.</strong> Con modelos clásicos (ChatGPT, Claude sin thinking): usa RECORD + CoT
+                    </p>
+                    <p style="margin: 0 0 3px;">
+                        <strong>2.</strong> Con modelos de razonamiento (o1, DeepSeek-R1): sé directo, da contexto
+                        rico
+                    </p>
+                    <p style="margin: 0 0 3px;">
+                        <strong>3.</strong> Siempre: conecta a fuentes verificadas (RAG/whitelisting) + verifica
+                        output
+                    </p>
+                    <p style="margin: 0;">
+                        <strong>4.</strong> Lo que no cambia: <strong style="color: var(--accent);">buen contexto
+                            clínico = mejor respuesta</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CAJA RESUMEN -->
+    <div class="glass-panel"
+        style="max-width: 1050px; margin: 8px auto; background: rgba(96,165,250,0.08); border: 1px solid rgba(96,165,250,0.4); padding: 6px 12px;">
+        <p style="font-size: 0.78em; text-align: center; margin: 0;">
+            <i class="fa-solid fa-lightbulb" style="color: var(--accent); margin-right: 8px;"></i>
+            <strong>58 técnicas documentadas</strong> (Schulhoff et al., 2024 · 1.565 artículos revisados) —
+            Pero para la consulta diaria: <strong style="color: var(--pediatric-green);">contexto clínico
+                preciso + fuentes fiables + verificación</strong> es lo que más impacta
+        </p>
+    </div>
+
+    <!-- REFERENCIAS -->
+    <p class="source-note">
+        Refs:
+        Wei et al., NeurIPS 2022 ·
+        Kojima et al., NeurIPS 2022 ·
+        Wang et al., ICLR 2023 ·
+        Sclar et al., ICLR 2024 ·
+        <a href="https://arxiv.org/abs/2406.06608" target="_blank" rel="noopener">Schulhoff et al., arXiv:2406.06608</a>
+        ·
+        Meincke, Mollick et al., Wharton 2025 ·
+        <a href="https://arxiv.org/abs/2411.10541" target="_blank" rel="noopener">arXiv:2411.10541</a> ·
+        Anthropic Context Engineering Guide, 2025 ·
+        Khattab et al., ICLR 2024 (DSPy)
+    </p>
+</section>

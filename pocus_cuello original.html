@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POCUS Avanzado de Cuello — Sesión Clínica</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Playfair+Display:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --r-background-color: #0a0e17;
+    --r-main-font: 'DM Sans', sans-serif;
+    --r-heading-font: 'Playfair Display', serif;
+    --r-main-font-size: 28px;
+    --r-main-color: #e2e8f0;
+    --r-heading-color: #f8fafc;
+    --r-link-color: #60a5fa;
+    --accent-teal: #2dd4bf;
+    --accent-amber: #fbbf24;
+    --accent-rose: #fb7185;
+    --accent-blue: #60a5fa;
+    --accent-violet: #a78bfa;
+    --surface-dark: #111827;
+    --surface-mid: #1e293b;
+    --border-subtle: rgba(148, 163, 184, 0.15);
+  }
+
+  .reveal {
+    font-family: var(--r-main-font);
+    font-weight: 400;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3 {
+    font-family: var(--r-heading-font);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  .reveal h2 {
+    font-size: 1.6em;
+    margin-bottom: 0.5em;
+  }
+
+  .reveal h3 {
+    font-size: 1.1em;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    color: var(--accent-teal);
+    margin-bottom: 0.4em;
+  }
+
+  /* ── Slide backgrounds ── */
+  .reveal .slides section {
+    padding: 40px 50px;
+  }
+
+  /* ── Title slide ── */
+  .title-slide {
+    text-align: left !important;
+  }
+  .title-slide h1 {
+    font-size: 2.4em;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #f8fafc 0%, var(--accent-teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.3em;
+  }
+  .title-slide .subtitle {
+    font-size: 1.1em;
+    color: #94a3b8;
+    font-weight: 400;
+    margin-bottom: 2em;
+  }
+  .title-slide .meta {
+    font-size: 0.65em;
+    color: #64748b;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 1em;
+  }
+
+  /* ── Block divider slides ── */
+  .block-divider {
+    text-align: left !important;
+  }
+  .block-divider .block-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7em;
+    color: var(--accent-teal);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.3em;
+  }
+  .block-divider h2 {
+    font-size: 2.2em;
+    line-height: 1.1;
+  }
+  .block-divider .block-desc {
+    font-size: 0.85em;
+    color: #94a3b8;
+    margin-top: 0.8em;
+    max-width: 70%;
+    line-height: 1.6;
+  }
+
+  /* ── Assertion-evidence layout ── */
+  .assertion-slide {
+    text-align: left !important;
+  }
+  .assertion-slide h2 {
+    font-size: 1.35em;
+    line-height: 1.25;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid var(--accent-teal);
+    margin-bottom: 0.6em;
+  }
+
+  /* ── Evidence containers ── */
+  .evidence-box {
+    background: var(--surface-mid);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-top: 0.4em;
+  }
+
+  /* ── Tables ── */
+  .reveal table {
+    font-size: 0.72em;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .reveal table thead th {
+    background: var(--surface-mid);
+    color: var(--accent-teal);
+    font-weight: 700;
+    padding: 12px 16px;
+    border-bottom: 2px solid var(--accent-teal);
+    text-align: left;
+  }
+  .reveal table tbody td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: top;
+  }
+  .reveal table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .reveal table tbody tr:nth-child(even) {
+    background: rgba(30, 41, 59, 0.4);
+  }
+
+  /* ── Highlight badges ── */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .badge-teal { background: rgba(45,212,191,0.15); color: var(--accent-teal); }
+  .badge-amber { background: rgba(251,191,36,0.15); color: var(--accent-amber); }
+  .badge-rose { background: rgba(251,113,133,0.15); color: var(--accent-rose); }
+  .badge-blue { background: rgba(96,165,250,0.15); color: var(--accent-blue); }
+  .badge-violet { background: rgba(167,139,250,0.15); color: var(--accent-violet); }
+
+  /* ── Key-value pairs ── */
+  .kv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 0.5em;
+  }
+  .kv-item {
+    background: var(--surface-dark);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+  .kv-item .label {
+    font-size: 0.65em;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .kv-item .value {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--accent-teal);
+  }
+  .kv-item .value.amber { color: var(--accent-amber); }
+  .kv-item .value.rose { color: var(--accent-rose); }
+
+  /* ── Image quiz slides ── */
+  .quiz-slide {
+    text-align: left !important;
+  }
+  .quiz-slide h2 {
+    font-size: 1.1em;
+    color: var(--accent-amber);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    border-bottom: none;
+    margin-bottom: 0.2em;
+  }
+  .quiz-slide .case-text {
+    font-size: 0.78em;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 0.6em;
+    max-width: 90%;
+  }
+  .image-placeholder {
+    background: var(--surface-mid);
+    border: 2px dashed rgba(45,212,191,0.3);
+    border-radius: 12px;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0.5em 0;
+  }
+  .image-placeholder .ph-icon {
+    font-size: 2em;
+    opacity: 0.4;
+  }
+  .image-placeholder .ph-text {
+    font-size: 0.7em;
+    color: #64748b;
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.5;
+  }
+  .quiz-answer {
+    background: rgba(45,212,191,0.08);
+    border: 1px solid rgba(45,212,191,0.25);
+    border-radius: 10px;
+    padding: 16px 24px;
+    margin-top: 0.4em;
+  }
+  .quiz-answer .dx-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65em;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .quiz-answer .dx-text {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-top: 4px;
+  }
+  .quiz-answer .dx-key {
+    font-size: 0.72em;
+    color: #94a3b8;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* ── Comparison layout ── */
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 0.5em;
+  }
+  .comparison .col {
+    background: var(--surface-dark);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+  .comparison .col-title {
+    font-weight: 700;
+    font-size: 0.85em;
+    margin-bottom: 0.5em;
+  }
+  .comparison .col-title.benign { color: var(--accent-teal); }
+  .comparison .col-title.malig { color: var(--accent-rose); }
+  .comparison .col p {
+    font-size: 0.75em;
+    color: #cbd5e1;
+    line-height: 1.55;
+    margin: 0.3em 0;
+  }
+
+  /* ── Red flags box ── */
+  .red-flags {
+    background: rgba(251,113,133,0.06);
+    border: 1px solid rgba(251,113,133,0.2);
+    border-radius: 10px;
+    padding: 20px 28px;
+    margin-top: 0.5em;
+  }
+  .red-flags .rf-title {
+    color: var(--accent-rose);
+    font-weight: 700;
+    font-size: 0.85em;
+    margin-bottom: 0.4em;
+  }
+  .red-flags p {
+    font-size: 0.75em;
+    color: #e2e8f0;
+    line-height: 1.6;
+    margin: 0.25em 0;
+  }
+
+  /* ── Three-column grid ── */
+  .tri-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 0.5em;
+  }
+  .tri-grid .card {
+    background: var(--surface-dark);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .tri-grid .card-title {
+    font-weight: 700;
+    font-size: 0.8em;
+    margin-bottom: 0.35em;
+  }
+  .tri-grid .card p {
+    font-size: 0.7em;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin: 0.2em 0;
+  }
+
+  /* ── Takeaway slide ── */
+  .takeaway-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .takeaway-list li {
+    padding: 14px 20px;
+    margin: 8px 0;
+    background: var(--surface-mid);
+    border-left: 3px solid var(--accent-teal);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.82em;
+    line-height: 1.5;
+  }
+  .takeaway-list li strong {
+    color: var(--accent-teal);
+  }
+
+  /* ── Footer / progress ── */
+  .reveal .progress {
+    height: 3px;
+    color: var(--accent-teal);
+  }
+
+  /* ── Fragments override for quiz ── */
+  .reveal .fragment.quiz-reveal {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .reveal .fragment.quiz-reveal.visible {
+    opacity: 1;
+  }
+
+  /* ── Emphasis text ── */
+  .em-teal { color: var(--accent-teal); font-weight: 700; }
+  .em-amber { color: var(--accent-amber); font-weight: 700; }
+  .em-rose { color: var(--accent-rose); font-weight: 700; }
+  .em-blue { color: var(--accent-blue); font-weight: 700; }
+  .em-muted { color: #64748b; font-size: 0.8em; }
+
+  /* ── Decorative accents ── */
+  .corner-accent {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(45,212,191,0.15);
+    border-radius: 0;
+    pointer-events: none;
+  }
+  .corner-accent.tl { top: 20px; left: 20px; border-right: none; border-bottom: none; }
+  .corner-accent.br { bottom: 20px; right: 20px; border-left: none; border-top: none; }
+
+  /* ── Scoring row ── */
+  .score-row {
+    display: flex;
+    gap: 10px;
+    margin: 0.4em 0;
+    align-items: center;
+  }
+  .score-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.72em;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .score-pill.s0 { background: rgba(45,212,191,0.12); color: var(--accent-teal); }
+  .score-pill.s1 { background: rgba(96,165,250,0.12); color: var(--accent-blue); }
+  .score-pill.s2 { background: rgba(251,191,36,0.12); color: var(--accent-amber); }
+  .score-pill.s3 { background: rgba(251,113,133,0.12); color: var(--accent-rose); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 1: TÍTULO -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="title-slide" data-background-gradient="radial-gradient(ellipse at 20% 80%, rgba(45,212,191,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(96,165,250,0.06) 0%, transparent 50%)">
+  <h1>POCUS Avanzado<br>de Cuello</h1>
+  <p class="subtitle">Tiroides · Ganglios · Glándulas salivales<br>Evidencia 2019–2025 para clínicos con experiencia ecográfica</p>
+  <p class="meta">Sesión clínica · Centro de Salud · 2026</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 2: MAPA DE LA SESIÓN -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide">
+  <h2>Tres dominios, un hilo conductor: el Doppler</h2>
+  <div class="tri-grid">
+    <div class="card" style="border-top: 3px solid var(--accent-teal);">
+      <div class="card-title" style="color: var(--accent-teal);">🔹 Tiroides</div>
+      <p>TI-RADS actualizado, patología difusa por Doppler, criterios de PAAF y elastografía</p>
+    </div>
+    <div class="card" style="border-top: 3px solid var(--accent-blue);">
+      <div class="card-title" style="color: var(--accent-blue);">🔹 Ganglios cervicales</div>
+      <p>Criterios multicriterio benigno/maligno, patrones etiológicos específicos</p>
+    </div>
+    <div class="card" style="border-top: 3px solid var(--accent-violet);">
+      <div class="card-title" style="color: var(--accent-violet);">🔹 Glándulas salivales</div>
+      <p>OMERACT en Sjögren, litiasis, tumores parotídeos: pleomorfo vs. Warthin</p>
+    </div>
+  </div>
+  <p style="font-size:0.65em; color:#64748b; margin-top:1.2em; text-align:center;">Formato: ~25 min · Casos con imagen entre bloques · Preguntas bienvenidas</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 3: BLOQUE 1 DIVIDER — TIROIDES -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="block-divider" data-background-gradient="linear-gradient(135deg, #0a0e17 0%, #0f1d2e 100%)">
+  <div class="block-number">Bloque 01</div>
+  <h2>Ecografía tiroidea</h2>
+  <p class="block-desc">TI-RADS · Patología difusa · Patrones de malignidad · Elastografía · Criterios de PAAF</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 4: ACR TI-RADS — Sistema de puntuación -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide">
+  <h2>El ACR TI-RADS sigue vigente: sistema aditivo de 5 categorías sin cambios desde 2017</h2>
+  <div class="evidence-box">
+    <table>
+      <thead>
+        <tr><th>Categoría</th><th>Puntos</th><th>Composición</th><th>Ecogenicidad</th><th>Forma</th><th>Margen</th><th>Focos eco.</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="badge badge-teal">0</span></td><td>—</td><td>Quístico / espongif.</td><td>Anecoico</td><td>Ancho > alto</td><td>Liso</td><td>Ninguno / cola cometa</td></tr>
+        <tr><td><span class="badge badge-blue">1</span></td><td>—</td><td>Mixto</td><td>Hiper/iso</td><td>—</td><td>—</td><td>Macrocalcif.</td></tr>
+        <tr><td><span class="badge badge-amber">2</span></td><td>—</td><td>Sólido</td><td>Hipoeco</td><td>—</td><td>Lobulado / irregular</td><td>Calcif. periférica</td></tr>
+        <tr><td><span class="badge badge-rose">3</span></td><td>—</td><td>—</td><td>Muy hipoeco</td><td>Alto > ancho</td><td>Ext. extratiroidea</td><td>Focos puntiformes</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.68em; color:#94a3b8; margin-top:0.7em;">VPN 99,7% para TR1/TR2 · Reduce biopsias innecesarias 20–47% vs. ATA 2015 · Los focos ecogénicos son <span class="em-rose">aditivos entre sí</span></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 5: TI-RADS niveles y decisiones PAAF -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide">
+  <h2>El riesgo de malignidad validado por puntos guía la decisión de PAAF según tamaño</h2>
+  <div class="evidence-box">
+    <table>
+      <thead>
+        <tr><th>Nivel</th><th>Puntos</th><th>Riesgo malig.</th><th>PAAF si…</th><th>Seguimiento si…</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="badge badge-teal">TR1</span></td><td>0</td><td>0,3%</td><td colspan="2" style="text-align:center; color:#64748b;">No PAAF ni seguimiento</td></tr>
+        <tr><td><span class="badge badge-teal">TR2</span></td><td>2</td><td>1,6%</td><td colspan="2" style="text-align:center; color:#64748b;">No PAAF ni seguimiento</td></tr>
+        <tr><td><span class="badge badge-blue">TR3</span></td><td>3</td><td>4,8%</td><td>≥ 2,5 cm</td><td>≥ 1,5 cm</td></tr>
+        <tr><td><span class="badge badge-amber">TR4</span></td><td>4–6</td><td>9–19%</td><td>≥ 1,5 cm</td><td>≥ 1,0 cm</td></tr>
+        <tr><td><span class="badge badge-rose">TR5</span></td><td>≥ 7</td><td>36,4%</td><td>≥ 1,0 cm</td><td>≥ 0,5 cm</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.68em; color:#94a3b8; margin-top:0.7em;">Microcarcinoma papilar ≤1 cm sin extensión: <span class="em-teal">vigilancia activa</span> (crecimiento ≥3 mm solo 2–10%) — ATA 2025</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 6: PITFALL — cola de cometa vs microcalcificaciones -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide">
+  <h2>El pitfall más frecuente: confundir artefacto en cola de cometa con microcalcificaciones</h2>
+  <div class="comparison">
+    <div class="col">
+      <div class="col-title benign">✅ Cola de cometa (0 puntos)</div>
+      <p>Artefacto > 1 mm, en componente <span class="em-teal">quístico</span></p>
+      <p>Causado por coloide espeso</p>
+      <p>100% benigno si distribución libre</p>
+      <p>Se ve como "V" invertida reverberante</p>
+    </div>
+    <div class="col">
+      <div class="col-title malig">⚠️ Focos puntiformes (3 puntos)</div>
+      <p>Focos < 1 mm, en componente <span class="em-rose">sólido</span></p>
+      <p>Representan cuerpos de psammoma</p>
+      <p>Especificidad 86–95% para ca. papilar</p>
+      <p>Puntos brillantes sin artefacto posterior</p>
+    </div>
+  </div>
+  <p style="font-size:0.65em; color:#64748b; margin-top:0.8em; text-align:center;">Middleton et al. 2021 — Error documentado como causa principal de sobre-clasificación TI-RADS</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 7: 🖼 QUIZ — Nódulo tiroideo TI-RADS -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="quiz-slide">
+  <h2>🩺 Caso imagen · Mujer 48 años, hallazgo incidental</h2>
+  <p class="case-text">Nódulo tiroideo derecho de 1,8 cm descubierto en eco-Doppler carotídeo. Sólido, hipoecogénico, márgenes regulares, más ancho que alto, sin calcificaciones ni focos puntiformes.</p>
+  <div class="image-placeholder">
+    <div class="ph-icon">📷</div>
+    <div class="ph-text">IMAGEN: Nódulo sólido hipoecogénico, márgenes lisos, sin calcificaciones<br>Fuente: Radiopaedia "Thyroid nodule TI-RADS 4" o caso propio</div>
+  </div>
+  <div class="fragment quiz-reveal">
+    <div class="quiz-answer">
+      <div class="dx-label">Clasificación</div>
+      <div class="dx-text">TR4 (4 puntos) — Sólido (2) + Hipoeco (2)</div>
+      <div class="dx-key">→ PAAF indicada (≥ 1,5 cm y es 1,8 cm) · Si ecogénico: sería TR3 y no PAAF hasta ≥ 2,5 cm</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 8: Patología difusa — diagnóstico Doppler -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide">
+  <h2>El Doppler diferencia Graves, Hashimoto y De Quervain con precisión casi diagnóstica</h2>
+  <div class="evidence-box">
+    <table>
+      <thead>
+        <tr><th>Parámetro</th><th style="color:var(--accent-rose);">Graves</th><th style="color:var(--accent-amber);">Hashimoto</th><th style="color:var(--accent-blue);">De Quervain</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ecogenicidad</td><td>Hipoeco difusa</td><td>Heterogénea "jirafa"</td><td>Áreas focales hipoeco</td></tr>
+        <tr><td>Doppler</td><td><strong>"Thyroid inferno"</strong></td><td>Leve ↑, vel. normal</td><td><strong>↓↓ en áreas afectadas</strong></td></tr>
+        <tr><td>PSV art. tiroidea inf.</td><td><span class="em-rose">> 150 cm/s</span></td><td>Normal (< 25)</td><td>Normal o ↓</td></tr>
+        <tr><td>Dolor</td><td>No</td><td>No</td><td><span class="em-amber">Sí (intenso)</span></td></tr>
+        <tr><td>Función</td><td>Hipertiroidismo</td><td>Hipo/eutiroidismo</td><td>Hiper transitorio</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.68em; color:#94a3b8; margin-top:0.6em;">Regla rápida: hiper + hipervascular = Graves · hiper + <span class="em-blue">hipovascular focal doloroso</span> = De Quervain</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 9: 🖼 QUIZ — Hashimoto "patrón jirafa" -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="quiz-slide">
+  <h2>🩺 Caso imagen · Mujer 38 años, TSH 8,2, anti-TPO positivos</h2>
+  <p class="case-text">Ecografía solicitada por hipotiroidismo subclínico. Tiroides con patrón heterogéneo: múltiples áreas hipoecogénicas con septos ecogénicos. Doppler: áreas hipoeco avasculares con flujo en parénquima circundante.</p>
+  <div class="image-placeholder">
+    <div class="ph-icon">📷</div>
+    <div class="ph-text">IMAGEN: "Patrón jirafa" en Hashimoto — pseudonódulos hipoeco con septos fibrosos ecogénicos + Doppler mostrando avascularidad de pseudonódulos<br>Fuente: Radiopaedia "Hashimoto pseudonodular" o ULTRASOUNDPAEDIA</div>
+  </div>
+  <div class="fragment quiz-reveal">
+    <div class="quiz-answer">
+      <div class="dx-label">Diagnóstico</div>
+      <div class="dx-text">Tiroiditis de Hashimoto — patrón jirafa</div>
+      <div class="dx-key">Clave: pseudonódulos <span class="em-teal">avasculares</span> (nódulos verdaderos tienen vascularización interna) · Riesgo linfoma ×40–80 → evaluar nódulos discretos con TI-RADS</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 10: 🖼 QUIZ — Thyroid inferno -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="quiz-slide">
+  <h2>🩺 Caso imagen · Mujer 30 años, taquicardia, temblor, TSH < 0,01</h2>
+  <p class="case-text">Hipertiroidismo clínico franco. Tiroides aumentada difusamente. Doppler color: la glándula entera se llena de señal color tanto en sístole como en diástole.</p>
+  <div class="image-placeholder">
+    <div class="ph-icon">📷</div>
+    <div class="ph-text">IMAGEN: "Thyroid inferno" en enfermedad de Graves — vascularización difusa llenando toda la glándula en Doppler color<br>Fuente: Radiopaedia "Graves disease ultrasound" o ULTRASOUNDPAEDIA</div>
+  </div>
+  <div class="fragment quiz-reveal">
+    <div class="quiz-answer">
+      <div class="dx-label">Diagnóstico</div>
+      <div class="dx-text">Enfermedad de Graves — "thyroid inferno"</div>
+      <div class="dx-key">PSV arteria tiroidea inferior > 150 cm/s (normal < 25) · Shunting arteriovenoso difuso · No confundir con Hashimoto (flujo leve, velocidades normales)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 11: Patrones de malignidad tiroidea -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide">
+  <h2>Cada tipo histológico de cáncer tiroideo tiene un perfil ecográfico reconocible</h2>
+  <div class="evidence-box">
+    <table>
+      <thead>
+        <tr><th>Tipo</th><th>Ecogenicidad</th><th>Calcificaciones</th><th>Forma</th><th>Dato diferenciador</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Papilar</strong></td><td>Hipoeco</td><td>Microcalcif. (54%)</td><td>Alto > ancho (40%)</td><td>El más frecuente (75–89%)</td></tr>
+        <tr><td><strong>Folicular</strong></td><td>Iso/hipoeco</td><td>Raras</td><td>Ancho > alto</td><td>Halo grueso; eco ≠ benigno/maligno</td></tr>
+        <tr><td><strong>Medular</strong></td><td>Hipoeco</td><td><span class="em-amber">Groseras (amiloide)</span></td><td>Ancho > alto (77%)</td><td>Bilateral → pensar MEN2</td></tr>
+        <tr><td><strong>Linfoma</strong></td><td><span class="em-blue">Muy hipoeco "pseudoquístico"</span></td><td>Ausentes</td><td>Variable</td><td>Hashimoto previo ~80%; BAG (no PAAF)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 12: Elastografía como complemento -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide">
+  <h2>La elastografía complementa al TI-RADS pero no lo sustituye — su mayor valor es degradar TR3/TR4</h2>
+  <div class="kv-grid">
+    <div class="kv-item">
+      <div class="label">Strain (Asteria) ≥ 3</div>
+      <div class="value">S 93,7% · E 90% · VPN 98%</div>
+    </div>
+    <div class="kv-item">
+      <div class="label">SWE — umbral malignidad</div>
+      <div class="value amber">E media > 34,5–66,7 kPa</div>
+    </div>
+    <div class="kv-item">
+      <div class="label">SWE metaanálisis (AUC)</div>
+      <div class="value">0,91–0,93</div>
+    </div>
+    <div class="kv-item">
+      <div class="label">Limitación principal</div>
+      <div class="value rose">Valores NO intercambiables entre equipos</div>
+    </div>
+  </div>
+  <div class="red-flags" style="margin-top:0.8em; background:rgba(251,191,36,0.06); border-color:rgba(251,191,36,0.2);">
+    <div class="rf-title" style="color:var(--accent-amber);">⚠️ No fiable en:</div>
+    <p>Nódulos calcificados · Lesiones quísticas · Nódulos < 5–8 mm · Contexto de Hashimoto (rigidez basal elevada ~8,4 kPa)</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 13: PAUSA — Síntesis tiroides -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="block-divider" data-background-gradient="linear-gradient(135deg, #0a0e17 0%, #0f1d2e 100%)">
+  <div class="block-number">Síntesis · Bloque 01</div>
+  <h2>¿Qué llevarse del tiroides?</h2>
+  <ul class="takeaway-list" style="margin-top:0.8em; max-width:85%;">
+    <li><strong>TI-RADS sin cambios:</strong> sistema aditivo robusto. VPN 99,7%. Cuidado con cola de cometa vs. microcalcificaciones.</li>
+    <li><strong>Doppler diferencia patología difusa:</strong> inferno = Graves, avascular focal = De Quervain, jirafa = Hashimoto.</li>
+    <li><strong>Elastografía = adyuvante:</strong> útil para degradar TR3/TR4, no sustituye modo B.</li>
+    <li><strong>Microcarcinoma papilar ≤ 1 cm:</strong> vigilancia activa es opción validada (ATA 2025).</li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 14: BLOQUE 2 DIVIDER — GANGLIOS -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="block-divider" data-background-gradient="linear-gradient(135deg, #0a0e17 0%, #111a2e 100%)">
+  <div class="block-number">Bloque 02</div>
+  <h2>Ganglios linfáticos cervicales</h2>
+  <p class="block-desc">Criterios multicriterio · Patrones etiológicos · Derivación urgente</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 15: Criterios benigno vs maligno -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide">
+  <h2>Ningún criterio individual basta: la combinación multicriterio alcanza S 87% y E 87%</h2>
+  <div class="evidence-box">
+    <table>
+      <thead>
+        <tr><th>Criterio</th><th style="color:var(--accent-teal);">Benigno / Reactivo</th><th style="color:var(--accent-rose);">Maligno / Metastásico</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Forma (S/L)</td><td>Ovalado (< 0,5)</td><td><strong>Redondo (> 0,5)</strong> · E 85–97%</td></tr>
+        <tr><td>Hilio ecogénico</td><td>Presente (84–92%)</td><td><strong>Ausente (~96%)</strong> · S ~98%</td></tr>
+        <tr><td>Corteza</td><td>Fina, simétrica</td><td>Engrosada excéntrica > 3 mm</td></tr>
+        <tr><td>Doppler</td><td>Hiliar, ramificado</td><td><strong>Periférico</strong> · E ~100%</td></tr>
+        <tr><td>Microcalcificaciones</td><td>Ausentes</td><td>Presentes · <span class="em-rose">E ~100% (PTC)</span></td></tr>
+        <tr><td>Necrosis quística</td><td>Ausente</td><td>Presente · <span class="em-rose">E ~100%</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 16: Patrones etiológicos ganglionares -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide">
+  <h2>Cada etiología deja una "huella ecográfica" que permite orientar la sospecha clínica</h2>
+  <div class="evidence-box" style="padding:20px 24px;">
+    <table>
+      <thead>
+        <tr><th>Etiología</th><th>Forma</th><th>Ecoestructura</th><th>Dato clave</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Reactivo</strong></td><td>Ovalado</td><td>Hilio conservado, corteza simétrica</td><td>Doppler hiliar, IR < 0,7</td></tr>
+        <tr><td><strong>Linfoma</strong></td><td>Redondo</td><td><span class="em-blue">Muy hipoeco, reticulación micronodular</span></td><td>BAG esencial (PAAF: solo 11%)</td></tr>
+        <tr><td><strong>Met. PTC</strong></td><td>Redondo</td><td>Hiperecogénico + quístico + microcalcif.</td><td><span class="em-rose">E ~100%</span> para los 3 signos</td></tr>
+        <tr><td><strong>Met. SCC</strong></td><td>Redondo</td><td>Necrosis quística prominente</td><td>VPH+ → mimetiza quiste branquial</td></tr>
+        <tr><td><strong>TB</strong></td><td>Conglomerado</td><td>Necrosis caseosa, heterogéneo</td><td>Pérdida de planos grasos</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 17: 🖼 QUIZ — Ganglio reactivo vs maligno -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="quiz-slide">
+  <h2>🩺 Caso imagen · Varón 35 años, masa cervical indolora 6 semanas</h2>
+  <p class="case-text">Sin síntomas infecciosos. Múltiples ganglios en niveles II–V bilateral: redondeados, marcadamente hipoecogénicos, bordes nítidos, sin hilio visible. Doppler: vascularización mixta. Reticulación micronodular interna. No necrosis quística.</p>
+  <div class="image-placeholder">
+    <div class="ph-icon">📷</div>
+    <div class="ph-text">IMAGEN: Ganglio redondeado muy hipoecogénico sin hilio, con reticulación interna y vascularización mixta en Doppler<br>Fuente: PMC "Ultrasound of malignant cervical lymph nodes" o Radiopaedia "Lymphoma cervical nodes"</div>
+  </div>
+  <div class="fragment quiz-reveal">
+    <div class="quiz-answer">
+      <div class="dx-label">Diagnóstico</div>
+      <div class="dx-text">Linfoma de Hodgkin</div>
+      <div class="dx-key">Pistas: hipoecogenicidad marcada + reticulación + bordes nítidos + bilateral + <span class="em-rose">sin necrosis</span> · Requiere BAG (no PAAF — precisión solo 11%) · En elastografía SWE: <span class="em-teal">más blando</span> que metástasis (< 30 kPa)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 18: 🖼 QUIZ — Metástasis PTC en ganglio -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="quiz-slide">
+  <h2>🩺 Caso imagen · Mujer 52 años, seguimiento post-tiroidectomía por ca. papilar</h2>
+  <p class="case-text">Tiroidectomía total hace 2 años. Eco de seguimiento: ganglio de 1,4 cm en nivel IV derecho, redondeado, sin hilio, con puntos ecogénicos brillantes y área quística interna.</p>
+  <div class="image-placeholder">
+    <div class="ph-icon">📷</div>
+    <div class="ph-text">IMAGEN: Ganglio redondeado sin hilio con microcalcificaciones puntiformes y componente quístico interno<br>Fuente: PMC "Metastatic PTC lymph node" o Radiopaedia "Papillary thyroid carcinoma lymph node metastasis"</div>
+  </div>
+  <div class="fragment quiz-reveal">
+    <div class="quiz-answer">
+      <div class="dx-label">Diagnóstico</div>
+      <div class="dx-text">Metástasis ganglionar de carcinoma papilar de tiroides</div>
+      <div class="dx-key">Tríada casi patognomónica: <span class="em-rose">microcalcificaciones + necrosis quística + hiperecogenicidad</span> · PAAF con lavado de tiroglobulina si ≥ 1 cm · Niveles III, IV y VI son los más afectados</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 19: Síntesis ganglios -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="block-divider" data-background-gradient="linear-gradient(135deg, #0a0e17 0%, #0f1d2e 100%)">
+  <div class="block-number">Síntesis · Bloque 02</div>
+  <h2>¿Qué llevarse de los ganglios?</h2>
+  <ul class="takeaway-list" style="margin-top:0.8em; max-width:85%;">
+    <li><strong>Hilio ausente</strong> es el signo más sensible (~98%) pero poco específico solo → combinar criterios.</li>
+    <li><strong>Tres signos de E ~100%:</strong> necrosis quística, microcalcificaciones, vascularización periférica.</li>
+    <li><strong>Linfoma:</strong> muy hipoeco + reticulación + bordes nítidos → <span class="em-rose">BAG obligatoria</span> (no PAAF).</li>
+    <li><strong>Explorar por niveles</strong> (I–VI), no solo alrededor del tiroides.</li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 20: BLOQUE 3 DIVIDER — SALIVALES -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="block-divider" data-background-gradient="linear-gradient(135deg, #0a0e17 0%, #15112e 100%)">
+  <div class="block-number">Bloque 03</div>
+  <h2>Glándulas salivales</h2>
+  <p class="block-desc">Sjögren y OMERACT · Sialolitiasis · Tumores parotídeos</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 21: OMERACT en Sjögren -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide">
+  <h2>El sistema OMERACT transforma el diagnóstico de Sjögren: AUC 0,974 integrado con ACR/EULAR</h2>
+  <div style="display:flex; gap:20px; margin-top:0.5em;">
+    <div style="flex:1;">
+      <p style="font-size:0.75em; color:#cbd5e1; line-height:1.6; margin-bottom:0.6em;">Puntuación 0–3 en cada glándula (2 parótidas + 2 submandibulares) = total 0–12</p>
+      <div class="score-row">
+        <span class="score-pill s0">0 — Homogénea normal</span>
+      </div>
+      <div class="score-row">
+        <span class="score-pill s1">1 — Áreas hipoeco pequeñas dispersas</span>
+      </div>
+      <div class="score-row">
+        <span class="score-pill s2">2 — Múltiples áreas confluyentes</span>
+      </div>
+      <div class="score-row">
+        <span class="score-pill s3">3 — Parénquima totalmente reemplazado</span>
+      </div>
+    </div>
+    <div style="flex:1;">
+      <div class="kv-item" style="margin-bottom:12px;">
+        <div class="label">Score total ≥ 8</div>
+        <div class="value">S 76% · E 90% · AUC 0,83</div>
+      </div>
+      <div class="kv-item" style="margin-bottom:12px;">
+        <div class="label">Score máx ≥ 2 + ACR/EULAR</div>
+        <div class="value">S 96,4% · E 86,5% · AUC 0,974</div>
+      </div>
+      <div class="kv-item">
+        <div class="label">Fiabilidad interobservador</div>
+        <div class="value amber">ICC > 0,85</div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:0.65em; color:#64748b; margin-top:0.6em;">Eco salival normal + anti-SSA negativo → puede evitar biopsia labial invasiva</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 22: 🖼 QUIZ — Sjögren -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="quiz-slide">
+  <h2>🩺 Caso imagen · Mujer 50 años, sequedad oral y ocular de 2 años, anti-SSA positivo</h2>
+  <p class="case-text">Ecografía de parótidas y submandibulares: ambas parótidas muestran múltiples áreas hipo/anecoicas confluyentes ocupando > 50% del parénquima. Submandibulares con patrón similar pero menos extenso.</p>
+  <div class="image-placeholder">
+    <div class="ph-icon">📷</div>
+    <div class="ph-text">IMAGEN: Parótida con patrón OMERACT grado 2–3 ("sal y pimienta") — múltiples áreas hipoeco confluyentes<br>Fuente: Ann Rheum Dis 2019 (artículo OMERACT original) o Radiopaedia "Sjögren syndrome ultrasound"</div>
+  </div>
+  <div class="fragment quiz-reveal">
+    <div class="quiz-answer">
+      <div class="dx-label">Diagnóstico</div>
+      <div class="dx-text">Síndrome de Sjögren — OMERACT grado 2–3</div>
+      <div class="dx-key">Score máximo ≥ 2 integrado en ACR/EULAR: <span class="em-teal">AUC 0,974</span> · Derivación a reumatología con eco ya realizada · Diferencial: IgG4-RD (agrandamiento nodular difuso, bordes preservados)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 23: Sialolitiasis + Tumores parotídeos -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide">
+  <h2>En parótida, la localización y el Doppler separan pleomorfo de Warthin con buena aproximación</h2>
+  <div class="evidence-box">
+    <table>
+      <thead>
+        <tr><th>Característica</th><th style="color:var(--accent-teal);">Adenoma pleomorfo</th><th style="color:var(--accent-amber);">Tumor de Warthin</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Localización</td><td>Cualquier zona</td><td><strong>Cola / polo inferior</strong></td></tr>
+        <tr><td>Ecoestructura</td><td>Sólida homogénea</td><td>Quística prominente (45%)</td></tr>
+        <tr><td>Doppler</td><td><span class="em-teal">Baja vascularización</span></td><td><span class="em-amber">Alta vascularización</span></td></tr>
+        <tr><td>Patrón vascular</td><td>Periférico</td><td>Central o mixto</td></tr>
+        <tr><td>Bilateral / multifocal</td><td>Raro</td><td>12% / 7%</td></tr>
+        <tr><td>Perfil típico</td><td>Mujer</td><td>Varón fumador</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.68em; color:#94a3b8; margin-top:0.6em;">Sialolitiasis: eco detecta ≥ 3 mm con <span class="em-teal">S 93–97%</span> · 15–60% cálculos parotídeos son radiolúcidos → eco > Rx simple</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 24: 🖼 QUIZ — Sialolitiasis -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="quiz-slide">
+  <h2>🩺 Caso imagen · Varón 45 años, tumefacción submandibular prandial recurrente</h2>
+  <p class="case-text">Dolor tipo cólico durante las comidas. Tumefacción submandibular izquierda que aumenta con la ingesta y cede parcialmente en horas. Ecografía: glándula aumentada, conducto dilatado (4 mm), foco hiperecogénico de 6 mm con sombra posterior.</p>
+  <div class="image-placeholder">
+    <div class="ph-icon">📷</div>
+    <div class="ph-text">IMAGEN: Cálculo hiperecogénico con sombra acústica posterior en conducto de Wharton dilatado + glándula submandibular aumentada<br>Fuente: PMC "Ultrasound in salivary gland diseases" o Radiopaedia "Sialolithiasis submandibular"</div>
+  </div>
+  <div class="fragment quiz-reveal">
+    <div class="quiz-answer">
+      <div class="dx-label">Diagnóstico</div>
+      <div class="dx-text">Sialolitiasis del conducto de Wharton</div>
+      <div class="dx-key">80% submandibular · Técnica bimanual (dedo intraoral) para litiasis distales · Dilatación ductal presente en 95% de eco "falsos negativos" → buscarla siempre como signo indirecto</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 25: RED FLAGS + CIERRE INTEGRADOR -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="assertion-slide" data-background-gradient="radial-gradient(ellipse at 50% 50%, rgba(251,113,133,0.04) 0%, transparent 70%)">
+  <h2>Red flags ecográficas de derivación urgente en POCUS de cuello</h2>
+  <div class="red-flags">
+    <div class="rf-title">🚩 Derivar sin demora</div>
+    <p>→ Nódulo tiroideo con <span class="em-rose">extensión extratiroidea</span></p>
+    <p>→ Ganglio cervical con <span class="em-rose">necrosis quística</span> sin contexto infeccioso</p>
+    <p>→ Masa parotídea con <span class="em-rose">parálisis facial</span> ipsilateral</p>
+    <p>→ <span class="em-rose">Crecimiento rápido</span> de cualquier masa cervical</p>
+    <p>→ Ganglio con microcalcificaciones o vascularización exclusivamente periférica</p>
+  </div>
+  <div style="margin-top:1em; padding:16px 24px; background:rgba(45,212,191,0.06); border:1px solid rgba(45,212,191,0.2); border-radius:10px;">
+    <p style="font-size:0.82em; color:#f8fafc; line-height:1.6; margin:0;">
+      <span class="em-teal">Mensaje final:</span> La ecografía POCUS avanzada de cuello no es radiología simplificada — es medicina clínica integrada. El Doppler es el hilo conductor que conecta los tres dominios.
+    </p>
+  </div>
+</section>
+
+</div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    transition: 'fade',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+    center: false,
+    controls: true,
+    progress: true,
+    // Fragments (quiz answers) advance with spacebar/click
+    fragments: true,
+    // PDF export friendly
+    pdfMaxPagesPerSlide: 1,
+    pdfSeparateFragments: false
+  });
+</script>
+</body>
+</html>

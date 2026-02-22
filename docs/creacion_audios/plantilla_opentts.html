@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textos de Audio - [NOMBRE PRESENTACIÓN]</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .config-box {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .config-box h3 {
+            color: #fbbf24;
+            margin-top: 0;
+        }
+
+        .config-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .config-box li {
+            margin: 8px 0;
+        }
+
+        .config-box a {
+            color: #60a5fa;
+        }
+
+        .audio-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .audio-item:hover {
+            border-color: rgba(251, 191, 36, 0.4);
+        }
+
+        .audio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .audio-number {
+            background: #fbbf24;
+            color: #1a1a2e;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .audio-filename {
+            color: #94a3b8;
+            font-size: 13px;
+            font-family: monospace;
+        }
+
+        .audio-text {
+            line-height: 1.6;
+            font-size: 15px;
+            color: #d1d5db;
+            margin-bottom: 15px;
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        }
+
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            height: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #10b981, #34d399);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .counter {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .done-badge {
+            display: none;
+            background: #10b981;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .audio-item.done .done-badge {
+            display: inline;
+        }
+
+        .audio-item.done {
+            opacity: 0.6;
+        }
+
+        .audio-item.done .audio-header {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎙️ Textos de Audio para OpenTTS</h1>
+    <p class="subtitle">[Descripción de la presentación]</p>
+
+    <div class="config-box">
+        <h3>⚙️ Configuración en OpenTTS.ai</h3>
+        <ul>
+            <li><strong>URL:</strong> <a href="https://www.opentts.ai/" target="_blank">https://www.opentts.ai/</a></li>
+            <li><strong>Rate:</strong> 1.1</li>
+            <li><strong>Pitch:</strong> 1.0</li>
+            <li><strong>Voice:</strong> Google ESPAÑOL</li>
+        </ul>
+        <p style="margin-top: 15px; font-size: 14px; color: #94a3b8;">
+            📁 Guarda cada audio con el nombre indicado en <code>assets/[carpeta]/</code>
+        </p>
+    </div>
+
+    <div class="counter">
+        Progreso: <span id="done-count">0</span> / <span id="total-count">0</span> audios
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill">0%</div>
+    </div>
+
+    <div id="audio-list"></div>
+
+    <script>
+        // =================================================================
+        // CONFIGURACIÓN: Editar este array con los textos de cada audio
+        // =================================================================
+        const audios = [
+            // Ejemplo de estructura:
+            // { num: "00", name: "00_intro.webm", text: `Texto de la narración...` },
+            // { num: "01", name: "01_slide1.webm", text: `Texto de la segunda diapositiva...` },
+        ];
+
+        // =================================================================
+        // NO MODIFICAR: Lógica de la aplicación
+        // =================================================================
+        const STORAGE_KEY = 'opentts_done_[PRESENTACION]'; // Cambiar por nombre único
+
+        const doneSet = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+
+        function updateProgress() {
+            const count = doneSet.size;
+            document.getElementById('done-count').textContent = count;
+            document.getElementById('total-count').textContent = audios.length;
+            const pct = audios.length ? Math.round((count / audios.length) * 100) : 0;
+            const fill = document.getElementById('progress-fill');
+            fill.style.width = pct + '%';
+            fill.textContent = pct + '%';
+        }
+
+        function copyText(index, btn) {
+            const text = audios[index].text;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = '✓ Copiado';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '📋 Copiar texto';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        function markDone(index) {
+            const item = document.getElementById('item-' + index);
+            if (doneSet.has(index)) {
+                doneSet.delete(index);
+                item.classList.remove('done');
+            } else {
+                doneSet.add(index);
+                item.classList.add('done');
+            }
+            localStorage.setItem(STORAGE_KEY, JSON.stringify([...doneSet]));
+            updateProgress();
+        }
+
+        function renderList() {
+            const container = document.getElementById('audio-list');
+            container.innerHTML = audios.map((a, i) => `
+        <div class="audio-item ${doneSet.has(i) ? 'done' : ''}" id="item-${i}">
+          <div class="audio-header">
+            <span>
+              <span class="audio-number">${a.num}</span>
+              <span class="done-badge">✓ Hecho</span>
+            </span>
+            <span class="audio-filename">${a.name}</span>
+          </div>
+          <div class="audio-text">${a.text}</div>
+          <button class="copy-btn" onclick="copyText(${i}, this)">📋 Copiar texto</button>
+          <button class="copy-btn" style="margin-left: 10px; background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);" onclick="markDone(${i})">
+            ${doneSet.has(i) ? '↩️ Desmarcar' : '✓ Marcar hecho'}
+          </button>
+        </div>
+      `).join('');
+        }
+
+        renderList();
+        updateProgress();
+    </script>
+</body>
+
+</html>

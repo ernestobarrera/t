@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- meta_propio_inicio -->
+  <meta name="description" content="Presentación: ChatGPT en ciencias de la salud" />
+  <meta name="author" content="Ernesto Barrera" />
+  <link rel="icon"  href="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Herramientas para buscar información sanitaria: ChatGPT para Profesionales Sanitarios | ​👨‍⚕️ EB" />
+  <meta property="og:site_name" content="Recursos para la gestión de información  🔎🩺⚕" />
+  <meta property="og:url" content="https://ernestobarrera.github.io/" />
+  <!-- <meta property="og:image" content="https://ernestobarrera.github.io/assets/images/me.png" > -->
+  <meta property="article:published_time" content="2023-04-30" />
+  <meta property="article:author" content="Ernesto Barrera" />
+  <!-- fin -->
+  <title> 🤖ChatGPT para Profesionales Sanitarios | @ernestob</title>
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <!-- tema anterior black -->
+  <link rel="stylesheet" href="reveal.js/dist/theme/blood.css" id="theme">
+  <link rel="stylesheet" href="../reveal.js-plugins/simplemenu/simplemenu.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/plugin/highlight/zenburn.css">
+  <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
+  
+  <!-- Animaciones para el plugin appearance https://github.com/Martinomagnifico/reveal.js-appearance-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="../reveal.js-plugins/appearance/appearance.css">
+  <script src="reveal.js/dist/reveal.js"></script>
+  <script src="reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="../reveal.js-plugins/menu/menu.js"></script>
+  <script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
+  <script src="../reveal.js-plugins/appearance/appearance.js"></script>
+  <script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
+  <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+  <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
+  <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+  
+
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  
+  <style>
+    /* Establecer el tamaño de fuente base en 16px */
+
+/* 
+Empieza aquí */
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1601px)  {
+  html {
+      font-size: 140%;
+  }
+  * {
+    font-size: 1.2rem;
+  }
+  }
+
+@media (min-width: 1401px)  and (max-width: 1600px){
+  html {
+      font-size: 100%;
+  }
+  * {
+    font-size: 1.2rem;
+  }
+  }
+
+@media (min-width: 1281px) and (max-width: 1400px) {
+  html {
+      font-size: 100%;
+  }
+  * {
+    font-size: 1.2rem;
+  }
+  }
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px)  {
+  html {
+/*     font-size: 14px; */ 
+      font-size: 100%;
+  }
+ 
+  * {
+    font-size: 1.2rem;
+  }
+}
+    /* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  html {
+  font-size: 100%;
+  }
+  * {
+    font-size: 1.2rem;
+  }
+  }
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  html {
+  font-size: 120%;
+  }
+  * {
+    font-size: 1.2rem;
+  }
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  html {
+/*     font-size: 14px; */
+font-size: 0.9rem;
+  }
+  
+  * {
+    font-size: 1rem;
+  }
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  html {
+/*     font-size: 14px; */
+font-size: 0.8rem;
+  }
+  
+  * {
+    font-size: 1rem;
+  }
+  
+}
+
+@media  (max-width: 319px) {
+  
+  html {
+/*     font-size: 14px; */
+font-size: 0.7rem;
+  }
+  
+  * {
+    font-size: 0.8rem;
+  }
+  
+}
+/* revisar ancho, porque fuente parece que funciona */ /* Agregar una especificidad mayor a las reglas CSS para que no sean sobrescritas */ /* este elemento css consigue aumentar el ancho del menu lateral, pero no consigue cambio de fuente *//* Establece un tamaño de fuente explícito para pantallas más grandes *//* Cambiar a un ancho deseado para pantallas más grandes */
+@media screen and (min-width: 500px) {
+  html .slide-menu.slide-menu--left.active{
+   
+    font-size: 0.2rem !important; 
+    width: 60%; 
+  }
+  
+   
+  }  
+/* 
+  Termina aqui */
+
+    .cabecera {
+      margin-top: 1em;
+      font-size: 5rem;
+      color: orange;
+      word-spacing: 10px;
+      text-shadow: 3px 3px 4px #000000;
+    }
+    h1.color, h2.color, h3.color, h4.color, h5.color, h6.color {
+  color:  rgb(251, 183, 56);
+  text-shadow: 1px 1px 1px #000;
+}
+    .reveal h1
+    {
+  font-size: 2.2rem;
+}
+.reveal h2{
+  font-size: 2rem;
+}
+.reveal h3{
+  font-size: 1.8rem;
+}
+.reveal h4{
+  font-size: 1.6rem;
+}
+.reveal h5 {
+  font-size: 1.4rem;
+}
+.table-cell {
+        border: 1px solid #dddddd;
+        padding: 5px;
+        font-size: 0.85em;
+    }
+
+    .table-cell-header {
+        font-weight: bold;
+    }
+
+   .imagen-responsiva {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    border: 1;
+    height: 100px;
+    width: auto;
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5); 
+}
+
+@media (max-width: 1200px) {
+    .imagen-responsiva {
+        height: 4vw;
+        min-height: 30px;
+    }
+}
+/* ESTO NO TERMINO DE FUNCIONAR PARA LAS MÁS ALTAS */
+/* @media (max-height: 800px) {
+  .diapo-grande {
+    font-size: 0.1rem;
+  }
+} */
+
+.vertical{
+  margin-top: 1.2rem;
+}
+
+    /* .vertical h1, .vertical h2, .vertical h3, .vertical h4, .vertical h5, .vertical h6 {
+      font-size: 3rem;
+      margin-top: 3rem;
+    } */
+  
+    .titulo {
+      /* font-size: 4rem; */
+      font-size: 2.5rem; /* por diseño responsivo, valorar si errores */
+      font-weight: bold;
+      font-family: 'Arial', sans-serif;
+    }
+  
+    /* Estilos adicionales */
+    .left {
+      text-align: left;
+    }
+  
+    .pie {
+      position: absolute !important;
+     /*  bottom: 5; */
+     bottom: 0.3125rem;
+    }
+  
+    .size-1 {
+ /*      font-size: 32px; */
+ font-size: 2rem;
+    }
+  
+    .size {
+      /* font-size: 26px; */
+      font-size: 1.625rem;
+
+    }
+  
+    .size0 {
+/*       font-size: 20px; */
+      font-size: 1.25rem;
+    }
+  
+    .size1 {
+      /* font-size: 16px; */
+      font-size: 1rem;
+    }
+  
+    .size2 {
+      /* font-size: 14px; */
+      font-size: 0.875rem;
+    }
+  
+    .size3 {
+      font-size: 1rem;
+    }
+  
+    .color {
+      color: rgb(251, 183, 56);
+    }
+  /* no parece funcionar en esta presentación, referencia en https://revealjs.com/fragments/ */
+  .fragment.blur {
+    filter: blur(5px);
+  }
+  .fragment.blur.visible {
+  filter: none;
+  }
+  .full-height {
+  height: 100vh;
+}
+  
+.footer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 50%;
+  bottom: 3em;
+  transform: translateX(-50%);
+}
+    .aligned p {
+  margin-left: 15%;
+  text-align: left;
+}
+.filaImagenTexto {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.filaImagenTexto div {
+  width: 50%;
+}
+.mensaje-usuario {
+  margin-left: 15%;
+  text-align: left;
+  color: #2fa883;
+  font-weight: bold;
+}
+
+.mensaje-chatgpt {
+  margin-left: 15%; 
+  text-align: left;
+  color: #3969ab;
+  font-weight: bold;
+}
+    .highlighted {
+      background-color: rgba(252, 212, 212, 0.5);
+    }
+    .controls-arrow {
+  font-size: 10px !important;
+}
+
+
+/* ideas animación botón https://webdeasy.de/en/top-css-buttons-en/ */
+
+.glow-on-hover {
+    width: 280px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(214, 197, 197);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.glow-on-hover:before {
+   
+    width: 280px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(214, 197, 197);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 8px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 191, 71);
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/* para tabla incremental de prompts, no funciona por el momento con tamaño de fuentes, que están inline */
+.bold-text {
+    font-weight: bold;
+}
+/* Estilo para la tabla específica */
+section .custom-table {
+    font-size: 0.8em !important; 
+    width: 100% !important;
+}
+
+/* Estilo para las celdas de la tabla específica */
+section .custom-table th, section .custom-table td {
+    padding: 4px 8px !important;
+    border: 1px solid #ccc !important;
+}
+
+/* Estilo para el encabezado de la tabla específica */
+section .custom-table th {
+    background-color: #333 !important;
+    color: #fff !important;
+    font-weight: bold !important;
+}
+
+/* CSS para cajas de https://rs-math.net/beamerkiller/   https://rs-math.net/beamerkiller/beamerkiller.css*/
+.reveal .box {
+    width: auto;
+    margin: 1ex auto;
+    line-height: 1.5;
+    padding: 0;
+    text-align: center;
+    overflow: auto;
+    text-align: left;
+    border-radius: 0.5em;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 8px 8px 7px 5px rgba(9, 9, 9, 0.512); /* Sombra más sutil */
+/*     box-shadow: 8px 8px 4px 2px rgba(0, 0, 0, 0.4);
+ */}
+
+.reveal .box .title,
+.reveal .box .content {
+    padding: 0.8ex 3%;
+    border: #ddd 1px solid; /* Borde sutil */
+    
+}
+
+.reveal .box .title {
+    color: rgb(251, 183, 56); /* Aplicando el color directamente */
+    text-shadow: 2px 2px 2px #555; /* Sombra que contraste con el fondo de pizarra */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparente */
+    border-bottom: none;
+    border-radius: 0.5em 0.5em 0 0;
+    font-size: 1.4em;
+    font-weight: 600;
+    
+}
+
+.reveal .box .content {
+    color: #ffffff; /* Blanco */
+    text-shadow: 2px 2px 2px #555; /* Sombra que contraste con el fondo de pizarra */
+    background-color: rgba(0, 0, 0, 0.2); /* Casi transparente */
+    border-radius: 0 0 0.5em 0.5em;
+   
+    font-size: 1.1em;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Título y enlace del artículo -->
+      <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6" data-audio-src="audio/diapo-titulo.mp3">
+          <h2 style="font-size: 4rem; color: white;">Título del Estudio de Dermatitis Atópica</h2>
+          <p style="font-size: 3rem; color: white;">[Aquí iría el título en el idioma original, seguido de la traducción al español]</p>
+          <a href="URL_DEL_ARTICULO" style="font-size: 3rem; color: #d9e3f0;">Enlace al artículo</a>
+          <aside class="notes">
+              En esta primera diapositiva introducimos el estudio que estamos analizando, el cual profundiza en la relación entre la dermatitis atópica y los factores genéticos. Un tema fascinante y relevante para la práctica clínica actual.
+          </aside>
+          <p style="position: absolute; bottom: 2%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em; color: white; margin-bottom: -3vh;">
+              Lectura crítica del artículo: 
+              <a href="URL_DEL_ARTICULO" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">[Título y referencia bibliográfica del artículo en norma vancouver]</a> elaborado por 
+              <a href="https://openai.com" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">ChatGPT</a>
+          </p>
+      </section>
+      
+      <!-- Resultados y conclusiones -->
+      <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6">
+          <h2 style="font-size: 4rem; color: white;">Resultados y Conclusiones</h2>
+          <div style="font-size: 3rem; color: white;">
+              <p>El estudio revela la importancia de la historia familiar en el desarrollo de la dermatitis atópica (DA), presentando datos sobre la distribución de IgE en suero y los riesgos de recurrencia para atopia.</p>
+              <ul style="font-size: 3rem;">
+                  <li>Riesgo de AD en hijos cuando ningún padre tiene manifestaciones: <strong>10%</strong>.</li>
+                  <li>Riesgo de atopia en la misma situación: <strong>16%</strong>.</li>
+              </ul>
+          </div>
+          <aside class="notes">
+              Los resultados son esclarecedores y apuntan a una clara influencia genética en la dermatitis atópica, un dato crucial para médicos y pacientes en la comprensión y manejo de la enfermedad.
+          </aside>
+          <p style="position: absolute; bottom: 2%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em; color: white; margin-bottom: -3vh;">
+              Lectura crítica del artículo: 
+              <a href="URL_DEL_ARTICULO" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">[Título y referencia bibliográfica del artículo en norma vancouver]</a> elaborado por 
+              <a href="https://openai.com" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">ChatGPT</a>
+          </p>
+      </section>
+      
+      <!-- Calidad del estudio -->
+      <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6">
+          <h2 style="font-size: 4rem; color: white;">Calidad del Estudio</h2>
+          <div style="font-size: 3rem; color: white;">
+              <p>La metodología del estudio y el análisis estadístico detallado sugieren una alta calidad de la investigación.</p>
+              <!-- Sugerencia de imagen: Una tabla o gráfico que represente la calidad del estudio -->
+          </div>
+          <aside class="notes">
+              La sólida base metodológica y estadística de este estudio proporciona una confianza considerable en los resultados y conclusiones presentados.
+          </aside>
+          <p style="position: absolute; bottom: 2%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em; color: white; margin-bottom: -3vh;">
+              Lectura crítica del artículo: 
+              <a href="URL_DEL_ARTICULO" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">[Título y referencia bibliográfica del artículo en norma vancouver]</a> elaborado por 
+              <a href="https://openai.com" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">ChatGPT</a>
+          </p>
+      </section>
+      
+      <!-- Interpretación por expertos -->
+      <!-- Los siguientes bloques de diapositivas deberán seguir el patrón establecido, incluyendo secciones para "Revisión Evolutiva", "Resumen de ChatGPT" y "Tweet (actualización)" -->
+     <!-- Interpretación por expertos -->
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6">
+  <h2 style="font-size: 4rem; color: white;">Interpretación por Expertos</h2>
+  <div style="font-size: 3rem; color: white;">
+      <p>Dermatólogos y genetistas resaltan la relevancia de los riesgos de recurrencia basados en la historia familiar. Un enfoque multidisciplinario es crucial para la comprensión completa del estudio.</p>
+  </div>
+  <aside class="notes">
+      Aquí, expertos de diferentes campos nos ofrecen su valiosa perspectiva sobre los datos presentados, enriqueciendo nuestra comprensión del estudio y sus implicaciones prácticas.
+  </aside>
+  <p style="position: absolute; bottom: 2%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em; color: white; margin-bottom: -3vh;">
+      Lectura crítica del artículo: 
+      <a href="URL_DEL_ARTICULO" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">[Título y referencia bibliográfica del artículo en norma vancouver]</a> elaborado por 
+      <a href="https://openai.com" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">ChatGPT</a>
+  </p>
+</section>
+
+<!-- Revisión Evolutiva -->
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6">
+  <h2 style="font-size: 4rem; color: white;">Revisión Evolutiva</h2>
+  <div style="font-size: 3rem; color: white;">
+      <p>Un enfoque evolutivo podría proporcionar insights sobre por qué ciertas predisposiciones genéticas a la DA han persistido a través del tiempo.</p>
+  </div>
+  <aside class="notes">
+      Reflexionar sobre la historia evolutiva de nuestras predisposiciones genéticas ofrece una capa adicional de comprensión y contexto al estudio de enfermedades como la DA.
+  </aside>
+  <p style="position: absolute; bottom: 2%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em; color: white; margin-bottom: -3vh;">
+      Lectura crítica del artículo: 
+      <a href="URL_DEL_ARTICULO" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">[Título y referencia bibliográfica del artículo en norma vancouver]</a> elaborado por 
+      <a href="https://openai.com" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">ChatGPT</a>
+  </p>
+</section>
+
+<!-- Resumen de ChatGPT -->
+<section data-background-image="" data-background-opacity="0.6">
+  <h2 style="font-size: 4rem; color: white;">Resumen de ChatGPT</h2>
+  <div style="font-size: 3rem; color: white;">
+      <p>El análisis del estudio subraya la influencia de la historia familiar en la dermatitis atópica y la importancia de la consejería genética.</p>
+  </div>
+  <aside class="notes">
+      Este resumen enfoca los puntos clave del estudio, proporcionando a los profesionales una síntesis accesible y aplicable de la investigación.
+  </aside>
+  <p style="position: absolute; bottom: 2%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em; color: white; margin-bottom: -3vh;">
+      Lectura crítica del artículo: 
+      <a href="URL_DEL_ARTICULO" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">[Título y referencia bibliográfica del artículo en norma vancouver]</a> elaborado por 
+      <a href="https://openai.com" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">ChatGPT</a>
+  </p>
+</section>
+
+<!-- Tweet (actualización) -->
+<section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-background-opacity="0.6">
+  <h2 style="font-size: 4rem; color: white;">Tweet</h2>
+  <div style="font-size: 3rem; color: white;">
+      <p>"🧬 Descubre cómo la historia familiar incide en el riesgo de #DermatitisAtópica. Datos esenciales para la consejería genética y el abordaje de la DA. #SaludPública #Genética 📊 @ChatGPT"</p>
+  </div>
+  <aside class="notes">
+      Este tweet resume de forma concisa y atractiva los hallazgos del estudio, facilitando su difusión en la comunidad médica y científica.
+  </aside>
+  <p style="position: absolute; bottom: 2%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em; color: white; margin-bottom: -3vh;">
+      Lectura crítica del artículo: 
+      <a href="URL_DEL_ARTICULO" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">[Título y referencia bibliográfica del artículo en norma vancouver]</a> elaborado por 
+      <a href="https://openai.com" target="_blank" style="font-size: inherit; text-decoration: underline; color: #d9e3f0;">ChatGPT</a>
+  </p>
+</section>
+
+</div>
+
+      
+     
+      
+  </div>
+  
+  
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/js/reveal.min.js"></script>
+
+<script src="reveal.js/plugin/notes/notes.js"></script>
+<script src="../reveal.js-plugins/"></script>
+
+<script src="../reveal.js-plugins/zoom/zoom.js"></script>
+<script src="../reveal.js-plugins/reveal-onetimer/onetimer.js"></script>
+<script src="../reveal.js-plugins/animate/plugin.js"></script>
+<script src="../reveal.js-plugins/animate/svg.min.js"></script>
+<script src="../reveal.js-plugins/simplemenu/simplemenu.js"></script>
+<script src="../reveal.js-plugins/fullscreen/plugin.js"></script>
+<script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+
+<script> 
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+
+
+
+Reveal.initialize({
+ controls: true,
+ progress: true,
+ history: true,
+ center: true,
+ autoSlide: 0,
+ slideNumber: 'hv',
+ mouseWheel: true,
+dependencies: [
+    { src: '//cdn.jsdelivr.net/npm/reveal-plantuml' },
+  ],
+
+ menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+    side: 'left',
+   themes: 
+   //texto del menu aparece traducido por cambio en menu.js 
+   [
+  { name: 'Negro', theme: 'reveal.js/dist/theme/black.css' },
+  { name: 'Blanco', theme: 'reveal.js/dist/theme/white.css' },
+  { name: 'Leyenda', theme: 'reveal.js/dist/theme/league.css' },
+  { name: 'Oscuro',  theme: 'reveal.js/dist/theme/black.css'},
+  { name: 'Solar',  theme: 'reveal.js/dist/theme/solarized.css'},
+  { name: 'Sangre',  theme: 'reveal.js/dist/theme/blood.css'},
+  /* { name: 'Sangre',  theme: 'reveal.js/dist/theme/blood_2.css'}, */
+  { name: 'Luna',  theme: 'reveal.js/dist/theme/moon.css'},
+  { name: 'Serif',  theme: 'reveal.js/dist/theme/serif.css'},
+  { name: 'Cielo',  theme: 'reveal.js/dist/theme/sky.css'},
+  { name: 'Beige',  theme: 'reveal.js/dist/theme/beige.css'},
+  { name: 'Simple',  theme: 'reveal.js/dist/theme/simple.css'},
+],
+
+   openOnInit: false,
+  /*  transitions: true,
+   transition: 'convex', // possible values: 'linear', 'slide', 'zoom', 'concave', 'convex', 'fade'. */
+	   markers: true,
+   keyboard: true,
+   useTextContentForMissingTitles: true,
+   titleSelector: 'h1, h2, h3, h4, h5, h6',
+   numbers: true,
+   hideMissingTitles: true,
+   
+   custom: [
+				            /* { title: 'Plugins', icon: '<i class="fa fa-external-link-alt"></i>', src: 'toc.html' }, */
+				            { title: 'Teclas', icon: '<i class="fa fa-info"></i>', src: 'about.html', content:'B: Escribir en pizarra<p>Botón Derecho Ratón: Borrar<p>C: Escribir en la diapositiva<p>SUPR: Borrar dibujo diapo<p>RETROCESO: Borrar todas diapos<p>M: Abrir/cerrar menú<p> F: Pantalla completa<p>V: Pausar presentación<p>A: Escuchar/pausar audio <p>S: Notas y vista de presentador<p>Alt+Botón Izquierdo del Ratón: Zoom<p>ESC: Mapa de Diapositivas<p>' }
+                    
+				        ]        
+ },
+ 
+	// ...
+	/* chart: {
+		defaults: {
+			color: 'lightgray', // color of labels
+			scale: {
+				beginAtZero: true,
+				ticks: { stepSize: 1 },
+				grid: { color: "lightgray" } , // color of grid lines
+			},
+		},
+		line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+		bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+		pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+	}, */
+        // ...
+/* https://github.com/rajgoel/reveal.js-plugins/blob/master/audio-slideshow/README.md */
+/* https://voicemaker.in/ Patricia, 3DB, 8% velocidad, DRC, Neural TTS, Spanish Castilian.*/
+ audio: {
+   prefix: 'chalkboard/',
+   suffix: '.mp3',
+   defaultDuration: 5,
+   /* Camila, Sofia, Diego, Luna https://www.voicerss.org/api/ */
+   textToSpeechURL: "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Diego&c=ogg&r=1&f=48khz_16bit_stereo&src=",
+   advance: -1,
+   autoplay: false,
+   defaultText: true,
+   playerOpacity: 0.2,
+ },
+ oneTimer: {immediateMode: true}, 
+ simplemenu: {
+ menuclass: 'menu',
+ activeclass: 'active',
+ activeelement: 'li',
+ selectby: 'id',
+ auto: false
+},
+animate: {
+		autoplay: true
+	},
+ chalkboard: { // font-awesome.min.css must be available
+   src: "../reveal.js-plugins/chalkboard/chalkboard.json ",
+   storage: "chalkboard-demo",
+   toggleChalkboardButton: { left: "80px" },
+   toggleNotesButton: { left: "130px" },
+   colorButtons: 5
+ },
+ width: "99%",
+ height: "99%",
+ center:true,
+/* esto daría tiempo en notas orador pero hay algún error  
+defaultTiming: #{attr 'revealjs_defaulttiming', 600}, */
+ // Specify the total time in seconds that is available to
+ // present.  If this is set to a nonzero value, the pacing
+ // timer will work out the time available for each slide,
+ // instead of using the defaultTiming value
+
+ backgroundTransition: 'fade',
+ // Transition style for full page slide backgrounds: none/fade/slide/convex/concave/zoom
+ 
+ // Global override for preloading lazy-loaded iframes
+ // - null:   Iframes with data-src AND data-preload will be loaded when within
+ //           the viewDistance, iframes with only data-src will be loaded when visible
+ // - true:   All iframes with data-src will be loaded when within the viewDistance
+ // - false:  All iframes with data-src will be loaded only when visible
+ preloadIframes: true,
+ viewDistance: 3,
+ mobileViewDistance: 2,
+ hash: true,
+ plugins: [ RevealMarkdown,RevealAudioSlideshow,RevealMenu,Appearance,RevealAnimate,RevealZoom, RevealChalkboard,RevealNotes,Simplemenu,RevealEmbedTweet,OneTimer],
+ /* , RevealHighlight, RevealAudioRecorder, RevealFullscreen,RevealEmbedTweet */
+});
+
+function changeTheme(input) {
+var config = {};
+config.theme = input.value;
+Reveal.getPlugin("RevealChalkboard").configure(config);
+input.blur();
+}
+
+
+/* para fecha del día */
+function getYesterdayDate() {
+      var ayer = new Date(Date.now() - 86400000);
+      var dia = ayer.getDate();
+      var mes = ayer.getMonth() + 1;
+      var año = ayer.getFullYear();
+      return dia.toString() + '/' + mes.toString() + '/' + año.toString();
+    }
+
+    Reveal.addEventListener('slidechanged', function(event) {
+    // Verifica si la diapositiva actual tiene un elemento con el ID que necesitas
+    var fechaSpan = event.currentSlide.querySelector('[id^="fecha-de-ayer"]');
+    if (fechaSpan) {
+        fechaSpan.innerHTML = getYesterdayDate();
+    }
+});
+    var fechaSpan = document.getElementById('fecha-de-ayer');
+    fechaSpan.innerHTML = getYesterdayDate();
+
+ 
+   
+
+/* para tabla prompts */
+
+    function copyToClipboard(elementId, btnElement) {
+  var text = document.getElementById(elementId).innerText;
+  var textarea = document.createElement("textarea");
+  textarea.textContent = text;
+  textarea.style.position = "fixed";
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    document.execCommand("copy");
+    btnElement.innerText = "¡Copiado!";
+    setTimeout(function() {
+      btnElement.innerText = "Copiar";
+    }, 2000); // Regresa al texto original después de 2 segundos
+  } catch (ex) {
+    console.warn("Copy to clipboard failed.", ex);
+  } finally {
+    document.body.removeChild(textarea);
+  }
+}
+
+           /* para tabla framework incremental */                 
+
+  var search = '((((("critical appraisal" OR "journal club" OR (journal[TIAB] AND club*[TIAB])))) OR ((((("evidence-based practice" OR "evidence-based policy" OR "evidence based practice" OR "evidence-based medicine" OR "evidence based medicine" OR "evidence-based health care" OR "evidence-based healthcare" OR "evidence based health care" OR "evidence based health care" OR "evidence-based dentistry" OR "evidence based dentistry" OR "Evidence-Based Facility Design" OR "evidence-based nursing" OR "evidence based nursing" OR "Evidence-Based Emergency Medicine")))) OR (((((("Evidence-Based Practice"[Mesh]) OR "Evidence-Based Practice/education"[Mesh]) OR "Evidence-Based Medicine"[Mesh]) OR "Evidence-Based Dentistry"[Mesh]) OR "Evidence-Based Nursing"[Mesh] OR "Evidence-Based Facility Design"[Mesh] OR "Evidence-Based Emergency Medicine"[Mesh])))))'; // Búsqueda completa
+  document.getElementById("searchString").innerText = search;
+              function copyPromptWithSearchToClipboard(elementId, btnElement) {
+                  var text = document.getElementById(elementId).innerText + ' ' + search;
+                  var textarea = document.createElement("textarea");
+                  textarea.textContent = text;
+                  textarea.style.position = "fixed";
+                  document.body.appendChild(textarea);
+                  textarea.select();
+                  try {
+                      document.execCommand("copy");
+                      btnElement.innerText = "¡Copiado!";
+                      setTimeout(function() {
+                          btnElement.innerText = "Copiar";
+                      }, 2000); // Regresa al texto original después de 2 segundos
+                  } catch (ex) {
+                      console.warn("Copy to clipboard failed.", ex);
+                  } finally {
+                      document.body.removeChild(textarea);
+                  }
+              }
+              
+          
+
+</script>
+
+
+<!-- <a href="https://twitter.com/ernestob" target="_blank">
+<img  style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png"
+width="35" height="40"> -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>

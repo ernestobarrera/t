@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Presentación: Diseño de una Asignatura Universitaria de Inteligencia Artificial para Medicina" />
+    <meta name="author" content="[Tu Nombre/Institución]" /> <link rel="icon" href="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png" /> <meta property="og:type" content="article" />
+    <meta property="og:title" content="Diseño de una Asignatura Universitaria de IA para Medicina | Propuesta Fundacional" />
+    <meta property="og:site_name" content="[Nombre de tu Sitio o Repositorio]" /> <meta property="og:url" content="https://www.youtube.com/channel/UCQuBnN3_cTHfEqH6jgg77_Q" /> <meta property="article:published_time" content="2025-05-25" /> <meta property="article:author" content="[Tu Nombre/Institución]" /> <title>IA para Medicina: Propuesta de Asignatura Universitaria</title>
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="reveal.js/dist/theme/blood.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js-plugins/simplemenu/simplemenu.css"> <link rel="stylesheet" href="reveal.js/plugin/highlight/zenburn.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/appearance/appearance.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+    <style>
+        /* ##Device=Desktops ##Screen=1281px to higher resolution desktops */ 
+        @media (min-width: 1601px){ html{ font-size: 140%;} *{ font-size: 1.2rem;}} 
+        @media (min-width: 1401px) and (max-width: 1600px){ html{ font-size: 100%;} *{ font-size: 1.2rem;}} 
+        @media (min-width: 1281px) and (max-width: 1400px){ html{ font-size: 100%;} *{ font-size: 1.2rem;}} 
+        /* ##Device=Laptops, Desktops ##Screen=B/w 1025px to 1280px */ 
+        @media (min-width: 1025px) and (max-width: 1280px){ html{ font-size: 100%;} *{ font-size: 1.2rem;}} 
+        /* ##Device=Tablets, Ipads (portrait) ##Screen=B/w 768px to 1024px */ 
+        @media (min-width: 768px) and (max-width: 1024px){ html{ font-size: 100%;} *{ font-size: 1.2rem;}} 
+        /* ##Device=Tablets, Ipads (landscape) ##Screen=B/w 768px to 1024px */ 
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){ html{ font-size: 120%;} *{ font-size: 1.2rem;}} 
+        /* ##Device=Low Resolution Tablets, Mobiles (Landscape) ##Screen=B/w 481px to 767px */ 
+        @media (min-width: 481px) and (max-width: 767px){ html{ font-size: 0.9rem;} *{ font-size: 1rem;}} 
+        /* ##Device=Most of the Smartphones Mobiles (Portrait) ##Screen=B/w 320px to 479px */ 
+        @media (min-width: 320px) and (max-width: 480px){ html{ font-size: 0.8rem;} *{ font-size: 1rem;}} 
+        @media (max-width: 319px){ html{ font-size: 0.7rem;} *{ font-size: 0.8rem;}} 
+        @media screen and (min-width: 500px){ html .slide-menu.slide-menu--left.active{ font-size: 0.2rem !important; width: 60%;}} 
+        .cabecera{ margin-top: 1em; font-size: 5rem; color: orange; word-spacing: 10px; text-shadow: 3px 3px 4px #000000;} 
+        h1.color, h2.color, h3.color, h4.color, h5.color, h6.color{ color: rgb(251, 183, 56); text-shadow: 1px 1px 1px #000;} 
+        .reveal h1{ font-size: 2.2rem;} .reveal h2{ font-size: 2rem;} .reveal h3{ font-size: 1.8rem;} .reveal h4{ font-size: 1.6rem;} .reveal h5{ font-size: 1.4rem;} 
+        .table-cell{ border: 1px solid #dddddd; padding: 5px; font-size: 0.85em;} .table-cell-header{ font-weight: bold;} 
+        .imagen-responsiva{ position: fixed; z-index: 5; top: 10px; right: 10px; border: 0; height: 80px; width: auto; box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);} /* Ajustado para no superponer logo cabecera */
+        @media (max-width: 1200px){ .imagen-responsiva{ height: 4vw; min-height: 30px;}} 
+        .vertical{ margin-top: 1.2rem;} .titulo{ font-size: 2.5rem; font-weight: bold; font-family: 'Arial', sans-serif;} 
+        .left{ text-align: left;} .pie{ position: absolute !important; bottom: 0.3125rem;} 
+        .size-1{ font-size: 2rem;} .size{ font-size: 1.625rem;} .size0{ font-size: 1.25rem;} .size1{ font-size: 1rem;} .size2{ font-size: 0.875rem;} .size3{ font-size: 1rem;} 
+        .color{ color: rgb(251, 183, 56);} 
+        .fragment.blur{ filter: blur(5px);} .fragment.blur.visible{ filter: none;} 
+        .full-height{ height: 100vh;} 
+        .footer{ position: absolute; width: 100%; text-align: center; left: 50%; bottom: 1em; transform: translateX(-50%); font-size: 0.7em; color: #ccc;} 
+        .aligned p{ margin-left: 15%; text-align: left;} 
+        .filaImagenTexto{ display: flex; align-items: center; justify-content: space-around;} .filaImagenTexto div{ width: 50%;} 
+        .mensaje-usuario{ margin-left: 15%; text-align: left; color: #2fa883; font-weight: bold;} 
+        .mensaje-chatgpt{ margin-left: 15%; text-align: left; color: #3969ab; font-weight: bold;} 
+        .highlighted{ background-color: rgba(252, 212, 212, 0.5);} 
+        .controls-arrow{ font-size: 10px !important;} 
+        .glow-on-hover{ width: 280px; height: 50px; border: none; outline: none; color: #fff; background: rgb(214, 197, 197); cursor: pointer; position: relative; z-index: 0; border-radius: 8px;} 
+        .glow-on-hover:before{ width: 280px; height: 50px; border: none; outline: none; color: #fff; background: rgb(214, 197, 197); cursor: pointer; position: relative; z-index: 0; border-radius: 8px;} 
+        .glow-on-hover:before{ content: ''; background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000); position: absolute; top: -2px; left: -2px; background-size: 400%; z-index: -1; filter: blur(5px); width: calc(100% + 4px); height: calc(100% + 4px); animation: glowing 20s linear infinite; opacity: 0; transition: opacity .3s ease-in-out; border-radius: 8px;} 
+        .glow-on-hover:active{ color: #000} .glow-on-hover:active:after{ background: transparent;} .glow-on-hover:hover:before{ opacity: 1;} 
+        .glow-on-hover:after{ z-index: -1; content: ''; position: absolute; width: 100%; height: 100%; background: rgb(255, 191, 71); left: 0; top: 0; border-radius: 8px;} 
+        button{ padding: 10px 20px; background-color: #007BFF; color: #FFFFFF; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;} 
+        button:hover{ background-color: #0056b3;} 
+        @keyframes glowing{ 0%{ background-position: 0 0;} 50%{ background-position: 400% 0;} 100%{ background-position: 0 0;}} 
+        .bold-text{ font-weight: bold;} 
+        section .custom-table{ font-size: 0.8em !important; width: 100% !important;} 
+        section .custom-table th, section .custom-table td{ padding: 4px 8px !important; border: 1px solid #ccc !important;} 
+        section .custom-table th{ background-color: #333 !important; color: #fff !important; font-weight: bold !important;} 
+        .reveal .box{ width: auto; margin: 1ex auto; line-height: 1.5; padding: 0; text-align: center; overflow: auto; text-align: left; border-radius: 0.5em; box-shadow: 8px 8px 7px 5px rgba(9, 9, 9, 0.512); } 
+        .reveal .box .title, .reveal .box .content{ padding: 0.8ex 3%; border: #ddd 1px solid;} 
+        .reveal .box .title{ color: rgb(251, 183, 56); text-shadow: 2px 2px 2px #555; background-color: rgba(0, 0, 0, 0.4); border-bottom: none; border-radius: 0.5em 0.5em 0 0; font-size: 1.4em; font-weight: 600;} 
+        .reveal .box .content{ color: #ffffff; text-shadow: 2px 2px 2px #555; background-color: rgba(0, 0, 0, 0.2); border-radius: 0 0 0.5em 0.5em; font-size: 1.1em;}
+        .reveal ul li { margin-bottom: 0.5em; line-height: 1.4; }
+        .reveal p { margin-bottom: 0.7em; line-height: 1.4; }
+        .reveal h3 { margin-bottom: 0.7em;}
+        .reveal h4 { margin-bottom: 0.5em;}
+        .reveal .slides section[data-background-image] {
+            background-position: center center;
+            background-size: cover;
+        }
+        .columna-izq { float: left; width: 48%; margin-right: 2%; }
+        .columna-der { float: right; width: 48%; }
+        .clear { clear: both; }
+        .small-text { font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <a href="[URL_A_TU_PAGINA_O_PERFIL]" target="_blank"> <img style="position: fixed; z-index:10; margin:10px; top: 0; left: 0; border: 0;" title="[TU_NOMBRE_O_INSTITUCION]" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png" width="35" height="40"> </a>
+
+        <div class="slides">
+
+            <section>
+                <section data-background-image="images/slide01_fondo_titulo.png" 
+                         data-background-opacity="0.3"
+                         data-audio-src="audio/slide01_titulo_institucional.mp3">
+                    <h1 class="color" style="margin-top: 15vh;">Diseño de una Asignatura Universitaria de Inteligencia Artificial para Medicina</h1>
+                    <h3 style="margin-top: 3vh;">Hacia un Estándar Global Acreditable</h3>
+                    <p style="position: absolute; bottom: 10vh; width: 100%; text-align: center; font-size: 0.9em;">
+                        [Nombre de la Institución/Departamento]<br>
+                        Mayo 2025
+                    </p>
+                    <aside class="notes">
+                        - Bienvenida.
+                        - Presentación formal del título de la propuesta.
+                        - Breve mención del carácter estratégico y la visión de futuro.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide02_fondo_resumen_ejecutivo.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide02_resumen_vision.mp3">
+                    <h2 class="color">Resumen Ejecutivo y Visión Estratégica</h2>
+                    <p style="font-size: 0.95rem; text-align: left; margin-top: 2vh;" class="fragment">
+                        Este informe presenta una investigación y propuesta para el diseño de una asignatura universitaria sobre "Inteligencia Artificial para Medicina", destinada a estudiantes de medicina desde los primeros años[cite: 1, 2].
+                    </p>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 2vh; line-height: 1.4;">
+                        <li class="fragment"><strong>Objetivo Principal:</strong> Integrar de manera sinérgica el conocimiento clínico fundamental con el pensamiento computacional, los principios de la neuroeducación, la alfabetización algorítmica y los más altos estándares pedagógicos y regulatorios[cite: 3].</li>
+                        <li class="fragment"><strong>Justificación:</strong> La IA está transformando la atención sanitaria, haciendo imperiosa esta formación[cite: 4].</li>
+                        <li class="fragment"><strong>Visión:</strong> Posicionar la asignatura como una oferta académica emblemática y exportable, preparando a los futuros médicos para liderar la transformación sanitaria[cite: 19, 21].</li>
+                    </ul>
+                    <aside class="notes">
+                        - Destacar la naturaleza "pionera" y "emblemática".
+                        - Subrayar la integración de múltiples disciplinas.
+                        - Conectar con la necesidad actual de transformación sanitaria.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide03_fondo_imperativo_medicina.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide03_imperativo_ia_medicina.mp3">
+                    <h2 class="color">El Imperativo de la IA en la Medicina Contemporánea</h2>
+                    <ul style="font-size: 0.95rem; text-align: left; margin-top: 3vh; line-height: 1.5;">
+                        <li class="fragment">La inteligencia artificial está reconfigurando fundamentalmente la prestación de servicios de salud, trascendiendo su papel como mera herramienta para convertirse en un componente integral de la práctica médica futura[cite: 25].</li>
+                        <li class="fragment">Esta transformación exige un cambio paradigmático en la educación médica[cite: 25].</li>
+                        <li class="fragment">La documentación de programas de formación en IA biomédica ya destaca la importancia de una capacitación integral que aborde la diversidad de los antecedentes de los estudiantes y la necesidad de experimentos prácticos[cite: 30].</li>
+                    </ul>
+                    <aside class="notes">
+                        - Enfatizar la IA como "componente integral", no solo una "herramienta".
+                        - La "transformación" y el "cambio paradigmático" son ideas fuerza.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide04_fondo_pensamiento_computacional_med.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide04_necesidad_pensamiento_computacional.mp3">
+                    <h2 class="color">La Nueva Competencia: Pensamiento Computacional en Medicina</h2>
+                    <p style="font-size: 0.95rem; text-align: left; margin-top: 2vh;" class="fragment">
+                        No es suficiente que los estudiantes de medicina adquieran únicamente habilidades clínicas tradicionales; es imperativo que también desarrollen un "pensamiento computacional"[cite: 26, 27].
+                    </p>
+                    <p style="font-size: 0.9rem; text-align: left; margin-top: 2vh;" class="fragment">
+                        Este enfoque cognitivo, aplicado al contexto médico, implica la capacidad de[cite: 27, 28]:
+                    </p>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 1vh; columns: 2; column-gap: 20px;">
+                        <li class="fragment">Descomponer problemas clínicos complejos.</li>
+                        <li class="fragment">Reconocer patrones en grandes conjuntos de datos sanitarios.</li>
+                        <li class="fragment">Abstraer principios fundamentales.</li>
+                        <li class="fragment">Comprender el diseño algorítmico subyacente.</li>
+                    </ul>
+                    <aside class="notes">
+                        - Definir claramente el "pensamiento computacional" en el contexto médico.
+                        - Resaltar sus componentes clave como habilidades prácticas.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide05_fondo_demanda_deficit.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide05_demanda_estudiantil_deficit.mp3">
+                    <h2 class="color">Demanda Estudiantil y Déficit Curricular Actual</h2>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 2vh; line-height: 1.4;">
+                        <li class="fragment">Los propios estudiantes de medicina identifican la importancia del conocimiento en IA para sus futuras carreras y abogan activamente por su inclusión en los planes de estudio[cite: 28].</li>
+                        <li class="fragment">Estudios indican que, aunque los estudiantes muestran un gran interés y optimismo, a menudo carecen de una exposición formal y una comprensión profunda de sus principios y limitaciones[cite: 28].</li>
+                        <li class="fragment">Abordar esta brecha es crucial para preparar una nueva generación de médicos capaces no solo de utilizar herramientas de IA, sino de comprenderlas, evaluarlas críticamente y participar en su desarrollo y aplicación ética[cite: 29].</li>
+                        <li class="fragment">La literatura subraya que la alfabetización en IA es una barrera significativa para su adopción en medicina, haciendo esencial la incorporación de los fundamentos de la IA en los currículos de los profesionales de la salud[cite: 30].</li>
+                    </ul>
+                    <aside class="notes">
+                        - Conectar la demanda estudiantil con la justificación de la asignatura.
+                        - El "déficit" o "brecha" es la oportunidad que se aborda.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide06_fondo_constructos_pedagogicos.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide06_introduccion_constructos_pedagogicos.mp3">
+                    <h2 class="color">Constructos Pedagógicos Centrales de la Asignatura</h2>
+                    <p style="font-size: 0.95rem; text-align: left; margin-top: 2vh;" class="fragment">
+                        Estos constructos son fundamentales para el diseño de una asignatura de IA en Medicina coherente y con visión de futuro. No son temas aislados, sino que interactúan para definir las competencias de un futuro "clínico preparado para la IA"[cite: 31, 32].
+                    </p>
+                    <blockquote class="fragment" style="font-size: 0.9em; margin-top: 2vh; font-style: italic;">
+                        "La alfabetización algorítmica es un requisito previo para el discernimiento; la IA explicable (XAI) permite la confianza en el discernimiento; y los principios de la neuroeducación optimizan el aprendizaje de todos estos elementos. Esta interconexión debe reflejarse explícitamente en el currículum"[cite: 33, 34, 35].
+                    </blockquote>
+                    <div style="margin-top: 3vh; display: flex; justify-content: space-around; text-align: center; font-size: 0.8rem;">
+                        <div class="fragment box" style="width: 22%; padding: 8px; margin: 4px;"><h5 class="color" style="font-size:1em; margin-bottom:0.3em;">Discernimiento Clínico Asistido por IA</h5></div>
+                        <div class="fragment box" style="width: 22%; padding: 8px; margin: 4px;"><h5 class="color" style="font-size:1em; margin-bottom:0.3em;">Alfabetización Algorítmica</h5></div>
+                        <div class="fragment box" style="width: 22%; padding: 8px; margin: 4px;"><h5 class="color" style="font-size:1em; margin-bottom:0.3em;">Principios de Neuroeducación</h5></div>
+                        <div class="fragment box" style="width: 22%; padding: 8px; margin: 4px;"><h5 class="color" style="font-size:1em; margin-bottom:0.3em;">IA Explicable (XAI)</h5></div>
+                    </div>
+                    <aside class="notes">
+                        - Introducir los 4 pilares conceptuales.
+                        - Enfatizar su interconexión y cómo juntos forman la base de la asignatura.
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <section data-background-image="images/slide07_fondo_constructo_discernimiento.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide07_constructo1_discernimiento.mp3">
+                    <h3 class="color">Constructo 1: Discernimiento Clínico Asistido por IA</h3>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:2vh;">
+                        <strong>Definición:</strong> Este concepto va más allá del "apoyo a la decisión", enfatizando el proceso cognitivo colaborativo donde los clínicos aprovechan los conocimientos de la IA manteniendo el juicio crítico y la responsabilidad[cite: 35].
+                    </p>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 2vh; line-height: 1.4;">
+                        <li class="fragment">Implica comprender las fortalezas y limitaciones de la IA en tareas diagnósticas y pronósticas[cite: 36].</li>
+                        <li class="fragment">No se trata de una aceptación pasiva de las recomendaciones algorítmicas, sino de una integración reflexiva de la información generada por la IA en el proceso de razonamiento clínico del médico[cite: 37].</li>
+                        <li class="fragment"><strong>Implicación curricular:</strong> Enseñar a evaluar críticamente las salidas de IA, comprender los datos subyacentes, e integrarlas en el razonamiento, identificando errores potenciales[cite: 38, 39].</li>
+                    </ul>
+                    <aside class="notes">
+                        - Idea central: IA como colaborador, no sustituto del juicio clínico.
+                        - Necesidad de evaluar críticamente las sugerencias de la IA.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide08_fondo_constructo_alfabetizacion.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide08_constructo2_alfabetizacion.mp3">
+                    <h3 class="color">Constructo 2: Alfabetización Algorítmica para Profesionales Médicos</h3>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:2vh;">
+                        <strong>Definición:</strong> Implica la comprensión de los principios fundamentales sobre cómo funcionan los algoritmos, cómo se desarrollan, entrenan y validan, incluyendo sus sesgos potenciales y limitaciones, sin necesidad de que el profesional sea un programador experto[cite: 41, 42].
+                    </p>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 2vh; line-height: 1.4;">
+                        <li class="fragment">Capacidad de "leer" e interpretar el comportamiento de los algoritmos en contextos clínicos[cite: 42].</li>
+                        <li class="fragment">Una definición operativa abarca la comprensión, el compromiso, la evaluación crítica, las implicaciones éticas y la aplicación responsable[cite: 42].</li>
+                        <li class="fragment"><strong>Enfoque curricular:</strong> Módulos sobre fuentes y calidad de datos, modelos de ML, métricas de rendimiento, y el crucial concepto de "sesgo algorítmico" y su impacto en la equidad sanitaria[cite: 43].</li>
+                    </ul>
+                    <aside class="notes">
+                        - Clave: No se requiere ser programador, sino un usuario informado y crítico.
+                        - El concepto de "sesgo algorítmico" es fundamental.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide09_fondo_constructo_neuroeducacion.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide09_constructo3_neuroeducacion.mp3">
+                    <h3 class="color">Constructo 3: Principios de Neuroeducación en Pedagogía Médica de IA</h3>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:2vh;">
+                        <strong>Definición:</strong> La neuroeducación aplica los hallazgos de la neurociencia cognitiva para mejorar las estrategias de enseñanza y aprendizaje, centrándose en cómo aprende mejor el cerebro. Esto incluye la gestión de la carga cognitiva, el fomento del compromiso y la promoción de la metacognición[cite: 45, 46].
+                    </p>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 2vh; line-height: 1.4;">
+                        <li class="fragment">Campo multidisciplinar que refleja la naturaleza interdisciplinaria de la asignatura propuesta[cite: 47].</li>
+                        <li class="fragment"><strong>Aplicación:</strong> Diseño de actividades "amigables con el cerebro", usando técnicas como repetición espaciada, recuperación activa, aprendizaje multimodal y creación de experiencias emocionalmente relevantes para mejorar la retención y comprensión[cite: 48, 49].</li>
+                        <li class="fragment">Integración de la Teoría de la Carga Cognitiva para optimizar entornos de aprendizaje y personalizar la educación[cite: 50].</li>
+                    </ul>
+                    <aside class="notes">
+                        - Enfocarse en CÓMO enseñar la IA de manera efectiva.
+                        - La gestión de la carga cognitiva es clave para temas complejos.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide10_fondo_constructo_xai.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide10_constructo4_xai.mp3">
+                    <h3 class="color">Constructo 4: IA Explicable (XAI) en Enseñanza y Aprendizaje Médico</h3>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:2vh;">
+                        <strong>Definición:</strong> La IA Explicable (XAI) se refiere a la capacidad de los sistemas de IA para proporcionar explicaciones claras, comprensibles y fiables de sus resultados y procesos de toma de decisiones. Esto es crucial para la adopción clínica, la construcción de confianza y la educación médica efectiva[cite: 52, 53].
+                    </p>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 2vh; line-height: 1.4;">
+                        <li class="fragment">Un marco de explicabilidad validado con clínicos (comprensibilidad, confianza, usabilidad) puede servir como herramienta de enseñanza[cite: 53].</li>
+                        <li class="fragment"><strong>Relevancia curricular:</strong> Enseñar la importancia de la XAI, métodos para lograrla (ej. LIME, SHAP) y cómo exigir e interpretar las explicaciones de las herramientas médicas de IA para garantizar la seguridad del paciente y fomentar la confianza[cite: 54].</li>
+                        <li class="fragment">Los Modelos de Lenguaje Grandes (LLM) pueden mejorar la XAI al transformar resultados complejos en narrativas comprensibles[cite: 55].</li>
+                    </ul>
+                    <aside class="notes">
+                        - XAI = Transparencia y Confianza.
+                        - Fundamental para la seguridad del paciente y la adopción responsable.
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <section data-background-image="images/slide11_fondo_teorias_aprendizaje.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide11_teorias_aprendizaje_evidencia.mp3">
+                    <h3 class="color">Fundamentos Teóricos del Aprendizaje para el Diseño Curricular</h3>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 2vh; line-height: 1.4;">
+                        <li class="fragment"><strong>Constructivismo Cognitivo:</strong> Enfatiza que los estudiantes construyen activamente su propio conocimiento. Se facilitará mediante aprendizaje basado en problemas, proyectos prácticos y práctica reflexiva[cite: 58, 59]. El diseño incorporará co-diseño y marcos de aprendizaje personalizados[cite: 60].</li>
+                        <li class="fragment"><strong>Teoría de la Carga Cognitiva (TCC):</strong> Crucial diseñar materiales y actividades que optimicen la carga sobre la memoria de trabajo, especialmente para IA en medicina. Implica descomponer información, proporcionar andamiaje y usar ejemplos[cite: 61, 62].</li>
+                        <li class="fragment"><strong>Principios de Educación Basada en la Evidencia:</strong> Decisiones sobre diseño curricular, métodos de enseñanza y evaluación deben estar informadas por la mejor evidencia de investigación disponible en educación médica y educación en IA[cite: 63].</li>
+                    </ul>
+                    <p class="fragment small-text" style="margin-top:1.5em;">La integración temprana y proactiva de la IA en la formación médica, en lugar de como un complemento tardío, puede remodelar fundamentalmente el pensamiento clínico[cite: 57].</p>
+                    <aside class="notes">
+                        - Resaltar la solidez pedagógica de la propuesta.
+                        - Mencionar cómo estas teorías se traducen en prácticas de enseñanza concretas.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide12_fondo_competencias_transversales.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide12_metahabilidad_etica.mp3">
+                    <h3 class="color">Competencias Transversales: Aprendizaje Continuo y Ética</h3>
+                    <div class="columna-izq fragment" style="font-size: 0.9rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.1em;">Meta-habilidad: Aprender a Aprender con IA</h4>
+                        <p>Dada la rápida evolución de la IA, una de las competencias más cruciales es la "meta-habilidad" de aprender a aprender con la IA[cite: 65].</p>
+                        <p>Esto implica enseñar a los estudiantes cómo aprender y adaptarse a las nuevas tecnologías de IA a lo largo de sus carreras, vinculándose con la neuroeducación (metacognición) y el aprendizaje permanente[cite: 66].</p>
+                        <p>El curso incluirá módulos sobre la evaluación de nuevas tecnologías y estrategias de aprendizaje autodirigido[cite: 67].</p>
+                    </div>
+                    <div class="columna-der fragment" style="font-size: 0.9rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.1em;">Razonamiento Ético como Habilidad Clínica Central</h4>
+                        <p>El razonamiento ético debe considerarse una habilidad clínica central en la era de la IA[cite: 67].</p>
+                        <p>Las consideraciones éticas no son un tema suplementario, sino que deben integrarse en el núcleo del razonamiento clínico cuando se utiliza la IA[cite: 68].</p>
+                        <p>La capacidad de identificar y mitigar sesgos, garantizar la autonomía del paciente y asignar responsabilidades se convierte en una competencia clínica fundamental, entretejida en cada aspecto del currículum[cite: 69, 70].</p>
+                    </div>
+                    <div class="clear"></div>
+                    <aside class="notes">
+                        - La IA evoluciona rápido, por lo que "aprender a aprender" es vital.
+                        - La ética no es un añadido, sino parte integral de la práctica médica con IA.
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <section data-background-image="images/slide13_fondo_marcos_europeos_eqf_tuning.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide13_marcos_europeos_eqf_tuning.mp3">
+                    <h3 class="color">Alineación con Marcos Europeos: EQF y Proyecto Tuning</h3>
+                    <div class="columna-izq fragment" style="font-size: 0.85rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Marco Europeo de Cualificaciones (EQF)</h4>
+                        <p>Funciona como una herramienta de traducción para facilitar la comprensión y comparabilidad de las cualificaciones nacionales en toda Europa[cite: 82].</p>
+                        <p>Su estructura de 8 niveles se basa en resultados de aprendizaje (conocimientos, destrezas, autonomía y responsabilidad)[cite: 82].</p>
+                        <p>Para "IA para Medicina", los resultados se mapearán al Nivel 6 (grado) o contribuirán al Nivel 7 (máster), enfocándose en "lo que una persona sabe, comprende y es capaz de hacer"[cite: 82, 83].</p>
+                    </div>
+                    <div class="columna-der fragment" style="font-size: 0.85rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Proyecto Tuning</h4>
+                        <p>Ofrece una metodología robusta para diseñar programas de estudio fundamentada en resultados de aprendizaje y competencias (genéricas y específicas)[cite: 85].</p>
+                        <p>Con un fuerte énfasis centrado en el estudiante, es esencial para definir resultados de aprendizaje claros e identificar competencias cruciales en IA para médicos[cite: 85, 86].</p>
+                        <p>Su filosofía de buscar puntos de referencia y entendimiento común es pertinente para una asignatura innovadora[cite: 86].</p>
+                    </div>
+                    <div class="clear"></div>
+                    <aside class="notes">
+                        - EQF: Para comparabilidad y movilidad.
+                        - Tuning: Para un diseño curricular robusto y centrado en el estudiante.
+                        - Ambos refuerzan la calidad y el reconocimiento internacional de la asignatura.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide14_fondo_ley_ia_ue.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide14_ley_ia_ue_hiaa.mp3">
+                    <h3 class="color">Cumplimiento de la Ley de IA de la UE (HIAA)</h3>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 2vh; line-height: 1.4;">
+                        <li class="fragment">La Ley de Inteligencia Artificial de la UE (HIAA) adopta un enfoque basado en el riesgo, clasificando las aplicaciones de IA en la educación como de "alto riesgo"[cite: 88].</li>
+                        <li class="fragment">Impone requisitos estrictos: seguridad, documentación exhaustiva, precisión y supervisión humana, especialmente para evaluación[cite: 88].</li>
+                        <li class="fragment"><strong>Mandato de "Alfabetización en IA":</strong> Conocimientos, habilidades y conciencia para utilizar la IA de forma responsable, aplicable a futuros médicos[cite: 89].</li>
+                        <li class="fragment"><strong>Implicaciones Curriculares:</strong> El curso debe abordar explícitamente estos requisitos, incorporar ética de IA y desarrollar la alfabetización en IA exigida[cite: 89]. La HIAA eleva esta alfabetización a competencia fundamental[cite: 91].</li>
+                    </ul>
+                    <aside class="notes">
+                        - La HIAA tiene implicaciones directas para el diseño del curso.
+                        - El "mandato de alfabetización en IA" es un pilar fundamental.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide15_fondo_directrices_oms_eua.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide15_directrices_oms_eua.mp3">
+                    <h3 class="color">Directrices de la OMS y Perspectivas de la EUA</h3>
+                     <div class="columna-izq fragment" style="font-size: 0.85rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Organización Mundial de la Salud (OMS)</h4>
+                        <p>Promueve una IA en salud que prioriza seguridad, equidad e integridad ética[cite: 93].</p>
+                        <p>Sus documentos abordan ética, gobernanza, regulación y la necesidad de educar a la fuerza laboral sanitaria para un uso responsable[cite: 93, 94].</p>
+                        <p>La Iniciativa Global sobre IA para la Salud (GI-AI4H) incluye capacitación en ética[cite: 94].</p>
+                    </div>
+                    <div class="columna-der fragment" style="font-size: 0.85rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Asociación Europea de Universidades (EUA)</h4>
+                        <p>Reconoce el potencial y los desafíos de la IA, enfatizando el uso responsable, control humano y valores universitarios[cite: 96].</p>
+                        <p>Aborda cuestiones prácticas y éticas, privacidad y calidad de datos, abogando por la apertura y multidisciplinariedad[cite: 97].</p>
+                        <p>La asignatura incorporará estos principios para una innovación ética.</p>
+                    </div>
+                    <div class="clear"></div>
+                    <p class="fragment small-text" style="margin-top:1.5em;">La asignatura alineará sus objetivos con estos principios éticos y prioridades estratégicas globales y universitarias.</p>
+                    <aside class="notes">
+                        - OMS: Enfoque en salud global, ética y desarrollo de la fuerza laboral.
+                        - EUA: Énfasis en valores universitarios, control humano e innovación responsable.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide16_fondo_estándares_acreditacion.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide16_estandares_acreditacion_medica.mp3">
+                    <h3 class="color">Estándares de Acreditación Médica (AQU Catalunya, LCME)</h3>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:2vh;">
+                        Aunque los estándares de acreditación pueden no tener cláusulas explícitas sobre "IA en Medicina", su enfoque en currículos relevantes y actualizados, y en la formación de graduados competentes, necesita la inclusión de la IA[cite: 100].
+                    </p>
+                    <ul style="font-size: 0.85rem; text-align: left; margin-top: 2vh; line-height: 1.4;">
+                        <li class="fragment"><strong>AQU Catalunya:</strong> Se enfoca en dimensiones como Currículum, Evaluación y Recursos Educativos. La asignatura de IA cumplirá con la relevancia y actualidad del currículum y la adecuación de recursos[cite: 102, 103, 104].</li>
+                        <li class="fragment"><strong>LCME (Norteamérica):</strong> Estándares como el 6 (Competencias y Diseño Curricular) y el 7 (Contenido Curricular) requieren preparación para la práctica contemporánea, incluyendo informática médica y tecnologías emergentes[cite: 105, 106]. La IA se integra en objetivos como juicio crítico y resolución de problemas[cite: 107].</li>
+                    </ul>
+                    <p class="fragment small-text" style="margin-top:1em;">El diseño curricular debe ser ágil para navegar la "doble transición ético-regulatoria" de la IA en medicina[cite: 110].</p>
+                    <aside class="notes">
+                        - La asignatura no solo es innovadora, sino que ayuda a cumplir con los requisitos de acreditación existentes.
+                        - Relevancia y actualización curricular son puntos clave.
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <section data-background-image="images/slide17_fondo_benchmarking_global.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide17_benchmarking_global_practicas.mp3">
+                    <h3 class="color">Benchmarking Global: Identificando Mejores Prácticas y Oportunidades</h3>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:2vh;">
+                        Se ha realizado una revisión de programas de referencia en universidades líderes de Europa, América del Norte y Asia-Pacífico[cite: 9].
+                    </p>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 2vh; line-height: 1.4;">
+                        <li class="fragment"><strong>Objetivo:</strong> Identificar temas curriculares comunes, enfoques pedagógicos innovadores y características únicas[cite: 9, 117].</li>
+                        <li class="fragment">Este análisis comparativo permite identificar las mejores prácticas y las lagunas existentes, especialmente en la formación de IA integrada y fundamental para estudiantes de medicina en etapas tempranas[cite: 10, 118].</li>
+                    </ul>
+                    <aside class="notes">
+                        - El análisis es la base para una propuesta informada.
+                        - Foco en "mejores prácticas" y "lagunas" para la formación temprana.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide18_fondo_temas_comunes_diversidad.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide18_temas_comunes_diversidad_pedagogica.mp3">
+                    <h3 class="color">Hallazgos del Benchmarking: Temas Comunes y Diversidad Pedagógica</h3>
+                    <div class="columna-izq fragment" style="font-size: 0.85rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Temas Comunes Identificados</h4>
+                        <p>La mayoría de los programas revisados cubren[cite: 135]:</p>
+                        <ul>
+                            <li>Conceptos fundamentales de IA/ML.</li>
+                            <li>Manejo de datos.</li>
+                            <li>Aplicaciones médicas específicas (imagenología, PNL, diagnóstico).</li>
+                            <li>Ética.</li>
+                            <li>Proyecto final o de culminación.</li>
+                        </ul>
+                        <p>Esta convergencia sugiere un consenso emergente sobre el conocimiento esencial[cite: 136].</p>
+                    </div>
+                    <div class="columna-der fragment" style="font-size: 0.85rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Diversidad Pedagógica y de Audiencia</h4>
+                        <p>Se observa una mezcla de[cite: 137]:</p>
+                        <ul>
+                            <li>Módulos en línea, MOOCS.</li>
+                            <li>Conferencias tradicionales.</li>
+                            <li>Aprendizaje basado en proyectos.</li>
+                            <li>Programas de MRes/MSc intensivos en investigación.</li>
+                        </ul>
+                        <p>Los programas varían desde introductorios hasta altamente especializados, dirigiéndose a profesionales en ejercicio o estudiantes de titulaciones amplias[cite: 138, 142].</p>
+                    </div>
+                    <div class="clear"></div>
+                    <aside class="notes">
+                        - Destacar el "consenso emergente" en contenidos.
+                        - La diversidad muestra que no hay un único modelo, pero sí tendencias.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide19_fondo_laguna_oportunidad.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide19_laguna_formacion_temprana.mp3">
+                    <h3 class="color">Laguna Identificada y Oportunidad Estratégica</h3>
+                    <h4 class="color" style="font-size:1.1em;">Enfoque en la Formación Médica Temprana</h4>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:2vh;">
+                        Muchos programas existentes son de posgrado o están dirigidos a profesionales o estudiantes de informática[cite: 148].
+                    </p>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 2vh; line-height: 1.4;">
+                        <li class="fragment"><strong>Existe una clara laguna en la oferta de educación en IA fundamental e integrada que comience en los primeros años de la facultad de medicina</strong>[cite: 149].</li>
+                        <li class="fragment">Esta formación temprana debería centrarse en el razonamiento clínico y el pensamiento computacional para todos los futuros médicos, no solo para los especialistas en IA[cite: 150].</li>
+                        <li class="fragment">Se observa una falta de integración explícita de los principios de la neuroeducación y un enfoque limitado en el "discernimiento clínico asistido por IA" como competencia definida en muchos programas revisados[cite: 151].</li>
+                    </ul>
+                    <p class="fragment" style="font-size:0.9em; margin-top:1.5em;">La asignatura propuesta se posiciona para llenar esta laguna, beneficiándose de las fortalezas regionales: resultados estructurados europeos, innovación norteamericana e integración asiática con sistemas de salud[cite: 152, 155].</p>
+                    <aside class="notes">
+                        - Esta es una justificación clave de la propuesta: llenar un vacío existente.
+                        - El enfoque en "todos los futuros médicos" es un diferenciador.
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <section data-background-image="images/slide20_fondo_taxonomias_educativas.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide20_taxonomias_educativas_accion.mp3">
+                    <h3 class="color">Pedagogía Universitaria Aplicada: Taxonomías en Acción</h3>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:2vh;">
+                        Las taxonomías como Bloom, SOLO y los Descriptores de Dublín no son meros sistemas de clasificación, sino herramientas de diseño proactivo para estructurar el currículum de IA en Medicina[cite: 166].
+                    </p>
+                    <ul style="font-size: 0.85rem; text-align: left; margin-top: 2vh; line-height: 1.3;">
+                        <li class="fragment"><strong>Taxonomía de Bloom (Dominio Cognitivo):</strong> Se utilizarán sus niveles (Recordar, Comprender, Aplicar, Analizar, Evaluar, Crear) para estructurar objetivos de aprendizaje y evaluaciones, desde la memorización hasta la creación de aplicaciones o la crítica de IA en escenarios médicos[cite: 168, 169].</li>
+                        <li class="fragment"><strong>Taxonomía SOLO (Estructura de Resultados de Aprendizaje Observados):</strong> Se aplicarán sus niveles (Preestructural a Abstracto Extendido) para evaluar la profundidad de la comprensión de las interacciones entre IA y medicina[cite: 172].</li>
+                        <li class="fragment"><strong>Descriptores de Dublín:</strong> Se alinearán los resultados generales del curso con los descriptores del ciclo correspondiente (Grado/Máster) en términos de Conocimiento, Aplicación, Juicio, Comunicación y Habilidades de Aprendizaje[cite: 174, 175].</li>
+                    </ul>
+                    <aside class="notes">
+                        - Énfasis en el uso "proactivo" de las taxonomías para el diseño.
+                        - Progresión de la comprensión como objetivo.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide21_fondo_alineamiento_ebc.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide21_alineamiento_constructivo_ebc.mp3">
+                    <h3 class="color">Alineamiento Constructivo y Educación Basada en Competencias (EBC)</h3>
+                    <div class="columna-izq fragment" style="font-size: 0.85rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Alineamiento Constructivo</h4>
+                        <p>Asegura que los resultados de aprendizaje, las actividades de enseñanza y las tareas de evaluación estén explícitamente alineados[cite: 176].</p>
+                        <p>Para IA en Medicina, implica definir lo que los estudiantes deben ser capaces de hacer, diseñar actividades que lo permitan y crear evaluaciones auténticas[cite: 177].</p>
+                        <p>Se propone un "triple alineamiento" que incorpore principios éticos y relevancia clínica real en cada componente[cite: 177, 178].</p>
+                    </div>
+                    <div class="columna-der fragment" style="font-size: 0.85rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Educación Basada en Competencias (EBC)</h4>
+                        <p>Se centra en competencias demostrables en lugar de la mera adquisición de conocimientos[cite: 180].</p>
+                        <p>Se definirán competencias específicas en IA para estudiantes de medicina (ej. "Evaluar críticamente una herramienta de diagnóstico IA")[cite: 180, 181].</p>
+                        <p>Las evaluaciones se diseñarán para que los estudiantes demuestren estas competencias en contextos auténticos[cite: 181]. La IA puede ayudar a implementar la EBC de forma más efectiva[cite: 181].</p>
+                    </div>
+                    <div class="clear"></div>
+                    <aside class="notes">
+                        - Alineamiento: Coherencia en todo el proceso de enseñanza-aprendizaje.
+                        - EBC: Enfoque en lo que los estudiantes PUEDEN HACER.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide22_fondo_estrategias_enseñanza_ia.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide22_estrategias_enseñanza_ia.mp3">
+                    <h3 class="color">Estrategias de Enseñanza Basadas en la Evidencia para Conceptos de IA</h3>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:2vh;">
+                        Se emplearán estrategias de enseñanza que hayan demostrado ser eficaces para temas complejos, abstractos y en rápida evolución[cite: 189]:
+                    </p>
+                    <ul style="font-size: 0.9rem; text-align: left; margin-top: 2vh; line-height: 1.4; columns: 2; column-gap: 20px;">
+                        <li class="fragment"><strong>Aprendizaje Basado en Problemas (ABP) y Casos (ABC):</strong> Utilizar casos médicos reales o simulados donde la IA desempeña un papel en diagnóstico, tratamiento o dilemas éticos[cite: 189].</li>
+                        <li class="fragment"><strong>Simulación:</strong> Pacientes virtuales, simulaciones de diagnóstico impulsadas por IA, simulaciones de dilemas éticos[cite: 190].</li>
+                        <li class="fragment"><strong>Aula Invertida:</strong> Estudiantes revisan conceptos fundamentales online; el tiempo en clase se usa para aplicación, discusión y resolución de problemas[cite: 190, 191].</li>
+                        <li class="fragment"><strong>Aprendizaje Basado en Equipos (ABE):</strong> Estudiantes resuelven colaborativamente problemas médicos relacionados con la IA[cite: 191, 192].</li>
+                    </ul>
+                    <p class="fragment small-text" style="margin-top:1.5em;">Se integrarán principios de la Teoría de la Carga Cognitiva para gestionar la complejidad[cite: 192]. Un marco como AIFM-ed sugiere constructivismo y cursos híbridos[cite: 193].</p>
+                    <aside class="notes">
+                        - Conectar cada estrategia con cómo facilita el aprendizaje de la IA.
+                        - Mencionar la importancia de la Teoría de la Carga Cognitiva.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide23_fondo_preparacion_profesorado.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide23_preparacion_profesorado_marcos.mp3">
+                    <h3 class="color">Preparación del Profesorado: Marcos para la Competencia Digital y en IA</h3>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:2vh;">
+                        La preparación del profesorado es un factor crítico. Sin una formación específica para los educadores tanto en conceptos de IA como en cómo enseñarlos eficazmente (pedagogía de la IA), incluso el currículum mejor diseñado fracasará[cite: 182].
+                    </p>
+                    <div class="columna-izq fragment" style="font-size: 0.8rem; text-align: left;">
+                        <h4 class="color" style="font-size:1em;">Marco Europeo DigCompEdu</h4>
+                        <p>Se utilizarán sus 6 áreas y 22 competencias para guiar el desarrollo profesional del profesorado[cite: 183].</p>
+                        <p>Busca asegurar que los educadores sean competentes en el uso de herramientas digitales para enseñar IA, evaluar competencias digitales y empoderar a los estudiantes[cite: 183, 184].</p>
+                    </div>
+                    <div class="columna-der fragment" style="font-size: 0.8rem; text-align: left;">
+                        <h4 class="color" style="font-size:1em;">Marco de Competencias en IA (UNESCO)</h4>
+                        <p>Se aplicarán sus 5 dimensiones y 15 competencias a través de 3 niveles de progresión para estructurar la formación docente en IA para la medicina[cite: 185, 186].</p>
+                        <p>El enfoque se centrará en desarrollar la capacidad de los docentes no solo para usar la IA, sino para enseñar sobre la IA de manera ética y pedagógica[cite: 186, 187].</p>
+                    </div>
+                    <div class="clear"></div>
+                    <aside class="notes">
+                        - El éxito del curso depende de la preparación docente.
+                        - Estos marcos internacionales proporcionan una guía sólida.
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <section data-background-image="images/slide24_fondo_competencias_programa.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide24_competencias_generales_programa.mp3">
+                    <h3 class="color">Diseño Curricular: Competencias Generales del Programa</h3>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:1vh;">
+                        Basándose en el EQF, el Proyecto Tuning, los Descriptores de Dublín y las necesidades de los interesados, se definen las siguientes competencias generales del programa[cite: 204]:
+                    </p>
+                    <ol style="font-size: 0.8rem; text-align: left; margin-top: 1vh; line-height: 1.3; columns: 2; column-gap: 20px;">
+                        <li class="fragment"><strong>Integración Clínico-Computacional:</strong> Integrar principios de IA y pensamiento computacional con conocimiento clínico para evaluar aplicaciones de IA en medicina[cite: 204].</li>
+                        <li class="fragment"><strong>Práctica Ética y Responsable de la IA:</strong> Analizar y abordar implicaciones éticas, legales y sociales (ELSI) de la IA en sanidad[cite: 205].</li>
+                        <li class="fragment"><strong>Alfabetización Algorítmica y de Datos:</strong> Comprender cómo se desarrollan, funcionan y validan sistemas médicos de IA, incluyendo sesgos[cite: 206].</li>
+                        <li class="fragment"><strong>Evaluación y Comunicación Aplicada de la IA:</strong> Evaluar críticamente información y herramientas de IA, y comunicar hallazgos a compañeros y pacientes[cite: 207].</li>
+                        <li class="fragment"><strong>Aprendizaje Adaptativo Permanente en IA:</strong> Desarrollar habilidades metacognitivas para aprender y adaptarse continuamente a tecnologías de IA en evolución[cite: 208].</li>
+                    </ol>
+                    <p class="fragment small-text" style="margin-top:1em;">A partir de estas competencias, se derivan resultados de aprendizaje específicos (SMART) para el curso, mapeados a taxonomías (Bloom, SOLO)[cite: 209].</p>
+                    <aside class="notes">
+                        - Presentar las 5 competencias como los pilares de lo que el estudiante logrará.
+                        - Enfatizar que son medibles y alineadas con estándares.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide25_fondo_estructura_modular.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide25_estructura_modular_general.mp3">
+                    <h3 class="color">Estructura Modular y Áreas de Contenido Propuestas</h3>
+                     <p class="fragment" style="font-size: 0.9rem; text-align: center; margin-top:1vh;">
+                        Se propone una estructura modular que permita flexibilidad y un aprendizaje progresivo[cite: 211]. Un hilo temático recurrente será la <span class="color">colaboración humano-IA</span>[cite: 212].
+                    </p>
+                    <div style="font-size: 0.8em; margin-top: 1vh; display: flex; flex-wrap: wrap; justify-content: space-around;">
+                        <div class="fragment box" style="width: 30%; margin: 5px;">M1: Fundamentos - Medicina, Computación y Datos [cite: 213]</div>
+                        <div class="fragment box" style="width: 30%; margin: 5px;">M2: Principios Fundamentales de IA y ML para Medicina [cite: 214]</div>
+                        <div class="fragment box" style="width: 30%; margin: 5px;">M3: Aplicaciones de la IA en la Práctica Clínica [cite: 217]</div>
+                        <div class="fragment box" style="width: 30%; margin: 5px;">M4: Implicaciones Éticas, Legales y Sociales (ELSI) [cite: 221]</div>
+                        <div class="fragment box" style="width: 30%; margin: 5px;">M5: Razonamiento Clínico e Integración de la IA [cite: 227]</div>
+                        <div class="fragment box" style="width: 30%; margin: 5px;">M6: Neuroeducación y Metacognición para el Aprendizaje Permanente [cite: 231]</div>
+                    </div>
+                    <p class="fragment" style="font-size: 0.9rem; text-align: center; margin-top:1.5vh;">
+                        <strong>Proyecto Final (Longitudinal o Módulo Final):</strong> Aplicación o evaluación crítica de la IA en un contexto médico, integrando conocimientos de todos los módulos[cite: 234].
+                    </p>
+                    <aside class="notes">
+                        - Presentar la visión general de la estructura del curso.
+                        - Destacar la progresión lógica y la cobertura integral.
+                        - El hilo de "colaboración humano-IA" es importante.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide26_fondo_ejemplo_modulo.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide26_ejemplo_modulo_fundamentos_elsi.mp3">
+                    <h3 class="color">Ejemplos Detallados de Módulos y Contenidos Clave</h3>
+                    <div style="display: flex; font-size: 0.8rem; margin-top: 1vh; line-height: 1.3;">
+                        <div class="fragment" style="width: 48%; padding-right: 2%; text-align: left;">
+                            <h4 class="color" style="font-size:1em;">Módulo 1: Fundamentos - Medicina, Computación y Datos [cite: 213]</h4>
+                            <ul style="font-size:0.9em;">
+                                <li>Introducción a la IA en el contexto de la medicina: historia, panorama actual, potencial futuro.</li>
+                                <li>Pensamiento Computacional para Clínicos: Descomposición, reconocimiento de patrones, abstracción, pensamiento algorítmico.</li>
+                                <li>Introducción a los Datos Médicos: Tipos (HCE, imagen, genómicos), fuentes, ciclo de vida, calidad y gobernanza.</li>
+                                <li>Conceptos Estadísticos Básicos para la IA: Probabilidad, distribuciones, pruebas de hipótesis.</li>
+                            </ul>
+                        </div>
+                        <div class="fragment" style="width: 48%; padding-left: 2%; text-align: left;">
+                            <h4 class="color" style="font-size:1em;">Módulo 4: Implicaciones Éticas, Legales y Sociales (ELSI) [cite: 221]</h4>
+                             <p style="font-size:0.9em;">La introducción temprana e integración de ELSI es clave para una innovación responsable y para desarrollar futuros clínicos éticamente responsables[cite: 221, 222].</p>
+                            <ul style="font-size:0.9em;">
+                                <li>Sesgo y Equidad en la IA Médica: Fuentes, impacto en disparidades, estrategias de mitigación[cite: 223].</li>
+                                <li>Transparencia e IA Explicable (XAI): Problema de la "caja negra", importancia, métodos[cite: 224].</li>
+                                <li>Autonomía del Paciente, Privacidad y Seguridad de los Datos: Consentimiento, gobernanza, regulación (Ley de IA UE)[cite: 225].</li>
+                                <li>Rendición de Cuentas y Responsabilidad: ¿Quién es responsable en errores de IA? Marcos legales y profesionales[cite: 225, 226].</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <aside class="notes">
+                        - Dar una idea más concreta del contenido de dos módulos representativos.
+                        - Resaltar la importancia de ELSI desde el inicio.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide27_fondo_actividades_innovadoras.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide27_actividades_innovadoras_aprendizaje.mp3">
+                    <h3 class="color">Actividades Innovadoras de Enseñanza y Aprendizaje</h3>
+                    <ul style="font-size: 0.85rem; text-align: left; margin-top: 1vh; line-height: 1.3; columns: 2; column-gap: 20px;">
+                        <li class="fragment"><strong>ABP/ABC con Herramientas de IA:</strong> Casos clínicos donde los estudiantes usan (o critican el uso de) herramientas de IA para diagnóstico o tratamiento[cite: 236].</li>
+                        <li class="fragment"><strong>Entrenamiento Basado en Simulación:</strong> Pacientes virtuales interactivos influenciados por IA; simulaciones de dilemas éticos en medicina con IA[cite: 237, 238].</li>
+                        <li class="fragment"><strong>Modelos de Aula Invertida y ABE:</strong> Teoría online antes de clase; tiempo en clase para aplicación práctica, discusiones éticas y resolución colaborativa[cite: 239, 240].</li>
+                        <li class="fragment"><strong>Talleres Interactivos y "Prompt-a-thons":</strong> Uso práctico de herramientas de IA (éticamente examinadas); aprendizaje de interacción efectiva con IA generativa para síntesis de información médica, seguido de evaluación crítica[cite: 241, 242].</li>
+                    </ul>
+                    <aside class="notes">
+                        - Mostrar la variedad y el carácter práctico de las metodologías.
+                        - "Prompt-a-thons" es un ejemplo de adaptación a tecnologías actuales.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide28_fondo_evaluacion_competencias.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide28_evaluacion_basada_competencias.mp3">
+                    <h3 class="color">Estrategia de Evaluación Basada en Competencias</h3>
+                    <p class="fragment" style="font-size: 0.95rem; text-align: left; margin-top:1vh;">
+                        La elección de los métodos de evaluación configurará críticamente cómo los estudiantes se involucran con la IA. Las evaluaciones auténticas y basadas en competencias impulsarán un aprendizaje más profundo[cite: 243, 244].
+                    </p>
+                    <ul style="font-size: 0.85rem; text-align: left; margin-top: 1vh; line-height: 1.3;">
+                        <li class="fragment"><strong>Evaluaciones Formativas:</strong> Cuestionarios online, reflexiones escritas sobre casos éticos, evaluación por pares. Herramientas de IA para autoevaluación y retroalimentación[cite: 245, 246].</li>
+                        <li class="fragment"><strong>Evaluaciones Sumativas:</strong> Proyectos, Exámenes Clínicos Objetivos Estructurados (ECOE) adaptados para IA, exámenes escritos basados en casos, presentaciones, portafolios[cite: 246].</li>
+                        <li class="fragment"><strong>Enfoque en Competencias Clave:</strong> Evaluación de la alfabetización algorítmica, pensamiento clínico-computacional y discernimiento ético mediante rúbricas específicas y escenarios[cite: 247].</li>
+                        <li class="fragment"><strong>Papel de la IA en Evaluación:</strong> Uso responsable de IA para generar bancos de preguntas o variaciones de casos; plataformas IA para retroalimentación personalizada, con evaluación crítica por parte de los estudiantes[cite: 248, 249].</li>
+                    </ul>
+                    <aside class="notes">
+                        - La evaluación debe ser auténtica y medir la aplicación de competencias.
+                        - Se contempla el uso ético de la IA también en el proceso de evaluación.
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <section data-background-image="images/slide29_fondo_implementacion_desarrollo_profesorado.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide29_implementacion_desarrollo_profesorado.mp3">
+                    <h3 class="color">Implementación Práctica y Desarrollo del Profesorado</h3>
+                     <div class="columna-izq fragment" style="font-size: 0.8rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.0em;">Pasos para la Implementación</h4>
+                        <p>Se recomienda un plan de implementación por fases, comenzando con un programa piloto para una cohorte de estudiantes, permitiendo ajustes iterativos[cite: 280, 281].</p>
+                        <p>Es fundamental un proceso claro para la aprobación universitaria interna, destacando la alineación estratégica y con estándares internacionales[cite: 283, 284].</p>
+                        <p>Desarrollar una narrativa que posicione la asignatura como una "oferta académica emblemática"[cite: 285].</p>
+                    </div>
+                    <div class="columna-der fragment" style="font-size: 0.8rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.0em;">Desarrollo del Profesorado</h4>
+                        <p>Evaluar necesidades basándose en marcos como DigCompEdu y UNESCO IA[cite: 290, 291].</p>
+                        <p>Implementar modelos de formación variados: talleres, coaching, co-docencia, desarrollo de recursos compartidos[cite: 292].</p>
+                        <p>Enfoque en: comprensión de IA, ética de IA, pedagogía de IA, uso de herramientas IA para enseñanza y co-diseño curricular[cite: 293, 294].</p>
+                    </div>
+                    <div class="clear"></div>
+                    <p class="fragment small-text" style="margin-top:1.5em;">El éxito de la asignatura está intrínsecamente ligado a la eficacia del programa de desarrollo del profesorado[cite: 288].</p>
+                    <aside class="notes">
+                        - Implementación gradual para asegurar calidad.
+                        - Inversión en profesorado es clave.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide30_fondo_recursos_calidad.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide30_recursos_esenciales_calidad.mp3">
+                    <h3 class="color">Recursos Esenciales y Garantía de Calidad</h3>
+                    <div class="columna-izq fragment" style="font-size: 0.85rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Recursos Esenciales</h4>
+                        <p><strong>Infraestructura Tecnológica:</strong> Laboratorios equipados o acceso a la nube para modelos de IA, internet de alta velocidad, plataformas de software[cite: 296].</p>
+                        <p><strong>Requisitos de Datos:</strong> Acceso a conjuntos de datos médicos anonimizados (o simulados de alta calidad) para proyectos, garantizando manejo ético y privacidad[cite: 296].</p>
+                        <p><strong>Herramientas de IA y Simulación:</strong> Criterios de selección para herramientas educativas (precisión, ética, valor pedagógico), software, acceso a plataformas especializadas[cite: 296, 297, 298].</p>
+                    </div>
+                    <div class="columna-der fragment" style="font-size: 0.85rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Garantía de Calidad y Mejora Continua</h4>
+                        <p><strong>Indicadores de Calidad Internos:</strong> Satisfacción de estudiantes, logro de resultados de aprendizaje, retroalimentación del profesorado[cite: 299].</p>
+                        <p><strong>Alineación con Estándares de Acreditación:</strong> Asegurar alineación con AQUAS, LCME y preparar documentación para acreditación[cite: 300].</p>
+                        <p><strong>Ciclo de Mejora Continua:</strong> Revisión y actualización regular del currículum basada en retroalimentación, avances tecnológicos y evolución de panoramas regulatorios y éticos[cite: 301].</p>
+                    </div>
+                    <div class="clear"></div>
+                    <aside class="notes">
+                        - Planificación de recursos es fundamental.
+                        - La calidad se asegura con un proceso iterativo.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide31_fondo_etica_futuro.png" 
+                         data-background-opacity="0.2"
+                         data-audio-src="audio/slide31_enfoque_etico_direcciones_futuras.mp3">
+                    <h3 class="color">Fomentando un Enfoque Ético y Direcciones Futuras</h3>
+                    <div class="columna-izq fragment" style="font-size: 0.9rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Enfoque Ético y Centrado en el Ser Humano</h4>
+                        <p>Reforzar principios éticos (autonomía, beneficencia, no maleficencia, justicia, explicabilidad) a lo largo de toda la asignatura[cite: 304].</p>
+                        <p>Enfatizar el papel de la IA en el aumento de las habilidades clínicas y el juicio humano, no en su reemplazo[cite: 305].</p>
+                        <p>Promover el pensamiento crítico sobre el impacto social de la IA en la medicina y la importancia de la supervisión humana[cite: 305].</p>
+                    </div>
+                    <div class="columna-der fragment" style="font-size: 0.9rem; text-align: left;">
+                        <h4 class="color" style="font-size:1.05em;">Tendencias Futuras y Escalado</h4>
+                        <p>Mantenerse al tanto de los futuros desarrollos en IA y su impacto potencial.</p>
+                        <p>Desarrollar estrategias para escalar la asignatura a otros departamentos, universidades o como desarrollo profesional continuo[cite: 306].</p>
+                        <p>Fomentar colaboración interinstitucional y promover una agenda de investigación en torno a la IA en la educación médica[cite: 306].</p>
+                    </div>
+                    <div class="clear"></div>
+                    <p class="fragment small-text" style="margin-top:1.5em;">Al integrar profundamente la ética, la asignatura se establecerá como una "oferta emblemática" más allá del contenido técnico[cite: 303].</p>
+                    <aside class="notes">
+                        - La ética es un hilo conductor.
+                        - La visión es de crecimiento e impacto a largo plazo.
+                    </aside>
+                </section>
+
+                <section data-background-image="images/slide32_fondo_conclusion_llamada.png" 
+                         data-background-opacity="0.3"
+                         data-audio-src="audio/slide32_conclusion_llamada_accion.mp3">
+                    <h2 class="color">Conclusión y Llamada a la Acción</h2>
+                    <p class="fragment" style="font-size: 1.0rem; margin-top: 3vh;">
+                        La implementación de esta asignatura de IA para Medicina representa una inversión estratégica en el futuro de la educación médica[cite: 539].
+                    </p>
+                    <p class="fragment" style="font-size: 1.0rem;">Posicionará a la institución como:
+                    </p>
+                    <ul style="font-size: 0.95rem; line-height:1.5; text-align: center; list-style-position: inside;">
+                        <li class="fragment">Líder europeo en educación médica digital[cite: 539].</li>
+                        <li class="fragment">Referente internacional en integración responsable de IA en medicina[cite: 539].</li>
+                        <li class="fragment">Formador de profesionales preparados para liderar la transformación digital del sistema sanitario[cite: 540].</li>
+                    </ul>
+                    <p class="fragment" style="font-size: 1.0rem; margin-top: 3vh;">
+                        Esta asignatura no es solo una adición al currículum, sino una transformación fundamental de cómo preparamos a los futuros médicos[cite: 540].
+                    </p>
+                    <h3 class="fragment color" style="margin-top: 5vh;">Agradecemos su consideración. Preguntas y Discusión.</h3>
+                    <aside class="notes">
+                        - Reiterar los beneficios estratégicos para la institución.
+                        - Hacer una llamada clara al apoyo y aprobación.
+                        - Abrir el diálogo.
+                    </aside>
+                </section>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="../reveal.js-plugins/menu/menu.js"></script>
+    <script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
+    <script src="../reveal.js-plugins/appearance/appearance.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
+    <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+    <script src="../reveal.js-plugins/zoom/zoom.js"></script> 
+    <script src="../reveal.js-plugins/reveal-onetimer/onetimer.js"></script> 
+    <script src="../reveal.js-plugins/animate/plugin.js"></script> 
+    <script src="../reveal.js-plugins/animate/svg.min.js"></script> 
+    <script src="../reveal.js-plugins/simplemenu/simplemenu.js"></script> 
+    <script src="../reveal.js-plugins/fullscreen/plugin.js"></script> 
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <script>
+        Reveal.initialize({
+            maxScale: 1, 
+            controls: true, 
+            progress: true, 
+            history: true, 
+            center: true, 
+            autoSlide: 0, 
+            slideNumber: 'c/t', // Muestra el número de diapositiva actual y el total
+            mouseWheel: true, 
+            pdfMaxPagesPerSlide: 1, // Para exportación a PDF
+            dependencies: [ 
+                { src: '//cdn.jsdelivr.net/npm/reveal-plantuml' }
+            ],
+            menu: { 
+                side: 'left',
+                themes: [
+                    { name: 'Negro', theme: 'reveal.js/dist/theme/black.css' },
+                    { name: 'Blanco', theme: 'reveal.js/dist/theme/white.css' },
+                    { name: 'Leyenda', theme: 'reveal.js/dist/theme/league.css' },
+                    { name: 'Oscuro', theme: 'reveal.js/dist/theme/black.css' }, 
+                    { name: 'Solar', theme: 'reveal.js/dist/theme/solarized.css' },
+                    { name: 'Sangre', theme: 'reveal.js/dist/theme/blood.css' },
+                    { name: 'Luna', theme: 'reveal.js/dist/theme/moon.css' },
+                    { name: 'Serif', theme: 'reveal.js/dist/theme/serif.css' },
+                    { name: 'Cielo', theme: 'reveal.js/dist/theme/sky.css' },
+                    { name: 'Beige', theme: 'reveal.js/dist/theme/beige.css' },
+                    { name: 'Simple', theme: 'reveal.js/dist/theme/simple.css' }
+                ],
+                openOnInit: false,
+                markers: true,
+                keyboard: true,
+                useTextContentForMissingTitles: true,
+                titleSelector: 'h1, h2, h3, h4, h5, h6',
+                numbers: true,
+                hideMissingTitles: true,
+                custom: [{ 
+                    title: 'Teclas', 
+                    icon: '<i class="fa fa-info"></i>', 
+                    content: '<p style="font-size:0.8em;">B: Pizarra<br>Botón Derecho Ratón: Borrar<br>C: Escribir en la diapositiva<br>SUPR: Borrar dibujo diapo<br>RETROCESO: Borrar todas diapos<br>M: Abrir/cerrar menú<br>F: Pantalla completa<br>V: Pausar presentación<br>A: Escuchar/pausar audio<br>S: Notas y vista de presentador<br>Alt+Botón Izquierdo del Ratón: Zoom<br>ESC: Mapa de Diapositivas</p>'
+                }]
+            },
+            audio: { 
+                prefix: 'audio/', 
+                suffix: '.mp3',
+                defaultDuration: 5, // Duración por defecto si no hay audio específico
+                textToSpeechURL: null, 
+                advance: 0, // No avanzar automáticamente al terminar el audio
+                autoplay: false, // No iniciar audio automáticamente
+                defaultText: false, 
+                playerOpacity: 0.15, 
+                playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height: 75px; z-index: 33;'
+            },
+            oneTimer: { immediateMode: true }, 
+            simplemenu: { menuclass: 'menu', activeclass: 'active', activeelement: 'li', selectby: 'id', auto: false }, 
+            animate: { autoplay: true }, 
+            chalkboard: { 
+                src: "../reveal.js-plugins/chalkboard/chalkboard.json ", 
+                storage: "chalkboard-ia-medicina-propuesta-final", 
+                toggleChalkboardButton: { left: "80px" },
+                toggleNotesButton: { left: "130px" },
+                colorButtons: 5
+            },
+            width: "99%", 
+            height: "99%",
+            backgroundTransition: 'fade', 
+            preloadIframes: true, 
+            viewDistance: 3, 
+            mobileViewDistance: 2, 
+            hash: true, 
+            plugins: [ 
+                RevealMarkdown, 
+                RevealAudioSlideshow, 
+                RevealMenu, 
+                Appearance, 
+                RevealAnimate, 
+                RevealZoom, 
+                RevealChalkboard, 
+                RevealNotes, 
+                Simplemenu, 
+                RevealEmbedTweet, 
+                OneTimer,
+                RevealHighlight 
+            ]
+        });
+    </script>
+</body>
+</html>
