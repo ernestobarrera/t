@@ -6539,17 +6539,17 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
             </div>
           </section>
           <!-- ============================================================
-     SLIDE #37 — GPTs, Gems y personalización
-     Deck: #37 | Bloque 2C | Audio: ~60s
-     Assertion: "Un asistente preconfigurado elimina el prompting repetitivo"
-     Puente desde #36 (Pirámide 5.0 → elige herramienta)
-     Puente hacia #38 (RAG + Whitelisting → asegura la herramienta)
-     ============================================================ -->
+               SLIDE #36 — GPTs, Gems y personalización
+               Deck: #36 | Bloque 2C | Audio: ~62s
+               Assertion: "Un asistente preconfigurado elimina el prompting repetitivo"
+               Puente desde #35 (Prompt Engineering → automatiza con GPTs)
+               Puente hacia #37 (Tabla herramientas → elige por confianza)
+               ============================================================ -->
 
           <section
             data-menu-title="GPTs, Gems y personalización"
-            data-audio-src="aepap-2026/audios/37.webm"
-            data-audio-text="Ya sabéis qué herramienta elegir según el nivel de confianza que necesitéis. Ahora, ¿cómo evitar escribir el mismo prompt cada vez que atendéis una consulta? La respuesta son los asistentes preconfigurados. En ChatGPT se llaman yepetés personalizados, en Gemini se llaman Gems, y en Claude se llaman Proyectos. La idea es la misma: le dais una vez las instrucciones, el rol, el formato de salida, y a partir de ahí, cada consulta ya sale con vuestro estilo y vuestras necesidades. Tres pasos: primero, definid el rol y el contexto, exactamente como aprendimos con Callens y con RECORD. Segundo, subid vuestros documentos de referencia: protocolos, guías, formularios. Y tercero, probadlo con casos reales y ajustad. Es iterativo, no sale perfecto a la primera. Pero ojo: un jepeté o un Gem hereda las limitaciones del modelo base. Si el modelo alucina, vuestro asistente también alucinará, pero con el formato que le habéis pedido. Eso puede ser más peligroso, porque parece más creíble. Por eso la siguiente slide es crucial: cómo verificar lo que os devuelve."
+            data-audio-src="aepap-2026/audios/36.webm"
+            data-audio-text="Ya sabéis cómo estructurar una buena consulta a la IA. Ahora, ¿cómo evitar escribir el mismo prompt cada vez que atendéis una consulta? La respuesta son los asistentes preconfigurados. En ChatGPT se llaman yepetés personalizados, en Gemini se llaman Gems, y en Claude se llaman Proyectos. La idea es la misma: le dais una vez las instrucciones, el rol, el formato de salida, y a partir de ahí, cada consulta ya sale con vuestro estilo y vuestras necesidades. Tres pasos: primero, definid el rol y el contexto, exactamente como aprendimos con Callens y con RECORD. Segundo, subid vuestros documentos de referencia: protocolos, guías, formularios. Y tercero, probadlo con casos reales y ajustad. Es iterativo, no sale perfecto a la primera. Pero ojo: un jepetéo un Gem hereda las limitaciones del modelo base. Si el modelo alucina, vuestro asistente también alucinará, pero con el formato que le habéis pedido. Eso puede ser más peligroso, porque parece más creíble. Pero antes de verificar, necesitáis saber con qué herramienta trabajar. No todas las IA son iguales, y la siguiente slide os lo demuestra."
           >
             <h3 class="assertion-title">
               Un asistente preconfigurado elimina el prompting repetitivo
@@ -6565,159 +6565,92 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
               GPTs (ChatGPT) · Gems (Gemini) · Proyectos (Claude)
             </p>
 
-            <div
-              class="grid-2"
-              style="
-                max-width: 920px;
-                margin: 0 auto;
-                gap: 20px;
-                align-items: start;
-              "
-            >
+            <div class="grid-2" style="max-width: 920px; margin: 0 auto; gap: 20px; align-items: start">
+
               <!-- Panel izquierdo: Ejemplos pediátricos -->
               <div class="glass-panel" style="padding: 15px 18px">
-                <h4
-                  style="
-                    color: var(--primary);
-                    margin: 0 0 10px;
-                    font-size: 0.9em;
-                  "
-                >
-                  <i class="fa-solid fa-stethoscope"></i> Ejemplos para tu
-                  consulta
+                <h4 style="color: var(--primary); margin: 0 0 10px; font-size: 0.9em">
+                  <i class="fa-solid fa-stethoscope"></i> Ejemplos para tu consulta
                 </h4>
                 <div style="font-size: 0.8em; line-height: 1.6">
                   <p style="margin: 0 0 8px">
-                    <i
-                      class="fa-solid fa-file-medical"
-                      style="color: var(--secondary); width: 18px"
-                    ></i>
-                    <strong>Traductor clínico:</strong> convierte analíticas en
-                    lenguaje para padres
+                    <i class="fa-solid fa-file-medical" style="color: var(--secondary); width: 18px"></i>
+                    <strong>Traductor clínico:</strong> convierte analíticas en lenguaje para padres
                   </p>
                   <p style="margin: 0 0 8px">
-                    <i
-                      class="fa-solid fa-list-check"
-                      style="color: var(--secondary); width: 18px"
-                    ></i>
-                    <strong>Codificador CIE-10:</strong> sugiere códigos a
-                    partir de tu texto libre
+                    <i class="fa-solid fa-list-check" style="color: var(--secondary); width: 18px"></i>
+                    <strong>Codificador CIE-10:</strong> sugiere códigos a partir de tu texto libre
                   </p>
                   <p style="margin: 0 0 8px">
-                    <i
-                      class="fa-solid fa-book-medical"
-                      style="color: var(--secondary); width: 18px"
-                    ></i>
-                    <strong>Preparador de sesiones:</strong> estructura casos
-                    clínicos para docencia
+                    <i class="fa-solid fa-book-medical" style="color: var(--secondary); width: 18px"></i>
+                    <strong>Preparador de sesiones:</strong> estructura casos clínicos para docencia
                   </p>
                   <p style="margin: 0">
-                    <i
-                      class="fa-solid fa-chart-line"
-                      style="color: var(--secondary); width: 18px"
-                    ></i>
-                    <strong>Revisor de informes:</strong> detecta
-                    inconsistencias y sugiere ampliación
+                    <i class="fa-solid fa-chart-line" style="color: var(--secondary); width: 18px"></i>
+                    <strong>Revisor de informes:</strong> detecta inconsistencias y sugiere ampliación
                   </p>
                 </div>
               </div>
 
               <!-- Panel derecho: 3 pasos -->
               <div class="glass-panel" style="padding: 15px 18px">
-                <h4
-                  style="
-                    color: var(--accent);
-                    margin: 0 0 10px;
-                    font-size: 0.9em;
-                  "
-                >
+                <h4 style="color: var(--accent); margin: 0 0 10px; font-size: 0.9em">
                   <i class="fa-solid fa-shoe-prints"></i> Créalo en 3 pasos
                 </h4>
                 <div style="font-size: 0.8em; line-height: 1.6">
                   <p style="margin: 0 0 12px">
-                    <span
-                      style="
-                        display: inline-block;
-                        width: 24px;
-                        height: 24px;
-                        background: var(--primary);
-                        border-radius: 50%;
-                        text-align: center;
-                        line-height: 24px;
-                        font-weight: bold;
-                        font-size: 0.85em;
-                        margin-right: 6px;
-                      "
-                      >1</span
-                    >
-                    <strong>Define rol + contexto</strong><br />
-                    <span
-                      style="
-                        color: var(--text-muted);
-                        margin-left: 30px;
-                        display: inline-block;
-                      "
-                    >
+                    <span style="
+                      display: inline-block;
+                      width: 24px; height: 24px;
+                      background: var(--primary);
+                      border-radius: 50%;
+                      text-align: center;
+                      line-height: 24px;
+                      font-weight: bold;
+                      font-size: 0.85em;
+                      margin-right: 6px;
+                    ">1</span>
+                    <strong>Define rol + contexto</strong><br>
+                    <span style="color: var(--text-muted); margin-left: 30px; display: inline-block">
                       Usa RECORD o Callens como plantilla
                     </span>
                   </p>
                   <p style="margin: 0 0 12px">
-                    <span
-                      style="
-                        display: inline-block;
-                        width: 24px;
-                        height: 24px;
-                        background: var(--primary);
-                        border-radius: 50%;
-                        text-align: center;
-                        line-height: 24px;
-                        font-weight: bold;
-                        font-size: 0.85em;
-                        margin-right: 6px;
-                      "
-                      >2</span
-                    >
-                    <strong>Sube documentos de referencia</strong><br />
-                    <span
-                      style="
-                        color: var(--text-muted);
-                        margin-left: 30px;
-                        display: inline-block;
-                      "
-                    >
+                    <span style="
+                      display: inline-block;
+                      width: 24px; height: 24px;
+                      background: var(--primary);
+                      border-radius: 50%;
+                      text-align: center;
+                      line-height: 24px;
+                      font-weight: bold;
+                      font-size: 0.85em;
+                      margin-right: 6px;
+                    ">2</span>
+                    <strong>Sube documentos de referencia</strong><br>
+                    <span style="color: var(--text-muted); margin-left: 30px; display: inline-block">
                       Protocolos, guías, formularios propios
                     </span>
                   </p>
                   <p style="margin: 0">
-                    <span
-                      style="
-                        display: inline-block;
-                        width: 24px;
-                        height: 24px;
-                        background: var(--primary);
-                        border-radius: 50%;
-                        text-align: center;
-                        line-height: 24px;
-                        font-weight: bold;
-                        font-size: 0.85em;
-                        margin-right: 6px;
-                      "
-                      >3</span
-                    >
-                    <strong>Prueba con casos reales y ajusta</strong><br />
-                    <span
-                      style="
-                        color: var(--text-muted);
-                        margin-left: 30px;
-                        display: inline-block;
-                      "
-                    >
+                    <span style="
+                      display: inline-block;
+                      width: 24px; height: 24px;
+                      background: var(--primary);
+                      border-radius: 50%;
+                      text-align: center;
+                      line-height: 24px;
+                      font-weight: bold;
+                      font-size: 0.85em;
+                      margin-right: 6px;
+                    ">3</span>
+                    <strong>Prueba con casos reales y ajusta</strong><br>
+                    <span style="color: var(--text-muted); margin-left: 30px; display: inline-block">
                       Iterativo — no sale perfecto a la primera
                     </span>
                   </p>
                 </div>
               </div>
-              -
             </div>
 
             <!-- Caveat: limitaciones -->
@@ -6732,24 +6665,21 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
               "
             >
               <p style="font-size: 0.78em; text-align: center; margin: 0">
-                <i
-                  class="fa-solid fa-triangle-exclamation"
-                  style="color: #ef4444"
-                ></i>
+                <i class="fa-solid fa-triangle-exclamation" style="color: #ef4444"></i>
                 <strong style="color: #ef4444">Limitación clave:</strong>
-                Un GPT/Gem hereda las alucinaciones del modelo base — pero con
-                tu formato, lo que las hace <em>más creíbles</em> y
-                potencialmente más peligrosas
+                Un GPT/Gem hereda las alucinaciones del modelo base —
+                pero con tu formato, lo que las hace <em>más creíbles</em> y potencialmente más peligrosas
               </p>
             </div>
+
           </section>
-          <!-- SLIDE #36: Tu caja de herramientas (fusión 3.1+3.2+2C.6+2C.7) -->
+          <!-- SLIDE #37: Tu caja de herramientas (fusión 3.1+3.2+2C.6+2C.7) -->
           <!-- 🔧 NOTA: Slide Pirámide 5.0 irá DESPUÉS de esta -->
           <section
             class="wide-slide"
             data-menu-title="Tu Caja de Herramientas"
-            data-audio-src="audio/36.mp3"
-            data-audio-text="Ya sabemos qué funciona y cómo preguntar. Ahora toca la pregunta más práctica: ¿con qué herramienta? Y aquí hay un error frecuente que veo en colegas que empiezan: tratar a todas las inteligencias artificiales como si fueran lo mismo. No lo son. Y la diferencia importa clínicamente. La tabla que tenéis en pantalla ordena las herramientas por nivel de confianza. Dejadme que la complemente con lo que no está escrito ahí. En la fila de arriba, erre-a-ge clínico. Estas herramientas, Open Evidence, Perplexity, NotebookLM, tienen una arquitectura que impide que inventen. Primero buscan en fuentes verificadas, y solo después generan texto basándose exclusivamente en lo que han encontrado. No pueden fabricar un estudio que no existe. En el medio, herramientas de investigación académica. Consensus, por ejemplo, busca en más de doscientos millones de artículos científicos reales y solo aplica inteligencia artificial después de la búsqueda. Elicit hace algo parecido: extrae datos de papers con una precisión validada del noventa y nueve coma cuatro por ciento. Y Scite os dice si un estudio ha sido apoyado o refutado por la literatura posterior. Ninguna de estas tres genera texto clínico: analizan lo que ya existe. Y abajo, los modelos fundacionales: ChatGPT, Claude, Gemini, DeepSeek. Ojo, no son inútiles ni mucho menos. Todos pueden buscar en internet y citar fuentes. Gemini integra Google Search, ChatGPT tiene navegación web. Pero, y esto es clave, también pueden generar sin buscar. Y el usuario no siempre sabe en qué modo está. Por eso la confianza es variable y la supervisión no es opcional. Ahora bien, un matiz importante que tenéis señalado en la slide. Que una herramienta cite su fuente no significa que esa fuente tenga peso metodológico. Una inteligencia artificial puede citar un artículo real de Nature y aun así producir una síntesis que no equivale a una revisión por pares. Trazabilidad no es lo mismo que evidencia preevaluada. Ese concepto lo vamos a desarrollar en la Pirámide cinco punto cero. Un dato para poner esto en perspectiva. Según la revisión de Shool, que analizó setecientos sesenta y un estudios de cinco bases de datos, el noventa y tres por ciento evalúa modelos generalistas. De pediatría, solo diez estudios. De medicina de familia, dos. Sabemos mucho de ge-pe-te-cuatro en exámenes tipo test, y muy poco de cómo funcionan estas herramientas en nuestra consulta real. Pero el panorama se mueve. En el panel inferior veis tres conceptos. Propietarios son modelos como ge-pe-te-cuatro o Gemini, que pertenecen a empresas y funcionan en sus servidores: tus datos salen de tu hospital. Open-source significa código público que puedes instalar en tu propio servidor: tus datos no salen. DeepSeek es open-source, y según el estudio de Sandmann, en ciento veinticinco casos clínicos rinde igual que los propietarios. Y especializados, como MedFound con ciento setenta y seis mil millones de parámetros, superan a los generalistas en ocho especialidades, pero casi nadie los evalúa todavía. En la siguiente diapositiva vamos a ordenar todo esto visualmente con la Pirámide de Evidencia cinco punto cero adaptada a herramientas de inteligencia artificial."
+            data-audio-src="aepap-2026/audios/37.webm"
+            data-audio-text="Ya tenéis un asistente configurado. Pero, ¿en qué herramienta lo habéis montado? No todas son iguales. Y la diferencia importa clínicamente. Y aquí hay un error frecuente que veo en colegas que empiezan: tratar a todas las inteligencias artificiales como si fueran lo mismo. No lo son. Y la diferencia importa clínicamente. La tabla que tenéis en pantalla ordena las herramientas por nivel de confianza. Dejadme que la complemente con lo que no está escrito ahí. En la fila de arriba, erre-a-ge clínico. Estas herramientas, Open Evidence, Perplexity, NotebookLM, tienen una arquitectura que impide que inventen. Primero buscan en fuentes verificadas, y solo después generan texto basándose exclusivamente en lo que han encontrado. No pueden fabricar un estudio que no existe. En el medio, herramientas de investigación académica. Consensus, por ejemplo, busca en más de doscientos millones de artículos científicos reales y solo aplica inteligencia artificial después de la búsqueda. Elicit hace algo parecido: extrae datos de papers con una precisión validada del noventa y nueve coma cuatro por ciento. Y Scite os dice si un estudio ha sido apoyado o refutado por la literatura posterior. Ninguna de estas tres genera texto clínico: analizan lo que ya existe. Y abajo, los modelos fundacionales: ChatGPT, Claude, Gemini, DeepSeek. Ojo, no son inútiles ni mucho menos. Todos pueden buscar en internet y citar fuentes. Gemini integra Google Search, ChatGPT tiene navegación web. Pero, y esto es clave, también pueden generar sin buscar. Y el usuario no siempre sabe en qué modo está. Por eso la confianza es variable y la supervisión no es opcional. Ahora bien, un matiz importante que tenéis señalado en la slide. Que una herramienta cite su fuente no significa que esa fuente tenga peso metodológico. Una inteligencia artificial puede citar un artículo real de Nature y aun así producir una síntesis que no equivale a una revisión por pares. Trazabilidad no es lo mismo que evidencia preevaluada. Ese concepto lo vamos a desarrollar en la Pirámide cinco punto cero. Un dato para poner esto en perspectiva. Según la revisión de Shool, que analizó setecientos sesenta y un estudios de cinco bases de datos, el noventa y tres por ciento evalúa modelos generalistas. De pediatría, solo diez estudios. De medicina de familia, dos. Sabemos mucho de ge-pe-te-cuatro en exámenes tipo test, y muy poco de cómo funcionan estas herramientas en nuestra consulta real. Pero el panorama se mueve. En el panel inferior veis tres conceptos. Propietarios son modelos como ge-pe-te-cuatro o Gemini, que pertenecen a empresas y funcionan en sus servidores: tus datos salen de tu hospital. Open-source significa código público que puedes instalar en tu propio servidor: tus datos no salen. DeepSeek es open-source, y según el estudio de Sandmann, en ciento veinticinco casos clínicos rinde igual que los propietarios. Y especializados, como MedFound con ciento setenta y seis mil millones de parámetros, superan a los generalistas en ocho especialidades, pero casi nadie los evalúa todavía. En la siguiente diapositiva vamos a ordenar todo esto visualmente con la Pirámide de Evidencia cinco punto cero adaptada a herramientas de inteligencia artificial."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -7048,7 +6978,7 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
             </div>
           </section>
 
-          <!-- ═══════════════ #36 — Pirámide 5.0 + Ecosistema IA ═══════════════ -->
+          <!-- ═══════════════ #37 — Pirámide 5.0 + Ecosistema IA ═══════════════ -->
           <section
             data-menu-title="Pirámide 5.0 + Ecosistema"
             data-background-iframe="https://ernestobarrera.github.io/piramide-evidencia-ia.html?embed=1"
