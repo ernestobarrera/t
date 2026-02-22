@@ -6538,7 +6538,211 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
               </p>
             </div>
           </section>
+          <!-- ============================================================
+     SLIDE #37 — GPTs, Gems y personalización
+     Deck: #37 | Bloque 2C | Audio: ~60s
+     Assertion: "Un asistente preconfigurado elimina el prompting repetitivo"
+     Puente desde #36 (Pirámide 5.0 → elige herramienta)
+     Puente hacia #38 (RAG + Whitelisting → asegura la herramienta)
+     ============================================================ -->
 
+          <section
+            data-menu-title="GPTs, Gems y personalización"
+            data-audio-src="aepap-2026/audios/37.webm"
+            data-audio-text="Ya sabéis qué herramienta elegir según el nivel de confianza que necesitéis. Ahora, ¿cómo evitar escribir el mismo prompt cada vez que atendéis una consulta? La respuesta son los asistentes preconfigurados. En ChatGPT se llaman yepetés personalizados, en Gemini se llaman Gems, y en Claude se llaman Proyectos. La idea es la misma: le dais una vez las instrucciones, el rol, el formato de salida, y a partir de ahí, cada consulta ya sale con vuestro estilo y vuestras necesidades. Tres pasos: primero, definid el rol y el contexto, exactamente como aprendimos con Callens y con RECORD. Segundo, subid vuestros documentos de referencia: protocolos, guías, formularios. Y tercero, probadlo con casos reales y ajustad. Es iterativo, no sale perfecto a la primera. Pero ojo: un jepeté o un Gem hereda las limitaciones del modelo base. Si el modelo alucina, vuestro asistente también alucinará, pero con el formato que le habéis pedido. Eso puede ser más peligroso, porque parece más creíble. Por eso la siguiente slide es crucial: cómo verificar lo que os devuelve."
+          >
+            <h3 class="assertion-title">
+              Un asistente preconfigurado elimina el prompting repetitivo
+            </h3>
+            <p
+              style="
+                font-size: 0.75em;
+                color: var(--text-muted);
+                text-align: center;
+                margin: 0 0 15px;
+              "
+            >
+              GPTs (ChatGPT) · Gems (Gemini) · Proyectos (Claude)
+            </p>
+
+            <div
+              class="grid-2"
+              style="
+                max-width: 920px;
+                margin: 0 auto;
+                gap: 20px;
+                align-items: start;
+              "
+            >
+              <!-- Panel izquierdo: Ejemplos pediátricos -->
+              <div class="glass-panel" style="padding: 15px 18px">
+                <h4
+                  style="
+                    color: var(--primary);
+                    margin: 0 0 10px;
+                    font-size: 0.9em;
+                  "
+                >
+                  <i class="fa-solid fa-stethoscope"></i> Ejemplos para tu
+                  consulta
+                </h4>
+                <div style="font-size: 0.8em; line-height: 1.6">
+                  <p style="margin: 0 0 8px">
+                    <i
+                      class="fa-solid fa-file-medical"
+                      style="color: var(--secondary); width: 18px"
+                    ></i>
+                    <strong>Traductor clínico:</strong> convierte analíticas en
+                    lenguaje para padres
+                  </p>
+                  <p style="margin: 0 0 8px">
+                    <i
+                      class="fa-solid fa-list-check"
+                      style="color: var(--secondary); width: 18px"
+                    ></i>
+                    <strong>Codificador CIE-10:</strong> sugiere códigos a
+                    partir de tu texto libre
+                  </p>
+                  <p style="margin: 0 0 8px">
+                    <i
+                      class="fa-solid fa-book-medical"
+                      style="color: var(--secondary); width: 18px"
+                    ></i>
+                    <strong>Preparador de sesiones:</strong> estructura casos
+                    clínicos para docencia
+                  </p>
+                  <p style="margin: 0">
+                    <i
+                      class="fa-solid fa-chart-line"
+                      style="color: var(--secondary); width: 18px"
+                    ></i>
+                    <strong>Revisor de informes:</strong> detecta
+                    inconsistencias y sugiere ampliación
+                  </p>
+                </div>
+              </div>
+
+              <!-- Panel derecho: 3 pasos -->
+              <div class="glass-panel" style="padding: 15px 18px">
+                <h4
+                  style="
+                    color: var(--accent);
+                    margin: 0 0 10px;
+                    font-size: 0.9em;
+                  "
+                >
+                  <i class="fa-solid fa-shoe-prints"></i> Créalo en 3 pasos
+                </h4>
+                <div style="font-size: 0.8em; line-height: 1.6">
+                  <p style="margin: 0 0 12px">
+                    <span
+                      style="
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        background: var(--primary);
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 24px;
+                        font-weight: bold;
+                        font-size: 0.85em;
+                        margin-right: 6px;
+                      "
+                      >1</span
+                    >
+                    <strong>Define rol + contexto</strong><br />
+                    <span
+                      style="
+                        color: var(--text-muted);
+                        margin-left: 30px;
+                        display: inline-block;
+                      "
+                    >
+                      Usa RECORD o Callens como plantilla
+                    </span>
+                  </p>
+                  <p style="margin: 0 0 12px">
+                    <span
+                      style="
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        background: var(--primary);
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 24px;
+                        font-weight: bold;
+                        font-size: 0.85em;
+                        margin-right: 6px;
+                      "
+                      >2</span
+                    >
+                    <strong>Sube documentos de referencia</strong><br />
+                    <span
+                      style="
+                        color: var(--text-muted);
+                        margin-left: 30px;
+                        display: inline-block;
+                      "
+                    >
+                      Protocolos, guías, formularios propios
+                    </span>
+                  </p>
+                  <p style="margin: 0">
+                    <span
+                      style="
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        background: var(--primary);
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 24px;
+                        font-weight: bold;
+                        font-size: 0.85em;
+                        margin-right: 6px;
+                      "
+                      >3</span
+                    >
+                    <strong>Prueba con casos reales y ajusta</strong><br />
+                    <span
+                      style="
+                        color: var(--text-muted);
+                        margin-left: 30px;
+                        display: inline-block;
+                      "
+                    >
+                      Iterativo — no sale perfecto a la primera
+                    </span>
+                  </p>
+                </div>
+              </div>
+              -
+            </div>
+
+            <!-- Caveat: limitaciones -->
+            <div
+              class="glass-panel"
+              style="
+                max-width: 880px;
+                margin: 15px auto 0;
+                padding: 10px 18px;
+                background: rgba(239, 68, 68, 0.08);
+                border: 1px solid rgba(239, 68, 68, 0.4);
+              "
+            >
+              <p style="font-size: 0.78em; text-align: center; margin: 0">
+                <i
+                  class="fa-solid fa-triangle-exclamation"
+                  style="color: #ef4444"
+                ></i>
+                <strong style="color: #ef4444">Limitación clave:</strong>
+                Un GPT/Gem hereda las alucinaciones del modelo base — pero con
+                tu formato, lo que las hace <em>más creíbles</em> y
+                potencialmente más peligrosas
+              </p>
+            </div>
+          </section>
           <!-- SLIDE #36: Tu caja de herramientas (fusión 3.1+3.2+2C.6+2C.7) -->
           <!-- 🔧 NOTA: Slide Pirámide 5.0 irá DESPUÉS de esta -->
           <section
@@ -9720,62 +9924,6 @@ Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en direc
                 ></i>
                 <span style="font-size: 0.85em">Demo en vivo</span>
               </div>
-            </div>
-          </section>
-
-          <!-- SLIDE: GPTs y Gems -->
-          <section
-            data-menu-title="GPTs y Gems"
-            data-audio-text="Una de las revoluciones recientes es la personalización. Podéis crear mini-asistentes preconfigurados sin saber programar."
-          >
-            <h2>🧩 GPTs y Gems: Personalización</h2>
-            <p
-              style="
-                font-size: 0.8em;
-                color: var(--text-muted);
-                margin-bottom: 20px;
-              "
-            >
-              Crea tu propio asistente preconfigurado sin programar
-            </p>
-            <div class="grid-2" style="max-width: 900px; margin: 20px auto">
-              <div class="glass-panel">
-                <h4 style="color: var(--primary)">
-                  <i class="fa-solid fa-robot"></i> Ejemplo: GPT Revisor
-                </h4>
-                <ul style="font-size: 0.85em; text-align: left">
-                  <li>Le das: resultados analíticos (anonimizados)</li>
-                  <li>Te devuelve: versión explicativa para padres</li>
-                  <li>Además: pistas de interpretación clínica</li>
-                  <li>Y: sugerencias para ampliar estudio</li>
-                </ul>
-              </div>
-              <div class="glass-panel">
-                <h4 style="color: var(--secondary)">
-                  <i class="fa-solid fa-wand-magic-sparkles"></i> Otros usos
-                </h4>
-                <ul style="font-size: 0.85em; text-align: left">
-                  <li>Generador de informes</li>
-                  <li>Traductor de jerga médica</li>
-                  <li>Asistente de codificación CIE-10</li>
-                  <li>Preparador de sesiones clínicas</li>
-                </ul>
-              </div>
-            </div>
-            <div
-              class="glass-panel"
-              style="
-                max-width: 800px;
-                margin: 15px auto;
-                background: rgba(96, 165, 250, 0.1);
-                border: 1px solid var(--primary);
-              "
-            >
-              <p style="font-size: 0.85em; text-align: center; margin: 0">
-                <i class="fa-solid fa-key" style="color: var(--primary)"></i>
-                <strong>Clave:</strong> Una vez configurado, tu GPT/Gem recuerda
-                las instrucciones y aplica el mismo formato cada vez.
-              </p>
             </div>
           </section>
 
