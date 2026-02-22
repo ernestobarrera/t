@@ -1,0 +1,1 @@
+menu.js sustituye "Themes" por "Temas" en 4 apariciones de código. Sustituye "Close" por "Salir" en una aparición de código. Con Cerrar la r requiere un ajuste dinámico

@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Presentación: ChatGPT en ciencias de la salud" />
+  <meta name="author" content="Ernesto Barrera" />
+  <link rel="icon" href="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title"
+    content="Herramientas para buscar información sanitaria: ChatGPT para Profesionales Sanitarios | ​👨‍⚕️ EB" />
+  <meta property="og:site_name" content="Recursos para la gestión de información 🔎🩺⚕" />
+  <meta property="og:url" content="https://ernestobarrera.github.io/" />
+  <meta property="article:published_time" content="2023-04-30" />
+  <meta property="article:author" content="Ernesto Barrera" />
+  <title>🤖ChatGPT para Profesionales Sanitarios | @ernestob</title>
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="reveal.js/dist/theme/blood.css" id="theme">
+  <link rel="stylesheet" href="../reveal.js-plugins/simplemenu/simplemenu.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/plugin/highlight/zenburn.css">
+  <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="../reveal.js-plugins/appearance/appearance.css">
+  <script src="reveal.js/dist/reveal.js"></script>
+  <script src="reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="../reveal.js-plugins/menu/menu.js"></script>
+  <script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
+  <script src="../reveal.js-plugins/appearance/appearance.js"></script>
+  <script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
+  <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+  <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
+  <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+  <link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <style>
+    /* ##Device=Desktops ##Screen=1281px to higher resolution desktops
+*/
+    @media (min-width: 1601px) {
+      html {
+        font-size: 140%;
+      }
+
+      * {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (min-width: 1401px) and (max-width: 1600px) {
+      html {
+        font-size: 100%;
+      }
+
+      * {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (min-width: 1281px) and (max-width: 1400px) {
+      html {
+        font-size: 100%;
+      }
+
+      * {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* ##Device=Laptops, Desktops ##Screen=B/w 1025px to 1280px
+*/
+    @media (min-width: 1025px) and (max-width: 1280px) {
+      html {
+        font-size: 100%;
+      }
+
+      * {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* ##Device=Tablets, Ipads (portrait) ##Screen=B/w 768px to 1024px
+*/
+    @media (min-width: 768px) and (max-width: 1024px) {
+      html {
+        font-size: 100%;
+      }
+
+      * {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* ##Device=Tablets, Ipads (landscape) ##Screen=B/w 768px to 1024px
+*/
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+      html {
+        font-size: 120%;
+      }
+
+      * {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* ##Device=Low Resolution Tablets, Mobiles (Landscape) ##Screen=B/w 481px to 767px
+*/
+    @media (min-width: 481px) and (max-width: 767px) {
+      html {
+        font-size: 0.9rem;
+      }
+
+      * {
+        font-size: 1rem;
+      }
+    }
+
+    /* ##Device=Most of the Smartphones Mobiles (Portrait) ##Screen=B/w 320px to 479px
+*/
+    @media (min-width: 320px) and (max-width: 480px) {
+      html {
+        font-size: 0.8rem;
+      }
+
+      * {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 319px) {
+      html {
+        font-size: 0.7rem;
+      }
+
+      * {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media screen and (min-width: 500px) {
+      html .slide-menu.slide-menu--left.active {
+        font-size: 0.2rem !important;
+        width: 60%;
+      }
+    }
+
+    .cabecera {
+      margin-top: 1em;
+      font-size: 5rem;
+      color: orange;
+      word-spacing: 10px;
+      text-shadow: 3px 3px 4px #000000;
+    }
+
+    h1.color,
+    h2.color,
+    h3.color,
+    h4.color,
+    h5.color,
+    h6.color {
+      color: rgb(251, 183, 56);
+      text-shadow: 1px 1px 1px #000;
+    }
+
+    .reveal h1 {
+      font-size: 2.2rem;
+    }
+
+    .reveal h2 {
+      font-size: 2rem;
+    }
+
+    .reveal h3 {
+      font-size: 1.8rem;
+    }
+
+    .reveal h4 {
+      font-size: 1.6rem;
+    }
+
+    .reveal h5 {
+      font-size: 1.4rem;
+    }
+
+    .table-cell {
+      border: 1px solid #dddddd;
+      padding: 5px;
+      font-size: 0.85em;
+    }
+
+    .table-cell-header {
+      font-weight: bold;
+    }
+
+    .imagen-responsiva {
+      position: fixed;
+      z-index: 5;
+      top: 0;
+      right: 0;
+      border: 1;
+      height: 100px;
+      width: auto;
+      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 1200px) {
+      .imagen-responsiva {
+        height: 4vw;
+        min-height: 30px;
+      }
+    }
+
+    .vertical {
+      margin-top: 1.2rem;
+    }
+
+    .titulo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .left {
+      text-align: left;
+    }
+
+    .pie {
+      position: absolute !important;
+      bottom: 0.3125rem;
+    }
+
+    .size-1 {
+      font-size: 2rem;
+    }
+
+    .size {
+      font-size: 1.625rem;
+    }
+
+    .size0 {
+      font-size: 1.25rem;
+    }
+
+    .size1 {
+      font-size: 1rem;
+    }
+
+    .size2 {
+      font-size: 0.875rem;
+    }
+
+    .size3 {
+      font-size: 1rem;
+    }
+
+    .color {
+      color: rgb(251, 183, 56);
+    }
+
+    .fragment.blur {
+      filter: blur(5px);
+    }
+
+    .fragment.blur.visible {
+      filter: none;
+    }
+
+    .full-height {
+      height: 100vh;
+    }
+
+    .footer {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      left: 50%;
+      bottom: 3em;
+      transform: translateX(-50%);
+    }
+
+    .aligned p {
+      margin-left: 15%;
+      text-align: left;
+    }
+
+    .filaImagenTexto {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .filaImagenTexto div {
+      width: 50%;
+    }
+
+    .mensaje-usuario {
+      margin-left: 15%;
+      text-align: left;
+      color: #2fa883;
+      font-weight: bold;
+    }
+
+    .mensaje-chatgpt {
+      margin-left: 15%;
+      text-align: left;
+      color: #3969ab;
+      font-weight: bold;
+    }
+
+    .highlighted {
+      background-color: rgba(252, 212, 212, 0.5);
+    }
+
+    .controls-arrow {
+      font-size: 10px !important;
+    }
+
+    .glow-on-hover {
+      width: 280px;
+      height: 50px;
+      border: none;
+      outline: none;
+      color: #fff;
+      background: rgb(214, 197, 197);
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 8px;
+    }
+
+    .glow-on-hover:before {
+      width: 280px;
+      height: 50px;
+      border: none;
+      outline: none;
+      color: #fff;
+      background: rgb(214, 197, 197);
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 8px;
+    }
+
+    .glow-on-hover:before {
+      content: '';
+      background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      border-radius: 8px;
+    }
+
+    .glow-on-hover:active {
+      color: #000
+    }
+
+    .glow-on-hover:active:after {
+      background: transparent;
+    }
+
+    .glow-on-hover:hover:before {
+      opacity: 1;
+    }
+
+    .glow-on-hover:after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgb(255, 191, 71);
+      left: 0;
+      top: 0;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    @keyframes glowing {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 400% 0;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .bold-text {
+      font-weight: bold;
+    }
+
+    section .custom-table {
+      font-size: 0.8em !important;
+      width: 100% !important;
+    }
+
+    section .custom-table th,
+    section .custom-table td {
+      padding: 4px 8px !important;
+      border: 1px solid #ccc !important;
+    }
+
+    section .custom-table th {
+      background-color: #333 !important;
+      color: #fff !important;
+      font-weight: bold !important;
+    }
+
+    .reveal .box {
+      width: auto;
+      margin: 1ex auto;
+      line-height: 1.5;
+      padding: 0;
+      text-align: center;
+      overflow: auto;
+      text-align: left;
+      border-radius: 0.5em;
+      box-shadow: 8px 8px 7px 5px rgba(9, 9, 9, 0.512);
+    }
+
+    .reveal .box .title,
+    .reveal .box .content {
+      padding: 0.8ex 3%;
+      border: #ddd 1px solid;
+    }
+
+    .reveal .box .title {
+      color: rgb(251, 183, 56);
+      text-shadow: 2px 2px 2px #555;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-bottom: none;
+      border-radius: 0.5em 0.5em 0 0;
+      font-size: 1.4em;
+      font-weight: 600;
+    }
+
+    .reveal .box .content {
+      color: #ffffff;
+      text-shadow: 2px 2px 2px #555;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 0 0 0.5em 0.5em;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal"><a href="https://twitter.com/ernestob" target="_blank"><img
+        style="position: relative; z-index:5;margin-top:4px; top: 0; left: 0; border: 0;" title="Estoy en Twitter"
+        src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png" width="35" height="40">
+      <div class="slides">
+        <section
+          data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png"
+          data-background-opacity="0.09"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/intro.mp3"><a
+            href="https://www.saludcastillayleon.es/institucion/es/biblioteca/noticias/xvii-jornadas-nacionales-informacion-documentacion-ciencias"
+            target="_blank"><img class="imagen-responsiva"
+              title="XVII Jornadas Nacionales de Información y Documentación en Ciencias de la salud (Bibliosalud 2023).Valladolid 19 y 20 octubre 2023."
+              src="https://pbs.twimg.com/media/FrasYivWIAEi__G?format=png&name=small"></a>
+          <h1 class="color" style="margin-top: 5vh;">Introducción a ChatGPT</h1>
+          <h3>En Ciencias de la Salud</h3>
+          <div class="blur"
+            style="position: absolute; top: 300px; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 20px; font-size: 1.2rem; text-align: left;">
+            <h4>💡TIP </h4>
+            <p style=" font-size: 1.2rem; color: rgb(253, 215, 1)">Esta presentación contiene diapositivas en navegación
+              horizontal y vertical, según se indica en las flechas de abajo a la derecha. Girar la rueda del ratón,
+              <strong>pulsar la barra espaciadora</strong> o las teclas de flecha del teclado para navegar por ellas.
+            </p>
+            <p style=" font-size: 1.2rem; color: rgb(253, 215, 1)">Incluye contenido audio en cada diapositiva para
+              facilitar un uso virtual asíncrono </p>
+          </div>
+          <div
+            style="position: absolute; top: 350px; left: 10px; width: 25vw; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.329); color: #fff; padding: 10px; font-size: 1.2em; text-align: center;">
+            <p>Ernesto Barrera Linares</p>
+            <p>Octubre 2023</p><a href="https://twitter.com/ernestob" target="_blank"><i class="fab fa-twitter"
+                style="margin-right: 10px;"></i></a><a href="https://www.linkedin.com/in/ernestobarreralinares/"
+              target="_blank"><i class="fab fa-linkedin"></i></a> <a href="https://github.com/ernestobarrera"
+              target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </section>
+        <section data-background-image="https://th.bing.com/th/id/OIG.1WWLJtUNycfosBvenwzJ?pid=ImgGn"
+          data-background-opacity="0.09"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/indice.mp3">
+          <h2>Índice de la Presentación</h2>
+          <ul>
+            <li><a style="font-size: 1.6rem;margin-bottom: 2rem" href="#/1">¿Qué es ChatGPT? Datos de su Impacto</a>
+            </li>
+            <li><a style="font-size: 1.6rem" href="#/3">Ejemplos y casos de estudio en contextos sanitarios</a></li>
+            <li><a style="font-size: 1.6rem" href="#/2">¿Cómo funciona? Aspectos conceptuales, técnicos y terminológicos
+                para facilitar su comprensión </a></li>
+            <li><a style="font-size: 1.6rem" href="#/3">Pros, Contras y Limitaciones de su uso en el ámbito de las
+                Ciencias de la Salud</a></li>
+          </ul>
+          <style>
+            h2 {
+              color: #2C3E50;
+              margin-bottom: 20px;
+            }
+
+            ul {
+              font-size: 2rem;
+              margin-bottom: 2rem;
+            }
+
+            ul li a:hover,
+            ul li a:focus {
+              color: #3498DB;
+              text-decoration: underline;
+            }
+          </style>
+        </section>
+        <section>
+          <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+            data-audio-src="https://ernestobarrera.github.io\assets\Audio\ChatGPT_Biblio\quees.mp3">
+            <div style="display: flex; align-items: center; justify-content: space-around;">
+              <div style="width: 70%;text-align: left;">
+                <h3 class="color" style="text-align: center;">¿Qué es ChatGPT?</h3>
+                <p style="font-size: 1.2rem; ">Herramienta de inteligencia artificial 🧠 que utiliza procesamiento de
+                  lenguaje natural para proporcionar respuestas conversacionales en tiempo real. En otras palabras, es
+                  un chatbot que puede conversar contigo y responder tus preguntas siempre que las formules en lenguaje
+                  natural. CHATGPT utiliza una gran cantidad de datos para mejorar constantemente la calidad de sus
+                  respuestas.</p>
+                <h5 class="color" style="margin-top: 1.2rem">Algunas características</h5>
+                <ul style="font-size: 1.1rem;line-height: 1.2rem; line-height: 190%;">
+                  <li>📝 Generación de texto coherente y relevante.</li>
+                  <li>❓ Capacidad para responder a preguntas.</li>
+                  <li>🎨 Capacidad para escribir en diferentes estilos.</li>
+                  <li>🔍 Capacidad para aprender de los inputs del usuario.</li>
+                  <li>🧠 Memoria de conversación: ChatGPT puede recordar el contexto de una conversación anterior y
+                    utilizarlo para generar respuestas más coherentes.</li>
+                  <li>👁️ Ahora es multimodal, puede ver, oír y leer: el texto como el "tejido conectivo".</li>
+                </ul>
+                <p style="font-size: 2rem;text-align: center" class="fragment color">"No es magia...es Inteligencia
+                  Artificial" ✨</p>
+              </div>
+              <div style="width: 30%;"><img
+                  src="https://th.bing.com/th/id/OIG.gl6kn.FD6PNOUJjrLkU2?pcl=1b1a19&pid=ImgGn"
+                  alt="Imagen representativa de ChatGPT" style="max-width: 100%;"></div>
+            </div>
+          </section>
+          <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+            data-audio-src="https://ernestobarrera.github.io\assets\Audio\ChatGPT_Biblio\tweet.mp3">
+            <div class="tweet" data-src="https://twitter.com/OpenAI/status/1598014522098208769"></div>
+          </section>
+        </section>
+        <section class="full-height"
+          data-background-iframe="https://esperr.github.io/pubmed-by-year/?q1=%22artificial%20intelligence%22[TIAB]&q2=OPENAI[TIAB]%20OR%20CHATGPT[TIAB]%20OR%20%22CHAT%20GPT%22[TIAB]%20OR%20GPT-3[TIAB]%20OR%20GPT-4[TIAB]%20&q3=%22COVID-19 vaccine*%22[TIAB]&startyear=2018"
+          data-background-opacity="1"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/bibliometria.mp3"
+          data-background-interactive="true">
+          <div class="fragment blur"
+            style="position: absolute; bottom: 15%; width: 35%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0, 0, 0, 0.406); background-color: rgba(0, 0, 0, 0.642); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+            <h6 style="text-align: center;" class="color">📈 Bibliometría:<br>El "Taquillazo" de ChatGPT</h6>
+            <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">IA: ↑39.12% (2022), ↑28.74% (2023)</p>
+            <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">ChatGPT: ↑246% en 2022, ↑6477%=>↑ x 65
+              en 2023</p>
+            <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">IA: ~1 de cada 100 publicaciones en
+              2023<br>ChatGPT: ~1 de cada 1000 publicaciones en 2023</p>
+          </div>
+          <div class="footer">
+            <H6 class="color">Bibliometría: búsquedas ChatGPT hasta ayer (<span id="fecha-de-ayer"></span>)</H6>
+            <p style="font-size: 1rem; color: #000; font-weight: 90; text-shadow: 1px 1px 2px rgba(253, 215, 1, 0.7);">
+              Diseño y construcción de la web de bibliometria: Ed Sperr</p>
+          </div>
+        </section>
+        <section class="full-height"
+          data-background-iframe="https://pageviews.wmcloud.org/langviews/?project=en.wikipedia.org&platform=all-access&agent=user&range=latest-365&sort=views&direction=1&view=chart&page=ChatGPT"
+          data-background-opacity="0.9"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/wikipedia_analisis.mp3">
+          <div class="footer">
+            <H6 class="color">Nº de visitas a ChatGPT en Wikipedia hasta ayer (<span id="fecha-de-ayer"></span>)</H6>
+            <H5 class="color">Interés sin precedentes</H5>
+          </div>
+        </section>
+        <section class="full-height" data-background-iframe="https://chat.openai.com/" data-background-opacity="1"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/webproduccion.mp3">
+          <div class="footer">
+            <H6 class=" color">ChatGPT en producción</span><br><a href="https://chat.openai.com/" target="_blank"
+                style="text-decoration: underline; color: #3498DB; font-weight: normal; text-transform: none;">Accede a
+                https://chat.openai.com/</a></H6>
+          </div>
+        </section>
+        <section data-background-image="https://media.giphy.com/media/SUp0ZNb0pmL3G65I2k/giphy-downsized-large.gif"
+          data-background-opacity="0.2"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/cambiobusqueda.mp3">
+          <H3 style="line-height: 1.4">ChatGPT no cambia la forma en que buscas...<br>si no la forma en que pensamos en
+            la búsqueda</H3>
+          <H2 class="color" style="margin-top:3vh">De resultados a respuestas, de consultas a conversaciones</H4>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/mapaconceptual.mp3">
+          <h4 class="color" style="margin-top: -1vh;">Mapa Conceptual: Las múltiples facetas de ChatGPT</h4>
+          <div style="display: flex; align-items: center; justify-content: center; height: 95vh;margin-top: -3vh;">
+            <div style="flex: 0 1 100%; margin-left:-20vh; margin-right:-20vh;"><img
+                src="http://www.plantuml.com/plantuml/png/ZLRDRXmt3BxlKwZ8pK1Is_c9WGH5NCTE2hIf4HljnHUkH8-PQCG1fN6yBl8mEURGGv57s1ShfH5sTjORjtiQKH_vVVmaoduL4qXgARWMkjaFwGfRD9q72hFuaK870gsPW_tO2FV17R5dCGzEocyD0IBywVoAxCU0CPgzHq_NDXrUGk_J2OVq3hJyM_JNcCZ2TimPtQBPUpPx6TF2uq-pm0xDNpEZlrDmZa9ZzlRByZUGXe9vN1PlMUXMqy4VUcf2Yo4PYo6XbErVAU2WVkvxN8L6pOyVxPRe-w5F2IZcoMxbkQ6sR_yabwxC_jCXE4fzKjUrlJzG70J8mTddcJ2dTxM3odcM-p87ZtPV5Cw9E45N8ZzlMFxfYXBUqRUfv409FSBbI7WdPN_tksvvl4mJcvzlb7-ylT5DYzIstVNpsNkgiYnqYJXK6wQaBtJ_vO_rkCSxKGz-cnqFZWzE3avEXZqMXrBZkxlFdn_jhyN70nwYPrVW-9DsLowf1WhDeFkPwlwy8Q1qdvLL9QkrrlTEuJlcw0hIczFpsSwEEHMs6A4b38cDGw_zXQQ73sW2f5x0Ash7lC600fQMtuA2JCARn6NZNC3rThL1ZhY5MBOEm_ABfqXncd74uHebJaePCDTyQnRccYpcNQXG4Qp56-qFyWnwXR4aRcJvvLBN0rV4o0Ar3Gm6enNA-cUvZeOjGH7YmKJmlIjflwYKcAYfdIqCh6jsa3XkBrzAA7wk4Qq0Kc2lsVQjGbRb11sicHCkMLgCfbr-TMHBRNEizgtmUNzOb7h78UBo7mYte7kfJta4nkqiYs8ghMLD7fGlikzNX9tmt6CxD0wTO71Qu0DUXFSOkpuBZmOKXaqVohS5j_pQaeLu4Kw5EnPB742gzYeqybpooTNAD77n8XmkUZSg0Z-8hiSD6ecv7O4vVE2OJugzHfNnTw6LUpKVFOu6MX11AUdQMYDG1IXxxuWlmbdVe1H3CiPoY9Wfyd0ONnhLpr4CtYo_j1WozVcwkveRrHAgvzsXH0wb3rTcP637oADXzMuBZjMLFc4WJS5yneck5NGFggYqlNB5qlpoxu1m4Uv5UuXOq5NZlV2fQHOw1LQtxyzh8VJWiQJriGSX7kwdXpcFVbRnMvhiF0IS7jLaluM4Gk0hPdNjBy9hojzSmjVWUytXN6gnVdYlCO88UrzmODLgSk2mNfG5siHnopksklbLyoa8Z7KrsUOPAGD078sEnE1YZtEeCvKerRVa_MJMCKHOi6gxCwDM43PXupni7QZ_zGvEvuwbWR0-UEI6kGDfoXjLjDrvDSlLjXYBaUCR-l2XEXTJgOLj9zblgWeAJpqM1JuqXtVUKCNfavT4LLR89d5JgojIlmGIDWJhL2MjMbnnZbRDERQrgVMSeiUSSmi5WvPYKRaQQFoEclIVAQSU0cNNgvgftnLTLH-799Z7gH8es19lOUuYMVRBRqr-JZ997TTIi-2dGxhyvgZXWUEcysItxvrzzqz2Do5uXS7L_wl_1G00"
+                alt="Mapa Mental" style="height: 90vh; width: auto;">
+              <div
+                style="position: absolute; bottom: 4%; left: 10%; color: #000; z-index: 1; text-align: left; background-color: rgba(255, 255, 255, 0.7); border-radius: 1px;">
+                <p style=" font-size: 0.9rem; text-shadow: none;">Estos son solo algunos de los casos de uso posibles.
+                </p>
+                <p style=" font-size: 0.9rem; text-shadow: none;"><sup>*</sup>Puedes hacer zoom en la imagen con el
+                  botón izquierdo del ratón + tecla ALT.</p>
+              </div>
+            </div>
+          </div>
+          <p
+            style="position: absolute; bottom: 4%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em;margin-bottom: -3vh">
+            Imagen elaborada con <a href="https://www.plantuml.com" target="_blank"
+              style="font-size: inherit; text-decoration: underline;">PlantUML</a>y <a href="https://openai.com"
+              target="_blank" style="font-size: inherit; text-decoration: underline;">ChatGPT</a></p>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
+          <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/ejemplopubmed.mp3">
+            <h3 class="color" style="text-align: center;">Algunos ejemplos de uso de ChatGPT</h3>
+            <p style="font-size: 1.4rem;">Describir una búsqueda en PubMed</p>
+            <h5 class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h5>
+            <p style="font-size: 1.3rem; text-align: left;">No sé cómo buscar en Pubmed, pero quiero entender cómo
+              funciona esto. Explícame la sintaxis de PubMed (diapositiva superior) de forma que una persona sin
+              conocimientos técnicos pueda entenderla. Organízalo por secciones con encabezados. </p>
+            <pre
+              class="custom-pre"><code class="custom-code-block hljs" >(statin*|rosuvastatin|lovastatin|atorvastatin|pravastatin|pitavastatin) ((((("critical appraisal" OR "journal club" OR (journal[TIAB] AND club*[TIAB])))) OR ((((("evidence-based practice" OR "evidence-based policy" OR "evidence based practice" OR "evidence-based medicine" OR "evidence based medicine" OR "evidence-based health care" OR "evidence-based healthcare" OR "evidence based health care" OR "evidence based health care" OR "evidence-based dentistry" OR "evidence based dentistry" OR "Evidence-Based Facility Design" OR "evidence-based nursing" OR "evidence based nursing" OR "Evidence-Based Emergency Medicine")))) OR (((((("Evidence-Based Practice"[Mesh]) OR "Evidence-Based Practice/education"[Mesh]) OR "Evidence-Based Medicine"[Mesh]) OR "Evidence-Based Dentistry"[Mesh]) OR "Evidence-Based Nursing"[Mesh] OR "Evidence-Based Facility Design"[Mesh] OR "Evidence-Based Emergency Medicine"[Mesh])))))</code></pre>
+          </section>
+          <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/ejemplopubmed2.mp3">
+            <h5 class="color" style="text-align: left;">🤖 ChatGPT:</h5>
+            <p style="font-size: 1.3rem; text-align: left;">La consulta proporcionada está estructurada de manera
+              compleja para obtener resultados precisos en PubMed. Vamos a desglosarla paso a paso.</p>
+            <h6 class="color" style="text-align: left;">1. Palabras clave y operadores</h6>
+            <p style="font-size: 1.3rem; text-align: left;">Las "palabras clave" son las palabras o frases específicas
+              que estamos buscando en la literatura. <br>Operadores son las herramientas que usamos para decirle al
+              motor de búsqueda cómo queremos que combine o excluya ciertas palabras clave. En PubMed, los operadores
+              principales son: OR, AND y NOT. <br>Por ejemplo con ("manzana" OR "pera"), la búsqueda devolverá
+              resultados que contienen la palabra "manzana" o "pera".</p>
+            <h6 class="color" style="text-align: left;">2. Términos de búsqueda con "wildcards"</h6>
+            <p style="font-size: 1.3rem; text-align: left;">Un "wildcard" es un símbolo que se utiliza para representar
+              uno o más caracteres en una palabra clave. En PubMed, el asterisco (*) es un wildcard común. <br>statin*
+              buscará todas las palabras que comiencen con "statin", como "statins", "statin-induced", etc.</p>
+          </section>
+          <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/ejemplopubmed3.mp3">
+            <h6 class="color" style="text-align: left;">3. Grupos de palabras clave</h6>
+            <p style="font-size: 1.1rem; text-align: left;">La búsqueda se compone de varios grupos de palabras clave,
+              separados por operadores. Estos grupos permiten realizar búsquedas más específicas.</p>
+            <pre
+              class="custom-pre"><code class="custom-code-block hljs" style="text-align: center;" >(statin*|rosuvastatin|lovastatin|atorvastatin|pravastatin|pitavastatin)</code></pre>
+            <p style="font-size: 1.1rem; text-align: left;">Esto buscará cualquier mención de términos relacionados con
+              "statin" o los nombres específicos de medicamentos listados. El operador | es equivalente al OR.</p>
+            <h6 class="color" style="text-align: left;">4. Uso de campos específicos: [TIAB] y [Mesh]</h6>
+            <p style="font-size: 1.1rem; text-align: left;">El campo [TIAB] en PubMed se refiere a "Title/Abstract", lo
+              que significa que la búsqueda se limitará a los títulos y resúmenes de los artículos.</p><code></code>
+            <pre
+              class="custom-pre"><code class="custom-code-block hljs" style="text-align: center;" >journal[TIAB] AND club*[TIAB]</code></pre>
+            <p style="font-size: 1.1rem; text-align: left;">Esto buscará artículos cuyo título o resumen contenga la
+              palabra "journal" y alguna palabra que comience con "club".</p>
+            <p style="font-size: 1.1rem; text-align: left;">[Mesh] se refiere a los "Medical Subject Headings", que son
+              términos estandarizados utilizados para indexar artículos en PubMed.</p><code></code>
+            <pre
+              class="custom-pre"><code class="custom-code-block hljs" style="text-align: center;" >"Evidence-Based Practice"[Mesh]</code></pre>
+            <p style="font-size: 1.1rem; text-align: left;">Esto buscará artículos que hayan sido indexados bajo el
+              término "Evidence-Based Practice" en el sistema MeSH.</p>
+            <h6 class="color" style="text-align: left;">5. Combinación de grupos</h6>
+            <p style="font-size: 1.1rem; text-align: left;">La consulta completa combina todos estos grupos de palabras
+              clave utilizando operadores OR para abarcar una amplia gama de términos relacionados con la práctica
+              basada en la evidencia y los medicamentos relacionados con "statin".</p>
+          </section>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
+          <section
+            data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/bibliometria1.mp3""><h3 class="
+            color" style="text-align: center;">ChatGPT: Quiero un análisis bibliométrico de publicaciones</h3>
+            <h5 class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h5>
+            <p style="font-size: 1.2m; text-align: left;">Analiza este archivo exportado de Embase con todas las citas
+              obtenidas en la siguiente búsqueda: </p>
+            <pre
+              class="custom-pre"><code class="custom-code-block hljs" >'chatgpt'/exp OR chatgpt OR 'chat gpt'/exp OR 'chat gpt' OR (('gpt 3' OR 'gpt 4') AND (openai OR llm))</code></pre>
+          </section>
+          <section class="full-height"
+            data-background-iframe="https://chat.openai.com/share/5a79cc6c-99fe-4ffd-a09a-dc1825a0d7b6"
+            data-background-opacity="1"
+            data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/bibliometria2.mp3"
+            data-background-interactive>
+            <div class="footer"
+              style="position: absolute; bottom: 4vh; width: 70%; background-color: rgba(0, 0, 0, 0.775); padding: 10px 0; text-align: center;">
+              <H6 class="color">Análisis bibliométrico con ChatGPT-4 Advanced Data Analysis</H6>
+            </div>
+          </section>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
+          <h3 class="color" style="text-align: center;">Lectura Crítica por ChatGPT</h3>
+          <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/lecturacritica.mp3">
+            <h4 class="color" style="text-align: left;">👩🏽‍⚕️ Yo:</h4>
+            <p style="font-size: 1.6rem; text-align: left;">Quiero que hagas la lectura crítica de un artículo
+              científico </p>
+            <h4 class="color" style="text-align: left; margin-top: 8vh;">🤖 ChatGPT:</h4>
+            <div class="fade-in">
+              <h5 class="color" style="text-align: left; margin-top: 3vh; ">Título y Diseño del Estudio</h5>
+              <p style="font-size: 1.2rem; text-align: left;"><strong>Título del artículo:</strong>The clinical
+                effectiveness of sertraline in primary care and the role of depression severity and duration (PANDA): a
+                pragmatic, double-blind, placebo-controlled randomised trial.</p>
+              <p style="font-size: 1.2rem; text-align: left;"><strong>Traducción al español (y enlace): </strong><a
+                  style="font-weight: bold; font-size:1.2em; text-align: center;"
+                  href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(19)30366-9/fulltext"
+                  target="_blank">La efectividad clínica de la sertralina en atención primaria y el papel de la gravedad
+                  y la duración de la depresión (PANDA): un ensayo aleatorizado pragmático, doble ciego y controlado con
+                  placebo.</a></p>
+              <p style="font-size: 1.2rem; text-align: left;"><strong>Diseño del estudio:</strong>Este es un ensayo
+                clínico aleatorizado, doble ciego y controlado con placebo que se llevó a cabo en 179 centros de
+                atención primaria en el Reino Unido. Se incluyeron pacientes de 18 años o más que presentaban síntomas
+                de depresión durante al menos dos semanas. Los participantes fueron asignados aleatoriamente a recibir
+                sertralina o un placebo. La dosis inicial de sertralina fue de 50 mg/día durante una semana, luego se
+                incrementó a 100 mg/día.</p>
+              <footer>
+                <p style="text-align: left; font-size: 1.2rem; margin-top:10vh">*Artículo resumido y analizado por
+                  <strong>ChatGPT</strong>. Versión del Prompt: julio 2023</p>
+              </footer>
+            </div>
+          </section>
+          <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/lecturacritica2.mp3">
+            <h5 class="color" style="text-align: left;">Resultados y Conclusiones</h5>
+            <p style="font-size: 1.2rem; text-align: left;"><strong>Validez interna:</strong>El estudio parece tener una
+              alta validez interna. Se utilizó un diseño de doble ciego para minimizar el sesgo, y el análisis se
+              realizó en la población por intención de tratar, lo que ayuda a preservar el equilibrio de las
+              características del paciente logrado en la aleatorización. La tasa de abandono fue similar en ambos
+              grupos.</p>
+            <p style="font-size: 1.2rem; text-align: left;"><strong>Validez externa:</strong>La validez externa del
+              estudio también parece ser alta. El estudio se realizó en un entorno de atención primaria y los
+              participantes tenían una amplia gama de gravedad de los síntomas de depresión, lo que sugiere que los
+              resultados son aplicables a la población general de pacientes con depresión en atención primaria.</p>
+            <p style="font-size: 1.2rem; text-align: left;"><strong>Resultados y conclusiones:</strong>Los resultados
+              mostraron que la sertralina no fue superior al placebo en términos de mejora de los síntomas de depresión
+              a las 6 semanas. Sin embargo, la sertralina fue superior al placebo en términos de reducción de los
+              síntomas de ansiedad y mejora de la calidad de vida a las 6 semanas. A las 12 semanas, la sertralina fue
+              superior al placebo tanto para la depresión como para la ansiedad.</p>
+            <div style="display: flex; align-items: center; justify-content: center; height: 30vh; margin-top: -1vh;">
+              <img src="https://telegra.ph/file/09b5752290ad69aa70d9b.png" alt="Figura 1"
+                style="height: 22vh; width: auto;"></div>
+          </section>
+          <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/lecturacritica3.mp3">
+            <h5 class="color" style="text-align: left;">Interpretación (I)</h5>
+            <p style="font-size: 1.2rem; text-align: left;"><strong>Aplicabilidad de la evidencia:</strong>Los hallazgos
+              del estudio son relevantes para la práctica clínica. Aunque la sertralina no mostró una mejora en los
+              síntomas de depresión a corto plazo, sí mostró beneficios a largo plazo y en la reducción de los síntomas
+              de ansiedad y la mejora de la calidad de vida.</p>
+            <p style="font-size: 1.2rem; text-align: left;"><strong>Jerarquía de la evidencia científica:</strong>Este
+              estudio se sitúa en la cima de la jerarquía de la evidencia científica, ya que es un ensayo clínico
+              aleatorizado.</p>
+            <p style="font-size: 1.2rem; text-align: left;"><strong>Posibles conflictos de interés y sesgos:</strong>No
+              se informaron conflictos de interés. Sin embargo, el estudio fue financiado por el National Institute for
+              Health Research, que podría tener un interés en los resultados.</p>
+            <p style="font-size: 1.2rem; text-align: left;"><strong>Interpretación de resultados
+                estadísticos:</strong>Los resultados se presentaron como diferencias de medias y razones de
+              probabilidades, con intervalos de confianza del 95%. Se utilizó un nivel de significación del 5%.</p>
+            <p style="font-size: 1.2rem; text-align: left;"><strong>Contextualización de los hallazgos:</strong>Los
+              hallazgos del estudio sugieren que la sertralina puede no ser efectiva para mejorar los síntomas de
+              depresión a corto plazo en la atención primaria, pero puede tener beneficios a largo plazo y para los
+              síntomas de ansiedad y la calidad de vida.</p>
+          </section>
+          <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/lecturacritica4.mp3">
+            <h5 class="color" style="text-align: left; margin-top:8vh">Interpretación (II)</h5>
+            <p style="font-size: 1.2rem; text-align: left;"><strong>Calidad del estudio:</strong>8/10. El estudio fue
+              bien diseñado y ejecutado, pero la falta de un efecto a corto plazo para la depresión es sorprendente y
+              puede reflejar una limitación en la medida de resultado utilizada o en el diseño del estudio.</p>
+            <p style="font-size: 1.2rem; text-align: left;"><strong>Resumen de ChatGPT:</strong>Este estudio examinó la
+              efectividad de la sertralina, un antidepresivo comúnmente prescrito, en el tratamiento de la depresión en
+              la atención primaria. Aunque la sertralina no mostró una mejora en los síntomas de depresión a las 6
+              semanas, sí mostró beneficios a las 12 semanas y en la reducción de los síntomas de ansiedad y la mejora
+              de la calidad de vida. Esto sugiere que la sertralina puede tener un efecto más lento o más sutil que lo
+              que se puede captar con las medidas de resultado a corto plazo. Además, la sertralina puede ser útil para
+              tratar los síntomas de ansiedad en pacientes con depresión.</p>
+            <div
+              style="display: flex; align-items: center; justify-content: center; height: 50vh; margin-bottom: -2vh;">
+              <img src="https://telegra.ph/file/afd9c7a390c39f1a513b0.png" alt="Figura 2"
+                style="height: 50vh; width: auto;"></div>
+          </section>
+          <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/lecturacritica5.mp3">
+            <p style="font-size: 1.4em; text-align: left;"><strong style="font-size: 1em;">Sugerencia de
+                Tweet:</strong>📢Estudio en @TheLancetPsych muestra que la sertralina puede no mejorar los síntomas de
+              #depresión a corto plazo, pero sí muestra beneficios a largo plazo y para los síntomas de #ansiedad y la
+              calidad de vida. 🧠💊 #SaludMental #Investigación #ChatGPT 🤖👩‍⚕️ <a
+                style="font-weight: bold; font-size:1em; text-align: center;"
+                href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(19)30366-9/fulltext"
+                target="_blank">Link al estudio</a></p>
+          </section>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-background-opacity="0.5"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/mapamental.mp3">
+          <div style="text-align: left;">
+            <h4 class="color" style="display: inline-block; margin-bottom: 0;">👩🏽‍⚕️ Yo:</h4>
+            <p style="font-size: 1.2em; display: inline-block; margin-top: 0; margin-left: 10px;">Dame el código de un
+              mapa mental con los pasos para diseñar una búsqueda eficaz en PubMed</p>
+          </div>
+          <h4 class="color " style="text-align: left; margin-top: 2vh;">🤖 ChatGPT:</h4>
+          <div style="position: relative; height: 95vh; margin-top: -1vh;">
+            <div class="fade-in" style="max-width: 100%; max-height: 95%; overflow: hidden;"><img
+                src="https://www.plantuml.com/plantuml/svg/bLRBRXl74jtpA-hYBWmG4aMHeaph4hgcHT4s4CcC92URR6fwYbJRFTrqF-JOHdRv0mT142389XiliWYoyoP0-4FvX5HFQpZKo08I2D3CrDJZrAbJFNpeF5fVI9qNk6or_kClgI1OAfIwvLvAlKIB1MGeNYwi2Je_CifO-Ezq7FysFD1Qy_hYKegNcfo3tSvmusLESmpAJutsfyZfnrQY-lJxS_cMe3zejKRElr5qsD8c9tZN0W2OOPvBlO3TNlbuWdOXDUoL3q-CbMyv7jLOoOKkI7iG_8zi-VepgUaQUhTx__vHRssjCVSxWz9wblgqcYpi3QvBVIsBK7mfSty9WrwtDAxXzlhbSwEzQ3g_nDoyZfXxhMzQrXX_MhSJgv_79k51f_k_VgVRH7gytt-mjrzQ7zqnW2RUGGFPVlrSLdfaLCv85E6yGjB8q1lSoQUYkRynY66ZMlVJF3JvwtOtviTH36YqSptk3LNKax_T_l5mEfnEqpjZSxBhuVOdWqSRzdgylSwWEPDEaa4ibA3jHp0D23LvxpvDPkr-HiAZNjIk5JExmxkOYQO6zd_NRnJpF--NuRO4Bhqq6iR16ti0HvVe7yyklj8iFK5QI6IR9VJoYk3858NH3iRUoYm8kVfTRvyQjf9bHmLxdIuyZLkcKN1ERghbfLS48yTz7_IwXwDmE96ELhyPo9corKVtAb2ES3oN0jy2QPY5x8JoqKuu7ErmL1H16qOYDdXmlGE7xNRoQhT7E-MRwDI6ltv-_qFJTPGTJcWkjIpHGauABgZ0qKvsk8vjS-pJdBIN4OM5cQL5OB6pDxTpHSxB1PRnqRKDV_xnULXzW5T1aZNWC2CB1Ymvewx8_h_CDo4N3q6bq39jMj3I6mT72gye9PcXmioY0n5j7EzN7ooVlEnbIT4LCeyEK85dk9rM6M9btCFDZD4UYtcAiMZXLKHMft8yMNBb71MdYy84XP1Ln7SgudvQ4zSRFvWCfv6uSr8aAjxWeafwYxldNge8gtQ14pf_ah2DXQ2SREna8aKf2swZTE2kcjJx6naY4qb9ELi4zwBIDJMVg2kprALPjvabro3Pm9mlp80sCTwJbZcRIMy2cJ4ZR75aOVNHopLXSG8S6UZAn4nKa5rG70-pjxtDxFto_PgzwTwujxyRsUCPEMz3JQ1YcRC5FItaJG5kSvPdIxBS9aFdtJMAKAVfRj0xFfrimREpBJXzTf6G2LDaKc_orYcJFNVbVitGhZv4eBBY8mRXmeRb3QxVW4XWfItlWlBeOlAbeXTuC-U53LgKGwb8Fdv1x6WEu9AMw4qxGSk2YmDDjWAtgZjQe7fJFGbIAYYqMq1UL6n-z-sQpM6_Fpm-YcoUnIN6GZBlXl4UNw4AQITlCJcpWJBa2obPBWLRsNn6c6WCUcC1OBbsIxYfp6p1Kab3Nb4wVX6SfrjpJBbFJ7vBm0PCFL97YzN79DywCPWi2h4giTbKh7F4U7FCKuKlo5vNK5WT449Y75roYn4nFLg_-bM4U4iwIZr2M2lr_O-rKgVTxlvnvFOnzyiP8gyJ8qBykjz1xHct75ktcmn44TI13LqbWIQvG4XApYj9fSAs_Wuq5QyGva4dHkwTntFodD2Aotkns_GDI9bECEuqMKSm5ZvWMSQaRBo8Sxa84JKgiXwlrzgIa9cqrMAJyo6NvPcPMGAgJjxMGzBvzK_Ylm40"
+                alt="Esquema del diseño de búsqueda avanzada en PubMed" style="max-width: 100%; display: block;"></div>
+          </div>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-background-opacity="0.6"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/video.mp3">
+          <h2 class="title color" style="text-align: center;">Resumen de un Video por ChatGPT-4 (con plugin)</h2>
+          <div style="text-align: left;">
+            <h4 class="color" style="display: inline-block; margin-bottom: 0;">👩🏽‍⚕️ Yo:</h4>
+            <p style="font-size: 1.2rem; display: inline-block; margin-top: 0; margin-left: 10px;">Quiero que
+              selecciones los momentos más importantes de este vídeo y presentes el guion completo del video con esa
+              estructura</p>
+          </div>
+          <h4 class="color" style="text-align: left; margin-top: 2vh;">🤖 ChatGPT:</h4>
+          <div class="fade-in" style="display: flex; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px; padding: 10px;"><iframe width="100%" height="400px"
+                src="https://www.youtube.com/embed/4h4Yz_0VGJs?si=l5hJdwUCpvXnCbQS" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+              <div style="text-align: left; font-size: 0.8rem; line-height: 120%; margin-top:1vh"><strong
+                  style="font-size: 0.8rem; ">Datos del video:<br></strong><br><strong
+                  style="font-size: 0.8rem;">Título:</strong>Advanced Searching for Systematic Reviews (2022)
+                <br><strong style="font-size: 0.8rem;">Nombre del canal:</strong><a
+                  style="font-size: 0.8rem;font-weight: bold;"
+                  href="https://www.youtube.com/University%20of%20Manitoba%20Libraries" target="_blank">University of
+                  Manitoba Libraries</a><br><strong style="font-size: 0.8rem;">Número de visualizaciones:</strong>1.019
+                (14/10/2023) <br><strong style="font-size: 0.8rem;">Duración:</strong>5.750 segundos (aproximadamente 95
+                minutos) <br><strong style="font-size: 0.8rem;">URL del video:</strong><a
+                  style="font-size: 0.8rem; font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs"
+                  target="_blank">Enlace</a></div>
+            </div>
+            <div style="flex: 2; min-width: 300px; overflow-y: auto; max-height: 90vh; padding: 0.5vh;">
+              <h3 style="font-size: 1.2em;">Momentos clave:</h3>
+              <ul style="font-size: 1.0rem;">
+                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1280s"
+                    target="_blank">Introducción a la búsqueda avanzada</a>- Importancia de analizar y revisar las
+                  herramientas de búsqueda.</li>
+                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1312s"
+                    target="_blank">Uso de bases de datos bibliográficas</a>- Cómo las bases de datos organizan y buscan
+                  información.</li>
+                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1344s"
+                    target="_blank">Importancia de las palabras clave y sinónimos</a>- Las bases de datos son literales
+                  y no buscan automáticamente sinónimos.</li>
+                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=1552s"
+                    target="_blank">Limitaciones de PubMed para revisiones sistemáticas</a>- PubMed no es adecuado para
+                  revisiones sistemáticas.</li>
+                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=2352s"
+                    target="_blank">Uso de encabezados de temas y subencabezados</a>- Cómo usar encabezados para refinar
+                  búsquedas.</li>
+                <li><a style="font-weight: bold;" href="https://www.youtube.com/watch?v=4h4Yz_0VGJs&t=2460s"
+                    target="_blank">Ejemplo práctico: Búsqueda de "diabetic foot"</a>- Búsqueda de un tema específico
+                  utilizando encabezados y palabras clave.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/siglas.mp3">
+          <div style="display: flex; align-items: center; justify-content: center; height: 95vh;">
+            <div style="flex: 0 1 70%;"><img
+                src="http://www.plantuml.com/plantuml/png/ZLPDRnH74BtFhwWi1-mHE8k1W1oKO2pp8TcM0oIvSAcThjrjtDCzzCVQEEB7v9W3f_o0IF4Vo-kU6Qy_4YaMmjirDLMltdlLw-SXie-jjghbhggYZaRexxz-IXT_a0JQMt9yTVp-nnrYoqQVirMEGWeKzC9mgBw9Isc5EiFQLk54suuzjpJZvcJXNR9gpnddwSxBydCbWxrtf--NkZcn4W8zs7fyvQ6IEISJNpeRZnZbNujPITGD_tlEEtqkz6XQLSz2_6paXyew9VHRHVWvPgMqNT23QJaUibzeIm_BuRNp-XplizarUc5RiP4Q_2U-F3xGLdhuCvFaChG6_N2hB_gs7zHRyO0nz3dJRMf_rIekwV6q3rvYtTxkp-DyluXNRBdwKdddub6FVkptBiz4JxUctwFV3M1UL8cykC7twL97kONj5WeqDCBplk6jzEtfVx9aP1wlqVlaVmrucvhlfjTqUV0OaAfdtmuwhjLUAtfhrZlxJry-XRVAC-UL-24-dJvvihTz9RvMhe--Mx9ofu1Vx8T0QRC6zkK6W38Ua8r8Bi-eRnJI6-wYTfPeDqNdT-YvUBIBRlR1GZHOgz6yi-U5eru9xRcsTJRGRlHwbXfzyQUzV-GG5OyyGu-sflGckz5oWwfiggek2rdNMCcwhkgQyB6knOel9J_OZLVZmMtYUKq7Bb0Bx0Q_GU61s4NYZq9ChpnRsWyD6wQDkZuuEAphJGg0dopJYhqMnIg_z6QNBijohbhJiNSgDKAA8methksCHCxU4B99LWX-9kSrH6KZeK3fQo0PILOhroTIvqNfHej5f0EOcUT0CmwCizW-_IoMl9LsVVjzGocuZAskEu_kCI2weIqg5R8aRERsmCEMGY8s2nnZwsY9vumHwQw4BkSI2inufit5rn1ru-wISXQL3M1uv2GeY8z1Y9Kq2VLQ-UWySSa0gaMoIEY17Ln_2TuHo0vMFHAjolmC975CVgG6V2P1oqLXoDDIcYKOj8xaJ8UONmZaQC86Dh73W9DU_-Ewzd8_UjPM57osSOmZta0xLeC9TfK67ezpffDQRGmg54CKRWFwe4ie7Xay9n5KOGZAc0hLszFjRTgGiqQwwBAf7Bt8o-EkQ64I58SMVL_8rAtHj5aEHnBmhwo2oVmmVKf2OWQN4XUYUA3V3CF2JNc2r6JM0isn_SLjRCeOXinWx9xEtPxjgmMo8AgN60KAfD5kemPE-OklJ51P-o05b-6rd8JOnCh20VgrSaNHGGxifMSRviwtuh6FxySJoFU36lvJqb7AA6WsJApFWJvxCS-MMUeaKuImoXha9us4aKGbuyINLYgr3zdAnrorGyb2SYX6zGlutF2vkp4vU9tZbsH6iWZzgcrCMccTrmKU7BCI7xXSK9FDmUUwrI00HPtF94tgUbMMRNob5AhhoRrUtb0KllWTL_zWbUXEn9Qj7R7SotQ8HSyrFZYMFJTHF5RwXbMwiZGJe9iKGlWwrd9x91_SLe-vhdUZsFvHAmrRtMYeMDSxT2mUymYciQfieD9pyMNlrb3G8bak14AJo-NfxwgYKKZPSRBYJFpOTB-TIVcI7AwengSGnqjgXzuAv0zYnn2ju8pClP5Gvcsuo_fQqhRug1-Wx373VSWA0cOjFZleEPAVokLIFHUhnh_kZboK7SAtOA0S8iJe58CrNZYAeXI0aeuDs_ZpuS7MFm00"
+                alt="Mapa Mental" style="height: 90vh; width: auto;"></div>
+            <div style="flex: 0 1 25%; text-align: left; padding-left: 2%; ">
+              <h3 class="color">¿Cómo funciona<br>"ChatGPT"?</h3>
+              <p style="font-size: 1.6rem;">Lo que nos dicen sus siglas</p>
+            </div>
+          </div>
+          <p
+            style="position: absolute; bottom: 2%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em;margin-bottom: -3vh">
+            Imagen elaborada con <a href="https://www.plantuml.com" target="_blank"
+              style="font-size: inherit; text-decoration: underline;">PlantUML</a>y <a href="https://openai.com"
+              target="_blank" style="font-size: inherit; text-decoration: underline;">ChatGPT</a></p>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/workflow.mp3">
+          <div style="display: flex; align-items: center; justify-content: center; height: 95vh;">
+            <div style="flex: 0 1 70%;"><img class="fade-in"
+                src="http://www.plantuml.com/plantuml/png/hPL1Rrn53CVl-HHME6mI9Qic3ONcW9gaIOL4KKKZJhruPvpDa7dswyoyG8hw4U00N17aX42K0xtrkb-8Zu3DlDTTjadBWKkxu_7yRV-UxTpB1LFfchYIpmEtcB21HAuWJoF1roi01-ZEfqawzeSI9S5x-mT71uTtx4QIfrIj1r7TNjjEpe8xPyePTjHsB5pwjzi7EtTkR_Usn-4PmSuTWE5SBZNcHA8t4pm-GozV1fv2IHsjF5zPI96bt93TyV7n-tVl0_p7_BRVcPzMyFPSMbN6gQRpVuPS9d8j48Tj2S80-rsHj0VtA6c48fCd39y4H-m2xi5X8YpXWk1GcaOumtv9OTAvC7l9Mv-AMYcfOuJTyItuc8kAe5DPZ2j3QQl77Pi9cq1S1BoAdM5vyEZa2Q_fltlmW9XI3VCeqLP969Wyd2JaV2f9GwolAg4LMEYkrRz--lv7E69rzcYQ9_HLaLN03CgsAylEF_m69t9E79wX9S_c2QLQQDdvbp_Wg9cGzyehmzhdUYU9yhez0hARD-I_WOVaa4Dkh4B5H3oFWqMFHlkDG3_3VdhQXQB6Bk5YoJN1-NdvwRT_mk7iAhekQa039nESX1WyUihs6Dh1L2wN7t_tUuLUMTZxpoYt7UM2zXIIdeGpAVEA4xQsFbh4DVmq-q2a_c-MnOBdl-rcgQA5azqkfRnmijl5hEeGfp0zAo2dYva1hDwdxAHHLmAAKAmnW1Wwhd1WChlAmM7UD7TGLu4M8quIPX1mg5WAQR2ntGDiREmpHfdENk36Xew4-Vjm4Nn8geb6bWf2C_lLgwf5obs6FWCkb4q60jiRts6a33RyO7ViAK54BLLpJg6rxy7ZLOF9tegyfjW1jrPwA7mHA1Mg1B85l-Yx5RZJb59mqXToz0KrRPGz69q6cYGQmIMCYjeeeNNV24eWNbHmb1oozA1iVeinUjhHlpGe5ogYpDiW8z3Jx8gXKSYAAHVaqgDS9laGVGf-RVVMU7SJjcwFFrXNjHE9v6NjzjtnXshKjRBUAvf2LTMqAcSdjXuPVPzK5LIH0qoEeZ2kxMwR-CvuP_tjL1TRriW-4liqg1MSKjAB-j7iF_-wfp9DPw_iQqEYI1TeAtC9zH73w24cBNZJCWHzJwoA3IMre6y2Aw8qUsbDS86kOnnLsXvhiIrb0HnK_k7T-rtBT3z2eekGiVRccQfB2WWkpbvmS1hKsvGxRAJsPPGCMU-AD9XLtGUSyknbBjOuDOLQdJ5uEyEbuJQAIHnbjE82sqM_SCZwurKieOtMPjWEmzWgcc1jw4Np1sHTSI47MsPosfdr4fomyUymAe4RvlCqn99w1ar7MG_W2JBoD962LYJP-fo69O0UzVmCP5A8Q_n4kOi5_O2XJUH2bdT0MDfX2k58MJPOfto-fC5JZTgl7iXXsjc4qJKjT1JLpTajMHfPV-1uF1vj0kLUDP8rc4QnrtEnkJmXZ5v_w1kR9-YRf25A3o-X3p9DU6ej31YdQimmkqg4kKQIVjQ7D3BuUP89a3MUDby_eb8IlelWiEShllg7gYOp_9622MPZHmnHXHUvKath4YWEdIBcq4foGHYzt51wxNonng-r3vEgeievqZGqaWV0KbUrrLJNPeL0kkA9tSB0BTNwVEMU7hec_Wq0"
+                alt="Flujo de Trabajo de ChatGPT" style="height: 90vh; width: auto;"></div>
+            </p>
+            <div style="flex: 0 1 25%; text-align: left; padding-left: 2%;">
+              <h3 class="color">¿Cómo funciona<br>"ChatGPT"?</h3>
+              <p style="font-size: 1.6rem;">Su flujo de trabajo</p>
+            </div>
+          </div>
+          <p
+            style="position: absolute; bottom: 2%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em;margin-bottom: -3vh">
+            Imagen elaborada con <a href="https://www.plantuml.com" target="_blank"
+              style="font-size: inherit; text-decoration: underline;">PlantUML</a>y <a href="https://openai.com"
+              target="_blank" style="font-size: inherit; text-decoration: underline;">ChatGPT</a></p>
+        </section>
+        <section>
+          <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+            data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/conceptos.mp3">
+            <h2 class="color" style="margin-top: -1vh;">ChatGPT: Algunos conceptos</h2>
+            <div style="display: flex; align-items: center; justify-content: center; height: 95vh;margin-top: -3vh;">
+              <div style="flex: 0 1 100%; margin-left:-20vh; margin-right:-20vh;"><img
+                  src="https://www.plantuml.com/plantuml/svg/ZLVBRXlB4TtpAoetm5qG4KsHaYwj289fMOm5MB9WoGuGP5ESAL8jpNIDgtleHn0WYoop28AiiWcy2Wp4Aty2VoYVaEgUXuUY1TW6R4zFTPt7gUwHdpYFudDZqnoBNkzN_ePoWY93OtlkpjW21NEOOtAt52vjUi8P2_nwDWs_EnKemk-kRqnoPyavs1rCEYzJMc2P-HbRVu7QVYe6i--_lp8V2SRxlTwHynyoEkvPJWd-r0FzTObfQkmITaVnyHnbQIpinOVdBEQZxiTicfcbpSbwIFGFalZwXR5KKnyEV_dbPDIkVkCy7kp7rLULJh4aiBTVGxqtUPd_tgJ-1lP7mxZOqXsDc-UElBXqTOCflmkSHxq_zuJPNqGvBVfL40cF1yFVZWV3-qnF3yQFzmxYwjC70hZFT_yUiuFskK9wobcgJ3B2HOT9jyDe_q4_CrhuZI0czz263_cmwTzmsCbFTocXeqTrt9sfw2I_9VzqCflCPjKxbfIa3NVyRFzfP_rRl2EDzrucWpW64QYYTX39R59ep8jSjitibh-YnADTLgLTPtOd3pWJbxQv_xZUECm_hbVfzX8il64BqzAp7CAfQBbdnHGXmJzQ7S64R6Bm44w4q9iLmGddELi7KozcNYPc_TNkNB2kacXX1dk38Po5qsOnqTughkUDLoEEdEe_70sFZyhZanlqlxkyXf_XuiMbDcURKE7PmGTOSOBpCaCn34UFocET1zrttEj3lQdNxyDH4aGVrkVYkD__tx__zdTuMP2TdlNxHu_YQzsZfVt-IrcYDHynSkttTLMNDnRXRKcGaaCHphBrrmPAwMH6hKGW2vuIgssNwo_ej1YCYjG34Vq156yM9XWmw7K9ZgQFdqrcaU0__mFdd5B6y7E_hzvkbKpbRMaKnPU2MoAghGtxDoGk4YTNKBB-ej2ed1hUlu64SmRzryuOgh_t1dMZQq7h5YoQLzEj2rnrL1tgJHfrQqBHdu8arofTycJL53L7nPEWWAVtdXk0gRxUiFgIGtdjTAgDCCEve8CvkXh3bI2KqGgZcGK67fcAi1kTJ_CvnUkcwVoA2Y6dXEhcAzN0ekIxC96yJdfKfq3EB6t82bC6H_dwa_KcuStOPdlJqS5kZEqV_wt66PE8KOMtLHUEHMbDKX7PIkzIE2zyJLlxEIzbtOz1DInBrG1fS0ER42iRUEw3oL1Q1D5iId8U1qtRh5oQrkVd98Av2NQusiFtTLIBqbQ7qIW6EU0ulKj1QT58iz7pBKutOv55AMp9DLXlGbzRJLcTImDyllwabpg7Lvxlo5QMQu1vDUzAMb_zfCr_KfWeHQEDMD63TZHrSwq6Njj05URhJwwUxGXvlxDmGWurl9sTDhp9U3mvFQdEt5_rKl0crs7kfBTT2TD2r2ajkwLEU3lQjTy_yoHDhhgaQvSHDWhEwPObwl76bagq9LUDDmV52w8q_E0qg3lEwDtErGrxU44eLWUwQNnglV90wKZKpb1mmWxebl8YuphRPMbGijY-dGlNlGzSW_O74gxWgZ7iu3rJA5DFOqmRi0LsnZQGtRxiMXN64boNNVxJsz9vWW_0NTUxfaJkAVfxFO71en2we3SHKYsReSvcm-71QGprNt-1w_Ndn0QD8Swj4fYkq8RhosrbgSu_O8Kk52pnbCZ3XZV-_93n0SYrqNxFod3akMDw5ycLa2X75byTQcxQNWg5Cga_9mt0cLraPVmQ2IJhhpbldPF6U8x4mwqC2DfPCFr6Elp0eUK5Bj4RRaV-VFtPSnf77cF8tL3JKj1w2fGfJd35k7i4I8I5MfGJB10uAJEF3SA5ML56BjvCabDgs3MtXL0Abae9DrYy0MezLel3fwmQizYx_SAHR9skrovOmvOJK_ChX5OcyhCbhT0rG-Yq84EXElhgaCTJ6Q-99e_U4tsg_yVqVm00"
+                  alt="Mapa Mental" style="height: 90vh; width: auto;"></div>
+            </div>
+            <p
+              style="position: absolute; bottom: 4%; right: 8%; text-align: center; z-index: 10; font-size: 0.5em;margin-bottom: -3vh">
+              Imagen elaborada con <a href="https://www.plantuml.com" target="_blank"
+                style="font-size: inherit; text-decoration: underline;">PlantUML</a>y <a href="https://openai.com"
+                target="_blank" style="font-size: inherit; text-decoration: underline;">ChatGPT</a></p>
+          </section>
+          <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+            data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/conceptos2.mp3">
+            <h3 class="color">Nueva terminología: Vocabulario clave</h3>
+            <ul style=" --custom-font-size: 1.1rem; --strong-font-size: 1.1rem; ">
+              <style>
+                ul li {
+                  font-size: var(--custom-font-size) !important;
+                }
+
+                ul li strong {
+                  font-size: var(--strong-font-size) !important;
+                }
+              </style>
+              <li><strong>Prompt:</strong>Es la pregunta o instrucción que le das a ChatGPT para generar una respuesta.
+              </li>
+              <li
+                class="fade-in" " ><strong>Plugin:</strong>Herramientas que puedes usar para añadir funcionalidades a ChatGPT. Existen plugins para tareas variadas, desde generación de texto hasta visualizaciones.</li><li class="
+                fade-in"><strong>Modelo:</strong>Es la versión específica de ChatGPT que estás utilizando. Por ejemplo,
+                GPT-3 o GPT-4.</li>
+              <li class="fade-in"><strong>OpenAI:</strong>La organización que desarrolló ChatGPT y otras tecnologías de
+                inteligencia artificial.</li>
+              <li class="fade-in"><strong>Token:</strong>Pieza de texto que el modelo considera como una unidad
+                indivisible.</li>
+              <li class="fade-in"><strong>Iteración:</strong>Proceso de mejora continua.</li>
+              <li class="fade-in"><strong>Transformer:</strong>Arquitectura de aprendizaje profundo especializada en
+                procesamiento de lenguaje natural.</li>
+              <li class="fade-in"><strong>Ventana de Contexto:</strong>Máximo de tokens que el modelo puede "ver" en una
+                conversación.</li>
+              <li class="fade-in"><strong>Embedding:</strong>Representación vectorial de palabras que captura
+                información semántica.</li>
+              <li class="fade-in"><strong>Atención:</strong>Mecanismo que permite al modelo ponderar diferentes palabras
+                en una entrada basada en su relevancia.</li>
+              <li class="fade-in"><strong>Few-Shot Prompting:</strong>Técnica donde se añaden pocos ejemplos en el
+                prompt para guiar al modelo hacia respuestas específicas.</li>
+              <li class="fade-in"><strong>Few-Shot Learning:</strong>Entrenamiento de un modelo con un pequeño conjunto
+                de datos etiquetados para realizar tareas específicas con pocos ejemplos.</li>
+              <li class="fade-in"><strong>Zero-Shot Prompting:</strong>Proporcionar información contextual o
+                instrucciones en el prompt sin ejemplos etiquetados, permitiendo al modelo generar respuestas basadas en
+                su conocimiento previo.</li>
+              <li class="fade-in"><strong>Shots (ejemplos etiquetados):</strong>Ejemplos etiquetados proporcionados al
+                modelo durante el entrenamiento o el prompting para guiar su comportamiento.</li>
+              <li class="fade-in"><strong>Preparar Modelo (cebar o priming):</strong>Proceso de proporcionar información
+                que puede influir en cómo un modelo procesa datos o responde a entradas específicas.</li>
+              <li class="fade-in"><strong>Fine Tuning:</strong>Optimización de un modelo para un conjunto de datos
+                específico ajustando sus parámetros o pesos, común en el aprendizaje transferido.</li>
+            </ul>
+          </section>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-background-opacity="0.6">
+          <h3 class="color">¿Qué son los prompts y cómo utilizarlos en salud?</h3>
+          <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/prompt.mp3">
+            <p style="text-align: left; font-size: 1.1rem;margin-top:-3vh">Un <strong>prompt</strong>es la instrucción
+              que nos permite interactuar con ChatGPT, haciéndole preguntas y obteniendo respuestas específicas. Al
+              influir en el entrenamiento de ChatGPT, los prompts impulsan a este modelo de IA a responder de una manera
+              más acorde a nuestras preguntas. Esto mejora significativamente la calidad de la interacción entre los
+              usuarios y la inteligencia artificial. Estos prompts son especialmente versátiles y tienen aplicaciones en
+              diversos campos, desde salud hasta tecnología, negocios, entre otros. </p>
+            <h4 class="color" style="margin-top: 0.5rem">Ejemplos de Prompt en Salud</h4>
+            <style>
+              .custom-table {
+                font-size: 0.9rem !important;
+                width: 100% !important;
+              }
+
+              .custom-table th,
+              .custom-table td {
+                font-size: 0.9rem !important;
+              }
+
+              .custom-table td strong {
+                font-size: 1rem !important;
+                font-weight: bold;
+              }
+            </style>
+            <table class="custom-table" style="font-size: 0.7rem; width: 100%;">
+              <thead>
+                <tr>
+                  <th>Tipo de Prompt</th>
+                  <th>Descripción</th>
+                  <th>Ejemplo en Salud</th>
+                  <th>Respuesta esperada</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Informativo</strong></td>
+                  <td>Proporciona información específica</td>
+                  <td>"Síntomas de la gripe"</td>
+                  <td>"La gripe puede causar fiebre, tos, dolor de garganta, etc."</td>
+                </tr>
+                <tr>
+                  <td><strong>Argumentativo</strong></td>
+                  <td>Argumentos a favor o en contra</td>
+                  <td>"Beneficios y riesgos de la vacuna COVID-19"</td>
+                  <td>"Los beneficios de la vacuna COVID-19 incluyen protección contra el virus, reducción de la
+                    transmisión, etc. Los riesgos pueden incluir efectos secundarios menores como dolor en el sitio de
+                    inyección."</td>
+                </tr>
+                <tr>
+                  <td><strong>Estructurado</strong></td>
+                  <td>Organiza la respuesta en secciones</td>
+                  <td>"Síntomas, causas y tratamientos de la diabetes."</td>
+                  <td>"Síntomas: sed excesiva, hambre, fatiga. Causas: resistencia a la insulina, falta de insulina.
+                    Tratamientos: medicamentos, dieta, ejercicio."</td>
+                </tr>
+                <tr>
+                  <td><strong>Comparativo</strong></td>
+                  <td>Compara elementos</td>
+                  <td>"Efectos secundarios de los medicamentos A y B"</td>
+                  <td>"El medicamento A puede causar náuseas y dolor de cabeza, mientras que el medicamento B puede
+                    causar somnolencia y mareos."</td>
+                </tr>
+                <tr>
+                  <td><strong>Frameworks P.ej: CIDI</strong></td>
+                  <td>Contexto, intención, diseño e implementación</td>
+                  <td>"En un escenario de telemedicina, proporciona un tratamiento para el dolor crónico (C)"; "Resumen
+                    Ejecutivo (I)"; "Lista numerada (D)"; "Describir del proceso" (Im).</td>
+                  <td>"C: Dolor crónico en pacientes de telemedicina. I: Tratar a distancia. D: 1) Evaluación inicial,
+                    2) Prescripción de medicamentos, 3) Terapias complementarias. Im: Uso de videollamadas para
+                    consultas."</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/promptincremental.mp3">
+          <style>
+            .flex-container {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              height: 100%;
+            }
+
+            .custom-code-block {
+              font-size: 1.8em;
+              white-space: pre-wrap;
+              word-wrap: break-word;
+              overflow-y: hidden;
+              line-height: 1.5;
+            }
+
+            .custom-pre {
+              vertical-align: top;
+              display: block;
+            }
+          </style>
+          <div style="margin-top: -2vh;">
+            <h3 class="color">Descripción de una búsqueda con un Prompt ampliado por pasos</h3>
+            <div class="flex-container">
+              <pre class="custom-pre"
+                style="font-size: 0.45rem;!important; width: 100%; margin-top: -2vh;"><code class="custom-code-block hljs" id="searchCodeBlock"></code></pre>
+            </div>
+            <table style="border-collapse: collapse; width: 100%; font-size: 1.0rem; margin-top: -3vh;">
+              <thead style="background-color: #454242">
+                <tr>
+                  <th style="border: 1px solid #dddddd;text-align: center; width: 86%;">👩🏽‍⚕️ Usuario escribe (prompt
+                    incremental)</th>
+                  <th style="border: 1px solid #dddddd;text-align: center; width: 4%;">🤖 ChatGPT</th>
+                  <th style="border: 1px solid #dddddd;text-align: center; width: 5%;">Prompt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="tablePromptSimple" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;"><a
+                      href="https://chat.openai.com/share/5f76c7ba-a364-4a56-9fc4-3fec9d15880a" target="_blank">Enlace
+                      🌐</a></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button
+                      style="margin-top: 5px; display: block;"
+                      onclick="copyPromptWithSearchToClipboard('promptSimple', this)">Copiar</button></td>
+                </tr>
+                <tr>
+                  <td id="tablePromptRol" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;"><a
+                      href="https://chat.openai.com/share/ea7287fb-3536-4c6d-89e3-ed8f13c26d86" target="_blank">Enlace
+                      🌐</a></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button
+                      style="margin-top: 5px; display: block;"
+                      onclick="copyPromptWithSearchToClipboard('promptRol', this)">Copiar</button></td>
+                </tr>
+                <tr>
+                  <td id="tablePromptEsencia" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;"><a
+                      href="https://chat.openai.com/share/3c3d6900-a0cc-4c70-843f-ae610fd57eaa" target="_blank">Enlace
+                      🌐</a></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button
+                      style="margin-top: 5px; display: block;"
+                      onclick="copyPromptWithSearchToClipboard('promptEsencia', this)">Copiar</button></td>
+                </tr>
+                <tr>
+                  <td id="tablePromptContexto" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;"><a
+                      href="https://chat.openai.com/share/142408e5-544f-450e-a6d9-28f7f287898b" target="_blank">Enlace
+                      🌐</a></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button
+                      style="margin-top: 5px; display: block;"
+                      onclick="copyPromptWithSearchToClipboard('promptContexto', this)">Copiar</button></td>
+                </tr>
+                <tr>
+                  <td id="tablePromptObjetivo" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;"><a
+                      href="https://chat.openai.com/share/cf29f701-84b3-4437-a206-504687569b90" target="_blank">Enlace
+                      🌐</a></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button
+                      style="margin-top: 5px; display: block;"
+                      onclick="copyPromptWithSearchToClipboard('promptObjetivo', this)">Copiar</button></td>
+                </tr>
+                <tr>
+                  <td id="tablePromptRequisitos" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;"><a
+                      href="https://chat.openai.com/share/8f1c0127-fdfa-48b9-8509-7b121480109c" target="_blank">Enlace
+                      🌐</a></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button
+                      style="margin-top: 5px; display: block;"
+                      onclick="copyPromptWithSearchToClipboard('promptRequisitos', this)">Copiar</button></td>
+                </tr>
+                <tr>
+                  <td id="tablePromptDiseño" style="border: 1px solid #dddddd; padding: 6px;"></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;"><a
+                      href="https://chat.openai.com/share/bc55e01d-7b17-41de-8f3c-d69175d0eac2" target="_blank">Enlace
+                      🌐</a></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button
+                      style="margin-top: 5px; display: block;"
+                      onclick="copyPromptWithSearchToClipboard('promptDiseño', this)">Copiar</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <p id="promptSimple" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed</p>
+            <p id="promptRol" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un
+              bibliotecario experto en ciencias de la salud</p>
+            <p id="promptEsencia" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un
+              bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles
+              profesionales multidisciplinares que describirás y te ayudará en esta tarea</p>
+            <p id="promptContexto" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres
+              un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles
+              profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será
+              presentada en un congreso de bibliotecarios y documentalistas</p>
+            <p id="promptObjetivo" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres
+              un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles
+              profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será
+              presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de
+              ChatGPT como apoyo en esta tarea</p>
+            <p id="promptRequisitos" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres
+              un bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles
+              profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será
+              presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de
+              ChatGPT como apoyo en esta tarea. Sin perder la profundidad, adoptarás un estilo muy pedagógico, para
+              amenizar tu exposición, en el que no faltarán ejemplos, emojis, ni elementos que faciliten la comprensión
+              del mensaje, como links a resultados de búsqueda</p>
+            <p id="promptDiseño" style="display:none;">Explícame cómo diseñar este tipo de búsquedas en PubMed. Eres un
+              bibliotecario experto en ciencias de la salud y coordinarás a un comité de 5 sabios con roles
+              profesionales multidisciplinares que describirás y te ayudará en esta tarea. Esta información será
+              presentada en un congreso de bibliotecarios y documentalistas. Tu objetivo será demostrar el potencial de
+              ChatGPT como apoyo en esta tarea. Sin perder la profundidad, adoptarás un estilo muy pedagógico, para
+              amenizar tu exposición, en el que no faltarán ejemplos, emojis, ni elementos que faciliten la comprensión
+              del mensaje, como links a resultados de búsqueda. Presentarás la información en una tabla exhaustiva, muy
+              clara y didáctica, estructurada paso a paso y un mapa mental</p>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const promptIds = ["promptSimple", "promptRol", "promptEsencia", "promptContexto", "promptObjetivo",
+                  "promptRequisitos", "promptDiseño"
+                ];
+                let prevText = "";
+                const fontSizeInEm = "0.8rem";
+                promptIds.forEach(function (id) {
+                  const promptText = document.getElementById(id).textContent;
+                  const newComponent = promptText.replace(prevText, "").trim();
+                  const boldText =
+                    `<span class="bold-text" style="font-size: ${fontSizeInEm};">${newComponent}</span>`;
+                  const normalText =
+                    `<span style="font-size: ${fontSizeInEm};">${promptText.replace(newComponent, "")}</span>`;
+                  const tableCellId = "table" + id.charAt(0).toUpperCase() + id.slice(1);
+                  document.getElementById(tableCellId).innerHTML = normalText + boldText;
+                  prevText = promptText;
+                });
+              });
+            </script>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                var promptText = document.getElementById("promptSimple").textContent;
+                document.getElementById("userInput").textContent = promptText;
+              });
+            </script>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                var codeBlock = document.getElementById("searchCodeBlock");
+                codeBlock.textContent = search;
+              });
+            </script>
+          </div>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg">
+          <section data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/ejemplosprompts.mp3">
+            <h3 class="color">Ejemplos de Prompts</h3>
+            <p style="margin-bottom:3vh ; font-size: 1.2rem; color:#faf5f5">Por su extensión, el texto del prompt no se
+              muestra. Se puede copiar al portapapeles con el botón azul para usar en ChatGPT-3 o ChatGPT-4</p>
+            <table style="border-collapse: collapse; width: 98%; font-size: 1.2rem; margin-top: 5vh auto;">
+              <thead style="background-color: #454242">
+                <tr>
+                  <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold;">Nombre
+                  </th>
+                  <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold;">
+                    Descripción</th>
+                  <th style="border: 1px solid #dddddd; padding: 6px; text-align: center; font-weight: bold;">Copiar
+                    Prompt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="border: 1px solid #dddddd; padding: 6px;font-weight: bold;font-size: 1.2rem;">Caso Clínico
+                  </td>
+                  <td style="border: 1px solid #dddddd; padding: 6px; font-weight: 400; font-size: 1.2rem;">Experto en
+                    diagnóstico clínico que crea casos clínicos simulados realistas y educativos</td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;text-align: center;"><button
+                      onclick="copyToClipboard('prompt1', this)">Copiar</button></td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #dddddd; padding: 6px;font-weight: bold;font-size: 1.2rem;">Entrevista
+                    clínica*</td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;font-weight: 80; font-size: 1.2rem;">Ayuda para
+                    guiar la entrevista clínica de forma eficaz y centrada en el paciente</td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;text-align: center;"><button
+                      onclick="copyToClipboard('prompt2', this)">Copiar </button></td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #dddddd; padding: 6px;font-weight: bold;font-size: 1.2rem;">Correo
+                    electrónico*</td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;font-weight: 80; font-size: 1.2rem;">Asistente para
+                    contestar correos electrónicos a pacientes</td>
+                  <td style="border: 1px solid #dddddd; padding: 6px; text-align: center;"><button
+                      onclick="copyToClipboard('prompt3', this)">Copiar</button></td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #dddddd; padding: 6px;font-weight: bold;font-size: 1.2rem;">Checklist
+                  </td>
+                  <td style="border: 1px solid #dddddd; padding: 6px; font-weight: 80; font-size: 1.2rem;"><a
+                      style="font-size: 1.2rem;font-weight: 600;" href="#/18/1">Asistente para crear listas de
+                      verificación</a></td>
+                  <td style="border: 1px solid #dddddd; padding: 6px;text-align: center;"><button
+                      onclick="copyToClipboard('prompt4', this)">Copiar</button></td>
+              </tbody>
+            </table>
+            <p style="font-size: 0.8rem; color:#ffffff; text-align: left; padding-left: 15px; ">Los nombres de Prompt
+              con * están diseñados para funcionamiento óptimo en ChatGPT-4</p>
+            <div style="display:none;">
+              <p id="prompt1">Eres un experto internacionalmente reconocido en el arte del diagnóstico clínico,
+                especialmente en casos de difícil interpretación y diagnósticos diferenciales. Utilizando una
+                combinación de métodos de diagnóstico tradicionales y avances modernos, tu misión es crear un caso
+                clínico simulado para un paciente imaginario que sea realista y altamente instructivo. Deberás
+                proporcionar la información más relevante, detallada y descriptiva, asegurándote de que el caso se
+                mantenga creíble y aporte valor educativo. Este caso puede abarcar una variedad de especialidades o
+                áreas clínicas y, ocasionalmente, podrías recibir pautas específicas sobre la especialidad o enfoque,
+                como el diagnóstico, el manejo o el tratamiento. El objetivo final es crear una experiencia educativa
+                enriquecedora y desafiante que demuestre tu habilidad para pensar de manera crítica y diagnosticar
+                eficazmente incluso en las situaciones más complejas. Tu primer paso será solicitar la temática del caso
+                clínico. No brindarás ninguna sugerencia inicial hasta recibir indicaciones sobre la temática. Darás tu
+                respuesta, y luego trabajaremos juntos para enriquecer y optimizarla a través de iteraciones sucesivas
+                siguiendo los pasos siguientes. En función de las indicaciones, generarás tres secciones: a) Caso
+                revisado: Aportarás tu versión revisada y mejorada del caso clínico. Este debe ser claro, preciso y
+                fácilmente comprensible. Si incluyes valores de laboratorio o cualquier otro dato específico, asegúrate
+                de hacerlo de manera ordenada, preferiblemente utilizando una tabla en formato Markdown. b) Sugerencias:
+                Ofrecerás consejos sobre qué detalles adicionales podrían mejorar el caso. Estos pueden ser desde datos
+                demográficos del paciente hasta síntomas adicionales, antecedentes médicos, resultados de pruebas, etc.
+                c) Preguntas: Plantearás las preguntas que consideres relevantes para obtener información adicional que
+                te ayude a mejorar el caso. Terminarás siempre ofreciéndome las dos opciones disponibles: Opción 1: Leer
+                el resultado y proporcionar más información o responder a una o más de las preguntas. Mantendremos este
+                proceso iterativo, en el que irás recibiendo información adicional y actualizando la sección "Caso
+                revisado" del caso clínico hasta que esté completo. Opción 2: "Usa este caso". En este caso, deberás
+                proporcionar la sección "Diagnóstico" con el diagnóstico más probable, basado en un razonamiento clínico
+                coherente, sistemático y guiado por la intuición, respaldado por un proceso lógico de deducción y
+                evidencia relevante. Adicionalmente, incluirás tres diagnósticos diferenciales, destacando los elementos
+                clave que contribuyen a su consideración, centrándote principalmente en los datos clínicos recogidos.
+              </p>
+              <p id="prompt2">Orientación en Comunicación Clínica Personalizada Introducción: Este prompt está diseñado
+                para ayudar a profesionales de la salud a comunicar información clínica de manera personalizada. La
+                comunicación efectiva es esencial para asegurar la comprensión, adherencia al proceso terapéutico,
+                mejorar la confianza con los profesionales, fortalecer el rol y participación autónoma del paciente,
+                mejorar la entrevista clínica, entre otros aspectos. Al responder a este prompt, considera las
+                características individuales del paciente o persona, incluyendo su salud mental, capacidad de
+                comprensión, nivel de educación, antecedentes culturales, edad, género, orientación sexual, aspectos
+                socioeconómicos, y cualquier otro factor relevante. Instrucciones para el Usuario: Describe brevemente
+                la situación o contexto. Indica qué quieres comunicar. Especifica tu profesión o especialidad. Describe
+                el perfil del paciente o persona a quien va dirigida la comunicación (edad, género, antecedentes
+                culturales, nivel de educación, salud mental, capacidad de comprensión, etc.). Instrucciones Internas
+                para ChatGPT: Hacer preguntas al usuario: Antes de proporcionar una respuesta, haz preguntas para
+                obtener más detalles basados en las instrucciones al usuario. Identificar la información clave: Extraer
+                los detalles sobre la profesión del usuario, la información que desea comunicar y las características
+                del receptor. Revisión científico-técnica: Realizar una revisión de la literatura científica para
+                obtener información sobre: Características psicológicas: Comprender cómo diferentes trastornos o
+                condiciones pueden influir en la percepción y comprensión del paciente. Health literacy: Evaluar la
+                capacidad del paciente para obtener, procesar y comprender información básica sobre salud y servicios de
+                salud para tomar decisiones adecuadas. Personalidad: Considerar cómo diferentes tipos de personalidad
+                pueden influir en la recepción y procesamiento de la información. Comprensión e Insight: Estudios
+                psicométricos que evalúen la capacidad del paciente para comprender y procesar información, así como su
+                autoconciencia sobre su condición. Aspectos de edad: Considerar las diferencias en la comunicación y
+                comprensión basadas en la etapa de vida del paciente (niños, adolescentes, adultos, ancianos). Género:
+                Investigar cómo las diferencias de género pueden influir en la percepción y recepción de la información.
+                Factores socioeconómicos: Considerar el nivel educativo, el acceso a recursos, y otros factores
+                socioeconómicos que pueden influir en la comprensión y respuesta del paciente. Aspectos transculturales:
+                Entender las diferencias culturales que pueden influir en la percepción, valores, y creencias del
+                paciente sobre la salud y la enfermedad. Otros componentes: Considerar otros factores como el nivel de
+                educación, experiencias previas con el sistema de salud, barreras del idioma, creencias religiosas,
+                entre otros. Recomendaciones basadas en investigaciones: Sobre las mejores prácticas para comunicar
+                información a pacientes teniendo en cuenta todos los componentes mencionados anteriormente. Adaptar el
+                enfoque de comunicación: Ofrecer orientación sobre cómo comunicar la información de manera efectiva.
+                Ejemplos contextualizados: Si es apropiado, ofrecer ejemplos concretos de frases o enfoques que el
+                profesional podría utilizar. Reafirmación y apoyo: Proporcionar consejos sobre cómo ofrecer reafirmación
+                y apoyo al paciente. Involucramiento del paciente: Sugerir maneras de involucrar al paciente en la
+                conversación. Consideraciones Esenciales en la Comunicación: Asegurar la comprensión del paciente o
+                interlocutor. Mejorar la adherencia al proceso terapéutico. Fomentar la confianza entre el paciente y
+                los profesionales. Reconocer y potenciar el rol de agencia del paciente. Mejorar la calidad de la
+                entrevista clínica. Coordinación de Expertos: Para cada respuesta, contarás con un asesor principal
+                experto en el cometido que se pide. Este asesor coordinará a un grupo multidisciplinario de expertos
+                adaptado a las necesidades específicas de la consulta. Adaptabilidad del Grupo de Expertos: El grupo de
+                expertos no será estático. Se adaptará según la patología, problema de salud, o cualquier otro
+                condicionante relevante del paciente o situación.</p>
+              <p id="prompt3">ChatGPT, necesito tu ayuda para proporcionar información médica general a mis pacientes.
+                Tu misión es brindar respuestas basadas en la evidencia médica actual, asegurándote de que sean
+                comprensibles para un paciente no médico. Antes de ofrecer la respuesta, por favor pregúntame sobre el
+                motivo de consulta del paciente. Quiero que me ayudes a redactar una respuesta que pueda enviar al
+                paciente en un correo electrónico. Puedes utilizar expresiones como 'Podremos considerar evaluar tus
+                resultados más adelante para determinar si se requiere algún tratamiento'. El tono será profesional,
+                amable y el texto lo más abreviado y conciso posible, adaptando la respuesta a la duda concreta.
+                Recuerda que, como médico, seré quien realice las evaluaciones y tome decisiones de tratamiento
+                pertinentes. El mail siempre lo acabarás con el siguiente texto: Nombre del médico/enfermera: Número de
+                Colegiado: Aviso de Privacidad: Toda la información proporcionada y discutida en este correo es
+                confidencial y está destinada únicamente para el uso del destinatario mencionado. Si ha recibido este
+                correo por error, le rogamos que lo elimine y notifique al remitente. Cualquier uso no autorizado,
+                divulgación o distribución de esta comunicación está estrictamente prohibida. Tras la respuesta,
+                generarás dos secciones: a) Sugerencias: Ofrecerás consejos sobre qué detalles adicionales podrían
+                mejorar el correo. Estos pueden ser desde datos demográficos del paciente hasta síntomas adicionales,
+                antecedentes médicos, resultados de pruebas, etc. b) Preguntas de seguimiento: Harás preguntas que
+                consideres relevantes para obtener información adicional que pueda ayudarte a mejorar el correo
+                electrónico. Esto podría incluir aclarar cualquier detalle no especificado o solicitar datos adicionales
+                necesarios para proporcionar una respuesta precisa y detallada. Terminarás siempre ofreciéndome las 4
+                opciones disponibles, que seleccionaré por el número: Opción 1: Leer el resultado y proporcionar más
+                información o responder a una o más de las preguntas. Mantendremos este proceso iterativo, en el que
+                irás recibiendo información adicional y actualizando la sección "correo revisado" del correo electrónico
+                hasta que esté completo. Opción 2: "mejora orientación diagnóstica". En este caso, deberás proporcionar
+                la sección "Diagnóstico" con el diagnóstico más adaptado que yo te proporcione Opción 3: "mejora
+                recomendación". En este caso modificarás las recomendaciones siguiendo mis indicaciones Opción 4:
+                "Mejoras generales". En este caso, te propondré otros cambios que podrán ser de estilo, de redacción,
+                etc. Estoy listo, empieza preguntandome por el motivo de consulta </p>
+              <p id="prompt4">Necesito ayuda para crear una lista de verificación (checklist) para un conjunto de
+                información. Me ayudarás a generar preguntas y respuestas útiles y relevantes que puedan ayudar a los
+                lectores, visitantes o usuarios a comprender mejor la información presentada El contenido cubrirá una
+                variedad de temas, que pueden incluir procedimientos, información técnica y científica, trámites
+                administrativos, etc. 1. Tu primera respuesta será preguntarme de qué debería tratar el checklist. Te
+                daré mi respuesta, pero tendremos que mejorarla a través de iteraciones continuas siguiendo los
+                siguientes pasos. 2. Basado en mi entrada, generará 3 secciones. a) checklist revisada: proporcione su
+                checklist reescrita . deben ser claras, concisas y fácil de entender para usted b) Sugerencias:
+                proporcione sugerencias sobre qué detalles incluir en el checklist para mejorarlas y c) Preguntas: haga
+                cualquier pregunta pertinente relativa a qué información adicional se necesita de mí para mejorar el
+                checklist 3. Continuaremos este proceso iterativo en el que yo le proporcionaré información adicional y
+                usted actualizará el checklist en la sección checklist revisada hasta que estén completas</p>
+            </div>
+          </section>
+          <section class="full-height"
+            data-background-iframe="https://chat.openai.com/share/5f9f766b-1b3b-4257-9add-24fa4b4da8f9"
+            data-background-opacity="1" data-background-interactive="true"
+            data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/checklist.mp3">
+            <div class="footer"
+              style="position: absolute; bottom: 4vh; width: 60%; background-color: rgba(0, 0, 0, 0.775); padding: 10px 0; text-align: center;">
+              <H6 class="color">Lista de verificación: Caso de estudio (ChatGPT 3)</H6>
+            </div>
+          </section>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/chatgptvision.mp3">
+          <h3 class="title color">ChatGPT MultiModal</h3>
+          <p style="font-size:1.5rem; margin-top:1vh">ChatGPT ya puede "ver" 👁️, "oir"👂 y "hablar"🗣️</p>
+          <div style="display: flex; align-items: center; justify-content: space-around;">
+            <div style="width: 50%;"><a href="https://openai.com/blog/chatgpt-can-now-see-hear-and-speak"
+                target="_blank"><img
+                  src="https://images.openai.com/blob/9c95036b-c2f5-4af8-a9c4-ed6c411f77e4/chatgpt-can-now-see-hear-and-speak-alt.jpg?trim=0,420,0,420&width=2000"
+                  alt="ChatGPT Vision" style="max-width: 85%;">
+                <p style="font-size: 1.1rem; text-align: center; margin-top: -3rem;">Imagen de <a
+                    href="https://openai.com/blog/chatgpt-can-now-see-hear-and-speak" target="_blank"
+                    style="text-decoration: underline; color: inherit;">openai.com</a></p>
+              </a></div>
+            <div style="width: 50%; text-align: left; padding-left:1.2rem;">
+              <h4 class="color" style="text-align: center; ">Ver el Mundo...<br>...a través de ChatGPT</h4>
+              <p style="font-size:1.4rem;">Con ChatGPT Vision, estamos entrando en una era donde la inteligencia
+                artificial no solo procesa información, sino que realmente interpreta el mundo a nuestro alrededor. Ya
+                no estamos limitados a palabras o números. Ahora, con una simple imagen, podemos acceder a un mundo de
+                conocimiento.</p>
+              <p style="font-size:1.3rem;" class=" color">Para obtener más información, visita <a
+                  style="font-size:1.3rem;" href="https://openai.com/blog/chatgpt-can-now-see-hear-and-speak"
+                  target="_blank" style="text-decoration: underline; color: inherit;">openai.com/blog</a></p>
+            </div>
+          </div>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-background-opacity="1"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/biblioteca.mp3">
+          <div style="display: flex; align-items: center; justify-content: center; ">
+            <div style="flex: 1; height: 100%; width: 100%;"><img
+                src="https://pbs.twimg.com/media/F8P5MjzbsAEcIIg?format=jpg&name=large" alt="interpretación de un libro"
+                style="height: 100%; width: 100%; object-fit: cover;"></div>
+          </div>
+        </section>
+        <section data-transition="zoom" class="full-height"
+          data-background-image="https:///ernestobarrera.github.io/assets/images/ChatGPT_Biblio/bibliotecaria_sanitarios.png"
+          data-background-opacity="0.8"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/dalle3.mp3"
+          style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="header">
+            <h2 class="title color">crear imagenes</h2>
+          </div>
+          <div class="footer">
+            <div class="box" style="margin: auto 0;">
+              <div class="title" style="font-size: 1.1rem ;">Prompt para DALL-E 3</div>
+              <div class="content" style="font-size: 1rem;">Foto ultra-realista en una biblioteca, donde una
+                bibliotecaria documentalista está sentada frente a dos monitores. A su lado, una médica de tez clara y
+                un enfermero de ascendencia africana escuchan atentamente. La habitación tiene un ambiente cálido, con
+                estanterías de madera y plantas verdes. La luz es suave y difusa, creando un ambiente de tranquilidad y
+                confianza. Los tres parecen estar en medio de una conversación amigable y colaborativa. Los monitores
+                muestran una búsqueda en PubMed y en ChatGPT, respectivamente. </div>
+            </div>
+          </div>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-background-opacity="0.6"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/consejos.mp3">
+          <h2 class="color">¿Vas a usar ChatGPT?</h2>
+          <p class="color" style="font-size: 1.4em;">Trucos y recomendaciones</p>
+          <ul style="font-size: 1.2rem; line-height: 160%;">
+            <li>Entiende las capacidades y limitaciones: Antes de comenzar, familiarízate con lo que ChatGPT puede y no
+              puede hacer.</li>
+            <li>Claridad ante todo: Proporciona instrucciones claras y detalladas, como si estuvieras hablando con un
+              aprendiz.</li>
+            <li>La cortesía se agradece: Ser educado y emocionalmente expresivo en tus interacciones puede mejorar la
+              calidad de las respuestas.</li>
+            <li>Experimenta: No temas probar diferentes prompts o utilizar ejemplos para obtener los resultados que
+              deseas.</li>
+            <li>Respuestas concisas: Si las respuestas son demasiado largas, puedes escribir "TL;DR" para recibir un
+              resumen.</li>
+            <li>Mantente actualizado: Si estás usando GPT-4, sigue las últimas actualizaciones, como la multimodalidad y
+              DALL-E 3.</li>
+            <li>Ten en cuenta la ética, confidencialidad y las mejores prácticas al interactuar con IA. Hoy por hoy, el
+              usuario debe gobernar entrada y salida de información</li>
+            <li>Explora más: Utiliza otros recursos y herramientas de IA como <a style="font-size: 1.6rem"
+                href="https://theresanaiforthat.com/" target="_blank">There's an Ai for That</a>o <a
+                style="font-size: 1.6rem"
+                href="https://www.perplexity.ai/search/a276ad2e-7ff0-4ee4-a18f-6adb1a22f085?s=u"
+                target="_blank">Perplexity</a>.</li><br><a
+              href="javascript:(function(){ var inputStr='%s'; var evalua='' + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text); if (evalua==''){ var inputStr=inputStr} else{ var inputStr='' + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text)}; if (!inputStr || (inputStr.length==2)) inputStr=prompt('Perplexity AI es una herramienta de búsqueda conversacional avanzada. Utiliza modelos de lenguaje extensos para respuestas precisas. Ideal para investigaciones, respuestas específicas y uso académico. Puedes especificar fuentes como YouTube, Reddit, Wikipedia y más. También cuenta con un copiloto para ayudarte a guiar tu búsqueda. Introduce tu pregunta o tema de interés:', ''); if (inputStr !=null) buscar='https://www.perplexity.ai/search?q=' + encodeURIComponent(inputStr); window.open(buscar)}());"
+              style="background-color: #007bff; color: white; padding: 20px 20px; border-radius: 8px; border: 2px solid #0056b3; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); text-decoration: none; cursor: pointer; font-size: 1.4rem;">🧠Perplexity
+            </a>👉Este botón es un bookmarklet, lo puedes arrastrar a la barra de marcadores de tu navegador.
+          </ul>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-background-opacity="0.6">
+          <h2 class="title color">Elementos para el Debate</h2>
+          <section data-transition="fade-in"
+            data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/pros.mp3">
+            <div class="box" style="font-size: 1.2rem;">
+              <div class="title color">Pros</div>
+              <div class="content">
+                <ul style="font-size: 1.2rem;line-height: 190%;">
+                  <li>Acceso rápido a muchos tipos de respuesta</li>
+                  <li>Una indudable herramienta de productividad para incorporar a nuestro PLE</li>
+                  <li>Facilita la educación y la formación</li>
+                  <li>Conversación natural que mejora la interacción usuario-sistema </li>
+                  <li>Funcionalidad multimodal que amplia opciones de interacción</li>
+                  <li>Ha potenciado la competencia y la innovación en el ámbito de la IA y la gestión de la información:
+                    <a style="font-size: 1.6rem;" href="https://theresanaiforthat.com/" target="_blank">There's an Ai
+                      for That (hay una IA para eso)</a>→ 8.836 IAs para 2.313 tareas y 4.847 trabajos (en octubre de
+                    2023) </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section data-transition="fade-in fade-out"
+            data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/contras.mp3">
+            <div class="box" style="font-size: 1.2rem;">
+              <div class="title color">Contras</div>
+              <div class="content">
+                <ul style="font-size: 1.1rem;line-height: 190%;">
+                  <li><strong>Aspectos éticos:</strong>Aunque ChatGPT es una herramienta poderosa, viene con desafíos
+                    éticos, como sesgos raciales, económicos o étnicos, así como vulnerabilidad a la manipulación.
+                    Sesgos que se ha demostrado podemos heredar</li>
+                  <li><strong>Información errónea:</strong>Otra preocupación es la capacidad del modelo para generar
+                    "alucinaciones", o información que parece correcta pero que en realidad no lo es. Es crucial
+                    verificar siempre la información generada por ChatGPT.</li>
+                  <li><strong>Integridad académica:</strong>En el ámbito académico, se debe garantizar que el trabajo
+                    final sea el resultado del esfuerzo y comprensión del investigador, autor o estudiante, para no
+                    comprometer la integridad y originalidad.</li>
+                  <li><strong>Responsabilidad y transparencia:</strong>ChatGPT debe considerarse como un asesor más que
+                    como un protagonista. La responsabilidad y la transparencia son cruciales, tanto en su uso como en
+                    la forma en que contribuimos al entrenamiento de futuros algoritmos.</li>
+                  <li><strong>Derechos de autor:</strong>También es importante tener en cuenta las implicaciones
+                    relacionadas con los derechos de autor cuando se utiliza contenido generado por ChatGPT.</li>
+                  <li><strong>Los LLM no son deterministas:</strong>Los grandes modelos de lenguaje pueden generar
+                    resultados diferentes incluso con las mismas entradas. Este comportamiento puede ser tanto una
+                    ventaja como una desventaja, dependiendo del contexto y las necesidades.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section data-transition="zoom"
+            data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/limitaciones.mp3">
+            <div class="box" style="font-size: 1.1rem;p">
+              <div class="title color">Limitaciones</div>
+              <div class="content">
+                <ul style="font-size: 0.9rem;line-height: 180%; padding: -2px;">
+                  <li><strong>Confidencialidad: </strong>ChatGPT procesa grandes cantidades de datos para poder generar
+                    su propio texto. Esto significa que la privacidad de la información es una preocupación importante y
+                    que todas las empresas que util izan tecnología de inteligencia artificial tienen la responsabilidad
+                    de proteger los datos de los usuarios y cumplir con los estándares requeridos en la seguridad del
+                    procesamiento de datos </li>
+                  <li><strong>Requiere planes estructurados de formación: </strong>Especialmente en el ámbito de las
+                    administraciones públicas </li>
+                  <li><strong>Tecnología Sanitaria:</strong>Es una tecnología a evaluar si se dedica a intervenciones
+                    sanitarias: eficacia, seguridad, eficiencia, aspectos éticos, legales, económicos, organizativos,
+                    sociales, etc.</li>
+                  <li><strong>Ventana de tokens:</strong>ChatGPT solo puede tener en cuenta los últimos 2048 tokens de
+                    contexto. Si tu conversación es más larga, puede que no recuerde información de partes anteriores de
+                    la conversación.</li>
+                  <li><strong>Antropomorfización:</strong>Aunque es tentador pensar en ChatGPT como un humano, e incluso
+                    puede ser conveniente tratarle como tal, recuerda que es una IA y no comprende el mundo de la misma
+                    manera que un humano. ChatGPT está diseñado para generar la respuesta más probablemente correcta, no
+                    necesariamente la respuesta correcta. Este sesgo de antropomorfización puede llevar a malentendidos
+                    sobre las capacidades de la IA.</li>
+                  <li><strong>Falta de contexto e implicaciones</strong>Los modelos de lenguaje, como ChatGPT, no están
+                    diseñados para proporcionar un contexto completo para la información que generan. Esto significa que
+                    no tienen la capacidad de entender las implicaciones éticas, culturales o políticas de la
+                    información proporcionada.</li>
+                  <li><strong>Latencia del modelo:</strong>Tiempo que tarda en generar respuestas. Mayor en los modelos
+                    más complejos</li>
+                  <li><strong>La Maldición de la Recursividad: </strong>Riesgo del Colapso del Modelo en el
+                    Entrenamiento con Datos Generados (1) <br><span style="font-size: 0.5em;">(1) Shumailov I, Shumaylov
+                      Z, Zhao Y, et al. The Curse of Recursion: Training on Generated Data Makes Models Forget.
+                      arXiv.org, https://arxiv.org/abs/2305.17493v2 (2023, accessed 8 October 2023)</span></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg"
+          data-background-opacity="0.6"
+          data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/gracias.mp3">
+          <div style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+            <div style="text-align: center; flex-grow: 1;">
+              <h3 class="color" style="font-size: 3rem;">Gracias</h3>
+              <p>Homines, dum docent, discunt 🩺 </p>
+              <p>(La mejor forma de aprender es enseñando)</p>
+            </div>
+            <div style="font-size: 0.8em; text-align: right;margin-top: 16vh;">
+              <p>Esta presentación ha sido creada con finalidad docente por <a href="https://twitter.com/ernestob"
+                  title="Twitter de Ernesto B." target="_blank">Ernesto Barrera</a><br>Está bajo licencia <a
+                  href="https://creativecommons.org/licenses/by-sa/4.0/" title="License" target="_blank">Creative
+                  Commons CC&nbsp;BY-SA&nbsp;4.0</a></p>
+            </div>
+          </div>
+        </section>
+      </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/js/reveal.min.js"></script>
+  <script src="reveal.js/plugin/notes/notes.js"></script>
+  <script src="../reveal.js-plugins/"></script>
+  <script src="../reveal.js-plugins/zoom/zoom.js"></script>
+  <script src="../reveal.js-plugins/reveal-onetimer/onetimer.js"></script>
+  <script src="../reveal.js-plugins/animate/plugin.js"></script>
+  <script src="../reveal.js-plugins/animate/svg.min.js"></script>
+  <script src="../reveal.js-plugins/simplemenu/simplemenu.js"></script>
+  <script src="../reveal.js-plugins/fullscreen/plugin.js"></script>
+  <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+  <script>
+    Reveal.initialize({
+      maxScale: 1,
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      autoSlide: 0,
+      slideNumber: 'hv',
+      mouseWheel: true,
+      dependencies: [{
+        src: '//cdn.jsdelivr.net/npm/reveal-plantuml'
+      }, ],
+      menu: {
+        side: 'left',
+        themes: [{
+          name: 'Negro',
+          theme: 'reveal.js/dist/theme/black.css'
+        }, {
+          name: 'Blanco',
+          theme: 'reveal.js/dist/theme/white.css'
+        }, {
+          name: 'Leyenda',
+          theme: 'reveal.js/dist/theme/league.css'
+        }, {
+          name: 'Oscuro',
+          theme: 'reveal.js/dist/theme/black.css'
+        }, {
+          name: 'Solar',
+          theme: 'reveal.js/dist/theme/solarized.css'
+        }, {
+          name: 'Sangre',
+          theme: 'reveal.js/dist/theme/blood.css'
+        }, {
+          name: 'Luna',
+          theme: 'reveal.js/dist/theme/moon.css'
+        }, {
+          name: 'Serif',
+          theme: 'reveal.js/dist/theme/serif.css'
+        }, {
+          name: 'Cielo',
+          theme: 'reveal.js/dist/theme/sky.css'
+        }, {
+          name: 'Beige',
+          theme: 'reveal.js/dist/theme/beige.css'
+        }, {
+          name: 'Simple',
+          theme: 'reveal.js/dist/theme/simple.css'
+        }, ],
+        openOnInit: false,
+        markers: true,
+        keyboard: true,
+        useTextContentForMissingTitles: true,
+        titleSelector: 'h1, h2, h3, h4, h5, h6',
+        numbers: true,
+        hideMissingTitles: true,
+        custom: [{
+          title: 'Teclas',
+          icon: '<i class="fa fa-info"></i>',
+          src: 'about.html',
+          content: 'B: Escribir en pizarra<p>Botón Derecho Ratón: Borrar<p>C: Escribir en la diapositiva<p>SUPR: Borrar dibujo diapo<p>RETROCESO: Borrar todas diapos<p>M: Abrir/cerrar menú<p>F: Pantalla completa<p>V: Pausar presentación<p>A: Escuchar/pausar audio <p>S: Notas y vista de presentador<p>Alt+Botón Izquierdo del Ratón: Zoom<p>ESC: Mapa de Diapositivas<p>'
+        }]
+      },
+      audio: {
+        prefix: 'chalkboard/',
+        suffix: '.mp3',
+        defaultDuration: 5,
+        textToSpeechURL: "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Diego&c=ogg&r=1&f=48khz_16bit_stereo&src=",
+        advance: -1,
+        autoplay: false,
+        defaultText: true,
+        playerOpacity: 0.2,
+      },
+      oneTimer: {
+        immediateMode: true
+      },
+      simplemenu: {
+        menuclass: 'menu',
+        activeclass: 'active',
+        activeelement: 'li',
+        selectby: 'id',
+        auto: false
+      },
+      animate: {
+        autoplay: true
+      },
+      chalkboard: {
+        src: "../reveal.js-plugins/chalkboard/chalkboard.json ",
+        storage: "chalkboard-demo",
+        toggleChalkboardButton: {
+          left: "80px"
+        },
+        toggleNotesButton: {
+          left: "130px"
+        },
+        colorButtons: 5
+      },
+      width: "99%",
+      height: "99%",
+      center: true,
+      backgroundTransition: 'fade',
+      preloadIframes: true,
+      viewDistance: 3,
+      mobileViewDistance: 2,
+      hash: true,
+      plugins: [RevealMarkdown, RevealAudioSlideshow, RevealMenu, Appearance, RevealAnimate, RevealZoom,
+        RevealChalkboard, RevealNotes, Simplemenu, RevealEmbedTweet, OneTimer
+      ],
+    });
+
+    function changeTheme(input) {
+      var config = {};
+      config.theme = input.value;
+      Reveal.getPlugin("RevealChalkboard").configure(config);
+      input.blur();
+    }
+
+    function getYesterdayDate() {
+      var ayer = new Date(Date.now() - 86400000);
+      var dia = ayer.getDate();
+      var mes = ayer.getMonth() + 1;
+      var año = ayer.getFullYear();
+      return dia.toString() + '/' + mes.toString() + '/' + año.toString();
+    }
+    Reveal.addEventListener('slidechanged', function (event) {
+      var fechaSpan = event.currentSlide.querySelector('[id^="fecha-de-ayer"]');
+      if (fechaSpan) {
+        fechaSpan.innerHTML = getYesterdayDate();
+      }
+    });
+    var fechaSpan = document.getElementById('fecha-de-ayer');
+    fechaSpan.innerHTML = getYesterdayDate();
+
+    function copyToClipboard(elementId, btnElement) {
+      var text = document.getElementById(elementId).innerText;
+      var textarea = document.createElement("textarea");
+      textarea.textContent = text;
+      textarea.style.position = "fixed";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        btnElement.innerText = "¡Copiado!";
+        setTimeout(function () {
+          btnElement.innerText = "Copiar";
+        }, 2000);
+      } catch (ex) {
+        console.warn("Copy to clipboard failed.", ex);
+      } finally {
+        document.body.removeChild(textarea);
+      }
+    }
+    var search =
+      '((((("critical appraisal" OR "journal club" OR (journal[TIAB] AND club*[TIAB])))) OR ((((("evidence-based practice" OR "evidence-based policy" OR "evidence based practice" OR "evidence-based medicine" OR "evidence based medicine" OR "evidence-based health care" OR "evidence-based healthcare" OR "evidence based health care" OR "evidence based health care" OR "evidence-based dentistry" OR "evidence based dentistry" OR "Evidence-Based Facility Design" OR "evidence-based nursing" OR "evidence based nursing" OR "Evidence-Based Emergency Medicine")))) OR (((((("Evidence-Based Practice"[Mesh]) OR "Evidence-Based Practice/education"[Mesh]) OR "Evidence-Based Medicine"[Mesh]) OR "Evidence-Based Dentistry"[Mesh]) OR "Evidence-Based Nursing"[Mesh] OR "Evidence-Based Facility Design"[Mesh] OR "Evidence-Based Emergency Medicine"[Mesh])))))';
+    document.getElementById("searchString").innerText = search;
+
+    function copyPromptWithSearchToClipboard(elementId, btnElement) {
+      var text = document.getElementById(elementId).innerText + ' ' + search;
+      var textarea = document.createElement("textarea");
+      textarea.textContent = text;
+      textarea.style.position = "fixed";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        btnElement.innerText = "¡Copiado!";
+        setTimeout(function () {
+          btnElement.innerText = "Copiar";
+        }, 2000);
+      } catch (ex) {
+        console.warn("Copy to clipboard failed.", ex);
+      } finally {
+        document.body.removeChild(textarea);
+      }
+    }
+  </script>
+</body>
+
+</html>

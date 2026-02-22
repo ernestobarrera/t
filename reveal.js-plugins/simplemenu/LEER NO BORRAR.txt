@@ -1,0 +1,2 @@
+La presentación online de casos de uso profesionales para chatgpt usa mycustomstyle.css 
+Cuando quiera actualizar el plugin, desde https://github.com/martinomagnifico/reveal.js-simplemenu copiar en local el zip y luego sustituir todos los archivos del plugin menos mycustomstyle.css. Además en el original están en otra subcarpeta

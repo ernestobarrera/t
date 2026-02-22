@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎙️ Audios AEPap 2026 — IA como Asistente del Pediatra de AP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(52, 211, 153, 0.15));
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 16px;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+        }
+
+        header h1 span {
+            color: #60a5fa;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 10px;
+            padding: 12px 18px;
+            display: inline-block;
+            font-size: 0.85em;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .progress-container {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 10px;
+            padding: 12px 18px;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(96, 165, 250, 0.15);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #60a5fa, #34d399);
+            border-radius: 6px;
+            transition: width 0.5s ease;
+        }
+
+        .block-title {
+            max-width: 900px;
+            margin: 30px auto 15px;
+            padding: 10px 18px;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #60a5fa;
+            border-left: 4px solid #60a5fa;
+            background: rgba(96, 165, 250, 0.08);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .audio-item {
+            max-width: 900px;
+            margin: 12px auto;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(96, 165, 250, 0.15);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: border-color 0.3s;
+        }
+
+        .audio-item:hover {
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .audio-item.done {
+            opacity: 0.5;
+            border-color: rgba(52, 211, 153, 0.3);
+        }
+
+        .audio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .audio-num {
+            font-weight: 700;
+            color: #60a5fa;
+            font-size: 0.9em;
+            background: rgba(96, 165, 250, 0.15);
+            padding: 2px 10px;
+            border-radius: 6px;
+        }
+
+        .audio-name {
+            color: #94a3b8;
+            font-size: 0.8em;
+        }
+
+        .audio-text {
+            font-size: 0.92em;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.4);
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .audio-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.82em;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-copy {
+            background: #60a5fa;
+            color: #0f172a;
+        }
+
+        .btn-copy:hover {
+            background: #93c5fd;
+        }
+
+        .btn-done {
+            background: rgba(52, 211, 153, 0.2);
+            color: #34d399;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+
+        .btn-done:hover {
+            background: rgba(52, 211, 153, 0.3);
+        }
+
+        .btn-undo {
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            display: none;
+        }
+
+        .btn-undo:hover {
+            background: rgba(239, 68, 68, 0.3);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #34d399;
+            color: #0f172a;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🎙️ Audios <span>AEPap 2026</span></h1>
+        <p class="subtitle">IA como Asistente del Pediatra de AP — Ernesto Barrera</p>
+        <div class="info-box">
+            🔧 OpenTTS.ai · Configurar voz, rate y pitch a tu preferencia<br>
+            📁 Archivos: <code>aepap_1.webm</code> → <code>aepap_73.webm</code>
+        </div>
+        <div class="progress-container">
+            <div style="display:flex;justify-content:space-between;font-size:0.85em">
+                <span>Progreso</span>
+                <span id="progress-text">0 / 73</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+    </header>
+
+    <main id="audio-list"></main>
+    <div class="toast" id="toast">✅ Texto copiado</div>
+
+    <script>
+        const audios = [
+            // ═══════════════════════════════════════════════════════════
+            // BLOQUE 0 · PORTADA Y ENCUADRE
+            // ═══════════════════════════════════════════════════════════
+            {
+                num: "1", name: "aepap_1.webm", text: `Bienvenidos al seminario "La Inteligencia Artificial como Asistente del Pediatra de Atención Primaria".
+
+Me llamo Ernesto Barrera, soy médico de familia en la Comunidad de Madrid, y llevo más de quince años trabajando en la intersección entre tecnología, formación y práctica clínica.
+
+Durante las próximas dos horas vamos a explorar juntos tres cuestiones que considero esenciales. Primera: dónde puede ayudarnos la IA hoy, con evidencias reales. Segunda: dónde puede hacernos daño si la usamos mal. Y tercera, y quizá la más práctica: cómo interactuar con ella para obtener resultados útiles y seguros en nuestra consulta.
+
+Será un seminario con elementos prácticos. Vais a ver demos en vivo, vais a practicar vosotros mismos, y os vais a llevar herramientas que podéis usar el lunes en vuestra consulta. // EDITADO
+
+Empecemos.` },
+
+            {
+                num: "2", name: "aepap_2.webm", text: `Antes de entrar en materia, la declaración obligada: no tengo conflictos de interés relacionados con este contenido. Las herramientas que mencionaré son de uso personal. No tengo vinculación comercial con ningún proveedor de inteligencia artificial. // EDITADO
+
+Dicho esto, sí tengo un sesgo que quiero hacer explícito: creo que estas herramientas tienen un potencial enorme para mejorar nuestra práctica, pero solo si las usamos con el mismo rigor con el que evaluamos cualquier otra intervención clínica.` },
+
+            {
+                num: "3", name: "aepap_3.webm", text: `Al finalizar estas dos horas, seréis capaces de hacer tres cosas concretas.
+
+Uno: identificar escenarios clínicos donde la IA puede ser útil en vuestra consulta de pediatría. No todos los escenarios son iguales; veremos dónde el semáforo está en verde y dónde está en rojo.
+
+Dos: reconocer las limitaciones y los riesgos más importantes. Porque la IA puede generar información falsa con una convicción que impresiona. Aprenderéis a detectar esas trampas.
+
+Y tres: aplicar un método básico de interacción, lo que llamamos "prompt", para obtener respuestas clínicas útiles. Distinguiréis una instrucción eficaz de una que no lo es.
+
+Tres objetivos, dos horas. Vamos a ello.` },
+
+            {
+                num: "4", name: "aepap_4.webm", text: `Esta es nuestra hoja de ruta. Cinco bloques, ciento veinte minutos.
+
+Empezamos con un bloque de ruptura, quince minutos, para situar el impacto de lo que está ocurriendo. Después, cuarenta y cinco minutos de fundamentos: qué es la IA, qué dice la evidencia, y qué aplicaciones concretas existen para pediatría. A continuación, cuarenta minutos de demos en vivo: veréis las herramientas funcionando en tiempo real. Habrá una pausa para café. Después, veinticinco minutos de práctica guiada donde vosotros seréis los protagonistas. Y cerraremos con veinte minutos de mensajes clave y evaluación.
+
+Podéis hacer clic en cualquier bloque de la pantalla para saltar directamente si necesitáis volver a algún punto durante la sesión.
+
+Ahora sí, entramos en materia.` },
+
+            // ═══════════════════════════════════════════════════════════
+            // BLOQUE 1 · RUPTURA (15 min)
+            // ═══════════════════════════════════════════════════════════
+            {
+                num: "5", name: "aepap_5.webm", text: `Bloque uno: Ruptura.
+
+Vamos a empezar rompiendo el hielo. Y también, si me lo permitís, rompiendo alguna idea preconcebida.` },
+
+            {
+                num: "6", name: "aepap_6.webm", text: `Primera pregunta, y quiero que seáis sinceros.
+
+¿Cuántos de vosotros habéis usado alguna herramienta de inteligencia artificial esta semana para algo relacionado con vuestra práctica clínica?
+
+No solo ChatGPT. Cualquier cosa: buscar información, redactar un informe, preparar una sesión, traducir un artículo...
+
+Levantad la mano si es "sí, regularmente". ¿Alguna vez? ¿Nunca?
+
+Perfecto. Guardad vuestra respuesta en la cabeza. Al final del seminario volveremos a esta pregunta y veremos si algo ha cambiado.` },
+
+            {
+                num: "7", name: "aepap_7.webm", text: `El treinta de noviembre de dos mil veintidós, OpenAI publicó un tuit. Decía, simplemente: "Introducing ChatGPT."
+
+Nada más. Un tuit, un enlace.
+
+En cinco días, un millón de usuarios. En dos meses, cien millones. Ningún producto tecnológico en la historia había crecido así.
+
+Ese tuit cambió las reglas del juego. No porque la tecnología fuese nueva, los modelos de lenguaje llevaban años desarrollándose, sino porque por primera vez cualquier persona podía hablar con una inteligencia artificial. Y eso incluye a nuestros pacientes, a sus familias... y a nosotros.` },
+
+            {
+                num: "8", name: "aepap_8.webm", text: `Mirad este gráfico. Son las publicaciones en PubMed sobre inteligencia artificial y modelos de lenguaje.
+
+En dos mil veintitrés, era una de cada doscientas quince publicaciones. Hoy, una de cada noventa. El crecimiento ha superado incluso al de los artículos sobre tratamiento de COVID.
+
+Esto no es una moda pasajera. Es una transformación estructural de la literatura biomédica. Y como clínicos, necesitamos saber cómo navegar este tsunami de información.
+
+La buena noticia: no tenéis que leerlo todo. Lo que sí necesitáis son herramientas y criterios para separar el grano de la paja. Y eso es exactamente lo que vamos a hacer hoy.` },
+
+            {
+                num: "9", name: "aepap_9.webm", text: `Voy a contaros dos historias. Las dos son reales.
+
+Historia uno, en verde. Un pediatra necesita dar información a unos padres sobre gastroenteritis aguda. Usa un modelo de IA para generar un borrador. Lo revisa, lo adapta al caso concreto, y lo entrega. Quince minutos ahorrados. Bajo riesgo, alto impacto.
+
+Historia dos, en rojo. Un modelo de IA sugiere una dosis de medicación. El clínico no la verifica. La referencia bibliográfica que cita el modelo no existe. Es inventada. Una alucinación.
+
+La diferencia entre estas dos historias no es la herramienta. Es exactamente la misma herramienta. La diferencia está en cómo, cuándo y para qué la usamos. Y sobre todo, en si verificamos antes de actuar.
+
+Este contraste va a ser el hilo conductor de todo el seminario. Vamos a los fundamentos.` },
+
+            // ═══════════════════════════════════════════════════════════
+            // BLOQUE 2A · FUNDAMENTOS TEÓRICOS (10 min)
+            // ═══════════════════════════════════════════════════════════
+            {
+                num: "10", name: "aepap_10.webm", text: `Bloque dos A: Fundamentos.
+
+Antes de hablar de lo que la IA puede o no puede hacer, necesitamos hablar el mismo idioma. Así que empezamos con un glosario rápido.` },
+
+            {
+                num: "11", name: "aepap_11.webm", text: `Seis conceptos que vamos a usar constantemente.
+
+LLM, o modelo de lenguaje grande: es el motor que hay detrás de ChatGPT, Claude o Gemini. Predice la siguiente palabra basándose en patrones estadísticos. Importante: predice, no comprende.
+
+Prompt: la instrucción que le das al modelo. La calidad de lo que obtienes depende directamente de la calidad de lo que preguntas.
+
+IA generativa: genera contenido nuevo. No busca en una base de datos; crea texto, imágenes o código de la nada.
+
+Alucinación: cuando la IA inventa información falsa con total convicción. Es el riesgo crítico que veremos en detalle.
+
+RAG, o generación aumentada por recuperación: la IA se conecta a fuentes externas y busca antes de responder. Herramientas como Perplexity u Open Evidence funcionan así. Es mucho más seguro.
+
+Y finalmente, IA agéntica: la IA que no solo responde, sino que planifica y ejecuta tareas autónomamente. Es el siguiente nivel, y ya empieza a verse en medicina.
+
+Con este vocabulario compartido, pasemos a ver cómo encaja la IA en nuestro flujo de trabajo clínico.` },
+
+            {
+                num: "12", name: "aepap_12.webm", text: `La IA puede integrarse en las cinco etapas del flujo clínico: admisión, diagnóstico, tratamiento, documentación y seguimiento.
+
+Una revisión sistemática publicada en dos mil veinticinco por Li y colaboradores en Applied Clinical Informatics analizó hasta qué punto GPT-4 podía asistir en tareas clínicas. El resultado: es aplicable al setenta y uno por ciento de las subtareas.
+
+Pero, y esto es clave, "aplicable" no significa "autónomo." Significa que puede aportar valor si un clínico supervisa. Veremos exactamente dónde sí y dónde no a lo largo de la sesión.` },
+
+            {
+                num: "13", name: "aepap_13.webm", text: `Esto es lo que necesitáis entender de verdad sobre cómo funciona un modelo de lenguaje.
+
+Un LLM es un sistema que predice la siguiente palabra basándose en patrones estadísticos de billones de textos. Genera texto coherente: sí. Comprende lo que dice: no. Razona lógicamente: no.
+
+¿Por qué es importante? Porque de aquí se deriva el riesgo más importante: puede generar información completamente falsa con una confianza absoluta. Eso es lo que llamamos alucinaciones. Y lo veremos en detalle en el bloque de evidencia, que empieza ahora.` },
+
+            // ═══════════════════════════════════════════════════════════
+            // EVIDENCIA CIENTÍFICA
+            // ═══════════════════════════════════════════════════════════
+            {
+                num: "14", name: "aepap_14.webm", text: `Dejemos las opiniones a un lado. Vamos a ver qué dice la literatura reciente. Porque en este campo, lo que era cierto hace seis meses puede haber cambiado.
+
+La síntesis que vais a ver se basa en una revisión de más de quinientas referencias publicadas entre dos mil veinticinco y dos mil veintiséis.` },
+
+            {
+                num: "15", name: "aepap_15.webm", text: `El modelo Human-in-the-Loop define cómo debe funcionar la colaboración. La IA propone, redacta, sintetiza. El pediatra verifica, decide, empatiza. Son roles complementarios, no intercambiables.
+
+En el único ensayo clínico aleatorizado publicado hasta la fecha, Goh y colaboradores probaron esto con 1213 consultas reales. Los médicos con GPT-4 mejoraron un 6.5% en manejo clínico. Pero tardaron 2 minutos más por caso. En una agenda de treinta pacientes, eso son sesenta minutos adicionales.
+
+El mensaje no es "úsalo siempre". Es "úsalo donde el beneficio justifique el coste". En documentación, casi siempre. En diagnóstico de rutina, rara vez. Esa decisión estratégica es exactamente lo que veremos con el Modelo Sándwich al final.` },
+
+            {
+                num: "16", name: "aepap_16.webm", text: `El paradigma de colaboración se resume así: por separado, médico e inteligencia artificial tienen capacidades complementarias pero asimétricas.
+
+El médico aporta juicio clínico, empatía y contexto del paciente y su familia. La IA aporta velocidad y procesamiento masivo, pero con una precisión global del 52.1% según el meta-análisis de Takita con ochenta y tres estudios. Traducido: acierta uno de cada dos diagnósticos. Es el nivel de un médico no especialista.
+
+En la intersección, Wang muestra una mejora de casi 5 puntos en manejo clínico. Juntos, mejor. Pero la combinación solo funciona cuando el humano mantiene su criterio activo, no cuando se limita a dar "ok" a lo que la máquina propone. Esa diferencia entre supervisar y cuestionar es el tema de la siguiente diapositiva.` },
+
+            {
+                num: "17", name: "aepap_17.webm", text: `Atención a la paradoja más contraintuitiva de toda la sesión. Wang y colaboradores, en npj Digital Medicine, muestran que Humano más IA no siempre supera a la IA sola.
+
+El riesgo relativo es de 1.59 pero no significativo. Los errores persisten entre el 26 y el 36 por ciento incluso con supervisión. Y el intervalo de predicción va de menos 31 a más 41 puntos, una incertidumbre que hace imposible predecir el resultado caso por caso.
+
+¿Por qué ocurre esto? Porque supervisar no es lo mismo que cuestionar. Cuando leemos una respuesta bien redactada, nuestro cerebro tiende a aceptarla. Es el mismo sesgo de anclaje que conocemos en clínica, pero amplificado por la elocuencia de la máquina.
+
+Pero hay una excepción: en el ensayo de Goh, médicos con formación específica mejoraron un 6.5 por ciento. La clave: integración con método, no supervisión pasiva. Y atención al deskilling: si un residente delega sistemáticamente los diagnósticos diferenciales a ChatGPT durante cuatro años, ¿qué ocurre el día que no tiene cobertura? Esa pérdida de competencia es acumulativa y silenciosa.` },
+
+            {
+                num: "18", name: "aepap_18.webm", text: `Antes de seguir con más datos, quiero que nos paremos un momento. La paradoja que acabamos de ver no es solo un dato académico. Toca algo muy personal.
+
+¿Alguna vez hemos confiado demasiado en una herramienta sin verificar? No hablo solo de IA. ¿Cuántas veces hemos aceptado una calculadora de dosis sin comprobar la fuente? ¿Cuántas veces hemos seguido una guía que luego descubrimos que estaba desactualizada?
+
+La respuesta honesta es que sí, nos pasa. Y con la IA el riesgo se amplifica porque la respuesta viene envuelta en un lenguaje impecable. No tartamudea, no duda, no dice "no lo sé". Y eso activa el mismo sesgo de anclaje que conocemos en clínica.
+
+Esa autorreflexión es el mejor escudo. Ahora vamos a ver la evidencia específica que necesitáis para calibrar exactamente dónde confiar y dónde dudar.` },
+
+
+            {
+                num: "20", name: "aepap_20.webm", text: `Hablemos de números concretos. El meta-análisis más amplio publicado hasta ahora, Takita y colaboradores, ochenta y tres estudios, muestra que la precisión diagnóstica global de la IA es del 52.1%. Uno de cada dos. Eso es el nivel de un médico no especialista, y queda 15.8 puntos por debajo del experto.
+
+Ahora bien, esa cifra global esconde una asimetría importante. En tareas acotadas, cribado de artículos, extracción de datos estructurados, codificación, el rendimiento es alto. Pero en diagnóstico complejo, donde hay que integrar historia, exploración y contexto familiar, la IA no llega.
+
+Pensadlo así: si un padre os pregunta "¿puedo fiarme del diagnóstico que me ha dado ChatGPT?", la respuesta honesta es "acertará la mitad de las veces, y no sabrás cuál mitad." Esa incertidumbre es exactamente lo que justifica que la IA sea copiloto, nunca piloto.` },
+
+            {
+                num: "21", name: "aepap_21.webm", text: `Las alucinaciones son el riesgo más crítico. Y se manifiestan en dos contextos distintos.
+
+Primero, las bibliográficas: hasta el 91.4% de las citas de Bard eran fabricadas. GPT-3.5, el 39.6%. GPT-4, el 28.6%. Nunca hagáis búsquedas bibliográficas ciegas con estos modelos.
+
+Segundo, en documentación clínica: un framework de Asgari y colaboradores con 50 médicos y casi 13 mil frases anotadas mostró que las alucinaciones se pueden reducir al 1.47%, por debajo del nivel humano. Pero las omisiones, lo que el modelo olvida incluir, alcanzan el 3.45% y son el riesgo mayor.
+
+La regla de oro sigue siendo la misma: verificar siempre antes de usar. Nunca copiar y pegar sin comprobar el DOI o el PMID en la fuente primaria.` },
+            {
+                num: "22", name: "aepap_22.webm", text: `Esta brecha es crucial para entender los titulares. Los modelos de lenguaje obtienen entre 84 y 90 por ciento en exámenes teóricos tipo USMLE. Impresionante. Pero recordad la cifra que acabamos de ver: en clínica real, 52.1%.
+
+¿Por qué esa diferencia tan brutal? Porque un examen tiene una respuesta correcta entre cinco opciones predefinidas. La clínica real tiene ruido: un niño que llora y no se deja explorar, unos padres que olvidan mencionar que el abuelo tiene celiaquía, una otoscopia con cerumen que no te deja ver. Eso no aparece en los datasets de entrenamiento.
+
+Y el dato más preocupante: solo el 9.4 por ciento de los estudios publicados evalúan errores y seguridad. Es decir, estamos entusiasmados con una herramienta cuya tasa de daño apenas se ha medido. Con un fármaco no lo aceptaríamos; con la IA tampoco deberíamos.` },
+
+            {
+                num: "23", name: "aepap_23.webm", text: `Esto me preocupa especialmente como clínico. No por nosotros, sino por lo que hacen nuestros pacientes cuando no estamos.
+
+Un estudio publicado en The Lancet Digital Health encontró que el ochenta y nueve con cinco por ciento de las respuestas de modelos de IA sobre primeros auxilios y reanimación cardiopulmonar en niños contenían errores significativos o alucinaciones.
+
+Pensad en la escena: una madre a las tres de la mañana, el niño de dos años se ha atragantado con una uva, pánico. El móvil está ahí, y la primera reacción es preguntar a ChatGPT "qué hago si mi hijo se atraga." La respuesta puede sonar impecable. Puede describir la maniobra de Heimlich con detalle. Y puede estar completamente equivocada en los detalles críticos: la posición, la fuerza, la secuencia.
+
+Nuestra responsabilidad no es solo usar bien la IA. Es educar activamente a las familias sobre sus limitaciones en emergencias. Y seguir insistiendo en el mensaje que no cambia: ante una emergencia, llama al ciento doce. La IA no salva vidas; el ciento doce sí.` },
+
+            {
+                num: "24", name: "aepap_24.webm", text: `El meta-análisis en red más amplio publicado en JMIR reúne 168 estudios y casi treinta y seis mil preguntas clínicas. La pregunta clave: ¿qué modelo es mejor para qué?
+
+La respuesta, y esto es importante, es que ninguno gana en todo. ChatGPT-4o lidera en preguntas objetivas. ChatGPT-4 en preguntas abiertas. Gemini en triaje y clasificación.
+
+Pero en diagnóstico top-1, donde hay que acertar a la primera como hacemos cada día en consulta, los humanos expertos siguen siendo superiores. Con un SUCRA de cero con noventa frente a cero con ochenta y uno de GPT-4. Traducido a lenguaje clínico: si tuviéramos que apostar quién acierta el diagnóstico más veces, el experto humano gana nueve de cada diez veces.
+
+La implicación práctica es clara: no hay un modelo universal. Si necesitáis buscar evidencia, uno. Si necesitáis redactar, otro. Si necesitáis clasificar, otro. Y para lo más crítico, la primera sospecha diagnóstica, vuestro criterio sigue siendo insustituible.` },
+
+            {
+                num: "25", name: "aepap_25.webm", text: `¿Y si usamos RAG para evaluar sesgo? Es una pregunta lógica: si el modelo trabaja con fuentes verificadas, ¿no debería evaluar mejor la calidad de un estudio?
+
+Los datos dicen que no. Cuando se probó NotebookLM para evaluar riesgo de sesgo en estudios clínicos, la concordancia con revisores humanos fue muy baja: un coeficiente de correlación intraclase de cero con veintisiete. Traducido: de cada cuatro evaluaciones, la IA coincide con el experto apenas una vez, y las otras tres discrepa.
+
+¿Por qué? Porque evaluar sesgo requiere un tipo de juicio que va más allá de procesar texto. Hay que inferir lo que el artículo no dice: ¿por qué no reportan el seguimiento? ¿por qué el grupo control es más joven? Eso es experiencia clínica y metodológica, no procesamiento lingüístico.
+
+Esto enlaza directamente con el semáforo que veremos en dos slides: evaluar calidad de evidencia es zona roja, por mucho que la herramienta tenga RAG.` },
+
+            {
+                num: "26", name: "aepap_26.webm", text: `Ahora un zoom a lo que más nos interesa: el diagnóstico pediátrico.
+
+En entornos rurales, donde el acceso a especialistas es limitado, la IA iguala prácticamente al pediatra: 87.3% frente a 91.3%, una diferencia estadísticamente no significativa. Esto es relevante: imaginad un centro de salud rural en Extremadura con un médico general solo, sin pediatra. Ahí la IA como segunda opinión puede ser transformadora.
+
+Pero cuidado con extrapolar. A nivel global, como ya vimos, la IA es equivalente solo al médico no especialista. El especialista sigue siendo netamente superior.
+
+En salud mental, hay una progresión real: el paso de GPT-3.5 a GPT-4 mejoró el F1 de 0.41 a 0.655. Traducido: pasó de acertar cuatro de cada diez a acertar seis o siete. ¿Aceptable para detectar depresión adolescente? Como cribado para derivar, posiblemente. Como diagnóstico, ni de lejos.
+
+Fijaos en el patrón que se repite: cuanto más estructurada y protocolizada la tarea, mejor rinde la IA. Cuanto más juicio clínico requiere, más lejos queda.` },
+
+            {
+                num: "27", name: "aepap_27.webm", text: `Tres lecciones del mismo campo, la escoliosis del adolescente, que ilustran por qué no debemos confundir velocidad con fiabilidad, ni fiabilidad con consistencia.
+
+Velocidad: la IA clasificó radiografías cien veces más rápido, siete a cuarenta y ocho segundos frente a once o doce minutos. Impresionante. Pero cuando se repitió la prueba una semana después, todos los modelos fallaron en reproducir sus propios resultados.
+
+Fiabilidad: en guías protocolizadas de otorrinolaringología, kappa igual a uno, cien por cien de adherencia. Perfecto. Pero el mismo tipo de modelo fabrica hasta el noventa y uno con cuatro por ciento de sus citas bibliográficas.
+
+Consenso: los cirujanos expertos coinciden el noventa y dos por ciento de las veces, con kappa de cero con novecientos trece. Los modelos de lenguaje multimodales: entre uno con seis y diez con dos por ciento, prácticamente aleatorio.
+
+La conclusión: rápido no es fiable. Fiable no es consistente. Tres dimensiones que no van juntas.` },
+
+            {
+                num: "29", name: "aepap_29.webm", text: `Los sesgos algorítmicos son un riesgo que debemos entender como clínicos, no solo como usuarios.
+
+Aparecen en tres niveles, y cada uno tiene una consecuencia clínica distinta. En la entrada: los datos de entrenamiento pueden no representar a nuestra población. Un modelo entrenado mayoritariamente con datos de niños anglosajones puede infradiagnosticar dermatitis en piel oscura o malinterpretar patrones culturales de presentación del dolor.
+
+En el proceso: la selección automatizada amplifica patrones preexistentes. Si los datos históricos muestran menos derivaciones de TDAH en niñas, el modelo aprenderá que el TDAH es "cosa de niños" y perpetuará el infradiagnóstico.
+
+Y en la salida: las alucinaciones se presentan con alta confianza, sin señales de alerta. No hay un indicador luminoso que diga "esto me lo estoy inventando."
+
+La validación en poblaciones infrarrepresentadas no es un ideal; es una necesidad clínica. Lo que funciona en un hospital universitario de Boston no necesariamente aplica en un centro de salud de Alcorcón.` },
+
+            {
+                num: "30", name: "aepap_30.webm", text: `Os presento un semáforo de seguridad basado en toda la evidencia que hemos revisado. Y quiero que entendáis no solo los colores, sino por qué cada tarea está donde está.
+
+Luz verde: automatizar con supervisión tareas como revisiones sistemáticas, extracción de datos tabulares y generación de resúmenes estructurados. ¿Por qué verde? Porque son tareas donde el error es detectable y reversible. Si el modelo extrae mal un dato de una tabla, lo ves al revisar.
+
+Luz amarilla: borradores de informes, síntesis de historiales y apoyo al diagnóstico diferencial. ¿Por qué amarillo? Porque el error puede pasar desapercibido si no cuestionas activamente. Recordad la paradoja de Wang: supervisar no es lo mismo que cuestionar.
+
+Luz roja: diagnóstico primario de imagen, planificación quirúrgica, dosificación sin verificación. ¿Por qué rojo? Porque el error tiene consecuencias irreversibles para el paciente y no siempre es detectable a tiempo.
+
+Fijaos en que el criterio no es "la IA lo hace bien o mal." El criterio es: si se equivoca, ¿puedo detectarlo antes de que cause daño? Esa es la pregunta que determina el color.` },
+
+
+            // ═══════════════════════════════════════════════════════════
+            // BLOQUE 2B · MARCO LEGAL (10 min)
+            // ═══════════════════════════════════════════════════════════
+            {
+                num: "32", name: "aepap_32.webm", text: `Bloque dos B: Marco Legal.
+
+Antes de poner en práctica lo que sabemos, necesitamos conocer las reglas del juego. Porque usar inteligencia artificial con datos de pacientes no es solo una cuestión técnica. Es una cuestión legal y ética que nos afecta directamente.` },
+
+            {
+                num: "33", name: "aepap_33.webm", text: `El marco legal que regula el uso de IA en consulta se apoya en tres pilares.
+
+Primero, el Reglamento Europeo de Inteligencia Artificial, que clasifica las herramientas de IA por nivel de riesgo. Las herramientas diagnósticas certificadas se consideran de alto riesgo.
+
+Segundo, el Reglamento General de Protección de Datos, el RGPD, que regula el tratamiento de datos personales con especial protección para datos de salud.
+
+Y tercero, la Ley 41/2002 de Autonomía del Paciente, que establece las bases del consentimiento informado.
+
+Es importante distinguir: ChatGPT, Claude o Gemini no son productos sanitarios certificados. Para ellos, la norma vinculante hoy es el RGPD. Y en datos de salud pediátrica, las exigencias son máximas.` },
+
+            {
+                num: "34", name: "aepap_34.webm", text: `Hay un punto que debe quedar absolutamente claro: la responsabilidad clínica siempre es del médico.
+
+Da igual que la IA haya generado el borrador, sugerido el diagnóstico o propuesto la dosis. La decisión final, la firma, la responsabilidad legal y ética, es del profesional que actúa.
+
+Esto es lo que llamamos el principio del "médico en el bucle". La IA puede asistir, pero el acto médico sigue siendo humano. Usar IA es legal y puede llegar a ser exigible por competencia profesional. Pero la responsabilidad clínica nunca se delega a un algoritmo.` },
+
+            {
+                num: "35", name: "aepap_35.webm", text: `¿Qué datos puedes introducir en un modelo de IA? Depende del nivel de sensibilidad.
+
+Nivel bajo, en verde: preguntas genéricas sobre guías o protocolos. Sin datos de paciente. Cualquier herramienta vale.
+
+Nivel medio, en azul: consultas con datos anonimizados. Aquí necesitas activar el modo efímero o temporal, para que la herramienta no almacene ni entrene con tu consulta.
+
+Nivel alto, en naranja: imágenes o analíticas. Solo herramientas institucionales integradas en la historia clínica electrónica. Y es obligatoria una Evaluación de Impacto en Protección de Datos.
+
+Y nivel muy alto, en rojo: enfermedades raras. Aquí se produce una situación especial: el setenta y cinco por ciento de pacientes con enfermedades raras tienen alto riesgo de reidentificación. En prevalencias menores de uno entre cincuenta mil, el nombre de la enfermedad más el país puede bastar para identificar al paciente. Solo IA local o certificada, y reformular la consulta a nivel fisiopatológico, sin nombrar la enfermedad.
+
+Recordad el protocolo de treinta segundos: sustituir nombres por "paciente", edad exacta por rango, fechas por "hace tres días", sin geografía, y nunca incluir número de historia clínica ni DNI.` },
+
+            {
+                num: "36", name: "aepap_36.webm", text: `No todas las IAs son iguales en protección de datos. Os presento un semáforo de jurisdicciones.
+
+Verde: despliegue local con modelos open-source como Llama o Mistral vía Ollama. Cero transferencia de datos, máximo control.
+
+Azul: proveedores europeos como Mistral Le Chat o Azure EU. Jurisdicción de la Unión Europea, sin transferencia a terceros países.
+
+Amarillo: proveedores americanos como OpenAI, Anthropic o Google, con Data Privacy Framework. Este acuerdo de adecuación entre la UE y Estados Unidos es válido pero frágil, porque está recurrido ante el Tribunal de Justicia de la Unión Europea.
+
+Y rojo: proveedores chinos como DeepSeek. Esencialmente incompatibles con el RGPD para datos de salud. Italia los prohibió de emergencia en enero de dos mil veinticinco y la OCU ha denunciado ante la Agencia Española de Protección de Datos.
+
+El mensaje clave: usar IA es legal y puede ser exigible, pero la responsabilidad clínica siempre es tuya. Anonimiza, documenta, y mantén el juicio crítico.` },
+
+            // ═══════════════════════════════════════════════════════════
+            // BLOQUE 2C · APLICACIONES PRÁCTICAS (15 min)
+            // ═══════════════════════════════════════════════════════════
+            {
+                num: "37", name: "aepap_37.webm", text: `Bloque dos C: Aplicaciones Prácticas.
+
+Hemos visto los fundamentos, la evidencia y el marco legal. Ahora vamos a lo concreto: ¿cómo puedes usar la IA en tu consulta de forma segura y efectiva?` },
+
+            {
+                num: "38", name: "aepap_38.webm", text: `Empiezo con la aplicación que tiene la evidencia más sólida, y probablemente la que más os importa a nivel personal: la reducción de carga documental.
+
+Un meta-análisis de catorce estudios confirma que la IA reduce moderada a altamente la carga de documentación clínica, con un tamaño de efecto de menos cero con setenta y uno, manteniendo la calidad comparable a la documentación manual.
+
+Pensad en vuestro día a día: treinta y cinco pacientes citados, más las demandas, más las recetas, más los informes de derivación. ¿Cuánto tiempo dedicáis a escribir y cuánto a explorar al niño y hablar con la familia? La evidencia dice que la IA puede invertir esa proporción.
+
+Y hay un beneficio que rara vez se mide pero todos sentimos: la reducción del burnout administrativo. No es que trabajemos menos; es que el trabajo que hacemos se parece más a la medicina que elegimos estudiar.
+
+Esto conecta directamente con la inteligencia ambiental que veremos a continuación.` },
+
+            {
+                num: "39", name: "aepap_39.webm", text: `La inteligencia ambiental va un paso más allá. Imagina una herramienta que escucha la conversación en consulta, filtra lo clínicamente relevante y genera una nota estructurada automáticamente.
+
+Esto ya existe. El flujo es: escucha activa, filtrado inteligente de síntomas y signos, y generación de documentación en formato SOAP o similar.
+
+Pero hay un requisito ético que es innegociable: el consentimiento explícito del paciente o la familia antes de activar cualquier sistema de grabación. Sin consentimiento, no hay inteligencia ambiental que valga.` },
+
+            {
+                num: "40", name: "aepap_40.webm", text: `Llegamos a una idea que quiero que os llevéis grabada: el prompt engineering ya es una habilidad clínica.
+
+Callens y colaboradores proponen un checklist de cuatro pasos para interactuar con un modelo de IA de forma efectiva. Primero, definir el rol y el contexto. Segundo, especificar el output deseado. Tercero, incluir restricciones y limitaciones. Y cuarto, definir el formato de respuesta.
+
+¿Os suena? Es la base del método RECORD que os enseñaré en el bloque de demos. Saber preguntar a la IA es tan importante como saber preguntar a un paciente.` },
+
+            {
+                num: "41", name: "aepap_41.webm", text: `Las cuatro técnicas de prompting con mayor impacto según la evidencia son las siguientes.
+
+Chain-of-Thought, o cadena de pensamiento: pedir al modelo que "piense paso a paso" mejora el rendimiento del diecisiete al cincuenta y ocho por ciento en tareas de razonamiento.
+
+Few-shot: dar dos o tres ejemplos antes de la consulta. El formato importa más que las etiquetas.
+
+RAG, o generación aumentada por recuperación: conectar el modelo a fuentes verificadas para reducir alucinaciones, con reducciones del dieciocho al cuarenta por ciento.
+
+Y Self-Consistency: generar varias respuestas y elegir la más frecuente, con una mejora de casi dieciocho puntos porcentuales.
+
+Pero atención: un estudio de Sclar y colaboradores demostró que cambios triviales en el formato del prompt, como espaciado o puntuación, pueden causar variaciones de hasta setenta y seis puntos porcentuales en la precisión. El cómo preguntas importa enormemente.` },
+
+            {
+                num: "42", name: "aepap_42.webm", text: `Dos mil veinticinco marca un cambio de paradigma. Los modelos de razonamiento como o1 o DeepSeek R1 internalizan el Chain-of-Thought. Así que pedirles "piensa paso a paso" es redundante o incluso perjudicial.
+
+El nuevo enfoque se llama Context Engineering: ya no se trata de encontrar las palabras perfectas, sino de dar la información correcta en el momento adecuado. Herramientas más memoria más fuentes verificadas.
+
+Para el pediatra de Atención Primaria, la clave es sencilla: con modelos clásicos, usad el método RECORD con cadena de pensamiento. Con modelos de razonamiento, sed directos y dad contexto rico. Y siempre, siempre: fuentes verificadas más verificación del output.` },
+
+            {
+                num: "43", name: "aepap_43.webm", text: `¿Dónde se concentra la evidencia actual? Esto es importante para calibrar expectativas.
+
+El noventa y tres con cincuenta y cinco por ciento de los estudios evalúan modelos generalistas: GPT-4, Claude, Gemini. Los que vosotros ya podéis usar. Solo el seis con cuarenta y cinco por ciento evalúa modelos médicos especializados.
+
+¿Qué significa esto en la práctica? Que cuando leéis un titular que dice "la IA diagnostica mejor que los médicos", casi seguro están usando GPT-4 en un examen teórico. No un modelo médico en vuestra consulta con un niño real.
+
+Y la métrica más usada sigue siendo la precisión simple: ¿acierta o no acierta? Pero en clínica lo que nos importa es otra cosa: ¿acierta cuando importa? ¿Falla de forma peligrosa? ¿Es consistente? Esas preguntas apenas se están empezando a responder.
+
+La buena noticia: las herramientas que usaréis hoy son exactamente las que la evidencia ha evaluado. La mala: queda mucho por hacer en evaluar modelos específicos para pediatría.` },
+
+            {
+                num: "44", name: "aepap_44.webm", text: `El ecosistema de IA médica se diversifica en tres direcciones, y cada una tiene implicaciones distintas para vuestra práctica.
+
+Los modelos open-source como DeepSeek ya igualan en rendimiento a los modelos propietarios, y permiten despliegue local. Sé lo que algunos estáis pensando: "yo no voy a instalar nada en mi ordenador." Pero la realidad es que no hace falta: los servicios de informática de las comunidades autónomas podrían desplegar estos modelos en servidores institucionales, con control total de los datos. Eso elimina el problema de la jurisdicción que vimos en el bloque legal.
+
+Los modelos médicos especializados, como MedFound con ciento setenta y seis mil millones de parámetros, superan a los generalistas en diagnóstico complejo en hasta ocho especialidades. Pero son menos accesibles y menos versátiles.
+
+Y la tercera dirección es la IA agéntica: modelos que planifican y ejecutan tareas autónomamente. Un agente puede recibir "busca los últimos metaanálisis sobre bronquiolitis, selecciona los tres más relevantes y genera un resumen para mi sesión clínica", y ejecutar todo el flujo. Ya hay sistemas multi-agente con resultados prometedores.
+
+¿La clave? No necesitáis elegir uno. Necesitáis saber cuándo usar cada uno: privacidad, precisión o automatización. Esas tres palabras definen la elección.` },
+
+            {
+                num: "45", name: "aepap_45.webm", text: `La inteligencia ambiental para documentación tiene el respaldo de un meta-análisis de veintitrés estudios. Y los resultados son consistentes: reducción significativa de la fatiga administrativa.
+
+Mirad esta infografía: el antes y el después. A la izquierda, lo que conocemos: la montaña de formularios, informes, hojas de derivación, notas en papel que luego hay que pasar. A la derecha, lo que ya existe: un resumen estructurado que el clínico revisa y valida en minutos.
+
+Pero quiero ser honesto: esta tecnología aún tiene barreras reales en nuestro contexto. Requiere integración con la historia clínica electrónica, necesita consentimiento informado del paciente en cada consulta, y los sistemas en español están menos desarrollados que los anglosajones.
+
+Dicho esto, es la aplicación con el camino más claro hacia nuestra consulta. Y conecta con lo que vimos antes sobre el burnout: si la IA nos devuelve tiempo para el paciente, la ganancia no es solo administrativa, es clínica y emocional.` },
+
+            {
+                num: "46", name: "aepap_46.webm", text: `Los sistemas multi-agente son uno de los avances más interesantes de los últimos meses. En vez de un solo modelo respondiendo a todo, son varios modelos especializados trabajando coordinados: uno analiza la historia, otro cruza con bases de datos de síntomas, otro revisa las guías clínicas, y un cuarto sintetiza.
+
+Los números son prometedores: sensibilidad de cero con noventa y cuatro y exactitud de cero con ochenta y seis en cohortes de validación.
+
+¿Qué significa esto para vosotros? Imaginad un niño de seis años con síntomas inespecíficos: febrícula intermitente, cansancio, pérdida de apetito. Antes de derivar, un sistema multi-agente podría cruzar esos síntomas con marcadores analíticos y sugeriros un panel de estudio orientado. No sustituye vuestra sospecha clínica, pero la complementa con un procesamiento que a veces se nos escapa por saturación de la agenda.
+
+Esto está en fase temprana, pero apuntadlo porque llegará a nuestras herramientas antes de lo que pensamos.` },
+
+            {
+                num: "47", name: "aepap_47.webm", text: `En pediatría específicamente, hay tres áreas donde la evidencia cuantitativa ya es sólida, y las tres comparten un rasgo: son tareas de cribado, no de diagnóstico definitivo.
+
+En neonatal: modelos especializados predicen morbilidad con suficiente antelación para ajustar el manejo. En retina: la detección de retinopatía del prematuro alcanza un F1 del ochenta y nueve por ciento. Traducido: de cada diez casos de ROP, detecta nueve. El décimo se escapa, y por eso el oftalmólogo sigue siendo imprescindible. Y en perioperatorio: la predicción de hipoxemia tiene un AUC de cero con ochenta y cinco, suficiente para alertar al anestesista, no para actuar automáticamente.
+
+El patrón es claro: la IA destaca como sistema de alerta temprana. Detecta patrones que nosotros podemos pasar por alto cuando estamos saturados. Pero la decisión clínica posterior sigue siendo nuestra. Y las dos siguientes slides muestran aplicaciones igual de concretas para atención primaria.` },
+
+            {
+                num: "48", name: "aepap_48.webm", text: `Un ejemplo que toca directamente la pediatría de primaria: detección de caries en escolares mediante fotografías intraorales analizadas por IA.
+
+Sensibilidad entre ochenta y dos y noventa y seis por ciento. Especificidad entre setenta y siete y noventa y nueve por ciento. ¿Qué significa esto en la práctica? Imaginad un programa de salud bucodental escolar: el enfermero escolar hace fotos con un protocolo estandarizado, la IA analiza las imágenes, y os llega una lista priorizada de qué niños necesitan revisión odontológica urgente.
+
+No sustituye al odontólogo, pero optimiza la derivación en un sistema donde las listas de espera de dental son de meses. Y fijaos: otra vez el mismo patrón. La IA no diagnostica; criba. No decide; prioriza. Es el uso donde la evidencia es más consistente.` },
+
+            {
+                num: "49", name: "aepap_49.webm", text: `Un tema delicado pero que debemos abordar: la detección de riesgo suicida en adolescentes.
+
+Los números son llamativos: la IA alcanza un noventa y nueve por ciento de detección en mensajes individuales. Pero esa cifra es engañosa. Detectar que un mensaje contiene palabras asociadas al suicidio es relativamente fácil. Lo difícil, y lo clínicamente importante, es determinar si hay riesgo genuino. Y ahí el rendimiento cae al ochenta y nueve por ciento. Se recupera al noventa y uno cuando se añade contexto conversacional completo.
+
+¿Qué implica esto para nosotros? Dos cosas. Primera: estas herramientas pueden ser un sistema de alerta en entornos digitales donde los adolescentes se expresan con más libertad que en consulta. Segunda: nunca, bajo ningún concepto, pueden sustituir la entrevista clínica. Un mensaje que dice "no quiero vivir" puede ser una expresión de frustración adolescente o un grito de auxilio real. Esa distinción requiere empatía, contexto y juicio clínico, exactamente lo que la IA no tiene.` },
+
+            {
+                num: "50", name: "aepap_50.webm", text: `En formación médica, los modelos de lenguaje son brillantes generando preguntas tipo test. Hasta el noventa y cuatro con cinco por ciento de precisión en preguntas de elección múltiple.
+
+Pero recordad la brecha que vimos antes entre exámenes y clínica. Lo mismo aplica aquí: un modelo que genera un caso clínico perfecto para un examen puede no capturar la ambigüedad real de una consulta. La variabilidad entre modelos es enorme cuando se les pone ante un caso clínico no estructurado.
+
+Para vosotros, como tutores de residentes o formadores, la lección es esta: usad la IA para generar material docente, bancos de preguntas, casos simulados. Pero evaluad el razonamiento clínico con casos reales, no con preguntas tipo test. Esto aplica tanto a vuestros residentes como a la propia IA.` },
+
+            {
+                num: "51", name: "aepap_51.webm", text: `Un hallazgo que va a cambiar cómo usáis la IA a partir de hoy: el prompting determinista.
+
+Con prompts estándar, preguntas abiertas del tipo "¿qué diagnósticos consideras?", la adherencia a protocolos clínicos fue del treinta y dos por ciento. Noventa y seis de trescientos casos. Es decir, dos de cada tres veces el modelo se salió del protocolo.
+
+Con prompts deterministas, instrucciones cerradas, paso a paso, tipo checklist, "evalúa primero fiebre, luego signos meníngeos, luego focalidad", la adherencia subió al cien por cien. Trescientos de trescientos.
+
+¿Por qué? Porque cuando le das libertad al modelo, "alucina creativamente." Cuando le das estructura, sigue el camino. Es exactamente lo que pasa con un residente: las instrucciones vagas producen resultados impredecibles; las instrucciones precisas producen resultados reproducibles.
+
+Esto es la base del método RECORD que vais a aprender en las demos. No es un capricho de ingeniería; es la diferencia entre el treinta y dos y el cien por cien.` },
+
+            {
+                num: "52", name: "aepap_52.webm", text: `Esta matriz resume todo lo que hemos visto en una sola imagen. Cinco dominios clínicos, cada uno con su nivel de evidencia y seguridad.
+
+Administración y educación: verde, nivel alto. Es donde la evidencia es más consistente y el riesgo de daño más bajo. Diagnóstico e investigación: amarillo, nivel medio. Funciona, pero necesita supervisión activa y metodológica. Salud mental: rojo, nivel bajo. Los avances son prometedores, pero la evidencia es preliminar y el riesgo ético es alto.
+
+¿Por qué importa esta matriz? Porque os da un criterio para cuando un compañero os diga "he visto que la IA diagnostica autismo." Podéis mirar la matriz y decir: "sí, pero estamos en amarillo tirando a rojo; necesitamos validación clínica antes de confiar."
+
+Es la chuleta del seminario. Está en los materiales y os la podéis llevar impresa.` },
+
+            {
+                num: "53", name: "aepap_53.webm", text: `La generación aumentada por recuperación, RAG, se consolida como el estándar de implementación segura. Y quiero que entendáis por qué, no solo que lo aceptéis.
+
+Un modelo de lenguaje sin RAG responde desde su memoria de entrenamiento, que puede estar desactualizada, incompleta o directamente equivocada. Un modelo con RAG busca primero en fuentes que vosotros o el sistema habéis seleccionado, y responde solo desde lo encontrado. Es la diferencia entre un médico que receta de memoria y uno que consulta el Pediamécum antes de firmar.
+
+Herramientas como Open Evidence trabajan con fuentes biomédicas curadas. Perplexity Pro busca en web académica con citas en tiempo real. Y NotebookLM os permite chatear con vuestros propios PDFs: protocolos de centro, guías AEPAP, artículos que habéis seleccionado.
+
+La regla práctica: para cualquier consulta clínica point-of-care, usad siempre herramientas con RAG. Para redacción y formato, el modelo base es suficiente. Esa distinción es la que separa el uso seguro del inseguro.` },
+
+            {
+                num: "54", name: "aepap_54.webm", text: `Un estudio de Masanneck y colaboradores demuestra algo con implicaciones prácticas inmediatas.
+
+Restringir las fuentes del modelo a fuentes profesionales mejora la precisión del sesenta al setenta y ocho por ciento. Dieciocho puntos porcentuales de mejora.
+
+Y al revés: usar aunque sea una fuente no profesional reduce las odds de respuesta correcta a la mitad.
+
+La acción es directa: configurad vuestros modelos para trabajar con guías AEPAP, protocolos de AEPED, Pediamécum y guías internacionales pediátricas. Limitad las fuentes y multiplicaréis la fiabilidad.` },
+
+            {
+                num: "55", name: "aepap_55.webm", text: `Cuatro conclusiones que sintetizan toda la evidencia que hemos revisado, y quiero que notéis cómo cada una conecta con lo que hemos visto.
+
+Primera: la IA aumenta al médico, no lo sustituye. Es el modelo Human-in-the-Loop del que hablamos al principio. Segunda: la reducción de burocracia es real y significativa, pero en diagnóstico la supervisión es obligatoria. Es la diferencia entre zona verde y zona roja del semáforo. Tercera: los modelos especializados superan a los generalistas, pero aún son minoría en la evidencia. Y cuarta: verificación antes de uso clínico. Siempre. Porque el 26 a 36 por ciento de errores persiste incluso con supervisión humana.
+
+Estas cuatro ideas las vais a ver en acción ahora mismo. Porque una cosa es entender la teoría y otra muy distinta es ver cómo funciona cuando te sientas delante de la pantalla.` },
+
+            {
+                num: "56", name: "aepap_56.webm", text: `Para terminar este bloque, la hoja de ruta traducida a vuestra consulta de atención primaria. Es diferente del semáforo general que vimos antes porque está pensada para las tareas que hacéis todos los días.
+
+Verde: adoptad la IA para documentación, hojas informativas para familias y síntesis de evidencia. Son las tareas que os roban tiempo sin aportar juicio clínico. Delegadlas con supervisión.
+
+Amarillo: apoyo al diagnóstico diferencial con RAG, preparación de sesiones clínicas, codificación CIE. Aquí la IA os ahorra tiempo, pero tenéis que cuestionar activamente cada resultado. No basta con leerlo; hay que contrastarlo.
+
+Rojo: diagnóstico autónomo, dosificación sin verificación, cualquier uso donde no revisáis el output antes de que llegue al paciente o a la historia clínica.
+
+Fijaos en la diferencia con el semáforo general: aquí el amarillo incluye RAG porque herramientas como Open Evidence o Perplexity Pro reducen significativamente el riesgo de alucinación. Pero no lo eliminan, y por eso sigue siendo amarillo, no verde.` },
+
+            {
+                num: "57", name: "aepap_57.webm", text: `Cinco mensajes clave antes de pasar a las demos. Y fijaos en cómo cada uno conecta con algo concreto que hemos visto.
+
+Uno: la evidencia más sólida está en documentación y síntesis. El meta-análisis de catorce estudios lo confirma. Semiautomatizad con revisión humana.
+
+Dos: en diagnóstico pediátrico real, la IA como segunda opinión, nunca como sustituto. Recordad la brecha entre el 84-90% en exámenes y el 52% en clínica real.
+
+Tres: los modelos open-source on-premise ya son competitivos y resuelven el problema de jurisdicción. DeepSeek local es una opción real.
+
+Cuatro: los modelos médicos especializados rinden mejor en tareas diagnósticas, pero solo el 6% de los estudios los evalúa. Queda camino.
+
+Y cinco: los prompts deterministas con checklists transforman la adherencia del treinta y dos al cien por cien. El método RECORD que vais a practicar está basado en este principio.
+
+Estos cinco puntos son la base. Ahora vamos a ver cómo se traducen en herramientas que podéis usar el lunes.` },
+
+            // ═══════════════════════════════════════════════════════════
+            // BLOQUE 3 · DEMOS EN VIVO (40 min)
+            // ═══════════════════════════════════════════════════════════
+            {
+                num: "58", name: "aepap_58.webm", text: `Bloque tres: Demos en vivo.
+
+Hasta ahora hemos hablado de evidencia y de conceptos. Ahora viene la parte que más me gusta: ver las herramientas funcionando en tiempo real.
+
+Vamos a navegar el ecosistema de IA disponible, y vais a ver exactamente cómo se usa cada herramienta.` },
+
+            {
+                num: "59", name: "aepap_59.webm", text: `Para navegar este ecosistema necesitamos un mapa. Os presento la Pirámide de Evidencia 5.0, adaptada del modelo clásico de Alper y Haynes.
+
+En la cima están las herramientas point-of-care con RAG clínico: Open Evidence, Perplexity Pro, NotebookLM. Dan respuestas verificables con citas a fuentes de alta calidad. Son las más seguras.
+
+En el nivel medio: herramientas de búsqueda y síntesis como Undermind, Scite.ai, Elicit o Consensus. Agentes de investigación que sintetizan literatura.
+
+Y en la base: los modelos fundacionales como ChatGPT, Claude o Gemini. Razonan bien, pero su conocimiento está "congelado" y tienen riesgo de alucinación.
+
+La regla es sencilla: para decisiones clínicas, subid lo más alto posible en la pirámide. Para tareas de redacción o formato, la base puede ser suficiente.` },
+
+            {
+                num: "60", name: "aepap_60.webm", text: `Aquí tenéis el catálogo completo, organizado por tipo, uso principal y nivel de confianza.
+
+Open Evidence y Perplexity Pro: RAG clínico, confianza alta. NotebookLM: RAG personal sobre tus propios documentos, confianza alta. Scite.ai: análisis de citas, confianza moderada. Y ChatGPT o Claude: modelos fundacionales, confianza alta para redacción y formato, pero baja para datos clínicos sin verificación externa.
+
+Fijaos en el asterisco: la confianza de los modelos fundacionales cambia radicalmente según la tarea. Redactar un email a una familia: alto. Calcular una dosis: bajo.` },
+
+            {
+                num: "61", name: "aepap_61.webm", text: `Vamos a ver un caso de uso real que podéis replicar mañana en vuestro centro de salud.
+
+El flujo es este: empezamos con una búsqueda avanzada en PubMed que filtra revisiones sistemáticas y metaanálisis del último mes, centrada en las diez patologías más frecuentes de nuestra consulta pediátrica: TDAH, TEA, bronquiolitis, asma, infecciones respiratorias de vías altas, otitis, gastroenteritis, dermatitis atópica, obesidad y ansiedad.
+
+Cargamos los abstracts en NotebookLM. Y a partir de ahí, la herramienta genera tres productos: un podcast tipo journal club de más de veinte minutos que puedes escuchar en el coche camino al trabajo, una presentación de diapositivas para tu sesión clínica, y un vídeo resumen.
+
+Todo a partir de la misma fuente de evidencia verificable. La IA no inventa nada porque trabaja exclusivamente sobre los artículos que tú le has dado. Eso es RAG en acción.
+
+Veámoslo en directo.` },
+
+            {
+                num: "62", name: "aepap_62.webm", text: `Ahora vamos a ver el método RECORD, que es el framework que os propongo para escribir prompts efectivos.
+
+RECORD es un acrónimo de seis letras.
+
+R de Rol: dile al modelo quién es. "Actúa como pediatra de Atención Primaria."
+
+E de Escenario: sitúa la acción. "En consulta de seguimiento."
+
+C de Contexto: da los datos clínicos relevantes. "Lactante de tres meses con bronquiolitis."
+
+O de Objetivo: di exactamente qué quieres obtener. "Genera una hoja informativa para padres."
+
+R de Restricciones: marca los límites. "Sin términos médicos, sin causar alarma."
+
+Y D de Diseño: define el formato. "Cinco secciones con signos de alarma destacados."
+
+Cuanto más completo sea tu prompt, más útil será la respuesta. Vamos a construir uno en vivo.` },
+
+            {
+                num: "63", name: "aepap_63.webm", text: `Una de las funcionalidades más potentes de estos modelos es la personalización.
+
+Podéis crear mini-asistentes preconfigurados, los llaman GPTs en ChatGPT, Gems en Gemini, sin saber programar. Le das las instrucciones una vez, y a partir de ahí el modelo las aplica automáticamente cada vez que lo usas.
+
+Un ejemplo concreto: un GPT que reciba resultados analíticos anonimizados y genere una versión explicativa para padres, más pistas de interpretación clínica y sugerencias para ampliar estudio.
+
+Otros usos: generador de informes, traductor de jerga médica, asistente de codificación CIE-10, preparador de sesiones clínicas.
+
+La clave: una vez configurado, el asistente recuerda las instrucciones y aplica el mismo formato cada vez. Es como tener un residente digital que no se cansa y no se equivoca, siempre que le hayas dado bien las instrucciones.` },
+
+            {
+                num: "64", name: "aepap_64.webm", text: `Aquí tenéis el constructor de prompts interactivo, una herramienta de código abierto que he desarrollado para este seminario.
+
+Podéis interactuar directamente con ella. Seleccionad un escenario, rellenad los campos del método RECORD, y el constructor genera el prompt completo listo para copiar y pegar en cualquier modelo de IA.
+
+Probadla. Está disponible en mi web y os la lleváis para usar en vuestra consulta.` },
+
+            // ═══════════════════════════════════════════════════════════
+            // BLOQUE 4 · PRÁCTICA GUIADA (25 min)
+            // ═══════════════════════════════════════════════════════════
+            {
+                num: "65", name: "aepap_65.webm", text: `Bloque cuatro: Práctica Guiada.
+
+Ahora os toca a vosotros. Habéis visto la evidencia, habéis visto las herramientas, habéis visto el método. Es hora de ponerlo en práctica.` },
+
+            {
+                num: "66", name: "aepap_66.webm", text: `Aquí tenéis tres plantillas listas para usar, basadas en escenarios reales de pediatría de primaria.
+
+Información para padres: genera una hoja explicativa sobre cualquier patología. Sesión clínica: resume un artículo para presentar en cinco minutos. Email a familia: responde una consulta de forma empática y profesional.
+
+Haced clic en cualquiera de ellas y obtendréis un prompt RECORD completo que podéis copiar, adaptar y usar inmediatamente. Escanead también el QR del kit de supervivencia para acceder a más plantillas.` },
+
+            {
+                num: "67", name: "aepap_67.webm", text: `Bien, ahora la práctica.
+
+Formad parejas o tríos. Elegid uno de estos tres casos.
+
+Caso uno: generar información para padres sobre varicela, con cuidados en casa y signos de alarma. Caso dos: resumir un artículo sobre bronquiolitis para una sesión clínica de cinco minutos. Caso tres: responder por email a una madre que pregunta sobre introducción de alimentación complementaria.
+
+Usad el método RECORD. Tenéis quince minutos. Podéis usar la plantilla impresa o la herramienta online con el QR.
+
+Al terminar, compartiremos algunos ejemplos y veremos qué funciona y qué se puede mejorar.
+
+Adelante.` },
+
+            // ═══════════════════════════════════════════════════════════
+            // BLOQUE 5 · CIERRE (20 min)
+            // ═══════════════════════════════════════════════════════════
+            {
+                num: "68", name: "aepap_68.webm", text: `Bloque cinco: Cierre.
+
+Llegamos al final. Vamos a recapitular lo esencial y asegurarnos de que os lleváis las herramientas y los conceptos bien consolidados.` },
+
+            {
+                num: "69", name: "aepap_69.webm", text: `Si tuviera que resumir todo el seminario en una sola imagen, sería esta: el Modelo Sándwich.
+
+Tres capas.
+
+Pan superior: el humano. Tú defines la estrategia, eliges la herramienta, formulas la pregunta correcta. Sin una buena pregunta, no hay buena respuesta.
+
+Relleno: la IA. Procesa datos masivamente, genera borradores, sintetiza evidencia, busca patrones. Hace el trabajo pesado que antes nos robaba horas.
+
+Pan inferior: el humano de nuevo. Verificas los hechos, validas el contexto clínico, y tomas la decisión final asumiendo la responsabilidad.
+
+El relleno puede cambiar, hoy es GPT-4, mañana será otro modelo, pero el pan siempre es humano. La verificación al final no es opcional. Es innegociable.` },
+
+            {
+                num: "70", name: "aepap_70.webm", text: `Tres cosas que os lleváis para casa. Solo tres, porque si son más, no os acordaréis de ninguna.
+
+Primero: el Modelo Sándwich. Humano define, IA procesa, humano verifica. La responsabilidad siempre es tuya.
+
+Segundo: el Método RECORD. Rol, Escenario, Contexto, Objetivo, Restricciones, Diseño. La calidad del output depende de la calidad del prompt.
+
+Y tercero: el Detector de Alucinaciones. Verifica siempre las referencias y los datos específicos. Usa herramientas con RAG como Open Evidence o Perplexity Pro.
+
+Tres herramientas mentales. Tres escudos. Lleváoslos al centro de salud.` },
+
+            {
+                num: "71", name: "aepap_71.webm", text: `Primera pregunta de evaluación.
+
+De las siguientes opciones, ¿cuál representa la aplicación más segura de IA generativa en la consulta de pediatría de Atención Primaria?
+
+Uno: sustituir la consulta con dermatología. Dos: prescribir autónomamente. Tres: diagnosticar TDAH. Cuatro: interpretar una espirometría sin validación. O cinco: generar un borrador de información para padres sobre gastroenteritis.
+
+La respuesta es la cinco. Bajo riesgo clínico, alto valor comunicativo, y siempre, siempre, con revisión del pediatra antes de entregar.` },
+
+            {
+                num: "72", name: "aepap_72.webm", text: `Segunda pregunta.
+
+Según la paradoja humano más IA que vimos, ¿cuál es el riesgo principal de añadir supervisión humana a las respuestas de IA?
+
+Uno: aumentar el coste. Dos: generar falsa confianza sin reducir errores. Tres: ralentizar el flujo. Cuatro: reducir la autonomía profesional. O cinco: crear dependencia tecnológica.
+
+La respuesta es la dos. Recordad: el meta-análisis de Wang mostró que los errores persisten en un veintiséis a treinta y seis por ciento incluso con supervisión humana, porque la supervisión puede generar una falsa sensación de seguridad.` },
+
+            {
+                num: "73", name: "aepap_73.webm", text: `Y con esto llegamos al final.
+
+"Homines, dum docent, discunt." Los hombres, mientras enseñan, aprenden.
+
+Os aseguro que preparar este seminario me ha enseñado tanto como espero que os haya enseñado a vosotros. La inteligencia artificial es una herramienta extraordinaria, pero solo si la usamos con rigor, con humildad y con el paciente siempre en el centro.
+
+Recordad el sándwich. Recordad RECORD. Y recordad verificar.
+
+Muchas gracias por vuestra atención, vuestra participación y vuestra generosidad compartiendo experiencias. Los materiales y todas las herramientas están en mi web. Y como siempre, mi buzón está abierto para preguntas, sugerencias o para seguir aprendiendo juntos.
+
+Gracias.` },
+        ];
+
+        // ═══════════════════════════════════════════════════════════
+        // Block titles for visual grouping
+        // ═══════════════════════════════════════════════════════════
+        const blocks = [
+            { before: 0, title: "BLOQUE 0 · Portada y Encuadre" },
+            { before: 4, title: "BLOQUE 1 · Ruptura (15 min)" },
+            { before: 9, title: "BLOQUE 2A · Fundamentos Teóricos (10 min)" },
+            { before: 13, title: "Evidencia Científica" },
+            { before: 31, title: "BLOQUE 2B · Marco Legal (10 min)" },
+            { before: 36, title: "BLOQUE 2C · Aplicaciones Prácticas (15 min)" },
+            { before: 57, title: "BLOQUE 3 · Demos en Vivo (40 min)" },
+            { before: 64, title: "BLOQUE 4 · Práctica Guiada (25 min)" },
+            { before: 67, title: "BLOQUE 5 · Cierre (20 min)" },
+        ];
+
+        const STORAGE_KEY = "aepap_audios_done_v2";
+        const LEGACY_STORAGE_KEY = "aepap_audios_done";
+
+        function migrateDoneIfNeeded() {
+            try {
+                const hasV2 = localStorage.getItem(STORAGE_KEY);
+                if (hasV2 !== null) return;
+
+                const legacyRaw = localStorage.getItem(LEGACY_STORAGE_KEY);
+                if (!legacyRaw) return;
+
+                const validNums = new Set(audios.map(a => a.num));
+                const legacyDone = JSON.parse(legacyRaw);
+                if (!Array.isArray(legacyDone)) return;
+
+                const migrated = [];
+                legacyDone.forEach(n => {
+                    const parsed = Number(n);
+                    if (!Number.isFinite(parsed)) return;
+
+                    const shifted = String(parsed + 1);
+                    if (!validNums.has(shifted)) return;
+                    if (!migrated.includes(shifted)) migrated.push(shifted);
+                });
+
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(migrated));
+            } catch {
+                // Ignore malformed legacy storage and continue with defaults.
+            }
+        }
+        function getDone() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+            catch { return []; }
+        }
+        function saveDone(arr) { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); }
+
+        function updateProgress() {
+            const done = getDone();
+            const total = audios.length;
+            const count = done.length;
+            document.getElementById("progress-text").textContent = `${count} / ${total}`;
+            document.getElementById("progress-fill").style.width = `${(count / total) * 100}%`;
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById("toast");
+            t.textContent = msg;
+            t.classList.add("show");
+            setTimeout(() => t.classList.remove("show"), 1500);
+        }
+
+        function copyText(num) {
+            const a = audios.find(x => x.num === num);
+            if (!a) return;
+            navigator.clipboard.writeText(a.text).then(() => showToast("✅ Texto copiado"));
+        }
+
+        function markDone(num) {
+            const done = getDone();
+            if (!done.includes(num)) { done.push(num); saveDone(done); }
+            const el = document.getElementById(`audio-${num}`);
+            if (el) {
+                el.classList.add("done");
+                el.querySelector(".btn-done").style.display = "none";
+                el.querySelector(".btn-undo").style.display = "inline-block";
+            }
+            updateProgress();
+        }
+
+        function undoDone(num) {
+            let done = getDone();
+            done = done.filter(x => x !== num);
+            saveDone(done);
+            const el = document.getElementById(`audio-${num}`);
+            if (el) {
+                el.classList.remove("done");
+                el.querySelector(".btn-done").style.display = "inline-block";
+                el.querySelector(".btn-undo").style.display = "none";
+            }
+            updateProgress();
+        }
+
+        function render() {
+            const list = document.getElementById("audio-list");
+            const done = getDone();
+            const blockMap = {};
+            blocks.forEach(b => { blockMap[b.before] = b.title; });
+
+            let html = "";
+            audios.forEach((a, i) => {
+                if (blockMap[i] !== undefined) {
+                    html += `<div class="block-title">📦 ${blockMap[i]}</div>`;
+                }
+                const isDone = done.includes(a.num);
+                html += `<div class="audio-item ${isDone ? 'done' : ''}" id="audio-${a.num}">
+            <div class="audio-header">
+                <span class="audio-num">#${a.num}</span>
+                <span class="audio-name">📁 ${a.name}</span>
+            </div>
+            <div class="audio-text">${a.text}</div>
+            <div class="audio-actions">
+                <button class="btn btn-copy" onclick="copyText('${a.num}')">📋 Copiar</button>
+                <button class="btn btn-done" onclick="markDone('${a.num}')" style="${isDone ? 'display:none' : ''}">✅ Hecho</button>
+                <button class="btn btn-undo" onclick="undoDone('${a.num}')" style="${isDone ? '' : 'display:none'}">↩️ Deshacer</button>
+            </div>
+        </div>`;
+            });
+            list.innerHTML = html;
+            updateProgress();
+        }
+
+        migrateDoneIfNeeded();
+        render();
+    </script>
+</body>
+
+</html>

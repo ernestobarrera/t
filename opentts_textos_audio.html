@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textos de Audio - Artículos Sanitarios Clave</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .config-box {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .config-box h3 {
+            color: #fbbf24;
+            margin-top: 0;
+        }
+
+        .config-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .config-box li {
+            margin: 8px 0;
+        }
+
+        .config-box a {
+            color: #60a5fa;
+        }
+
+        .audio-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .audio-item:hover {
+            border-color: rgba(251, 191, 36, 0.4);
+        }
+
+        .audio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .audio-number {
+            background: #fbbf24;
+            color: #1a1a2e;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .audio-filename {
+            color: #94a3b8;
+            font-size: 13px;
+            font-family: monospace;
+        }
+
+        .audio-text {
+            line-height: 1.6;
+            font-size: 15px;
+            color: #d1d5db;
+            margin-bottom: 15px;
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        }
+
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            height: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #10b981, #34d399);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .counter {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .done-badge {
+            display: none;
+            background: #10b981;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .audio-item.done .done-badge {
+            display: inline;
+        }
+
+        .audio-item.done {
+            opacity: 0.6;
+        }
+
+        .audio-item.done .audio-header {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎙️ Textos de Audio para OpenTTS</h1>
+    <p class="subtitle">Biblioteca de 35 Artículos Sanitarios Clave</p>
+
+    <div class="config-box">
+        <h3>⚙️ Configuración en OpenTTS.ai</h3>
+        <ul>
+            <li><strong>URL:</strong> <a href="https://www.opentts.ai/" target="_blank">https://www.opentts.ai/</a></li>
+            <li><strong>Rate:</strong> 1.1</li>
+            <li><strong>Pitch:</strong> 1.0</li>
+            <li><strong>Voice:</strong> Google ESPAÑOL</li>
+        </ul>
+        <p style="margin-top: 15px; font-size: 14px; color: #94a3b8;">
+            📁 Guarda cada audio con el nombre indicado en <code>assets/articulos_sanitarios_clave/</code>
+        </p>
+    </div>
+
+    <div class="counter">
+        Progreso: <span id="done-count">0</span> / <span id="total-count">0</span> audios
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill">0%</div>
+    </div>
+
+    <div id="audio-list"></div>
+
+    <script>
+        const audios = [
+            { num: "00", name: "0.webm", text: `Bienvenido a esta biblioteca comentada de treinta y cinco artículos que cambiaron cómo entendemos la salud y el cuidado. No es un listado académico: es un viaje narrado por hitos clínicos, ideas que tardaron décadas en ser escuchadas, herramientas metodológicas imprescindibles y reflexiones éticas que siguen interpelándonos. La presentación incluye audio automático en cada diapositiva, que puedes pausar con la tecla A, y enlaces directos a las fuentes originales. Pulsa Espacio para continuar.` },
+            { num: "01", name: "1.webm", text: `Un consejo antes de empezar: no intentes leer todo lo que aparece en pantalla, eso ya lo harás a tu ritmo, quizá después. Deja que el audio te guíe entre ideas mientras observas la estructura. Cada diapositiva de artículo tiene tres capas: una idea clave destacada, el contexto y relevancia del hallazgo, y acceso directo a la publicación original. Si quieres navegar libremente, pulsa M para abrir el índice lateral con todos los títulos.` },
+            { num: "02", name: "2.webm", text: `El recorrido se organiza en cinco bloques. Primero, los hitos clínicos: estudios que transformaron decisiones terapéuticas de forma inmediata. Después, las perlas durmientes: ideas inicialmente marginales que acabaron rediseñando la práctica. Tercero, la metodología: las herramientas que usamos para juzgar qué es cierto. Cuarto, bioética y filosofía: preguntas sobre persona, sufrimiento, justicia y responsabilidad social de la medicina. Y quinto, incorporaciones clave: cinco artículos añadidos en esta iteración por su impacto clínico y de salud pública. Puedes seguir el orden o saltar directamente al bloque que más te interese.` },
+            { num: "03", name: "3.webm", text: `Empezamos en el Londres de mil ochocientos cincuenta y cuatro, donde John Snow investiga un brote de cólera trazando un mapa de muertes puerta a puerta. Descubre que todos los afectados beben de la misma bomba de agua. Lo fascinante es que actúa sin conocer el mecanismo: retira la manivela décadas antes de que Koch identifique el bacilo. Este es el nacimiento de la epidemiología y una lección que perdura: la evidencia observacional puede justificar la acción incluso sin comprender la causa.` },
+            { num: "04", name: "4.webm", text: `De un descuido de laboratorio en mil novecientos veintinueve a salvar aproximadamente doscientos millones de vidas. Alexander Fleming observa que un moho de Penicillium lisa los estafilococos de alrededor y caracteriza su actividad antibacteriana. No logra purificar la penicilina, eso llegará una década después con Florey y Chain, pero sienta las bases de la era antibiótica. Antes de este hallazgo serendípico, neumonía, sepsis e infecciones de herida eran frecuentemente sentencias de muerte.` },
+            { num: "05", name: "5.webm", text: `Antes de mil novecientos cuarenta y ocho, la medicina evaluaba tratamientos mediante impresión clínica, autoridad y tradición. Este ensayo del Medical Research Council, diseñado por Austin Bradford Hill, introduce la aleatorización mediante sobres sellados, asignación oculta y evaluación ciega de radiografías. Es el primer ensayo clínico aleatorizado moderno. Demuestra que la estreptomicina reduce la mortalidad por tuberculosis, pero su verdadera importancia es metodológica: inventa el método con el que opera cada ensayo posterior.` },
+            { num: "06", name: "6.webm", text: `Cuando el ochenta por ciento de los hombres británicos fumaba, Richard Doll y Austin Bradford Hill publican un estudio de casos y controles que muestra una asociación dramática entre tabaco y cáncer de pulmón. El propio Doll era fumador y dejó de fumar al descubrir los datos. El seguimiento prospectivo de médicos británicos durante cincuenta años proporcionó evidencia definitiva. La resistencia de décadas a aceptar estos hallazgos nos recuerda cómo los intereses económicos y las normas culturales pueden cegar incluso a los científicos.` },
+            { num: "07", name: "7.webm", text: `Este estudio inventó un concepto que hoy damos por obvio: el factor de riesgo. Basado en más de cinco mil adultos reclutados desde mil novecientos cuarenta y ocho, cuantificó el riesgo coronario asociado a hipertensión, colesterol elevado e hipertrofia ventricular izquierda. Antes de Framingham, la aterosclerosis se consideraba consecuencia inevitable del envejecimiento. Este paper estableció que la enfermedad coronaria era predecible, modificable y prevenible, catalizando todo el paradigma de la cardiología preventiva.` },
+            { num: "08", name: "8.webm", text: `Una aspirina de céntimos salvando tantas vidas como un trombolítico caro. ISIS-2 estudió más de diecisiete mil pacientes con infarto agudo de miocardio en cuatrocientos diecisiete hospitales de dieciséis países. Demostró que la aspirina reducía la mortalidad vascular un veintitrés por ciento, y la combinación con estreptoquinasa un cuarenta y dos por ciento. Estableció el poder de los megaensayos grandes y simples para detectar efectos moderados pero clínicamente vitales. Antes de estos ensayos, la mortalidad intrahospitalaria por infarto rondaba el treinta por ciento.` },
+            { num: "09", name: "9.webm", text: `La guerra del colesterol terminó aquí. El ensayo 4S demostró por primera vez que reducir el colesterol LDL con una estatina disminuye la mortalidad por todas las causas, no solo los eventos cardíacos, en pacientes con enfermedad coronaria. La simvastatina redujo la mortalidad total un treinta por ciento. El ensayo se detuvo prematuramente por beneficio abrumador. Intervenciones previas habían fracasado en demostrar beneficio global, alimentando a los escépticos. Este estudio destruyó esas dudas y lanzó la revolución de las estatinas.` },
+            { num: "10", name: "10.webm", text: `El médico como fármaco. Michael Balint, psicoanalista húngaro trabajando con médicos generales en Londres, formuló una idea engañosamente simple: el médico mismo es el fármaco más frecuentemente utilizado en medicina general, y como todo fármaco necesita dosificación, indicaciones y conocimiento de sus efectos secundarios. Inicialmente recibido con suspicacia, su enfoque demostró ser extraordinariamente duradero. Los grupos Balint se utilizan hoy en la formación de medicina de familia en más de treinta países.` },
+            { num: "11", name: "11.webm", text: `La ley que todos citan pero nadie obedece. Julian Tudor Hart, médico general galés en un pueblo minero deprimido, enunció una de las leyes sociológicas más importantes de la medicina: la disponibilidad de buena atención médica tiende a variar inversamente con la necesidad de la población atendida. Y esta ley opera más completamente donde la atención está más expuesta a las fuerzas del mercado. Durante décadas fue más citada que obedecida. El propio Tudor Hart demostró la alternativa: tras veinticinco años en su consulta, la mortalidad prematura era un veintiocho por ciento menor que en pueblos vecinos.` },
+            { num: "12", name: "12.webm", text: `En mil novecientos treinta y cinco, Archie Cochrane desfiló por Londres con un cartel que decía que todos los tratamientos eficaces debían ser gratuitos. Nadie le prestó atención. Su monografía de mil novecientos setenta y dos reclamaba un registro internacional de ensayos y criterios de calidad para evaluar investigación. Ninguno de los dos objetivos se logró en vida. Fue vilipendiado por colegas. La Colaboración Cochrane se fundó cinco años después de su muerte y cuenta hoy con más de cuatrocientos mil ensayos registrados. A veces las ideas correctas simplemente llegan antes que su tiempo.` },
+            { num: "13", name: "13.webm", text: `Enfermedad no es lo mismo que padecimiento. Arthur Kleinman y colegas introdujeron la distinción fundamental entre disease, la entidad biomédica, e illness, la experiencia subjetiva del paciente moldeada por cultura, significado y contexto social. Propusieron preguntar al paciente qué cree que causó su problema, cómo funciona, qué teme y qué espera del tratamiento. Publicado en una revista de medicina interna, fue ampliamente ignorado durante décadas. Hoy es fundacional para todo currículo de competencia cultural y medicina narrativa.` },
+            { num: "14", name: "14.webm", text: `No era la pobreza: era la jerarquía. El Estudio Whitehall examinó dieciocho mil funcionarios británicos y descubrió algo que destrozó suposiciones: existía un gradiente inverso entre categoría laboral y mortalidad en cada escalón de la jerarquía. Los mandos medios morían más que los directivos. El personal administrativo más que los mandos medios. Y no se trataba de pobreza: todos tenían empleo, vivienda y acceso al sistema nacional de salud. Este hallazgo sentó las bases empíricas de todo lo que hoy sabemos sobre determinantes sociales de la salud.` },
+            { num: "15", name: "15.webm", text: `La medicina sabe de órganos. ¿Pero sabe de personas? Ian McWhinney argumentó que el método clínico tradicional, nacido en la Francia del siglo diecinueve, estaba mostrando signos de no satisfacer necesidades contemporáneas. Identificó un punto ciego crítico: no existían medios para comprender la experiencia interna de los pacientes. Propuso una transformación que requería un cambio en la epistemología de la medicina, recurriendo a la fenomenología. Su paper proporcionó el fundamento filosófico para el método clínico centrado en el paciente.` },
+            { num: "16", name: "16.webm", text: `Más médicos de primaria, menos muertes. Barbara Starfield y colegas sintetizaron toda la evidencia que muestra que la atención primaria previene enfermedad y muerte. El hallazgo clave: un aumento de un médico de primaria por cada diez mil habitantes se asocia con una reducción media del cinco coma tres por ciento en mortalidad. Sugiriendo que hasta ciento veintisiete mil muertes anuales en Estados Unidos podrían evitarse con aumentos modestos. Sin embargo, el impacto en política sanitaria estadounidense fue despreciable. La evidencia era clara. El sistema se negó a cambiar.` },
+            { num: "17", name: "17.webm", text: `Nueve criterios para hablar de causalidad. Austin Bradford Hill, un año después de confirmar el vínculo tabaco-cáncer, expuso nueve puntos de vista para evaluar si una asociación observada es causal: fuerza, consistencia, especificidad, temporalidad, gradiente biológico, plausibilidad, coherencia, experimento y analogía. Aunque se conocen universalmente como criterios de Bradford Hill, el propio Hill insistió en que no eran criterios rígidos ni una lista de verificación. Ninguno, por sí solo, prueba nada. Y ninguno es indispensable. Un matiz consistentemente perdido.` },
+            { num: "18", name: "18.webm", text: `La paradoja de la prevención: lo que más salva vidas es lo que menos convence a cada individuo. Geoffrey Rose trazó la distinción más trascendental en medicina preventiva: entre los determinantes de casos individuales y los de las tasas de incidencia poblacionales. Un pequeño desplazamiento de toda la distribución de un factor de riesgo produce mayor beneficio global que tratar solo la cola de alto riesgo. Esto explica por qué intervenciones como reducción de sal o cinturones de seguridad son tan eficaces y a la vez tan difíciles de defender políticamente.` },
+            { num: "19", name: "19.webm", text: `La medicina basada en la evidencia no es un recetario: es un juicio que integra tres fuentes. David Sackett y colegas proporcionaron la definición canónica: el uso consciente, explícito y juicioso de la mejor evidencia actual en la toma de decisiones sobre pacientes individuales, integrando experiencia clínica, evidencia de investigación y valores del paciente. Sackett insistió explícitamente: la evidencia sin juicio clínico es tan peligrosa como el juicio sin evidencia. El modo por defecto de la medicina, autoridad, anécdota, razonamiento fisiopatológico, era insuficiente y a veces dañino.` },
+            { num: "20", name: "20.webm", text: `La mayoría de los hallazgos publicados probablemente son falsos. John Ioannidis, mediante un marco matemático basado en probabilidad pre-estudio, potencia estadística, sesgo y número de relaciones testadas, argumentó que el escepticismo sistemático era necesario. Los hallazgos tienen menos probabilidad de ser verdaderos cuando los estudios son pequeños, los efectos menores, las comparaciones más numerosas o los conflictos de interés más presentes. Este paper catalizó la toma de conciencia sobre la crisis de replicación e inspiró movimientos de pre-registro y ciencia abierta.` },
+            { num: "21", name: "21.webm", text: `Un checklist para asegurar que los ensayos se cuentan bien. CONSORT estableció que la comunicación inadecuada no era simplemente una molestia sino que estaba empíricamente asociada con estimaciones sesgadas de los efectos del tratamiento. Proporcionando una lista de veinticinco ítems y un diagrama de flujo de participantes, transformó cómo se redactan y evalúan los ensayos aleatorizados. Más de cuatrocientas revistas la han adoptado. La idea profunda: la transparencia en la comunicación no es ejercicio burocrático sino precondición de confianza científica.` },
+            { num: "22", name: "22.webm", text: `Un lenguaje común para hablar de certeza. Antes de GRADE, las guías clínicas utilizaban docenas de sistemas inconsistentes para calificar evidencia: jerarquías de números romanos, letras, esquemas arbitrarios. GRADE proporcionó un marco unificado que clasifica la evidencia como alta, moderada, baja o muy baja, y separa calidad de evidencia de fuerza de recomendación. Adoptado por más de cien organizaciones incluyendo la OMS y Cochrane, se convirtió en el sistema dominante a nivel global. Pablo Alonso-Coello de Barcelona fue uno de sus desarrolladores clave.` },
+            { num: "23", name: "23.webm", text: `La medicina es política a gran escala. Rudolf Virchow investigó una epidemia de tifus en la Alta Silesia en mil ochocientos cuarenta y ocho y concluyó que las causas eran sociales y políticas, no puramente médicas. Recomendó democracia, educación y derechos lingüísticos en lugar de intervenciones médicas. Su aforismo, la medicina es una ciencia social y la política no es otra cosa que medicina a gran escala, fundó la disciplina de la medicina social. También estableció la célula como unidad fundamental de la enfermedad, revolucionando simultáneamente patología y medicina social.` },
+            { num: "24", name: "24.webm", text: `El secreto del cuidado del paciente está en cuidar al paciente. Y no es una frase bonita: es epistemología clínica. Francis Peabody, escribiendo mientras moría de cáncer a los cuarenta y cinco años, afrontó una paradoja que se ha profundizado: la creciente especialización puede disminuir la competencia clínica al fragmentar la historia del paciente. Su intuición sobre pacientes con trastornos funcionales sigue vigente: son el desafío central porque revelan que la enfermedad no puede entenderse separada de la persona. Cuidar no es lo opuesto al rigor científico sino su precondición.` },
+            { num: "25", name: "25.webm", text: `Estructura, proceso, resultado. Donabedian estableció el marco clásico para pensar la calidad: qué tenemos, qué hacemos y qué conseguimos. Y años después, ya al final de su vida, lo resumió con una frase incómoda para los tecnócratas: el secreto de la calidad es el amor. Como diciendo: los indicadores importan, pero descansan sobre una ética de cuidado. Es la misma idea que Peabody, siete décadas antes, expresaba desde la cabecera del paciente.` },
+            { num: "26", name: "26.webm", text: `La medicina no podía controlarse a sí misma. Henry Beecher documentó veintidós ejemplos de estudios publicados en las revistas más prestigiosas donde los pacientes fueron sometidos a riesgo sin consentimiento. Lo más perturbador: las violaciones éticas no estaban ocultas sino publicadas abiertamente. Revisión por pares, supervisión editorial, autorregulación profesional: todo había fallado. Seis de siete revisores del New England recomendaron no publicar este artículo, ilustrando precisamente el problema que exponía. Catalizó los comités de ética y el Informe Belmont.` },
+            { num: "27", name: "27.webm", text: `El establishment médico se ha convertido en una amenaza importante para la salud. Ivan Illich operó a tres niveles de crítica. La yatrogenia clínica documenta el daño directo. La yatrogenia social describe cómo la medicina coloniza nacimiento, envejecimiento, dolor y muerte. La yatrogenia cultural, su concepto más radical, argumenta que al prometer eliminar el sufrimiento, la medicina destruye las capacidades culturales para afrontar la mortalidad. Sus advertencias están vindicadas por los datos sobre errores médicos, sobrediagnóstico y la epidemia de opioides.` },
+            { num: "28", name: "28.webm", text: `¿Quién derrotó realmente a las grandes epidemias? Thomas McKeown mostró que la mortalidad por tuberculosis, sarampión y otras enfermedades había caído un ochenta o noventa por ciento antes de que existieran vacunas o antibióticos eficaces. La nutrición y las condiciones de vida, no las intervenciones médicas, explicaban la mayor parte del descenso. Aunque sus afirmaciones específicas han sido debatidas, su pregunta fundamental perdura: ¿qué produce realmente salud? Sentó las bases de todo el campo de los determinantes sociales.` },
+            { num: "29", name: "29.webm", text: `El modelo biomédico es, parádojicamente, anticientífico. George Engel argumentó que la enfermedad opera simultáneamente a través de niveles anidados, molecular, celular, orgánico, personal, familiar, comunitario, y que el reduccionismo a cualquier nivel individual produce no solo comprensión incompleta sino distorsionada. Con el modelo biopsicosocial, la narrativa del paciente, el contexto social y la vida emocional se convierten en datos de igual rango que los valores de laboratorio. Las especialidades agudas siguen operando en gran medida bajo el paradigma biomédico.` },
+            { num: "30", name: "30.webm", text: `La salud es un derecho humano fundamental. Ciento treinta y cuatro naciones reunidas en Alma-Ata proclamaron la atención primaria como clave para alcanzar Salud para Todos. Esta fue la primera declaración internacional que vinculó formalmente salud con desarrollo social, equidad, derechos humanos y participación comunitaria. El objetivo ambicioso de Salud para Todos en el año dos mil no se logró, pero reconfiguró fundamentalmente la política sanitaria global. Para cualquier médico de atención primaria, este es el acta fundacional política y filosófica de la disciplina.` },
+            { num: "31", name: "31.webm", text: `Dolor y sufrimiento no son lo mismo. Eric Cassell logró la clarificación conceptual más importante en filosofía de la medicina del siglo veinte. El dolor es una señal del cuerpo; el sufrimiento es un estado de la persona, surge cuando la integridad de la personalidad está amenazada o desintegrada. Un paciente con dolor intenso puede no sufrir si el dolor se comprende y es finito. Otro con dolor leve puede sufrir profundamente si amenaza su identidad. La implicación radical: si la medicina solo trata enfermedad y maneja dolor, fracasará sistemáticamente en abordar el sufrimiento.` },
+            { num: "32", name: "32.webm", text: `El patógeno es la injusticia misma. Paul Farmer introdujo la violencia estructural en la clínica: racismo, pobreza, desigualdad de género y violencia política producen sistemáticamente exposición diferencial a la enfermedad y acceso diferencial a la atención. No tener en cuenta las fuerzas estructurales produce una imagen distorsionada de la causalidad. Usando el VIH en Estados Unidos y Ruanda como casos de estudio, demostró que el mismo patógeno produce resultados radicalmente distintos dependiendo de las estructuras sociales. Es el punto terminal del arco que comenzó con Virchow: la medicina como inevitablemente política.` },
+            { num: "33", name: "33.webm", text: `En 1953, Virginia Apgar transformó la evaluación neonatal con una escala clínica simple, rápida y reproducible aplicada al minuto de nacer. Su propuesta permitió detectar depresión neonatal, estandarizar la comunicación entre equipos y evaluar de forma objetiva la respuesta a la reanimación. Publicada en una revista de anestesia poco visible, la escala se convirtió en práctica universal y hoy sigue utilizándose en prácticamente todos los partos del mundo. Es un ejemplo clásico de innovación clínica con impacto global surgida fuera de los circuitos de prestigio habituales.` },
+            { num: "34", name: "34.webm", text: `En 1983, el equipo de Françoise Barré-Sinoussi aisló un retrovirus en pacientes con riesgo de sida y proporcionó la evidencia decisiva del agente causal de la epidemia. Este hallazgo permitió pasar de hipótesis difusas a una línea de investigación biomédica concreta: diagnóstico específico, vigilancia epidemiológica y, después, desarrollo de antirretrovirales. El trabajo no solo resolvió una pregunta etiológica crítica; también cambió la respuesta sanitaria global frente al VIH y abrió el camino para transformar una infección inicialmente mortal en enfermedad crónica tratable.` },
+            { num: "35", name: "35.webm", text: `En 2005, Katalin Karikó y colaboradores demostraron que modificar nucleósidos del ARN mensajero reduce su reconocimiento por receptores innatos y atenúa la respuesta inflamatoria no deseada. Este resultado resolvió un obstáculo central que impedía el uso terapéutico del ARNm y habilitó su desarrollo clínico. Años después, ese mecanismo fue decisivo para las vacunas de ARNm frente a COVID-19. Es un caso paradigmático de investigación básica persistente que, tras años de escasa visibilidad, terminó transformando la medicina a escala mundial.` },
+            { num: "36", name: "36.webm", text: `En 2012, Jennifer Doudna, Emmanuelle Charpentier y colegas mostraron que CRISPR-Cas9 podía reprogramarse como nucleasa guiada por ARN para cortar ADN en secuencias elegidas. El hallazgo transformó un sistema inmune bacteriano en herramienta de edición genética versátil, precisa y escalable. Desde entonces, CRISPR redefinió investigación biomédica, modelado de enfermedad y desarrollo terapéutico. Su relevancia histórica es comparable a la introducción de la PCR: no es solo un resultado, es una plataforma que multiplicó la velocidad y el alcance de toda una disciplina.` },
+            { num: "37", name: "37.webm", text: `En 1990, Hall y colaboradores vincularon cáncer de mama familiar de inicio precoz con la región 17q21, abriendo la vía al mapeo de BRCA1 liderado por Mary-Claire King. Este trabajo cambió la oncología clínica al hacer posible una estratificación de riesgo hereditaria basada en genética molecular. Sus consecuencias alcanzan prevención, consejo genético y decisiones terapéuticas personalizadas. Es un artículo de referencia para entender cómo la genética traslacional pasó de la asociación familiar a la medicina de precisión.` },
+            { num: "38", name: "38.webm", text: `Llegamos al final del recorrido. Estos treinta y cinco artículos convergen en cuatro niveles inseparables de la práctica médica. Primero, el biológico: los avances técnicos importan, pero no agotan el fenómeno de enfermar. Segundo, el relacional: la calidad clínica depende también del vínculo, la escucha y la continuidad. Tercero, el social: la distribución de enfermedad y cuidado está modelada por estructuras e inequidad. Y cuarto, el ético: todo acto médico es una decisión moral, no solo una operación técnica. Leídos juntos, estos artículos no solo explican la medicina moderna: también delimitan sus límites y sus responsabilidades. Gracias por acompañarme.` }
+        ];
+
+        const doneSet = new Set(JSON.parse(localStorage.getItem('opentts_done') || '[]'));
+
+        function updateProgress() {
+            const count = doneSet.size;
+            document.getElementById('done-count').textContent = count;
+            document.getElementById('total-count').textContent = audios.length;
+            const pct = Math.round((count / audios.length) * 100);
+            const fill = document.getElementById('progress-fill');
+            fill.style.width = pct + '%';
+            fill.textContent = pct + '%';
+        }
+
+        function copyText(index, btn) {
+            const text = audios[index].text;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = '✓ Copiado';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '📋 Copiar texto';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        function markDone(index) {
+            const item = document.getElementById('item-' + index);
+            if (doneSet.has(index)) {
+                doneSet.delete(index);
+                item.classList.remove('done');
+            } else {
+                doneSet.add(index);
+                item.classList.add('done');
+            }
+            localStorage.setItem('opentts_done', JSON.stringify([...doneSet]));
+            updateProgress();
+        }
+
+        function renderList() {
+            const container = document.getElementById('audio-list');
+            container.innerHTML = audios.map((a, i) => `
+        <div class="audio-item ${doneSet.has(i) ? 'done' : ''}" id="item-${i}">
+          <div class="audio-header">
+            <span>
+              <span class="audio-number">${a.num}</span>
+              <span class="done-badge">✓ Hecho</span>
+            </span>
+            <span class="audio-filename">${a.name}</span>
+          </div>
+          <div class="audio-text">${a.text}</div>
+          <button class="copy-btn" onclick="copyText(${i}, this)">📋 Copiar texto</button>
+          <button class="copy-btn" style="margin-left: 10px; background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);" onclick="markDone(${i})">
+            ${doneSet.has(i) ? '↩️ Desmarcar' : '✓ Marcar hecho'}
+          </button>
+        </div>
+      `).join('');
+        }
+
+        renderList();
+        updateProgress();
+    </script>
+</body>
+
+</html>

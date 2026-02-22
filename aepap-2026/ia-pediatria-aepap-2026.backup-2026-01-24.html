@@ -1,0 +1,2498 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Seminario: La IA como Asistente del Pediatra de AP - 22º Congreso AEPap 2026">
+    <meta name="author" content="Ernesto Barrera Linares">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="La IA como Asistente del Pediatra de Atención Primaria | AEPap 2026">
+    <meta property="og:site_name" content="22º Congreso de Actualización en Pediatría">
+    <meta property="article:published_time" content="2026-02-01">
+    <meta property="article:author" content="Ernesto Barrera Linares">
+
+    <title>🤖 IA como Asistente del Pediatra de AP | AEPap 2026</title>
+
+    <link rel="icon" href="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png">
+
+    <!-- Reveal.js Core -->
+    <link rel="stylesheet" href="reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/plugin/highlight/zenburn.css">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="../reveal.js-plugins/menu/menu.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
+    <link rel="stylesheet" href="../reveal.js-plugins/appearance/appearance.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Space+Grotesk:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #60a5fa;
+            --secondary: #34d399;
+            --accent: #fbbf24;
+            --pediatric-blue: #4a90d9;
+            --pediatric-green: #6ecf9a;
+            --bg-dark: #0f172a;
+            --surface: rgba(30, 41, 59, 0.85);
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --text-main: #f1f5f9;
+            --text-muted: #b0c4d8;
+            --subtitle-color: #8ba3c4;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Fondo del congreso AEPap con overlay oscuro */
+        .reveal {
+            background:
+                linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.85) 100%),
+                url('assets/aepap-2026-bg.jpg') no-repeat center bottom;
+            background-size: cover, cover;
+        }
+
+        .reveal {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            color: var(--text-main);
+            text-transform: none;
+            font-weight: 500;
+        }
+
+        .reveal h1 {
+            font-size: 2.2em;
+        }
+
+        .reveal h2 {
+            font-size: 1.8em;
+        }
+
+        .reveal h3 {
+            font-size: 1.4em;
+        }
+
+        .reveal h4 {
+            font-size: 1.1em;
+        }
+
+        /* Glass Panel - Estilo glassmorphism */
+        .glass-panel {
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--pediatric-blue), var(--pediatric-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-warn {
+            background: linear-gradient(135deg, #f97316, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Grid layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        /* Métricas */
+        .metric-box {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 0.7em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* RECORD letters */
+        .record-letter {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            border-radius: 6px;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-right: 8px;
+        }
+
+        /* Demo overlay */
+        .demo-overlay {
+            position: absolute;
+            bottom: 60px;
+            right: 40px;
+        }
+
+        .demo-overlay .glass-panel {
+            padding: 10px 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.9;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.6em;
+            font-weight: 600;
+        }
+
+        .badge-blue {
+            background: rgba(96, 165, 250, 0.2);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .badge-green {
+            background: rgba(52, 211, 153, 0.2);
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+        }
+
+        .badge-warn {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid #ef4444;
+        }
+
+        /* Links y listas */
+        .reveal a {
+            color: var(--primary);
+        }
+
+        .reveal ul {
+            margin-left: 0;
+        }
+
+        .reveal li {
+            margin-bottom: 0.5em;
+            font-size: 0.9em;
+        }
+
+        /* Notas de fuente */
+        .source-note {
+            font-size: 0.5em;
+            color: var(--text-muted);
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        /* Section intros */
+        .section-intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 500px;
+            text-align: center;
+        }
+
+        .section-intro i {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        /* Demo overlay */
+        .demo-overlay {
+            position: absolute;
+            bottom: 60px;
+            right: 15px;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .present .demo-overlay {
+            opacity: 1;
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+
+        .demo-overlay .glass-panel {
+            padding: 8px 16px;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+                transform: scale(1);
+            }
+
+            50% {
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+                transform: scale(1.01);
+            }
+        }
+
+        /* Progress bar */
+        .reveal .progress {
+            height: 4px;
+            background: rgba(96, 165, 250, 0.2);
+        }
+
+        .reveal .progress span {
+            background: linear-gradient(90deg, var(--pediatric-blue), var(--pediatric-green));
+        }
+
+        /* Slide number */
+        .reveal .slide-number {
+            font-size: 0.7em;
+            padding: 8px 12px;
+            background: var(--surface);
+            backdrop-filter: blur(10px);
+            border-radius: 0 0 0 8px;
+            right: 0;
+            top: 0;
+            bottom: auto;
+        }
+
+        /* Box estilo del modelo bibliosalud */
+        .reveal .box {
+            width: auto;
+            margin: 1ex auto;
+            line-height: 1.5;
+            padding: 0;
+            text-align: left;
+            border-radius: 0.5em;
+            box-shadow: 8px 8px 7px 5px rgba(9, 9, 9, 0.512);
+        }
+
+        .reveal .box .title,
+        .reveal .box .content {
+            padding: 0.8ex 3%;
+            border: rgba(255, 255, 255, 0.1) 1px solid;
+        }
+
+        .reveal .box .title {
+            color: var(--accent);
+            text-shadow: 2px 2px 2px #555;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-bottom: none;
+            border-radius: 0.5em 0.5em 0 0;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .reveal .box .content {
+            color: var(--text-main);
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 0 0 0.5em 0.5em;
+            font-size: 1em;
+        }
+
+        /* Estilo RECORD */
+        .record-letter {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        /* Conflicto de intereses */
+        .conflict-box {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid var(--secondary);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Takeaway box */
+        .takeaway-box {
+            background: linear-gradient(135deg, rgba(74, 144, 217, 0.2), rgba(110, 207, 154, 0.2));
+            border: 2px solid var(--pediatric-green);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        /* ════════════════════════════════════════════════════════════════ */
+        /* MEJORAS BASADAS EN EVIDENCIA - 2026-01-24                        */
+        /* ════════════════════════════════════════════════════════════════ */
+
+        /* Titulares-enunciado: frases completas y verificables */
+        .assertion-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 0.3em;
+            color: var(--text-main);
+            text-align: left;
+        }
+
+        .assertion-title .highlight {
+            background: linear-gradient(135deg, var(--pediatric-blue), var(--pediatric-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Subtítulos descriptivos - tamaño más equilibrado */
+        .subtitle {
+            font-size: 0.9em;
+            color: var(--subtitle-color);
+            font-weight: 400;
+            margin-bottom: 1em;
+            text-align: left;
+        }
+
+        /* Wrapper centrado para titulares con alineación interna izquierda */
+        .title-wrapper {
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+            text-align: left;
+        }
+
+        /* Layout ancho para bloques 2B/2C */
+        .wide-slide .title-wrapper {
+            max-width: 1100px;
+            margin-bottom: 12px;
+        }
+
+        .wide-slide .subtitle {
+            margin-bottom: 0.6em;
+        }
+
+        .wide-slide .grid-2,
+        .wide-slide .grid-3 {
+            gap: 12px;
+            align-items: center;
+        }
+
+        .wide-slide .glass-panel {
+            padding: 14px 16px;
+        }
+
+        .wide-slide .source-note {
+            margin-top: 12px;
+        }
+
+        /* Métricas con impacto visual */
+        .metric-impact {
+            position: relative;
+            display: inline-block;
+        }
+
+        .metric-impact::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(90deg, #ef4444, #f97316);
+            border-radius: 2px;
+            animation: pulse-bar 2s infinite;
+        }
+
+        @keyframes pulse-bar {
+
+            0%,
+            100% {
+                opacity: 0.7;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Reveal progresivo para listas */
+        .reveal .fragment.fade-in-then-semi-out.visible:not(.current-fragment) {
+            opacity: 0.5;
+        }
+
+        /* Animación para panel de prompts */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+            /* Bibliometría: footer visible sobre iframe */
+        .reveal section.full-height {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        
+        /* Ajuste: zoom out del iframe de bibliometría para que no se corte */
+        .reveal .slide-background[data-background-iframe*="startyear=2019&endyear=2026"] .slide-background-content iframe {
+            transform: scale(0.9);
+            transform-origin: top left;
+            width: 111.12%;
+            height: 111.12%;
+        }        .reveal .footer {
+            position: absolute;
+            bottom: 16px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 30;
+            pointer-events: none;
+        }
+
+        .reveal .footer .color {
+            color: var(--accent);
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Logo en esquina -->
+        <a href="https://ernestobarrera.github.io" target="_blank">
+            <img style="position: fixed; z-index:5; margin:8px; top: 0; left: 0; border: 0; opacity: 0.8;"
+                title="Ir a mi página web" src="https://ernestobarrera.github.io/assets/images/avatar_cabecera.png"
+                width="35" height="40">
+        </a>
+
+        <div class="slides">
+
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+            <!-- BLOQUE 0: PORTADA Y CONFLICTO DE INTERESES -->
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+
+            <!-- SLIDE 1: PORTADA -->
+            <section data-menu-title="Portada"
+                data-audio-text="Bienvenidos al seminario La Inteligencia Artificial como Asistente del Pediatra de Atención Primaria. A lo largo de dos horas exploraremos las evidencias, aplicaciones y riesgos de la IA en nuestra práctica clínica diaria.">
+                <div style="text-align: center; margin-top: 30px;">
+                    <p style="font-size: 0.75em; color: var(--accent); margin-bottom: 15px;">
+                        <i class="fa-solid fa-graduation-cap"></i> 22º Congreso de Actualización en Pediatría · AEPap
+                        2026
+                    </p>
+                    <h1 style="font-size: 1.8em; line-height: 1.3; margin: 20px 0;">
+                        La Inteligencia Artificial como<br>
+                        <span class="text-gradient">Asistente del Pediatra de AP</span>
+                    </h1>
+                    <p style="font-size: 0.9em; color: var(--text-muted); margin-top: 20px;">
+                        Evidencias, Aplicaciones y Riesgos
+                    </p>
+                    <div style="margin-top: 50px;">
+                        <p style="font-size: 0.95em; font-weight: 500;">Ernesto Barrera Linares</p>
+                        <p style="font-size: 0.7em; color: var(--text-muted);">
+                            Médico de Familia · Centro de Salud "San Blas", Parla<br>
+                            <i class="fa-solid fa-envelope" style="margin-right: 5px;"></i>ernestobarreral@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 2: CONFLICTO DE INTERESES -->
+            <section data-menu-title="Conflicto de Intereses"
+                data-audio-text="Declaración de conflictos de interés: El ponente declara no tener conflictos de interés relacionados con el contenido de este seminario.">
+                <h2>Declaración de Conflictos de Interés</h2>
+                <div class="conflict-box" style="max-width: 700px; margin: 40px auto;">
+                    <i class="fa-solid fa-circle-check"
+                        style="font-size: 3em; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <p style="font-size: 1.1em; margin: 0;">
+                        El ponente declara <strong>no tener conflictos de interés</strong><br>
+                        relacionados con el contenido de este seminario.
+                    </p>
+                </div>
+                <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 40px;">
+                    Las herramientas mencionadas son de uso personal y código abierto.<br>
+                    No existe vinculación comercial con ningún proveedor de IA.
+                </p>
+            </section>
+
+            <!-- SLIDE 3: OBJETIVOS -->
+            <section data-menu-title="Objetivos del Seminario"
+                data-audio-text="Los objetivos de este seminario son tres. Primero, identificar escenarios clínicos donde la IA puede ser útil. Segundo, reconocer las limitaciones y riesgos de los modelos actuales. Tercero, aplicar un método básico de interacción para obtener información clínica relevante.">
+                <h2>Objetivos del Seminario</h2>
+                <p style="font-size: 0.75em; color: var(--text-muted); margin-bottom: 25px;">
+                    Al finalizar, serás capaz de:
+                </p>
+                <div style="max-width: 850px; margin: 0 auto;">
+                    <div class="glass-panel"
+                        style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 15px;">
+                        <span
+                            style="background: var(--primary); color: white; padding: 8px 14px; border-radius: 50%; font-weight: 700;">1</span>
+                        <div style="text-align: left;">
+                            <strong>Identificar escenarios clínicos</strong>
+                            <p style="font-size: 0.8em; color: var(--text-muted); margin: 5px 0 0;">
+                                Soporte al diagnóstico diferencial, interpretación de pruebas, tareas administrativas...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="glass-panel"
+                        style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 15px;">
+                        <span
+                            style="background: var(--accent); color: #1e293b; padding: 8px 14px; border-radius: 50%; font-weight: 700;">2</span>
+                        <div style="text-align: left;">
+                            <strong>Reconocer limitaciones y riesgos</strong>
+                            <p style="font-size: 0.8em; color: var(--text-muted); margin: 5px 0 0;">
+                                Valoración crítica antes de aplicar respuestas de IA en la práctica clínica.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span
+                            style="background: var(--secondary); color: #1e293b; padding: 8px 14px; border-radius: 50%; font-weight: 700;">3</span>
+                        <div style="text-align: left;">
+                            <strong>Aplicar un método de interacción (prompt)</strong>
+                            <p style="font-size: 0.8em; color: var(--text-muted); margin: 5px 0 0;">
+                                Método RECORD: distinguir instrucciones eficaces de las que no lo son.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE: Glosario de conceptos emergentes -->
+            <section data-menu-title="Glosario IA"
+                data-audio-text="Antes de empezar, vamos a alinear vocabulario. Estos son los conceptos clave que usaremos durante el seminario.">
+                <h2>📚 Hablando el mismo idioma</h2>
+                <p style="font-size: 0.75em; color: var(--text-muted); margin-bottom: 15px;">
+                    Conceptos clave para entender la IA en 2026
+                </p>
+                <div class="grid-2" style="max-width: 950px; margin: 0 auto; gap: 12px;">
+                    <div class="glass-panel" style="padding: 12px;">
+                        <h4 style="color: var(--primary); margin-bottom: 8px; font-size: 0.95em;">
+                            <i class="fa-solid fa-brain"></i> LLM (Large Language Model)
+                        </h4>
+                        <p style="font-size: 0.75em; color: var(--text-muted); margin: 0;">
+                            Modelo de lenguaje grande. "Predice la siguiente palabra" tras entrenar con millones de
+                            textos.
+                            <span style="color: var(--accent);">Ej: GPT-4, Claude, Gemini</span>
+                        </p>
+                    </div>
+                    <div class="glass-panel" style="padding: 12px;">
+                        <h4 style="color: var(--secondary); margin-bottom: 8px; font-size: 0.95em;">
+                            <i class="fa-solid fa-message"></i> Prompt
+                        </h4>
+                        <p style="font-size: 0.75em; color: var(--text-muted); margin: 0;">
+                            La instrucción que das a la IA. Cuanto más precisa, mejor resultado.
+                            <span style="color: var(--accent);">La calidad del output = calidad del prompt</span>
+                        </p>
+                    </div>
+                    <div class="glass-panel" style="padding: 12px;">
+                        <h4 style="color: var(--accent); margin-bottom: 8px; font-size: 0.95em;">
+                            <i class="fa-solid fa-wand-sparkles"></i> IA Generativa
+                        </h4>
+                        <p style="font-size: 0.75em; color: var(--text-muted); margin: 0;">
+                            IA que <strong>crea contenido nuevo</strong>: texto, imágenes, audio, código.
+                            <span style="color: var(--accent);">No busca, genera.</span>
+                        </p>
+                    </div>
+                    <div class="glass-panel" style="padding: 12px;">
+                        <h4 style="color: #a855f7; margin-bottom: 8px; font-size: 0.95em;">
+                            <i class="fa-solid fa-ghost"></i> Alucinación
+                        </h4>
+                        <p style="font-size: 0.75em; color: var(--text-muted); margin: 0;">
+                            Cuando la IA <strong>inventa información falsa</strong> con total convicción.
+                            <span style="color: #ef4444;">¡El riesgo más crítico!</span>
+                        </p>
+                    </div>
+                    <div class="glass-panel" style="padding: 12px;">
+                        <h4 style="color: #ec4899; margin-bottom: 8px; font-size: 0.95em;">
+                            <i class="fa-solid fa-plug"></i> RAG (Retrieval-Augmented)
+                        </h4>
+                        <p style="font-size: 0.75em; color: var(--text-muted); margin: 0;">
+                            IA conectada a fuentes externas. <strong>Busca antes de responder</strong>.
+                            <span style="color: var(--accent);">Perplexity, Open Evidence</span>
+                        </p>
+                    </div>
+                    <div class="glass-panel" style="padding: 12px;">
+                        <h4 style="color: #f97316; margin-bottom: 8px; font-size: 0.95em;">
+                            <i class="fa-solid fa-robot"></i> IA Agéntica
+                        </h4>
+                        <p style="font-size: 0.75em; color: var(--text-muted); margin: 0;">
+                            IA que <strong>planifica y ejecuta tareas</strong> de forma autónoma.
+                            <span style="color: var(--accent);">El siguiente nivel.</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE: Sistema de Votación (explicación) -->
+            <section data-menu-title="Cómo votaremos"
+                data-audio-text="Durante el seminario haremos varias encuestas. Os explico el sistema: cada uno tenéis un folio con dos colores, uno en cada cara.">
+                <h2>🗳️ Sistema de Votación</h2>
+                <p style="font-size: 0.85em; color: var(--text-muted); margin-bottom: 20px;">
+                    Así participaremos en las encuestas del seminario
+                </p>
+                <div class="grid-2" style="max-width: 900px; margin: 20px auto;">
+                    <div class="glass-panel" style="padding: 20px;">
+                        <h4 style="color: var(--primary); margin-bottom: 12px;">
+                            <i class="fa-solid fa-file"></i> Tu folio de respuestas
+                        </h4>
+                        <div style="display: flex; gap: 15px; justify-content: center; margin: 15px 0;">
+                            <div
+                                style="background: var(--secondary); color: #1e293b; padding: 30px 25px; border-radius: 8px; font-weight: 700;">
+                                CARA A<br><span style="font-size: 0.7em;">Verde/Sí</span>
+                            </div>
+                            <div
+                                style="background: #ef4444; color: white; padding: 30px 25px; border-radius: 8px; font-weight: 700;">
+                                CARA B<br><span style="font-size: 0.7em;">Rojo/No</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.8em; color: var(--text-muted); margin-top: 10px;">
+                            Sistema binario: da la vuelta según tu respuesta
+                        </p>
+                    </div>
+                    <div class="glass-panel" style="padding: 20px;">
+                        <h4 style="color: var(--secondary); margin-bottom: 12px;">
+                            <i class="fa-solid fa-camera"></i> El proceso
+                        </h4>
+                        <ol style="font-size: 0.85em; color: var(--text-muted); text-align: left; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">Se lanza la pregunta</li>
+                            <li style="margin-bottom: 8px;">Cada uno levanta su folio con la cara elegida</li>
+                            <li style="margin-bottom: 8px;">Se toma una foto del auditorio</li>
+                            <li style="margin-bottom: 8px;">Una IA analiza los colores y cuenta</li>
+                            <li>Se muestran los resultados en tiempo real</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="glass-panel"
+                    style="max-width: 800px; margin: 15px auto; background: rgba(251,191,36,0.1); border: 1px solid var(--accent);">
+                    <p style="font-size: 0.85em; text-align: center; margin: 0;">
+                        <i class="fa-solid fa-user-shield" style="color: var(--accent); margin-right: 8px;"></i>
+                        <strong>Privacidad:</strong> Si prefieres no salir en la foto, puedes taparte la cara con el
+                        folio.
+                        Solo contamos los colores, no las caras.
+                    </p>
+                </div>
+            </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+            <!-- BLOQUE 1: RUPTURA (15 min) -->
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+
+            <section>
+                <section data-menu-title="Bloque 1: Ruptura"
+                    data-audio-text="Comenzamos con el bloque de ruptura. Vamos a empezar con una pregunta para todos vosotros.">
+                    <div class="section-intro">
+                        <i class="fa-solid fa-bolt" style="color: var(--accent);"></i>
+                        <h1><span style="color: var(--accent);">Bloque 1:</span> Ruptura</h1>
+                        <p style="color: var(--text-muted);">Impacto emocional + Autodiagnóstico</p>
+                        <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 20px;">
+                            <i class="fa-solid fa-clock"></i> 15 minutos
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Poll inicial -->
+                <section data-menu-title="Encuesta Inicial"
+                    data-audio-text="Levantad la mano o responded en Mentimeter: ¿Cuántos habéis usado alguna herramienta de IA esta semana para algo relacionado con vuestra práctica clínica?">
+                    <h2>🙋 Pregunta para empezar</h2>
+                    <div class="glass-panel" style="max-width: 800px; margin: 30px auto; padding: 40px;">
+                        <p style="font-size: 1.4em; text-align: center; margin: 0;">
+                            ¿Has usado alguna herramienta de IA<br>
+                            <span class="text-gradient" style="font-weight: 700;">esta semana</span><br>
+                            para algo relacionado con tu práctica clínica?
+                        </p>
+                    </div>
+                    <div class="grid-3" style="max-width: 750px; margin: 30px auto;">
+                        <div class="glass-panel" style="text-align: center; padding: 20px;">
+                            <i class="fa-solid fa-check-circle" style="font-size: 2em; color: var(--secondary);"></i>
+                            <p style="margin: 10px 0 0; font-size: 0.9em;">Sí, regularmente</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; padding: 20px;">
+                            <i class="fa-solid fa-question-circle" style="font-size: 2em; color: var(--accent);"></i>
+                            <p style="margin: 10px 0 0; font-size: 0.9em;">Alguna vez</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; padding: 20px;">
+                            <i class="fa-solid fa-times-circle" style="font-size: 2em; color: #ef4444;"></i>
+                            <p style="margin: 10px 0 0; font-size: 0.9em;">Nunca</p>
+                        </div>
+                    </div>
+                </section>
+                <section data-background-image="https://ernestobarrera.github.io/assets/images/pizarra.jpg" data-audio-src="https://ernestobarrera.github.io\assets\Audio\ChatGPT_Biblio\tweet.mp3"><div class="tweet" data-src="https://twitter.com/OpenAI/status/1598014522098208769"></div></section>
+                <section class="full-height" style="position: relative;" data-background-iframe="https://esperr.github.io/pubmed-by-year/?q1=((%20%22ChatGPT%22[TIAB]%20OR%20%22Claude%22[TIAB]%20OR%20%22Gemini%22[TIAB]%20OR%20%22Perplexity%22[TIAB]%20OR%20%22Anthropic%22[TIAB]%20OR%20%22Bard%22[TIAB]%20OR%20%22Deepseek%22[TIAB]%20OR%20%22Google%20NotebookLM%22[TIAB]%20OR%20%22Qwen%22[TIAB]%20OR%20%22InternLM%22[TIAB]%20OR%20%22Baichuan%22[TIAB]%20OR%20(%22Llama%22[TIAB]%20AND%20%22AI%22[TIAB])%20OR%20(%22Llama%202%22[TIAB]%20AND%20%22AI%22[TIAB])%20OR%20(%22Mistral%22[TIAB]%20AND%20%22AI%22[TIAB])%20OR%20(%22Mixtral%22[TIAB]%20AND%20%22AI%22[TIAB])%20OR%20%22Grok%22[TIAB]%20OR%20%22SenseNova%22[TIAB]%20OR%20%22GitHub%20Copilot%22[TIAB]%20OR%20%22Microsoft%20Copilot%22[TIAB]%20OR%20%22Large%20Language%20Model*%22[TIAB]%20OR%20%22Generative%20Artificial%20Intelligence%22[TIAB]%20OR%20%22Transformer%22[TIAB]%20OR%20%22Attention%20Mechanism%22[TIAB]%20OR%20%22Pretrained%20Transformer%22[TIAB]%20OR%20%22pre-trained%20transformer*%22[TIAB]%20OR%20%22Self-Attention%22[TIAB]%20OR%20%22Embeddings%22[TIAB]%20OR%20%22Generative%20Artificial%20Intelligence%22[Mesh]%20OR%20%22Natural%20Language%20Processing%22[Mesh]%20))&q2=(%22COVID-19%22%20OR%20%22COVID19%22%20OR%20%22COVID-19%22[MeSH%20Terms]%20OR%20%22COVID-19%20Vaccines%22%20OR%20%22COVID-19%20Vaccines%22[MeSH%20Terms]%20OR%20%22COVID-19%20serotherapy%22%20OR%20%22COVID-19%20serotherapy%22[%20MeSH%20Terms]%20OR%20%22COVID-19%20Nucleic%20Acid%20Testing%22%20OR%20%22covid-19%20nucleic%20acid%20testing%22[MeSH%20Terms]%20OR%20%22COVID-19%20Serological%20Testing%22%20OR%20%22covid-19%20serological%20testing%22[MeSH%20Terms]%20OR%20%22COVID-19%20Testing%22%20OR%20%22covid-19%20testing%22[MeSH%20Terms]%20OR%20%22SARS-CoV-2%22%20OR%20%22SARSCoV2%22%20OR%20%22SARSCoV-2%22%20OR%20%22SARS-CoV2%22%20OR%20%22sars-cov-2%22[MeSH%20Terms]%20OR%20%22Severe%20Acute%20Respiratory%20Syndrome%20Coronavirus%202%22%20OR%20%222019%20NCOV%22%20OR%20((%22coronavirus%22[MeSH%20Terms]%20OR%20%22coronavirus%22%20OR%20%22COV%22%20OR%20%22NCOV%22)%20AND%202019/11/01[PDAT]%20:%203000/12/31[PDAT]))%20AND%20(%22therapeutics%22[MeSH%20Terms]%20OR%20%22therapeutics%22[All%20Fields]%20OR%20%22treatments%22[All%20Fields]%20OR%20%22therapy%22[MeSH%20Subheading]%20OR%20%22therapy%22[All%20Fields]%20OR%20%22treatment%22[All%20Fields]%20OR%20%22treatment%20s%22[All%20Fields]%20OR%20%22treat*%22[All%20Fields]%20OR%20(%22clinical%20trial%22[Publication%20Type]%20OR%20%22clinical%20trials%20as%20topic%22[MeSH%20Terms]%20OR%20%22clinical%20trials%22[All%20Fields])%20OR%20(%22clinical%20trial%22[Publication%20Type]%20OR%20%22clinical%20trials%20as%20topic%22[MeSH%20Terms]%20OR%20%22clinical%20trial%22[All%20Fields])%20OR%20(%22randomized%20controlled%20trial%22[Publication%20Type]%20OR%20%22randomized%20controlled%20trials%20as%20topic%22[MeSH%20Terms]%20OR%20%22randomized%20controlled%20trial%22[All%20Fields]%20OR%20%22randomised%20controlled%20trial%22[All%20Fields])%20OR%20(%22randomized%20controlled%20trial%22[Publication%20Type]%20OR%20%22randomized%20controlled%20trials%20as%20topic%22[MeSH%20Terms]%20OR%20%22randomized%20controlled%20trials%22[All%20Fields]%20OR%20%22randomised%20controlled%20trials%22[All%20Fields])%20OR%20(%22therapeutics%22[MeSH%20Terms]%20OR%20%22therapeutics%22[All%20Fields]%20OR%20%22therapies%22[All%20Fields]%20OR%20%22therapy%22[MeSH%20Subheading]%20OR%20%22therapy%22[All%20Fields]%20OR%20%22therapy%20s%22[All%20Fields]%20OR%20%22therapys%22[All%20Fields])%20OR%20(%22therapeutical%22[All%20Fields]%20OR%20%22therapeutically%22[All%20Fields]%20OR%20%22therapeuticals%22[All%20Fields]%20OR%20%22therapeutics%22[MeSH%20Terms]%20OR%20%22therapeutics%22[All%20Fields]%20OR%20%22therapeutic%22[All%20Fields]))&q3=OPENAI[TIAB]%20OR%20CHATGPT[TIAB]%20OR%20%22CHAT%20GPT%22[TIAB]%20OR%20GPT-3[TlAB]%20OR%20GPT-4*[TlAB]&startyear=2019&endyear=2026" data-background-opacity="0.9" data-audio-src="https://ernestobarrera.github.io/assets/Audio/ChatGPT_Biblio/bibliometria.mp3" ><div class="biblio-card" style="position: absolute; bottom: 15%; width: 35%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0, 0, 0, 0.406); background-color: rgba(0, 0, 0, 0.642); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+  <h4 style="text-align: center;">📈 Bibliometría:<br>IA en PubMed (lectura clínica)</h4>
+
+  <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">
+    IA/LLM (términos amplios): ↑<b>106,83%</b> (2023), ↑<b>60,38%</b> (2024)
+  </p>
+
+  <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">
+    Impulso inicial (ChatGPT/GPT): ↑<b>8.361,81%</b> (2023) ⇒ <b>×84,62</b>; luego se modera: ↑<b>81,75%</b> (2024)
+  </p>
+
+  <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">
+    Después el crecimiento se reparte (IA/LLM sin ChatGPT/GPT): ↑<b>51,86%</b> (2024), ↑<b>61,87%</b> (2025)
+  </p>
+
+  <p style="font-size: 1rem; color: rgb(253, 215, 1); font-weight: 80;">
+    En proporciones fáciles: en 2023 IA/LLM ≈ <b>1</b> de cada <b>215</b> publicaciones y ChatGPT ≈ <b>1</b> de cada <b>752</b>.<br>
+    En 2025 IA/LLM ≈ <b>1</b> de cada <b>90</b> y ya equivale al <b>95,80%</b> del volumen de COVID terapéutica (2025).
+  </p>
+
+  <p style="font-size: 0.85rem; opacity: 0.85; margin-top: 10px;">
+    Cálculos verificados directamente sobre <b>PubMed by Year.csv</b> (métrica: resultados por 100.000 publicaciones).
+  </p>
+</div>
+<div class="footer" style="position: absolute; bottom: 16px; left: 0; width: 100%; text-align: center; z-index: 30;"><h6 class="color" style="margin: 0 0 4px 0;">BIBLIOMETRIA BÚSQUEDAS FILTRO IA (<span id="fecha-de-ayer"></span>)</h6><p style="margin: 0; font-size: 1rem; color: #000; font-weight: 90; text-shadow: 1px 1px 2px rgba(253, 215, 1, 0.7);">Diseño y construcción de la web de bibliometria: Ed Sperr</p></div>
+                </section>
+
+                <!-- Placeholder para historia de impacto -->
+                <section data-menu-title="Historia de Impacto"
+                    data-audio-text="Voy a contaros dos historias. Una de éxito y otra de fracaso. Ambas son reales.">
+                    <h2>Dos historias reales</h2>
+                    <div class="grid-2" style="max-width: 900px; margin: 30px auto;">
+                        <div class="glass-panel" style="border-top: 4px solid var(--secondary);">
+                            <h4 style="color: var(--secondary);"><i class="fa-solid fa-check"></i> Éxito</h4>
+                            <p style="font-size: 0.85em; color: var(--text-muted);">
+                                Un pediatra genera información para padres sobre gastroenteritis aguda.
+                                Revisa, adapta y entrega. Ahorro: 15 minutos.
+                            </p>
+                            <p style="font-size: 0.75em; margin-top: 15px;">
+                                <span class="badge badge-green">Bajo riesgo</span>
+                                <span class="badge badge-green">Alto impacto</span>
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="border-top: 4px solid #ef4444;">
+                            <h4 style="color: #ef4444;"><i class="fa-solid fa-times"></i> Fracaso</h4>
+                            <p style="font-size: 0.85em; color: var(--text-muted);">
+                                Un LLM sugiere una dosis de medicación. El clínico no verifica.
+                                La referencia citada... no existe.
+                            </p>
+                            <p style="font-size: 0.75em; margin-top: 15px;">
+                                <span class="badge badge-warn">Alucinación</span>
+                                <span class="badge badge-warn">Sin verificación</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9em; color: var(--text-muted); margin-top: 30px;">
+                        <i class="fa-solid fa-arrow-right" style="color: var(--primary);"></i>
+                        <strong>La diferencia:</strong> cómo, cuándo y para qué usamos la herramienta.
+                    </p>
+                </section>
+            </section>
+
+
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+            <!-- BLOQUE 2: FUNDAMENTOS (20 min) -->
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+
+            <section>
+                <section data-menu-title="Bloque 2: Fundamentos"
+                    data-audio-text="Ahora entramos en los fundamentos. Qué es y qué no es la inteligencia artificial.">
+                    <div class="section-intro">
+                        <i class="fa-solid fa-brain" style="color: var(--primary);"></i>
+                        <h1><span style="color: var(--primary);">Bloque 2:</span> Fundamentos</h1>
+                        <p style="color: var(--text-muted);">Qué es y qué NO es la IA</p>
+                        <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 20px;">
+                            <i class="fa-solid fa-clock"></i> 20 minutos
+                        </p>
+                    </div>
+                </section>
+                
+
+                <!-- Placeholder: Qué es un LLM -->
+                <section data-menu-title="¿Qué es un LLM?"
+                    data-audio-text="Un modelo de lenguaje grande, o LLM, es un sistema que predice la siguiente palabra basándose en patrones estadísticos de billones de textos. No razona, no comprende: predice.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">Los LLM <span class="highlight">predicen palabras</span>, no
+                            comprenden significados</h2>
+                        <p class="subtitle">Large Language Model = sistema que genera texto basándose en patrones
+                            estadísticos</p>
+                    </div>
+                    <div class="glass-panel" style="max-width: 850px; margin: 20px auto;">
+                        <p style="font-size: 0.95em; text-align: center; color: var(--text-muted);">
+                            Sistema que <span class="text-gradient-warn">predice la siguiente palabra</span><br>
+                            basándose en patrones estadísticos de billones de textos.
+                        </p>
+                    </div>
+                    <div class="grid-3" style="max-width: 850px; margin: 25px auto;">
+                        <div class="glass-panel" style="text-align: center; padding: 20px;">
+                            <i class="fa-solid fa-check" style="color: var(--secondary); font-size: 1.5em;"></i>
+                            <p style="margin: 10px 0 0; font-size: 0.8em;">Genera texto coherente</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; padding: 20px;">
+                            <i class="fa-solid fa-times" style="color: #ef4444; font-size: 1.5em;"></i>
+                            <p style="margin: 10px 0 0; font-size: 0.8em;">NO comprende</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; padding: 20px;">
+                            <i class="fa-solid fa-times" style="color: #ef4444; font-size: 1.5em;"></i>
+                            <p style="margin: 10px 0 0; font-size: 0.8em;">NO razona</p>
+                        </div>
+                    </div>
+                    <p class="source-note">
+                        Implicación clave: puede generar información falsa con total convicción ("alucinaciones")
+                    </p>
+                </section>
+
+                                                <!-- Placeholder: Evidencia actual -->
+                <section data-menu-title="Evidencia Actual"
+                    data-audio-text="La evidencia reciente confirma un rendimiento mixto: alta confianza en documentación y cribado, pero resultados limitados en diagnóstico autónomo. En pediatría, la fiabilidad depende del contexto y la supervisión.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">La evidencia muestra un <span class="highlight">rendimiento mixto</span> de la IA</h2>
+                        <p class="subtitle">Alta confianza en tareas acotadas • Baja confianza en diagnóstico autónomo</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 920px; margin: 20px auto; gap: 12px;">
+                        <div class="glass-panel" style="border-left: 4px solid var(--secondary);">
+                            <h4 style="color: var(--secondary); margin-bottom: 8px;">
+                                <i class="fa-solid fa-check-double"></i> Evidencia fuerte en tareas acotadas
+                            </h4>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "F1 0.91-0.97 en cribado y extracción" (A4SLR)
+                            </p>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "84% de concordancia" en evaluación de ensayos
+                            </p>
+                            <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
+                                Meta-análisis: SMD -0.71 en carga documental
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="border-left: 4px solid #ef4444;">
+                            <h4 style="color: #ef4444; margin-bottom: 8px;">
+                                <i class="fa-solid fa-exclamation-triangle"></i> Evidencia débil en diagnóstico autónomo
+                            </h4>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "71.7% de precisión estricta" en psiquiatría real
+                            </p>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "87.3% vs 91.3%" en diferencial pediátrico rural
+                            </p>
+                            <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
+                                Rendimiento sensible a edad y contexto clínico
+                            </p>
+                        </div>
+                    </div>
+                    <div class="glass-panel"
+                        style="max-width: 860px; margin: 16px auto; background: rgba(96,165,250,0.08); border: 1px solid rgba(96,165,250,0.5);">
+                        <p style="font-size: 0.82em; text-align: center; margin: 0;">
+                            <i class="fa-solid fa-stethoscope" style="color: var(--primary); margin-right: 8px;"></i>
+                            <strong>Acción:</strong> usar IA para tareas acotadas; en diagnóstico, solo como segunda opinión con supervisión.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1016/j.jval.2025.08.002" target="_blank" rel="noopener">534:#243</a>; <a href="https://doi.org/10.1016/j.jclinepi.2025.111672" target="_blank" rel="noopener">534:#510</a>; <a href="https://doi.org/10.1186/s12911-025-03324-w" target="_blank" rel="noopener">534:#46</a>; <a href="https://doi.org/10.2196/77699" target="_blank" rel="noopener">534:#58</a>; <a href="https://doi.org/10.2196/65263" target="_blank" rel="noopener">534:#455</a></p>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+            <!-- BLOQUE 2B: RIESGOS (dentro de Fundamentos) -->
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+
+            <section>
+                                                <!-- SLIDE: Alucinaciones y Fiabilidad -->
+                <section class="wide-slide" data-menu-title="Alucinaciones"
+                    data-audio-text="La IA puede inventar referencias con alta convicción. En radiología se observaron tasas de fabricación de hasta el 60.6% en el peor modelo, pero la precisión mejora cuando se exige citar literatura actual.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">Las <span class="highlight">alucinaciones</span> son el riesgo más crítico</h2>
+                        <p class="subtitle">Hasta 60.6% de referencias fabricadas en el peor modelo evaluado</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 25px auto; gap: 12px;">
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="color: #ef4444;">60.6%</div>
+                            <div class="metric-label">fabricación de referencias (peor modelo)</div>
+                            <p style="font-size: 0.72em; color: var(--text-muted); margin-top: 8px;">
+                                "2.7% totalmente exactas" en el peor desempeño
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="text-align: left;">
+                            <h4 style="color: #ef4444; margin-bottom: 10px;">
+                                <i class="fa-solid fa-clipboard-check"></i> Mitigación con fuentes
+                            </h4>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "96.8% de respuestas correctas" en guías clínicas
+                            </p>
+                            <p style="font-size: 0.82em; margin: 0;">
+                                "100% de precisión" cuando se exige citar literatura actual
+                            </p>
+                        </div>
+                    </div>
+                    <div class="glass-panel"
+                        style="max-width: 900px; margin: 14px auto; background: rgba(251,191,36,0.1); border: 1px solid var(--accent);">
+                        <p style="font-size: 0.82em; text-align: center; margin: 0;">
+                            <i class="fa-solid fa-magnifying-glass" style="color: var(--accent); margin-right: 8px;"></i>
+                            <strong>Acción:</strong> exigir DOI/PMID y verificación externa antes de usar datos clínicos.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.4274/dir.2025.253101" target="_blank" rel="noopener">534:#399</a>; <a href="https://doi.org/10.1007/s00405-025-09630-3" target="_blank" rel="noopener">534:#234</a></p>
+                </section>
+
+                <!-- SLIDE: Variabilidad por modelo -->
+                <section class="wide-slide" data-menu-title="Variabilidad por modelo"
+                    data-audio-text="La fiabilidad de referencias cambia drásticamente entre modelos. Claude 3.5 llega al 80.8% de referencias exactas con 3.1% de fabricación, mientras que Gemini 1.5 Pro cae a 2.7% con 60.6% de fabricación.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">La fiabilidad de referencias <span class="highlight">depende del modelo</span></h2>
+                        <p class="subtitle">De 80.8% exactas a 2.7% exactas según el LLM</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">80.8%</div>
+                            <div class="metric-label">referencias exactas</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">
+                                "fabrication rate 3.1%"
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid #ef4444;">
+                            <div class="metric-value" style="color: #ef4444;">2.7%</div>
+                            <div class="metric-label">referencias exactas</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">
+                                "fabrication rate 60.6%"
+                            </p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> comparar modelos y verificar bibliografía antes de usar datos clínicos.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.4274/dir.2025.253101" target="_blank" rel="noopener">534:#399</a></p>
+                </section>
+
+                <!-- SLIDE: Autoactualización limitada -->
+                <section class="wide-slide" data-menu-title="Autoactualización"
+                    data-audio-text="Sin literatura explícita, la IA no se actualiza. En guías clínicas, ChatGPT-4.0 acierta 96.8%, pero al exigir referencias actuales sube al 100%.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">Sin literatura explícita, la IA <span class="highlight">no se actualiza</span></h2>
+                        <p class="subtitle">96.8% correcto; 100% al exigir referencias actuales</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid #ef4444;">
+                            <div class="metric-value" style="color: #ef4444;">96.8%</div>
+                            <div class="metric-label">sin exigir bibliografía</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">"15.5/16 scenarios"</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">100%</div>
+                            <div class="metric-label">al citar literatura</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">"all responses reached 100% accuracy"</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> pedir DOI/PMID y guías recientes en tareas clínicas.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1007/s00405-025-09630-3" target="_blank" rel="noopener">534:#234</a></p>
+                </section>
+
+                <!-- SLIDE: RAG y sesgo -->
+                <section class="wide-slide" data-menu-title="RAG y sesgo"
+                    data-audio-text="La evaluación de riesgo de sesgo con RAG muestra baja concordancia. En NotebookLM el ICC con revisores fue 0.27 y el acuerdo porcentual 14.8 a 29.6.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">RAG <span class="highlight">no sustituye</span> la evaluación de sesgo</h2>
+                        <p class="subtitle">ICC 0.27 y acuerdo 14.8-29.6% frente a revisores</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid #ef4444;">
+                            <div class="metric-value" style="color: #ef4444;">ICC 0.27</div>
+                            <div class="metric-label">concordancia LM vs revisor</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">"poor agreement"</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--accent);">
+                            <div class="metric-value" style="color: var(--accent);">14.8-29.6%</div>
+                            <div class="metric-label">percent agreement</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">"ranged from 14.8% to 29.6%"</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> riesgo de sesgo siempre con revisión humana.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1016/j.jposna.2025.100294" target="_blank" rel="noopener">534:#25</a></p>
+                </section>
+
+                <!-- SLIDE: Variación por edad -->
+                <section class="wide-slide" data-menu-title="Variación por edad"
+                    data-audio-text="En psiquiatría, el rendimiento cambia por edad. La precisión estricta global fue 71.7%, con mejores resultados en mayores y peor en adolescentes.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">La precisión <span class="highlight">varía por edad</span> en psiquiatría</h2>
+                        <p class="subtitle">71.7% global; hasta 79.5% en mayores; menor en adolescentes</p>
+                    </div>
+                    <div class="grid-3" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="color: var(--primary);">71.7%</div>
+                            <div class="metric-label">strict accuracy</div>
+                        </div>
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="color: var(--secondary);">0.881</div>
+                            <div class="metric-label">weighted F1</div>
+                        </div>
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="color: var(--accent);">79.5%</div>
+                            <div class="metric-label">mejor en mayores</div>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> revisar especialmente en adolescentes y casos complejos.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.2196/77699" target="_blank" rel="noopener">534:#58</a></p>
+                </section>
+
+                <!-- SLIDE: Diagnóstico pediátrico real -->
+                <section class="wide-slide" data-menu-title="Diagnóstico pediátrico real"
+                    data-audio-text="En diagnóstico pediátrico real, la precisión es alta pero cae en casos raros. GPT-3 alcanza 87.3% frente a 91.3% de pediatras, y baja a 80% en diagnósticos raros.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">En diagnóstico pediátrico real, los <span class="highlight">casos raros bajan</span></h2>
+                        <p class="subtitle">87.3% vs 91.3%; raros 80% vs 85%</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">87.3%</div>
+                            <div class="metric-label">GPT-3 (131/150)</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">Pediatras: 91.3% (137/150)</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid #ef4444;">
+                            <div class="metric-value" style="color: #ef4444;">80%</div>
+                            <div class="metric-label">diagnósticos raros</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">Pediatras: 85% (17/20)</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> usar IA como apoyo, no como sustituto en diagnósticos raros.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.2196/65263" target="_blank" rel="noopener">534:#455</a></p>
+                </section>
+
+                <!-- SLIDE: AIS y consenso -->
+                <section class="wide-slide" data-menu-title="AIS y consenso"
+                    data-audio-text="En escoliosis idiopática del adolescente, el acuerdo de cirujanos es alto, pero el consenso entre LLMs es casi nulo.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">En AIS, el <span class="highlight">consenso LLM</span> es casi nulo</h2>
+                        <p class="subtitle">92% en cirujanos vs 1.6-10.2% en LLMs</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">92.0%</div>
+                            <div class="metric-label">acuerdo cirujanos</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">κ = 0.913</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid #ef4444;">
+                            <div class="metric-value" style="color: #ef4444;">1.6-10.2%</div>
+                            <div class="metric-label">consenso LLM</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">κ = 0.001-0.036</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> no delegar clasificaciones complejas sin revisión experta.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.3390/diagnostics15243219" target="_blank" rel="noopener">534:#40</a></p>
+                </section>
+
+                                                <!-- SLIDE: Sesgos Algorítmicos -->
+                <section class="wide-slide" data-menu-title="Sesgos Algorítmicos"
+                    data-audio-text="Los sesgos nacen de la selección de modelos y de cohortes poco representativas. La consecuencia es una IA menos segura fuera del entorno donde se entrenó.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">Los sesgos nacen de <span class="highlight">datos no representativos</span></h2>
+                        <p class="subtitle">La seguridad clínica se degrada cuando el modelo no refleja a tu población</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 20px auto; gap: 12px;">
+                        <div class="glass-panel" style="border-top: 4px solid #ef4444;">
+                            <h4 style="color: #ef4444;">
+                                <i class="fa-solid fa-filter"></i> Sesgo de herramienta
+                            </h4>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "93.55% evaluaciones en LLM generalistas; 6.45% en modelos médicos"
+                            </p>
+                            <p style="font-size: 0.7em; color: var(--text-muted); margin: 0;">
+                                Accuracy es la métrica más usada (21.78%)
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="border-top: 4px solid #a855f7;">
+                            <h4 style="color: #a855f7;">
+                                <i class="fa-solid fa-globe"></i> Sesgo geográfico / cohorte
+                            </h4>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "545 pacientes: 1 hospital + 5 hospitales en test"
+                            </p>
+                            <p style="font-size: 0.7em; color: var(--text-muted); margin: 0;">
+                                Ejemplos pediátricos en cohortes chinas (ROP, miopía)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 14px auto;">
+                        <p style="font-size: 0.85em; text-align: center; margin: 0;">
+                            <i class="fa-solid fa-arrow-right" style="color: var(--primary); margin-right: 8px;"></i>
+                            <strong>Acción:</strong> validar localmente y monitorizar equidad antes del despliegue.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1186/s12911-025-02954-4" target="_blank" rel="noopener">1021:#2</a>; <a href="https://doi.org/10.1038/s41746-026-02372-4" target="_blank" rel="noopener">534:#2</a>; <a href="https://doi.org/10.1136/bmjophth-2025-002385" target="_blank" rel="noopener">534:#9</a>; <a href="https://doi.org/10.1038/s41746-025-02308-4" target="_blank" rel="noopener">534:#14</a></p>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+            <!-- BLOQUE 2C: PUESTA AL DÍA (15 min) -->
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+
+            <section>
+                <section class="wide-slide" data-menu-title="Bloque 2C: Puesta al día"
+                    data-audio-text="Puesta al día 2025-2026: lo más relevante de la evidencia reciente para pediatría de atención primaria.">
+                    <div class="section-intro">
+                        <i class="fa-solid fa-arrows-rotate" style="color: var(--accent);"></i>
+                        <h1><span style="color: var(--accent);">Bloque 2C:</span> Puesta al día 2025-2026</h1>
+                        <p style="color: var(--text-muted);">Estado del arte y mensajes prácticos</p>
+                        <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 20px;">
+                            <i class="fa-solid fa-clock"></i> 15 minutos
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SLIDE: Mapa 2025-2026 -->
+                <section class="wide-slide" data-menu-title="Mapa 2025-2026"
+                    data-audio-text="La evidencia 2025-2026 se concentra en evaluaciones de LLM generalistas, con baja presencia de modelos médicos específicos.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">La evidencia 2025-2026 se concentra en <span class="highlight">benchmarking técnico</span></h2>
+                        <p class="subtitle">Dominio de modelos generalistas y métricas de precisión</p>
+                    </div>
+                    <div class="glass-panel" style="max-width: 1100px; margin: 20px auto;">
+                        <div style="display: grid; gap: 12px;">
+                            <div>
+                                <div style="font-size: 0.75em; color: var(--text-muted);">LLM generalistas evaluados (93.55%)</div>
+                                <div style="height: 8px; background: rgba(96,165,250,0.15); border-radius: 6px; overflow: hidden;">
+                                    <div style="width: 93.55%; height: 100%; background: var(--primary);"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.75em; color: var(--text-muted);">Modelos médicos específicos (6.45%)</div>
+                                <div style="height: 8px; background: rgba(251,191,36,0.15); border-radius: 6px; overflow: hidden;">
+                                    <div style="width: 6.45%; height: 100%; background: var(--accent);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 14px auto;">
+                        <p style="font-size: 0.82em; text-align: center; margin: 0;">
+                            "Accuracy es la métrica más usada (21.78%)" en evaluaciones clínicas
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1186/s12911-025-02954-4" target="_blank" rel="noopener">1021:#2</a></p>
+                </section>
+
+                <!-- SLIDE: Open-source -->
+                <section class="wide-slide" data-menu-title="Open-source clínico"
+                    data-audio-text="Modelos open-source como DeepSeek ya rinden al nivel de los propietarios y permiten despliegue local.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">Los modelos <span class="highlight">open-source</span> ya igualan a los propietarios</h2>
+                        <p class="subtitle">Rendimiento comparable + despliegue local</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 20px auto; gap: 12px;">
+                        <div class="glass-panel" style="border-top: 4px solid var(--primary);">
+                            <h4 style="color: var(--primary); margin-bottom: 8px;">
+                                <i class="fa-solid fa-scale-balanced"></i> DeepSeek V3/R1
+                            </h4>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "Using 125 patient cases" en comparación directa
+                            </p>
+                            <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
+                                Rinde igual o mejor que modelos propietarios
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="border-top: 4px solid var(--secondary);">
+                            <h4 style="color: var(--secondary); margin-bottom: 8px;">
+                                <i class="fa-solid fa-shield"></i> Despliegue local
+                            </h4>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "allow efficient fine-tuning on local data in hospitals"
+                            </p>
+                            <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
+                                Privacidad y cumplimiento normativo
+                            </p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 14px auto;">
+                        <p style="font-size: 0.82em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> priorizar modelos on-premise cuando hay restricciones de datos.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1038/s41591-025-03727-2" target="_blank" rel="noopener">1021:#3</a></p>
+                </section>
+
+                <!-- SLIDE: Modelos especializados -->
+                <section class="wide-slide" data-menu-title="Modelos médicos"
+                    data-audio-text="Los modelos médicos especializados superan a los generalistas en diagnóstico complejo.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">Los modelos médicos <span class="highlight">especializados</span> superan a los generalistas</h2>
+                        <p class="subtitle">Menos hype, más entrenamiento clínico específico</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 20px auto;">
+                        <div class="glass-panel" style="border-top: 4px solid var(--primary);">
+                            <h4 style="color: var(--primary);"><i class="fa-solid fa-microscope"></i> MedFound (176B)</h4>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "generalist medical language model with 176 billion parameters"
+                            </p>
+                            <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
+                                Supera a LLMs base en comunes, externos y raros (8 especialidades)
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="border-top: 4px solid var(--secondary);">
+                            <h4 style="color: var(--secondary);"><i class="fa-solid fa-triangle-exclamation"></i> Evidencia aún escasa</h4>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "medical-domain LLMs accounted for only 6.45%"
+                            </p>
+                            <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
+                                Necesidad de validación clínica externa
+                            </p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 14px auto;">
+                        <p style="font-size: 0.82em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> si el objetivo es diagnóstico, priorizar modelos médicos con validación externa.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1038/s41591-024-03416-6" target="_blank" rel="noopener">1021:#5</a>; <a href="https://doi.org/10.1186/s12911-025-02954-4" target="_blank" rel="noopener">1021:#2</a></p>
+                </section>
+
+                <!-- SLIDE: Documentación y evidencia -->
+                <section class="wide-slide" data-menu-title="Documentación y evidencia"
+                    data-audio-text="La utilidad más sólida está en documentación y síntesis de evidencia, siempre con revisión humana.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">La mayor utilidad actual está en <span class="highlight">documentación y evidencia</span></h2>
+                        <p class="subtitle">Semiautomatizar con revisión humana</p>
+                    </div>
+                    <div class="grid-3" style="max-width: 1100px; margin: 20px auto; gap: 12px;">
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="font-size: 2em; color: var(--secondary);">F1 0.91-0.97</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">"High accuracy in article screening"</p>
+                            <p style="font-size: 0.68em; color: var(--text-muted); margin: 0;">Cribado/extracción en SLR</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="font-size: 2em; color: var(--primary);">84%</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">"84% agreement (16/19) TRACT"</p>
+                            <p style="font-size: 0.68em; color: var(--text-muted); margin: 0;">Evaluación de ensayos</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="font-size: 2em; color: var(--accent);">SMD -0.71</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">IC -0.93 a -0.49</p>
+                            <p style="font-size: 0.68em; color: var(--text-muted); margin: 0;">Reducción carga documental</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 12px auto;">
+                        <p style="font-size: 0.82em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> usar IA para cribado/extracción + checklist TRACT, con revisión humana final.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1016/j.jval.2025.08.002" target="_blank" rel="noopener">534:#243</a>; <a href="https://doi.org/10.1016/j.jclinepi.2025.111672" target="_blank" rel="noopener">534:#510</a>; <a href="https://doi.org/10.1186/s12911-025-03324-w" target="_blank" rel="noopener">534:#46</a></p>
+                </section>
+
+                <!-- SLIDE: Diagnóstico precoz en AP -->
+                <section class="wide-slide" data-menu-title="Diagnóstico precoz AP"
+                    data-audio-text="En atención primaria, sistemas multi-agente mejoran el diagnóstico precoz. Se reporta sensibilidad 0.94 y exactitud 0.86 con cohortes de validación.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">Sistemas <span class="highlight">multi-agente</span> mejoran diagnóstico precoz en AP</h2>
+                        <p class="subtitle">Sensibilidad 0.94 y exactitud 0.86 en cohortes de validación</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">0.9400</div>
+                            <div class="metric-label">sensibilidad</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">"higher sensitivity"</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--primary);">
+                            <div class="metric-value" style="color: var(--primary);">0.8600</div>
+                            <div class="metric-label">exactitud</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">"accuracy (0.8600)"</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> usar como apoyo a derivación temprana en AP.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1038/s41746-026-02372-4" target="_blank" rel="noopener">534:#2</a></p>
+                </section>
+
+                <!-- SLIDE: Pediatría -->
+                <section class="wide-slide" data-menu-title="Pediatría"
+                    data-audio-text="En pediatría, la evidencia más cuantitativa se concentra en neonatal, retina y perioperatorio; el diagnóstico complejo requiere supervisión.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">En pediatría hay <span class="highlight">tres áreas con evidencia sólida</span></h2>
+                        <p class="subtitle">Neonatal, retina y perioperatorio concentran resultados cuantitativos</p>
+                    </div>
+                    <div class="grid-3" style="max-width: 1100px; margin: 20px auto; gap: 12px;">
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="color: var(--primary);">0.291</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">AUPRC media (NeonatalBERT)</p>
+                            <p style="font-size: 0.68em; color: var(--text-muted); margin: 0;">Morbilidad neonatal</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="color: var(--accent);">89.35%</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">F1 en ROP con notas de admisión</p>
+                            <p style="font-size: 0.68em; color: var(--text-muted); margin: 0;">AUC 0.90</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="color: #ef4444;">0.85</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">AUROC hipoxemia perioperatoria</p>
+                            <p style="font-size: 0.68em; color: var(--text-muted); margin: 0;">0.83 en validación externa</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 12px auto;">
+                        <p style="font-size: 0.82em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> priorizar cribado/predicción; diagnóstico complejo con supervisión.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1016/j.landig.2025.100926" target="_blank" rel="noopener">534:#55</a>; <a href="https://doi.org/10.1136/bmjophth-2025-002385" target="_blank" rel="noopener">534:#9</a>; <a href="https://doi.org/10.1371/journal.pone.0339276" target="_blank" rel="noopener">534:#22</a></p>
+                </section>
+
+                <!-- SLIDE: NeonatalBERT -->
+                <section class="wide-slide" data-menu-title="NeonatalBERT"
+                    data-audio-text="NeonatalBERT supera a modelos genéricos en morbilidad neonatal. AUPRC media 0.291 frente a 0.194 en modelo tabular, y 0.360 en cohorte externa.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">NeonatalBERT <span class="highlight">supera</span> a modelos genéricos</h2>
+                        <p class="subtitle">AUPRC 0.291 vs 0.194; cohorte externa 0.360</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">0.291</div>
+                            <div class="metric-label">AUPRC media (19 outcomes)</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">Modelo tabular: 0.194</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--primary);">
+                            <div class="metric-value" style="color: var(--primary);">0.360</div>
+                            <div class="metric-label">AUPRC externa</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">Rango otros modelos: 0.224-0.333</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> priorizar modelos entrenados en notas clínicas reales.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1016/j.landig.2025.100926" target="_blank" rel="noopener">534:#55</a></p>
+                </section>
+
+                <!-- SLIDE: ROP -->
+                <section class="wide-slide" data-menu-title="ROP con NLP"
+                    data-audio-text="La predicción de ROP desde notas de admisión alcanza F1 89.35% y AUC 0.90, superando a modelos clásicos.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">Las notas de admisión <span class="highlight">predicen ROP</span> con alta precisión</h2>
+                        <p class="subtitle">F1 89.35% y AUC 0.90, por encima de modelos clásicos</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">89.35%</div>
+                            <div class="metric-label">F1 score</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">AUC 0.90</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--accent);">
+                            <div class="metric-value" style="color: var(--accent);">78%</div>
+                            <div class="metric-label">F1 mejor ML</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">AUC 0.87</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> útil como cribado temprano en prematuros.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1136/bmjophth-2025-002385" target="_blank" rel="noopener">534:#9</a></p>
+                </section>
+
+                <!-- SLIDE: Coartación prenatal -->
+                <section class="wide-slide" data-menu-title="Coartación prenatal"
+                    data-audio-text="La red CoA-Net mejora el diagnóstico prenatal de coartación con balanced accuracy 82.63% y AUC 0.867.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">El DL prenatal <span class="highlight">mejora</span> la coartación aórtica</h2>
+                        <p class="subtitle">Balanced accuracy 82.63% y AUC 0.867</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">82.63%</div>
+                            <div class="metric-label">balanced accuracy</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">F1 68.81%</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--primary);">
+                            <div class="metric-value" style="color: var(--primary);">0.867</div>
+                            <div class="metric-label">AUC</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">MCC 69.73%</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> apoyo al cribado prenatal en centros con ecocardiografía fetal.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1002/mp.70230" target="_blank" rel="noopener">534:#13</a></p>
+                </section>
+
+                <!-- SLIDE: Hipoxemia pediátrica -->
+                <section class="wide-slide" data-menu-title="Hipoxemia pediátrica"
+                    data-audio-text="En anestesia pediátrica, modelos ML alcanzan AUROC 0.85 en validación interna y 0.83 en externa.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">La predicción de <span class="highlight">hipoxemia pediátrica</span> es robusta</h2>
+                        <p class="subtitle">AUROC 0.85 interno y 0.83 externo</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">0.85</div>
+                            <div class="metric-label">AUROC interno</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">800 casos pediátricos</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--accent);">
+                            <div class="metric-value" style="color: var(--accent);">0.83</div>
+                            <div class="metric-label">AUROC externo</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">134 casos de validación</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> útil para alertas tempranas en quirófano pediátrico.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1371/journal.pone.0339276" target="_blank" rel="noopener">534:#22</a></p>
+                </section>
+
+                <!-- SLIDE: Caries escolar -->
+                <section class="wide-slide" data-menu-title="Caries escolar"
+                    data-audio-text="La IA en fotos intraorales detecta caries en escolares con sensibilidad entre 82.31 y 96.45%, y especificidad entre 77.10 y 99.33.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">La IA en fotos intraorales <span class="highlight">detecta caries</span> en escolares</h2>
+                        <p class="subtitle">Sensibilidad 82.31-96.45% y especificidad 77.10-99.33</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">82.31-96.45%</div>
+                            <div class="metric-label">sensibilidad</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">precision 72.6%</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--primary);">
+                            <div class="metric-value" style="color: var(--primary);">77.10-99.33%</div>
+                            <div class="metric-label">especificidad</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">recall 41.1% · mAP 45.8%</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> útil para cribado escolar y priorización de revisión.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1186/s12903-025-07486-x" target="_blank" rel="noopener">534:#54</a></p>
+                </section>
+
+                <!-- SLIDE: Riesgo suicida -->
+                <section class="wide-slide" data-menu-title="Riesgo suicida"
+                    data-audio-text="En jóvenes, la detección de riesgo suicida alcanza 99% en mensajes individuales, cae a 89% en riesgo genuino y mejora a 91% al añadir contexto conversacional.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">El contexto <span class="highlight">mejora</span> la detección de riesgo suicida</h2>
+                        <p class="subtitle">99% en mensajes; 89% sin contexto; 91% con contexto</p>
+                    </div>
+                    <div class="grid-3" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="color: var(--secondary);">99%</div>
+                            <div class="metric-label">mensajes individuales</div>
+                        </div>
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="color: #ef4444;">89%</div>
+                            <div class="metric-label">riesgo genuino</div>
+                        </div>
+                        <div class="glass-panel" style="text-align: center;">
+                            <div class="metric-value" style="color: var(--accent);">91%</div>
+                            <div class="metric-label">con contexto</div>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> usar contexto conversacional para reducir falsos positivos.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.2196/76051" target="_blank" rel="noopener">534:#1</a></p>
+                </section>
+
+                <!-- SLIDE: Patología pediátrica LLM -->
+                <section class="wide-slide" data-menu-title="Patología pediátrica LLM"
+                    data-audio-text="En patología pediátrica, ChatGPT-4o alcanza 77.1% de concordancia parcial, mientras que GPT-5 baja a 57.6%.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">En patología pediátrica, la <span class="highlight">concordancia es parcial</span></h2>
+                        <p class="subtitle">ChatGPT-4o 77.1% vs GPT-5 57.6%</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">77.1%</div>
+                            <div class="metric-label">concordancia parcial</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">IHC accuracy 74.4%</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid #ef4444;">
+                            <div class="metric-value" style="color: #ef4444;">57.6%</div>
+                            <div class="metric-label">concordancia parcial</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">IHC accuracy 60.7%</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> usar como apoyo docente, no como diagnóstico final.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1080/15513815.2025.2607706" target="_blank" rel="noopener">534:#37</a></p>
+                </section>
+
+                <!-- SLIDE: Patología pediátrica confocal -->
+                <section class="wide-slide" data-menu-title="Patología confocal"
+                    data-audio-text="En patología quirúrgica pediátrica con imágenes confocales, la IA alcanza 85% de accuracy y 100% de sensibilidad.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">La IA confocal logra <span class="highlight">alta sensibilidad</span> intraoperatoria</h2>
+                        <p class="subtitle">85% accuracy, 100% sensibilidad y 86% especificidad</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 12px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">85%</div>
+                            <div class="metric-label">accuracy</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">κ = 0.78</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--primary);">
+                            <div class="metric-value" style="color: var(--primary);">100%</div>
+                            <div class="metric-label">sensibilidad</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">especificidad 86%</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 10px auto;">
+                        <p style="font-size: 0.8em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> soporte rápido en decisiones intraoperatorias.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.3390/children12121608" target="_blank" rel="noopener">534:#41</a></p>
+                </section>
+
+                <!-- SLIDE: Educación -->
+                <section class="wide-slide" data-menu-title="Educación médica"
+                    data-audio-text="Los LLM superan exámenes, pero no garantizan competencia clínica real.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">Los LLM <span class="highlight">superan exámenes</span>, pero no garantizan competencia clínica</h2>
+                        <p class="subtitle">La evaluación debe centrarse en razonamiento y seguridad</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 20px auto;">
+                        <div class="glass-panel" style="border-top: 4px solid var(--secondary);">
+                            <h4 style="color: var(--secondary);"><i class="fa-solid fa-graduation-cap"></i> Rendimiento en exámenes</h4>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "highest overall accuracy 94.5% (120/127)"
+                            </p>
+                            <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
+                                GPT-4o: 63.0% en el mismo examen
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="border-top: 4px solid #ef4444;">
+                            <h4 style="color: #ef4444;"><i class="fa-solid fa-person-chalkboard"></i> Casos clínicos</h4>
+                            <p style="font-size: 0.82em; margin: 0 0 6px;">
+                                "28/31 correct (90.3%)" en preguntas basadas en casos
+                            </p>
+                            <p style="font-size: 0.72em; color: var(--text-muted); margin: 0;">
+                                Variabilidad extrema según modelo
+                            </p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 12px auto;">
+                        <p style="font-size: 0.82em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> evaluar razonamiento con casos clínicos y no solo con MCQ.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1186/s12909-025-08315-z" target="_blank" rel="noopener">534:#39</a></p>
+                </section>
+
+                <!-- SLIDE: Prompting determinista -->
+                <section class="wide-slide" data-menu-title="Prompting determinista"
+                    data-audio-text="El prompting determinista puede forzar adherencia a protocolos críticos, reduciendo alucinaciones.">
+                    <div class="title-wrapper">
+                        <h2 class="assertion-title">El <span class="highlight">prompting determinista</span> fuerza adherencia a protocolos</h2>
+                        <p class="subtitle">Reduce errores en tareas de alto riesgo</p>
+                    </div>
+                    <div class="grid-2" style="max-width: 1100px; margin: 25px auto;">
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid #ef4444;">
+                            <div class="metric-value" style="color: #ef4444;">32%</div>
+                            <div class="metric-label">Prompt estándar</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">"96/300 cases" adherentes</p>
+                        </div>
+                        <div class="glass-panel" style="text-align: center; border-top: 4px solid var(--secondary);">
+                            <div class="metric-value" style="color: var(--secondary);">100%</div>
+                            <div class="metric-label">Prompting determinista</div>
+                            <p style="font-size: 0.72em; margin: 4px 0 0;">"300/300" protocolo cumplido</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 900px; margin: 12px auto;">
+                        <p style="font-size: 0.82em; text-align: center; margin: 0;">
+                            <strong>Acción:</strong> usar prompts deterministas y checklists en protocolos de alto riesgo.
+                        </p>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.3389/frai.2025.1728320" target="_blank" rel="noopener">534:#42</a></p>
+                </section>
+
+                <!-- SLIDE: Síntesis -->
+                <section class="wide-slide" data-menu-title="Síntesis"
+                    data-audio-text="Cinco mensajes clave para la práctica de pediatría de atención primaria.">
+                    <h2>📌 Cinco mensajes clave para el pediatra de AP</h2>
+                    <div class="glass-panel" style="max-width: 1100px; margin: 20px auto;">
+                        <ul style="font-size: 0.78em; margin: 0; columns: 2; column-gap: 24px;">
+                            <li>La evidencia sólida está en documentación y síntesis; semiautomatizar con revisión humana.</li>
+                            <li>En diagnóstico pediátrico real, usar IA como segunda opinión, no como sustituto.</li>
+                            <li>Open-source on-premise ya es competitivo y viable con privacidad.</li>
+                            <li>Modelos médicos especializados rinden mejor, pero siguen siendo minoría.</li>
+                            <li>Prompts deterministas + checklists reducen errores en protocolos críticos.</li>
+                        </ul>
+                    </div>
+                    <p class="source-note">Refs: <a href="https://doi.org/10.1186/s12911-025-02954-4" target="_blank" rel="noopener">1021:#2</a>; <a href="https://doi.org/10.1038/s41591-025-03727-2" target="_blank" rel="noopener">1021:#3</a>; <a href="https://doi.org/10.1038/s41591-024-03416-6" target="_blank" rel="noopener">1021:#5</a>; <a href="https://doi.org/10.1186/s12911-025-03324-w" target="_blank" rel="noopener">534:#46</a>; <a href="https://doi.org/10.2196/65263" target="_blank" rel="noopener">534:#455</a>; <a href="https://doi.org/10.3389/frai.2025.1728320" target="_blank" rel="noopener">534:#42</a></p>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+            <!-- BLOQUE 3: DEMOS EN VIVO (40 min) -->
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+
+            <section>
+                <section data-menu-title="Bloque 3: Demos en Vivo"
+                    data-audio-text="Ahora viene la parte más práctica. Vamos a ver estas herramientas en acción.">
+                    <div class="section-intro">
+                        <i class="fa-solid fa-laptop-code" style="color: var(--primary);"></i>
+                        <h1><span style="color: var(--primary);">Bloque 3:</span> Demos en Vivo</h1>
+                        <p style="color: var(--text-muted);">Experiencias prácticas con herramientas reales</p>
+                        <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 20px;">
+                            <i class="fa-solid fa-clock"></i> 40 minutos
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SLIDE: Pirámide de Evidencia 5.0 -->
+                <section data-menu-title="Pirámide 5.0"
+                    data-audio-text="Para navegar el ecosistema de la IA necesitamos un mapa conceptual. Os presento la Pirámide de Evidencia 5.0, adaptada del modelo de Alper y Haynes.">
+                    <h2>🔺 Pirámide de Evidencia 5.0</h2>
+                    <p style="font-size: 0.75em; color: var(--text-muted); margin-bottom: 15px;">
+                        Clasificación según nivel de procesamiento y aplicabilidad clínica
+                    </p>
+                    <div style="max-width: 850px; margin: 0 auto;">
+                        <div class="glass-panel"
+                            style="margin-bottom: 12px; border-left: 4px solid var(--pediatric-green);">
+                            <h4 style="color: var(--pediatric-green); margin-bottom: 5px;">
+                                🏔️ CIMA: Point-of-Care (RAG Clínico)
+                            </h4>
+                            <p style="font-size: 0.85em; color: var(--text-muted); margin: 0;">
+                                <strong>Open Evidence</strong> · <strong>Perplexity Pro</strong> ·
+                                <strong>NotebookLM</strong><br>
+                                <span style="font-size: 0.8em;">Respuestas verificables con citas a fuentes de alta
+                                    calidad</span>
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="margin-bottom: 12px; border-left: 4px solid var(--primary);">
+                            <h4 style="color: var(--primary); margin-bottom: 5px;">
+                                🔍 MEDIO: Búsqueda y Síntesis
+                            </h4>
+                            <p style="font-size: 0.85em; color: var(--text-muted); margin: 0;">
+                                <strong>Undermind</strong> · <strong>Scite.ai</strong> · <strong>Elicit</strong> ·
+                                <strong>Consensus</strong><br>
+                                <span style="font-size: 0.8em;">Agentes de investigación que sintetizan
+                                    literatura</span>
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="border-left: 4px solid var(--accent);">
+                            <h4 style="color: var(--accent); margin-bottom: 5px;">
+                                ⚙️ BASE: Modelos Fundacionales
+                            </h4>
+                            <p style="font-size: 0.85em; color: var(--text-muted); margin: 0;">
+                                <strong>ChatGPT</strong> · <strong>Claude</strong> · <strong>Gemini</strong><br>
+                                <span style="font-size: 0.8em;">Razonan bien, pero conocimiento "congelado" + riesgo de
+                                    alucinación</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="source-note">
+                        Adaptado de Alper BS, Haynes RB. EBHC Pyramid 5.0. Evid Based Med. 2016
+                    </p>
+                </section>
+
+                <!-- SLIDE: Herramientas por Nivel -->
+                <section data-menu-title="Herramientas IA"
+                    data-audio-text="Veamos las herramientas concretas que podemos usar según nuestras necesidades.">
+                    <h2>🧰 Herramientas por Nivel</h2>
+                    <div style="max-width: 950px; margin: 15px auto; overflow-x: auto;">
+                        <table style="width: 100%; font-size: 0.75em; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: rgba(96,165,250,0.2);">
+                                    <th
+                                        style="padding: 10px; text-align: left; border-bottom: 2px solid var(--primary);">
+                                        Herramienta</th>
+                                    <th
+                                        style="padding: 10px; text-align: left; border-bottom: 2px solid var(--primary);">
+                                        Tipo</th>
+                                    <th
+                                        style="padding: 10px; text-align: left; border-bottom: 2px solid var(--primary);">
+                                        Uso principal</th>
+                                    <th
+                                        style="padding: 10px; text-align: center; border-bottom: 2px solid var(--primary);">
+                                        Confianza</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 8px;"><strong>Open Evidence</strong></td>
+                                    <td style="padding: 8px;">RAG Whitelist</td>
+                                    <td style="padding: 8px;">Consultas clínicas point-of-care</td>
+                                    <td style="padding: 8px; text-align: center;"><span
+                                            class="badge badge-green">Alta</span></td>
+                                </tr>
+                                <tr style="background: rgba(255,255,255,0.02);">
+                                    <td style="padding: 8px;"><strong>Perplexity Pro</strong></td>
+                                    <td style="padding: 8px;">RAG Académico</td>
+                                    <td style="padding: 8px;">Búsquedas con citas verificables</td>
+                                    <td style="padding: 8px; text-align: center;"><span
+                                            class="badge badge-green">Alta</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px;"><strong>NotebookLM</strong></td>
+                                    <td style="padding: 8px;">RAG Personal</td>
+                                    <td style="padding: 8px;">Chatear con tus propios PDFs</td>
+                                    <td style="padding: 8px; text-align: center;"><span
+                                            class="badge badge-green">Alta</span></td>
+                                </tr>
+                                <tr style="background: rgba(255,255,255,0.02);">
+                                    <td style="padding: 8px;"><strong>Scite.ai</strong></td>
+                                    <td style="padding: 8px;">Análisis citas</td>
+                                    <td style="padding: 8px;">Verificar calidad de evidencia</td>
+                                    <td style="padding: 8px; text-align: center;"><span
+                                            class="badge badge-blue">Mod.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px;"><strong>ChatGPT/Claude</strong></td>
+                                    <td style="padding: 8px;">Fundacional</td>
+                                    <td style="padding: 8px;">Redacción, resumen, adaptación</td>
+                                    <td style="padding: 8px; text-align: center;"><span
+                                            class="badge badge-warn">Baja*</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="font-size: 0.7em; color: var(--text-muted); text-align: center; margin-top: 10px;">
+                        *Sin verificación externa. Alta para tareas de redacción/formato, baja para datos clínicos.
+                    </p>
+                </section>
+
+                <!-- SLIDE: Demo RECORD -->
+                <section data-menu-title="Demo: Método RECORD"
+                    data-audio-text="Ahora vamos a ver el método RECORD en acción. Vamos a construir un prompt paso a paso.">
+                    <h2>📝 Método RECORD</h2>
+                    <p style="font-size: 0.8em; color: var(--text-muted); margin-bottom: 20px;">
+                        Framework para escribir prompts efectivos (Barrera-Linares, 2024)
+                    </p>
+                    <div class="grid-3" style="max-width: 950px; margin: 0 auto; gap: 10px;">
+                        <div class="glass-panel" style="padding: 12px;">
+                            <span class="record-letter" style="background: var(--primary);">R</span>
+                            <strong>Rol</strong>
+                            <p style="font-size: 0.75em; color: var(--text-muted); margin: 5px 0 0;">
+                                "Actúa como pediatra de AP..."
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="padding: 12px;">
+                            <span class="record-letter" style="background: var(--secondary);">E</span>
+                            <strong>Escenario</strong>
+                            <p style="font-size: 0.75em; color: var(--text-muted); margin: 5px 0 0;">
+                                "En consulta de seguimiento..."
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="padding: 12px;">
+                            <span class="record-letter" style="background: var(--accent);">C</span>
+                            <strong>Contexto</strong>
+                            <p style="font-size: 0.75em; color: var(--text-muted); margin: 5px 0 0;">
+                                "Lactante 3 meses, bronquiolitis..."
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="padding: 12px;">
+                            <span class="record-letter" style="background: #a855f7;">O</span>
+                            <strong>Objetivo</strong>
+                            <p style="font-size: 0.75em; color: var(--text-muted); margin: 5px 0 0;">
+                                "Genera hoja para padres..."
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="padding: 12px;">
+                            <span class="record-letter" style="background: #ec4899;">R</span>
+                            <strong>Restricciones</strong>
+                            <p style="font-size: 0.75em; color: var(--text-muted); margin: 5px 0 0;">
+                                "Sin términos médicos..."
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="padding: 12px;">
+                            <span class="record-letter" style="background: #f97316;">D</span>
+                            <strong>Diseño</strong>
+                            <p style="font-size: 0.75em; color: var(--text-muted); margin: 5px 0 0;">
+                                "5 secciones + signos alarma"
+                            </p>
+                        </div>
+                    </div>
+                    <div class="demo-overlay">
+                        <div class="glass-panel">
+                            <i class="fa-solid fa-play" style="color: var(--secondary); margin-right: 8px;"></i>
+                            <span style="font-size: 0.85em;">Demo en vivo</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE: GPTs y Gems -->
+                <section data-menu-title="GPTs y Gems"
+                    data-audio-text="Una de las revoluciones recientes es la personalización. Podéis crear mini-asistentes preconfigurados sin saber programar.">
+                    <h2>🧩 GPTs y Gems: Personalización</h2>
+                    <p style="font-size: 0.8em; color: var(--text-muted); margin-bottom: 20px;">
+                        Crea tu propio asistente preconfigurado sin programar
+                    </p>
+                    <div class="grid-2" style="max-width: 900px; margin: 20px auto;">
+                        <div class="glass-panel">
+                            <h4 style="color: var(--primary);">
+                                <i class="fa-solid fa-robot"></i> Ejemplo: GPT Revisor
+                            </h4>
+                            <ul style="font-size: 0.85em; text-align: left;">
+                                <li>Le das: resultados analíticos (anonimizados)</li>
+                                <li>Te devuelve: versión explicativa para padres</li>
+                                <li>Además: pistas de interpretación clínica</li>
+                                <li>Y: sugerencias para ampliar estudio</li>
+                            </ul>
+                        </div>
+                        <div class="glass-panel">
+                            <h4 style="color: var(--secondary);">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i> Otros usos
+                            </h4>
+                            <ul style="font-size: 0.85em; text-align: left;">
+                                <li>Generador de informes</li>
+                                <li>Traductor de jerga médica</li>
+                                <li>Asistente de codificación CIE-10</li>
+                                <li>Preparador de sesiones clínicas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="glass-panel"
+                        style="max-width: 800px; margin: 15px auto; background: rgba(96,165,250,0.1); border: 1px solid var(--primary);">
+                        <p style="font-size: 0.85em; text-align: center; margin: 0;">
+                            <i class="fa-solid fa-key" style="color: var(--primary);"></i>
+                            <strong>Clave:</strong> Una vez configurado, tu GPT/Gem recuerda las instrucciones
+                            y aplica el mismo formato cada vez.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SLIDE: Demo Constructor de Prompts (iframe) -->
+                <section data-menu-title="Demo: Constructor"
+                    data-background-iframe="https://ernestobarrera.github.io/constructor-prompts.html"
+                    data-background-interactive
+                    data-audio-text="Aquí tenéis el constructor de prompts interactivo. Podéis probarlo directamente.">
+                    <div style="position: absolute; bottom: 20px; left: 20px; z-index: 100;">
+                        <div class="glass-panel" style="padding: 10px 20px;">
+                            <i class="fa-solid fa-hand-pointer" style="color: var(--accent); margin-right: 8px;"></i>
+                            <span style="font-size: 0.85em;">Interactúa directamente con la herramienta</span>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+            <!-- BLOQUE 4: PRÁCTICA GUIADA (25 min) -->
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+
+            <section>
+                <section data-menu-title="Bloque 4: Práctica RECORD"
+                    data-audio-text="Ahora os toca a vosotros. Vamos a practicar el método RECORD con casos reales.">
+                    <div class="section-intro">
+                        <i class="fa-solid fa-person-chalkboard" style="color: var(--accent);"></i>
+                        <h1><span style="color: var(--accent);">Bloque 4:</span> Práctica Guiada</h1>
+                        <p style="color: var(--text-muted);">Ejercicio RECORD en grupos</p>
+                        <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 20px;">
+                            <i class="fa-solid fa-clock"></i> 25 minutos
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SLIDE: Generador de Prompts Interactivo -->
+                <section data-menu-title="Generador de Prompts"
+                    data-audio-text="Aquí tenéis un generador de prompts para llevaros. Seleccionad un escenario y copiad el prompt generado.">
+                    <h2>🚀 Generador de Prompts para Pediatría</h2>
+                    <p style="font-size: 0.75em; color: var(--text-muted); margin-bottom: 15px;">
+                        Selecciona un escenario y llévate tu prompt listo para usar
+                    </p>
+                    <div class="grid-3" style="max-width: 950px; margin: 15px auto; gap: 12px;">
+                        <button class="glass-panel prompt-btn"
+                            style="cursor: pointer; border: 2px solid transparent; transition: all 0.3s;"
+                            onclick="generatePrompt('info-padres')"
+                            onmouseover="this.style.borderColor='var(--primary)'"
+                            onmouseout="this.style.borderColor='transparent'">
+                            <i class="fa-solid fa-file-lines"
+                                style="font-size: 2em; color: var(--primary); margin-bottom: 10px;"></i>
+                            <h4 style="margin: 0; font-size: 0.95em;">Info para Padres</h4>
+                            <p style="font-size: 0.7em; color: var(--text-muted); margin: 5px 0 0;">
+                                Generar hoja explicativa
+                            </p>
+                        </button>
+                        <button class="glass-panel prompt-btn"
+                            style="cursor: pointer; border: 2px solid transparent; transition: all 0.3s;"
+                            onclick="generatePrompt('sesion-clinica')"
+                            onmouseover="this.style.borderColor='var(--secondary)'"
+                            onmouseout="this.style.borderColor='transparent'">
+                            <i class="fa-solid fa-presentation-screen"
+                                style="font-size: 2em; color: var(--secondary); margin-bottom: 10px;"></i>
+                            <h4 style="margin: 0; font-size: 0.95em;">Sesión Clínica</h4>
+                            <p style="font-size: 0.7em; color: var(--text-muted); margin: 5px 0 0;">
+                                Resumir artículo
+                            </p>
+                        </button>
+                        <button class="glass-panel prompt-btn"
+                            style="cursor: pointer; border: 2px solid transparent; transition: all 0.3s;"
+                            onclick="generatePrompt('email-respuesta')"
+                            onmouseover="this.style.borderColor='var(--accent)'"
+                            onmouseout="this.style.borderColor='transparent'">
+                            <i class="fa-solid fa-envelope"
+                                style="font-size: 2em; color: var(--accent); margin-bottom: 10px;"></i>
+                            <h4 style="margin: 0; font-size: 0.95em;">Email a Familia</h4>
+                            <p style="font-size: 0.7em; color: var(--text-muted); margin: 5px 0 0;">
+                                Responder consulta
+                            </p>
+                        </button>
+                    </div>
+                    <!-- Espacio reservado para evitar salto -->
+                    <div id="prompt-output-container"
+                        style="position: relative; min-height: 0; transition: min-height 0.3s ease;">
+                        <div id="prompt-output" class="glass-panel"
+                            style="max-width: 850px; margin: 15px auto; display: none; border: 2px solid var(--primary); background: rgba(15, 23, 42, 0.98); animation: fadeInUp 0.3s ease-out; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(96,165,250,0.3);">
+                                <h4 style="margin: 0; color: var(--primary); font-size: 0.9em;">📋 Tu prompt RECORD
+                                    generado:</h4>
+                                <div style="display: flex; gap: 10px;">
+                                    <button onclick="copyPrompt()"
+                                        style="background: var(--primary); color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8em;">
+                                        <i class="fa-solid fa-copy"></i> Copiar
+                                    </button>
+                                    <button onclick="closePromptPanel()"
+                                        style="background: rgba(255,255,255,0.1); color: var(--text-muted); border: 1px solid rgba(255,255,255,0.2); padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8em;">
+                                        <i class="fa-solid fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <pre id="prompt-text"
+                                style="font-size: 0.75em; white-space: pre-wrap; color: var(--text-main); margin: 0; line-height: 1.4; max-height: 180px; overflow-y: auto;"></pre>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.65em; color: var(--text-muted); text-align: center;">
+                        💡 Escanea el QR del "Kit de Supervivencia" para más plantillas
+                    </p>
+                </section>
+
+                <!-- SLIDE: Votación Interactiva con IA (preparada) -->
+                <section data-menu-title="Votación con IA"
+                    data-audio-text="Vamos a hacer una votación. Levantad la cartulina del color de vuestra respuesta y tomaré una foto para que la IA cuente los votos.">
+                    <h2>🗳️ Votación Interactiva</h2>
+                    <p style="font-size: 0.85em; color: var(--text-muted); margin-bottom: 20px;">
+                        Levantad vuestra cartulina según vuestra respuesta
+                    </p>
+                    <div class="grid-3" style="max-width: 800px; margin: 20px auto;">
+                        <div class="glass-panel"
+                            style="text-align: center; background: rgba(52,211,153,0.2); border: 2px solid var(--secondary);">
+                            <span style="font-size: 3em;">🟢</span>
+                            <p style="margin: 10px 0 0; font-weight: 600;">Opción A</p>
+                        </div>
+                        <div class="glass-panel"
+                            style="text-align: center; background: rgba(251,191,36,0.2); border: 2px solid var(--accent);">
+                            <span style="font-size: 3em;">🟡</span>
+                            <p style="margin: 10px 0 0; font-weight: 600;">Opción B</p>
+                        </div>
+                        <div class="glass-panel"
+                            style="text-align: center; background: rgba(239,68,68,0.2); border: 2px solid #ef4444;">
+                            <span style="font-size: 3em;">🔴</span>
+                            <p style="margin: 10px 0 0; font-weight: 600;">Opción C</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 700px; margin: 20px auto; text-align: center;">
+                        <p style="font-size: 0.9em; margin: 0;">
+                            <i class="fa-solid fa-camera" style="color: var(--primary); margin-right: 8px;"></i>
+                            <strong>El ponente tomará una foto del auditorio</strong>
+                        </p>
+                        <p style="font-size: 0.75em; color: var(--text-muted); margin: 10px 0 0;">
+                            Un modelo de IA analizará la imagen y mostrará los resultados en tiempo real
+                        </p>
+                    </div>
+                    <!-- Espacio para resultados de IA (se activará con foto) -->
+                    <div id="voting-results" style="display: none; max-width: 700px; margin: 15px auto;">
+                        <div class="glass-panel"
+                            style="background: rgba(96,165,250,0.1); border: 1px solid var(--primary);">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">
+                                <i class="fa-solid fa-chart-bar"></i> Resultados:
+                            </h4>
+                            <div id="vote-chart"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE: Casos para práctica -->
+                <section data-menu-title="Ejercicio en Grupos"
+                    data-audio-text="Formad parejas o tríos. Elegid uno de estos tres casos y escribid vuestro prompt usando el método RECORD.">
+                    <h2>✍️ Ejercicio: Escribe tu Prompt</h2>
+                    <p style="font-size: 0.8em; color: var(--text-muted); margin-bottom: 20px;">
+                        En parejas/tríos, elegid un caso y aplicad RECORD
+                    </p>
+                    <div class="grid-3" style="max-width: 950px; margin: 15px auto;">
+                        <div class="glass-panel" style="border-top: 4px solid var(--primary);">
+                            <span class="badge badge-blue">Caso 1</span>
+                            <h4 style="margin: 10px 0 5px;">Varicela</h4>
+                            <p style="font-size: 0.8em; color: var(--text-muted);">
+                                Generar información para padres sobre cuidados en casa y signos de alarma.
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="border-top: 4px solid var(--secondary);">
+                            <span class="badge badge-green">Caso 2</span>
+                            <h4 style="margin: 10px 0 5px;">Sesión Clínica</h4>
+                            <p style="font-size: 0.8em; color: var(--text-muted);">
+                                Resumir un artículo sobre bronquiolitis para presentar en 5 minutos.
+                            </p>
+                        </div>
+                        <div class="glass-panel" style="border-top: 4px solid var(--accent);">
+                            <span class="badge"
+                                style="background: rgba(251,191,36,0.2); color: var(--accent); border: 1px solid var(--accent);">Caso
+                                3</span>
+                            <h4 style="margin: 10px 0 5px;">Email Lactancia</h4>
+                            <p style="font-size: 0.8em; color: var(--text-muted);">
+                                Responder consulta de madre sobre introducción de alimentación complementaria.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="glass-panel" style="max-width: 700px; margin: 20px auto; text-align: center;">
+                        <p style="font-size: 0.9em; margin: 0;">
+                            <i class="fa-solid fa-stopwatch" style="color: var(--accent);"></i>
+                            <strong>Tenéis 15 minutos</strong>
+                        </p>
+                        <p style="font-size: 0.75em; color: var(--text-muted); margin: 5px 0 0;">
+                            Usad la plantilla RECORD impresa o el QR para la herramienta online
+                        </p>
+                    </div>
+                </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+            <!-- BLOQUE 5: CIERRE (20 min) -->
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+
+            <section>
+                <section data-menu-title="Bloque 5: Cierre"
+                    data-audio-text="Llegamos al cierre. Vamos a recapitular lo que hemos aprendido y a hacer el test oficial.">
+                    <div class="section-intro">
+                        <i class="fa-solid fa-flag-checkered" style="color: var(--pediatric-green);"></i>
+                        <h1><span style="color: var(--pediatric-green);">Bloque 5:</span> Cierre</h1>
+                        <p style="color: var(--text-muted);">Lo que nos llevamos para casa</p>
+                        <p style="font-size: 0.7em; color: var(--text-muted); margin-top: 20px;">
+                            <i class="fa-solid fa-clock"></i> 20 minutos
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SLIDE: Lo que nos llevamos para casa -->
+                <section data-menu-title="Lo que nos llevamos"
+                    data-audio-text="Estos son los tres mensajes clave para llevaros a casa.">
+                    <h2>🏠 Lo que nos llevamos para casa</h2>
+                    <div style="max-width: 850px; margin: 25px auto;">
+                        <div class="takeaway-box" style="margin-bottom: 20px;">
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <span style="font-size: 2.5em;">🥪</span>
+                                <div style="text-align: left;">
+                                    <h4 style="margin: 0; color: var(--pediatric-green);">Modelo Sándwich</h4>
+                                    <p style="font-size: 0.85em; margin: 5px 0 0; color: var(--text-muted);">
+                                        <strong>Humano</strong> define → <strong>IA</strong> procesa →
+                                        <strong>Humano</strong> verifica<br>
+                                        La responsabilidad siempre es tuya.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="takeaway-box" style="margin-bottom: 20px;">
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <span style="font-size: 2.5em;">📝</span>
+                                <div style="text-align: left;">
+                                    <h4 style="margin: 0; color: var(--pediatric-green);">Método RECORD</h4>
+                                    <p style="font-size: 0.85em; margin: 5px 0 0; color: var(--text-muted);">
+                                        Rol + Escenario + Contexto + Objetivo + Restricciones + Diseño<br>
+                                        La calidad del output depende de la calidad del prompt.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="takeaway-box">
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <span style="font-size: 2.5em;">🔍</span>
+                                <div style="text-align: left;">
+                                    <h4 style="margin: 0; color: var(--pediatric-green);">Detector de Alucinaciones</h4>
+                                    <p style="font-size: 0.85em; margin: 5px 0 0; color: var(--text-muted);">
+                                        Verifica SIEMPRE las referencias y datos específicos.<br>
+                                        Usa fuentes con RAG (Open Evidence, Perplexity Pro).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE: Test con rúbrica -->
+                <section data-menu-title="Pregunta Test 1"
+                    data-audio-text="Pregunta de evaluación número uno. De las siguientes opciones, cuál representa el uso más seguro de IA en consulta.">
+                    <h3>📋 Pregunta de Evaluación 1</h3>
+                    <div class="glass-panel" style="max-width: 900px; margin: 15px auto; text-align: left;">
+                        <p style="font-size: 0.9em;">
+                            Al considerar el uso de una IA generativa como herramienta de apoyo en Pediatría de AP,
+                            ¿cuál representa su <strong>aplicación más segura</strong>?
+                        </p>
+                        <ol style="font-size: 0.8em; margin-top: 15px;">
+                            <li>Sustituir la consulta con un especialista en dermatología atípica</li>
+                            <li>Prescribir de forma autónoma el tratamiento para un lactante febril</li>
+                            <li>Establecer el diagnóstico definitivo en sospecha de TDAH</li>
+                            <li>Interpretar una espirometría compleja sin validación</li>
+                            <li style="color: var(--secondary); font-weight: 600;">Generar un borrador de información
+                                para padres sobre GEA</li>
+                        </ol>
+                    </div>
+                    <div class="fragment glass-panel"
+                        style="max-width: 800px; margin: 15px auto; background: rgba(52,211,153,0.1); border: 1px solid var(--secondary);">
+                        <p style="font-size: 0.8em; margin: 0;">
+                            <strong>✓ Respuesta: 5</strong> — Bajo riesgo clínico, alto valor comunicativo,
+                            siempre con revisión del pediatra antes de entregar.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SLIDE: Gracias -->
+                <section data-menu-title="Gracias"
+                    data-audio-text="Muchas gracias por vuestra atención. Recordad: la mejor forma de aprender es enseñando.">
+                    <h2 style="font-size: 2.5em;">Gracias</h2>
+                    <p style="font-size: 1.1em; font-style: italic; color: var(--text-muted); margin: 20px 0;">
+                        "Homines, dum docent, discunt"
+                    </p>
+                    <p style="font-size: 0.85em; color: var(--text-muted);">
+                        La mejor forma de aprender es enseñando
+                    </p>
+                    <div style="margin-top: 40px;">
+                        <p style="font-size: 0.9em;">
+                            <i class="fa-solid fa-globe" style="margin-right: 8px; color: var(--primary);"></i>
+                            <a href="https://ernestobarrera.github.io" target="_blank">ernestobarrera.github.io</a>
+                        </p>
+                        <p style="font-size: 0.8em; color: var(--text-muted); margin-top: 20px;">
+                            <a href="https://twitter.com/ernestob" target="_blank"><i class="fab fa-twitter"
+                                    style="margin-right: 15px;"></i></a>
+                            <a href="https://www.linkedin.com/in/ernestobarreralinares/" target="_blank"><i
+                                    class="fab fa-linkedin" style="margin-right: 15px;"></i></a>
+                            <a href="https://github.com/ernestobarrera" target="_blank"><i
+                                    class="fab fa-github"></i></a>
+                        </p>
+                    </div>
+                    <p style="font-size: 0.65em; color: var(--text-muted); margin-top: 40px;">
+                        Licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA
+                            4.0</a>
+                    </p>
+                </section>
+            </section>
+
+        </div><!-- /slides -->
+    </div><!-- /reveal -->
+
+    <!-- Reveal.js Core -->
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+
+    <!-- Plugins -->
+    <script src="../reveal.js-plugins/menu/menu.js"></script>
+    <script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
+    <script src="../reveal.js-plugins/appearance/appearance.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+    <script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
+    <script src="../reveal.js-plugins/embed-tweet/plugin.js"></script>
+    <script src="../reveal.js-plugins/simplemenu/simplemenu.js"></script>
+    <script src="../reveal.js-plugins/zoom/zoom.js"></script>
+
+    <script>
+        Reveal.initialize({
+            // Configuración general
+            width: "100%",
+            height: "100%",
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0,
+            center: true,
+            hash: true,
+            history: true,
+
+            // Navegación
+            controls: true,
+            progress: true,
+            slideNumber: 'h.v',
+            mouseWheel: true,
+
+            // Transiciones
+            transition: 'slide',
+            backgroundTransition: 'fade',
+
+            // Audio
+            audio: {
+                prefix: 'audio/',
+                suffix: '.mp3',
+                defaultDuration: 5,
+                textToSpeechURL: "https://api.voicerss.org/?key=5d3a06e889ae45cb8f2e4295756bec7e&hl=es-es&v=Diego&c=ogg&r=1&f=48khz_16bit_stereo&src=",
+                advance: -1,
+                autoplay: false,
+                defaultText: true,
+                playerOpacity: 0.2,
+            },
+
+            // Menú
+            menu: {
+                side: 'left',
+                width: 'normal',
+                numbers: true,
+                titleSelector: 'h1, h2, h3',
+                useTextContentForMissingTitles: true,
+                hideMissingTitles: true,
+                markers: true,
+                keyboard: true,
+                openOnInit: false,
+                themes: [
+                    { name: 'Oscuro', theme: 'reveal.js/dist/theme/black.css' },
+                    { name: 'Claro', theme: 'reveal.js/dist/theme/white.css' },
+                ],
+                custom: [{
+                    title: 'Atajos de Teclado',
+                    icon: '<i class="fa fa-keyboard"></i>',
+                    content: `
+                        <h2 style="color: var(--primary); margin-bottom: 15px;">⌨️ Atajos de Teclado</h2>
+                        <table style="font-size: 0.9em; width: 100%; border-collapse: collapse;">
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>Espacio / →</strong></td><td>Siguiente diapositiva</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>←</strong></td><td>Diapositiva anterior</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>↓ / ↑</strong></td><td>Navegar verticalmente</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>ESC / O</strong></td><td>Vista general (mapa)</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>F</strong></td><td>Pantalla completa</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>S</strong></td><td>Vista del presentador</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>M</strong></td><td>Abrir/cerrar menú</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>B</strong></td><td>Pizarra (chalkboard)</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>C</strong></td><td>Dibujar en diapositiva</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>DEL</strong></td><td>Borrar dibujo actual</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>BACKSPACE</strong></td><td>Borrar todos los dibujos</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>A</strong></td><td>Reproducir/pausar audio</td></tr>
+                            <tr><td style="padding: 5px; border-bottom: 1px solid #444;"><strong>V</strong></td><td>Pausar presentación</td></tr>
+                            <tr><td style="padding: 5px;"><strong>Alt + Click</strong></td><td>Zoom en elemento</td></tr>
+                        </table>
+                    `
+                }]
+            },
+
+            // Chalkboard
+            chalkboard: {
+                toggleChalkboardButton: { left: "80px" },
+                toggleNotesButton: { left: "130px" },
+                colorButtons: 5,
+            },
+
+            // Plugins
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealNotes,
+                RevealMenu,
+                RevealChalkboard,
+                Appearance,
+                RevealAudioSlideshow,
+                RevealZoom,
+                RevealEmbedTweet,
+            ],
+        });
+
+        // ═══════════════════════════════════════════════════════════════
+        // GENERADOR DE PROMPTS RECORD
+        // ═══════════════════════════════════════════════════════════════
+
+        const prompts = {
+            'info-padres': `[R] Actúa como un pediatra de Atención Primaria con 15 años de experiencia, especializado en comunicación con familias.
+
+[E] Estás en consulta y acabas de diagnosticar [ENFERMEDAD] a un paciente pediátrico. Los padres necesitan información clara para el cuidado en casa.
+
+[C] El paciente es un niño/a de [EDAD] años. Es la primera vez que la familia se enfrenta a esta situación. Tienen un nivel de comprensión medio y están preocupados.
+
+[O] Genera una hoja informativa para entregar a los padres que incluya:
+- Qué es la enfermedad (explicación sencilla)
+- Cuidados en casa
+- Signos de alarma que requieren volver a consulta
+- Cuándo esperar mejoría
+
+[R] Restricciones:
+- Usa lenguaje sencillo, sin jerga médica
+- Evita causar alarma innecesaria
+- No incluyas tratamientos farmacológicos específicos
+- Máximo 1 página A4
+
+[D] Formato: Título + 4 secciones con iconos/emojis + lista de signos de alarma destacada en recuadro`,
+
+            'sesion-clinica': `[R] Actúa como un médico residente senior preparando una sesión clínica para su equipo de Atención Primaria.
+
+[E] Tienes que presentar un artículo científico reciente en la sesión clínica semanal del centro de salud. Dispones de 5 minutos para la presentación.
+
+[C] El artículo trata sobre [TEMA DEL ARTÍCULO]. La audiencia son médicos de familia y pediatras con carga asistencial alta que necesitan información práctica y aplicable.
+
+[O] Genera un resumen estructurado del artículo que incluya:
+- Pregunta de investigación
+- Metodología (muy resumida)
+- Resultados principales (con números clave)
+- Aplicabilidad a nuestra práctica
+- Limitaciones principales
+- Take-home message
+
+[R] Restricciones:
+- Máximo 5 minutos de presentación
+- Destaca qué cambia en nuestra práctica
+- Incluye nivel de evidencia si es posible
+- Sé crítico pero constructivo
+
+[D] Formato: Esquema numerado con viñetas, destacando en negrita los datos clave`,
+
+            'email-respuesta': `[R] Actúa como un pediatra de Atención Primaria respondiendo por email a una consulta de una familia.
+
+[E] Has recibido un email de una madre/padre consultando sobre [TEMA DE LA CONSULTA]. No es una urgencia, pero la familia está preocupada y merece una respuesta clara y empática.
+
+[C] Se trata de [DESCRIPCIÓN DEL CASO: edad del niño, situación]. La familia ya tiene cita programada para la próxima semana, pero necesita orientación mientras tanto.
+
+[O] Redacta un email de respuesta que:
+- Tranquilice a la familia
+- Proporcione orientación básica
+- Indique cuándo acudir a urgencias
+- Confirme la cita programada
+
+[R] Restricciones:
+- Tono profesional pero cercano
+- No diagnosticar ni prescribir por email
+- Incluir disclaimer si es necesario
+- Máximo 200 palabras
+
+[D] Formato: Saludo + 3 párrafos cortos + despedida profesional`
+        };
+
+        function generatePrompt(type) {
+            const promptOutput = document.getElementById('prompt-output');
+            const promptText = document.getElementById('prompt-text');
+
+            if (prompts[type]) {
+                promptText.textContent = prompts[type];
+                promptOutput.style.display = 'block';
+                // Sin scroll automático para evitar saltos
+            }
+        }
+
+        function closePromptPanel() {
+            const promptOutput = document.getElementById('prompt-output');
+            promptOutput.style.display = 'none';
+        }
+
+        function copyPrompt() {
+            const promptText = document.getElementById('prompt-text').textContent;
+            navigator.clipboard.writeText(promptText).then(() => {
+                // Feedback visual
+                const btn = event.target.closest('button');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Copiado!';
+                btn.style.background = 'var(--secondary)';
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = 'var(--primary)';
+                }, 2000);
+            });
+        }
+     function getYesterdayDate() {
+    var yesterday = new Date(Date.now() - 86400000);
+    var day = String(yesterday.getDate()).padStart(2, '0');
+    var month = String(yesterday.getMonth() + 1).padStart(2, '0');
+    var year = yesterday.getFullYear();
+    return day + '/' + month + '/' + year;
+}
+
+function updateBibliometriaDate(root) {
+    if (!root || !root.querySelector) return;
+    var dateSpan = root.querySelector('#fecha-de-ayer');
+    if (dateSpan) {
+        dateSpan.textContent = getYesterdayDate();
+    }
+}
+
+Reveal.on('ready', function (event) {
+    updateBibliometriaDate(event.currentSlide);
+});
+
+Reveal.on('slidechanged', function (event) {
+    updateBibliometriaDate(event.currentSlide);
+});
+
+updateBibliometriaDate(document); 
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+

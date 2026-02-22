@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>POCUS avanzado de cuello</title>
+<link rel="stylesheet" href="reveal.js/dist/reset.css" />
+<link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme" />
+<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" />
+<link rel="stylesheet" href="reveal.js-plugins/menu/menu.css" />
+<link rel="stylesheet" href="reveal.js-plugins/chalkboard/style.css" />
+<link rel="stylesheet" href="reveal.js-plugins/appearance/appearance.css" />
+<link rel="stylesheet" href="reveal.js-plugins/simplemenu/simplemenu.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+<style>
+:root{--bg1:#0a1626;--bg2:#133455;--ink:#e9f2fb;--muted:#b5c9de;--teal:#2dd4bf;--blue:#60a5fa;--amber:#fbbf24;--rose:#fb7185;--card:rgba(11,28,46,.82);--line:rgba(255,255,255,.14)}
+body{font-family:Manrope,sans-serif;background:radial-gradient(circle at 10% 10%,rgba(45,212,191,.12),transparent 38%),radial-gradient(circle at 90% 8%,rgba(96,165,250,.12),transparent 36%),linear-gradient(160deg,var(--bg1)0%,var(--bg2)100%)}
+.reveal{font-family:Manrope,sans-serif;color:var(--ink)}
+.slide{padding:30px 50px 56px 50px;text-align:left;box-sizing:border-box}
+.reveal h1,.reveal h2,.reveal h3{text-transform:none;margin:0 0 .35em 0}
+.reveal h1{font-family:Fraunces,serif;font-size:2em}
+.reveal h2{font-family:Fraunces,serif;font-size:1.12em}
+.reveal p,.reveal li{font-size:.62em;line-height:1.34}
+.k{display:inline-flex;font-size:.45em;text-transform:uppercase;letter-spacing:.1em;color:#d7eef9;border:1px solid rgba(45,212,191,.34);background:rgba(45,212,191,.14);border-radius:999px;padding:4px 10px;margin-bottom:9px;font-weight:800}
+.lead{color:var(--muted)}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:10px}
+.card p{margin:0;color:#c6d9ed}
+.foot{margin-top:10px;border-top:1px solid var(--line);padding-top:8px;display:flex;justify-content:space-between;gap:10px}
+.foot p{margin:0;font-size:.49em;color:#c9dff2}
+.map{display:block;text-decoration:none;color:inherit}
+.map .cta{font-size:.46em;color:var(--teal);text-transform:uppercase;letter-spacing:.08em;font-weight:800}
+.n{font-family:monospace;font-size:.58em;letter-spacing:.12em;color:var(--teal);text-transform:uppercase}
+.desc{color:var(--muted)}
+.back{display:inline-flex;margin-top:10px;text-decoration:none;color:#d8ecff;border:1px solid rgba(96,165,250,.42);background:rgba(96,165,250,.1);border-radius:999px;padding:6px 10px;font-size:.46em;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.a h2{display:inline-block;border-bottom:2px solid var(--teal);padding-bottom:.32em;max-width:95%}
+.q h2{color:var(--amber)}
+.box{margin-top:.4em;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:15px;overflow-x:auto}
+.reveal table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:.66em}
+.reveal th,.reveal td{padding:7px 8px;border-bottom:1px solid rgba(255,255,255,.1);text-align:left;vertical-align:top;overflow-wrap:anywhere}
+.reveal th{color:var(--teal);background:rgba(255,255,255,.02)}
+.img{min-height:180px;border:2px dashed rgba(45,212,191,.34);border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;color:#9fbfdb;font-size:.54em;padding:10px}
+.p{display:inline-flex;margin-top:7px;padding:4px 9px;border:1px solid rgba(251,191,36,.4);background:rgba(251,191,36,.12);border-radius:999px;font-size:.47em;text-transform:uppercase;letter-spacing:.07em;color:#ffe8b0;font-weight:700}
+.ans{margin-top:9px;background:rgba(45,212,191,.11);border:1px solid rgba(45,212,191,.35);border-radius:10px;padding:10px}
+.ans p{margin:4px 0 0 0;font-size:.57em;color:#cfe3f4}
+.fragment.show{opacity:0}.fragment.show.visible{opacity:1}
+.kv{background:rgba(10,25,42,.84);border:1px solid var(--line);border-radius:10px;padding:9px}
+.kv .l{font-size:.47em;text-transform:uppercase;letter-spacing:.08em;color:#9eb7ce}
+.kv .v{margin-top:3px;font-size:.7em;color:#f2f8ff;font-weight:700}
+.tk{margin-top:.6em;list-style:none;padding:0}
+.tk li{margin:6px 0;padding:8px 10px;border-left:3px solid var(--teal);background:var(--card);border-radius:0 8px 8px 0;font-size:.58em}
+.fallback{margin-top:8px;border:1px solid var(--line);border-radius:10px;background:rgba(8,22,36,.76);padding:9px;max-height:390px;overflow:auto}
+.fallback ol{margin:0;padding-left:18px}.fallback li{margin-bottom:7px;font-size:.54em;color:#d5e8f8}
+.reveal .progress{height:3px;color:var(--teal)}.reveal .slide-number{font-family:monospace;font-size:.44em}.audio-controls{z-index:35!important}
+kbd{font-family:monospace;border:1px solid rgba(255,255,255,.22);border-radius:4px;padding:1px 4px;background:rgba(255,255,255,.08)}
+@media(max-width:1000px){.slide{padding:22px 22px 50px 22px}.g4,.g3,.g2{grid-template-columns:1fr}.foot{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<!-- 1 -->
+<section class="slide" data-menu-title="Inicio" data-audio-text="Bienvenidos. Esta sesión avanza con barra espaciadora y sigue una narrativa clínica simple: normalidad, criterios, caso y decisión. Pulsa Espacio para empezar.">
+  <span class="k">POCUS avanzado de cuello</span>
+  <h1>Tiroides, ganglios y salivales con foco práctico</h1>
+  <p class="lead">30 diapositivas, 3 secciones verticales y guion de audio listo para grabación offline.</p>
+  <div class="g4">
+    <div class="card"><p>30 slides</p></div>
+    <div class="card"><p>3 stacks verticales</p></div>
+    <div class="card"><p>casos con pausa diagnóstica</p></div>
+    <div class="card"><p>audio + fallback</p></div>
+  </div>
+  <div class="foot"><p>Navegación: <kbd>Espacio</kbd> para avanzar.</p><p>Ernesto Barrera · 2026</p></div>
+</section>
+
+<!-- 2 -->
+<section class="slide" data-menu-title="Guia" data-audio-text="Usa una estrategia de baja carga cognitiva: primero patrón visual, luego audio, por último detalle. En los casos, piensa primero y pulsa Espacio o flecha para revelar respuesta.">
+  <span class="k">Guía</span>
+  <h2>Cómo leer esta presentación</h2>
+  <div class="g2">
+    <div class="card"><p>1) Patrón antes que detalle.</p></div>
+    <div class="card"><p>2) Audio como hilo narrativo.</p></div>
+    <div class="card"><p>3) Caso primero, respuesta después.</p></div>
+    <div class="card"><p>4) Volver al hilo conductor en cada bloque.</p></div>
+  </div>
+  <div class="box"><p><kbd>M</kbd> menú · <kbd>A</kbd> audio · <kbd>B</kbd> pizarra · <kbd>C</kbd> anotar · <kbd>F</kbd> pantalla completa.</p></div>
+  <div class="foot"><p>Pie inicial: usa <kbd>Espacio</kbd> para ritmo continuo.</p><p>Guion íntegro en fallback de lectura.</p></div>
+</section>
+
+<!-- 3 -->
+<section class="slide" data-menu-title="Hilo conductor" data-audio-text="Este es el hilo conductor. En cada dominio seguimos la misma secuencia: normalidad, criterios, casos y síntesis. Puedes volver aquí desde cada sección.">
+  <span class="k">Hilo conductor</span>
+  <h2>Tres dominios, una secuencia estable</h2>
+  <div class="g3">
+    <a class="card map" href="#/3/0"><p>Bloque 1 · Tiroides</p><span class="cta">Abrir</span></a>
+    <a class="card map" href="#/4/0"><p>Bloque 2 · Ganglios</p><span class="cta">Abrir</span></a>
+    <a class="card map" href="#/5/0"><p>Bloque 3 · Salivales</p><span class="cta">Abrir</span></a>
+  </div>
+</section>
+
+<!-- STACK 1: TIROIDES (9) -->
+<section>
+  <!-- 4 -->
+  <section class="slide" data-menu-title="B1 portada" data-audio-text="Entramos en tiroides. Objetivo: reducir punciones innecesarias sin perder lesiones relevantes." data-background-gradient="linear-gradient(135deg,#0b1b2f,#0f2f4d)">
+    <div class="n">Bloque 01</div><h2>Tiroides</h2><p class="desc">normalidad · TI-RADS · Doppler · casos</p><a class="back" href="#/2">Volver al hilo conductor</a>
+  </section>
+  <!-- 5 -->
+  <section class="slide a" data-menu-title="B1 normalidad" data-audio-text="Sin referencia de normalidad, sube el sobrediagnóstico. Esta es la base.">
+    <h2>Patrón normal tiroideo</h2>
+    <div class="g2">
+      <div class="card"><p>Ecoestructura homogénea.</p><p>Istmo habitualmente menor de 3 mm.</p><p>Doppler discreto.</p><p>PSV ATI: menor de 25 cm/s.</p></div>
+      <div class="img">Imagen sugerida: tiroides normal transversal + referencias anatómicas.</div>
+    </div>
+  </section>
+  <!-- 6 -->
+  <section class="slide a" data-menu-title="B1 TI-RADS" data-audio-text="TI-RADS convierte imagen en decisión. La clave es sumar puntos y aplicar umbral de tamaño.">
+    <h2>TI-RADS y decisión de PAAF</h2>
+    <div class="box"><table><thead><tr><th>Nivel</th><th>Puntos</th><th>Riesgo</th><th>PAAF</th></tr></thead><tbody>
+      <tr><td>TR1</td><td>0</td><td>0,3%</td><td>No</td></tr>
+      <tr><td>TR2</td><td>2</td><td>1,6%</td><td>No</td></tr>
+      <tr><td>TR3</td><td>3</td><td>4,8%</td><td>&ge; 2,5 cm</td></tr>
+      <tr><td>TR4</td><td>4-6</td><td>9-19%</td><td>&ge; 1,5 cm</td></tr>
+      <tr><td>TR5</td><td>&ge; 7</td><td>36,4%</td><td>&ge; 1 cm</td></tr>
+    </tbody></table></div>
+  </section>
+  <!-- 7 -->
+  <section class="slide a" data-menu-title="B1 pitfall" data-audio-text="Error frecuente: cola de cometa no es microcalcificación. Esta confusión dispara falsos positivos.">
+    <h2>Pitfall: cola de cometa vs microcalcificación</h2>
+    <div class="g2">
+      <div class="card"><p>Cola de cometa: patrón quístico benigno.</p></div>
+      <div class="card"><p>Foco puntiforme sólido: aumenta riesgo TI-RADS.</p></div>
+    </div>
+  </section>
+  <!-- 8 -->
+  <section class="slide q" data-menu-title="B1 caso TR4" data-audio-text="Caso uno. Nódulo sólido hipoecogénico de 1,8 cm, ancho mayor que alto, sin focos puntiformes. Puntúalo y pulsa Espacio o flecha para ver respuesta.">
+    <h2>Caso 1 · Nódulo tiroideo</h2><p>Mujer 48 años, nódulo de 1,8 cm, sólido, hipoeco, bordes regulares.</p><span class="p">Piensa y pulsa Espacio</span>
+    <div class="fragment show"><div class="ans"><strong>Respuesta:</strong> TR4.<p>PAAF indicada por tamaño.</p></div></div>
+  </section>
+  <!-- 9 -->
+  <section class="slide a" data-menu-title="B1 Doppler" data-audio-text="En patología difusa, el Doppler simplifica el diferencial entre Graves, Hashimoto y De Quervain.">
+    <h2>Doppler en tiroides difuso</h2>
+    <div class="box"><table><thead><tr><th>Entidad</th><th>Patrón</th><th>Doppler</th></tr></thead><tbody>
+      <tr><td>Graves</td><td>Hipoeco difusa</td><td>Hiperflujo difuso</td></tr>
+      <tr><td>Hashimoto</td><td>Heterogénea</td><td>Leve o normal</td></tr>
+      <tr><td>De Quervain</td><td>Focal en mapa</td><td>Disminuido focal</td></tr>
+    </tbody></table></div>
+  </section>
+  <!-- 10 -->
+  <section class="slide q" data-menu-title="B1 caso Hashimoto" data-audio-text="Caso dos. Pseudonódulos avasculares y anti TPO positivo. Decide diagnóstico y pulsa Espacio o flecha.">
+    <h2>Caso 2 · Patrón jirafa</h2><p>Tiroides heterogéneo con pseudonódulos avasculares.</p><span class="p">Resolver antes de revelar</span>
+    <div class="fragment show"><div class="ans"><strong>Respuesta:</strong> tiroiditis de Hashimoto.<p>Pista: avascularidad de pseudonódulos.</p></div></div>
+  </section>
+  <!-- 11 -->
+  <section class="slide q" data-menu-title="B1 caso Graves" data-audio-text="Caso tres. Hipertiroidismo con hiperflujo difuso intenso. Decide si corresponde a Graves y pulsa Espacio o flecha.">
+    <h2>Caso 3 · Thyroid inferno</h2><p>TSH suprimida y Doppler global muy aumentado.</p><span class="p">Hipótesis y revelar</span>
+    <div class="fragment show"><div class="ans"><strong>Respuesta:</strong> Graves.<p>El patrón de hiperflujo difuso lo respalda.</p></div></div>
+  </section>
+  <!-- 12 -->
+  <section class="slide" data-menu-title="B1 sintesis" data-audio-text="Síntesis de tiroides: patrón basal, TI-RADS con tamaño y Doppler en patología difusa." data-background-gradient="linear-gradient(135deg,#0a1f34,#10365a)">
+    <div class="n">Síntesis bloque 01</div><h2>Claves de tiroides</h2>
+    <ul class="tk"><li>Normalidad primero.</li><li>TI-RADS + umbral de tamaño.</li><li>Doppler ordena el diferencial difuso.</li><li>En duda, seguimiento estructurado.</li></ul>
+    <a class="back" href="#/2">Volver al hilo conductor</a>
+  </section>
+</section>
+
+<!-- STACK 2: GANGLIOS (8) -->
+<section>
+  <!-- 13 -->
+  <section class="slide" data-menu-title="B2 portada" data-audio-text="Entramos en ganglios. El valor está en la combinación de criterios y la exploración por niveles." data-background-gradient="linear-gradient(135deg,#0a1828,#1a2142)">
+    <div class="n">Bloque 02</div><h2>Ganglios cervicales</h2><p class="desc">normalidad · multicriterio · casos</p><a class="back" href="#/2">Volver al hilo conductor</a>
+  </section>
+  <!-- 14 -->
+  <section class="slide a" data-menu-title="B2 normalidad" data-audio-text="El patrón normal ganglionar incluye forma ovalada, hilio ecogénico y Doppler hiliar.">
+    <h2>Patrón ganglionar normal</h2>
+    <div class="g2"><div class="card"><p>Eje corto/largo menor de 0,5.</p><p>Hilio conservado.</p><p>Flujo hiliar.</p><p>Barrer niveles I a VI.</p></div><div class="img">Imagen sugerida: ganglio ovalado con hilio + mapa por niveles.</div></div>
+  </section>
+  <!-- 15 -->
+  <section class="slide a" data-menu-title="B2 criterios" data-audio-text="Ningún criterio aislado basta. Hay que integrar forma, hilio, corteza, Doppler y signos de alta especificidad.">
+    <h2>Benigno vs maligno: lectura combinada</h2>
+    <div class="box"><table><thead><tr><th>Criterio</th><th>Benigno</th><th>Sospecha</th></tr></thead><tbody>
+      <tr><td>Forma</td><td>Ovalado</td><td>Redondo</td></tr>
+      <tr><td>Hilio</td><td>Presente</td><td>Ausente</td></tr>
+      <tr><td>Doppler</td><td>Hiliar</td><td>Periférico</td></tr>
+      <tr><td>Signos fuertes</td><td>Sin necrosis</td><td>Necrosis/microcalcif.</td></tr>
+    </tbody></table></div>
+  </section>
+  <!-- 16 -->
+  <section class="slide a" data-menu-title="B2 huellas" data-audio-text="Aquí se resumen huellas etiológicas. Se ajustó la maquetación para mantener margen derecho y evitar desbordes de tabla.">
+    <h2>Cada etiología deja una huella ecográfica</h2>
+    <div class="box"><table><thead><tr><th>Etiología</th><th>Patrón</th><th>Dato clave</th></tr></thead><tbody>
+      <tr><td>Reactivo</td><td>Ovalado con hilio</td><td>Doppler hiliar</td></tr>
+      <tr><td>Linfoma</td><td>Muy hipoeco, redondo</td><td>BAG preferente</td></tr>
+      <tr><td>Metástasis PTC</td><td>Focos + quístico</td><td>Alta especificidad</td></tr>
+      <tr><td>Metástasis SCC</td><td>Necrosis quística</td><td>Simula quiste branquial</td></tr>
+      <tr><td>Tuberculosis</td><td>Conglomerados</td><td>Pérdida planos grasos</td></tr>
+    </tbody></table></div>
+  </section>
+  <!-- 17 -->
+  <section class="slide q" data-menu-title="B2 caso linfoma" data-audio-text="Caso cuatro. Ganglios bilaterales hipoecogénicos sin hilio y sin necrosis. Decide y pulsa Espacio o flecha.">
+    <h2>Caso 4 · Adenopatías persistentes</h2><p>Niveles II-V bilaterales, reticulación interna, vascularización mixta.</p><span class="p">Piensa y revela</span>
+    <div class="fragment show"><div class="ans"><strong>Respuesta:</strong> linfoma probable.<p>Planificar BAG para confirmación.</p></div></div>
+  </section>
+  <!-- 18 -->
+  <section class="slide q" data-menu-title="B2 caso PTC" data-audio-text="Caso cinco. Seguimiento post cáncer papilar con microcalcificaciones y componente quístico. Decide y pulsa Espacio o flecha.">
+    <h2>Caso 5 · Ganglio post-tiroidectomía</h2><p>Ganglio de 1,4 cm sin hilio, focos ecogénicos y área quística.</p><span class="p">Resolver y revelar</span>
+    <div class="fragment show"><div class="ans"><strong>Respuesta:</strong> metástasis ganglionar de PTC.<p>Tríada altamente sugestiva.</p></div></div>
+  </section>
+  <!-- 19 -->
+  <section class="slide q" data-menu-title="B2 caso SCC" data-audio-text="Caso seis. Masa quística lateral en adulto fumador con componente sólido vascular. Decide y pulsa Espacio o flecha.">
+    <h2>Caso 6 · Masa lateral quística en adulto</h2><p>Lesión compleja nivel II con infiltración.</p><span class="p">Hipótesis diagnóstica</span>
+    <div class="fragment show"><div class="ans"><strong>Respuesta:</strong> metástasis quística por SCC probable.<p>Manejar como malignidad hasta descartar.</p></div></div>
+  </section>
+  <!-- 20 -->
+  <section class="slide" data-menu-title="B2 sintesis" data-audio-text="Síntesis ganglionar. Combinar criterios, explorar por niveles y no decidir por un único signo.">
+    <div class="n">Síntesis bloque 02</div><h2>Claves de ganglios</h2>
+    <ul class="tk"><li>Multicriterio siempre.</li><li>Necrosis/microcalcif. son señales fuertes.</li><li>Sospecha de linfoma: BAG.</li><li>Mapa por niveles de forma sistemática.</li></ul>
+    <a class="back" href="#/2">Volver al hilo conductor</a>
+  </section>
+</section>
+
+<!-- STACK 3: SALIVALES (8) -->
+<section>
+  <!-- 21 -->
+  <section class="slide" data-menu-title="B3 portada" data-audio-text="Entramos en salivales. Objetivo: separar inflamación, obstrucción y tumor con un protocolo breve." data-background-gradient="linear-gradient(135deg,#0a1525,#2d1947)">
+    <div class="n">Bloque 03</div><h2>Glándulas salivales</h2><p class="desc">normalidad · OMERACT · litiasis · tumores</p><a class="back" href="#/2">Volver al hilo conductor</a>
+  </section>
+  <!-- 22 -->
+  <section class="slide a" data-menu-title="B3 normalidad" data-audio-text="Comparar ambos lados evita sobrediagnóstico. Parótida suele ser más ecogénica que submandibular.">
+    <h2>Patrón normal salival</h2>
+    <div class="g2"><div class="card"><p>Parótida homogénea e hiperecogénica.</p><p>Submandibular algo menos ecogénica.</p><p>Técnica bimanual para Wharton distal.</p><p>Revisar cola parotídea.</p></div><div class="img">Imagen sugerida: parótida y submandibular normales.</div></div>
+  </section>
+  <!-- 23 -->
+  <section class="slide a" data-menu-title="B3 OMERACT" data-audio-text="OMERACT da un lenguaje reproducible para Sjögren y mejora la integración con criterios ACR EULAR.">
+    <h2>OMERACT en Sjögren</h2>
+    <div class="g2">
+      <div class="kv"><div class="l">Escala</div><div class="v">0 normal a 3 reemplazo difuso</div></div>
+      <div class="kv"><div class="l">Total</div><div class="v">0 a 12</div></div>
+      <div class="kv"><div class="l">Corte útil</div><div class="v">OMERACT ≥ 8</div></div>
+      <div class="kv"><div class="l">Con ACR/EULAR</div><div class="v">AUC cercana a 0,97</div></div>
+    </div>
+  </section>
+  <!-- 24 -->
+  <section class="slide q" data-menu-title="B3 caso Sjogren" data-audio-text="Caso siete. Sequedad crónica y focos hipoecogénicos confluyentes en parótidas. Define grado y pulsa Espacio o flecha para revelar.">
+    <h2>Caso 7 · Patrón salival en Sjögren</h2><p>Afectación bilateral con áreas hipoeco extensas.</p><span class="p">Piensa y revela</span>
+    <div class="fragment show"><div class="ans"><strong>Respuesta:</strong> patrón OMERACT 2-3.<p>Integrar con clínica e inmunología para derivación.</p></div></div>
+  </section>
+  <!-- 25 -->
+  <section class="slide a" data-menu-title="B3 litiasis" data-audio-text="En litiasis, combina signo directo con signo indirecto. Si no ves cálculo, busca dilatación ductal.">
+    <h2>Sialolitiasis: directo más indirecto</h2>
+    <div class="box"><table><thead><tr><th>Hallazgo</th><th>Valor</th></tr></thead><tbody>
+      <tr><td>Cálculo + sombra</td><td>Signo directo</td></tr>
+      <tr><td>Dilatación ductal</td><td>Signo indirecto sensible</td></tr>
+      <tr><td>Clínica prandial</td><td>Alto valor contextual</td></tr>
+      <tr><td>Topografía</td><td>Predominio submandibular</td></tr>
+    </tbody></table></div>
+  </section>
+  <!-- 26 -->
+  <section class="slide a" data-menu-title="B3 tumores" data-audio-text="En masa parotídea, localización y Doppler orientan la distinción entre pleomorfo y Warthin.">
+    <h2>Pleomorfo vs Warthin</h2>
+    <div class="box"><table><thead><tr><th>Característica</th><th>Pleomorfo</th><th>Warthin</th></tr></thead><tbody>
+      <tr><td>Localización</td><td>Variable</td><td>Cola parotídea</td></tr>
+      <tr><td>Componente</td><td>Más sólido</td><td>Más quístico</td></tr>
+      <tr><td>Doppler</td><td>Flujo bajo</td><td>Flujo central/mixto</td></tr>
+      <tr><td>Multifocalidad</td><td>Poco frecuente</td><td>Más frecuente</td></tr>
+    </tbody></table></div>
+  </section>
+  <!-- 27 -->
+  <section class="slide q" data-menu-title="B3 caso litiasis" data-audio-text="Caso ocho. Dolor prandial, Wharton dilatado y foco hiperecogénico con sombra. Decide y pulsa Espacio o flecha.">
+    <h2>Caso 8 · Tumefacción submandibular prandial</h2><p>Conducto de Wharton dilatado con cálculo visible.</p><span class="p">Diagnóstico y acción</span>
+    <div class="fragment show"><div class="ans"><strong>Respuesta:</strong> sialolitiasis del conducto de Wharton.<p>Valorar derivación según localización y recurrencia.</p></div></div>
+  </section>
+  <!-- 28 -->
+  <section class="slide" data-menu-title="B3 sintesis" data-audio-text="Síntesis salival. Con patrón normal, OMERACT y lectura de litiasis, el POCUS se vuelve decisional.">
+    <div class="n">Síntesis bloque 03</div><h2>Claves de salivales</h2>
+    <ul class="tk"><li>Comparación bilateral obligatoria.</li><li>OMERACT para Sjögren.</li><li>Dilatación ductal si no ves cálculo.</li><li>Red flags tumorales: derivación preferente.</li></ul>
+    <a class="back" href="#/2">Volver al hilo conductor</a>
+  </section>
+</section>
+
+<!-- 29 -->
+<section class="slide" data-menu-title="Cierre" data-audio-text="Cierre integrador. POCUS de cuello es un algoritmo clínico: referencia, estratificación y decisión.">
+  <span class="k">Cierre operativo</span><h2>Algoritmo de 3 pasos para consulta</h2>
+  <div class="g3">
+    <div class="card"><p>1) Referencia normal.</p></div>
+    <div class="card"><p>2) Estratificar con sistema adecuado.</p></div>
+    <div class="card"><p>3) Decidir seguimiento, punción o derivación.</p></div>
+  </div>
+  <p class="lead">Mensaje final: el Doppler es el hilo conductor en los tres dominios.</p>
+</section>
+
+<!-- 30 -->
+<section class="slide" id="guion-fallback" data-menu-title="Guion audio" data-audio-text="Esta diapositiva reúne todo el guion narrado como fallback de lectura y soporte para notas del orador.">
+  <span class="k">Fallback de lectura</span><h2>Guion de audio por diapositiva</h2>
+  <p class="lead">Generado automáticamente desde <code>data-audio-text</code>.</p>
+  <div class="fallback"><ol id="audio-script-list"></ol></div>
+</section>
+
+</div></div>
+<script src="reveal.js/dist/reveal.js"></script>
+<script src="reveal.js/plugin/markdown/markdown.js"></script>
+<script src="reveal.js/plugin/highlight/highlight.js"></script>
+<script src="reveal.js/plugin/notes/notes.js"></script>
+<script src="reveal.js/plugin/math/math.js"></script>
+<script src="reveal.js/plugin/zoom/zoom.js"></script>
+<script src="reveal.js/plugin/search/search.js"></script>
+<script src="reveal.js-plugins/menu/menu.js"></script>
+<script src="reveal.js-plugins/chalkboard/plugin.js"></script>
+<script src="reveal.js-plugins/appearance/appearance.js"></script>
+<script src="reveal.js-plugins/audio-slideshow/plugin.js"></script>
+<script src="reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+<script src="reveal.js-plugins/audio-slideshow/recorder.js"></script>
+<script src="reveal.js-plugins/simplemenu/simplemenu.js"></script>
+<script src="reveal.js-plugins/fullscreen/plugin.js"></script>
+<script src="reveal.js-plugins/animate/svg.min.js"></script>
+<script src="reveal.js-plugins/animate/plugin.js"></script>
+<script src="reveal.js-plugins/embed-tweet/plugin.js"></script>
+<script>
+const leaf=()=>Array.from(document.querySelectorAll(".reveal .slides section")).filter(s=>!s.querySelector(":scope > section"));
+const esc=v=>String(v||"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
+function syncNotes(){leaf().forEach(s=>{const t=s.getAttribute("data-audio-text");if(!t)return;let n=s.querySelector("aside.notes");if(!n){n=document.createElement("aside");n.className="notes";s.appendChild(n)}if(!n.textContent.trim())n.textContent=t;});}
+function scriptHtml(){return leaf().map((s,i)=>{const h=(s.querySelector("h1,h2,h3")?.textContent||`Diapositiva ${i+1}`).trim();const t=s.getAttribute("data-audio-text")||"Sin texto";return `<li><strong>${i+1}. ${esc(h)}</strong><br>${esc(t)}</li>`;}).join("");}
+function renderFallback(){const o=document.getElementById("audio-script-list");if(o)o.innerHTML=scriptHtml();}
+syncNotes();
+const menuShort=`<ul class="slide-menu-items"><li class="slide-menu-item"><span class="slide-menu-item-title"><strong>Navegacion</strong>: <kbd>Espacio</kbd> avanzar · <kbd>Shift+Espacio</kbd> volver</span></li><li class="slide-menu-item"><span class="slide-menu-item-title"><kbd>M</kbd> menu · <kbd>A</kbd> audio · <kbd>B</kbd> pizarra · <kbd>C</kbd> anotar</span></li></ul>`;
+const menuScript=`<div class="slide-menu-items"><div class="slide-menu-item"><span class="slide-menu-item-title"><strong>Guion narrado</strong></span></div><ol style="padding-left:18px;margin-top:8px;max-height:70vh;overflow:auto;">${scriptHtml()}</ol></div>`;
+Reveal.initialize({
+  width:1280,height:720,margin:.02,controls:true,progress:true,hash:true,center:false,slideNumber:"c/t",transition:"fade",backgroundTransition:"fade",touch:true,mouseWheel:true,viewDistance:3,mobileViewDistance:1,
+  menu:{side:"left",markers:true,openButton:true,keyboard:true,titleSelector:"h1,h2,h3",custom:[{title:"Atajos",icon:"⌨",content:menuShort},{title:"Guion",icon:"TXT",content:menuScript}]},
+  simplemenu:{auto:false},audioStartAtFragment:false,
+  audio:{prefix:"assets/pocus_cuello/",suffix:".webm",defaultDuration:7,defaultText:true,defaultNotes:true,defaultAudios:true,autoplay:true,advance:-1,playerOpacity:.88,playerStyle:"position:fixed;bottom:8px;left:19%;width:62%;height:42px;z-index:35;"},
+  chalkboard:{storage:"pocus-cuello-chalkboard",toggleChalkboardButton:{left:"80px"},toggleNotesButton:{left:"130px"}},
+  animate:{autoplay:true},
+  plugins:[RevealMarkdown,RevealHighlight,RevealNotes,RevealMath.KaTeX,RevealZoom,RevealSearch,RevealMenu,RevealChalkboard,Appearance,RevealAudioSlideshow,Simplemenu,RevealFullscreen,RevealAnimate,RevealEmbedTweet]
+});
+Reveal.on("ready",renderFallback);
+</script>
+</body>
+</html>
