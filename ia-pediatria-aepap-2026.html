@@ -485,6 +485,32 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
       }
 
+      .piramide-hint {
+        left: 100px;
+        right: auto;
+        bottom: 20px;
+        max-width: 360px;
+        pointer-events: none;
+      }
+
+      .piramide-hint .glass-panel {
+        background: rgba(15, 23, 42, 0.88);
+        border-radius: 12px;
+      }
+
+      .present .piramide-hint {
+        opacity: 1;
+        animation:
+          pulse-glow 2s ease-in-out 2,
+          piramide-hint-fade 0.5s ease-out 4s forwards;
+      }
+
+      @keyframes piramide-hint-fade {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
       @keyframes pulse-glow {
         0%,
         100% {
@@ -6539,7 +6565,7 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
             </div>
           </section>
 
-          <!-- SLIDE: Técnicas de Prompting con Evidencia -->
+          <!-- SLIDE #36: Técnicas de Prompting con Evidencia -->
           <section
             data-menu-title="Técnicas de Prompting"
             data-audio-text="Las 4 técnicas de prompting con mayor impacto según la evidencia son: Chain-of-Thought, que mejora del 17 al 58 por ciento pidiendo 'piensa paso a paso'. Few-shot, dando ejemplos antes de la consulta. RAG, conectando a fuentes verificadas para reducir alucinaciones. Y Self-Consistency, generando varias respuestas y eligiendo la más frecuente. Pero atención: cambios triviales en el formato pueden causar variaciones de hasta 76 puntos porcentuales."
@@ -6707,11 +6733,11 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
             </p>
           </section>
           <!-- ============================================================
-               SLIDE #36 — GPTs, Gems y personalización
-               Deck: #36 | Bloque 2C | Audio: ~62s
+               SLIDE #37 — GPTs, Gems y personalización
+               Deck: #37 | Bloque 2C | Audio: ~62s
                Assertion: "Un asistente preconfigurado elimina el prompting repetitivo"
-               Puente desde #35 (Prompt Engineering → automatiza con GPTs)
-               Puente hacia #37 (Tabla herramientas → elige por confianza)
+               Puente desde #36 (Técnicas Prompting → automatiza con GPTs)
+               Puente hacia #38 (Tabla herramientas → elige por confianza)
                ============================================================ -->
 
           <section
@@ -6910,7 +6936,7 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
               </p>
             </div>
           </section>
-          <!-- SLIDE #37: Tu caja de herramientas (fusión 3.1+3.2+2C.6+2C.7) -->
+          <!-- SLIDE #38: Tu caja de herramientas (fusión 3.1+3.2+2C.6+2C.7) -->
           <!-- 🔧 NOTA: Slide Pirámide 5.0 irá DESPUÉS de esta -->
           <section
             class="wide-slide"
@@ -7215,16 +7241,210 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
             </div>
           </section>
 
-          <!-- ═══════════════ #37 — Pirámide 5.0 + Ecosistema IA ═══════════════ -->
+          <!--SLIDE: IA Agéntica (síntesis operativa) -->
           <section
-            data-menu-title="Pirámide 5.0 + Ecosistema"
-            data-background-iframe="https://ernestobarrera.github.io/piramide-evidencia-ia.html?embed=1"
-            data-background-interactive
-            data-audio-src="aepap-2026/audios/37.webm"
-            data-audio-text="Recordemos los tres niveles de confianza que ya vimos: erre a ge clínico, investigación académica y fundacional. Ahora vamos a profundizar con la herramienta interactiva que tenéis delante. Esto es un modelo bidimensional. A la izquierda, la pirámide de evidencia cinco punto cero de Alper y Haynes: cinco niveles, desde los estudios originales en la base hasta los sistemas integrados en la historia clínica electrónica en la cúspide. A la derecha, las herramientas de inteligencia artificial clasificadas en la misma lógica de la tabla anterior, pero con más detalle: fundacionales frente a erre a ge. La tesis sigue siendo la misma: trazabilidad no es evaluación crítica. Que una herramienta cite un artículo del ene i ye eme no significa que lo haya ponderado. Acceder a Cochrane no es producir una revisión Cochrane. Explorad la interfaz. Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide a los que accede. Al hacer clic se abre su ficha: características, precio, mejor uso y precauciones. Los botones superiores explican la diferencia entre grounding y appraisal, la guía de evaluación crítica y las conclusiones prácticas. Usad este mapa cuando volváis a la consulta y dudéis de con qué herramienta trabajar."
-          ></section>
+            class="wide-slide"
+            data-menu-title="IA Agéntica: Impacto y Control Clínico"
+            data-audio-src="aepap-2026/audios/49.webm"
+            data-audio-text="La IA puede amplificar el criterio clínico, pero también erosionar el razonamiento cuando delegamos sin control. En nivel asistencial, reduce carga documental; en nivel de recomendación, mejora síntesis si usamos RAG y verificamos fuentes; en nivel de acción, aumenta el riesgo de deskilling y exige límites explícitos. El deskilling no es teórico: requiere práctica deliberada sin IA para preservar competencias. Cuanta más autonomía del agente, más obligatoria la supervisión humana, la trazabilidad y la documentación de la decisión final."
+          >
+            <div class="title-wrapper">
+              <h2 class="assertion-title">
+                De IA que sugiere a IA que actúa:
+                <span class="highlight">control clínico explícito</span>
+              </h2>
+              <p class="subtitle">
+                Taxonomía operativa en 3 niveles: valor clínico, riesgo
+                dominante y barrera de seguridad obligatoria
+              </p>
+            </div>
 
-          <!-- SLIDE #38 NUEVA v2: RAG + Whitelisting (fusión #47+#48 antiguos) -->
+            <div
+              class="glass-panel"
+              style="
+                max-width: 1150px;
+                margin: 12px auto;
+                padding: 0;
+                overflow: hidden;
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1.1fr 1.1fr 1.2fr 1.3fr;
+                  font-size: 0.74em;
+                "
+              >
+                <div
+                  style="
+                    padding: 10px;
+                    background: rgba(96, 165, 250, 0.2);
+                    font-weight: 700;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+                  "
+                >
+                  Nivel de autonomía
+                </div>
+                <div
+                  style="
+                    padding: 10px;
+                    background: rgba(96, 165, 250, 0.2);
+                    font-weight: 700;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+                  "
+                >
+                  Valor clínico principal
+                </div>
+                <div
+                  style="
+                    padding: 10px;
+                    background: rgba(96, 165, 250, 0.2);
+                    font-weight: 700;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+                  "
+                >
+                  Riesgo dominante
+                </div>
+                <div
+                  style="
+                    padding: 10px;
+                    background: rgba(96, 165, 250, 0.2);
+                    font-weight: 700;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+                  "
+                >
+                  Control no negociable
+                </div>
+
+                <div
+                  style="
+                    padding: 10px;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+                  "
+                >
+                  <strong style="color: var(--secondary)">Asiste</strong><br />
+                  <span style="color: var(--text-muted)"
+                    >IA ambiental / documentación</span
+                  >
+                </div>
+                <div
+                  style="
+                    padding: 10px;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+                  "
+                >
+                  Reduce carga administrativa y libera tiempo clínico
+                </div>
+                <div
+                  style="
+                    padding: 10px;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+                  "
+                >
+                  Tecnostrés, sobreconfianza en resúmenes y riesgo de privacidad
+                </div>
+                <div
+                  style="
+                    padding: 10px;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+                  "
+                >
+                  Consentimiento explícito + revisión humana final de la nota
+                </div>
+
+                <div
+                  style="
+                    padding: 10px;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+                  "
+                >
+                  <strong style="color: var(--accent)">Recomienda</strong><br />
+                  <span style="color: var(--text-muted)"
+                    >LLM + RAG en soporte decisional</span
+                  >
+                </div>
+                <div
+                  style="
+                    padding: 10px;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+                  "
+                >
+                  Mejora síntesis de evidencia y estructuración del diferencial
+                </div>
+                <div
+                  style="
+                    padding: 10px;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+                  "
+                >
+                  Alucinación plausible + anclaje algorítmico
+                </div>
+                <div
+                  style="
+                    padding: 10px;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+                  "
+                >
+                  RAG + verificación en fuente primaria + contraste con juicio
+                  clínico
+                </div>
+
+                <div style="padding: 10px">
+                  <strong style="color: #ef4444">Actúa</strong><br />
+                  <span style="color: var(--text-muted)"
+                    >Agentes / multiagente / flujos</span
+                  >
+                </div>
+                <div style="padding: 10px">
+                  Automatiza tareas y secuencias operativas de alto volumen
+                </div>
+                <div style="padding: 10px">
+                  Erosión del razonamiento clínico y
+                  <strong>deskilling</strong> progresivo
+                </div>
+                <div style="padding: 10px">
+                  Límites explícitos de autonomía + trazabilidad completa +
+                  supervisión humana documentada
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-3" style="max-width: 1100px; margin: 10px auto">
+              <div class="glass-panel" style="text-align: center">
+                <div class="metric-value" style="color: var(--primary)">
+                  OR 1.35
+                </div>
+                <p style="font-size: 0.72em; margin: 4px 0 0">
+                  RAG vs LLM base en rendimiento clínico
+                </p>
+              </div>
+              <div class="glass-panel" style="text-align: center">
+                <div class="metric-value" style="color: #ef4444">
+                  Deskilling
+                </div>
+                <p style="font-size: 0.72em; margin: 4px 0 0">
+                  Evidencia empírica: desuso de habilidades sin práctica AI-off
+                </p>
+              </div>
+              <div class="glass-panel" style="text-align: center">
+                <div class="metric-value" style="color: var(--accent)">
+                  Algovigilancia
+                </div>
+                <p style="font-size: 0.72em; margin: 4px 0 0">
+                  Monitorización sistemática de rendimiento y deriva
+                  post-despliegue
+                </p>
+              </div>
+            </div>
+
+            <p class="source-note">
+              Refs: Goh et al. JAMA Intern Med 2024; Budzyń et al. Lancet
+              Gastroenterol Hepatol 2025; Liu et al. JAMIA 2025; Reglamento (UE)
+              2024/1689.
+            </p>
+          </section>
+
+          <!-- SLIDE #39: RAG + Whitelisting (fusión #47+#48 antiguos) -->
           <section
             class="wide-slide"
             data-menu-title="RAG + Whitelisting"
@@ -7860,7 +8080,7 @@ Fijaos en la diferencia con el semáforo anterior. Aquel clasificaba tareas de i
             </p>
           </section>
 
-          <!-- SLIDE #40: Síntesis — 5 mensajes para el lunes -->
+          <!-- SLIDE #41: Síntesis — 5 mensajes para el lunes -->
           <section
             class="wide-slide"
             data-menu-title="Síntesis: 5 mensajes"
@@ -9236,7 +9456,7 @@ Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en direc
         <section>
           <section
             data-menu-title="Bloque 3: Demos en Vivo"
-            data-audio-text="Ahora viene la parte más práctica. Vamos a ver dos herramientas en acción: NotebookLM para documentación clínica, y la Pirámide de Evidencia cinco punto cero interactiva para elegir herramienta."
+            data-audio-text="Ahora viene una parte más práctica. Vamos a ver dos herramientas en acción: NotebookLM para documentación clínica, y la Pirámide de Evidencia cinco punto cero interactiva para elegir herramienta."
           >
             <div class="section-intro">
               <i
@@ -9860,24 +10080,22 @@ Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en direc
             </div>
           </section>
 
-          <!-- SLIDE #43: Demo Pirámide 5.0 interactiva -->
+          <!-- SLIDE #44: Demo Pirámide 5.0 interactiva -->
           <section
             data-menu-title="Demo: Pirámide 5.0"
-            data-background-iframe="https://ernestobarrera.github.io/piramide-evidencia-ia.html"
+            data-background-iframe="https://ernestobarrera.github.io/piramide-evidencia-ia.html?embed=1"
             data-background-interactive
-            data-audio-src="aepap-2026/audios/43.webm"
+            data-audio-src="aepap-2026/audios/45.webm"
             data-audio-text="Vamos a explorar juntos la Pirámide de Evidencia cinco punto cero adaptada a herramientas de inteligencia artificial. Es interactiva: podéis pulsar en cada nivel para ver qué herramientas pertenecen a cada categoría y por qué."
           >
-            <div
-              style="position: absolute; bottom: 20px; left: 20px; z-index: 100"
-            >
-              <div class="glass-panel" style="padding: 10px 20px">
+            <div class="demo-overlay piramide-hint">
+              <div class="glass-panel" style="padding: 10px 14px">
                 <i
                   class="fa-solid fa-hand-pointer"
                   style="color: var(--accent); margin-right: 8px"
                 ></i>
-                <span style="font-size: 0.85em"
-                  >Interactúa directamente con la Pirámide 5.0</span
+                <span style="font-size: 0.8em"
+                  >Interactúa con la Pirámide 5.0</span
                 >
               </div>
             </div>
@@ -10442,209 +10660,6 @@ Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en direc
                 La verificación humana al final <strong>NO es opcional</strong>
               </p>
             </div>
-          </section>
-
-          <!-- SLIDE: IA Agéntica (síntesis operativa) -->
-          <section
-            class="wide-slide"
-            data-menu-title="IA Agéntica: Impacto y Control Clínico"
-            data-audio-src="aepap-2026/audios/49.webm"
-            data-audio-text="La IA puede amplificar el criterio clínico, pero también erosionar el razonamiento cuando delegamos sin control. En nivel asistencial, reduce carga documental; en nivel de recomendación, mejora síntesis si usamos RAG y verificamos fuentes; en nivel de acción, aumenta el riesgo de deskilling y exige límites explícitos. El deskilling no es teórico: requiere práctica deliberada sin IA para preservar competencias. Cuanta más autonomía del agente, más obligatoria la supervisión humana, la trazabilidad y la documentación de la decisión final."
-          >
-            <div class="title-wrapper">
-              <h2 class="assertion-title">
-                De IA que sugiere a IA que actúa:
-                <span class="highlight">control clínico explícito</span>
-              </h2>
-              <p class="subtitle">
-                Taxonomía operativa en 3 niveles: valor clínico, riesgo
-                dominante y barrera de seguridad obligatoria
-              </p>
-            </div>
-
-            <div
-              class="glass-panel"
-              style="
-                max-width: 1150px;
-                margin: 12px auto;
-                padding: 0;
-                overflow: hidden;
-              "
-            >
-              <div
-                style="
-                  display: grid;
-                  grid-template-columns: 1.1fr 1.1fr 1.2fr 1.3fr;
-                  font-size: 0.74em;
-                "
-              >
-                <div
-                  style="
-                    padding: 10px;
-                    background: rgba(96, 165, 250, 0.2);
-                    font-weight: 700;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-                  "
-                >
-                  Nivel de autonomía
-                </div>
-                <div
-                  style="
-                    padding: 10px;
-                    background: rgba(96, 165, 250, 0.2);
-                    font-weight: 700;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-                  "
-                >
-                  Valor clínico principal
-                </div>
-                <div
-                  style="
-                    padding: 10px;
-                    background: rgba(96, 165, 250, 0.2);
-                    font-weight: 700;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-                  "
-                >
-                  Riesgo dominante
-                </div>
-                <div
-                  style="
-                    padding: 10px;
-                    background: rgba(96, 165, 250, 0.2);
-                    font-weight: 700;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-                  "
-                >
-                  Control no negociable
-                </div>
-
-                <div
-                  style="
-                    padding: 10px;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-                  "
-                >
-                  <strong style="color: var(--secondary)">Asiste</strong><br />
-                  <span style="color: var(--text-muted)"
-                    >IA ambiental / documentación</span
-                  >
-                </div>
-                <div
-                  style="
-                    padding: 10px;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-                  "
-                >
-                  Reduce carga administrativa y libera tiempo clínico
-                </div>
-                <div
-                  style="
-                    padding: 10px;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-                  "
-                >
-                  Tecnostrés, sobreconfianza en resúmenes y riesgo de privacidad
-                </div>
-                <div
-                  style="
-                    padding: 10px;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-                  "
-                >
-                  Consentimiento explícito + revisión humana final de la nota
-                </div>
-
-                <div
-                  style="
-                    padding: 10px;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-                  "
-                >
-                  <strong style="color: var(--accent)">Recomienda</strong><br />
-                  <span style="color: var(--text-muted)"
-                    >LLM + RAG en soporte decisional</span
-                  >
-                </div>
-                <div
-                  style="
-                    padding: 10px;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-                  "
-                >
-                  Mejora síntesis de evidencia y estructuración del diferencial
-                </div>
-                <div
-                  style="
-                    padding: 10px;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-                  "
-                >
-                  Alucinación plausible + anclaje algorítmico
-                </div>
-                <div
-                  style="
-                    padding: 10px;
-                    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-                  "
-                >
-                  RAG + verificación en fuente primaria + contraste con juicio
-                  clínico
-                </div>
-
-                <div style="padding: 10px">
-                  <strong style="color: #ef4444">Actúa</strong><br />
-                  <span style="color: var(--text-muted)"
-                    >Agentes / multiagente / flujos</span
-                  >
-                </div>
-                <div style="padding: 10px">
-                  Automatiza tareas y secuencias operativas de alto volumen
-                </div>
-                <div style="padding: 10px">
-                  Erosión del razonamiento clínico y
-                  <strong>deskilling</strong> progresivo
-                </div>
-                <div style="padding: 10px">
-                  Límites explícitos de autonomía + trazabilidad completa +
-                  supervisión humana documentada
-                </div>
-              </div>
-            </div>
-
-            <div class="grid-3" style="max-width: 1100px; margin: 10px auto">
-              <div class="glass-panel" style="text-align: center">
-                <div class="metric-value" style="color: var(--primary)">
-                  OR 1.35
-                </div>
-                <p style="font-size: 0.72em; margin: 4px 0 0">
-                  RAG vs LLM base en rendimiento clínico
-                </p>
-              </div>
-              <div class="glass-panel" style="text-align: center">
-                <div class="metric-value" style="color: #ef4444">
-                  Deskilling
-                </div>
-                <p style="font-size: 0.72em; margin: 4px 0 0">
-                  Evidencia empírica: desuso de habilidades sin práctica AI-off
-                </p>
-              </div>
-              <div class="glass-panel" style="text-align: center">
-                <div class="metric-value" style="color: var(--accent)">
-                  Algovigilancia
-                </div>
-                <p style="font-size: 0.72em; margin: 4px 0 0">
-                  Monitorización sistemática de rendimiento y deriva
-                  post-despliegue
-                </p>
-              </div>
-            </div>
-
-            <p class="source-note">
-              Refs: Goh et al. JAMA Intern Med 2024; Budzyń et al. Lancet
-              Gastroenterol Hepatol 2025; Liu et al. JAMIA 2025; Reglamento (UE)
-              2024/1689.
-            </p>
           </section>
 
           <!-- SLIDE: Lo que nos llevamos para casa -->
