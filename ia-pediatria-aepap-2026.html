@@ -1276,7 +1276,7 @@
                 </div>
               </a>
               <!-- Bloque 3 -->
-              <a href="#/54" style="text-decoration: none">
+              <a href="#/43" style="text-decoration: none">
                 <div
                   class="glass-panel"
                   style="
@@ -1314,7 +1314,7 @@
                 </div>
               </a>
               <!-- Bloque 4 -->
-              <a href="#/61" style="text-decoration: none">
+              <a href="#/46" style="text-decoration: none">
                 <div
                   class="glass-panel"
                   style="
@@ -1348,7 +1348,7 @@
                 </div>
               </a>
               <!-- Bloque 5 -->
-              <a href="#/64" style="text-decoration: none">
+              <a href="#/49" style="text-decoration: none">
                 <div
                   class="glass-panel"
                   style="
@@ -8309,8 +8309,6 @@ Después pasaremos a interaccionar con algún modelo. Pero primero, vamos a ver 
             </div>
           </section>
 
-
-
           <!-- SLIDE #44: Demo NotebookLM - Actualización Periódica -->
           <section
             class="wide-slide"
@@ -8753,8 +8751,7 @@ Después pasaremos a interaccionar con algún modelo. Pero primero, vamos a ver 
             </p>
           </section>
 
-
-          <!-- SLIDE #44: Demo Pirámide 5.0 interactiva -->
+          <!-- SLIDE #45: Demo Pirámide 5.0 interactiva -->
           <section
             data-menu-title="Demo: Pirámide 5.0"
             data-background-iframe="https://ernestobarrera.github.io/piramide-evidencia-ia.html?embed=1"
@@ -8777,7 +8774,6 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
               </div>
             </div>
           </section>
-
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════════ -->
@@ -8787,7 +8783,7 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
         <section>
           <section
             data-menu-title="Bloque 4: Práctica RECORD"
-            data-audio-text="Hemos visto la evidencia, hemos visto las herramientas, y hemos visto cómo se aplican en demos reales. Ahora vamos a poner en práctica el método RECORD con la ayuda un generador de prompts diseñado para la docencia en el contexto asistencial de la pediatría de atención primarai."
+            data-audio-text="Hemos visto la evidencia, hemos visto las herramientas, y hemos visto cómo se aplican en demos reales. Ahora vamos a poner en práctica el método RECORD con la ayuda de un generador de prompts diseñado para la docencia en el contexto asistencial de la pediatría de atención primaria."
           >
             <div class="section-intro">
               <i
@@ -9962,104 +9958,8 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
         });
       }
 
-      // ═══════════════════════════════════════════════════════════════
-      // GENERADOR DE PROMPTS RECORD
-      // ═══════════════════════════════════════════════════════════════
+      //
 
-      const prompts = {
-        "info-padres": `[R] Actúa como un pediatra de Atención Primaria con 15 años de experiencia, especializado en comunicación con familias.
-
-[E] Estás en consulta y acabas de diagnosticar [ENFERMEDAD] a un paciente pediátrico. Los padres necesitan información clara para el cuidado en casa.
-
-[C] El paciente es un niño/a de [EDAD] años. Es la primera vez que la familia se enfrenta a esta situación. Tienen un nivel de comprensión medio y están preocupados.
-
-[O] Genera una hoja informativa para entregar a los padres que incluya:
-- Qué es la enfermedad (explicación sencilla)
-- Cuidados en casa
-- Signos de alarma que requieren volver a consulta
-- Cuándo esperar mejoría
-
-[R] Restricciones:
-- Usa lenguaje sencillo, sin jerga médica
-- Evita causar alarma innecesaria
-- No incluyas tratamientos farmacológicos específicos
-- Máximo 1 página A4
-
-[D] Formato: Título + 4 secciones con iconos/emojis + lista de signos de alarma destacada en recuadro`,
-
-        "sesion-clinica": `[R] Actúa como un médico residente senior preparando una sesión clínica para su equipo de Atención Primaria.
-
-[E] Tienes que presentar un artículo científico reciente en la sesión clínica semanal del centro de salud. Dispones de 5 minutos para la presentación.
-
-[C] El artículo trata sobre [TEMA DEL ARTÍCULO]. La audiencia son médicos de familia y pediatras con carga asistencial alta que necesitan información práctica y aplicable.
-
-[O] Genera un resumen estructurado del artículo que incluya:
-- Pregunta de investigación
-- Metodología (muy resumida)
-- Resultados principales (con números clave)
-- Aplicabilidad a nuestra práctica
-- Limitaciones principales
-- Take-home message
-
-[R] Restricciones:
-- Máximo 5 minutos de presentación
-- Destaca qué cambia en nuestra práctica
-- Incluye nivel de evidencia si es posible
-- Sé crítico pero constructivo
-
-[D] Formato: Esquema numerado con viñetas, destacando en negrita los datos clave`,
-
-        "email-respuesta": `[R] Actúa como un pediatra de Atención Primaria respondiendo por email a una consulta de una familia.
-
-[E] Has recibido un email de una madre/padre consultando sobre [TEMA DE LA CONSULTA]. No es una urgencia, pero la familia está preocupada y merece una respuesta clara y empática.
-
-[C] Se trata de [DESCRIPCIÓN DEL CASO: edad del niño, situación]. La familia ya tiene cita programada para la próxima semana, pero necesita orientación mientras tanto.
-
-[O] Redacta un email de respuesta que:
-- Tranquilice a la familia
-- Proporcione orientación básica
-- Indique cuándo acudir a urgencias
-- Confirme la cita programada
-
-[R] Restricciones:
-- Tono profesional pero cercano
-- No diagnosticar ni prescribir por email
-- Incluir disclaimer si es necesario
-- Máximo 200 palabras
-
-[D] Formato: Saludo + 3 párrafos cortos + despedida profesional`,
-      };
-
-      function generatePrompt(type) {
-        const promptOutput = document.getElementById("prompt-output");
-        const promptText = document.getElementById("prompt-text");
-
-        if (prompts[type]) {
-          promptText.textContent = prompts[type];
-          promptOutput.style.display = "block";
-          // Sin scroll automático para evitar saltos
-        }
-      }
-
-      function closePromptPanel() {
-        const promptOutput = document.getElementById("prompt-output");
-        promptOutput.style.display = "none";
-      }
-
-      function copyPrompt() {
-        const promptText = document.getElementById("prompt-text").textContent;
-        navigator.clipboard.writeText(promptText).then(() => {
-          // Feedback visual
-          const btn = event.target.closest("button");
-          const originalHTML = btn.innerHTML;
-          btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Copiado!';
-          btn.style.background = "var(--secondary)";
-          setTimeout(() => {
-            btn.innerHTML = originalHTML;
-            btn.style.background = "var(--primary)";
-          }, 2000);
-        });
-      }
       function getYesterdayDate() {
         var yesterday = new Date(Date.now() - 86400000);
         var day = String(yesterday.getDate()).padStart(2, "0");
