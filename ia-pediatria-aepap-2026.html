@@ -941,6 +941,16 @@
         font-weight: 600;
         letter-spacing: 0.5px;
       }
+
+      /* Respuesta correcta oculta hasta clic (fragment) */
+      .reveal .fragment.reveal-correct {
+        opacity: 1;
+        visibility: inherit;
+      }
+      .reveal .fragment.reveal-correct.visible {
+        color: var(--secondary);
+        font-weight: 600;
+      }
     </style>
   </head>
 
@@ -9328,13 +9338,14 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
                   Establecer el diagnóstico definitivo en sospecha de TDAH
                 </li>
                 <li>Interpretar una espirometría compleja sin validación</li>
-                <li style="color: var(--secondary); font-weight: 600">
+                <li class="fragment reveal-correct" data-fragment-index="0">
                   Generar un borrador de información para padres sobre GEA
                 </li>
               </ol>
             </div>
             <div
               class="fragment glass-panel"
+              data-fragment-index="0"
               style="
                 max-width: 800px;
                 margin: 15px auto;
@@ -9368,7 +9379,7 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
               </p>
               <ol style="font-size: 0.8em; margin-top: 15px">
                 <li>Aumentar el coste económico de cada consulta</li>
-                <li style="color: var(--secondary); font-weight: 600">
+                <li class="fragment reveal-correct" data-fragment-index="0">
                   Generar falsa confianza sin reducir errores (26-36%)
                 </li>
                 <li>Ralentizar excesivamente el flujo de trabajo</li>
@@ -9378,6 +9389,7 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
             </div>
             <div
               class="fragment glass-panel"
+              data-fragment-index="0"
               style="
                 max-width: 800px;
                 margin: 15px auto;
