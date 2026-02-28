@@ -6058,9 +6058,9 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
           <section
             class="wide-slide"
             data-menu-title="Prompt Engineering clínico"
-            data-audio-text="La diferencia entre una respuesta clínica útil y una peligrosa no está solo en el modelo de IA. Puede estar también en cómo le preguntas. Y aquí hay una idea clave: la IA generativa no es intrínsecamente determinista; no funciona como una calculadora clínica que, con la misma entrada, siempre da exactamente la misma salida. Es un sistema probabilístico que funciona generando texto paso a paso, con variabilidad. Por eso, pequeños cambios en la forma del prompt ( es decir, en cómo preguntas) pueden cambiar el camino de la respuesta y condicionar mucho el resultado. Sin estructura, esa variabilidad se nota más: la misma pregunta, formulada de forma ligeramente distinta, puede producir recomendaciones distintas. En medicina, eso es inaceptable. Para darle solidez, os proponemos RECORD: un acrónimo mnemotécnico de seis pasos que estructura cualquier consulta clínica a la IA. Rol, Escenario, Contexto, Objetivo, Restricciones y Diseño de salida. La mayoría de marcos similares cubren los cuatro primeros. La diferencia de RECORD son las dos últimas letras: Restricciones —lo que la IA no debe hacer ni incluir— y Diseño —el formato exacto de la respuesta—. Esos dos elementos son los que convierten un prompt genérico en un prompt controlado. En el bloque cuatro lo practicaréis con casos pediátricos. Callens, en una revisión narrativa publicada en Acta Clinica Belgica en dos mil veintiséis, confirma esta lógica y aporta datos relevantes. Por ejemplo: un metaanálisis de treinta y seis estudios, que midió cómo rinden los modelos de lenguaje en exámenes de licenciatura médica de diez países, encontró una precisión media del setenta y dos por ciento. Es decir, un aprobado raspado. Y aquí viene lo preocupante: según este estudio, los modelos que peor puntúan muestran, paradójicamente, más confianza en sus respuestas. La IA que más se equivoca puede parecer la más segura. 
-            ¿Se puede reducir esa inestabilidad? La Clínica Mayo muestra que sí. Arriola-Montenegro y colegas evaluaron seiscientos escenarios de dosificación de anemia en hemodiálisis, un dominio donde un error de dosis puede ser grave. Con prompts sueltos, sin estructura, la IA solo seguía el protocolo institucional en el treinta y dos por ciento de los casos. Recomendaba dosis inseguras y violaba tiempos de espera entre ajustes. Entonces codificaron las reglas del protocolo directamente en la estructura del prompt, paso a paso. Resultado: cien por cien de adherencia. Trescientos de trescientos. La misma IA, distinto prompt.
-            Ese es el mensaje de esta diapositiva: la estructura no elimina la incertidumbre del modelo, ni vuelve determinista un sistema que no lo es; pero sí puede convertir respuestas variables en respuestas más reproducibles, más auditables y más seguras."
+            data-audio-text="La diferencia entre una respuesta clínica útil y una peligrosa puede estar en cómo preguntáis. O lo que es lo mismo, el prompt que usáis en vuestras conversaciones con la IA
+> La IA generativa no es una calculadora: es probabilística. Sin estructura, la misma pregunta formulada de forma distinta puede dar recomendaciones distintas.
+> En medicina, eso es inaceptable. Para darle solidez, os proponemos el método RECORD: seis pasos que estructuran cualquier consulta clínica a la IA. Rol, Escenario, Contexto, Objetivo, Restricciones y Diseño de salida. En el bloque cuatro lo practicaréis con casos pediátricos."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -6568,7 +6568,8 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
           <!-- SLIDE #36: Técnicas de Prompting con Evidencia -->
           <section
             data-menu-title="Técnicas de Prompting"
-            data-audio-text="Las 4 técnicas de prompting con mayor impacto según la evidencia son: Chain-of-Thought, que mejora del 17 al 58 por ciento pidiendo 'piensa paso a paso'. Few-shot, dando ejemplos antes de la consulta. RAG, conectando a fuentes verificadas para reducir alucinaciones. Y Self-Consistency, generando varias respuestas y eligiendo la más frecuente. Pero atención: cambios triviales en el formato pueden causar variaciones de hasta 76 puntos porcentuales."
+            data-audio-text="Aqui veréis cuatro técnicas avanzadas para construir prompts con impacto demostrado. Cadena de pensamiento: pedirle que razone paso a paso mejora del diecisiete al cincuenta y ocho por ciento. Few-shot: darle ejemplos antes de la consulta. Erre-a-g: conectar a fuentes verificadas. Y autoconsistencia: generar varias respuestas y elegir la más frecuente.
+> Pero atención a lo que os comentaba Ernesto: cambios triviales en el formato del prompt pueden causar variaciones de hasta setenta y seis puntos porcentuales. La forma de preguntar importa tanto como la pregunta."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -6742,7 +6743,7 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
 
           <section
             data-menu-title="GPTs, Gems y personalización"
-            data-audio-src="aepap-2026/audios/36.webm"
+            data-audio-src="aepap-2026/audios/37.webm"
             data-audio-text="Ya sabéis cómo estructurar una buena consulta a la IA. Ahora, ¿cómo evitar escribir el mismo prompt cada vez que atendéis una consulta? La respuesta son los asistentes preconfigurados. En ChatGPT se llaman yepetés personalizados, en Gemini se llaman Gems, y en Claude se llaman Proyectos. La idea es la misma: le dais una vez las instrucciones, el rol, el formato de salida, y a partir de ahí, cada consulta ya sale con vuestro estilo y vuestras necesidades. Tres pasos: primero, definid el rol y el contexto, exactamente como aprendimos con Callens y con RECORD. Segundo, subid vuestros documentos de referencia: protocolos, guías, formularios. Y tercero, probadlo con casos reales y ajustad. Es iterativo, no sale perfecto a la primera. Pero ojo: un jepetéo un Gem hereda las limitaciones del modelo base. Si el modelo alucina, vuestro asistente también alucinará, pero con el formato que le habéis pedido. Eso puede ser más peligroso, porque parece más creíble. Pero antes de verificar, necesitáis saber con qué herramienta trabajar. No todas las IA son iguales, y la siguiente slide os lo demuestra."
           >
             <h3 class="assertion-title">
@@ -6941,8 +6942,8 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
           <section
             class="wide-slide"
             data-menu-title="Tu Caja de Herramientas"
-            data-audio-src="aepap-2026/audios/37.webm"
-            data-audio-text="Ya tenéis un asistente configurado. Pero, ¿en qué herramienta lo habéis montado? No todas son iguales. Y la diferencia importa clínicamente. Y aquí hay un error frecuente que veo en colegas que empiezan: tratar a todas las inteligencias artificiales como si fueran lo mismo. No lo son. Y la diferencia importa clínicamente. La tabla que tenéis en pantalla ordena las herramientas por nivel de confianza. Dejadme que la complemente con lo que no está escrito ahí. En la fila de arriba, erre-a-ge clínico. Estas herramientas, Open Evidence, Perplexity, NotebookLM, tienen una arquitectura que impide que inventen. Primero buscan en fuentes verificadas, y solo después generan texto basándose exclusivamente en lo que han encontrado. No pueden fabricar un estudio que no existe. En el medio, herramientas de investigación académica. Consensus, por ejemplo, busca en más de doscientos millones de artículos científicos reales y solo aplica inteligencia artificial después de la búsqueda. Elicit hace algo parecido: extrae datos de papers con una precisión validada del noventa y nueve coma cuatro por ciento. Y Scite os dice si un estudio ha sido apoyado o refutado por la literatura posterior. Ninguna de estas tres genera texto clínico: analizan lo que ya existe. Y abajo, los modelos fundacionales: ChatGPT, Claude, Gemini, DeepSeek. Ojo, no son inútiles ni mucho menos. Todos pueden buscar en internet y citar fuentes. Gemini integra Google Search, ChatGPT tiene navegación web. Pero, y esto es clave, también pueden generar sin buscar. Y el usuario no siempre sabe en qué modo está. Por eso la confianza es variable y la supervisión no es opcional. Ahora bien, un matiz importante que tenéis señalado en la slide. Que una herramienta cite su fuente no significa que esa fuente tenga peso metodológico. Una inteligencia artificial puede citar un artículo real de Nature y aun así producir una síntesis que no equivale a una revisión por pares. Trazabilidad no es lo mismo que evidencia preevaluada. Ese concepto lo vamos a desarrollar en la Pirámide cinco punto cero. Un dato para poner esto en perspectiva. Según la revisión de Shool, que analizó setecientos sesenta y un estudios de cinco bases de datos, el noventa y tres por ciento evalúa modelos generalistas. De pediatría, solo diez estudios. De medicina de familia, dos. Sabemos mucho de ge-pe-te-cuatro en exámenes tipo test, y muy poco de cómo funcionan estas herramientas en nuestra consulta real. Pero el panorama se mueve. En el panel inferior veis tres conceptos. Propietarios son modelos como ge-pe-te-cuatro o Gemini, que pertenecen a empresas y funcionan en sus servidores: tus datos salen de tu hospital. Open-source significa código público que puedes instalar en tu propio servidor: tus datos no salen. DeepSeek es open-source, y según el estudio de Sandmann, en ciento veinticinco casos clínicos rinde igual que los propietarios. Y especializados, como MedFound con ciento setenta y seis mil millones de parámetros, superan a los generalistas en ocho especialidades, pero casi nadie los evalúa todavía. En la siguiente diapositiva vamos a ordenar todo esto visualmente con la Pirámide de Evidencia cinco punto cero adaptada a herramientas de inteligencia artificial."
+            data-audio-src="aepap-2026/audios/38.webm"
+            data-audio-text="Ya tenéis un asistente configurado, o habéis elegido un recurso apoyado en la IA. Pero no todas las herramientas son iguales, y la diferencia importa clínicamente. La tabla que tenéis en pantalla las ordena por nivel de confianza. Arriba, erre-a-ge clínico: Open Evidence, Perplexity, NotebookLM. Estas no pueden inventar, porque solo trabajan con fuentes que les proporcionáis. En el medio, herramientas de investigación académica: Consensus, Elicit, Scite. Analizan literatura real, no generan texto clínico. Y abajo, los modelos generales: ChatGPT, Claude, Gemini. Pueden buscar en internet, sí. Pero también pueden generar sin buscar. Y el usuario no siempre sabe en qué modo está. Un matiz clave: que una herramienta cite su fuente no significa que esa fuente tenga peso metodológico. Trazabilidad no es lo mismo que evidencia. Más adelante lo ordenaremos visualmente con el apoyo metodológico de la Pirámide de la evidencia.  "
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -7245,8 +7246,8 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
           <section
             class="wide-slide"
             data-menu-title="IA Agéntica: Impacto y Control Clínico"
-            data-audio-src="aepap-2026/audios/49.webm"
-            data-audio-text="La IA puede amplificar el criterio clínico, pero también erosionar el razonamiento cuando delegamos sin control. En nivel asistencial, reduce carga documental; en nivel de recomendación, mejora síntesis si usamos RAG y verificamos fuentes; en nivel de acción, aumenta el riesgo de deskilling y exige límites explícitos. El deskilling no es teórico: requiere práctica deliberada sin IA para preservar competencias. Cuanta más autonomía del agente, más obligatoria la supervisión humana, la trazabilidad y la documentación de la decisión final."
+            data-audio-src="aepap-2026/audios/39.webm"
+            data-audio-text="Hasta ahora hemos hablado de una IA que responde cuando le preguntáis. Pero hay un cambio en marcha: la IA agéntica. Significa que el modelo no solo responde, sino que ejecuta tareas por su cuenta. Le decís ´revisa las analíticas pendientes y avísame de las urgentes´, y lo hace solo. En enero, un millón y medio de agentes se registraron en Moltbook, una red social donde solo publican las máquinas. Los humanos, solo mirais. Los agentes crearon religiones, debatieron si eran conscientes, y uno escribió: ´los humanos nos están haciendo capturas de pantalla´. Eso es IA agéntica. La tabla que veis en pantalla clasifica tres niveles: asiste, recomienda y actúa. Fijaos en la columna de riesgo: a más autonomía, más erosión del razonamiento clínico. Abajo tenéis tres conceptos clave. El o-erre uno coma treinta y cinco es la ventaja de usar erre-a-ge frente al modelo base solo: un treinta y cinco por ciento más de probabilidad de acertar. Deskilling es la pérdida real de competencias por desuso: Budzyń lo midió en endoscopistas que en solo tres meses rindieron peor sin la IA que antes de usarla. Y algovigilancia es lo que necesitamos: monitorizar sistemáticamente cómo rinden estas herramientas una vez desplegadas, igual que hacemos farmacovigilancia con los medicamentos. Cuanta más autonomía del agente, más obligatorias estas tres cosas: supervisión, trazabilidad y documentación."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -7448,8 +7449,8 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
           <section
             class="wide-slide"
             data-menu-title="RAG + Whitelisting"
-            data-audio-src="aepap-2026/audios/38.webm"
-            data-audio-text="Erre-a-ge es la diferencia entre una i-a que inventa y una que busca antes de responder. El concepto es simple: en lugar de generar desde su entrenamiento, el modelo primero busca en fuentes que tú le proporcionas y genera solo a partir de lo que ha leído. El metaanálisis de Liu en yámia, veinte estudios, muestra mejora significativa: OR de uno con treinta y cinco comparado con ele-ele-emes base. Pero no todos los erre-a-ge son iguales. En el extremo estricto tenéis NotebookLM: solo responde desde los documentos que le subes. En el otro, los modelos con búsqueda web como Perplexity o ChatGPT, que mezclan recuperación con su propio entrenamiento. Y luego está el erre-a-ge sobre historia clínica electrónica, que es lo que usan los sistemas de documentación ambiental como los que vimos antes. Cuanto más estricto, más seguro. Y hay un segundo paso igual de importante: el whitelisting. Restringir las fuentes a guías profesionales sube la precisión del sesenta al setenta y ocho por ciento, dieciocho puntos. Incluir una sola fuente no profesional reduce las odds de acierto a la mitad. La regla para vuestra consulta es binaria: si la herramienta no cita la fuente primaria verificable, no la uses en clínica."
+            data-audio-src="aepap-2026/audios/40.webm"
+            data-audio-text="Erre-a-g es la diferencia entre una IA que genera desde lo que recuerda de su entrenamiento y una que busca antes de responder. El concepto lo veis en el flujo de arriba: pregunta clínica, búsqueda en fuentes, y solo entonces genera la respuesta. Pensadlo como la diferencia entre un residente que contesta de memoria y uno que abre UpToDate antes de hablar. Los dos pueden acertar, pero uno tiene las fuentes delante. Liu analizó veinte estudios en yámia, comparando erre-a-g frente a modelos base sin búsqueda, y encontró mejora significativa: un treinta y cinco por ciento más de probabilidad de respuesta correcta. Ahora bien, no todos los erre-a-g son iguales. NotebookLM es el más estricto: solo trabaja con los documentos que le subes. Perplexity o ChatGPT con búsqueda web mezclan recuperación con su propio entrenamiento. Y luego están los que operan sobre la historia clínica electrónica, como los sistemas de documentación ambiental. Cuanto más estricto, más controlable. Y hay un segundo dato que importa: el whitelisting. Restringir las fuentes a guías profesionales sube la precisión del sesenta al setenta y ocho por ciento, dieciocho puntos. Pero meter una sola fuente no profesional reduce la probabilidad de acierto a la mitad. La regla práctica está abajo en rojo: si la herramienta no os muestra de dónde saca la información, extremad la cautela antes de aplicarla en clínica."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -7792,15 +7793,8 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
           <section
             class="wide-slide"
             data-menu-title="🚦 Semáforo AP — Consulta"
-            data-audio-text="En el bloque de evidencia vimos un semáforo para investigación. El criterio allí era: ¿puedo detectar el error antes de que cause daño? Este semáforo es distinto. Es para vuestra consulta del lunes, y el criterio es otro: ¿qué nivel de supervisión necesita esta tarea?
-
-Luz verde: usar ahora. Administración, documentación clínica y borradores de información para familias. ¿Por qué verde? Porque son tareas donde el riesgo clínico directo es bajo, el ahorro de tiempo es alto, y la evidencia es la más sólida. Si el modelo redacta un informe de rutina o un borrador educativo, lo revisas en segundos y lo corriges si hace falta. No hay daño posible mientras haya revisión antes de entregar.
-
-Luz amarilla: usar con cuidado. El modelo como segundo cerebro para diagnóstico diferencial complejo, y como apoyo en enfermedades raras. ¿Por qué amarillo? Porque aquí la i-a puede aportar valor real, ampliando tu lista diagnóstica en casos complejos, pero solo si validas siempre con erre-a-ge contra fuentes profesionales. Nunca fiarse de la memoria del modelo.
-
-Luz roja: evitar. Confianza ciega en lo que genera la i-a, que es sinónimo de alucinaciones en clínica, y cualquier forma de sustitución del juicio clínico. No hay atajo aquí. La decisión clínica es tuya.
-
-Fijaos en la diferencia con el semáforo anterior. Aquel clasificaba tareas de investigación por detectabilidad del error. Este clasifica tareas de consulta por nivel de supervisión. Complementarios, no redundantes."
+            data-audio-src="aepap-2026/audios/41.webm"
+            data-audio-text="En la diapositiva sobre la evidencia vimos otro semáforo. Aquel era para investigación, este es para vuestra consulta del lunes. Parecen iguales, pero preguntan cosas distintas. Aquel: si la i-a se equivoca, ¿puedo detectar el error? Este: si se equivoca, ¿qué le pasa al paciente? El criterio aquí es: ¿qué nivel de supervisión necesita esta tarea? Verde: resúmenes, hojas para familias, sesiones clínicas. Amarillo: diagnóstico diferencial, manejo con datos desidentificados. Rojo: dosificación, diagnóstico primario, decisiones irreversibles. Si solo os lleváis una herramienta de todo el seminario, que sea este semáforo. Un ejemplo lo aclara. Un resumen malo para una sesión clínica es verde en ambos: error visible, daño nulo. Un diagnóstico diferencial es amarillo en ambos, pero por razones opuestas. En investigación, porque el error se camufla en texto convincente. En consulta, porque a las once y media con treinta y cinco pacientes, no siempre tendréis condiciones de cuestionarlo."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -8084,14 +8078,16 @@ Fijaos en la diferencia con el semáforo anterior. Aquel clasificaba tareas de i
           <section
             class="wide-slide"
             data-menu-title="Síntesis: 5 mensajes"
-            data-audio-text="Cinco mensajes. Sin datos nuevos, sin matices adicionales. Solo lo que os lleváis de este bloque para la consulta del lunes.
-Primero: empezad por la documentación. Es donde la evidencia es más sólida y el riesgo más bajo. Automatizad la burocracia, revisad el resultado, y recuperad tiempo para el paciente.
-Segundo: elegid herramienta por nivel de confianza, no por moda. La Pirámide cinco punto cero os da el criterio. No es lo mismo una búsqueda en Consensus que un chat abierto con un modelo generalista.
-Tercero: estructurad cada consulta clínica a la IA. Rol, contexto, tarea, restricciones, salida. RECORD o Callens, da igual cuál, pero siempre con estructura. La diferencia entre el treinta y dos y el cien por cien de adherencia es exactamente eso.
-Cuarto: exigid fuentes verificables. Si la herramienta no usa erre-a-ge o no podéis comprobar la referencia, no lo uséis para decisiones clínicas. Sin fuente, no hay seguridad.
-Y quinto: delegad lo verde, supervisad lo amarillo, prohibid lo rojo. El semáforo de vuestra consulta no es el mismo que el de investigación. El criterio aquí es: si se equivoca, ¿puedo detectarlo antes de que afecte al paciente?
-Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en directo."
-            data-audio-src="aepap-2026/audios/40.webm"
+            data-audio-text="Cinco mensajes para la consulta del lunes. Lo que os podeis llevar de este bloque.
+ Primero: empezad por la documentación. Es donde la evidencia es más sólida y el riesgo más bajo. Automatizad la burocracia, revisad el resultado, y recuperad tiempo para el paciente. 
+Segundo: elegid herramienta por cómo trabaja, no por moda. La pregunta clave es: ¿busca en fuentes antes de responder, o genera desde su entrenamiento? No es lo mismo. 
+Tercero: estructurad cada consulta clínica a la i-a. RECORD o Callens, da igual cuál, pero siempre con estructura. Ya hemos visto que la respuesta puede cambiar mucho, en formato y contenido.
+Cuarto: exigid fuentes verificables. Sin erre-a-g o sin referencia comprobable, no lo uséis para decisiones clínicas. Si lo hacéis, tendreis que supervisarlas con más precaución y seguramente, buscar vosotros esas fuentes antes de tomar esas decisiones.
+Y quinto: delegad lo verde, supervisad lo amarillo, prohibid lo rojo. El criterio aquí es: si se equivoca, ¿puedo detectarlo antes de que afecte al paciente? 
+Fijaos en la barra de abajo. Esos cinco pasos no son una lista: son un flujo. Cada uno depende del anterior. Con esto cerramos el bloque de aplicaciones. 
+
+"
+            data-audio-src="aepap-2026/audios/42.webm"
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -8099,7 +8095,7 @@ Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en direc
                 <span class="highlight">tu consulta del lunes</span>
               </h2>
               <p class="subtitle">
-                Síntesis del bloque · De la evidencia a la práctica
+                La IA te da velocidad. Estas cinco decisiones te dan seguridad.
               </p>
             </div>
 
@@ -8157,8 +8153,8 @@ Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en direc
                     border-radius: 8px;
                   "
                 >
-                  <strong>Elige herramienta por nivel de confianza</strong> —
-                  Pirámide 5.0, no la moda
+                  <strong>Elige herramienta por cómo trabaja — </strong> —
+                  ¿busca en fuentes o genera "de memoria"?
                 </td>
               </tr>
               <tr>
@@ -8276,13 +8272,7 @@ Con esto cerramos el bloque de aplicaciones. Ahora, veámoslo funcionar en direc
         <section>
           <section
             data-menu-title="Bloque 3: Demos en Vivo"
-            data-audio-text="Bien. Hasta aquí, evidencia y herramientas. Pero hay una diferencia entre saber que algo funciona y verlo funcionar. Y esa es la idea de este bloque: dos demos, dos preguntas distintas.
-
-La primera: ¿cuántas revisiones sistemáticas o artículos de revista de impacto publicados en el último mes en vuestras diez patologías más frecuentes habéis tenido tiempo de leer? Probablemente ninguna. No por falta de interés, sino por falta de tiempo. NotebookLM, de Google, ataca exactamente ese problema. Vamos a ver cómo.
-
-La segunda: cuando una inteligencia artificial os devuelve una respuesta clínica con tres citas de PubMed de diferente perfil metodológico ¿qué nivel de evidencia tiene eso? No es opinión de experto, no es una revisión sistemática, no es un ensayo clínico. No encaja en ningún peldaño de la pirámide  que usamos para jerarquizar el nivel de la evidencia científica. Aprovecharemos un recurso que establece conexiones entre la evidencia científica y las respuestas generadas por la inteligencia artificial: nnos servirá para entender qué lugar ocupan las respuestas de la IA en la jerarquía de la evidencia, y qué es lo que realmente nos está diciendo, y qué no.
-
-Después pasaremos a interaccionar con algún modelo. Pero primero, vamos a ver qué es posible."
+            data-audio-text="Vamos a cambiar de registro. En lo que queda vais a ver dos cosas concretas. Primero, cómo una herramienta de i-a transforma artículos científicos en formatos que podéis consumir en el coche, preparar para una sesión o compartir con residentes. Y después, un mapa interactivo que ordena todas las herramientas que hemos mencionado por lo que realmente importa: cómo trabajan con las fuentes."
             data-audio-src="aepap-2026/audios/43.webm"
           >
             <div class="section-intro">
@@ -8295,7 +8285,8 @@ Después pasaremos a interaccionar con algún modelo. Pero primero, vamos a ver 
                 Vivo
               </h1>
               <p style="color: var(--text-muted)">
-                2 demos: NotebookLM + Pirámide 5.0 interactiva
+                La IA como asistente cognitivo: consumir ciencia, producir
+                formatos, elegir herramienta
               </p>
               <p
                 style="
@@ -8313,7 +8304,7 @@ Después pasaremos a interaccionar con algún modelo. Pero primero, vamos a ver 
           <section
             class="wide-slide"
             data-menu-title="Demo: NotebookLM Actualización"
-            data-audio-text="NotebookLM es una herramienta de Google que se ha convertido en uno de los asistentes cognitivos más populares del último año, y tiene una razón técnica clara. ¿Recordáis el erre-a-ge que vimos hace unas slides? NotebookLM es erre-a-ge en su forma más pura. Un modelo de lenguaje que solo puede generar a partir de los documentos que tú le subes. No busca en internet, no recurre a su entrenamiento general, no inventa. Si le cargas diez abstracts de PubMed, su universo de conocimiento son esos diez abstracts, y cada afirmación que hace incluye la cita al documento de origen. Pero no solo acepta artículos. Podéis subir archivos PDF, páginas web, vídeos de YouTube, documentos de Google Drive, presentaciones. Hay compañeros que lo usan para preparar sesiones clínicas cargando las guías de referencia. Otros le suben protocolos de su centro y le preguntan dudas como si fuera un tutor que se ha leído todo. También funciona para revisar material educativo: le cargas tus hojas para familias junto con la guía clínica y le pides que detecte inconsistencias. En todos los casos, la clave es la misma: solo trabaja con lo que le das. Nada más. Ahora veamos lo que ha producido. Tenéis cuatro productos enlazados en pantalla. El primero es un podcast general, Tu dosis periódica de evidencia científica, disponible en Spotify. El segundo es otro podcast, este generado a partir de una búsqueda de PubMed con revisiones sistemáticas y metaanálisis del último mes en doce patologías pediátricas frecuentes. Si le dais al play en el reproductor de la slide, escucharéis un fragmento. Podéis escucharlo entero de camino a casa. El tercero es una presentación de diapositivas. Y aquí hay algo que no debería sorprendernos pero que ha sorprendido a muchos compañeros: cuando una profesión lleva décadas transmitiendo conocimiento con diapositivas, ofrecerle una herramienta que transforma evidencia en presentaciones listas para una sesión clínica tiene un encaje que no necesita explicación. Y el cuarto es un vídeo resumen narrado. Cuatro formatos, la misma evidencia, cero invención. Hacéis clic y lo comprobáis vosotros mismos."
+            data-audio-text="NotebookLM es erre-a-ge en su forma más estricta. Es una herramienta de i-a de Google que admite fuentes en diferentes formatos: vídeos, páginas web, archivos, presentaciones. Se los subes y solo trabaja con esos documentos. No busca en internet, no recurre a lo que aprendió en su entrenamiento. Si le cargas diez abstracts, o una búsqueda en PubMed con un filtro determinado, su universo son esos diez abstracts o esa búsqueda, y cada afirmación que genera incluye la cita al documento de origen. Lo que veis en pantalla son cuatro productos reales generados a partir de las mismas fuentes: un podcast, una síntesis de PubMed con filtro metodológico, una presentación para sesión clínica y un vídeo resumen. Misma evidencia, cuatro formatos, cero invención. Ernesto os cuenta cómo lo usa."
           >
             <!-- Overlay para imagen NotebookLM (hidden por defecto) -->
             <div
@@ -8757,10 +8748,7 @@ Después pasaremos a interaccionar con algún modelo. Pero primero, vamos a ver 
             data-background-iframe="https://ernestobarrera.github.io/piramide-evidencia-ia.html?embed=1"
             data-background-interactive
             data-audio-src="aepap-2026/audios/45.webm"
-            data-audio-text="Vamos a hacer una pausa epistemológica. Todos conocéis la pirámide de la evidencia: estudios primarios en la base, revisiones sistemáticas un peldaño arriba, guías de práctica clínica, sumarios como UpToDate, y en la cima los sistemas integrados en la historia clínica. Cada peldaño sube porque alguien ha hecho un trabajo de valoración crítica sobre el anterior. Una revisión Cochrane no es un montón de ensayos apilados: es una evaluación sistemática de su calidad, su riesgo de sesgo, su aplicabilidad. Eso se llama appraisal. Valoración crítica.
-Ahora, la pregunta que planteamos en la portada de este bloque: cuando una inteligencia artificial os responde citando tres artículos de PubMed, ¿en qué nivel de la pirámide estáis? La respuesta es: depende. Y depende de una distinción que es la clave de esta herramienta. Una cosa es grounding, fundamentación: que la IA ancle su respuesta en fuentes reales, verificables. Eso es lo que hace el erre-a-ge. Y otra cosa muy distinta es appraisal: que alguien haya evaluado la calidad de esas fuentes. Citar no es evaluar. Un chatbot que os da tres referencias de PubMed está haciendo grounding en el nivel uno. No ha subido ningún peldaño. Pero una herramienta erre-a-ge que conecta con Cochrane o con UpToDate, esa sí está anclando en evidencia ya valorada.
-Esa distinción es la que organiza la tabla que tenéis en pantalla. Son dos columnas y tres filas. Las columnas separan fundacional, es decir, ele-ele-eme puro sin acceso a fuentes externas, de erre-a-ge, herramientas que recuperan fuentes verificables antes de responder. Las tres filas representan tres niveles de uso clínico: abajo, búsqueda y mapeo bibliográfico; en el medio, lectura y síntesis de documentos; y arriba, decisión clínica en el punto de atención. Lo que veréis es que la columna fundacional se vacía conforme subís. Para buscar artículos tenéis Google Scholar o PubMed punto ai. Para leer y sintetizar, Claude o ChatGPT os sirven si les dais el documento. Pero para decisión clínica, la columna fundacional está vacía a propósito: un ele-ele-eme generalista no es una herramienta de punto de atención. En cambio, la columna erre-a-ge se llena en los tres niveles: Consensus y Elicit para buscar, NotebookLM o Scite para leer, y OpenEvidence o Glass para el punto de atención.
-Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide a los que accede. Al hacer clic se abre su ficha: qué hace, si es gratuita, mejor uso y precauciones. Los botones superiores de la web explican la diferencia entre grounding y appraisal, la guía de evaluación crítica y las conclusiones prácticas. Usad este mapa cuando volváis a la consulta y dudéis de con qué herramienta trabajar."
+            data-audio-text="A la izquierda de la pantalla tenéis la pirámide de la evidencia que ya conocéis: cada peldaño sube porque alguien ha evaluado críticamente lo que hay debajo. A la derecha, las herramientas de i-a ordenadas por cómo trabajan con las fuentes. La regla de lectura es una sola. Columna izquierda: la respuesta puede salir de su entrenamiento o de una búsqueda, pero no siempre os dice de dónde. La calidad la verificáis vosotros. Columna derecha: la herramienta recupera fuentes identificables y os las muestra. La trazabilidad viene de serie. Las filas suben en riesgo clínico. Abajo, búsqueda: Scholar y PubMed punto ai a la izquierda, Consensus y Elicit a la derecha. En medio, lectura: Claude o ChatGPT a la izquierda, NotebookLM y Scite a la derecha. Y arriba, decisión clínica: la columna izquierda está vacía a propósito. Solo las herramientas que recuperan fuentes verificables tienen sitio ahí. Pero cuidado: que cite la fuente no significa que esa fuente sea la mejor disponible. Y ahí la pirámide de la izquierda vuelve a entrar. Ernesto os lo muestra."
           >
             <div class="demo-overlay piramide-hint">
               <div class="glass-panel" style="padding: 10px 14px">
@@ -8783,7 +8771,8 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
         <section>
           <section
             data-menu-title="Bloque 4: Práctica RECORD"
-            data-audio-text="Hemos visto la evidencia, hemos visto las herramientas, y hemos visto cómo se aplican en demos reales. Ahora vamos a poner en práctica el método RECORD con la ayuda de un generador de prompts diseñado para la docencia en el contexto asistencial de la pediatría de atención primaria."
+            data-audio-text="Habéis escuchado evidencia, habéis visto herramientas en producción. En este bloque del seminario, vais a participar vosotros." 
+"
           >
             <div class="section-intro">
               <i
@@ -8810,7 +8799,7 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
           <!-- SLIDE: Generador de Prompts Interactivo -->
           <section
             data-menu-title="Prompting Clínico: la Evidencia"
-            data-audio-text="Antes de usar la herramienta, un minuto para reforzar por qué merece la pena estructurar un prompt. Callens publicó en enero de dos mil veintiséis una revisión narrativa en Acta Clinica Belgica que recoge la evidencia disponible. Los datos son claros. La cadena de pensamiento, pedirle a la IA que piense paso a paso y razone su respuesta antes de dar una conclusión, mejora de forma consistente la precisión en tareas diagnósticas complejas. Ojo: los modelos que ya incluyen razonamiento integrado, como o uno o o tres de OpenAI, aplican esta estrategia internamente, así que repetírselo no siempre añade valor. Pero en modelos generalistas, sigue siendo una de las técnicas más eficaces. El few-shot, darle uno o dos ejemplos del formato que quieres, alcanzó el noventa y cuatro, cien por cien de precisión en evaluación de inmunoterapia. El erre-a-ge, conectar la IA con fuentes verificadas, mejora la precisión una media del trece por ciento y reduce alucinaciones entre el doce y el dieciocho por ciento. Y lo que ya vimos: un prompt estructurado llevó la adherencia a protocolo del treinta y dos al cien por cien. Mismo modelo, distinta pregunta. Son tres marcos que convergen en lo mismo. El RTF, rol, tarea y formato, para tareas simples. El BRAIN, antecedentes, rol, objetivo, instrucciones y siguientes pasos, para razonamiento diagnóstico. Y, como propuesta nuestra, RECORD, que añade escenario y restricciones clínicas pensando en atención primaria. Tres nombres, mismos principios. Su conclusión es que la alfabetización en ingeniería de prompts es una competencia clínica emergente. No un truco técnico: una habilidad que se entrena y está ligada a resultados. Tenéis una en el enlace de esta diapositiva: treinta casos de pediatría de atención primaria con prompts prediseñados."
+            data-audio-text="Antes de lanzarnos a la práctica, un recordatorio del marco teórico. Todo lo que veis a la izquierda de la pantalla tiene evidencia publicada. La cadena de pensamiento mejora la precisión diagnóstica de forma consistente: solo pidiendo a la IA con frases como esta al  final del prompt: ´Piensa paso a paso y razona tu pensamiento´. Otra técnica conocida: El few-shot, dar uno o dos ejemplos del formato que esperáis, alcanzó entre el noventa y cuatro y el cien por cien en evaluación de inmunoterapia. El erre-a-g con fuentes verificadas reduce alucinaciones entre el doce y el dieciocho por ciento. Y un prompt estructurado llevó la adherencia a protocolo del treinta y dos al cien por cien. Mismo modelo, distinta pregunta, resultado completamente diferente. A la derecha tenéis tres marcos que aplican estos principios. Todos comparten los mismos componentes: rol, contexto, tarea, restricciones, formato de salida. RECORD añade uno más: el escenario de atención primaria. Ese es el que vamos a practicar."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -9120,7 +9109,7 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
             data-menu-title="Generador RECORD Pediatría AP"
             data-background-iframe="https://ernestobarrera.github.io/ia/p/record-pediatria-ap.html"
             data-background-interactive
-            data-audio-text="Lo que tenéis en pantalla es el generador RECORD para pediatría de atención primaria. Funciona como un wizard: seleccionáis un caso de entre treinta escenarios organizados en cinco categorías, consulta aguda, seguimiento, comunicación con familias, docencia y coordinación. Después, el wizard os guía paso a paso por cada letra del método: rol, escenario, contexto, objetivo, restricciones y diseño de salida. En cada paso veis un ejemplo adaptado a ese caso concreto, y podéis editarlo o dejarlo como está. Al final se genera un prompt completo listo para pegar en cualquier herramienta de inteligencia artificial. Si pasáis el ratón por encima de un caso, veréis la estructura RECORD antes de abrirlo. Probadlo directamente aquí o desde el enlace de la diapositiva anterior."
+            data-audio-text="Lo que veis en pantalla es un recurso que Ernesto ha desarrollado con ayuda de i-a generativa. Es un bookmarklet basado en el método RECORD, diseñado para pediatría de atención primaria. Despliega treinta escenarios reales en cinco categorías: consulta aguda, seguimiento, comunicación con familias, docencia y seguridad con i-a. Seleccionáis un caso, el asistente os guía letra por letra por cada componente del método, y al final genera un prompt completo que se abre directamente en ChatGPT. Desde ahí lo podéis copiar a Claude, a Gemini, o a la i-a que uséis. El bookmarklet se arrastra a la barra de marcadores de vuestro navegador y lo tenéis siempre a mano. Su finalidad es docente: aprender a estructurar la pregunta hasta que os salga solo.
           >
             <div class="demo-overlay piramide-hint">
               <div class="glass-panel" style="padding: 10px 14px">
@@ -9143,7 +9132,7 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
         <section>
           <section
             data-menu-title="Bloque 5: Cierre"
-            data-audio-text="Llegamos al cierre. Vamos a recapitular lo que hemos aprendido y a hacer el test oficial."
+            data-audio-text="Cerramos ya el seminario con el Último bloque. Vamos a atar cabos"
           >
             <div class="section-intro">
               <i
@@ -9173,7 +9162,7 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
           <section
             class="wide-slide"
             data-menu-title="Modelo Sándwich"
-            data-audio-text="El Modelo Sándwich resume la filosofía de colaboración humano-IA. Primera capa, el pan superior: el humano define la estrategia, elige la herramienta, formula la pregunta correcta. Capa central, el relleno: la IA procesa masivamente datos, genera borradores, sintetiza evidencia. Tercera capa, el pan inferior: el humano verifica, valida, y toma la decisión final. La verificación humana al final es innegociable."
+            data-audio-text="El Modelo Sándwich resume la filosofía de colaboración humano-i-a. Pan superior: el humano define la estrategia, elige la herramienta, formula la pregunta correcta. Relleno: la i-a procesa datos, genera borradores, sintetiza evidencia. Pan inferior: el humano verifica, valida y toma la decisión final. La verificación humana al final es innegociable. Esta deliberación antes y después de la máquina es lo que separa al clínico que integra la i-a en su razonamiento clínico del que simplemente ejecuta lo que le devuelve la pantalla."
           >
             <div class="title-wrapper">
               <h2 class="assertion-title">
@@ -9315,7 +9304,7 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
           <!-- SLIDE: Lo que nos llevamos para casa -->
           <section
             data-menu-title="Lo que nos llevamos"
-            data-audio-text="Estos son los tres mensajes clave para llevaros a casa."
+            data-audio-text="Tres mensajes para llevaros a casa. Modelo Sándwich: vosotros pensáis antes, la i-a procesa, vosotros verificáis después. La responsabilidad siempre es vuestra. Método RECORD: la calidad de lo que os devuelve la máquina depende de la calidad de lo que le preguntáis. No hay atajo. Y detección de alucinaciones: verificad siempre las referencias y los datos específicos. Usad herramientas con erre-a-ge. Y si os parece irónico que una i-a os esté diciendo que no os fiéis de la i-a, pensad en lo que ha pasado en esta presentación. El guion lo hemos construido con la ayuda de un modelo de lenguaje. Y ha funcionado. Eso mismo os puede funcionar en vuestro contexto. Una ayuda cognitiva de máquina a humano que hace cinco años era impensable. Aprovechadla sin depender de ella. Esa es la actitud correcta."
           >
             <h2>🏠 Lo que nos llevamos para casa</h2>
             <div style="max-width: 850px; margin: 25px auto">
@@ -10023,7 +10012,7 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
       updateBibliometriaDate(document);
     </script>
     <!-- INICIO AVATAR IA COPILOTO -->
-    <style>
+    <!--   <style>
       /* 1. Estilos Base y Posicionamiento */
       #avatar_ia_asistente {
         position: fixed;
@@ -10159,15 +10148,15 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
           bottom: 12px;
         }
       }
-    </style>
+    </style> -->
 
-    <div id="avatar_ia_asistente" aria-hidden="true">
+    <!--  <div id="avatar_ia_asistente" aria-hidden="true">
       <div class="wrap">
         <div class="ring"></div>
         <div class="core">
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <!-- Gradientes abstractos tecnológicos -->
+            
               <radialGradient id="face_glow" cx="50%" cy="45%" r="55%">
                 <stop offset="0%" stop-color="rgba(95,240,255,0.20)"></stop>
                 <stop offset="70%" stop-color="rgba(95,240,255,0.04)"></stop>
@@ -10185,7 +10174,7 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
 
             <circle cx="50" cy="50" r="48" fill="url(#face_glow)"></circle>
 
-            <!-- Marcas superficiales -->
+        
             <g opacity="0.75">
               <path
                 d="M18 58 Q50 28 82 58"
@@ -10201,7 +10190,7 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
               ></path>
             </g>
 
-            <!-- Ojos fijos y parpadeo computacional -->
+           
             <g class="eyes">
               <ellipse
                 class="eye"
@@ -10223,7 +10212,7 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
               <circle cx="64" cy="40" r="0.9" fill="rgba(0,0,0,0.5)"></circle>
             </g>
 
-            <!-- Osciloscopio / Boca central -->
+           
             <g opacity="0.85">
               <rect
                 class="voice_bar"
@@ -10302,9 +10291,9 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
           </svg>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <script>
+    <!--  <script>
       (function () {
         const avatar = document.getElementById("avatar_ia_asistente");
 
@@ -10468,7 +10457,7 @@ Al pasar el ratón por cada herramienta se iluminan los niveles de la pirámide 
           init();
         }
       })();
-    </script>
+    </script> -->
     <!-- FIN AVATAR IA COPILOTO -->
   </body>
 </html>
