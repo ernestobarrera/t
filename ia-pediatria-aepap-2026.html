@@ -2271,7 +2271,7 @@
 
         <!-- SLIDE: Microactividad post-Paradoja (añadida 2026-02-06) -->
         <section data-menu-title="Pausa: ¿Experiencias?" data-audio-src="aepap-2026/audios/19.webm"
-          data-audio-text="Antes de seguir con más evidencia, me gustaría saber: ¿alguno de vosotros ha tenido ya una experiencia, buena o mala, usando IA en consulta? Levantad la mano si queréis compartirla brevemente.">
+          data-audio-text="No estamos hablando de teoría, esto pasa. Y cuando pasa en consulta, no viene con una etiqueta que diga sesgo de automatización. Viene con un informe hecho por IA que suena perfecto, o una respuesta impecable que nadie revisa porque no hay tiempo. Ernesto, seguro que es interesante oir experiencias reales ¿puedes preguntarles por favor?">
           <h2 style="font-size: 2em">
             🤔 ¿Has confiado en una herramienta sin verificar?
           </h2>
@@ -2309,7 +2309,7 @@
 
         <!-- SLIDE: Evidencia Actual (2B.6, actualizada con REF-A + REF-B) -->
         <section class="wide-slide" data-menu-title="Evidencia Actual" data-audio-src="aepap-2026/audios/20.webm"
-          data-audio-text="La evidencia de 2025 confirma un rendimiento mixto. Un meta-análisis de 83 estudios muestra que la IA tiene una precisión diagnóstica global del 52.1%. Es comparable a un médico no especialista, pero significativamente inferior al experto, 15.8 puntos menos. En tareas acotadas como cribado de artículos o extracción de datos, funciona bien. Pero en diagnóstico autónomo, la supervisión sigue siendo imprescindible.">
+          data-audio-text="Hablemos de números concretos. El metanálisis más amplio publicado hasta ahora, Taquita y colaboradores en ene-pe-jota Digital Medicine, ochenta y tres estudios, muestra que la precisión diagnóstica global de la i-a es del cincuenta y dos por ciento. Uno de cada dos. Eso es el nivel de un médico no especialista, y queda quince coma ocho puntos por debajo del especialista. Ahora bien, esa cifra global esconde una asimetría importante. En tareas acotadas, cribado de artículos, extracción de datos estructurados, codificación, el rendimiento es alto. Pero en diagnóstico complejo, donde hay que integrar historia, exploración y contexto familiar, la i-a no llega. De hecho, un metanálisis en red con ciento sesenta y ocho estudios confirma que en el diagnóstico más probable, el top uno, el humano sigue ganando. Pensadlo así: si un padre os pregunta, ¿puedo fiarme del diagnóstico que me ha dado chat-yipiití? La respuesta honesta es: acertará la mitad de las veces, y no sabrás cuál mitad. Esa incertidumbre es exactamente lo que justifica que la i-a sea copiloto, nunca piloto.">
           <div class="title-wrapper">
             <h2 class="assertion-title">
               La IA acierta
@@ -2422,7 +2422,23 @@
 
         <!-- SLIDE: Alucinaciones (2B.7, dual panel: Chelli + Asgari/REF-D) -->
         <section class="wide-slide" data-menu-title="Alucinaciones" data-audio-src="aepap-2026/audios/21.webm"
-          data-audio-text="Las alucinaciones son el riesgo más crítico. En dos contextos distintos. Primero, bibliográficas: hasta el 91.4% de las citas de Bard eran fabricadas, GPT-3.5 el 39.6%, GPT-4 el 28.6%. Segundo, en documentación clínica: un framework de Asgari y colaboradores con 50 médicos y casi 13 mil frases anotadas mostró que las alucinaciones se pueden reducir al 1.47%, por debajo del nivel humano. Pero las omisiones, lo que el modelo olvida incluir, alcanzan el 3.45% y son el riesgo mayor. La regla de oro sigue siendo la misma: verificar siempre antes de usar.">
+          data-audio-text="Las alucinaciones son el riesgo más crítico, pero necesitamos distinguir dos tipos porque
+ el peligro no está donde parece. El primero es el que más titular es genera, las
+ citas bibliográficas inventadas. Barth fabricaba 9 de cada 10, GPT 4 mejora, pero aún inventa
+ casi una de cada 3. Y no inventa mal, inventa autores que existen, revistas que existen,
+ doy que parecen reales. Si no lo compróevas en PubMed, no lo distingues, regla absoluta,
+ nunca usar una cita de ellas inverificar la fuente primaria. El segundo tipo es más
+ util y más relevante para nuestra consulta. A la derecha tenéis los datos de Asgari y
+ colaboradores, publicado en N.P.J. Digital Medicine. Lo que hicieron fue poner un escriba de
+ ya generar notas clínicas a partir de transcripciones de consultas de atención primaria.
+ 450 notas, casi 13.000 frases, revisadas una por una por 50 médicos, marcando cada error. El
+ resultado, las aducinaciones puras, bajan al 1 y medio por ciento. Menos que el error humano tomando
+ notas a mano, pero las omisiones, lo que el modelo simplemente no incluye, llegan al 3 y medio por
+ ciento. Y eso es lo que os tiene que preocupar más, porque una omisión en la historia de un
+ niño puede cambiar todo el razonamiento diagnóstico. Laía miente poco, pero estudios como
+ este proveban que en ese modelo y contexto o mite más de lo que miente. Y ni lo uno ni
+ lo otro se ve a simple vista. Por eso verificar no es un consejo, es la regla de oro.
+">
           <div class="title-wrapper">
             <h2 class="assertion-title">
               Las <span class="highlight">alucinaciones</span> son el riesgo
@@ -2545,7 +2561,18 @@
         <!-- SLIDE: Brecha Exámenes vs Clínica (2B.8, con REF-A + dato 9.4%) -->
         <section class="wide-slide" data-menu-title="Brecha Exámenes vs Clínica"
           data-audio-src="aepap-2026/audios/22.webm"
-          data-audio-text="La brecha entre aprobar exámenes y saber curar es enorme. Los modelos de lenguaje obtienen entre 84 y 90 por ciento en exámenes teóricos tipo USMLE. Pero el meta-análisis de Takita muestra que en clínica real la precisión global es del 52.1%. Y el dato más preocupante: solo el 9.4 por ciento de los estudios publicados evalúan errores y seguridad. Aprobar el examen no es saber curar. Con la IA aplica exactamente igual.">
+          data-audio-text=" Los modelos del lenguaje obtienen entre 84 y 90% en examen estipo o SML, necesarios para ejercer
+ medicina en Estados Unidos. Impresionante, pero en práctica clínicas real, la precisión global
+ cae al 52% según el metanálisis de taquita con 83 estudios. ¿Por qué es a caída?
+ Porque un examen tiene una respuesta correcta entre cinco opciones, la consulta real tiene ruido,
+ un niño que llora y no se deja explorar. Unos padres que olvidan mencionar que la vuelo
+ tiene celiacía, una autoscopia con serumen que no deja ver. Nada de eso aparece en los datos
+ de entrenamiento, y el dato que más debería preocuparnos, solo el 9,4% de los estudios
+ publicados sobre y a clínicas evaluar errores y daño potencial al paciente.
+ más del 90% de la investigación mides y laía cierta, pero casi nadie me de cuando hace
+ daño. Si no me dimos el daño, no podemos prevenirlo, y eso nos lleva directamente a la
+ siguiente pregunta. ¿Qué ocurre cuando son las familias las que consultan a la ía?
+">
           <div class="title-wrapper">
             <h2 class="assertion-title">
               Aprobar el examen
@@ -2644,7 +2671,8 @@
 
         <!-- SLIDE: Seguridad Pública - Fallos en RCP (NotebookLM) -->
         <section class="wide-slide" data-menu-title="Riesgo: Dr. AI" data-audio-src="aepap-2026/audios/23.webm"
-          data-audio-text="Esto me preocupa especialmente como clínico. No por nosotros, sino por lo que hacen las familias cuando no estamos delante. Los datos que veis hablan por sí solos. En un estudio con veintidós escenarios pediátricos de emergencia, ChatGPT y GPT-4 dieron instrucciones de primeros auxilios correctas en menos de la mitad de los casos. En un segundo estudio centrado exclusivamente en reanimación cardiopulmonar pediátrica, menos del diez por ciento de las respuestas cumplía las guías de la American Heart Association. Pensad en la escena: una madre a las tres de la madrugada, el niño atragantado, el móvil en la mano. La respuesta puede sonar impecable. Y puede estar equivocada en lo que importa: la posición, la fuerza, la secuencia. Nuestra responsabilidad no es solo usar bien la IA. Es educar activamente a las familias sobre sus limitaciones. Ante una emergencia, llama al ciento doce. La IA no salva vidas. El ciento doce sí.">
+          data-audio-text=" Esto nos preocupa especialmente como clínicos. No por nosotros, sino por las familias que ya están usando estas herramientas sin que nadie les haya explicado dónde fallan. Los datos que veis hablan por sí solos. En un estudio con veintidós escenarios pediátricos de emergencia, chat-yipiití con yepeté-cuatro dio instrucciones de primeros auxilios correctas en menos de la mitad de los casos. En un segundo estudio, centrado exclusivamente en reanimación cardiopulmonar pediátrica, menos del diez por ciento de las respuestas cumplían las guías de la American Heart Association. Pensad en la escena: una madre a las tres de la madrugada, el niño atragantado, el móvil en la mano. La respuesta puede sonar impecable y estar equivocada en lo que importa: la posición, la fuerza, la secuencia. Que la i-a falle aquí no es un argumento contra la tecnología. Es un argumento a favor de evaluarla con el mismo rigor que cualquier otra intervención clínica. Y en urgencias, el mensaje es simple: uno uno dos.
+">
           <div class="title-wrapper">
             <h2 class="assertion-title">
               En urgencias pediátricas, la IA
@@ -2808,7 +2836,18 @@
 
         <!-- SLIDE: Mapa del Rendimiento (FUSIÓN-A de 2B.10+2B.13+2B.14) -->
         <section class="wide-slide" data-menu-title="Mapa del Rendimiento" data-audio-src="aepap-2026/audios/24.webm"
-          data-audio-text="168 estudios, casi 36 mil preguntas clínicas: ¿qué modelo de IA es mejor para qué tarea? La respuesta: ninguno gana en todo. ChatGPT-4o lidera en preguntas objetivas, ChatGPT-4 en abiertas, Gemini en triaje. Pero en diagnóstico top-1, los humanos expertos siguen siendo superiores. No hay un modelo universal: la elección depende de la tarea clínica.">
+          data-audio-text="Vamos a comparar modelos deía generativa. El meta análisis en red más amplio publicado en JTM
+ IR hasta 2025 reo un 168 estudios y casi 36.000 preguntas clínicas. La pregunta central,
+ ¿qué modelo es mejor para que? La respuesta es que ninguno ganan en todo. Para preguntas
+ objetivas, chatGPT4. Para preguntas abiertas, chatGPT4. Para triaje y clasificación,
+ cheminai, distintas tareas, distintos ganadores, pero en diagnostico top 1, donde hay que acertar a la
+ primera como hacemos cada día en consulta, los expertos humanos siguen en cabeza. Un sucla
+ de cero con 90 es la probabilidad más alta de ocupar el primer puesto en el ranking. Ningún modelo
+ los superan esa tarea, la implicación práctica es directa. No existe un modelo universal. Para
+ buscar evidencia, uno, para redactar, otro, para clasificar, otro, y para lo más crítico,
+ la primera sospecha diagnóstica, vuestro criterio sigue siendo el más difícil de superar.
+ [música]
+">
           <div class="title-wrapper">
             <h2 class="assertion-title">
               Ningún modelo de IA <span class="highlight">gana en todo</span>
@@ -3012,13 +3051,25 @@
 
         <!-- SLIDE: RAG y sesgo -->
         <section class="wide-slide" data-menu-title="RAG y sesgo" data-audio-src="aepap-2026/audios/25.webm"
-          data-audio-text="¿Y si usamos RAG para evaluar sesgo? Es una pregunta lógica: si el modelo trabaja con fuentes verificadas, ¿no debería evaluar mejor la calidad de un estudio?
+          data-audio-text="¿Y si usamos RAG para evaluar sesgo?  , la lógica es impecable.
+ Si el modelo trabaja con fuentes verificadas, ¿no debería juzgar mejor la calidad de un estudio?,
+ los datos dicen de no.
+ Cuando se evaluó en NotebookLM para valorar riesgo de sesgos en estudios clínicos, la concordancia
+ con revisores humanos fue muy baja.
+ El coeficiente de correlación interaclase fue de 0,27, que en métodología se clasifica
+ directamente como acuerdo pobre.
+ Y el porcentaje de coincidencia directa con los revisores oscilo entre el 14 y el 29 por
+ ciento, según la dimensión evaluada.
+ Menos de uno de cada tres juicios coincidía con el experto, ¿por qué falla incluso
+ con Rag? porqué evaluar seSGo NO es procesar texto, es inferir lo que el artículo no dice.
+ ¿por qué no reportan el seguimiento completo?
+ ¿por qué el grupo control tiene una distribución de edad distinta?
+ Esa razónamiento metacritico es experiencia metodológica, no lingüística.
+ Ninguna fuente verificada lo puede suplir.
+ Recordad este dato cuando lleguemos al semáforo.
+ evaluar calidad de evidencia es zona roja, con RAG sin él.
 
-       Los datos dicen que no. Cuando se probó NotebookLM para evaluar riesgo de sesgo en estudios clínicos, la concordancia con revisores humanos fue muy baja: un coeficiente de correlación intraclase de cero con veintisiete. Traducido: de cada cuatro evaluaciones, la IA coincide con el experto apenas una vez, y las otras tres discrepa.
-
-       ¿Por qué? Porque evaluar sesgo requiere un tipo de juicio que va más allá de procesar texto. Hay que inferir lo que el artículo no dice: ¿por qué no reportan el seguimiento? ¿por qué el grupo control es más joven? Eso es experiencia clínica y metodológica, no procesamiento lingüístico.
-
-       Esto enlaza directamente con el semáforo que veremos en dos slides: evaluar calidad de evidencia es zona roja, por mucho que la herramienta tenga RAG.">
+">
           <div class="title-wrapper">
             <h2 class="assertion-title">
               Con RAG*, evaluar sesgo sigue en
