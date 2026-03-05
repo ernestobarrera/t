@@ -2527,9 +2527,10 @@
           </aside>
         </section>
 
-        <!-- SLIDE: Brecha Exámenes vs Clínica (2B.8, con REF-A + dato 9.4%) -->
-        <section class="wide-slide" data-menu-title="Brecha Exámenes vs Clínica"
-          data-audio-src="aepap-2026/audios/22.m4a" data-audio-text=" Los modelos del lenguaje obtienen entre 84 y 90% en examen estipo o SML, necesarios para ejercer
+        <!-- SLIDE OCULTA (recorte pre-congreso 2026-03-05): Brecha Exámenes vs Clínica -->
+        <template class="slide-oculta">
+          <section class="wide-slide" data-menu-title="Brecha Exámenes vs Clínica"
+            data-audio-src="aepap-2026/audios/22.m4a" data-audio-text=" Los modelos del lenguaje obtienen entre 84 y 90% en examen estipo o SML, necesarios para ejercer
  medicina en Estados Unidos. Impresionante, pero en práctica clínicas real, la precisión global
  cae al 52% según el metanálisis de taquita con 83 estudios. ¿Por qué es a caída?
  Porque un examen tiene una respuesta correcta entre cinco opciones, la consulta real tiene ruido,
@@ -2541,99 +2542,100 @@
  daño. Si no me dimos el daño, no podemos prevenirlo, y eso nos lleva directamente a la
  siguiente pregunta. ¿Qué ocurre cuando son las familias las que consultan a la ía?
 ">
-          <div class="title-wrapper">
-            <h2 class="assertion-title">
-              Aprobar el examen
-              <span class="highlight">no es saber curar</span>
-            </h2>
-            <p class="subtitle">
-              84-90% en exámenes teóricos, pero solo 52.1% en clínica real
-              (Takita 2025, 83 estudios)
-            </p>
-          </div>
-          <div style="max-width: 800px; margin: 15px auto">
-            <!-- Barra 1: Exámenes -->
-            <div style="margin: 1rem 0">
-              <div style="
+            <div class="title-wrapper">
+              <h2 class="assertion-title">
+                Aprobar el examen
+                <span class="highlight">no es saber curar</span>
+              </h2>
+              <p class="subtitle">
+                84-90% en exámenes teóricos, pero solo 52.1% en clínica real
+                (Takita 2025, 83 estudios)
+              </p>
+            </div>
+            <div style="max-width: 800px; margin: 15px auto">
+              <!-- Barra 1: Exámenes -->
+              <div style="margin: 1rem 0">
+                <div style="
                     display: flex;
                     justify-content: space-between;
                     align-items: baseline;
                     margin-bottom: 0.3rem;
                   ">
-                <span style="font-size: 0.85em">Exámenes tipo test (<span class="abbr-tip"
-                    data-info="United States Medical Licensing Examination — examen de licencia médica de referencia internacional">USMLE</span>)
-                </span>
-                <strong style="font-size: 1.1em; color: var(--secondary)">84-90%</strong>
-              </div>
-              <div style="background: #333; border-radius: 6px; height: 1.5rem">
-                <div style="
+                  <span style="font-size: 0.85em">Exámenes tipo test (<span class="abbr-tip"
+                      data-info="United States Medical Licensing Examination — examen de licencia médica de referencia internacional">USMLE</span>)
+                  </span>
+                  <strong style="font-size: 1.1em; color: var(--secondary)">84-90%</strong>
+                </div>
+                <div style="background: #333; border-radius: 6px; height: 1.5rem">
+                  <div style="
                       background: linear-gradient(90deg, #66bb6a, #43a047);
                       width: 87%;
                       height: 100%;
                       border-radius: 6px;
                     "></div>
+                </div>
               </div>
-            </div>
-            <!-- Barra 2: Clínica real -->
-            <div style="margin: 1rem 0">
-              <div style="
+              <!-- Barra 2: Clínica real -->
+              <div style="margin: 1rem 0">
+                <div style="
                     display: flex;
                     justify-content: space-between;
                     align-items: baseline;
                     margin-bottom: 0.3rem;
                   ">
-                <span style="font-size: 0.85em">Precisión diagnóstica en práctica clínica real</span>
-                <strong style="font-size: 1.1em; color: #ffa726">52.1%</strong>
-              </div>
-              <div style="background: #333; border-radius: 6px; height: 1.5rem">
-                <div style="
+                  <span style="font-size: 0.85em">Precisión diagnóstica en práctica clínica real</span>
+                  <strong style="font-size: 1.1em; color: #ffa726">52.1%</strong>
+                </div>
+                <div style="background: #333; border-radius: 6px; height: 1.5rem">
+                  <div style="
                       background: linear-gradient(90deg, #ffa726, #fb8c00);
                       width: 52%;
                       height: 100%;
                       border-radius: 6px;
                     "></div>
+                </div>
+                <small style="color: #aaa">Meta-análisis de Takita 2025 · 83 estudios, precisión media
+                  ponderada</small>
               </div>
-              <small style="color: #aaa">Meta-análisis de Takita 2025 · 83 estudios, precisión media
-                ponderada</small>
-            </div>
-            <!-- Barra 3: Seguridad -->
-            <div style="margin: 1rem 0">
-              <div style="
+              <!-- Barra 3: Seguridad -->
+              <div style="margin: 1rem 0">
+                <div style="
                     display: flex;
                     justify-content: space-between;
                     align-items: baseline;
                     margin-bottom: 0.3rem;
                   ">
-                <span style="font-size: 0.85em">Estudios que evalúan seguridad del paciente</span>
-                <strong style="font-size: 1.1em; color: #ef5350">9.4%</strong>
-              </div>
-              <div style="background: #333; border-radius: 6px; height: 1.5rem">
-                <div style="
+                  <span style="font-size: 0.85em">Estudios que evalúan seguridad del paciente</span>
+                  <strong style="font-size: 1.1em; color: #ef5350">9.4%</strong>
+                </div>
+                <div style="background: #333; border-radius: 6px; height: 1.5rem">
+                  <div style="
                       background: linear-gradient(90deg, #ef5350, #e53935);
                       width: 9.4%;
                       height: 100%;
                       border-radius: 6px;
                     "></div>
+                </div>
+                <small style="color: #aaa">Solo el 9.4% de los estudios publicados evalúa errores y daño
+                  potencial al paciente (Zhang 2026)</small>
               </div>
-              <small style="color: #aaa">Solo el 9.4% de los estudios publicados evalúa errores y daño
-                potencial al paciente (Zhang 2026)</small>
             </div>
-          </div>
-          <div class="glass-panel" style="
+            <div class="glass-panel" style="
                 max-width: 900px;
                 margin: 10px auto;
                 background: rgba(251, 191, 36, 0.1);
                 border: 1px solid var(--accent);
               ">
-            <p style="font-size: 0.82em; text-align: center; margin: 0">
-              → Si no medimos el daño, no podemos prevenirlo. </p>
-          </div>
-          <p class="source-note">
-            <a href="https://doi.org/10.1038/s41746-025-01543-z" target="_blank" rel="noopener">Takita 2025</a>
-            |
-            <a href="https://doi.org/10.1016/j.ijmedinf.2025.106231" target="_blank" rel="noopener">Zhang 2026</a>
-          </p>
-        </section>
+              <p style="font-size: 0.82em; text-align: center; margin: 0">
+                → Si no medimos el daño, no podemos prevenirlo. </p>
+            </div>
+            <p class="source-note">
+              <a href="https://doi.org/10.1038/s41746-025-01543-z" target="_blank" rel="noopener">Takita 2025</a>
+              |
+              <a href="https://doi.org/10.1016/j.ijmedinf.2025.106231" target="_blank" rel="noopener">Zhang 2026</a>
+            </p>
+          </section>
+        </template>
 
         <!-- SLIDE: Seguridad Pública - Fallos en RCP (NotebookLM) -->
         <section class="wide-slide" data-menu-title="Riesgo: Dr. AI" data-audio-src="aepap-2026/audios/23.m4a"
@@ -2799,7 +2801,8 @@
               2025</a>
           </p>
           <aside class="notes">
-            ERNESTO: Las 3 de la madrugada, niño atragantado, madre con el móvil. Menos del 10% de respuestas sobre RCP
+            ERNESTO: Las 3 de la madrugada, niño atragantado, madre con el móvil. Menos del 10% de respuestas sobre
+            RCP
             pediátrica cumplen guías AHA. ¿Cuántos habéis oído 'lo busqué en ChatGPT'? [PAUSA] En urgencias: 112,
             siempre.
           </aside>
@@ -3099,9 +3102,10 @@
           </p>
         </section>
 
-        <!-- SLIDE: Precisión Diagnóstica (2B.12, con Takita + zoom pediátrico) -->
-        <section class="wide-slide" data-menu-title="Diagnóstico Pediátrico" data-audio-src="aepap-2026/audios/26.m4a"
-          data-audio-text="Veamos que pasa con la IA en el diagnóstico pediatrico.
+        <!-- SLIDE OCULTA (recorte pre-congreso 2026-03-05): Diagnóstico Pediátrico -->
+        <template class="slide-oculta">
+          <section class="wide-slide" data-menu-title="Diagnóstico Pediátrico" data-audio-src="aepap-2026/audios/26.m4a"
+            data-audio-text="Veamos que pasa con la IA en el diagnóstico pediatrico.
  Tres estudios, dos historias muy distintas.
  Primera historia, donde la IA se acerca,
 mansor y colaboradores entrenaron un modelo GPT3
@@ -3127,364 +3131,367 @@ mansor y colaboradores entrenaron un modelo GPT3
  Y atención, por que incluso donde se acerca, la velocidad no garantiza la fíabilidad.
  Eso es lo que veremos ahora.
 ">
-          <div class="title-wrapper">
-            <h2 class="assertion-title">
-              En pediatría, el rendimiento
-              <span class="highlight">depende del contexto</span>
-            </h2>
-            <p class="subtitle">
-              Prometedora en tareas acotadas; frágil con pacientes jóvenes y
-              complejos
-            </p>
-          </div>
-          <div class="grid-2" style="max-width: 980px; margin: 8px auto; gap: 14px">
-            <!-- Panel 1: Donde se acerca -->
-            <div class="glass-panel" style="
+            <div class="title-wrapper">
+              <h2 class="assertion-title">
+                En pediatría, el rendimiento
+                <span class="highlight">depende del contexto</span>
+              </h2>
+              <p class="subtitle">
+                Prometedora en tareas acotadas; frágil con pacientes jóvenes y
+                complejos
+              </p>
+            </div>
+            <div class="grid-2" style="max-width: 980px; margin: 8px auto; gap: 14px">
+              <!-- Panel 1: Donde se acerca -->
+              <div class="glass-panel" style="
                   text-align: center;
                   border-top: 4px solid #66bb6a;
                   padding: 8px 10px;
                 ">
-              <h4 style="color: #66bb6a; margin-bottom: 4px; font-size: 0.92em">
-                Tareas acotadas: la IA se acerca
-              </h4>
-              <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
-                Dx rural pediátrico · GPT-3 fine-tuned · 500 casos
-              </p>
-              <div style="
+                <h4 style="color: #66bb6a; margin-bottom: 4px; font-size: 0.92em">
+                  Tareas acotadas: la IA se acerca
+                </h4>
+                <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
+                  Dx rural pediátrico · GPT-3 fine-tuned · 500 casos
+                </p>
+                <div style="
                     display: flex;
                     justify-content: center;
                     gap: 1.2rem;
                     margin: 4px 0;
                   ">
-                <div>
-                  <div style="
+                  <div>
+                    <div style="
                         font-size: 1.7rem;
                         font-weight: 700;
                         color: var(--primary);
                       ">
-                    91.3%
+                      91.3%
+                    </div>
+                    <span style="font-size: 0.88em">Pediatra</span>
                   </div>
-                  <span style="font-size: 0.88em">Pediatra</span>
-                </div>
-                <div style="font-size: 1.4em; align-self: center">≈</div>
-                <div>
-                  <div style="
+                  <div style="font-size: 1.4em; align-self: center">≈</div>
+                  <div>
+                    <div style="
                         font-size: 1.7rem;
                         font-weight: 700;
                         color: var(--secondary);
                       ">
-                    87.3%
+                      87.3%
+                    </div>
+                    <span style="font-size: 0.88em">GPT-3</span>
                   </div>
-                  <span style="font-size: 0.88em">GPT-3</span>
                 </div>
-              </div>
-              <p style="font-size: 0.72em; color: #777; margin: 2px 0">
-                P=.47, NS · Mansoor, JMIRx Med 2025
-              </p>
-              <hr style="
+                <p style="font-size: 0.72em; color: #777; margin: 2px 0">
+                  P=.47, NS · Mansoor, JMIRx Med 2025
+                </p>
+                <hr style="
                     border: none;
                     border-top: 1px solid rgba(255, 255, 255, 0.08);
                     margin: 5px 0;
                   " />
-              <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
-                Urgencias pediátricas · 80 casos reales · Turín
-              </p>
-              <div style="
+                <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
+                  Urgencias pediátricas · 80 casos reales · Turín
+                </p>
+                <div style="
                     display: flex;
                     justify-content: center;
                     gap: 1.2rem;
                     margin: 4px 0;
                   ">
-                <div>
-                  <div style="
+                  <div>
+                    <div style="
                         font-size: 1.7rem;
                         font-weight: 700;
                         color: var(--secondary);
                       ">
-                    72.5
+                      72.5
+                    </div>
+                    <span style="font-size: 0.88em">ChatGPT-4o</span>
                   </div>
-                  <span style="font-size: 0.88em">ChatGPT-4o</span>
-                </div>
-                <div style="font-size: 1.4em; align-self: center">&gt;</div>
-                <div>
-                  <div style="
+                  <div style="font-size: 1.4em; align-self: center">&gt;</div>
+                  <div>
+                    <div style="
                         font-size: 1.7rem;
                         font-weight: 700;
                         color: var(--primary);
                       ">
-                    61.9
+                      61.9
+                    </div>
+                    <span style="font-size: 0.88em">Pediatras urg.</span>
                   </div>
-                  <span style="font-size: 0.88em">Pediatras urg.</span>
                 </div>
+                <p style="font-size: 0.72em; color: #777; margin: 2px 0">
+                  P&lt;.05 · Del Monte, Front Digit Health 2025
+                </p>
               </div>
-              <p style="font-size: 0.72em; color: #777; margin: 2px 0">
-                P&lt;.05 · Del Monte, Front Digit Health 2025
-              </p>
-            </div>
-            <!-- Panel 2: Donde falla -->
-            <div class="glass-panel" style="
+              <!-- Panel 2: Donde falla -->
+              <div class="glass-panel" style="
                   text-align: center;
                   border-top: 4px solid #ef5350;
                   padding: 8px 10px;
                 ">
-              <h4 style="color: #ef5350; margin-bottom: 4px; font-size: 0.92em">
-                Pacientes jóvenes: la IA falla más
-              </h4>
-              <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
-                Psiquiatría · 9.923 pacientes · 6 centros
-              </p>
-              <div style="
+                <h4 style="color: #ef5350; margin-bottom: 4px; font-size: 0.92em">
+                  Pacientes jóvenes: la IA falla más
+                </h4>
+                <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
+                  Psiquiatría · 9.923 pacientes · 6 centros
+                </p>
+                <div style="
                     display: flex;
                     justify-content: center;
                     gap: 1.2rem;
                     margin: 4px 0;
                     align-items: center;
                   ">
-                <div>
-                  <div style="
+                  <div>
+                    <div style="
                         font-size: 1.7rem;
                         font-weight: 700;
                         color: #ef5350;
                       ">
-                    61%
+                      61%
+                    </div>
+                    <span style="font-size: 0.88em">Adolescentes</span>
                   </div>
-                  <span style="font-size: 0.88em">Adolescentes</span>
-                </div>
-                <div style="font-size: 1.5em; color: #aaa">→</div>
-                <div>
-                  <div style="
+                  <div style="font-size: 1.5em; color: #aaa">→</div>
+                  <div>
+                    <div style="
                         font-size: 1.7rem;
                         font-weight: 700;
                         color: #66bb6a;
                       ">
-                    79%
+                      79%
+                    </div>
+                    <span style="font-size: 0.88em">≥60 años</span>
                   </div>
-                  <span style="font-size: 0.88em">≥60 años</span>
                 </div>
-              </div>
-              <p style="font-size: 0.72em; color: #777; margin: 2px 0">
-                GPT-4.0, P&lt;.001 · Sun, JMIR Med Inform 2026
-              </p>
-              <hr style="
+                <p style="font-size: 0.72em; color: #777; margin: 2px 0">
+                  GPT-4.0, P&lt;.001 · Sun, JMIR Med Inform 2026
+                </p>
+                <hr style="
                     border: none;
                     border-top: 1px solid rgba(255, 255, 255, 0.08);
                     margin: 5px 0;
                   " />
-              <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
-                Trastornos conductuales de la infancia (F9)
-              </p>
-              <div style="margin: 4px 0">
-                <div style="font-size: 2rem; font-weight: 700; color: #ef5350">
-                  44.9%
+                <p style="font-size: 0.82em; color: #aaa; margin: 2px 0">
+                  Trastornos conductuales de la infancia (F9)
+                </p>
+                <div style="margin: 4px 0">
+                  <div style="font-size: 2rem; font-weight: 700; color: #ef5350">
+                    44.9%
+                  </div>
+                  <span style="font-size: 0.88em">Precisión GPT-4.0</span>
                 </div>
-                <span style="font-size: 0.88em">Precisión GPT-4.0</span>
+                <p style="font-size: 0.72em; color: #777; margin: 2px 0">
+                  Peor categoría diagnóstica junto a F6
+                </p>
               </div>
-              <p style="font-size: 0.72em; color: #777; margin: 2px 0">
-                Peor categoría diagnóstica junto a F6
-              </p>
             </div>
-          </div>
-          <!-- Barra Patrón: ancha, ajustada -->
-          <div class="glass-panel" style="
+            <!-- Barra Patrón: ancha, ajustada -->
+            <div class="glass-panel" style="
                 max-width: 980px;
                 margin: 6px auto;
                 text-align: center;
                 padding: 7px 20px;
               ">
-            <p style="font-size: 0.92em; margin: 0; line-height: 1.3">
-              <strong style="color: var(--accent)">Patrón:</strong>
-              cuanto más estructurada la tarea, mejor rinde. Cuanto más juicio
-              clínico y más joven el paciente, más lejos queda.
+              <p style="font-size: 0.92em; margin: 0; line-height: 1.3">
+                <strong style="color: var(--accent)">Patrón:</strong>
+                cuanto más estructurada la tarea, mejor rinde. Cuanto más juicio
+                clínico y más joven el paciente, más lejos queda.
+              </p>
+            </div>
+            <p class="source-note">
+              <a href="https://doi.org/10.2196/65263" target="_blank" rel="noopener">Mansoor 2025</a>
+              ·
+              <a href="https://doi.org/10.3389/fdgth.2025.1624786" target="_blank" rel="noopener">Del Monte 2025</a>
+              ·
+              <a href="https://doi.org/10.2196/77699" target="_blank" rel="noopener">Sun 2026</a>
             </p>
-          </div>
-          <p class="source-note">
-            <a href="https://doi.org/10.2196/65263" target="_blank" rel="noopener">Mansoor 2025</a>
-            ·
-            <a href="https://doi.org/10.3389/fdgth.2025.1624786" target="_blank" rel="noopener">Del Monte 2025</a>
-            ·
-            <a href="https://doi.org/10.2196/77699" target="_blank" rel="noopener">Sun 2026</a>
-          </p>
-          <aside class="notes">
-            ERNESTO: El patrón clave: cuanto más joven el paciente, peor rinde la IA. Trastornos conductuales: 44,9%.
-            Vuestros pacientes más vulnerables son donde la IA falla más. Para sesiones clínicas, fantástica. Para
-            diagnosticar, no.
-          </aside>
-        </section>
+            <aside class="notes">
+              ERNESTO: El patrón clave: cuanto más joven el paciente, peor rinde la IA. Trastornos conductuales: 44,9%.
+              Vuestros pacientes más vulnerables son donde la IA falla más. Para sesiones clínicas, fantástica. Para
+              diagnosticar, no.
+            </aside>
+          </section>
+        </template>
 
-        <!-- SLIDE: Velocidad ≠ Fiabilidad ≠ Consenso (FUSIÓN-B de 2B.10+2B.13+2B.14) -->
-        <section class="wide-slide" data-menu-title="Velocidad ≠ Fiabilidad ≠ Consenso"
-          data-audio-src="aepap-2026/audios/27.m4a"
-          data-audio-text="Tres estudios recientes, tres lecciones, para entender por qué velocidad, fiabilidad y consenso son cosas distintas. Y por qué confundirlas es el error más frecuente cuando evaluamos IA. Velocidad. En escoliosis adolescente, cuatro modelos de lenguaje clasificaron radiografías cien veces más rápido que los cirujanos: segundos frente a once o doce minutos. Pero cuando se repitió exactamente la misma prueba una semana después, con las mismas imágenes y las mismas instrucciones, los modelos dieron resultados distintos. Kappa prácticamente cero. Es decir: el mismo paciente puede recibir una clasificación diferente según el día. La velocidad no compró reproducibilidad. Fiabilidad. En otorrinolaringología pediátrica, ChatGPT-cuatro alcanzó kappa de uno en adherencia a guías clínicas de tubos de timpanostomía. Perfección. Pero cuando se evaluó la misma categoría de herramienta para generar citas bibliográficas en radiología, la tasa de referencias inventadas osciló entre el tres y el sesenta y uno por ciento, según el modelo. Veinte veces más error de un modelo a otro. Perfecto donde la respuesta está codificada en una guía. Impredecible donde tiene que construir la respuesta. Consenso. Los cirujanos expertos coinciden el noventa y dos por ciento de las veces. Los modelos de lenguaje, entre el uno con seis y el diez con dos por ciento. Eso es acuerdo por azar. Como lanzar una moneda. La misma tecnología. Tres dimensiones. Tres perfiles de fallo completamente distintos. Y la clave: en ninguna de las tres puedes predecir cuándo va a fallar. Eso tiene consecuencias directas en cómo leemos los sesgos que genera, que es lo que vemos ahora.">
-          <div class="title-wrapper">
-            <h2 class="assertion-title">
-              Rápido <span class="highlight">≠</span> fiable
-              <span class="highlight">≠</span> consistente
-            </h2>
-            <p class="subtitle">
-              Escoliosis adolescente: 100× más rápido, pero sin
-              reproducibilidad ni consenso entre modelos
-            </p>
-          </div>
-          <div class="grid-3" style="max-width: 960px; margin: 12px auto">
-            <!-- Panel 1: Velocidad -->
-            <div class="glass-panel" style="
+        <!-- SLIDE OCULTA (recorte pre-congreso 2026-03-05): Velocidad ≠ Fiabilidad ≠ Consenso -->
+        <template class="slide-oculta">
+          <section class="wide-slide" data-menu-title="Velocidad ≠ Fiabilidad ≠ Consenso"
+            data-audio-src="aepap-2026/audios/27.m4a"
+            data-audio-text="Tres estudios recientes, tres lecciones, para entender por qué velocidad, fiabilidad y consenso son cosas distintas. Y por qué confundirlas es el error más frecuente cuando evaluamos IA. Velocidad. En escoliosis adolescente, cuatro modelos de lenguaje clasificaron radiografías cien veces más rápido que los cirujanos: segundos frente a once o doce minutos. Pero cuando se repitió exactamente la misma prueba una semana después, con las mismas imágenes y las mismas instrucciones, los modelos dieron resultados distintos. Kappa prácticamente cero. Es decir: el mismo paciente puede recibir una clasificación diferente según el día. La velocidad no compró reproducibilidad. Fiabilidad. En otorrinolaringología pediátrica, ChatGPT-cuatro alcanzó kappa de uno en adherencia a guías clínicas de tubos de timpanostomía. Perfección. Pero cuando se evaluó la misma categoría de herramienta para generar citas bibliográficas en radiología, la tasa de referencias inventadas osciló entre el tres y el sesenta y uno por ciento, según el modelo. Veinte veces más error de un modelo a otro. Perfecto donde la respuesta está codificada en una guía. Impredecible donde tiene que construir la respuesta. Consenso. Los cirujanos expertos coinciden el noventa y dos por ciento de las veces. Los modelos de lenguaje, entre el uno con seis y el diez con dos por ciento. Eso es acuerdo por azar. Como lanzar una moneda. La misma tecnología. Tres dimensiones. Tres perfiles de fallo completamente distintos. Y la clave: en ninguna de las tres puedes predecir cuándo va a fallar. Eso tiene consecuencias directas en cómo leemos los sesgos que genera, que es lo que vemos ahora.">
+            <div class="title-wrapper">
+              <h2 class="assertion-title">
+                Rápido <span class="highlight">≠</span> fiable
+                <span class="highlight">≠</span> consistente
+              </h2>
+              <p class="subtitle">
+                Escoliosis adolescente: 100× más rápido, pero sin
+                reproducibilidad ni consenso entre modelos
+              </p>
+            </div>
+            <div class="grid-3" style="max-width: 960px; margin: 12px auto">
+              <!-- Panel 1: Velocidad -->
+              <div class="glass-panel" style="
                   text-align: center;
                   border-top: 4px solid var(--secondary);
                   padding: 15px;
                 ">
-              <div style="font-size: 1.4em; margin-bottom: 6px">⚡</div>
-              <div style="
+                <div style="font-size: 1.4em; margin-bottom: 6px">⚡</div>
+                <div style="
                     font-size: 0.9rem;
                     font-weight: 600;
                     color: var(--secondary);
                     text-transform: uppercase;
                     letter-spacing: 1px;
                   ">
-                Velocidad
-              </div>
-              <div style="margin: 10px 0">
-                <div style="
+                  Velocidad
+                </div>
+                <div style="margin: 10px 0">
+                  <div style="
                       font-size: 1.5rem;
                       font-weight: 700;
                       color: var(--primary);
                     ">
-                  100×
+                    100×
+                  </div>
+                  <p style="font-size: 0.72em; margin: 4px 0">
+                    IA: 7–48 s &nbsp;vs&nbsp; cirujano: 11–12 min
+                  </p>
                 </div>
-                <p style="font-size: 0.72em; margin: 4px 0">
-                  IA: 7–48 s &nbsp;vs&nbsp; cirujano: 11–12 min
-                </p>
-              </div>
-              <div style="
+                <div style="
                     background: rgba(239, 68, 68, 0.15);
                     border-radius: 8px;
                     padding: 8px 10px;
                     margin-top: 8px;
                   ">
-                <p style="
+                  <p style="
                       font-size: 0.68em;
                       margin: 0;
                       color: #ef5350;
                       font-weight: 600;
                     ">
-                  ⚠️ Test-retest a 1 semana: todos los modelos dieron
-                  resultados distintos (κ&nbsp;≈&nbsp;0)
-                </p>
+                    ⚠️ Test-retest a 1 semana: todos los modelos dieron
+                    resultados distintos (κ&nbsp;≈&nbsp;0)
+                  </p>
+                </div>
               </div>
-            </div>
-            <!-- Panel 2: Fiabilidad -->
-            <div class="glass-panel" style="
+              <!-- Panel 2: Fiabilidad -->
+              <div class="glass-panel" style="
                   text-align: center;
                   border-top: 4px solid var(--accent);
                   padding: 15px;
                 ">
-              <div style="font-size: 1.4em; margin-bottom: 6px">🎯</div>
-              <div style="
+                <div style="font-size: 1.4em; margin-bottom: 6px">🎯</div>
+                <div style="
                     font-size: 0.9rem;
                     font-weight: 600;
                     color: var(--accent);
                     text-transform: uppercase;
                     letter-spacing: 1px;
                   ">
-                Fiabilidad
-              </div>
-              <div style="margin: 10px 0">
-                <div style="font-size: 1.5rem; font-weight: 700; color: #66bb6a">
-                  <span class="abbr-tip"
-                    data-info="Kappa de Cohen: concordancia inter-observador (1.0 = acuerdo perfecto)">κ</span>
-                  = 1.0
+                  Fiabilidad
                 </div>
-                <p style="font-size: 0.72em; margin: 4px 0">
-                  <span class="abbr-tip" data-info="Otorrinolaringología">ORL</span>
-                  pediátrica: 100% en guías protocolizadas
-                </p>
-              </div>
-              <div style="
+                <div style="margin: 10px 0">
+                  <div style="font-size: 1.5rem; font-weight: 700; color: #66bb6a">
+                    <span class="abbr-tip"
+                      data-info="Kappa de Cohen: concordancia inter-observador (1.0 = acuerdo perfecto)">κ</span>
+                    = 1.0
+                  </div>
+                  <p style="font-size: 0.72em; margin: 4px 0">
+                    <span class="abbr-tip" data-info="Otorrinolaringología">ORL</span>
+                    pediátrica: 100% en guías protocolizadas
+                  </p>
+                </div>
+                <div style="
                     background: rgba(239, 68, 68, 0.15);
                     border-radius: 8px;
                     padding: 8px 10px;
                     margin-top: 8px;
                   ">
-                <p style="
+                  <p style="
                       font-size: 0.68em;
                       margin: 0;
                       color: #ef5350;
                       font-weight: 600;
                     ">
-                  ⚠️ Misma herramienta en citas bibliográficas: 3–61%
-                  fabricadas según modelo
-                </p>
+                    ⚠️ Misma herramienta en citas bibliográficas: 3–61%
+                    fabricadas según modelo
+                  </p>
+                </div>
               </div>
-            </div>
-            <!-- Panel 3: Consenso -->
-            <div class="glass-panel" style="
+              <!-- Panel 3: Consenso -->
+              <div class="glass-panel" style="
                   text-align: center;
                   border-top: 4px solid #ef5350;
                   padding: 15px;
                 ">
-              <div style="font-size: 1.4em; margin-bottom: 6px">🤝</div>
-              <div style="
+                <div style="font-size: 1.4em; margin-bottom: 6px">🤝</div>
+                <div style="
                     font-size: 0.9rem;
                     font-weight: 600;
                     color: #ef5350;
                     text-transform: uppercase;
                     letter-spacing: 1px;
                   ">
-                Consenso
-              </div>
-              <div style="margin: 10px 0">
-                <div style="font-size: 1.5rem; font-weight: 700; color: #66bb6a">
-                  92%
+                  Consenso
                 </div>
-                <p style="font-size: 0.72em; margin: 4px 0">
-                  Cirujanos expertos:
-                  <span class="abbr-tip"
-                    data-info="Kappa de Cohen: concordancia inter-observador (1.0 = acuerdo perfecto)">κ</span>
-                  = 0.913
-                </p>
-              </div>
-              <div style="
+                <div style="margin: 10px 0">
+                  <div style="font-size: 1.5rem; font-weight: 700; color: #66bb6a">
+                    92%
+                  </div>
+                  <p style="font-size: 0.72em; margin: 4px 0">
+                    Cirujanos expertos:
+                    <span class="abbr-tip"
+                      data-info="Kappa de Cohen: concordancia inter-observador (1.0 = acuerdo perfecto)">κ</span>
+                    = 0.913
+                  </p>
+                </div>
+                <div style="
                     background: rgba(239, 68, 68, 0.15);
                     border-radius: 8px;
                     padding: 8px 10px;
                     margin-top: 8px;
                   ">
-                <p style="
+                  <p style="
                       font-size: 0.68em;
                       margin: 0;
                       color: #ef5350;
                       font-weight: 600;
                     ">
-                  ⚠️ Modelos de lenguaje: 1.6–10.2% (<span class="abbr-tip"
-                    data-info="Kappa de Cohen: concordancia inter-observador (1.0 = acuerdo perfecto)">κ</span>&nbsp;≈&nbsp;0)
-                  — acuerdo por azar
-                </p>
+                    ⚠️ Modelos de lenguaje: 1.6–10.2% (<span class="abbr-tip"
+                      data-info="Kappa de Cohen: concordancia inter-observador (1.0 = acuerdo perfecto)">κ</span>&nbsp;≈&nbsp;0)
+                    — acuerdo por azar
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="glass-panel" style="
+            <div class="glass-panel" style="
                 max-width: 800px;
                 margin: 10px auto;
                 text-align: center;
                 padding: 12px;
               ">
-            <p style="font-size: 0.85em; margin: 0; font-weight: 600">
-              La <span class="text-gradient-warn">velocidad atrae</span>, la
-              fiabilidad importa, el consenso
-              <span style="color: #ef5350">falta</span>
+              <p style="font-size: 0.85em; margin: 0; font-weight: 600">
+                La <span class="text-gradient-warn">velocidad atrae</span>, la
+                fiabilidad importa, el consenso
+                <span style="color: #ef5350">falta</span>
+              </p>
+            </div>
+            <p class="source-note" style="max-width: 960px; margin: 4px auto 0; font-size: 0.48em">
+              Aktan et al.
+              <a href="https://doi.org/10.3390/diagnostics15243219" target="_blank" rel="noopener"><em>Diagnostics</em>
+                2025</a>
+              · Durgut &amp; Dikici
+              <a href="https://doi.org/10.1007/s00405-025-09630-3" target="_blank" rel="noopener"><em>Eur Arch
+                  Otorhinolaryngol</em> 2026</a>
+              · Güneş et al.
+              <a href="https://doi.org/10.4274/dir.2025.253101" target="_blank" rel="noopener"><em>Diagn Interv
+                  Radiol</em> 2025</a>
             </p>
-          </div>
-          <p class="source-note" style="max-width: 960px; margin: 4px auto 0; font-size: 0.48em">
-            Aktan et al.
-            <a href="https://doi.org/10.3390/diagnostics15243219" target="_blank" rel="noopener"><em>Diagnostics</em>
-              2025</a>
-            · Durgut &amp; Dikici
-            <a href="https://doi.org/10.1007/s00405-025-09630-3" target="_blank" rel="noopener"><em>Eur Arch
-                Otorhinolaryngol</em> 2026</a>
-            · Güneş et al.
-            <a href="https://doi.org/10.4274/dir.2025.253101" target="_blank" rel="noopener"><em>Diagn Interv
-                Radiol</em> 2025</a>
-          </p>
-        </section>
+          </section>
+        </template>
 
         <!-- SLIDE: Sesgos Algorítmicos (con infografía 08) -->
         <!-- ============================================================
@@ -3696,7 +3703,8 @@ mansor y colaboradores entrenaron un modelo GPT3
           </p>
           <aside class="notes">
             ERNESTO: Paco menciona un semáforo. Lo que veréis más adelante es un algoritmo de decisión paso a paso.
-            Cuando lleguemos, conectad con este momento: la pregunta no es si la IA acierta, sino si podéis detectar el
+            Cuando lleguemos, conectad con este momento: la pregunta no es si la IA acierta, sino si podéis detectar
+            el
             error a tiempo.
           </aside>
         </section>
@@ -3707,21 +3715,23 @@ mansor y colaboradores entrenaron un modelo GPT3
                Reemplaza imagen IA_Potencia_09.jpg por tabla HTML
                Refs verificadas PubMed: Lee · Asgari · Aktan · Bushuven · Kular · Takita · Beber · Wang
                ============================================================ -->
-        <!--   <section class="wide-slide" data-menu-title="🚦 Semáforo IA (oculto)" data-audio-src="" data-audio-text="" style="display:none">
-          <div class="title-wrapper">
-            <h2 class="assertion-title">
-              Si la IA se equivoca, ¿puedes
-              <span class="highlight">detectarlo a tiempo?</span>
-            </h2>
-            <p class="subtitle">
-              Criterio único de seguridad:
-              <strong>detectabilidad del error</strong>, no precisión del
-              modelo
-            </p>
-          </div>
+        <template class="slide-oculta">
+          <section class="wide-slide" data-menu-title="🚦 Semáforo IA (oculto)" data-audio-src="" data-audio-text=""
+            style="display:none">
+            <div class="title-wrapper">
+              <h2 class="assertion-title">
+                Si la IA se equivoca, ¿puedes
+                <span class="highlight">detectarlo a tiempo?</span>
+              </h2>
+              <p class="subtitle">
+                Criterio único de seguridad:
+                <strong>detectabilidad del error</strong>, no precisión del
+                modelo
+              </p>
+            </div>
 
-       
-          <div style="
+
+            <div style="
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 gap: 0;
@@ -3731,76 +3741,76 @@ mansor y colaboradores entrenaron un modelo GPT3
                 overflow: hidden;
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
               ">
-       
-            <div style="
+
+              <div style="
                   background: #1a8a1a;
                   padding: 0.5em 0.45em 0.35em;
                   text-align: center;
                 ">
-              <div style="
+                <div style="
                     font-size: 0.72em;
                     font-weight: 700;
                     color: #fff;
                     text-transform: uppercase;
                     letter-spacing: 0.06em;
                   ">
-                🟢 Verde
-              </div>
-              <div style="
+                  🟢 Verde
+                </div>
+                <div style="
                     font-size: 0.46em;
                     color: rgba(255, 255, 255, 0.85);
                     margin-top: 0.1em;
                   ">
-                Automatizar · supervisión
+                  Automatizar · supervisión
+                </div>
               </div>
-            </div>
-            <div style="
+              <div style="
                   background: #b8960a;
                   padding: 0.5em 0.45em 0.35em;
                   text-align: center;
                 ">
-              <div style="
+                <div style="
                     font-size: 0.72em;
                     font-weight: 700;
                     color: #fff;
                     text-transform: uppercase;
                     letter-spacing: 0.06em;
                   ">
-                🟡 Amarillo
-              </div>
-              <div style="
+                  🟡 Amarillo
+                </div>
+                <div style="
                     font-size: 0.46em;
                     color: rgba(255, 255, 255, 0.85);
                     margin-top: 0.1em;
                   ">
-                Monitorizar · cuestionar
+                  Monitorizar · cuestionar
+                </div>
               </div>
-            </div>
-            <div style="
+              <div style="
                   background: #c41e1e;
                   padding: 0.5em 0.45em 0.35em;
                   text-align: center;
                 ">
-              <div style="
+                <div style="
                     font-size: 0.72em;
                     font-weight: 700;
                     color: #fff;
                     text-transform: uppercase;
                     letter-spacing: 0.06em;
                   ">
-                🔴 Rojo
-              </div>
-              <div style="
+                  🔴 Rojo
+                </div>
+                <div style="
                     font-size: 0.46em;
                     color: rgba(255, 255, 255, 0.85);
                     margin-top: 0.1em;
                   ">
-                No automatizar
+                  No automatizar
+                </div>
               </div>
-            </div>
 
-            
-            <div style="
+
+              <div style="
                   background: rgba(26, 138, 26, 0.12);
                   border-left: 3px solid #1a8a1a;
                   padding: 0.45em 0.5em;
@@ -3809,13 +3819,13 @@ mansor y colaboradores entrenaron un modelo GPT3
                   line-height: 1.55;
                   color: rgba(255, 255, 255, 0.92);
                 ">
-              ✔ Cribado artículos en RS<br />
-              <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">F1 = 0,92 – 0,98</span><br />
-              ✔ Extracción datos tabulares<br />
-              ✔ Resúmenes estructurados<br />
-              ✔ Material educativo familias
-            </div>
-            <div style="
+                ✔ Cribado artículos en RS<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">F1 = 0,92 – 0,98</span><br />
+                ✔ Extracción datos tabulares<br />
+                ✔ Resúmenes estructurados<br />
+                ✔ Material educativo familias
+              </div>
+              <div style="
                   background: rgba(184, 150, 10, 0.1);
                   border-left: 3px solid #b8960a;
                   padding: 0.45em 0.5em;
@@ -3824,14 +3834,14 @@ mansor y colaboradores entrenaron un modelo GPT3
                   line-height: 1.55;
                   color: rgba(255, 255, 255, 0.92);
                 ">
-              ⚠ Borradores informes clínicos<br />
-              <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">Omisiones 3,5 %</span><br />
-              ⚠ Apoyo dx diferencial<br />
-              <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">Precisión global 52 %</span><br />
-              ⚠ Evaluación calidad evidencia<br />
-              <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">ICC = 0,27</span>
-            </div>
-            <div style="
+                ⚠ Borradores informes clínicos<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">Omisiones 3,5 %</span><br />
+                ⚠ Apoyo dx diferencial<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">Precisión global 52 %</span><br />
+                ⚠ Evaluación calidad evidencia<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">ICC = 0,27</span>
+              </div>
+              <div style="
                   background: rgba(196, 30, 30, 0.1);
                   border-left: 3px solid #c41e1e;
                   padding: 0.45em 0.5em;
@@ -3840,16 +3850,16 @@ mansor y colaboradores entrenaron un modelo GPT3
                   line-height: 1.55;
                   color: rgba(255, 255, 255, 0.92);
                 ">
-              ✖ Diagnóstico primario imagen<br />
-              <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">κ ≈ 0 reproducibilidad</span><br />
-              ✖ Dosificación sin verificar<br />
-              ✖ Emergencias / RCP<br />
-              <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">&lt; 10 % conforme AHA</span><br />
-              ✖ Decisiones irreversibles
-            </div>
+                ✖ Diagnóstico primario imagen<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">κ ≈ 0 reproducibilidad</span><br />
+                ✖ Dosificación sin verificar<br />
+                ✖ Emergencias / RCP<br />
+                <span style="opacity: 0.65; font-size: 0.88em; margin-left: 1em">&lt; 10 % conforme AHA</span><br />
+                ✖ Decisiones irreversibles
+              </div>
 
-          
-            <div style="
+
+              <div style="
                   background: rgba(26, 138, 26, 0.22);
                   padding: 0.35em 0.4em;
                   text-align: center;
@@ -3858,9 +3868,9 @@ mansor y colaboradores entrenaron un modelo GPT3
                   font-weight: 600;
                   color: #6fdc6f;
                 ">
-              Error DETECTABLE<br />al revisar
-            </div>
-            <div style="
+                Error DETECTABLE<br />al revisar
+              </div>
+              <div style="
                   background: rgba(184, 150, 10, 0.18);
                   padding: 0.35em 0.4em;
                   text-align: center;
@@ -3869,9 +3879,9 @@ mansor y colaboradores entrenaron un modelo GPT3
                   font-weight: 600;
                   color: #f0d060;
                 ">
-              Error puede PASAR<br />DESAPERCIBIDO
-            </div>
-            <div style="
+                Error puede PASAR<br />DESAPERCIBIDO
+              </div>
+              <div style="
                   background: rgba(196, 30, 30, 0.18);
                   padding: 0.35em 0.4em;
                   text-align: center;
@@ -3880,25 +3890,28 @@ mansor y colaboradores entrenaron un modelo GPT3
                   font-weight: 600;
                   color: #ff7070;
                 ">
-              Error puede ser<br />IRREVERSIBLE
+                Error puede ser<br />IRREVERSIBLE
+              </div>
             </div>
-          </div>
 
-          <p class="source-note">
-            Elaboración propia ·
-            <a href="https://doi.org/10.1016/j.jval.2025.08.002" target="_blank">Lee <em>Value Health</em> 2025</a>
-            ·
-            <a href="https://doi.org/10.1038/s41746-025-01670-7" target="_blank">Asgari <em>npj Digit Med</em> 2025</a>
-            ·
-            <a href="https://doi.org/10.1038/s41746-025-01543-z" target="_blank">Takita <em>npj Digit Med</em> 2025</a>
-            ·
-            <a href="https://doi.org/10.1016/j.jposna.2025.100294" target="_blank">Beber <em>JPOSNA</em> 2025</a>
-            ·
-            <a href="https://doi.org/10.3390/diagnostics15243219" target="_blank">Aktan <em>Diagnostics</em> 2025</a>
-            ·
-            <a href="https://doi.org/10.1007/s10916-023-02019-x" target="_blank">Bushuven <em>J Med Syst</em> 2023</a>
-          </p>
-        </section> -->
+            <p class="source-note">
+              Elaboración propia ·
+              <a href="https://doi.org/10.1016/j.jval.2025.08.002" target="_blank">Lee <em>Value Health</em> 2025</a>
+              ·
+              <a href="https://doi.org/10.1038/s41746-025-01670-7" target="_blank">Asgari <em>npj Digit Med</em>
+                2025</a>
+              ·
+              <a href="https://doi.org/10.1038/s41746-025-01543-z" target="_blank">Takita <em>npj Digit Med</em>
+                2025</a>
+              ·
+              <a href="https://doi.org/10.1016/j.jposna.2025.100294" target="_blank">Beber <em>JPOSNA</em> 2025</a>
+              ·
+              <a href="https://doi.org/10.3390/diagnostics15243219" target="_blank">Aktan <em>Diagnostics</em> 2025</a>
+              ·
+              <a href="https://doi.org/10.1007/s10916-023-02019-x" target="_blank">Bushuven <em>J Med Syst</em> 2023</a>
+            </p>
+          </section>
+        </template>
 
 
 
@@ -6829,6 +6842,121 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
             </div>
           </div>
         </section>
+
+                <!-- SLIDE: Toolkit personal para demo en vivo (añadida 2026-03-05) -->
+        <section class="wide-slide" data-menu-title="Mi kit del lunes" data-audio-src="" data-audio-text="">
+          <div class="title-wrapper">
+            <h2 class="assertion-title">
+              Lo que abro
+              <span class="highlight">cada lunes a las 8</span>
+            </h2>
+            <p class="subtitle">Herramientas reales y de uso diario organizadas por función</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1100px; margin: 15px auto; font-size: 0.9em;">
+
+            <!-- Columna 1: GPTs personalizados -->
+            <div class="glass-panel" style="padding: 16px; border-top: 4px solid var(--secondary); display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h4 style="color: var(--secondary); margin: 0 0 16px; font-size: 1.25em; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                  <i class="fa-solid fa-robot"></i> GPTs Especializados
+                </h4>
+                <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                  <a href="https://chatgpt.com/g/g-X7vlWsNJx-evidence-based-practice" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fa-solid fa-file-pdf"></i> Lectura Crítica EBP
+                  </a>
+                </div>
+                <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                  <a href="https://chatgpt.com/g/g-67b1abae4e24819191a40f0e7b0ab906-asistente-de-resumenes-medicos" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fa-solid fa-list-check"></i> Resúmenes Médicos
+                  </a>
+                </div>
+              </div>
+              <div style="margin-top: 20px; padding: 12px; background: rgba(102, 187, 106, 0.1); border-radius: 6px; text-align: center; border: 1px solid rgba(102, 187, 106, 0.3);">
+                <p style="margin: 0; color: #66bb6a; font-size: 0.95em; font-weight: 600;">
+                  <i class="fa-solid fa-circle-check" style="margin-right: 6px;"></i>Semáforo Verde (Aportas la fuente)
+                </p>
+              </div>
+            </div>
+
+            <!-- Columna 2: Búsqueda y vigilancia -->
+            <div class="glass-panel" style="padding: 16px; border-top: 4px solid var(--primary); display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h4 style="color: var(--primary); margin: 0 0 16px; font-size: 1.25em; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                  <i class="fa-solid fa-magnifying-glass"></i> Búsqueda y Vigilancia
+                </h4>
+                <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                  <a href="https://ernestobarrera.github.io/buscar-pubmed.html" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fa-solid fa-microscope"></i> Buscador PubMed IA
+                  </a>
+                </div>
+                <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                  <a href="https://www.inoreader.com/folder/AEPAP%202026" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fa-solid fa-rss"></i> RSS Inteligente
+                  </a>
+                </div>
+              </div>
+              <div style="margin-top: 20px; padding: 12px; background: rgba(102, 187, 106, 0.1); border-radius: 6px; text-align: center; border: 1px solid rgba(102, 187, 106, 0.3);">
+                <p style="margin: 0; color: #66bb6a; font-size: 0.95em; font-weight: 600;">
+                  <i class="fa-solid fa-circle-check" style="margin-right: 6px;"></i>Semáforo Verde (Fuentes Trazadas)
+                </p>
+              </div>
+            </div>
+
+            <!-- Columna 3: Modelos Directos -->
+            <div class="glass-panel" style="padding: 16px; border-top: 4px solid #a78bfa; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h4 style="color: #a78bfa; margin: 0 0 16px; font-size: 1.25em; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                  <i class="fa-solid fa-network-wired"></i> Modelos Directos
+                </h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <!-- Claude -->
+                  <a href="https://claude.ai" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                    <strong style="color: #a78bfa; font-size: 1.25em;">Claude</strong>
+                    <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Razonamiento</span>
+                  </a>
+                  <!-- Perplexity -->
+                  <a href="https://perplexity.ai" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                    <strong style="color: #22d3ee; font-size: 1.25em;">Perplexity</strong>
+                    <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Búsqueda RAG</span>
+                  </a>
+                  <!-- Gemini Gem -->
+                  <a href="https://gemini.google.com/gem/da9353a37a47" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                    <strong style="color: #f43f5e; font-size: 1.25em;">Gemini Gem</strong>
+                    <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Asist. Clínico</span>
+                  </a>
+                  <!-- Google IA -->
+                  <a href="https://www.google.com/search?udm=50&aep=11" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                    <strong style="color: #3b82f6; font-size: 1.25em;">Google AI</strong>
+                    <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Búsqueda Web</span>
+                  </a>
+                  <!-- DeepSeek -->
+                  <a href="https://chat.deepseek.com" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                    <strong style="color: #60a5fa; font-size: 1.25em;">DeepSeek</strong>
+                    <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Código/Lógica</span>
+                  </a>
+                  <!-- Qwen -->
+                  <a href="https://tongyi.aliyun.com/qianwen" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                    <strong style="color: #34d399; font-size: 1.25em;">Qwen</strong>
+                    <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Multilingüe</span>
+                  </a>
+                </div>
+              </div>
+              <div style="margin-top: 20px; padding: 12px; background: rgba(251, 191, 36, 0.1); border-radius: 6px; text-align: center; border: 1px solid rgba(251, 191, 36, 0.3);">
+                <p style="margin: 0; color: #fbbf24; font-size: 0.95em; font-weight: 600;">
+                  <i class="fa-solid fa-triangle-exclamation" style="margin-right: 6px;"></i>Semáforo Amarillo (Verificar)
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="source-note" style="margin-top: 10px;">
+            Haz clic en cualquier tarjeta durante la presentación para abrir recursos en vivo
+          </p>
+        </section>
+
+
       </section>
 
       <!-- ═══════════════════════════════════════════════════════════════ -->
