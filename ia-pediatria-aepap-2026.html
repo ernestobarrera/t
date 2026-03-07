@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 
 <head>
@@ -488,6 +488,55 @@
       }
     }
 
+    /* ── Tarjeta de navegación — slide portada ──────────────────────── */
+    .nav-hint {
+      position: absolute;
+      bottom: 70px;
+      right: 20px;
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .present .nav-hint {
+      animation:
+        nav-hint-in 0.6s ease-out 1.2s forwards,
+        nav-hint-out 0.5s ease-in 9s forwards;
+    }
+
+    @keyframes nav-hint-in {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes nav-hint-out {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .nav-hint .glass-panel {
+      background: rgba(6, 13, 26, 0.92);
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      padding: 10px 14px;
+      min-width: 200px;
+    }
+
+    .nav-hint kbd {
+      display: inline-block;
+      background: rgba(96, 165, 250, 0.12);
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 0.9em;
+      font-family: monospace;
+      color: var(--primary);
+    }
+
+    /* ──────────────────────────────────────────────────────────────── */
+
     @keyframes pulse-glow {
 
       0%,
@@ -948,14 +997,31 @@
       <!-- ═══════════════════════════════════════════════════════════════ -->
 
       <!-- SLIDE 1: PORTADA -->
-      <section data-menu-title="Portada" data-audio-src="aepap-2026/audios/1.m4a"
-        data-audio-text="Bienvenidos al seminario La Inteligencia Artificial como Asistente del Pediatra de Atención Primaria. A lo largo de dos horas exploraremos las evidencias, aplicaciones y riesgos de la IA en nuestra práctica clínica diaria."
-        data-background-iframe="aepap-2026/svg_portada.svg" data-background-color="#060d1a"
-        data-background-interactive="true">
+      <section data-menu-title="Portada" data-audio-src="aepap-2026/audios/1.webm"
+        data-audio-text="Bienvenidos al seminario La Inteligencia Artificial como Asistente del Pediatra de Atención Primaria. Una nota rápida sobre la navegación: la barra espaciadora avanza en orden, bajando verticalmente si hay contenido y pasando al siguiente tema al terminar. La flecha derecha salta directamente al siguiente tema sin entrar en el contenido vertical. Las flechas en pantalla indican las opciones disponibles en cada momento."
+        data-background-iframe="aepap-2026/svg_portada.svg" data-background-color="#060d1a">
+        <!-- Tarjeta de navegación: aparece 1,2 s después y desaparece a los 9 s -->
+        <div class="nav-hint">
+          <div class="glass-panel">
+            <p
+              style="font-size:0.5em;font-weight:700;color:var(--primary);margin:0 0 8px;letter-spacing:0.06em;text-transform:uppercase;">
+              ⌨ Navegación</p>
+            <p style="font-size:0.47em;margin:0 0 3px;color:var(--text-main);"><kbd>Espacio</kbd> &nbsp; siguiente en
+              orden</p>
+            <p style="font-size:0.42em;margin:0 0 8px;color:var(--text-muted);padding-left:2px;">↓ si hay vertical,
+              luego →</p>
+            <p style="font-size:0.47em;margin:0 0 3px;color:var(--text-main);"><kbd>→</kbd> &nbsp; siguiente tema <em
+                style="font-style:normal;color:var(--text-muted);">(salta el vertical)</em></p>
+            <p style="font-size:0.47em;margin:0 0 8px;color:var(--text-main);"><kbd>↓</kbd> <kbd>↑</kbd> &nbsp; dentro
+              del tema actual</p>
+            <p style="font-size:0.4em;margin:0;color:var(--text-muted);line-height:1.4;">Las flechas en pantalla
+              muestran las opciones</p>
+          </div>
+        </div>
       </section>
 
       <!-- SLIDE 2: CONFLICTO DE INTERESES -->
-      <section data-menu-title="Conflicto de Intereses" data-audio-src="aepap-2026/audios/2.m4a"
+      <section data-menu-title="Conflicto de Intereses" data-audio-src="aepap-2026/audios/2.webm"
         data-audio-text="Declaración de conflictos de interés: El ponente declara no tener conflictos de interés relacionados con el contenido de este seminario.">
         <h2>Declaración de Conflictos de Interés</h2>
         <div class="conflict-box" style="max-width: 700px; margin: 40px auto">
@@ -1274,7 +1340,7 @@
         </section>
 
         <!-- Poll inicial -->
-        <section data-menu-title="Encuesta Inicial" data-audio-src="aepap-2026/audios/6.m4a" data-audio-text=" Queremos haceros una pregunta antes de seguir, y vale la pena ser sincero con uno mismo. Ernesto, tú que estás físicamente en la sala, ¿se la haces tú?
+        <section data-menu-title="Encuesta Inicial" data-audio-src="aepap-2026/audios/6.webm" data-audio-text=" Queremos sugeriros una pequeña reflexión antes de seguir. ¿Habéis usado alguna herramienta de inteligencia artificial esta semana para algo relacionado con vuestra práctica clínica? No solo ChatGPT. Cualquier cosa: buscar información, redactar un informe, preparar una sesión... Sea cual sea la respuesta, guardadla. Al final del seminario volveremos sobre esto y quizá vuestra perspectiva haya cambiado.
   ">
           <h2>🙋 Pregunta para empezar</h2>
           <div class="glass-panel" style="max-width: 800px; margin: 30px auto; padding: 40px">
@@ -2230,8 +2296,8 @@
         </section>
 
         <!-- SLIDE: Microactividad post-Paradoja (añadida 2026-02-06) -->
-        <section data-menu-title="Pausa: ¿Experiencias?" data-audio-src="aepap-2026/audios/19.m4a"
-          data-audio-text="No estamos hablando de teoría, esto pasa. Y cuando pasa en consulta, no viene con una etiqueta que diga sesgo de automatización. Viene con un informe hecho por IA que suena perfecto, o una respuesta impecable que nadie revisa porque no hay tiempo. Ernesto, seguro que es interesante oir experiencias reales ¿puedes preguntarles por favor?">
+        <section data-menu-title="Pausa: ¿Experiencias?" data-audio-src="aepap-2026/audios/19.webm"
+          data-audio-text="No estamos hablando de teoría, esto pasa. Y cuando pasa en consulta, no viene con una etiqueta que diga sesgo de automatización. Viene con un informe hecho por IA que suena perfecto, o una respuesta impecable que nadie revisa porque no hay tiempo. Tomad un momento para recordar si alguna vez os ha pasado algo así en la consulta. Ser conscientes de ello es el primer paso para usar estas herramientas con seguridad.">
           <h2 style="font-size: 2em">
             🤔 ¿Has confiado en una herramienta sin verificar?
           </h2>
@@ -3702,7 +3768,8 @@ mansor y colaboradores entrenaron un modelo GPT3
             <a href="https://doi.org/10.1038/s41746-025-01503-7" target="_blank" rel="noopener">DOI</a>
           </p>
           <aside class="notes">
-            ERNESTO: Paco menciona un semáforo. Lo que veréis más adelante es un algoritmo de decisión paso a paso.
+            Como se mencionó anteriormente en el semáforo sobre protección de datos, lo que veréis a continuación es la
+            aplicación práctica: un algoritmo de decisión paso a paso para integrarlo en consulta.
             Cuando lleguemos, conectad con este momento: la pregunta no es si la IA acierta, sino si podéis detectar
             el
             error a tiempo.
@@ -6522,8 +6589,8 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
 
         <!-- SLIDE #44: Demo NotebookLM - Actualización Periódica -->
         <section class="wide-slide" data-menu-title="Demo: NotebookLM Actualización"
-          data-audio-src="aepap-2026/audios/44.m4a"
-          data-audio-text="NotebookLM es erre-a-ge en su forma más estricta. Es una herramienta de i-a de Google que admite fuentes en diferentes formatos: vídeos, páginas web, archivos, presentaciones. Se los subes y solo trabaja con esos documentos. No busca en internet, no recurre a lo que aprendió en su entrenamiento. Si le cargas diez abstracts, o una búsqueda en PubMed con un filtro determinado, su universo son esos diez abstracts o esa búsqueda, y cada afirmación que genera incluye la cita al documento de origen. Lo que veis en pantalla son cuatro productos reales generados a partir de las mismas fuentes: un podcast, una síntesis de PubMed con filtro metodológico, una presentación para sesión clínica y un vídeo resumen. Misma evidencia, cuatro formatos, cero invención. Ernesto os cuenta cómo lo usa.">
+          data-audio-src="aepap-2026/audios/44.webm"
+          data-audio-text="NotebookLM es erre-a-ge en su forma más estricta. Es una herramienta de i-a de Google que admite fuentes en diferentes formatos: vídeos, páginas web, archivos, presentaciones. Se los subes y solo trabaja con esos documentos. No busca en internet, no recurre a lo que aprendió en su entrenamiento. Si le cargas diez abstracts, o una búsqueda en PubMed con un filtro determinado, su universo son esos diez abstracts o esa búsqueda, y cada afirmación que genera incluye la cita al documento de origen. Lo que veis en pantalla son cuatro productos reales generados a partir de las mismas fuentes: un podcast, una síntesis de PubMed con filtro metodológico, una presentación para sesión clínica y un vídeo resumen. Misma evidencia, cuatro formatos, cero invención. Este es el potencial de estructurar bien las peticiones a la IA.">
           <!-- Overlay para imagen NotebookLM (hidden por defecto) -->
           <div id="nlm-preview" onclick="this.style.display = 'none'" style="
                 display: none;
@@ -6834,7 +6901,7 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
         <section data-menu-title="Demo: Pirámide 5.0"
           data-background-iframe="https://ernestobarrera.github.io/piramide-evidencia-ia.html?embed=1"
           data-background-interactive data-audio-src="aepap-2026/audios/45.m4a"
-          data-audio-text="A la izquierda de la pantalla tenéis la pirámide de la evidencia que ya conocéis: cada peldaño sube porque alguien ha evaluado críticamente lo que hay debajo. A la derecha, las herramientas de i-a ordenadas por cómo trabajan con las fuentes. La regla de lectura es una sola. Columna izquierda: la respuesta puede salir de su entrenamiento o de una búsqueda, pero no siempre os dice de dónde. La calidad la verificáis vosotros. Columna derecha: la herramienta recupera fuentes identificables y os las muestra. La trazabilidad viene de serie. Las filas suben en riesgo clínico. Abajo, búsqueda: Scholar y PubMed punto ai a la izquierda, Consensus y Elicit a la derecha. En medio, lectura: Claude o ChatGPT a la izquierda, NotebookLM y Scite a la derecha. Y arriba, decisión clínica: la columna izquierda está vacía a propósito. Solo las herramientas que recuperan fuentes verificables tienen sitio ahí. Pero cuidado: que cite la fuente no significa que esa fuente sea la mejor disponible. Y ahí la pirámide de la izquierda vuelve a entrar. Ernesto os lo muestra.">
+          data-audio-text="A la izquierda de la pantalla tenéis la pirámide de la evidencia que ya conocéis: cada peldaño sube porque alguien ha evaluado críticamente lo que hay debajo. A la derecha, las herramientas de i-a ordenadas por cómo trabajan con las fuentes. La regla de lectura es una sola. Columna izquierda: la respuesta puede salir de su entrenamiento o de una búsqueda, pero no siempre os dice de dónde. La calidad la verificáis vosotros. Columna derecha: la herramienta recupera fuentes identificables y os las muestra. La trazabilidad viene de serie. Las filas suben en riesgo clínico. Abajo, búsqueda: Scholar y PubMed punto ai a la izquierda, Consensus y Elicit a la derecha. En medio, lectura: Claude o ChatGPT a la izquierda, NotebookLM y Scite a la derecha. Y arriba, decisión clínica: la columna izquierda está vacía a propósito. Solo las herramientas que recuperan fuentes verificables tienen sitio ahí. Pero cuidado: que cite la fuente no significa que esa herramienta haya escogido la mejor evidencia disponible para vuestro paciente. Y ahí la pirámide de la izquierda vuelve a entrar. El profesional evalúa la calidad clínica; la herramienta agiliza el camino.">
           <div class="demo-overlay piramide-hint">
             <div class="glass-panel" style="padding: 10px 14px">
               <i class="fa-solid fa-hand-pointer" style="color: var(--accent); margin-right: 8px"></i>
@@ -6843,7 +6910,7 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
           </div>
         </section>
 
-                <!-- SLIDE: Toolkit personal para demo en vivo (añadida 2026-03-05) -->
+        <!-- SLIDE: Toolkit personal para demo en vivo (añadida 2026-03-05) -->
         <section class="wide-slide" data-menu-title="Mi kit del lunes" data-audio-src="" data-audio-text="">
           <div class="title-wrapper">
             <h2 class="assertion-title">
@@ -6853,26 +6920,39 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
             <p class="subtitle">Herramientas reales y de uso diario organizadas por función</p>
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1100px; margin: 15px auto; font-size: 0.9em;">
+          <div
+            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1100px; margin: 15px auto; font-size: 0.9em;">
 
             <!-- Columna 1: GPTs personalizados -->
-            <div class="glass-panel" style="padding: 16px; border-top: 4px solid var(--secondary); display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="glass-panel"
+              style="padding: 16px; border-top: 4px solid var(--secondary); display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <h4 style="color: var(--secondary); margin: 0 0 16px; font-size: 1.25em; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <h4
+                  style="color: var(--secondary); margin: 0 0 16px; font-size: 1.25em; display: flex; align-items: center; justify-content: center; gap: 10px;">
                   <i class="fa-solid fa-robot"></i> GPTs Especializados
                 </h4>
-                <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                  <a href="https://chatgpt.com/g/g-X7vlWsNJx-evidence-based-practice" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <div
+                  style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;"
+                  onmouseover="this.style.transform='translateY(-2px)'"
+                  onmouseout="this.style.transform='translateY(0)'">
+                  <a href="https://chatgpt.com/g/g-X7vlWsNJx-evidence-based-practice" target="_blank" rel="noopener"
+                    style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
                     <i class="fa-solid fa-file-pdf"></i> Lectura Crítica EBP
                   </a>
                 </div>
-                <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                  <a href="https://chatgpt.com/g/g-67b1abae4e24819191a40f0e7b0ab906-asistente-de-resumenes-medicos" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <div
+                  style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;"
+                  onmouseover="this.style.transform='translateY(-2px)'"
+                  onmouseout="this.style.transform='translateY(0)'">
+                  <a href="https://chatgpt.com/g/g-67b1abae4e24819191a40f0e7b0ab906-asistente-de-resumenes-medicos"
+                    target="_blank" rel="noopener"
+                    style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
                     <i class="fa-solid fa-list-check"></i> Resúmenes Médicos
                   </a>
                 </div>
               </div>
-              <div style="margin-top: 20px; padding: 12px; background: rgba(102, 187, 106, 0.1); border-radius: 6px; text-align: center; border: 1px solid rgba(102, 187, 106, 0.3);">
+              <div
+                style="margin-top: 20px; padding: 12px; background: rgba(102, 187, 106, 0.1); border-radius: 6px; text-align: center; border: 1px solid rgba(102, 187, 106, 0.3);">
                 <p style="margin: 0; color: #66bb6a; font-size: 0.95em; font-weight: 600;">
                   <i class="fa-solid fa-circle-check" style="margin-right: 6px;"></i>Semáforo Verde (Aportas la fuente)
                 </p>
@@ -6880,23 +6960,34 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
             </div>
 
             <!-- Columna 2: Búsqueda y vigilancia -->
-            <div class="glass-panel" style="padding: 16px; border-top: 4px solid var(--primary); display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="glass-panel"
+              style="padding: 16px; border-top: 4px solid var(--primary); display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <h4 style="color: var(--primary); margin: 0 0 16px; font-size: 1.25em; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <h4
+                  style="color: var(--primary); margin: 0 0 16px; font-size: 1.25em; display: flex; align-items: center; justify-content: center; gap: 10px;">
                   <i class="fa-solid fa-magnifying-glass"></i> Búsqueda y Vigilancia
                 </h4>
-                <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                  <a href="https://ernestobarrera.github.io/buscar-pubmed.html" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <div
+                  style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;"
+                  onmouseover="this.style.transform='translateY(-2px)'"
+                  onmouseout="this.style.transform='translateY(0)'">
+                  <a href="https://ernestobarrera.github.io/buscar-pubmed.html" target="_blank" rel="noopener"
+                    style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
                     <i class="fa-solid fa-microscope"></i> Buscador PubMed IA
                   </a>
                 </div>
-                <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                  <a href="https://www.inoreader.com/folder/AEPAP%202026" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <div
+                  style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 22px 12px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s;"
+                  onmouseover="this.style.transform='translateY(-2px)'"
+                  onmouseout="this.style.transform='translateY(0)'">
+                  <a href="https://www.inoreader.com/folder/AEPAP%202026" target="_blank" rel="noopener"
+                    style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2em; display: flex; align-items: center; justify-content: center; gap: 8px;">
                     <i class="fa-solid fa-rss"></i> RSS Inteligente
                   </a>
                 </div>
               </div>
-              <div style="margin-top: 20px; padding: 12px; background: rgba(102, 187, 106, 0.1); border-radius: 6px; text-align: center; border: 1px solid rgba(102, 187, 106, 0.3);">
+              <div
+                style="margin-top: 20px; padding: 12px; background: rgba(102, 187, 106, 0.1); border-radius: 6px; text-align: center; border: 1px solid rgba(102, 187, 106, 0.3);">
                 <p style="margin: 0; color: #66bb6a; font-size: 0.95em; font-weight: 600;">
                   <i class="fa-solid fa-circle-check" style="margin-right: 6px;"></i>Semáforo Verde (Fuentes Trazadas)
                 </p>
@@ -6904,47 +6995,69 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
             </div>
 
             <!-- Columna 3: Modelos Directos -->
-            <div class="glass-panel" style="padding: 16px; border-top: 4px solid #a78bfa; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="glass-panel"
+              style="padding: 16px; border-top: 4px solid #a78bfa; display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <h4 style="color: #a78bfa; margin: 0 0 16px; font-size: 1.25em; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <h4
+                  style="color: #a78bfa; margin: 0 0 16px; font-size: 1.25em; display: flex; align-items: center; justify-content: center; gap: 10px;">
                   <i class="fa-solid fa-network-wired"></i> Modelos Directos
                 </h4>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                   <!-- Claude -->
-                  <a href="https://claude.ai" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                  <a href="https://claude.ai" target="_blank" rel="noopener"
+                    style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+                    onmouseout="this.style.background='rgba(0,0,0,0.2)'">
                     <strong style="color: #a78bfa; font-size: 1.25em;">Claude</strong>
                     <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Razonamiento</span>
                   </a>
                   <!-- Perplexity -->
-                  <a href="https://perplexity.ai" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                  <a href="https://perplexity.ai" target="_blank" rel="noopener"
+                    style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+                    onmouseout="this.style.background='rgba(0,0,0,0.2)'">
                     <strong style="color: #22d3ee; font-size: 1.25em;">Perplexity</strong>
                     <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Búsqueda RAG</span>
                   </a>
                   <!-- Gemini Gem -->
-                  <a href="https://gemini.google.com/gem/da9353a37a47" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                  <a href="https://gemini.google.com/gem/da9353a37a47" target="_blank" rel="noopener"
+                    style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+                    onmouseout="this.style.background='rgba(0,0,0,0.2)'">
                     <strong style="color: #f43f5e; font-size: 1.25em;">Gemini Gem</strong>
                     <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Asist. Clínico</span>
                   </a>
                   <!-- Google IA -->
-                  <a href="https://www.google.com/search?udm=50&aep=11" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                  <a href="https://www.google.com/search?udm=50&aep=11" target="_blank" rel="noopener"
+                    style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+                    onmouseout="this.style.background='rgba(0,0,0,0.2)'">
                     <strong style="color: #3b82f6; font-size: 1.25em;">Google AI</strong>
                     <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Búsqueda Web</span>
                   </a>
                   <!-- DeepSeek -->
-                  <a href="https://chat.deepseek.com" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                  <a href="https://chat.deepseek.com" target="_blank" rel="noopener"
+                    style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+                    onmouseout="this.style.background='rgba(0,0,0,0.2)'">
                     <strong style="color: #60a5fa; font-size: 1.25em;">DeepSeek</strong>
                     <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Código/Lógica</span>
                   </a>
                   <!-- Qwen -->
-                  <a href="https://tongyi.aliyun.com/qianwen" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">
+                  <a href="https://tongyi.aliyun.com/qianwen" target="_blank" rel="noopener"
+                    style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 14px 6px; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; transition: background 0.2s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+                    onmouseout="this.style.background='rgba(0,0,0,0.2)'">
                     <strong style="color: #34d399; font-size: 1.25em;">Qwen</strong>
                     <span style="font-size: 0.85em; color: #aaa; margin-top: 4px;">Multilingüe</span>
                   </a>
                 </div>
               </div>
-              <div style="margin-top: 20px; padding: 12px; background: rgba(251, 191, 36, 0.1); border-radius: 6px; text-align: center; border: 1px solid rgba(251, 191, 36, 0.3);">
+              <div
+                style="margin-top: 20px; padding: 12px; background: rgba(251, 191, 36, 0.1); border-radius: 6px; text-align: center; border: 1px solid rgba(251, 191, 36, 0.3);">
                 <p style="margin: 0; color: #fbbf24; font-size: 0.95em; font-weight: 600;">
-                  <i class="fa-solid fa-triangle-exclamation" style="margin-right: 6px;"></i>Semáforo Amarillo (Verificar)
+                  <i class="fa-solid fa-triangle-exclamation" style="margin-right: 6px;"></i>Semáforo Amarillo
+                  (Verificar)
                 </p>
               </div>
             </div>
@@ -7229,8 +7342,8 @@ Por eso empezamos por aquí: la documentación es la zona verde más clara. Pero
         <!-- SLIDE: Casos para práctica -->
         <section data-menu-title="Generador RECORD Pediatría AP"
           data-background-iframe="https://ernestobarrera.github.io/ia/p/record-pediatria-ap.html"
-          data-background-interactive data-audio-src="aepap-2026/audios/48.m4a"
-          data-audio-text="Lo que veis en pantalla es un recurso que Ernesto ha desarrollado con ayuda de i-a generativa. Es un bookmarklet basado en el método RECORD, diseñado para pediatría de atención primaria. Despliega treinta escenarios reales en cinco categorías: consulta aguda, seguimiento, comunicación con familias, docencia y seguridad con i-a. Seleccionáis un caso, el asistente os guía letra por letra por cada componente del método, y al final genera un prompt completo que se abre directamente en ChatGPT. Desde ahí lo podéis copiar a Claude, a Gemini, o a la i-a que uséis. El bookmarklet se arrastra a la barra de marcadores de vuestro navegador y lo tenéis siempre a mano. Su finalidad es docente: aprender a estructurar la pregunta hasta que os salga solo.">
+          data-background-interactive data-audio-src="aepap-2026/audios/48.webm"
+          data-audio-text="Lo que veis en pantalla es un recurso desarrollado con ayuda de i-a generativa. Es un bookmarklet basado en el método RECORD, diseñado para pediatría de atención primaria. Despliega treinta escenarios reales en cinco categorías: consulta aguda, seguimiento, comunicación con familias, docencia y seguridad... El bookmarklet se arrastra a la barra de marcadores del navegador para tenerlo siempre a mano.">
           <div class="demo-overlay piramide-hint">
             <div class="glass-panel" style="padding: 10px 14px">
               <i class="fa-solid fa-hand-pointer" style="color: var(--accent); margin-right: 8px"></i>
