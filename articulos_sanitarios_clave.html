@@ -598,6 +598,45 @@
       opacity: 0.92;
     }
 
+    .site-return {
+      position: fixed;
+      top: 10px;
+      left: 12px;
+      z-index: 70;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(7, 14, 26, 0.78);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      text-decoration: none;
+      color: #e7f1fe;
+      font-size: 0.52rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      transition: 0.16s ease;
+    }
+
+    .site-return:hover {
+      border-color: rgba(96, 165, 250, 0.7);
+      background: rgba(96, 165, 250, 0.22);
+      color: #f4f9ff;
+    }
+
+    .site-return img {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      object-fit: contain;
+    }
+
+    .site-return i {
+      font-size: 0.58rem;
+    }
+
     .lang-switch {
       position: fixed;
       top: 4px;
@@ -882,6 +921,22 @@
 
     @media (max-width: 900px),
     (max-height: 560px) {
+      .site-return {
+        top: 6px;
+        left: 6px;
+        padding: 3px 8px;
+        font-size: 0.48rem;
+      }
+
+      .site-return img {
+        width: 12px;
+        height: 12px;
+      }
+
+      .site-return i {
+        font-size: 0.5rem;
+      }
+
       .lang-switch {
         top: 3px;
         right: 4px;
@@ -1021,6 +1076,12 @@
 </head>
 
 <body>
+  <a href="https://ernestobarrera.github.io/" class="site-return" aria-label="Volver a la web principal">
+    <img src="../assets/images/me.png" alt="Avatar Ernesto Barrera"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" />
+    <i class="fas fa-home" style="display:none;"></i>
+    <span>Inicio</span>
+  </a>
   <div class="lang-switch" role="group" aria-label="Selector de idioma y audio">
     <span class="lang-switch-label">Idioma</span>
     <button type="button" data-lang-btn="es" class="active" aria-label="Español (texto y audio)"
@@ -3416,15 +3477,25 @@
           </div>
         </div>
         <div class="keyline">
-          <strong>Mensaje clave:</strong> Una escala clínica breve y reproducible puede cambiar resultados poblacionales cuando se vuelve estándar asistencial.
+          <strong>Mensaje clave:</strong> Una escala clínica breve y reproducible puede cambiar resultados poblacionales
+          cuando se vuelve estándar asistencial.
         </div>
         <div class="article-body">
           <p>
-            La escala de Apgar introdujo un lenguaje común para valorar al recién nacido en tiempo real usando cinco dominios observables (frecuencia cardiaca, respiración, tono, reflejos y color). Su fuerza no fue tecnológica sino operativa: permitió comparar situaciones entre profesionales y centros, decidir con rapidez cuándo intensificar soporte y auditar la calidad de la atención perinatal. El impacto histórico es extraordinario porque convirtió una práctica heterogénea en una evaluación sistemática aplicable en cualquier contexto clínico, desde hospitales terciarios hasta entornos con pocos recursos. Su difusión global muestra cómo un instrumento sencillo, bien definido y clínicamente útil puede tener consecuencias de salud pública más duraderas que innovaciones mucho más complejas.
+            La escala de Apgar introdujo un lenguaje común para valorar al recién nacido en tiempo real usando cinco
+            dominios observables (frecuencia cardiaca, respiración, tono, reflejos y color). Su fuerza no fue
+            tecnológica sino operativa: permitió comparar situaciones entre profesionales y centros, decidir con rapidez
+            cuándo intensificar soporte y auditar la calidad de la atención perinatal. El impacto histórico es
+            extraordinario porque convirtió una práctica heterogénea en una evaluación sistemática aplicable en
+            cualquier contexto clínico, desde hospitales terciarios hasta entornos con pocos recursos. Su difusión
+            global muestra cómo un instrumento sencillo, bien definido y clínicamente útil puede tener consecuencias de
+            salud pública más duraderas que innovaciones mucho más complejas.
           </p>
         </div>
         <aside class="notes">
-          Artículo 31. Virginia Apgar — una escala de un minuto que cambió el inicio de la vida. Idea central: la escala estandarizó la valoración neonatal inmediata y su adopción universal mejoró comunicación clínica, monitorización de calidad y decisiones de reanimación.
+          Artículo 31. Virginia Apgar — una escala de un minuto que cambió el inicio de la vida. Idea central: la escala
+          estandarizó la valoración neonatal inmediata y su adopción universal mejoró comunicación clínica,
+          monitorización de calidad y decisiones de reanimación.
         </aside>
       </section>
 
@@ -3439,7 +3510,8 @@
           <div class="meta-card">
             <h3>Referencia</h3>
             <p class="citation">
-              <strong>Barré-Sinoussi F, Chermann JC, Rey F, et al.</strong> Isolation of a T-lymphotropic retrovirus from a patient at risk for acquired immune deficiency syndrome (AIDS).
+              <strong>Barré-Sinoussi F, Chermann JC, Rey F, et al.</strong> Isolation of a T-lymphotropic retrovirus
+              from a patient at risk for acquired immune deficiency syndrome (AIDS).
               <em>Science.</em> 1983;220(4599):868–871.
               <strong>DOI:</strong> 10.1126/science.6189183 |
               <strong>PMID:</strong> 6189183.
@@ -3460,15 +3532,23 @@
           </div>
         </div>
         <div class="keyline">
-          <strong>Mensaje clave:</strong> Sin identificar el agente causal no hay prevención ni tratamiento racionales; este artículo hizo posible ambos.
+          <strong>Mensaje clave:</strong> Sin identificar el agente causal no hay prevención ni tratamiento racionales;
+          este artículo hizo posible ambos.
         </div>
         <div class="article-body">
           <p>
-            El aislamiento del retrovirus asociado al sida marcó un punto de inflexión científico y sanitario. Al establecer una causa viral concreta, permitió desarrollar pruebas diagnósticas específicas, mejorar la seguridad transfusional y orientar investigación terapéutica de alto rendimiento clínico. El valor del estudio también fue metodológico: convirtió una crisis con fuerte incertidumbre social y biomédica en un programa acumulativo de evidencia. Décadas después, ese cambio sigue visible en la transición desde mortalidad masiva a control crónico del VIH en sistemas con acceso a tratamiento. Es uno de los ejemplos más claros de cómo un hallazgo de laboratorio puede reconfigurar políticas de salud pública global.
+            El aislamiento del retrovirus asociado al sida marcó un punto de inflexión científico y sanitario. Al
+            establecer una causa viral concreta, permitió desarrollar pruebas diagnósticas específicas, mejorar la
+            seguridad transfusional y orientar investigación terapéutica de alto rendimiento clínico. El valor del
+            estudio también fue metodológico: convirtió una crisis con fuerte incertidumbre social y biomédica en un
+            programa acumulativo de evidencia. Décadas después, ese cambio sigue visible en la transición desde
+            mortalidad masiva a control crónico del VIH en sistemas con acceso a tratamiento. Es uno de los ejemplos más
+            claros de cómo un hallazgo de laboratorio puede reconfigurar políticas de salud pública global.
           </p>
         </div>
         <aside class="notes">
-          Artículo 32. Barré-Sinoussi et al. — identificar el VIH para poder tratar y prevenir. Idea central: el aislamiento del virus dio base causal, diagnóstica y terapéutica a toda la respuesta moderna frente al sida.
+          Artículo 32. Barré-Sinoussi et al. — identificar el VIH para poder tratar y prevenir. Idea central: el
+          aislamiento del virus dio base causal, diagnóstica y terapéutica a toda la respuesta moderna frente al sida.
         </aside>
       </section>
 
@@ -3483,7 +3563,8 @@
           <div class="meta-card">
             <h3>Referencia</h3>
             <p class="citation">
-              <strong>Karikó K, Buckstein M, Ni H, Weissman D.</strong> Suppression of RNA recognition by Toll-like receptors: the impact of nucleoside modification and the evolutionary origin of RNA.
+              <strong>Karikó K, Buckstein M, Ni H, Weissman D.</strong> Suppression of RNA recognition by Toll-like
+              receptors: the impact of nucleoside modification and the evolutionary origin of RNA.
               <em>Immunity.</em> 2005;23(2):165–175.
               <strong>DOI:</strong> 10.1016/j.immuni.2005.06.008 |
               <strong>PMID:</strong> 16111635.
@@ -3492,7 +3573,8 @@
           <div class="meta-card">
             <h3>Enlaces primarios</h3>
             <div class="chips">
-              <a class="chip doi" href="https://doi.org/10.1016/j.immuni.2005.06.008" target="_blank" rel="noopener">DOI:
+              <a class="chip doi" href="https://doi.org/10.1016/j.immuni.2005.06.008" target="_blank"
+                rel="noopener">DOI:
                 10.1016/j.immuni.2005.06.008</a>
               <a class="chip pmid" href="https://pubmed.ncbi.nlm.nih.gov/16111635/" target="_blank" rel="noopener">PMID:
                 16111635</a>
@@ -3504,15 +3586,23 @@
           </div>
         </div>
         <div class="keyline">
-          <strong>Mensaje clave:</strong> La modificación de nucleósidos convirtió al ARNm de molécula inflamatoria inestable en plataforma terapéutica utilizable.
+          <strong>Mensaje clave:</strong> La modificación de nucleósidos convirtió al ARNm de molécula inflamatoria
+          inestable en plataforma terapéutica utilizable.
         </div>
         <div class="article-body">
           <p>
-            Este artículo aborda el cuello de botella que bloqueaba la traslación clínica del ARNm: su activación intensa de la inmunidad innata. Al demostrar que nucleósidos modificados suprimen el reconocimiento por TLR y mejoran la tolerabilidad biológica, abrió una vía de diseño molecular con consecuencias directas para vacunas y otras terapias basadas en ARNm. El mérito histórico no es solo técnico; es estratégico. Permitió que una línea de investigación considerada durante años periférica se convirtiera en infraestructura biomédica crítica durante una emergencia global. Su incorporación aquí refleja un criterio de impacto durable: cambiar un mecanismo limita o expande todo lo que la medicina puede construir después.
+            Este artículo aborda el cuello de botella que bloqueaba la traslación clínica del ARNm: su activación
+            intensa de la inmunidad innata. Al demostrar que nucleósidos modificados suprimen el reconocimiento por TLR
+            y mejoran la tolerabilidad biológica, abrió una vía de diseño molecular con consecuencias directas para
+            vacunas y otras terapias basadas en ARNm. El mérito histórico no es solo técnico; es estratégico. Permitió
+            que una línea de investigación considerada durante años periférica se convirtiera en infraestructura
+            biomédica crítica durante una emergencia global. Su incorporación aquí refleja un criterio de impacto
+            durable: cambiar un mecanismo limita o expande todo lo que la medicina puede construir después.
           </p>
         </div>
         <aside class="notes">
-          Artículo 33. Karikó et al. — el giro molecular que hizo viable la plataforma de ARNm. Idea central: resolver la inmunogenicidad del ARNm habilitó una tecnología con impacto clínico y poblacional masivo.
+          Artículo 33. Karikó et al. — el giro molecular que hizo viable la plataforma de ARNm. Idea central: resolver
+          la inmunogenicidad del ARNm habilitó una tecnología con impacto clínico y poblacional masivo.
         </aside>
       </section>
 
@@ -3527,7 +3617,8 @@
           <div class="meta-card">
             <h3>Referencia</h3>
             <p class="citation">
-              <strong>Jinek M, Chylinski K, Fonfara I, Hauer M, Doudna JA, Charpentier E.</strong> A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity.
+              <strong>Jinek M, Chylinski K, Fonfara I, Hauer M, Doudna JA, Charpentier E.</strong> A programmable
+              dual-RNA-guided DNA endonuclease in adaptive bacterial immunity.
               <em>Science.</em> 2012;337(6096):816–821.
               <strong>DOI:</strong> 10.1126/science.1225829 |
               <strong>PMID:</strong> 22745249.
@@ -3548,15 +3639,24 @@
           </div>
         </div>
         <div class="keyline">
-          <strong>Mensaje clave:</strong> CRISPR-Cas9 convirtió la edición génica de alta precisión en una capacidad experimental y terapéutica generalizable.
+          <strong>Mensaje clave:</strong> CRISPR-Cas9 convirtió la edición génica de alta precisión en una capacidad
+          experimental y terapéutica generalizable.
         </div>
         <div class="article-body">
           <p>
-            El trabajo de Jinek y colegas estableció la arquitectura funcional que hizo de CRISPR-Cas9 una herramienta programable: un sistema guiado por ARN capaz de dirigir cortes de ADN en secuencias objetivo. Su efecto fue inmediato en investigación básica y rápidamente expansivo en biomedicina traslacional, al facilitar creación de modelos celulares y animales, cribados funcionales y estrategias terapéuticas de edición somática. La importancia de este artículo está en su carácter de “tecnología habilitadora”: no resuelve una única enfermedad, sino que modifica la capacidad de investigar y de intervenir sobre múltiples enfermedades con un coste y una accesibilidad radicalmente distintos a los métodos previos.
+            El trabajo de Jinek y colegas estableció la arquitectura funcional que hizo de CRISPR-Cas9 una herramienta
+            programable: un sistema guiado por ARN capaz de dirigir cortes de ADN en secuencias objetivo. Su efecto fue
+            inmediato en investigación básica y rápidamente expansivo en biomedicina traslacional, al facilitar creación
+            de modelos celulares y animales, cribados funcionales y estrategias terapéuticas de edición somática. La
+            importancia de este artículo está en su carácter de “tecnología habilitadora”: no resuelve una única
+            enfermedad, sino que modifica la capacidad de investigar y de intervenir sobre múltiples enfermedades con un
+            coste y una accesibilidad radicalmente distintos a los métodos previos.
           </p>
         </div>
         <aside class="notes">
-          Artículo 34. Jinek et al. — CRISPR-Cas9 como herramienta programable de edición genética. Idea central: una plataforma de edición reutilizable redefinió posibilidades diagnósticas, experimentales y terapéuticas en múltiples áreas.
+          Artículo 34. Jinek et al. — CRISPR-Cas9 como herramienta programable de edición genética. Idea central: una
+          plataforma de edición reutilizable redefinió posibilidades diagnósticas, experimentales y terapéuticas en
+          múltiples áreas.
         </aside>
       </section>
 
@@ -3571,7 +3671,8 @@
           <div class="meta-card">
             <h3>Referencia</h3>
             <p class="citation">
-              <strong>Hall JM, Lee MK, Newman B, et al.</strong> Linkage of early-onset familial breast cancer to chromosome 17q21.
+              <strong>Hall JM, Lee MK, Newman B, et al.</strong> Linkage of early-onset familial breast cancer to
+              chromosome 17q21.
               <em>Science.</em> 1990;250(4988):1684–1689.
               <strong>DOI:</strong> 10.1126/science.2270482 |
               <strong>PMID:</strong> 2270482.
@@ -3592,15 +3693,25 @@
           </div>
         </div>
         <div class="keyline">
-          <strong>Mensaje clave:</strong> Localizar BRCA1 convirtió el riesgo hereditario de cáncer de mama en información clínica accionable.
+          <strong>Mensaje clave:</strong> Localizar BRCA1 convirtió el riesgo hereditario de cáncer de mama en
+          información clínica accionable.
         </div>
         <div class="article-body">
           <p>
-            Este artículo proporciona una demostración robusta de ligamiento genético entre cáncer de mama familiar de inicio temprano y la región cromosómica 17q21, paso decisivo hacia la identificación de BRCA1. Su impacto clínico fue profundo: cambió la evaluación del riesgo oncológico en familias de alta carga, impulsó programas de consejo genético y habilitó estrategias preventivas y terapéuticas más personalizadas. También ilustra una cuestión de crédito científico relevante en artículos multiautor: citar solo por primer autor puede ocultar liderazgos de programa de investigación sostenidos durante años. En términos de historia de la medicina, este paper marca la transición práctica hacia la oncología de precisión basada en susceptibilidad genética.
+            Este artículo proporciona una demostración robusta de ligamiento genético entre cáncer de mama familiar de
+            inicio temprano y la región cromosómica 17q21, paso decisivo hacia la identificación de BRCA1. Su impacto
+            clínico fue profundo: cambió la evaluación del riesgo oncológico en familias de alta carga, impulsó
+            programas de consejo genético y habilitó estrategias preventivas y terapéuticas más personalizadas. También
+            ilustra una cuestión de crédito científico relevante en artículos multiautor: citar solo por primer autor
+            puede ocultar liderazgos de programa de investigación sostenidos durante años. En términos de historia de la
+            medicina, este paper marca la transición práctica hacia la oncología de precisión basada en susceptibilidad
+            genética.
           </p>
         </div>
         <aside class="notes">
-          Artículo 35. Hall et al. — del locus BRCA1 a la oncología de precisión. Idea central: el ligamiento en 17q21 abrió la medicina de precisión en cáncer hereditario y transformó prevención, consejo genético y estratificación de riesgo.
+          Artículo 35. Hall et al. — del locus BRCA1 a la oncología de precisión. Idea central: el ligamiento en 17q21
+          abrió la medicina de precisión en cáncer hereditario y transformó prevención, consejo genético y
+          estratificación de riesgo.
         </aside>
       </section>
 
@@ -3710,6 +3821,7 @@
         htmlLang: "es",
         documentTitle: "Biblioteca de Artículos Médicos | 35 esenciales",
         metaDescription: "Biblioteca de 35 artículos médicos esenciales",
+        homeLabel: "Inicio",
         langLabel: "Idioma",
         langSwitchAria: "Selector de idioma y audio",
         langButtons: {
@@ -3860,6 +3972,7 @@
         htmlLang: "en",
         documentTitle: "Medical Articles Library | 35 Essentials",
         metaDescription: "Library of 35 essential medical articles",
+        homeLabel: "Home",
         langLabel: "Language",
         langSwitchAria: "Language and audio selector",
         langButtons: {
@@ -4063,6 +4176,8 @@
 
       const langLabel = document.querySelector(".lang-switch-label");
       if (langLabel) langLabel.textContent = ui.langLabel;
+      const homeLabel = document.querySelector(".site-return span");
+      if (homeLabel) homeLabel.textContent = ui.homeLabel;
       const langSwitch = document.querySelector(".lang-switch");
       if (langSwitch) {
         langSwitch.setAttribute("aria-label", ui.langSwitchAria || ui.langLabel);
