@@ -3871,6 +3871,9 @@
         documentTitle: "Biblioteca de Artículos Médicos | 35 esenciales",
         metaDescription: "Biblioteca de 35 artículos médicos esenciales",
         homeLabel: "Inicio",
+        kofiLabel: "Invítame a un café",
+        kofiHover: "Apoya en Ko-fi ↗",
+        kofiAria:  "Invítame a un café en Ko-fi",
         langLabel: "Idioma",
         langSwitchAria: "Selector de idioma y audio",
         langButtons: {
@@ -4022,6 +4025,9 @@
         documentTitle: "Medical Articles Library | 35 Essentials",
         metaDescription: "Library of 35 essential medical articles",
         homeLabel: "Home",
+        kofiLabel: "Buy me a coffee",
+        kofiHover: "Support on Ko-fi ↗",
+        kofiAria:  "Buy me a coffee on Ko-fi",
         langLabel: "Language",
         langSwitchAria: "Language and audio selector",
         langButtons: {
@@ -4227,6 +4233,15 @@
       if (langLabel) langLabel.textContent = ui.langLabel;
       const homeLabel = document.querySelector(".site-return span");
       if (homeLabel) homeLabel.textContent = ui.homeLabel;
+      const kofiBtn = document.querySelector(".kofi-return");
+      if (kofiBtn) {
+        const kofiDefault = kofiBtn.querySelector(".kofi-label-default");
+        const kofiHover   = kofiBtn.querySelector(".kofi-label-hover");
+        if (kofiDefault) kofiDefault.textContent = ui.kofiLabel;
+        if (kofiHover)   kofiHover.textContent   = ui.kofiHover;
+        kofiBtn.setAttribute("aria-label", ui.kofiAria);
+        kofiBtn.setAttribute("title", ui.kofiAria);
+      }
       const langSwitch = document.querySelector(".lang-switch");
       if (langSwitch) {
         langSwitch.setAttribute("aria-label", ui.langSwitchAria || ui.langLabel);
