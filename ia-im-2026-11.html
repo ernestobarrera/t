@@ -17,29 +17,27 @@
   <title>IA en Inspección Sanitaria · noviembre de 2026 | @ernestob</title>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { width: 100%; min-height: 100%; background: #0a0f1a; }
-    body { color: #f1f5f9; font: 1rem/1.6 system-ui, sans-serif; }
-    header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.3rem 1rem; padding: 0.5rem 0.75rem; color: #f1f5f9; font: 0.875rem/1.4 system-ui, sans-serif; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0f1a; }
+    body { display: flex; flex-direction: column; height: 100dvh; color: #f1f5f9; font: 1rem/1.6 system-ui, sans-serif; }
+    header { display: flex; align-items: center; justify-content: space-between; flex: 0 0 auto; gap: 0.3rem 1rem; padding: 0.5rem 0.75rem; color: #cbd5e1; font: 0.8125rem/1.4 system-ui, sans-serif; }
+    header time { white-space: nowrap; color: #94a3b8; }
     a { color: #b9dbff; }
     a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
-    nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
-    main { height: calc(100dvh - 3.5rem); min-height: 360px; }
+    main { flex: 1 1 auto; min-height: 0; }
     iframe { display: block; width: 100%; height: 100%; border: none; }
-    #fuentes { max-width: 75rem; margin: 0 auto; padding: 2rem 1rem 3rem; scroll-margin-top: 1rem; }
+    #fuentes { display: none; position: fixed; inset: 0; z-index: 1; overflow: auto; padding: 2rem max(1rem, calc((100vw - 73rem) / 2)) 3rem; background: #0a0f1a; }
+    #fuentes:target { display: block; }
     #fuentes h1 { font-size: 1.5rem; }
     #fuentes h2 { font-size: 1.1rem; margin-top: 1.5rem; }
     #fuentes p { margin-top: 0.65rem; }
     #fuentes .back { display: inline-block; margin-top: 1.5rem; }
-    @media (max-width: 600px) { main { height: calc(100dvh - 6rem); } }
+    @media (max-width: 600px) { header { align-items: flex-start; font-size: 0.75rem; } }
   </style>
 </head>
 <body>
   <header id="presentacion">
-    <span>Inspección Sanitaria · 5 de noviembre de 2026</span>
-    <nav aria-label="Materiales del curso">
-      <a href="#fuentes">Fuentes y límites</a>
-      <a href="https://docs.google.com/presentation/d/e/2PACX-1vSGCwIOXvHua8s3voQtGkOn3-IBahYq6HG_JMfhfE6RtViLrFRMbzB2rVKcZ6X6FePJvrZVBGDmi_W5/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank" rel="noopener noreferrer">Abrir en Google Slides</a>
-    </nav>
+    <span>IA aplicada en Inspección Sanitaria</span>
+    <time datetime="2026-11-05">5 de noviembre de 2026</time>
   </header>
   <main>
     <iframe
