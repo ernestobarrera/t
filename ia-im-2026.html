@@ -20,15 +20,23 @@
       overflow: hidden;
       background: #0a0f1a;
     }
+    body { display: flex; flex-direction: column; height: 100dvh; }
     iframe {
       display: block;
-      width: 100vw;
-      height: 100vh;
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+      height: 0;
       border: none;
     }
   </style>
 </head>
 <body>
+<!-- Añadir a la página de abril sin sustituir su presentación ni su DOI. -->
+<aside aria-label="Edición de noviembre" style="padding: .5rem .75rem; color: #f1f5f9; background: #172238; font: .875rem/1.4 system-ui, sans-serif;">
+  Disponible la <a href="ia-im-2026-11.html" style="color: #b9dbff;">edición del 5 de noviembre de 2026</a>. Esta página conserva la edición de abril.
+</aside>
+
   <iframe
     src="https://docs.google.com/presentation/d/e/2PACX-1vRpXjX-5r5vNOVbw1daUK_RDDGyLXfvp9r3DQcbaSVhXp-SkbzjczoHXshkdidYVWQ8sd4cGJmVLu43/embed?start=false&loop=false&delayms=600000"
     frameborder="0"
